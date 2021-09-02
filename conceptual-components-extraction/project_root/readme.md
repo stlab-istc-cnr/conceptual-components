@@ -70,7 +70,7 @@ From the folder "/Users/goofy/conceptual-components-extraction/project_root/", r
 
 Output: it produces a filtered (no have and be lemmas) and enriched (top level ancestors frames) version of the disambiguated virtual documents of the communities.
 
-### 6 ``clustering_synsetframe_communities.py``
+### 6a ``clustering_synsetframe_communities.py``
 Input:
 - csv with the filtered and enriched with ancestors synset and frames: it is generated in step 5
 - csv for storing the output
@@ -83,6 +83,8 @@ From the folder "/Users/goofy/conceptual-components-extraction/project_root/", r
 (Replace "100" with "81" if you want to run the experiment on the Conf dataset)
 
 Output: it runs the clustering algorithm on the virtual documents of the communities
+
+### 6b ``elbowmethod``
 
 ### 7 ``clusters_frame_analysis.py``
 Input:

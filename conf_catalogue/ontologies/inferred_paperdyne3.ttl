@@ -1,0 +1,43 @@
+<http://paperdyne#submits>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://paperdyne#reviewedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://paperdyne#Review>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Topic> .
+
+<http://paperdyne#Paper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Contribution> .
+
+<http://paperdyne#isInConflictWith>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#isInConflictWith> .
+
+<http://paperdyne#Reviewer>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Person> .

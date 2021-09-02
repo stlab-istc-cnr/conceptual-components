@@ -1,0 +1,33 @@
+<http://pcs#assigned_review_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#Review> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#Primary_Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://pcs#accept>  a  <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#CommitteeMember> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://pcs#accepted_by> .
+
+<http://pcs#Paper>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://pcs#DOCUMENT> .
+
+<http://pcs#Review>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://pcs#DOCUMENT> .
+
+<http://pcs#Primary_Reviewer>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://pcs#CommitteeMember> .

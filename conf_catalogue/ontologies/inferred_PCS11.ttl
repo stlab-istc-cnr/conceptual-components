@@ -1,0 +1,31 @@
+<http://pcs#ConferenceMember>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://pcs#PERSON> .
+
+<http://pcs#has_conference_member>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#Conference> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#ConferenceMember> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://pcs#member_of_conference> .
+
+<http://pcs#member_of_conference>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#ConferenceMember> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#Conference> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://pcs#Conference>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

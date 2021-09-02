@@ -1,0 +1,40 @@
+<http://paperdyne#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Topic> , <http://paperdyne#Review> , <http://paperdyne#Program_Comitee_Meeting> , <http://paperdyne#Program_Comitee> , <http://paperdyne#PhaseOfConferencePreparation> .
+
+<http://paperdyne#Conference>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Program_Comitee> , <http://paperdyne#Conflict_Of_Interest> , <http://paperdyne#Conflict_Rules> , <http://paperdyne#Contribution> , <http://paperdyne#Location> , <http://paperdyne#Discussion> , <http://paperdyne#Review> , <http://paperdyne#Person> , <http://paperdyne#Topic> , <http://paperdyne#PhaseOfConferencePreparation> , <http://paperdyne#Program_Comitee_Meeting> .
+
+<http://paperdyne#hasEmail>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://paperdyne#hasName>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://paperdyne#hasAcronym>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Conference> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .

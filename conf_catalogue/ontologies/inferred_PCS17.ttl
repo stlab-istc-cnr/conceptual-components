@@ -1,0 +1,64 @@
+<http://pcs#Information>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://pcs#Email> .
+
+<http://pcs#get>  a  <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#PERSON> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#Email> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://pcs#submit>  a  <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#PERSON> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#DOCUMENT> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://pcs#submited_by> .
+
+<http://pcs#System>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://pcs#DOCUMENT>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://pcs#PERSON>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://pcs#Document_ID>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#DOCUMENT> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://pcs#submited_by>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#DOCUMENT> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#PERSON> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://pcs#loggin_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://pcs#PERSON> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://pcs#System> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

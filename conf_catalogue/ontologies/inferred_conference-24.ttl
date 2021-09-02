@@ -1,0 +1,37 @@
+<http://conference#has_a_program_committee>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://conference#Conference_volume> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://conference#Program_committee> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://conference#has_a_commtitee> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://conference#was_a_program_committee_of> .
+
+<http://conference#Program_committee>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://conference#Committee> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://conference#Steering_committee> .
+
+<http://conference#was_a_program_committee_of>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://conference#Program_committee> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://conference#Conference_volume> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://conference#was_a_committee_of> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://conference#Conference_volume>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://conference#Conference> .

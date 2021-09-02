@@ -1,0 +1,1229 @@
+@prefix : <http://myreview#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://myreview#> .
+
+<http://myreview> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://myreview#IsAssignedTo
+:IsAssignedTo rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :paperIsAssignedTo
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :paperIsAssignedTo ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Reviewer ;
+              rdfs:range :Paper .
+
+
+###  http://myreview#abstractIsSubmittedBy
+:abstractIsSubmittedBy rdf:type owl:ObjectProperty ;
+                       owl:equivalentProperty [ owl:inverseOf :submitsAbstract
+                                              ] ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       owl:inverseOf :submitsAbstract ;
+                       rdf:type owl:FunctionalProperty ,
+                                owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :PaperAbstract ;
+                       rdfs:range :ContactAuthor .
+
+
+###  http://myreview#accepts
+:accepts rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :isAcceptedBy
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isAcceptedBy ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Chair ;
+         rdfs:range :Paper .
+
+
+###  http://myreview#asksForPreference
+:asksForPreference rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :Chair ;
+                   rdfs:range :Reviewer .
+
+
+###  http://myreview#assigns
+:assigns rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :isAssignedBy
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isAssignedBy ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Administrator ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :Criterion
+                                    :PaperStatus
+                                    :Question
+                                    :ResearchTopic
+                                  )
+                    ] .
+
+
+###  http://myreview#consistsOf
+:consistsOf rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :forms
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :forms ;
+            rdf:type owl:InverseFunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :ConferenceProgram ;
+            rdfs:range :Slot .
+
+
+###  http://myreview#containsEvaluation
+:containsEvaluation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:InverseFunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Review ;
+                    rdfs:range :Evaluation .
+
+
+###  http://myreview#cooperates
+:cooperates rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :cooperatesReviewer
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :cooperatesReviewer ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Reviewer ;
+            rdfs:range :ExternalReviewer .
+
+
+###  http://myreview#cooperatesReviewer
+:cooperatesReviewer rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :ExternalReviewer ;
+                    rdfs:range :Reviewer .
+
+
+###  http://myreview#forms
+:forms rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdf:type owl:FunctionalProperty ,
+                owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :Slot ;
+       rdfs:range :ConferenceProgram .
+
+
+###  http://myreview#hasAbstract
+:hasAbstract rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :isAbstractOf
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :isAbstractOf ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :PaperAbstract .
+
+
+###  http://myreview#hasAssignedPaper
+:hasAssignedPaper rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :isAssignedToSession
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  owl:inverseOf :isAssignedToSession ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Session ;
+                  rdfs:range :AcceptedPaper .
+
+
+###  http://myreview#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :writePaper
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :writePaper ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Paper ;
+           rdfs:range :Author .
+
+
+###  http://myreview#hasChair
+:hasChair rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :isChairOf
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :isChairOf ;
+          rdf:type owl:FunctionalProperty ,
+                   owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Session ;
+          rdfs:range :Chair .
+
+
+###  http://myreview#hasConflictedPaper
+:hasConflictedPaper rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Reviewer ;
+                    rdfs:range :Paper ;
+                    rdfs:comment """• if one of the paper’s authors name (first name + last name) are equal to a reviewer’s name, there is a conflict ;
+• if one of the paper’s authors affiliation are equal to a reviewer’s affiliation, there is a conflict.""" .
+
+
+###  http://myreview#hasMainTopic
+:hasMainTopic rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Paper ;
+              rdfs:range :ResearchTopic .
+
+
+###  http://myreview#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :isMemberOf
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isMemberOf ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :ProgramCommittee ;
+           rdfs:range :ProgramCommitteeMember .
+
+
+###  http://myreview#hasPreferredPaper
+:hasPreferredPaper rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Reviewer ;
+                   rdfs:range :Paper .
+
+
+###  http://myreview#hasPreferredTopic
+:hasPreferredTopic rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Reviewer ;
+                   rdfs:range :ResearchTopic .
+
+
+###  http://myreview#hasSecondaryTopic
+:hasSecondaryTopic rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Paper ;
+                   rdfs:range :ResearchTopic .
+
+
+###  http://myreview#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :isStatusOf
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isStatusOf ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Paper ;
+           rdfs:range :PaperStatus .
+
+
+###  http://myreview#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       owl:equivalentProperty [ owl:inverseOf :isAssociatedTo
+                              ] ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :isAssociatedTo ;
+       rdf:type owl:InverseFunctionalProperty ,
+                owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :Slot ;
+       rdfs:range :Session .
+
+
+###  http://myreview#includes
+:includes rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :isIncludedIn
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :isIncludedIn ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Proceedings ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :AcceptedPaper
+                                     :ExternalReviewersList
+                                     :IndexOfAuthors
+                                     :PCMembersList
+                                   )
+                     ] .
+
+
+###  http://myreview#isAbstractOf
+:isAbstractOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ,
+                       owl:InverseFunctionalProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :PaperAbstract ;
+              rdfs:range :Paper .
+
+
+###  http://myreview#isAcceptedBy
+:isAcceptedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Paper ;
+              rdfs:range :Chair .
+
+
+###  http://myreview#isAssignedBy
+:isAssignedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Criterion
+                                          :PaperStatus
+                                          :Question
+                                          :ResearchTopic
+                                        )
+                          ] ;
+              rdfs:range :Administrator .
+
+
+###  http://myreview#isAssignedToSession
+:isAssignedToSession rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :AcceptedPaper ;
+                     rdfs:range :Session .
+
+
+###  http://myreview#isAssociatedTo
+:isAssociatedTo rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:FunctionalProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Session ;
+                rdfs:range :Slot .
+
+
+###  http://myreview#isChairOf
+:isChairOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:InverseFunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Chair ;
+           rdfs:range :Session .
+
+
+###  http://myreview#isContainedIn
+:isContainedIn rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:FunctionalProperty ,
+                        owl:InverseFunctionalProperty ,
+                        owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :Evaluation ;
+               rdfs:range :Review .
+
+
+###  http://myreview#isIncludedIn
+:isIncludedIn rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :AcceptedPaper
+                                          :ExternalReviewersList
+                                          :IndexOfAuthors
+                                          :PCMembersList
+                                        )
+                          ] ;
+              rdfs:range :Proceedings .
+
+
+###  http://myreview#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :ProgramCommitteeMember ;
+            rdfs:range :ProgramCommittee .
+
+
+###  http://myreview#isProducedBy
+:isProducedBy rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :produces
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :produces ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :OutputDocument ;
+              rdfs:range :Chair .
+
+
+###  http://myreview#isProgramOf
+:isProgramOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :ConferenceProgram ;
+             rdfs:range :Conference .
+
+
+###  http://myreview#isRatedBy
+:isRatedBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :rates
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :rates ;
+           rdf:type owl:InverseFunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Paper ;
+           rdfs:range :Review .
+
+
+###  http://myreview#isRejectedBy
+:isRejectedBy rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :rejects
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :rejects ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Paper ;
+              rdfs:range :Chair .
+
+
+###  http://myreview#isStatusOf
+:isStatusOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :PaperStatus ;
+            rdfs:range :Paper .
+
+
+###  http://myreview#isWritenBy
+:isWritenBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :writeReview
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :writeReview ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Review ;
+            rdfs:range :Reviewer .
+
+
+###  http://myreview#mustPay
+:mustPay rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :ConferenceAttendant ;
+         rdfs:range :Fee .
+
+
+###  http://myreview#paperIsAssignedTo
+:paperIsAssignedTo rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Paper ;
+                   rdfs:range :Reviewer .
+
+
+###  http://myreview#paperIsSubmittedBy
+:paperIsSubmittedBy rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty [ owl:inverseOf :submitsPaper
+                                           ] ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :submitsPaper ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Paper ;
+                    rdfs:range :Author .
+
+
+###  http://myreview#produces
+:produces rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Chair ;
+          rdfs:range :OutputDocument .
+
+
+###  http://myreview#rates
+:rates rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdf:type owl:FunctionalProperty ,
+                owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :Review ;
+       rdfs:range :Paper .
+
+
+###  http://myreview#rejects
+:rejects rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Chair ;
+         rdfs:range :Paper .
+
+
+###  http://myreview#sets
+:sets rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdf:type owl:AsymmetricProperty ,
+               owl:IrreflexiveProperty ;
+      rdfs:domain :Chair ;
+      rdfs:range [ rdf:type owl:Class ;
+                   owl:unionOf ( :Fee
+                                 :PaymentMode
+                               )
+                 ] .
+
+
+###  http://myreview#submitsAbstract
+:submitsAbstract rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:InverseFunctionalProperty ,
+                          owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :ContactAuthor ;
+                 rdfs:range :PaperAbstract .
+
+
+###  http://myreview#submitsPaper
+:submitsPaper rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Author ;
+              rdfs:range :Paper .
+
+
+###  http://myreview#writePaper
+:writePaper rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Author ;
+            rdfs:range :Paper .
+
+
+###  http://myreview#writeReview
+:writeReview rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Reviewer ;
+             rdfs:range :Review .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://myreview#beginsAt
+:beginsAt rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Slot .
+
+
+###  http://myreview#date
+:date rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Slot ;
+      rdfs:range xsd:date .
+
+
+###  http://myreview#endsAt
+:endsAt rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Slot .
+
+
+###  http://myreview#hasAcronym
+:hasAcronym rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range xsd:string .
+
+
+###  http://myreview#hasAdress
+:hasAdress rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :ConferenceAttendant ;
+           rdfs:range xsd:string .
+
+
+###  http://myreview#hasAffiliation
+:hasAffiliation rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Person ;
+                rdfs:range xsd:string .
+
+
+###  http://myreview#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Conference
+                                      :Person
+                                    )
+                      ] ;
+          rdfs:range xsd:string .
+
+
+###  http://myreview#hasFirstName
+:hasFirstName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string .
+
+
+###  http://myreview#hasID
+:hasID rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :Paper ;
+       rdfs:range xsd:string .
+
+
+###  http://myreview#hasLastName
+:hasLastName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:string .
+
+
+###  http://myreview#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Conference
+                                     :Session
+                                   )
+                     ] ;
+         rdfs:range xsd:string .
+
+
+###  http://myreview#hasPassword
+:hasPassword rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :ProgramCommitteeMember ;
+             rdfs:range xsd:string .
+
+
+###  http://myreview#hasPhone
+:hasPhone rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :ConferenceAttendant ;
+          rdfs:range xsd:string .
+
+
+###  http://myreview#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Paper ;
+          rdfs:range xsd:string .
+
+
+###  http://myreview#hasWeight
+:hasWeight rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Criterion ;
+           rdfs:range xsd:float .
+
+
+###  http://myreview#paid
+:paid rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :ConferenceAttendant ;
+      rdfs:range xsd:boolean .
+
+
+###  http://myreview#room
+:room rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Session ;
+      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://myreview#AcceptedPaper
+:AcceptedPaper rdf:type owl:Class ;
+               rdfs:subClassOf :Paper ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAcceptedBy ;
+                                 owl:someValuesFrom :Chair
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isRatedBy ;
+                                 owl:someValuesFrom :Review
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasStatus ;
+                                 owl:hasValue :Accept
+                               ] ;
+               owl:disjointWith :RejectedPaper .
+
+
+###  http://myreview#Administrator
+:Administrator rdf:type owl:Class ;
+               rdfs:subClassOf :ProgramCommitteeMember .
+
+
+###  http://myreview#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
+
+
+###  http://myreview#BookletOfAbstracts
+:BookletOfAbstracts rdf:type owl:Class ;
+                    rdfs:subClassOf :OutputDocument ;
+                    owl:disjointWith :CD-ROM ,
+                                     :ExternalReviewersList ,
+                                     :IndexOfAuthors ,
+                                     :ListOfAbstracts ,
+                                     :PCMembersList ,
+                                     :Proceedings ,
+                                     :Program .
+
+
+###  http://myreview#CD-ROM
+:CD-ROM rdf:type owl:Class ;
+        rdfs:subClassOf :OutputDocument ;
+        owl:disjointWith :ExternalReviewersList ,
+                         :IndexOfAuthors ,
+                         :ListOfAbstracts ,
+                         :PCMembersList ,
+                         :Proceedings ,
+                         :Program .
+
+
+###  http://myreview#Chair
+:Chair rdf:type owl:Class ;
+       rdfs:subClassOf :ProgramCommitteeMember .
+
+
+###  http://myreview#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAcronym ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasEmail ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasName ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            owl:disjointWith :ConferenceProgram ,
+                             :Criterion ,
+                             :Document ,
+                             :Fee ,
+                             :OutputDocument ,
+                             :PaperStatus ,
+                             :PaymentMode ,
+                             :Person ,
+                             :ProgramCommittee ,
+                             :Question ,
+                             :ResearchTopic ,
+                             :Session ,
+                             :Slot .
+
+
+###  http://myreview#ConferenceAttendant
+:ConferenceAttendant rdf:type owl:Class ;
+                     rdfs:subClassOf :Person ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :mustPay ;
+                                       owl:someValuesFrom :Fee
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :paid ;
+                                       owl:hasValue "true"^^xsd:boolean
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasAdress ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasPhone ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://myreview#ConferenceProgram
+:ConferenceProgram rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isProgramOf ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   owl:disjointWith :Criterion ,
+                                    :Document ,
+                                    :Fee ,
+                                    :OutputDocument ,
+                                    :PaperStatus ,
+                                    :PaymentMode ,
+                                    :Person ,
+                                    :ProgramCommittee ,
+                                    :Question ,
+                                    :ResearchTopic ,
+                                    :Session ,
+                                    :Slot .
+
+
+###  http://myreview#ContactAuthor
+:ContactAuthor rdf:type owl:Class ;
+               rdfs:subClassOf :Author ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasEmail ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] .
+
+
+###  http://myreview#Criterion
+:Criterion rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasWeight ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           owl:disjointWith :Document ,
+                            :Fee ,
+                            :OutputDocument ,
+                            :PaperStatus ,
+                            :PaymentMode ,
+                            :Person ,
+                            :ProgramCommittee ,
+                            :Question ,
+                            :ResearchTopic ,
+                            :Session ,
+                            :Slot ;
+           rdfs:comment "Criteria are used to evaluate a paper." .
+
+
+###  http://myreview#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Fee ,
+                           :OutputDocument ,
+                           :PaperStatus ,
+                           :PaymentMode ,
+                           :Person ,
+                           :ProgramCommittee ,
+                           :Question ,
+                           :ResearchTopic ,
+                           :Session ,
+                           :Slot .
+
+
+###  http://myreview#Evaluation
+:Evaluation rdf:type owl:Class ;
+            rdfs:subClassOf :Document ;
+            owl:disjointWith :Paper ,
+                             :PaperAbstract ,
+                             :Review .
+
+
+###  http://myreview#ExternalReviewer
+:ExternalReviewer rdf:type owl:Class ;
+                  rdfs:subClassOf :Person ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :cooperatesReviewer ;
+                                    owl:someValuesFrom :Reviewer
+                                  ] ;
+                  owl:disjointWith :ProgramCommitteeMember .
+
+
+###  http://myreview#ExternalReviewersList
+:ExternalReviewersList rdf:type owl:Class ;
+                       rdfs:subClassOf :OutputDocument ;
+                       owl:disjointWith :IndexOfAuthors ,
+                                        :ListOfAbstracts ,
+                                        :PCMembersList ,
+                                        :Proceedings ,
+                                        :Program .
+
+
+###  http://myreview#Fee
+:Fee rdf:type owl:Class ;
+     rdfs:subClassOf owl:Thing ;
+     owl:disjointWith :OutputDocument ,
+                      :PaperStatus ,
+                      :PaymentMode ,
+                      :Person ,
+                      :ProgramCommittee ,
+                      :Question ,
+                      :ResearchTopic ,
+                      :Session ,
+                      :Slot .
+
+
+###  http://myreview#IndexOfAuthors
+:IndexOfAuthors rdf:type owl:Class ;
+                rdfs:subClassOf :OutputDocument ;
+                owl:disjointWith :ListOfAbstracts ,
+                                 :PCMembersList ,
+                                 :Proceedings ,
+                                 :Program .
+
+
+###  http://myreview#ListOfAbstracts
+:ListOfAbstracts rdf:type owl:Class ;
+                 rdfs:subClassOf :OutputDocument ;
+                 owl:disjointWith :PCMembersList ,
+                                  :Proceedings ,
+                                  :Program .
+
+
+###  http://myreview#OutputDocument
+:OutputDocument rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isProducedBy ;
+                                  owl:someValuesFrom :Chair
+                                ] ;
+                owl:disjointWith :PaperStatus ,
+                                 :PaymentMode ,
+                                 :Person ,
+                                 :ProgramCommittee ,
+                                 :Question ,
+                                 :ResearchTopic ,
+                                 :Session ,
+                                 :Slot .
+
+
+###  http://myreview#PCMembersList
+:PCMembersList rdf:type owl:Class ;
+               rdfs:subClassOf :OutputDocument ;
+               owl:disjointWith :Proceedings ,
+                                :Program .
+
+
+###  http://myreview#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Document ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAuthor ;
+                         owl:someValuesFrom :Author
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :paperIsSubmittedBy ;
+                         owl:someValuesFrom :Author
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAbstract ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasMainTopic ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasID ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasTitle ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       owl:disjointWith :PaperAbstract ,
+                        :Review .
+
+
+###  http://myreview#PaperAbstract
+:PaperAbstract rdf:type owl:Class ;
+               rdfs:subClassOf :Document ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :abstractIsSubmittedBy ;
+                                 owl:someValuesFrom :ContactAuthor
+                               ] ;
+               owl:disjointWith :Review .
+
+
+###  http://myreview#PaperQuestion
+:PaperQuestion rdf:type owl:Class ;
+               rdfs:subClassOf :Question ;
+               owl:disjointWith :ReviewQuestion ;
+               rdfs:comment "Questions must be asked to the author that submits a paper." .
+
+
+###  http://myreview#PaperStatus
+:PaperStatus rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             owl:disjointWith :PaymentMode ,
+                              :Person ,
+                              :ProgramCommittee ,
+                              :Question ,
+                              :ResearchTopic ,
+                              :Session ,
+                              :Slot .
+
+
+###  http://myreview#PaymentMode
+:PaymentMode rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             owl:disjointWith :Person ,
+                              :ProgramCommittee ,
+                              :Question ,
+                              :ResearchTopic ,
+                              :Session ,
+                              :Slot .
+
+
+###  http://myreview#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAffiliation ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasFirstName ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasLastName ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        owl:disjointWith :ProgramCommittee ,
+                         :Question ,
+                         :ResearchTopic ,
+                         :Session ,
+                         :Slot .
+
+
+###  http://myreview#Proceedings
+:Proceedings rdf:type owl:Class ;
+             rdfs:subClassOf :OutputDocument ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :includes ;
+                               owl:someValuesFrom :AcceptedPaper
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :includes ;
+                               owl:someValuesFrom :ExternalReviewersList
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :includes ;
+                               owl:someValuesFrom :IndexOfAuthors
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :includes ;
+                               owl:someValuesFrom :PCMembersList
+                             ] ;
+             owl:disjointWith :Program .
+
+
+###  http://myreview#Program
+:Program rdf:type owl:Class ;
+         rdfs:subClassOf :OutputDocument .
+
+
+###  http://myreview#ProgramCommittee
+:ProgramCommittee rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasMember ;
+                                    owl:someValuesFrom :Administrator
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasMember ;
+                                    owl:someValuesFrom :Chair
+                                  ] ;
+                  owl:disjointWith :Question ,
+                                   :ResearchTopic ,
+                                   :Session ,
+                                   :Slot .
+
+
+###  http://myreview#ProgramCommitteeMember
+:ProgramCommitteeMember rdf:type owl:Class ;
+                        rdfs:subClassOf :Person ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasEmail ;
+                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                        ] .
+
+
+###  http://myreview#Question
+:Question rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :ResearchTopic ,
+                           :Session ,
+                           :Slot .
+
+
+###  http://myreview#RejectedPaper
+:RejectedPaper rdf:type owl:Class ;
+               rdfs:subClassOf :Paper ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isRatedBy ;
+                                 owl:someValuesFrom :Review
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isRejectedBy ;
+                                 owl:someValuesFrom :Chair
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasStatus ;
+                                 owl:hasValue :Reject
+                               ] .
+
+
+###  http://myreview#ResearchTopic
+:ResearchTopic rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAssignedBy ;
+                                 owl:someValuesFrom :Administrator
+                               ] ;
+               owl:disjointWith :Session ,
+                                :Slot .
+
+
+###  http://myreview#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isWritenBy ;
+                          owl:someValuesFrom :Reviewer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :containsEvaluation ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rates ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] .
+
+
+###  http://myreview#ReviewQuestion
+:ReviewQuestion rdf:type owl:Class ;
+                rdfs:subClassOf :Question ;
+                rdfs:comment "Questions must be asked to the reviewer that submits a review." .
+
+
+###  http://myreview#Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :ProgramCommitteeMember .
+
+
+###  http://myreview#Session
+:Session rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAssociatedTo ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         owl:disjointWith :Slot ;
+         rdfs:comment "Sessions of the conference. Each session is associated to one of the previously defined slots." .
+
+
+###  http://myreview#Slot
+:Slot rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :beginsAt ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :date ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :endsAt ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "A “slot of the conference” is a period of a given day that hosts one or several sessions." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://myreview#Accept
+:Accept rdf:type owl:NamedIndividual ,
+                 :PaperStatus ,
+                 owl:Thing .
+
+
+###  http://myreview#Reject
+:Reject rdf:type owl:NamedIndividual ,
+                 :PaperStatus ,
+                 owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

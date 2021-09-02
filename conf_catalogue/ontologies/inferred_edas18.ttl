@@ -1,0 +1,35 @@
+<http://edas#PaperPresentation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://edas#AcademicEvent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#Workshop> , <http://edas#TalkEvent> .
+
+<http://edas#AcceptedPaper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://edas#Paper> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#WithdrawnPaper> , <http://edas#RejectedPaper> , <http://edas#PublishedPaper> , <http://edas#PendingPaper> , <http://edas#ActivePaper> .
+
+<http://edas#relatedToPaper>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#PaperPresentation> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#AcceptedPaper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://edas#relatedToEvent> .
+
+<http://edas#relatedToEvent>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#AcceptedPaper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#PaperPresentation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .

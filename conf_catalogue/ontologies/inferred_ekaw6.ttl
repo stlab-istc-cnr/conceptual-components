@@ -1,0 +1,21 @@
+<http://ekaw#Paper>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://ekaw#Document> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://ekaw#Web_Site> , <http://ekaw#Review> , <http://ekaw#Programme_Brochure> , <http://ekaw#Proceedings> .
+
+<http://ekaw#Possible_Reviewer>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://ekaw#Person> .
+
+<http://ekaw#reviewerOfPaper>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://ekaw#Possible_Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://ekaw#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://ekaw#hasReviewer> .

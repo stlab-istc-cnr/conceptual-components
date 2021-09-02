@@ -1,0 +1,24 @@
+<http://conference#contributes>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://conference#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://conference#Conference_document> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://conference#has_authors> .
+
+<http://conference#Invited_speaker>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://conference#Conference_contributor> .
+
+<http://conference#Invited_talk>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://conference#Presentation> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://conference#Regular_contribution> , <http://conference#Poster> .

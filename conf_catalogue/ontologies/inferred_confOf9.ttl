@@ -1,0 +1,41 @@
+<http://confOf#writes>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "confTool" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://confOf#Author> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://confOf#Contribution> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://confOf#Author>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "confTool" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://confOf#Person> .
+
+<http://confOf#writtenBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "confTool" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://confOf#Contribution> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://confOf#Author> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://confOf#writes> .
+
+<http://confOf#Contribution>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "confTool"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://confOf#Country> , <http://confOf#Person> , <http://confOf#Topic> , <http://confOf#Organization> , <http://confOf#Event> .

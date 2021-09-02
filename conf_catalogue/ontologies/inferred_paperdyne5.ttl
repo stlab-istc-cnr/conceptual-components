@@ -1,0 +1,72 @@
+<http://paperdyne#visibleBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#views> .
+
+<http://paperdyne#Pending_Proposed_Conflict>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Conflict_Of_Interest> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Self_Conflict> .
+
+<http://paperdyne#confirmes>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Pending_Proposed_Conflict> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#confirmedBy> .
+
+<http://paperdyne#confirmedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Pending_Proposed_Conflict> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://paperdyne#refuses>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Pending_Proposed_Conflict> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#refusedBy> .
+
+<http://paperdyne#Paper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Contribution> .
+
+<http://paperdyne#Reviewer>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Person> .
+
+<http://paperdyne#refusedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Pending_Proposed_Conflict> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://paperdyne#blockAssigningToReviewer>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

@@ -1,0 +1,34 @@
+<http://edas#AcademicEvent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://edas#ConferenceEvent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#NonAcademicEvent> .
+
+<http://edas#forEvent>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Call> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#AcademicEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://edas#hasCall>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#AcademicEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#Call> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://edas#forEvent> .
+
+<http://edas#Call>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#ReviewForm> , <http://edas#Conference> , <http://edas#ReviewQuestion> , <http://edas#ReviewRating> , <http://edas#Document> , <http://edas#PersonalHistory> , <http://edas#Topic> , <http://edas#Person> , <http://edas#Place> , <http://edas#Sponsorship> , <http://edas#ConferenceEvent> , <http://edas#Country> , <http://edas#ConferenceSession> , <http://edas#ContactInformation> , <http://edas#Organization> .

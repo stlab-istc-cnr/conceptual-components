@@ -1,0 +1,92 @@
+<http://edas#Person>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#Topic> , <http://edas#Sponsorship> , <http://edas#ReviewRating> , <http://edas#ReviewQuestion> , <http://edas#ReviewForm> , <http://edas#Place> , <http://edas#PersonalHistory> .
+
+<http://edas#hasAttendee>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#ConferenceEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://edas#isMemberOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#Conference> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://edas#ConferenceEvent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#Place> , <http://edas#PersonalHistory> , <http://edas#Topic> , <http://edas#ContactInformation> , <http://edas#Document> , <http://edas#Country> , <http://edas#Person> , <http://edas#ConferenceSession> , <http://edas#ReviewForm> , <http://edas#ReviewRating> , <http://edas#Sponsorship> , <http://edas#ReviewQuestion> , <http://edas#Organization> .
+
+<http://edas#hasBiography>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://edas#attendeeAt>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#ConferenceEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://edas#hasAttendee> .
+
+<http://edas#Conference>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Conference" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#ReviewForm> , <http://edas#ContactInformation> , <http://edas#ReviewQuestion> , <http://edas#Organization> , <http://edas#PersonalHistory> , <http://edas#Paper> , <http://edas#ConferenceSession> , <http://edas#Place> , <http://edas#Topic> , <http://edas#Country> , <http://edas#Person> , <http://edas#ConferenceEvent> , <http://edas#Sponsorship> , <http://edas#Document> , <http://edas#ReviewRating> .
+
+<http://edas#hasLastName>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://edas#hasMember>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Conference> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://edas#isMemberOf> .
+
+<http://edas#hasFirstName>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .

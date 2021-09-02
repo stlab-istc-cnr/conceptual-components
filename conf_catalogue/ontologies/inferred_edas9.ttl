@@ -1,0 +1,35 @@
+<http://edas#hasProgramme>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#ConferenceEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#Programme> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://edas#Programme>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://edas#Document> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#SlideSet> , <http://edas#Review> .
+
+<http://edas#belongsToEvent>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#Programme> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#ConferenceEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://edas#hasProgramme> .
+
+<http://edas#ConferenceEvent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#Place> , <http://edas#PersonalHistory> , <http://edas#Topic> , <http://edas#ContactInformation> , <http://edas#Document> , <http://edas#Country> , <http://edas#Person> , <http://edas#ConferenceSession> , <http://edas#ReviewForm> , <http://edas#ReviewRating> , <http://edas#Sponsorship> , <http://edas#ReviewQuestion> , <http://edas#Organization> .

@@ -1,0 +1,20 @@
+<http://myreview#ConferenceAttendant>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://myreview#Person> .
+
+<http://myreview#mustPay>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://myreview#ConferenceAttendant> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://myreview#Fee> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://myreview#Fee>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://myreview#OutputDocument> , <http://myreview#Session> , <http://myreview#ProgramCommittee> , <http://myreview#Question> , <http://myreview#ResearchTopic> , <http://myreview#PaymentMode> , <http://myreview#PaperStatus> , <http://myreview#Slot> , <http://myreview#Person> .

@@ -1,0 +1,21 @@
+<http://cmt#Meta-Reviewer>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A special type of Reviewer.  There can be any number of Reviewers for a given paper, but only one Meta-Reviewer.  The Meta-Reviewer can go over all the reviews submitted for the paper and submit their own review.  Questions for the Meta-Reviewer can be different from those for a normal Reviewer.  Their role is to ensure that the reviews are good and consistent. The decision to use Meta-Reviewers is optional, and must be set before paper assignment occurs." ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://cmt#Reviewer> .
+
+<http://cmt#Paper>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://cmt#Document> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://cmt#Review> .
+
+<http://cmt#readByMeta-Reviewer>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://cmt#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://cmt#Meta-Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

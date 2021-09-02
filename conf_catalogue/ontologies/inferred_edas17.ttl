@@ -1,0 +1,33 @@
+<http://edas#isMenuOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#MealMenu> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#MealEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://edas#hasMenu>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://edas#MealEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://edas#MealMenu> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://edas#isMenuOf> .
+
+<http://edas#MealMenu>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://edas#Document> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://edas#SlideSet> , <http://edas#Review> , <http://edas#Programme> , <http://edas#Paper> .
+
+<http://edas#MealEvent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://edas#NonAcademicEvent> .

@@ -1,0 +1,26 @@
+<http://myreview#ExternalReviewersList>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://myreview#OutputDocument> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://myreview#Program> , <http://myreview#Proceedings> , <http://myreview#PCMembersList> , <http://myreview#ListOfAbstracts> , <http://myreview#IndexOfAuthors> .
+
+<http://myreview#includes>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://myreview#Proceedings> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://myreview#isIncludedIn> .
+
+<http://myreview#Proceedings>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://myreview#OutputDocument> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://myreview#Program> .

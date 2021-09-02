@@ -1,0 +1,269 @@
+@prefix : <http://crs_dr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://crs_dr#> .
+
+<http://crs_dr> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://crs_dr#article_written_by
+:article_written_by rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty [ owl:inverseOf :writes_article
+                                           ] ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :article ;
+                    rdfs:range :author .
+
+
+###  http://crs_dr#assigns_article_to_conference
+:assigns_article_to_conference rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdf:type owl:AsymmetricProperty ,
+                                        owl:IrreflexiveProperty ;
+                               rdfs:domain :author ;
+                               rdfs:range :article .
+
+
+###  http://crs_dr#assigns_reviewers_to_article
+:assigns_reviewers_to_article rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain :chair ;
+                              rdfs:range :reviewer .
+
+
+###  http://crs_dr#creates_program
+:creates_program rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty [ owl:inverseOf :program_created_by
+                                        ] ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :chair ;
+                 rdfs:range :program .
+
+
+###  http://crs_dr#has_abstract
+:has_abstract rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :part_of_article
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :article ;
+              rdfs:range :abstract .
+
+
+###  http://crs_dr#has_author
+:has_author rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :article ;
+            rdfs:range :author .
+
+
+###  http://crs_dr#has_program
+:has_program rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :conference ;
+             rdfs:range :program .
+
+
+###  http://crs_dr#has_reviewer
+:has_reviewer rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :article ;
+              rdfs:range :reviewer .
+
+
+###  http://crs_dr#has_session
+:has_session rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :program ;
+             rdfs:range :session .
+
+
+###  http://crs_dr#part_of_article
+:part_of_article rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :has_abstract ;
+                 rdf:type owl:InverseFunctionalProperty ,
+                          owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :abstract ;
+                 rdfs:range :article .
+
+
+###  http://crs_dr#program_created_by
+:program_created_by rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :creates_program ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :program ;
+                    rdfs:range :chair .
+
+
+###  http://crs_dr#review_written_by
+:review_written_by rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty [ owl:inverseOf :writes_review
+                                          ] ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :review ;
+                   rdfs:range :reviewer .
+
+
+###  http://crs_dr#submits_to_conference
+:submits_to_conference rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdf:type owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :participant ;
+                       rdfs:range :conference .
+
+
+###  http://crs_dr#writes_article
+:writes_article rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :article_written_by ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :author ;
+                rdfs:range :article .
+
+
+###  http://crs_dr#writes_review
+:writes_review rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :review_written_by ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :reviewer ;
+               rdfs:range :review .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://crs_dr#has_enddate
+:has_enddate rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :event ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://crs_dr#has_startdate
+:has_startdate rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :event ;
+               rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://crs_dr#abstract
+:abstract rdf:type owl:Class ;
+          rdfs:subClassOf :document ;
+          owl:disjointWith :article ,
+                           :review .
+
+
+###  http://crs_dr#article
+:article rdf:type owl:Class ;
+         rdfs:subClassOf :document ;
+         owl:disjointWith :review .
+
+
+###  http://crs_dr#author
+:author rdf:type owl:Class ;
+        rdfs:subClassOf :person .
+
+
+###  http://crs_dr#chair
+:chair rdf:type owl:Class ;
+       rdfs:subClassOf :person .
+
+
+###  http://crs_dr#conference
+:conference rdf:type owl:Class ;
+            rdfs:subClassOf :event ;
+            owl:disjointWith :pc_meeting ,
+                             :session .
+
+
+###  http://crs_dr#document
+:document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :event ,
+                           :person ,
+                           :program .
+
+
+###  http://crs_dr#event
+:event rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       owl:disjointWith :person ,
+                        :program .
+
+
+###  http://crs_dr#participant
+:participant rdf:type owl:Class ;
+             rdfs:subClassOf :person .
+
+
+###  http://crs_dr#pc_meeting
+:pc_meeting rdf:type owl:Class ;
+            rdfs:subClassOf :event ;
+            owl:disjointWith :session .
+
+
+###  http://crs_dr#person
+:person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith :program .
+
+
+###  http://crs_dr#program
+:program rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  http://crs_dr#review
+:review rdf:type owl:Class ;
+        rdfs:subClassOf :document .
+
+
+###  http://crs_dr#reviewer
+:reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :person .
+
+
+###  http://crs_dr#session
+:session rdf:type owl:Class ;
+         rdfs:subClassOf :event .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

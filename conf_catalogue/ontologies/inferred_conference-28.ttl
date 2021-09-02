@@ -1,0 +1,20 @@
+<http://conference#has_workshops>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://conference#Conference_volume> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://conference#Workshop> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://conference#has_parts> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://conference#Workshop>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://conference#Conference_part> .
+
+<http://conference#Conference_volume>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://conference#Conference> .

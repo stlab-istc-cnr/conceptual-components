@@ -1,0 +1,51 @@
+<http://paperdyne#Conference>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Program_Comitee> , <http://paperdyne#Conflict_Of_Interest> , <http://paperdyne#Conflict_Rules> , <http://paperdyne#Contribution> , <http://paperdyne#Location> , <http://paperdyne#Discussion> , <http://paperdyne#Review> , <http://paperdyne#Person> , <http://paperdyne#Topic> , <http://paperdyne#PhaseOfConferencePreparation> , <http://paperdyne#Program_Comitee_Meeting> .
+
+<http://paperdyne#Location>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Topic> , <http://paperdyne#Review> , <http://paperdyne#Program_Comitee_Meeting> , <http://paperdyne#Program_Comitee> , <http://paperdyne#PhaseOfConferencePreparation> , <http://paperdyne#Person> .
+
+<http://paperdyne#Discussion>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Topic> , <http://paperdyne#Review> , <http://paperdyne#Program_Comitee_Meeting> , <http://paperdyne#Program_Comitee> , <http://paperdyne#PhaseOfConferencePreparation> , <http://paperdyne#Person> , <http://paperdyne#Location> .
+
+<http://paperdyne#organises>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://paperdyne#takesPlace>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Conference> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://paperdyne#contains>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://paperdyne#Program_Comitee_Chair>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Person> .
+
+<http://paperdyne#Program_Comitee_Meeting>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://paperdyne#Topic> , <http://paperdyne#Review> .

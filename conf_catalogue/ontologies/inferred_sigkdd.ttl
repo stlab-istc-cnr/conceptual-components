@@ -1,0 +1,540 @@
+@prefix : <http://sigkdd#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sigkdd#> .
+
+<http://sigkdd> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sigkdd#award
+:award rdf:type owl:ObjectProperty ;
+       owl:equivalentProperty [ owl:inverseOf :awarded_by
+                              ] ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :awarded_by ;
+       rdfs:range :Award .
+
+
+###  http://sigkdd#awarded_by
+:awarded_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Award .
+
+
+###  http://sigkdd#can_stay_in
+:can_stay_in rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Person ;
+             rdfs:range :Place .
+
+
+###  http://sigkdd#design
+:design rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :designed_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :ACM_SIGKDD ;
+        rdfs:range :Deadline .
+
+
+###  http://sigkdd#designed_by
+:designed_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :design ;
+             rdfs:domain :Deadline ;
+             rdfs:range :ACM_SIGKDD .
+
+
+###  http://sigkdd#hold
+:hold rdf:type owl:ObjectProperty ;
+      owl:equivalentProperty [ owl:inverseOf :holded_by
+                             ] ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdfs:domain :ACM_SIGKDD ;
+      rdfs:range :Conference .
+
+
+###  http://sigkdd#holded_by
+:holded_by rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :hold ;
+           rdfs:domain :Conference ;
+           rdfs:range :ACM_SIGKDD .
+
+
+###  http://sigkdd#notification_until
+:notification_until rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Author ;
+                    rdfs:range :Deadline_Author_notification .
+
+
+###  http://sigkdd#obtain
+:obtain rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Author ;
+        rdfs:range :Award .
+
+
+###  http://sigkdd#pay
+:pay rdf:type owl:ObjectProperty ;
+     owl:equivalentProperty [ owl:inverseOf :payed_by
+                            ] ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdfs:domain :Person ;
+     rdfs:range :Registration_fee .
+
+
+###  http://sigkdd#payed_by
+:payed_by rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :pay ;
+          rdfs:domain :Registration_fee ;
+          rdfs:range :Person .
+
+
+###  http://sigkdd#presentation
+:presentation rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :presentationed_by
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Speaker ;
+              rdfs:range :Document .
+
+
+###  http://sigkdd#presentationed_by
+:presentationed_by rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   owl:inverseOf :presentation ;
+                   rdfs:domain :Document ;
+                   rdfs:range :Speaker .
+
+
+###  http://sigkdd#search
+:search rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :searched_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :ACM_SIGKDD ;
+        rdfs:range :Sponzor .
+
+
+###  http://sigkdd#searched_by
+:searched_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :search ;
+             rdfs:domain :Sponzor ;
+             rdfs:range :ACM_SIGKDD .
+
+
+###  http://sigkdd#submit
+:submit rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Author ;
+        rdfs:range :Paper .
+
+
+###  http://sigkdd#submit_until
+:submit_until rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Document ;
+              rdfs:range :Deadline .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sigkdd#City_of_conference
+:City_of_conference rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Conference ;
+                    rdfs:range xsd:string .
+
+
+###  http://sigkdd#Currency
+:Currency rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Registration_fee ;
+          rdfs:range xsd:string .
+
+
+###  http://sigkdd#Date
+:Date rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Deadline ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://sigkdd#E-mail
+:E-mail rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string .
+
+
+###  http://sigkdd#End_of_conference
+:End_of_conference rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Conference ;
+                   rdfs:range xsd:dateTime .
+
+
+###  http://sigkdd#Name
+:Name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://sigkdd#Name_of_conference
+:Name_of_conference rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Conference ;
+                    rdfs:range xsd:string .
+
+
+###  http://sigkdd#Name_of_sponsor
+:Name_of_sponsor rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Sponzor ;
+                 rdfs:range xsd:string .
+
+
+###  http://sigkdd#Nation
+:Nation rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string .
+
+
+###  http://sigkdd#Price
+:Price rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Registration_fee ;
+       rdfs:range xsd:int .
+
+
+###  http://sigkdd#Start_of_conference
+:Start_of_conference rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Conference ;
+                     rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sigkdd#ACM_SIGKDD
+:ACM_SIGKDD rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :design ;
+                              owl:someValuesFrom :Deadline
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hold ;
+                              owl:someValuesFrom :Conference
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :search ;
+                              owl:someValuesFrom :Sponzor
+                            ] .
+
+
+###  http://sigkdd#Abstract
+:Abstract rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :submit_until ;
+                                owl:someValuesFrom :Deadline_Abstract_Submission
+                              ] ;
+          rdfs:subClassOf :Document .
+
+
+###  http://sigkdd#Author
+:Author rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :submit ;
+                              owl:someValuesFrom :Paper
+                            ] ;
+        rdfs:subClassOf :Speaker ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :notification_until ;
+                          owl:someValuesFrom :Deadline_Author_notification
+                        ] .
+
+
+###  http://sigkdd#Author_of_paper
+:Author_of_paper rdf:type owl:Class ;
+                 rdfs:subClassOf :Author ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :award ;
+                                   owl:someValuesFrom :Best_Applications_Paper_Award
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :award ;
+                                   owl:someValuesFrom :Best_Research_Paper_Award
+                                 ] .
+
+
+###  http://sigkdd#Author_of_paper_student
+:Author_of_paper_student rdf:type owl:Class ;
+                         rdfs:subClassOf :Author ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :award ;
+                                           owl:someValuesFrom :Best_Student_Paper_Award
+                                         ] .
+
+
+###  http://sigkdd#Award
+:Award rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :awarded_by ;
+                             owl:someValuesFrom :Organizator
+                           ] ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#Best_Applications_Paper_Award
+:Best_Applications_Paper_Award rdf:type owl:Class ;
+                               rdfs:subClassOf :Award .
+
+
+###  http://sigkdd#Best_Paper_Awards_Committee
+:Best_Paper_Awards_Committee rdf:type owl:Class ;
+                             rdfs:subClassOf :Committee .
+
+
+###  http://sigkdd#Best_Research_Paper_Award
+:Best_Research_Paper_Award rdf:type owl:Class ;
+                           rdfs:subClassOf :Award .
+
+
+###  http://sigkdd#Best_Student_Paper_Award
+:Best_Student_Paper_Award rdf:type owl:Class ;
+                          rdfs:subClassOf :Award .
+
+
+###  http://sigkdd#Best_Student_Paper_Supporter
+:Best_Student_Paper_Supporter rdf:type owl:Class ;
+                              rdfs:subClassOf :Sponzor .
+
+
+###  http://sigkdd#Bronze_Supporter
+:Bronze_Supporter rdf:type owl:Class ;
+                  rdfs:subClassOf :Sponzor .
+
+
+###  http://sigkdd#Committee
+:Committee rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#Conference_hall
+:Conference_hall rdf:type owl:Class ;
+                 rdfs:subClassOf :Place .
+
+
+###  http://sigkdd#Deadline
+:Deadline rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#Deadline_Abstract_Submission
+:Deadline_Abstract_Submission rdf:type owl:Class ;
+                              rdfs:subClassOf :Deadline .
+
+
+###  http://sigkdd#Deadline_Author_notification
+:Deadline_Author_notification rdf:type owl:Class ;
+                              rdfs:subClassOf :Deadline .
+
+
+###  http://sigkdd#Deadline_Paper_Submission
+:Deadline_Paper_Submission rdf:type owl:Class ;
+                           rdfs:subClassOf :Deadline .
+
+
+###  http://sigkdd#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#Exhibitor
+:Exhibitor rdf:type owl:Class ;
+           rdfs:subClassOf :Sponzor .
+
+
+###  http://sigkdd#Fee
+:Fee rdf:type owl:Class ;
+     rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#General_Chair
+:General_Chair rdf:type owl:Class ;
+               rdfs:subClassOf :Organizator .
+
+
+###  http://sigkdd#Gold_Supporter
+:Gold_Supporter rdf:type owl:Class ;
+                rdfs:subClassOf :Sponzor .
+
+
+###  http://sigkdd#Hotel
+:Hotel rdf:type owl:Class ;
+       rdfs:subClassOf :Place .
+
+
+###  http://sigkdd#Invited_Speaker
+:Invited_Speaker rdf:type owl:Class ;
+                 rdfs:subClassOf :Speaker .
+
+
+###  http://sigkdd#Listener
+:Listener rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://sigkdd#Main_office
+:Main_office rdf:type owl:Class ;
+             rdfs:subClassOf :Place .
+
+
+###  http://sigkdd#Organizator
+:Organizator rdf:type owl:Class ;
+             rdfs:subClassOf :Person .
+
+
+###  http://sigkdd#Organizing_Committee
+:Organizing_Committee rdf:type owl:Class ;
+                      rdfs:subClassOf :Committee .
+
+
+###  http://sigkdd#Organizing_Committee_member
+:Organizing_Committee_member rdf:type owl:Class ;
+                             rdfs:subClassOf :Organizator .
+
+
+###  http://sigkdd#Paper
+:Paper rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :submit_until ;
+                             owl:someValuesFrom :Deadline_Paper_Submission
+                           ] ;
+       rdfs:subClassOf :Document .
+
+
+###  http://sigkdd#Person
+:Person rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :pay ;
+                              owl:someValuesFrom :Registration_fee
+                            ] ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :can_stay_in ;
+                          owl:someValuesFrom :Hotel
+                        ] .
+
+
+###  http://sigkdd#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://sigkdd#Platinum_Supporter
+:Platinum_Supporter rdf:type owl:Class ;
+                    rdfs:subClassOf :Sponzor .
+
+
+###  http://sigkdd#Program_Chair
+:Program_Chair rdf:type owl:Class ;
+               rdfs:subClassOf :Organizator .
+
+
+###  http://sigkdd#Program_Committee
+:Program_Committee rdf:type owl:Class ;
+                   rdfs:subClassOf :Committee .
+
+
+###  http://sigkdd#Program_Committee_member
+:Program_Committee_member rdf:type owl:Class ;
+                          rdfs:subClassOf :Organizator .
+
+
+###  http://sigkdd#Registration_Non-Member
+:Registration_Non-Member rdf:type owl:Class ;
+                         rdfs:subClassOf :Registration_fee .
+
+
+###  http://sigkdd#Registration_SIGKDD_Member
+:Registration_SIGKDD_Member rdf:type owl:Class ;
+                            rdfs:subClassOf :Registration_fee .
+
+
+###  http://sigkdd#Registration_SIGMOD_Member
+:Registration_SIGMOD_Member rdf:type owl:Class ;
+                            rdfs:subClassOf :Registration_fee .
+
+
+###  http://sigkdd#Registration_Student
+:Registration_Student rdf:type owl:Class ;
+                      rdfs:subClassOf :Registration_fee .
+
+
+###  http://sigkdd#Registration_fee
+:Registration_fee rdf:type owl:Class ;
+                  rdfs:subClassOf :Fee .
+
+
+###  http://sigkdd#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document .
+
+
+###  http://sigkdd#Silver_Supporter
+:Silver_Supporter rdf:type owl:Class ;
+                  rdfs:subClassOf :Sponzor .
+
+
+###  http://sigkdd#Speaker
+:Speaker rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :presentation ;
+                               owl:someValuesFrom :Document
+                             ] ;
+         rdfs:subClassOf :Person .
+
+
+###  http://sigkdd#Sponzor
+:Sponzor rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :pay ;
+                               owl:someValuesFrom :Sponzor_fee
+                             ] ;
+         rdfs:subClassOf :Person .
+
+
+###  http://sigkdd#Sponzor_fee
+:Sponzor_fee rdf:type owl:Class ;
+             rdfs:subClassOf :Fee .
+
+
+###  http://sigkdd#Webmaster
+:Webmaster rdf:type owl:Class ;
+           rdfs:subClassOf :Organizator .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

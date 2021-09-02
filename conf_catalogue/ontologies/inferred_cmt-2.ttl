@@ -1,0 +1,848 @@
+@prefix : <http://cmt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://cmt#> .
+
+<http://cmt> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://cmt#acceptPaper
+:acceptPaper rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :acceptedBy
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :acceptedBy ;
+             rdf:type owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Administrator ;
+             rdfs:range :Paper .
+
+
+###  http://cmt#acceptedBy
+:acceptedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Paper ;
+            rdfs:range :Administrator .
+
+
+###  http://cmt#addProgramCommitteeMember
+:addProgramCommitteeMember rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :addedBy
+                                                  ] ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf :addedBy ;
+                           rdf:type owl:InverseFunctionalProperty ;
+                           rdfs:domain :Administrator ;
+                           rdfs:range :ProgramCommitteeMember .
+
+
+###  http://cmt#addedBy
+:addedBy rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :ProgramCommitteeMember ;
+         rdfs:range :Administrator .
+
+
+###  http://cmt#adjustBid
+:adjustBid rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :adjustedBy
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :adjustedBy ;
+           rdf:type owl:InverseFunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Reviewer ;
+           rdfs:range :Bid .
+
+
+###  http://cmt#adjustedBy
+:adjustedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Bid ;
+            rdfs:range :Reviewer .
+
+
+###  http://cmt#assignExternalReviewer
+:assignExternalReviewer rdf:type owl:ObjectProperty ;
+                        owl:equivalentProperty [ owl:inverseOf :assignedByReviewer
+                                               ] ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        owl:inverseOf :assignedByReviewer ;
+                        rdf:type owl:InverseFunctionalProperty ,
+                                 owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain :Reviewer ;
+                        rdfs:range :ExternalReviewer .
+
+
+###  http://cmt#assignReviewer
+:assignReviewer rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :assignedByAdministrator
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :assignedByAdministrator ;
+                rdfs:domain :Administrator ;
+                rdfs:range :Reviewer .
+
+
+###  http://cmt#assignedByAdministrator
+:assignedByAdministrator rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:domain :Reviewer ;
+                         rdfs:range :Administrator .
+
+
+###  http://cmt#assignedByReviewer
+:assignedByReviewer rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :ExternalReviewer ;
+                    rdfs:range :Reviewer .
+
+
+###  http://cmt#assignedTo
+:assignedTo rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :hasBeenAssigned
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :hasBeenAssigned ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Paper ;
+            rdfs:range :Reviewer .
+
+
+###  http://cmt#co-writePaper
+:co-writePaper rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :hasCo-author
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :hasCo-author ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :Co-author ;
+               rdfs:range :Paper .
+
+
+###  http://cmt#detailsEnteredBy
+:detailsEnteredBy rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :enterConferenceDetails
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  owl:inverseOf :enterConferenceDetails ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Conference ;
+                  rdfs:range :Administrator .
+
+
+###  http://cmt#enableVirtualMeeting
+:enableVirtualMeeting rdf:type owl:ObjectProperty ;
+                      owl:equivalentProperty [ owl:inverseOf :virtualMeetingEnabledBy
+                                             ] ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      owl:inverseOf :virtualMeetingEnabledBy ;
+                      rdf:type owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :Administrator ;
+                      rdfs:range :Conference .
+
+
+###  http://cmt#endReview
+:endReview rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :ProgramCommitteeChair ;
+           rdfs:range :Review .
+
+
+###  http://cmt#enterConferenceDetails
+:enterConferenceDetails rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdf:type owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain :Administrator ;
+                        rdfs:range :Conference .
+
+
+###  http://cmt#enterReviewCriteria
+:enterReviewCriteria rdf:type owl:ObjectProperty ;
+                     owl:equivalentProperty [ owl:inverseOf :reviewCriteriaEnteredBy
+                                            ] ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :reviewCriteriaEnteredBy ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :Administrator ;
+                     rdfs:range :Conference .
+
+
+###  http://cmt#finalizePaperAssignment
+:finalizePaperAssignment rdf:type owl:ObjectProperty ;
+                         owl:equivalentProperty [ owl:inverseOf :paperAssignmentFinalizedBy
+                                                ] ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         owl:inverseOf :paperAssignmentFinalizedBy ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain :Administrator ;
+                         rdfs:range :Conference .
+
+
+###  http://cmt#hardcopyMailingManifestsPrintedBy
+:hardcopyMailingManifestsPrintedBy rdf:type owl:ObjectProperty ;
+                                   owl:equivalentProperty [ owl:inverseOf :printHardcopyMailingManifests
+                                                          ] ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   owl:inverseOf :printHardcopyMailingManifests ;
+                                   rdf:type owl:AsymmetricProperty ,
+                                            owl:IrreflexiveProperty ;
+                                   rdfs:domain :Conference ;
+                                   rdfs:range :Administrator .
+
+
+###  http://cmt#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :writePaper
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :writePaper ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Paper ;
+           rdfs:range :Author .
+
+
+###  http://cmt#hasBeenAssigned
+:hasBeenAssigned rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Reviewer ;
+                 rdfs:range :Paper .
+
+
+###  http://cmt#hasBid
+:hasBid rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:InverseFunctionalProperty ,
+                 owl:AsymmetricProperty ,
+                 owl:IrreflexiveProperty ;
+        rdfs:domain :Paper ;
+        rdfs:range :Bid .
+
+
+###  http://cmt#hasCo-author
+:hasCo-author rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Paper ;
+              rdfs:range :Co-author .
+
+
+###  http://cmt#hasConferenceMember
+:hasConferenceMember rdf:type owl:ObjectProperty ;
+                     owl:equivalentProperty [ owl:inverseOf :memberOfConference
+                                            ] ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :memberOfConference ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :Conference ;
+                     rdfs:range :ConferenceMember .
+
+
+###  http://cmt#hasConflictOfInterest
+:hasConflictOfInterest rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdf:type owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :Person ;
+                       rdfs:range :Document .
+
+
+###  http://cmt#hasDecision
+:hasDecision rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Decision .
+
+
+###  http://cmt#hasProgramCommitteeMember
+:hasProgramCommitteeMember rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :memberOfProgramCommittee
+                                                  ] ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf :memberOfProgramCommittee ;
+                           rdf:type owl:AsymmetricProperty ,
+                                    owl:IrreflexiveProperty ;
+                           rdfs:domain :ProgramCommittee ;
+                           rdfs:range :ProgramCommitteeMember .
+
+
+###  http://cmt#hasSubjectArea
+:hasSubjectArea rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Paper ;
+                rdfs:range :SubjectArea .
+
+
+###  http://cmt#markConflictOfInterest
+:markConflictOfInterest rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdf:type owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Author
+                                                    :Chairman
+                                                    :Reviewer
+                                                  )
+                                    ] ;
+                        rdfs:range :Paper ;
+                        rdfs:comment """In CMT terms, a ‘Conflict of Interest’ is an association between a specific Reviewer and a specific Paper that states there is a conflict of interest between that Reviewer and that paper. Conflicts can be marked by Authors (during paper submission) or by Reviewers (in Phase 2) or by Chairmen (in Phase 3).
+
+Based on that conflict, the reviewer will not be able to bid on the paper, be assigned to that paper (either automatically by the system or manually by a Chairman) or view review submissions for that paper.
+""" .
+
+
+###  http://cmt#memberOfConference
+:memberOfConference rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :ConferenceMember ;
+                    rdfs:range :Conference .
+
+
+###  http://cmt#memberOfProgramCommittee
+:memberOfProgramCommittee rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdf:type owl:AsymmetricProperty ,
+                                   owl:IrreflexiveProperty ;
+                          rdfs:domain :ProgramCommitteeMember ;
+                          rdfs:range :ProgramCommittee .
+
+
+###  http://cmt#paperAssignmentFinalizedBy
+:paperAssignmentFinalizedBy rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdf:type owl:AsymmetricProperty ,
+                                     owl:IrreflexiveProperty ;
+                            rdfs:domain :Conference ;
+                            rdfs:range :Administrator .
+
+
+###  http://cmt#paperAssignmentToolsRunBy
+:paperAssignmentToolsRunBy rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :runPaperAssignmentTools
+                                                  ] ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf :runPaperAssignmentTools ;
+                           rdf:type owl:AsymmetricProperty ,
+                                    owl:IrreflexiveProperty ;
+                           rdfs:domain :Conference ;
+                           rdfs:range :Administrator .
+
+
+###  http://cmt#printHardcopyMailingManifests
+:printHardcopyMailingManifests rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdf:type owl:AsymmetricProperty ,
+                                        owl:IrreflexiveProperty ;
+                               rdfs:domain :Administrator ;
+                               rdfs:range :Conference .
+
+
+###  http://cmt#readByMeta-Reviewer
+:readByMeta-Reviewer rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:FunctionalProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :Paper ;
+                     rdfs:range :Meta-Reviewer .
+
+
+###  http://cmt#readByReviewer
+:readByReviewer rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :readPaper
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :readPaper ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Paper ;
+                rdfs:range :Reviewer .
+
+
+###  http://cmt#readPaper
+:readPaper rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Reviewer ;
+           rdfs:range :Paper .
+
+
+###  http://cmt#rejectPaper
+:rejectPaper rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :rejectedBy
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :rejectedBy ;
+             rdf:type owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Administrator ;
+             rdfs:range :Paper .
+
+
+###  http://cmt#rejectedBy
+:rejectedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Paper ;
+            rdfs:range :Administrator .
+
+
+###  http://cmt#reviewCriteriaEnteredBy
+:reviewCriteriaEnteredBy rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain :Conference ;
+                         rdfs:range :Administrator .
+
+
+###  http://cmt#reviewerBiddingStartedBy
+:reviewerBiddingStartedBy rdf:type owl:ObjectProperty ;
+                          owl:equivalentProperty [ owl:inverseOf :startReviewerBidding
+                                                 ] ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          owl:inverseOf :startReviewerBidding ;
+                          rdf:type owl:AsymmetricProperty ,
+                                   owl:IrreflexiveProperty ;
+                          rdfs:domain :Conference ;
+                          rdfs:range :Administrator .
+
+
+###  http://cmt#runPaperAssignmentTools
+:runPaperAssignmentTools rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain :Administrator ;
+                         rdfs:range :Conference .
+
+
+###  http://cmt#setMaxPapers
+:setMaxPapers rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Administrator ;
+              rdfs:range :ProgramCommitteeMember .
+
+
+###  http://cmt#startReviewerBidding
+:startReviewerBidding rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdf:type owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :Administrator ;
+                      rdfs:range :Conference .
+
+
+###  http://cmt#submitPaper
+:submitPaper rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Author ;
+             rdfs:range :Paper .
+
+
+###  http://cmt#virtualMeetingEnabledBy
+:virtualMeetingEnabledBy rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain :Conference ;
+                         rdfs:range :Administrator .
+
+
+###  http://cmt#writePaper
+:writePaper rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:InverseFunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Author ;
+            rdfs:range :Paper .
+
+
+###  http://cmt#writeReview
+:writeReview rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :writtenBy
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :writtenBy ;
+             rdf:type owl:InverseFunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Reviewer ;
+             rdfs:range :Review .
+
+
+###  http://cmt#writtenBy
+:writtenBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Review ;
+           rdfs:range :Reviewer .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://cmt#acceptsHardcopySubmissions
+:acceptsHardcopySubmissions rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdf:type owl:FunctionalProperty ;
+                            rdfs:domain :Conference ;
+                            rdfs:range xsd:boolean .
+
+
+###  http://cmt#date
+:date rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Conference ;
+      rdfs:range xsd:date .
+
+
+###  http://cmt#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Person ;
+       rdfs:range xsd:string .
+
+
+###  http://cmt#logoURL
+:logoURL rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Conference ;
+         rdfs:range xsd:anyURI .
+
+
+###  http://cmt#maxPapers
+:maxPapers rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :ProgramCommitteeMember ;
+           rdfs:range xsd:int .
+
+
+###  http://cmt#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Conference
+                                  :Person
+                                )
+                  ] ;
+      rdfs:range xsd:string .
+
+
+###  http://cmt#paperID
+:paperID rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Paper ;
+         rdfs:range xsd:unsignedLong .
+
+
+###  http://cmt#reviewsPerPaper
+:reviewsPerPaper rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Conference ;
+                 rdfs:range xsd:int .
+
+
+###  http://cmt#siteURL
+:siteURL rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Conference ;
+         rdfs:range xsd:anyURI .
+
+
+###  http://cmt#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :Paper ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://cmt#Acceptance
+:Acceptance rdf:type owl:Class ;
+            rdfs:subClassOf :Decision ;
+            owl:disjointWith :Rejection .
+
+
+###  http://cmt#Administrator
+:Administrator rdf:type owl:Class ;
+               rdfs:subClassOf :User .
+
+
+###  http://cmt#AssociatedChair
+:AssociatedChair rdf:type owl:Class ;
+                 rdfs:subClassOf :Chairman ,
+                                 :ConferenceMember ;
+                 owl:disjointWith :ConferenceChair .
+
+
+###  http://cmt#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :ConferenceMember ,
+                        :User .
+
+
+###  http://cmt#AuthorNotReviewer
+:AuthorNotReviewer rdf:type owl:Class ;
+                   rdfs:subClassOf :Author ;
+                   owl:disjointWith :ProgramCommitteeMember ,
+                                    :Reviewer .
+
+
+###  http://cmt#Bid
+:Bid rdf:type owl:Class ;
+     rdfs:subClassOf owl:Thing ;
+     owl:disjointWith :Conference ,
+                      :Decision ,
+                      :Document ,
+                      :Person ,
+                      :Preference ,
+                      :ProgramCommittee .
+
+
+###  http://cmt#Chairman
+:Chairman rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :AssociatedChair
+                                              :ConferenceChair
+                                              :ProgramCommitteeChair
+                                            )
+                              ] ;
+          rdfs:subClassOf :ConferenceMember ,
+                          :Person .
+
+
+###  http://cmt#Co-author
+:Co-author rdf:type owl:Class ;
+           rdfs:subClassOf :Author .
+
+
+###  http://cmt#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :date ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :name ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :reviewsPerPaper ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            owl:disjointWith :Decision ,
+                             :Document ,
+                             :Person ,
+                             :Preference ,
+                             :ProgramCommittee .
+
+
+###  http://cmt#ConferenceChair
+:ConferenceChair rdf:type owl:Class ;
+                 rdfs:subClassOf :Chairman ,
+                                 :ConferenceMember .
+
+
+###  http://cmt#ConferenceMember
+:ConferenceMember rdf:type owl:Class ;
+                  rdfs:subClassOf :Person .
+
+
+###  http://cmt#Decision
+:Decision rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Document ,
+                           :Person ,
+                           :Preference ,
+                           :ProgramCommittee .
+
+
+###  http://cmt#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Person ,
+                           :Preference ,
+                           :ProgramCommittee .
+
+
+###  http://cmt#ExternalReviewer
+:ExternalReviewer rdf:type owl:Class ;
+                  rdfs:subClassOf :Person ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :assignedByReviewer ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  owl:disjointWith :Reviewer ;
+                  rdfs:comment "An External Reviewer is a person that has been assigned to review a paper for another Reviewer, but is not themselves a Reviewer. " .
+
+
+###  http://cmt#Meta-Review
+:Meta-Review rdf:type owl:Class ;
+             rdfs:subClassOf :Review .
+
+
+###  http://cmt#Meta-Reviewer
+:Meta-Reviewer rdf:type owl:Class ;
+               rdfs:subClassOf :Reviewer ;
+               rdfs:comment "A special type of Reviewer.  There can be any number of Reviewers for a given paper, but only one Meta-Reviewer.  The Meta-Reviewer can go over all the reviews submitted for the paper and submit their own review.  Questions for the Meta-Reviewer can be different from those for a normal Reviewer.  Their role is to ensure that the reviews are good and consistent. The decision to use Meta-Reviewers is optional, and must be set before paper assignment occurs." .
+
+
+###  http://cmt#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Document ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasDecision ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :readByReviewer ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasDecision ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :readByMeta-Reviewer ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       owl:disjointWith :Review .
+
+
+###  http://cmt#PaperAbstract
+:PaperAbstract rdf:type owl:Class ;
+               rdfs:subClassOf :Paper .
+
+
+###  http://cmt#PaperFullVersion
+:PaperFullVersion rdf:type owl:Class ;
+                  rdfs:subClassOf :Paper .
+
+
+###  http://cmt#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith :Preference ,
+                         :ProgramCommittee .
+
+
+###  http://cmt#Preference
+:Preference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            owl:disjointWith :ProgramCommittee .
+
+
+###  http://cmt#ProgramCommittee
+:ProgramCommittee rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  http://cmt#ProgramCommitteeChair
+:ProgramCommitteeChair rdf:type owl:Class ;
+                       rdfs:subClassOf :Chairman ,
+                                       :ProgramCommitteeMember .
+
+
+###  http://cmt#ProgramCommitteeMember
+:ProgramCommitteeMember rdf:type owl:Class ;
+                        rdfs:subClassOf :ConferenceMember ,
+                                        :Person ;
+                        rdfs:comment "The Program Committee consists of all members of the conference except for Authors who are not also Reviewers." .
+
+
+###  http://cmt#Rejection
+:Rejection rdf:type owl:Class ;
+           rdfs:subClassOf :Decision .
+
+
+###  http://cmt#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document .
+
+
+###  http://cmt#Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :ConferenceMember ,
+                          :User .
+
+
+###  http://cmt#SubjectArea
+:SubjectArea rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  http://cmt#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf :Person .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

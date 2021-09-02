@@ -1,0 +1,1086 @@
+@prefix : <http://openconf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://openconf#> .
+
+<http://openconf> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://openconf#Program_made_by
+:Program_made_by rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty [ owl:inverseOf :made_program
+                                        ] ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Conference_Program ;
+                 rdfs:range :Program_chair .
+
+
+###  http://openconf#Review_made_by
+:Review_made_by rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :has_made_review
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :has_made_review ;
+                rdfs:domain :Paper_Review ;
+                rdfs:range :Reviewer .
+
+
+###  http://openconf#appropriate_length
+:appropriate_length rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Paper_Review ;
+                    rdfs:range :Long_bool .
+
+
+###  http://openconf#has_Categorization
+:has_Categorization rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Paper_Review ;
+                    rdfs:range :Paper_Categorization .
+
+
+###  http://openconf#has_Overall
+:has_Overall rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Paper_Review ;
+             rdfs:range :Overall_Value .
+
+
+###  http://openconf#has_Reccommendation
+:has_Reccommendation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Paper_Review ;
+                     rdfs:range :Reccommendation ;
+                     owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://openconf#has_Result
+:has_Result rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Advocated_Paper
+                                        :Planed_Paper
+                                      )
+                        ] ;
+            rdfs:range :Result_of_Advocate .
+
+
+###  http://openconf#has_Review
+:has_Review rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Planed_Paper
+                                        :Reviewed_Paper
+                                      )
+                        ] ;
+            rdfs:range :Paper_Review .
+
+
+###  http://openconf#has_been_sent_by
+:has_been_sent_by rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :has_sent
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  owl:inverseOf :has_sent ;
+                  rdfs:domain :Submitted_Paper ;
+                  rdfs:range :Contact_Author .
+
+
+###  http://openconf#has_made_review
+:has_made_review rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Reviewer ;
+                 rdfs:range :Paper_Review .
+
+
+###  http://openconf#has_member
+:has_member rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :is_member_of
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Program_Committee
+                                        :Review_Committee
+                                      )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Advocate
+                                       :Program_chair
+                                       :Reviewer
+                                     )
+                       ] .
+
+
+###  http://openconf#has_sent
+:has_sent rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Contact_Author ;
+          rdfs:range :Submitted_Paper .
+
+
+###  http://openconf#is_Candidate_for_Award
+:is_Candidate_for_Award rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain :Paper_Review ;
+                        rdfs:range :Long_bool .
+
+
+###  http://openconf#is_From_Area_of_Interest
+:is_From_Area_of_Interest rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( :Advocate
+                                                      :Reviewer
+                                                    )
+                                      ] ;
+                          rdfs:range :Topics .
+
+
+###  http://openconf#is_Type
+:is_Type rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Paper_File ;
+         rdfs:range :Format .
+
+
+###  http://openconf#is_member_of
+:is_member_of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :has_member ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Advocate
+                                          :Program_chair
+                                          :Reviewer
+                                        )
+                          ] ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :Program_Committee
+                                         :Review_Committee
+                                       )
+                         ] .
+
+
+###  http://openconf#is_planned_in
+:is_planned_in rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :planned_papers
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :planned_papers ;
+               rdfs:domain :Planed_Paper ;
+               rdfs:range :Conference_Program .
+
+
+###  http://openconf#is_stored_in
+:is_stored_in rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Submitted_Paper ;
+              rdfs:range :Paper_File .
+
+
+###  http://openconf#is_written_by
+:is_written_by rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :writes_Paper
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :writes_Paper ;
+               rdfs:domain :Paper ;
+               rdfs:range :Author .
+
+
+###  http://openconf#made_program
+:made_program rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :Program_made_by ;
+              rdfs:domain :Program_chair ;
+              rdfs:range :Conference_Program .
+
+
+###  http://openconf#planned_papers
+:planned_papers rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Conference_Program ;
+                rdfs:range :Planed_Paper .
+
+
+###  http://openconf#to_advocate_by
+:to_advocate_by rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :will_advocate
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :will_advocate ;
+                rdfs:domain :Advocated_Paper ;
+                rdfs:range :Advocate .
+
+
+###  http://openconf#will_advocate
+:will_advocate rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Advocate ;
+               rdfs:range :Advocated_Paper .
+
+
+###  http://openconf#writes_Paper
+:writes_Paper rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Author ;
+              rdfs:range :Paper .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://openconf#Abstract
+:Abstract rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Paper .
+
+
+###  http://openconf#Alternate_Email
+:Alternate_Email rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Contact_Author ;
+                 rdfs:range xsd:string .
+
+
+###  http://openconf#Comments_To_Chair
+:Comments_To_Chair rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Submitted_Paper .
+
+
+###  http://openconf#Comments_for_Author
+:Comments_for_Author rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Paper_Review ;
+                     rdfs:range xsd:string .
+
+
+###  http://openconf#Comments_for_Program_Committee
+:Comments_for_Program_Committee rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty ;
+                                rdfs:domain :Paper_Review ;
+                                rdfs:range xsd:string .
+
+
+###  http://openconf#Comments_to_Chair
+:Comments_to_Chair rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Reviewer .
+
+
+###  http://openconf#Country
+:Country rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :People ;
+         rdfs:range xsd:string .
+
+
+###  http://openconf#E-mail
+:E-mail rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :People ;
+        rdfs:range xsd:string .
+
+
+###  http://openconf#Keywords
+:Keywords rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Paper ;
+          rdfs:range xsd:string .
+
+
+###  http://openconf#Name
+:Name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :People ;
+      rdfs:range xsd:string .
+
+
+###  http://openconf#Organisation
+:Organisation rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :People ;
+              rdfs:range xsd:string .
+
+
+###  http://openconf#Other_Areas
+:Other_Areas rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Reviewer .
+
+
+###  http://openconf#Paper_Id
+:Paper_Id rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Submitted_Paper ;
+          rdfs:range xsd:int .
+
+
+###  http://openconf#Password
+:Password rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Member
+                                      :Submitted_Paper
+                                    )
+                      ] ;
+          rdfs:range xsd:string .
+
+
+###  http://openconf#Students
+:Students rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Paper ;
+          rdfs:range xsd:boolean .
+
+
+###  http://openconf#Surname
+:Surname rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :People ;
+         rdfs:range xsd:string .
+
+
+###  http://openconf#Telephone
+:Telephone rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Contact_Author
+                                       :Member
+                                     )
+                       ] ;
+           rdfs:range xsd:string .
+
+
+###  http://openconf#Title
+:Title rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Paper ;
+       rdfs:range xsd:string .
+
+
+###  http://openconf#UserName
+:UserName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Reviewer ;
+          rdfs:range xsd:string .
+
+
+###  http://openconf#Web_Address
+:Web_Address rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://openconf#Web_address
+:Web_address rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Member ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://openconf#Adobe_PDF
+:Adobe_PDF rdf:type owl:Class ;
+           rdfs:subClassOf :Format ;
+           owl:disjointWith :Corel_Word_Perfect ,
+                            :HTML ,
+                            :MS_Word ,
+                            :PostScript ,
+                            :RTF ,
+                            :Text .
+
+
+###  http://openconf#Advocate
+:Advocate rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Member
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_From_Area_of_Interest ;
+                                                       owl:someValuesFrom :Topics
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_member_of ;
+                                                       owl:someValuesFrom :Program_Committee
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :will_advocate ;
+                                                       owl:someValuesFrom :Advocated_Paper
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Member .
+
+
+###  http://openconf#Advocated_Paper
+:Advocated_Paper rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Submitted_Paper
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :has_Result ;
+                                                              owl:someValuesFrom :Result_of_Advocate
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :to_advocate_by ;
+                                                              owl:someValuesFrom :Advocate
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Submitted_Paper .
+
+
+###  http://openconf#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :People ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :writes_Paper ;
+                          owl:someValuesFrom :Paper
+                        ] .
+
+
+###  http://openconf#Balanced_Theory_and_Practice
+:Balanced_Theory_and_Practice rdf:type owl:Class ;
+                              rdfs:subClassOf :Paper_Categorization ;
+                              owl:disjointWith :Highly_Practical ,
+                                               :Highly_Theoretical ,
+                                               :Tends_Towards_Practical ,
+                                               :Tends_Towards_Theoretical .
+
+
+###  http://openconf#Clarity_to_Present_Understanding
+:Clarity_to_Present_Understanding rdf:type owl:Class ;
+                                  rdfs:subClassOf :Overall_Value ;
+                                  owl:disjointWith :New_Information ,
+                                                   :New_Perspective_Issue_Problem_Solving ,
+                                                   :Not_Much ,
+                                                   :Other ,
+                                                   :Valuable_Confirmation_of_Present_Knowledge .
+
+
+###  http://openconf#Classic_Papers
+:Classic_Papers rdf:type owl:Class ;
+                rdfs:subClassOf :Topics ;
+                owl:disjointWith :Computer_Science ,
+                                 :Humour ,
+                                 :Networking ,
+                                 :Programming ,
+                                 :RFC .
+
+
+###  http://openconf#Clear_Accept
+:Clear_Accept rdf:type owl:Class ;
+              rdfs:subClassOf :Reccommendation ;
+              owl:disjointWith :Clear_Reject ,
+                               :Marginal_Tend_to_Accept ,
+                               :Marginal_Tend_to_Reject ,
+                               :Must_Accept ,
+                               :Portable_Reject .
+
+
+###  http://openconf#Clear_Reject
+:Clear_Reject rdf:type owl:Class ;
+              rdfs:subClassOf :Reccommendation ;
+              owl:disjointWith :Marginal_Tend_to_Accept ,
+                               :Marginal_Tend_to_Reject ,
+                               :Must_Accept ,
+                               :Portable_Reject .
+
+
+###  http://openconf#Committees
+:Committees rdf:type owl:Class ;
+            rdfs:subClassOf :Domain_Topic .
+
+
+###  http://openconf#Computer_Science
+:Computer_Science rdf:type owl:Class ;
+                  rdfs:subClassOf :Topics ;
+                  owl:disjointWith :Humour ,
+                                   :Networking ,
+                                   :Programming ,
+                                   :RFC .
+
+
+###  http://openconf#Conference_Program
+:Conference_Program rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Domain_Topic
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :Program_made_by ;
+                                                                 owl:someValuesFrom :Program_chair
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :planned_papers ;
+                                                                 owl:someValuesFrom :Planed_Paper
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Domain_Topic .
+
+
+###  http://openconf#Contact_Author
+:Contact_Author rdf:type owl:Class ;
+                rdfs:subClassOf :Author .
+
+
+###  http://openconf#Corel_Word_Perfect
+:Corel_Word_Perfect rdf:type owl:Class ;
+                    rdfs:subClassOf :Format ;
+                    owl:disjointWith :HTML ,
+                                     :MS_Word ,
+                                     :PostScript ,
+                                     :RTF ,
+                                     :Text .
+
+
+###  http://openconf#Domain_Topic
+:Domain_Topic rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  http://openconf#Format
+:Format rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:unionOf ( :Adobe_PDF
+                                            :Corel_Word_Perfect
+                                            :HTML
+                                            :MS_Word
+                                            :PostScript
+                                            :RTF
+                                            :Text
+                                          )
+                            ] ;
+        rdfs:subClassOf :Value_Partition ;
+        rdfs:comment "Format of submmised papers files" .
+
+
+###  http://openconf#HTML
+:HTML rdf:type owl:Class ;
+      rdfs:subClassOf :Format ;
+      owl:disjointWith :MS_Word ,
+                       :PostScript ,
+                       :RTF ,
+                       :Text .
+
+
+###  http://openconf#High
+:High rdf:type owl:Class ;
+      rdfs:subClassOf :Reviewer_Famliliarity ;
+      owl:disjointWith :Low ,
+                       :Moderate .
+
+
+###  http://openconf#Highly_Practical
+:Highly_Practical rdf:type owl:Class ;
+                  rdfs:subClassOf :Paper_Categorization ;
+                  owl:disjointWith :Highly_Theoretical ,
+                                   :Tends_Towards_Practical ,
+                                   :Tends_Towards_Theoretical .
+
+
+###  http://openconf#Highly_Theoretical
+:Highly_Theoretical rdf:type owl:Class ;
+                    rdfs:subClassOf :Paper_Categorization ;
+                    owl:disjointWith :Tends_Towards_Practical ,
+                                     :Tends_Towards_Theoretical .
+
+
+###  http://openconf#Humour
+:Humour rdf:type owl:Class ;
+        rdfs:subClassOf :Topics ;
+        owl:disjointWith :Networking ,
+                         :Programming ,
+                         :RFC .
+
+
+###  http://openconf#Long_bool
+:Long_bool rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Value_Partition
+                                                      [ rdf:type owl:Class ;
+                                                        owl:oneOf ( :No
+                                                                    :Unsure
+                                                                    :Yes
+                                                                  )
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Value_Partition .
+
+
+###  http://openconf#Low
+:Low rdf:type owl:Class ;
+     rdfs:subClassOf :Reviewer_Famliliarity ;
+     owl:disjointWith :Moderate .
+
+
+###  http://openconf#MS_Word
+:MS_Word rdf:type owl:Class ;
+         rdfs:subClassOf :Format ;
+         owl:disjointWith :PostScript ,
+                          :RTF ,
+                          :Text .
+
+
+###  http://openconf#Marginal_Tend_to_Accept
+:Marginal_Tend_to_Accept rdf:type owl:Class ;
+                         rdfs:subClassOf :Reccommendation ;
+                         owl:disjointWith :Marginal_Tend_to_Reject ,
+                                          :Must_Accept ,
+                                          :Portable_Reject .
+
+
+###  http://openconf#Marginal_Tend_to_Reject
+:Marginal_Tend_to_Reject rdf:type owl:Class ;
+                         rdfs:subClassOf :Reccommendation ;
+                         owl:disjointWith :Must_Accept ,
+                                          :Portable_Reject .
+
+
+###  http://openconf#Member
+:Member rdf:type owl:Class ;
+        rdfs:subClassOf :People .
+
+
+###  http://openconf#Moderate
+:Moderate rdf:type owl:Class ;
+          rdfs:subClassOf :Reviewer_Famliliarity .
+
+
+###  http://openconf#Must_Accept
+:Must_Accept rdf:type owl:Class ;
+             rdfs:subClassOf :Reccommendation ;
+             owl:disjointWith :Portable_Reject .
+
+
+###  http://openconf#Networking
+:Networking rdf:type owl:Class ;
+            rdfs:subClassOf :Topics ;
+            owl:disjointWith :Programming ,
+                             :RFC .
+
+
+###  http://openconf#New_Information
+:New_Information rdf:type owl:Class ;
+                 rdfs:subClassOf :Overall_Value ;
+                 owl:disjointWith :New_Perspective_Issue_Problem_Solving ,
+                                  :Not_Much ,
+                                  :Other ,
+                                  :Valuable_Confirmation_of_Present_Knowledge .
+
+
+###  http://openconf#New_Perspective_Issue_Problem_Solving
+:New_Perspective_Issue_Problem_Solving rdf:type owl:Class ;
+                                       rdfs:subClassOf :Overall_Value ;
+                                       owl:disjointWith :Not_Much ,
+                                                        :Other ,
+                                                        :Valuable_Confirmation_of_Present_Knowledge .
+
+
+###  http://openconf#Not_Much
+:Not_Much rdf:type owl:Class ;
+          rdfs:subClassOf :Overall_Value ;
+          owl:disjointWith :Other ,
+                           :Valuable_Confirmation_of_Present_Knowledge .
+
+
+###  http://openconf#Other
+:Other rdf:type owl:Class ;
+       rdfs:subClassOf :Overall_Value ;
+       owl:disjointWith :Valuable_Confirmation_of_Present_Knowledge .
+
+
+###  http://openconf#Overall_Value
+:Overall_Value rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Clarity_to_Present_Understanding
+                                                   :New_Information
+                                                   :New_Perspective_Issue_Problem_Solving
+                                                   :Not_Much
+                                                   :Other
+                                                   :Valuable_Confirmation_of_Present_Knowledge
+                                                 )
+                                   ] ;
+               rdfs:subClassOf :Review_Values .
+
+
+###  http://openconf#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Domain_Topic ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :is_written_by ;
+                         owl:someValuesFrom :Author
+                       ] .
+
+
+###  http://openconf#Paper_Categorization
+:Paper_Categorization rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( :Balanced_Theory_and_Practice
+                                                          :Highly_Practical
+                                                          :Highly_Theoretical
+                                                          :Tends_Towards_Practical
+                                                          :Tends_Towards_Theoretical
+                                                        )
+                                          ] ;
+                      rdfs:subClassOf :Review_Values .
+
+
+###  http://openconf#Paper_File
+:Paper_File rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Domain_Topic
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :is_Type ;
+                                                         owl:someValuesFrom :Format
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Domain_Topic .
+
+
+###  http://openconf#Paper_Review
+:Paper_Review rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :Domain_Topic
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :Review_made_by ;
+                                                           owl:someValuesFrom :Reviewer
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :appropriate_length ;
+                                                           owl:someValuesFrom :Long_bool
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_Categorization ;
+                                                           owl:someValuesFrom :Paper_Categorization
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_Overall ;
+                                                           owl:someValuesFrom :Overall_Value
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_Reccommendation ;
+                                                           owl:someValuesFrom :Reccommendation
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :is_Candidate_for_Award ;
+                                                           owl:someValuesFrom :Long_bool
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Domain_Topic ;
+              rdfs:comment "Review of the Paper" .
+
+
+###  http://openconf#People
+:People rdf:type owl:Class ;
+        rdfs:subClassOf :Domain_Topic ;
+        rdfs:comment "obecná třída pro všechny lidi" .
+
+
+###  http://openconf#Planed_Paper
+:Planed_Paper rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :Submitted_Paper
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_Result ;
+                                                           owl:someValuesFrom :Result_of_Advocate
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_Review ;
+                                                           owl:someValuesFrom :Paper_Review
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :is_planned_in ;
+                                                           owl:someValuesFrom :Conference_Program
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Reviewed_Paper ;
+              rdfs:comment "Paper planned in the program of the conference" .
+
+
+###  http://openconf#Portable_Reject
+:Portable_Reject rdf:type owl:Class ;
+                 rdfs:subClassOf :Reccommendation .
+
+
+###  http://openconf#PostScript
+:PostScript rdf:type owl:Class ;
+            rdfs:subClassOf :Format ;
+            owl:disjointWith :RTF ,
+                             :Text .
+
+
+###  http://openconf#Program_Committee
+:Program_Committee rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Committees
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :has_member ;
+                                                                owl:someValuesFrom :Advocate
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :has_member ;
+                                                                owl:someValuesFrom :Program_chair
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Review_Committee .
+
+
+###  http://openconf#Program_chair
+:Program_chair rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Member
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :has_made_review ;
+                                                            owl:someValuesFrom :Conference_Program
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :is_member_of ;
+                                                            owl:someValuesFrom :Program_Committee
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :made_program ;
+                                                            owl:someValuesFrom :Conference_Program
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Reviewer .
+
+
+###  http://openconf#Programming
+:Programming rdf:type owl:Class ;
+             rdfs:subClassOf :Topics ;
+             owl:disjointWith :RFC .
+
+
+###  http://openconf#RFC
+:RFC rdf:type owl:Class ;
+     rdfs:subClassOf :Topics .
+
+
+###  http://openconf#RTF
+:RTF rdf:type owl:Class ;
+     rdfs:subClassOf :Format ;
+     owl:disjointWith :Text .
+
+
+###  http://openconf#Reccommendation
+:Reccommendation rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :Clear_Accept
+                                                     :Clear_Reject
+                                                     :Marginal_Tend_to_Accept
+                                                     :Marginal_Tend_to_Reject
+                                                     :Must_Accept
+                                                     :Portable_Reject
+                                                   )
+                                     ] ;
+                 rdfs:subClassOf :Review_Values ;
+                 rdfs:comment "Review Reccommendations" .
+
+
+###  http://openconf#Result_of_Advocate
+:Result_of_Advocate rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Value_Partition
+                                                               [ rdf:type owl:Class ;
+                                                                 owl:oneOf ( :Accept
+                                                                             :Reject
+                                                                             :Unsure
+                                                                           )
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Value_Partition .
+
+
+###  http://openconf#Review_Committee
+:Review_Committee rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Committees
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :has_member ;
+                                                               owl:someValuesFrom :Reviewer
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Committees .
+
+
+###  http://openconf#Review_Values
+:Review_Values rdf:type owl:Class ;
+               rdfs:subClassOf :Value_Partition .
+
+
+###  http://openconf#Reviewed_Paper
+:Reviewed_Paper rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Submitted_Paper
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :has_Review ;
+                                                             owl:someValuesFrom :Paper_Review
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Submitted_Paper .
+
+
+###  http://openconf#Reviewer
+:Reviewer rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Member
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :has_made_review ;
+                                                       owl:someValuesFrom :Paper_Review
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_From_Area_of_Interest ;
+                                                       owl:someValuesFrom :Topics
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_member_of ;
+                                                       owl:someValuesFrom :Review_Committee
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Member .
+
+
+###  http://openconf#Reviewer_Famliliarity
+:Reviewer_Famliliarity rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Review_Values
+                                                                  [ rdf:type owl:Class ;
+                                                                    owl:unionOf ( :High
+                                                                                  :Low
+                                                                                  :Moderate
+                                                                                )
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Review_Values ;
+                       rdfs:comment "Reviewer familiarity with subject matter." .
+
+
+###  http://openconf#Submitted_Paper
+:Submitted_Paper rdf:type owl:Class ;
+                 rdfs:subClassOf :Paper ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :has_been_sent_by ;
+                                   owl:someValuesFrom :Contact_Author
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_stored_in ;
+                                   owl:someValuesFrom :Paper_File
+                                 ] .
+
+
+###  http://openconf#Tends_Towards_Practical
+:Tends_Towards_Practical rdf:type owl:Class ;
+                         rdfs:subClassOf :Paper_Categorization ;
+                         owl:disjointWith :Tends_Towards_Theoretical .
+
+
+###  http://openconf#Tends_Towards_Theoretical
+:Tends_Towards_Theoretical rdf:type owl:Class ;
+                           rdfs:subClassOf :Paper_Categorization .
+
+
+###  http://openconf#Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf :Format .
+
+
+###  http://openconf#Topics
+:Topics rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:unionOf ( :Classic_Papers
+                                            :Computer_Science
+                                            :Humour
+                                            :Networking
+                                            :Programming
+                                            :RFC
+                                          )
+                            ] ;
+        rdfs:subClassOf :Value_Partition ;
+        rdfs:comment "souhrný seznam základních témat" .
+
+
+###  http://openconf#Valuable_Confirmation_of_Present_Knowledge
+:Valuable_Confirmation_of_Present_Knowledge rdf:type owl:Class ;
+                                            rdfs:subClassOf :Overall_Value .
+
+
+###  http://openconf#Value_Partition
+:Value_Partition rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://openconf#Accept
+:Accept rdf:type owl:NamedIndividual ,
+                 :Result_of_Advocate ,
+                 :Value_Partition ,
+                 owl:Thing .
+
+
+###  http://openconf#Areas_of_interest
+:Areas_of_interest rdf:type owl:NamedIndividual ,
+                            :Topics ,
+                            :Value_Partition ,
+                            owl:Thing .
+
+
+###  http://openconf#No
+:No rdf:type owl:NamedIndividual ,
+             :Long_bool ,
+             :Value_Partition ,
+             owl:Thing .
+
+
+###  http://openconf#Reject
+:Reject rdf:type owl:NamedIndividual ,
+                 :Result_of_Advocate ,
+                 :Value_Partition ,
+                 owl:Thing .
+
+
+###  http://openconf#Technical_Area
+:Technical_Area rdf:type owl:NamedIndividual ,
+                         :Topics ,
+                         :Value_Partition ,
+                         owl:Thing .
+
+
+###  http://openconf#Unsure
+:Unsure rdf:type owl:NamedIndividual ,
+                 :Long_bool ,
+                 :Result_of_Advocate ,
+                 :Value_Partition ,
+                 owl:Thing .
+
+
+###  http://openconf#Yes
+:Yes rdf:type owl:NamedIndividual ,
+              :Long_bool ,
+              :Value_Partition ,
+              owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

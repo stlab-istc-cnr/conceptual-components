@@ -1,0 +1,42 @@
+<http://confOf#parallel_with>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://confOf#Administrative_event> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://confOf#Administrative_event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://confOf#parallel_with> .
+
+<http://confOf#follows>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://confOf#Administrative_event> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://confOf#Administrative_event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://confOf#Working_event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://confOf#Event> .
+
+<http://confOf#Administrative_event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://confOf#Event> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://confOf#Working_event> , <http://confOf#Social_event> .
+
+<http://confOf#hasAdministrativeEvent>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://confOf#Working_event> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://confOf#Administrative_event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

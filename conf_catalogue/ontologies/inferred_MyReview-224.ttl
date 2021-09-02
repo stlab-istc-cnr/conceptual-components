@@ -1,0 +1,33 @@
+<http://myreview#OutputDocument>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://myreview#ProgramCommittee> , <http://myreview#Session> , <http://myreview#PaperStatus> , <http://myreview#PaymentMode> , <http://myreview#Person> , <http://myreview#Slot> , <http://myreview#ResearchTopic> , <http://myreview#Question> .
+
+<http://myreview#Chair>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://myreview#ProgramCommitteeMember> .
+
+<http://myreview#isProducedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://myreview#OutputDocument> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://myreview#Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://myreview#produces> .
+
+<http://myreview#produces>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://myreview#Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://myreview#OutputDocument> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

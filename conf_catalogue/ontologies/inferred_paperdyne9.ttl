@@ -1,0 +1,101 @@
+<http://paperdyne#assignedToReviewBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://paperdyne#assignedBy> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#assignsToReview> .
+
+<http://paperdyne#assignedPaperBy>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://paperdyne#assigns> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#assignsPaper> .
+
+<http://paperdyne#assignsToReview>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://paperdyne#assigns> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://paperdyne#acceptedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#accepts> .
+
+<http://paperdyne#accepts>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://paperdyne#rejectedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#rejects> .
+
+<http://paperdyne#assignsPaper>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Program_Comitee_Chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://paperdyne#Reviewer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://paperdyne#assignedBy> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://paperdyne#Paper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Contribution> .
+
+<http://paperdyne#Reviewer>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Person> .
+
+<http://paperdyne#Program_Comitee_Chair>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Person> .

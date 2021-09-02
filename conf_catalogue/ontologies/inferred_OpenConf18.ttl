@@ -1,0 +1,31 @@
+<http://openconf#Advocate>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://openconf#Member> .
+
+<http://openconf#Advocated_Paper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://openconf#Submitted_Paper> .
+
+<http://openconf#will_advocate>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://openconf#Advocate> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://openconf#Advocated_Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://openconf#to_advocate_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://openconf#Advocated_Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://openconf#Advocate> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://openconf#will_advocate> .

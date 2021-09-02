@@ -1,0 +1,35 @@
+<http://paperdyne#Author>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Speaker> , <http://paperdyne#Person> .
+
+<http://paperdyne#visibleBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://paperdyne#views> .
+
+<http://paperdyne#conflictProposedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://paperdyne#Proposed_Conflict> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://paperdyne#proposedBy> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://paperdyne#Paper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Contribution> .
+
+<http://paperdyne#Proposed_Conflict>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://paperdyne#Conflict_Of_Interest> .
+
+<http://paperdyne#blockAssigningToReviewer>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

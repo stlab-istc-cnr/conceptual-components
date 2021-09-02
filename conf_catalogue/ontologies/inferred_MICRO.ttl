@@ -1,0 +1,554 @@
+@prefix : <http://micro#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://micro#> .
+
+<http://micro> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://micro#appliesTo
+:appliesTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :DoubleBlindReview
+                                       :Paper
+                                       :TutorialProposal
+                                       :WorksopProposal
+                                     )
+                       ] .
+
+
+###  http://micro#conducts
+:conducts rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :isConductedBy
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :isConductedBy ;
+          rdfs:domain :Author ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Lecture
+                                     :Tutorial
+                                     :WorkShop
+                                   )
+                     ] .
+
+
+###  http://micro#conflictsWith
+:conflictsWith rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Author ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Author
+                                          :Organizer
+                                          :OutsideReferee
+                                        )
+                          ] .
+
+
+###  http://micro#executes
+:executes rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :isExecutedBy
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Reviewer ;
+          rdfs:range :DoubleBlindReview .
+
+
+###  http://micro#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :isAuthorOf
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isAuthorOf ;
+           rdfs:domain :ActivitySubmissionForm ;
+           rdfs:range :Author .
+
+
+###  http://micro#hasMembers
+:hasMembers rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :isMemberOf
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :isMemberOf ;
+            rdfs:range :CommitteeMember .
+
+
+###  http://micro#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :isIncluded
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range :Topic .
+
+
+###  http://micro#isAuthorOf
+:isAuthorOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Author ;
+            rdfs:range :ActivitySubmissionForm .
+
+
+###  http://micro#isConductedBy
+:isConductedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Lecture
+                                           :Tutorial
+                                           :WorkShop
+                                         )
+                           ] ;
+               rdfs:range :Author .
+
+
+###  http://micro#isExecutedBy
+:isExecutedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :executes ;
+              rdfs:domain :DoubleBlindReview ;
+              rdfs:range :Reviewer .
+
+
+###  http://micro#isIncluded
+:isIncluded rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :hasTopic ;
+            rdfs:domain :Topic ;
+            rdfs:range :Activity .
+
+
+###  http://micro#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :CommitteeMember .
+
+
+###  http://micro#isOrganizedBy
+:isOrganizedBy rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :organizes
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :organizes ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Conference ;
+               rdfs:range :OrganizingCommittee .
+
+
+###  http://micro#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range :Conference .
+
+
+###  http://micro#isSubmittedBy
+:isSubmittedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :ActivitySubmissionForm .
+
+
+###  http://micro#organizes
+:organizes rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:InverseFunctionalProperty ;
+           rdfs:domain :OrganizingCommittee ;
+           rdfs:range :Conference .
+
+
+###  http://micro#takesPlace
+:takesPlace rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range :Location .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://micro#annualOrder
+:annualOrder rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Conference ;
+             rdfs:range xsd:int .
+
+
+###  http://micro#begins
+:begins rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Activity
+                                    :Conference
+                                  )
+                    ] ;
+        rdfs:range xsd:dateTime .
+
+
+###  http://micro#ends
+:ends rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Activity
+                                  :Conference
+                                )
+                  ] ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://micro#expectedAttendance
+:expectedAttendance rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :Activity ;
+                    rdfs:range xsd:int .
+
+
+###  http://micro#hasAcronym
+:hasAcronym rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Lecture ;
+            rdfs:range xsd:string .
+
+
+###  http://micro#hasMail
+:hasMail rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://micro#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Person
+                                     :Tutorial
+                                   )
+                     ] ;
+         rdfs:range xsd:string .
+
+
+###  http://micro#submissionDeadline
+:submissionDeadline rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :ActivitySubmissionForm ;
+                    rdfs:range xsd:dateTime .
+
+
+###  http://micro#worksForCompany
+:worksForCompany rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://micro#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isConductedBy ;
+                            owl:someValuesFrom :Author
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isPartOf ;
+                            owl:someValuesFrom :Conference
+                          ] .
+
+
+###  http://micro#ActivitySubmissionForm
+:ActivitySubmissionForm rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasAuthor ;
+                                          owl:someValuesFrom :Author
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :isSubmittedBy ;
+                                          owl:allValuesFrom :Author
+                                        ] .
+
+
+###  http://micro#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :conducts ;
+                          owl:someValuesFrom :Activity
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :conflictsWith ;
+                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Author
+                                                             :Organizer
+                                                             :OutsideReferee
+                                                           )
+                                             ]
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isAuthorOf ;
+                          owl:someValuesFrom :ActivitySubmissionForm
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :conducts ;
+                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :conflictsWith ;
+                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                        ] ;
+        owl:disjointWith :Organizer ,
+                         :OutsideReferee .
+
+
+###  http://micro#CommitteeMember
+:CommitteeMember rdf:type owl:Class ;
+                 rdfs:subClassOf :Organizer ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isMemberOf ;
+                                   owl:someValuesFrom :OrganizingCommittee
+                                 ] .
+
+
+###  http://micro#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isOrganizedBy ;
+                              owl:allValuesFrom :OrganizingCommittee
+                            ] .
+
+
+###  http://micro#DoubleBlindReview
+:DoubleBlindReview rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :appliesTo ;
+                                     owl:allValuesFrom :Lecture
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isExecutedBy ;
+                                     owl:allValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :OutsideReferee
+                                                                       :Reviewer
+                                                                     )
+                                                       ]
+                                   ] .
+
+
+###  http://micro#FinanceChair
+:FinanceChair rdf:type owl:Class ;
+              rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#GeneralCoChair
+:GeneralCoChair rdf:type owl:Class ;
+                rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#Lecture
+:Lecture rdf:type owl:Class ;
+         rdfs:subClassOf :Activity .
+
+
+###  http://micro#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://micro#Organizer
+:Organizer rdf:type owl:Class ;
+           rdfs:subClassOf :Person ;
+           owl:disjointWith :OutsideReferee .
+
+
+###  http://micro#OrganizingCommittee
+:OrganizingCommittee rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :organizes ;
+                                       owl:someValuesFrom :Conference
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasMembers ;
+                                       owl:allValuesFrom :CommitteeMember
+                                     ] .
+
+
+###  http://micro#OutsideReferee
+:OutsideReferee rdf:type owl:Class ;
+                rdfs:subClassOf :Person .
+
+
+###  http://micro#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :ActivitySubmissionForm ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :appliesTo ;
+                         owl:allValuesFrom :Lecture
+                       ] .
+
+
+###  http://micro#PaperSubmissionChair
+:PaperSubmissionChair rdf:type owl:Class ;
+                      rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://micro#ProgramCoChair
+:ProgramCoChair rdf:type owl:Class ;
+                rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#PublicationsChair
+:PublicationsChair rdf:type owl:Class ;
+                   rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#PublicityWebChair
+:PublicityWebChair rdf:type owl:Class ;
+                   rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#QualitatvieLecture
+:QualitatvieLecture rdf:type owl:Class ;
+                    rdfs:subClassOf :Lecture ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasTopic ;
+                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                           owl:oneOf ( :Compilers
+                                                                       :Microarchitecture
+                                                                       :Systems
+                                                                     )
+                                                         ]
+                                    ] ;
+                    owl:disjointWith :TraditionalLecture .
+
+
+###  http://micro#RegistrationChair
+:RegistrationChair rdf:type owl:Class ;
+                   rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :Organizer ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :executes ;
+                            owl:someValuesFrom :DoubleBlindReview
+                          ] .
+
+
+###  http://micro#SteeringCommittee
+:SteeringCommittee rdf:type owl:Class ;
+                   rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#StudentAdvocate
+:StudentAdvocate rdf:type owl:Class ;
+                 rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://micro#TraditionalLecture
+:TraditionalLecture rdf:type owl:Class ;
+                    rdfs:subClassOf :Lecture ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasTopic ;
+                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                           owl:oneOf ( :ForwardLookingIdea
+                                                                     )
+                                                         ]
+                                    ] .
+
+
+###  http://micro#Tutorial
+:Tutorial rdf:type owl:Class ;
+          rdfs:subClassOf :Activity .
+
+
+###  http://micro#TutorialProposal
+:TutorialProposal rdf:type owl:Class ;
+                  rdfs:subClassOf :ActivitySubmissionForm ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :appliesTo ;
+                                    owl:allValuesFrom :Tutorial
+                                  ] .
+
+
+###  http://micro#WorkShop
+:WorkShop rdf:type owl:Class ;
+          rdfs:subClassOf :Activity .
+
+
+###  http://micro#WorkshopTutorialChair
+:WorkshopTutorialChair rdf:type owl:Class ;
+                       rdfs:subClassOf :OrganizingCommittee .
+
+
+###  http://micro#WorksopProposal
+:WorksopProposal rdf:type owl:Class ;
+                 rdfs:subClassOf :ActivitySubmissionForm ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :appliesTo ;
+                                   owl:allValuesFrom :WorkShop
+                                 ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://micro#Compilers
+:Compilers rdf:type owl:NamedIndividual ,
+                    :Topic ,
+                    owl:Thing .
+
+
+###  http://micro#ForwardLookingIdea
+:ForwardLookingIdea rdf:type owl:NamedIndividual ,
+                             :Topic ,
+                             owl:Thing .
+
+
+###  http://micro#Microarchitecture
+:Microarchitecture rdf:type owl:NamedIndividual ,
+                            :Topic ,
+                            owl:Thing .
+
+
+###  http://micro#Systems
+:Systems rdf:type owl:NamedIndividual ,
+                  :Topic ,
+                  owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

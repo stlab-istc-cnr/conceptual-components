@@ -1,0 +1,33 @@
+<http://micro#Author>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://micro#Person> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://micro#OutsideReferee> , <http://micro#Organizer> .
+
+<http://micro#conducts>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://micro#Author> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://micro#isConductedBy> .
+
+<http://micro#isConductedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://micro#Author> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://micro#Activity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

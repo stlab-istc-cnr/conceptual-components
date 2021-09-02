@@ -1,0 +1,60 @@
+<http://openconf#Program_made_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://openconf#Conference_Program> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://openconf#Program_chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://openconf#Conference_Program>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://openconf#Domain_Topic> .
+
+<http://openconf#is_planned_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://openconf#Planed_Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://openconf#Conference_Program> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://openconf#planned_papers> .
+
+<http://openconf#Program_chair>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://openconf#Reviewer> .
+
+<http://openconf#planned_papers>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://openconf#Conference_Program> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://openconf#Planed_Paper> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://openconf#Planed_Paper>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Paper planned in the program of the conference" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://openconf#Reviewed_Paper> .
+
+<http://openconf#made_program>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://openconf#Program_chair> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://openconf#Conference_Program> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://openconf#Program_made_by> .

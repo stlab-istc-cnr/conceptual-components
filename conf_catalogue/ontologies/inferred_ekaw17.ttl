@@ -1,0 +1,26 @@
+<http://ekaw#partOfEvent>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://ekaw#Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://ekaw#Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://ekaw#partOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://ekaw#Conference_Session>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://ekaw#Session> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://ekaw#Workshop_Session> .
+
+<http://ekaw#Conference>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "One edition of a conference" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://ekaw#Scientific_Event> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://ekaw#Tutorial> , <http://ekaw#Social_Event> , <http://ekaw#Track> , <http://ekaw#Workshop> , <http://ekaw#Invited_Talk> , <http://ekaw#Contributed_Talk> , <http://ekaw#Session> .

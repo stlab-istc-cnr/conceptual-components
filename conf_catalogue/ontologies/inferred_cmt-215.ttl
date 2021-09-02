@@ -1,0 +1,17 @@
+<http://cmt#ProgramCommitteeChair>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://cmt#ProgramCommitteeMember> , <http://cmt#Chairman> .
+
+<http://cmt#endReview>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://cmt#ProgramCommitteeChair> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://cmt#Review> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://cmt#Review>  a  <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://cmt#Document> .

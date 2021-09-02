@@ -1,0 +1,33 @@
+<http://cmt#ProgramCommitteeMember>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The Program Committee consists of all members of the conference except for Authors who are not also Reviewers." ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://cmt#Person> , <http://cmt#ConferenceMember> .
+
+<http://cmt#ProgramCommittee>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://cmt#memberOfProgramCommittee>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://cmt#ProgramCommitteeMember> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://cmt#ProgramCommittee> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://cmt#hasProgramCommitteeMember>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://cmt#ProgramCommittee> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://cmt#ProgramCommitteeMember> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://cmt#memberOfProgramCommittee> .

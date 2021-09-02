@@ -1,0 +1,1651 @@
+@prefix : <http://www.loc.gov/mads/rdf/v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.loc.gov/mads/rdf/v1#> .
+
+<http://www.loc.gov/mads/rdf/v1> rdf:type owl:Ontology ;
+                                  owl:versionIRI <http://id.loc.gov/ontologies/madsrdf/v1-4-0> ;
+                                  <http://purl.org/dc/terms/modified> "2019-01-04T17:01:03.065-05:00" ;
+                                  rdfs:comment """This document describes the MADS/RDF (Metadata Authority Description Schema in RDF) vocabulary, a data model for authority and vocabulary data used within the library and information science (LIS) community, which is inclusive of museums, archives, and other cultural institutions. It is presented as an OWL ontology. 
+      
+      
+      MADS/RDF is a knowledge organization system (KOS) designed for use with controlled values for names (personal, corporate, geographic, etc.), thesauri, taxonomies, subject heading systems, and other controlled value lists. It is closely related to SKOS, the Simple Knowledge Organization System and a widely supported and adopted RDF vocabulary. Given the close relationship between the aim of MADS/RDF and the aim of SKOS, the MADS ontology has been fully mapped to SKOS. 
+      
+      
+      Unlike SKOS, however, which is very broad in its application, MADS/RDF is designed specifically to support authority data as used by and needed in the LIS community and its technology systems. For example, MADS/RDF provides a means to record data from the Machine Readable Cataloging (MARC) Authorities format in RDF for use in semantic applications and Linked Data projects. 
+      
+      
+      MADS/RDF is designed to support the description of cultural and bibliographic resources. Data described using MADS/RDF, therefore, assists with identifying and annotating bibliographic and cultural resources. MADS/RDF is not focused on the description of Real World Objects. Although a MADS/RDF description may contain information specific to the Real World Object associated with the MADS/RDF authoritative label, the MADS/RDF ontology distinguishes between these two entities – the RWO and the Authority. 
+      
+      
+      Updated: 29 October 2015. Addition of new properties, madsrdf:activityEndDate, madsrdf:activityStartDate, madsrdf:associatedLanguage, madsrdf:associatedLocale, madsrdf:birthDate, madsrdf:birthPlace, madsrdf:deathDate, madsrdf:deathPlace, madsrdf:entityDescriptor, madsrdf:establishDate, madsrdf:fieldOfActivity, madsrdf:gender, madsrdf:hasAffiliation, madsrdf:honoraryTitle, madsrdf:isIdentifiedByAuthority, madsrdf:occupation, madsrdf:prominentFamilyMember, madsrdf:terminateDate, madsrdf:fullerName, madsrdf:creationDateStart, madsrdf:creationDateEnd, madsrdf:workOrigin, madsrdf:hasChararacteristic.  
+      
+      
+      The MADS/RDF to SKOS/RDF mapping was done by Antoine Isaac. The MADS/RDF model and ontology benefited significantly as a result of the fruitful discussions surrounding his effort to map the MADS/RDF ontology to SKOS. """@en ;
+                                  rdfs:label "MADS/RDF (Metadata Authority Description Schema in RDF)" ;
+                                  owl:priorVersion <http://id.loc.gov/ontologies/madsrdf/v1-3-1> ;
+                                  owl:versionInfo "1.4.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.loc.gov/mads/rdf/v1#authoritativeLabel
+:authoritativeLabel rdf:type owl:AnnotationProperty ;
+                    rdfs:comment "A lexical string representing a controlled, curated label for the Authority."@en ;
+                    rdfs:label "Authoritative Label"@en ;
+                    rdfs:subPropertyOf rdfs:label ,
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+                    rdfs:domain :Authority .
+
+
+###  http://www.loc.gov/mads/rdf/v1#changeNote
+:changeNote rdf:type owl:AnnotationProperty ;
+            rdfs:comment "A note detailing a modification to an Authority or Variant."@en ;
+            rdfs:label "Change Note"@en ;
+            rdfs:subPropertyOf :note .
+
+
+###  http://www.loc.gov/mads/rdf/v1#citationNote
+:citationNote rdf:type owl:AnnotationProperty ;
+              rdfs:comment "A note about how the madsrdf:Source relates to the resource about which the madsrdf:Source is the information source."@en ;
+              rdfs:label "Citation Note"@en ;
+              rdfs:domain :Source .
+
+
+###  http://www.loc.gov/mads/rdf/v1#citationSource
+:citationSource rdf:type owl:AnnotationProperty ;
+                rdfs:comment "The cited resource."@en ;
+                rdfs:label "Citation Source"@en ;
+                rdfs:domain :Source .
+
+
+###  http://www.loc.gov/mads/rdf/v1#city
+:city rdf:type owl:AnnotationProperty ;
+      rdfs:comment "The city component of an address."@en ;
+      rdfs:label "City"@en ;
+      rdfs:domain :Address .
+
+
+###  http://www.loc.gov/mads/rdf/v1#classification
+:classification rdf:type owl:AnnotationProperty ;
+                rdfs:comment "The classification code associated with a madsrdf:Authority."@en ;
+                rdfs:label "Classification"@en ;
+                rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#semanticRelation> ;
+                rdfs:domain :Authority .
+
+
+###  http://www.loc.gov/mads/rdf/v1#country
+:country rdf:type owl:AnnotationProperty ;
+         rdfs:comment "Country associated with an address." ;
+         rdfs:label "Country" ;
+         rdfs:domain :Address .
+
+
+###  http://www.loc.gov/mads/rdf/v1#definitionNote
+:definitionNote rdf:type owl:AnnotationProperty ;
+                rdfs:comment "An explanation of the meaning of an Authority, DeprecatedAuthority, or Variant description."@en ;
+                rdfs:label "Definition Note"@en ;
+                rdfs:subPropertyOf :note .
+
+
+###  http://www.loc.gov/mads/rdf/v1#deletionNote
+:deletionNote rdf:type owl:AnnotationProperty ;
+              rdfs:comment "A note pertaining to the deletion of a resource." ;
+              rdfs:label "Deletion Note" ;
+              rdfs:subPropertyOf :changeNote .
+
+
+###  http://www.loc.gov/mads/rdf/v1#deprecatedLabel
+:deprecatedLabel rdf:type owl:AnnotationProperty ;
+                 rdfs:comment "A label once considered authoritative (controlled and curated) but which is no longer." ;
+                 rdfs:label "Deprecated Label" ;
+                 rdfs:subPropertyOf rdfs:label ,
+                                    <http://www.w3.org/2004/02/skos/core#hiddenLabel> ;
+                 rdfs:domain :DeprecatedAuthority .
+
+
+###  http://www.loc.gov/mads/rdf/v1#editorialNote
+:editorialNote rdf:type owl:AnnotationProperty ;
+               rdfs:comment "A note pertaining to the management of the label associated with the resource." ;
+               rdfs:label "Editorial Note" ;
+               rdfs:subPropertyOf :note .
+
+
+###  http://www.loc.gov/mads/rdf/v1#exampleNote
+:exampleNote rdf:type owl:AnnotationProperty ;
+             rdfs:comment "A example of how the resource might be used." ;
+             rdfs:label "Example Note" ;
+             rdfs:subPropertyOf :note .
+
+
+###  http://www.loc.gov/mads/rdf/v1#gender
+:gender rdf:type owl:AnnotationProperty ;
+        rdfs:domain :RWO .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority
+:hasRelatedAuthority rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#semanticRelation> .
+
+
+###  http://www.loc.gov/mads/rdf/v1#historyNote
+:historyNote rdf:type owl:AnnotationProperty ;
+             rdfs:comment "A note pertaining to the history of the resource." ;
+             rdfs:label "History Note" ;
+             rdfs:subPropertyOf :note .
+
+
+###  http://www.loc.gov/mads/rdf/v1#idScheme
+:idScheme rdf:type owl:AnnotationProperty ;
+          rdfs:comment "The scheme associated with the identifier. For example, \"LCCN\" would be used when the Identifier Value (madsrdf:idValue) is a LC Control Number." ;
+          rdfs:label "Identifier Scheme" ;
+          rdfs:domain :Identifier .
+
+
+###  http://www.loc.gov/mads/rdf/v1#natureOfAffiliation
+:natureOfAffiliation rdf:type owl:AnnotationProperty ;
+                     rdfs:comment "Records the individual's role or position in the organization with which the individual is affiliated. A \"job title\" might be appropriate." ;
+                     rdfs:label "Nature of Affiliation" ;
+                     rdfs:domain :Affiliation .
+
+
+###  http://www.loc.gov/mads/rdf/v1#note
+:note rdf:type owl:AnnotationProperty ;
+      rdfs:comment "A note about the resource." ;
+      rdfs:label "Note" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#organization
+:organization rdf:type owl:AnnotationProperty ;
+              rdfs:comment "The group or organization with which an individual is associated." ;
+              rdfs:label "Organization or Group" ;
+              rdfs:domain :Affiliation .
+
+
+###  http://www.loc.gov/mads/rdf/v1#scopeNote
+:scopeNote rdf:type owl:AnnotationProperty ;
+           rdfs:label "Scope Note" ;
+           rdfs:subPropertyOf :note .
+
+
+###  http://www.loc.gov/mads/rdf/v1#see
+:see rdf:type owl:AnnotationProperty ;
+     rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://www.loc.gov/mads/rdf/v1#state
+:state rdf:type owl:AnnotationProperty ;
+       rdfs:comment "The state associated with an address." ;
+       rdfs:label "State" ;
+       rdfs:domain :Address .
+
+
+###  http://www.w3.org/2004/02/skos/core#hiddenLabel
+<http://www.w3.org/2004/02/skos/core#hiddenLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#semanticRelation
+<http://www.w3.org/2004/02/skos/core#semanticRelation> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.loc.gov/mads/rdf/v1#adminMetadata
+:adminMetadata rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( <http://org.semanticweb.owlapi/error#Error17>
+                                           <http://org.semanticweb.owlapi/error#Error18>
+                                           <http://org.semanticweb.owlapi/error#Error19>
+                                         )
+                           ] ;
+               rdfs:comment "This relates an Authority or Variant to its administrative metadata, which is, minimimally, a Class defined outside of the MADS/RDF namespace. The RecordInfo Class from the RecordInfo ontology is recommended."@en ;
+               rdfs:label "Administrative Metadata"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#associatedLanguage
+:associatedLanguage rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :RWO ;
+                    rdfs:range :Language ;
+                    rdfs:comment "Language that a person, organization, or family uses for publication, communication, etc., or in which a work is expressed. " ;
+                    rdfs:label "Associated Language" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#associatedLocale
+:associatedLocale rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :RWO ;
+                  rdfs:range :Geographic ;
+                  rdfs:comment "A town, city, province, state, and/or country associated with persons, corporate bodies, families, works, and expressions." ;
+                  rdfs:label "Associated Locale" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#birthPlace
+:birthPlace rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :RWO ;
+            rdfs:range :Geographic ;
+            rdfs:comment "The town, city, province, state, and/or country in which a person was born." ;
+            rdfs:label "Place of Birth" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#componentList
+:componentList rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :ComplexType ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( <http://org.semanticweb.owlapi/error#Error10>
+                                          <http://org.semanticweb.owlapi/error#Error9>
+                                        )
+                          ] ;
+               rdfs:comment "madsrdf:componentList organizes the madsrdf:SimpleType resources whose labels are represented in the label of the associated madsrdf:ComplexType resource." ;
+               rdfs:label "Component List" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#deathPlace
+:deathPlace rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :RWO ;
+            rdfs:range :Geographic ;
+            rdfs:comment "The town, city, province, state, and/or country in which a person died." ;
+            rdfs:label "Place of Death" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#elementList
+:elementList rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( <http://org.semanticweb.owlapi/error#Error7>
+                                        <http://org.semanticweb.owlapi/error#Error8>
+                                      )
+                        ] ;
+             rdfs:comment "The madsrdf:elementList property is used to organize the various parts of labels."@en ;
+             rdfs:label "Element List" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#extension
+:extension rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:label "Extension" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#fieldOfActivity
+:fieldOfActivity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :RWO ;
+                 rdfs:comment "The field of activity associated with an individual." ;
+                 rdfs:label "Field of Activity" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#fullerName
+:fullerName rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:range :PersonalName ;
+            rdfs:comment "Full form of name needed to distinguish a person from another person with the same preferred name." ;
+            rdfs:label "Fuller Name" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasAbbreviationVariant
+:hasAbbreviationVariant rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasVariant ;
+                        rdf:type owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:label "Has Abbreviation Variant" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasAcronymVariant
+:hasAcronymVariant rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasVariant ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:label "Has Acronym Variant" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasAffiliation
+:hasAffiliation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :RWO ;
+                rdfs:range :Affiliation ;
+                rdfs:comment "Property to associate an individual, such as a foaf:Agent, to a group or organization with which an individual is or has been affiliated." ;
+                rdfs:label "Has Affiliation" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasAffiliationAddress
+:hasAffiliationAddress rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :Affiliation ;
+                       rdfs:range :Address ;
+                       rdfs:comment "The address of the group or organization with which an individual is associated." ;
+                       rdfs:label "Has Affiliation Address" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasBroaderAuthority
+:hasBroaderAuthority rdf:type owl:ObjectProperty ;
+                     owl:equivalentProperty [ owl:inverseOf :hasNarrowerAuthority
+                                            ] ;
+                     rdfs:subPropertyOf :hasRelatedAuthority ,
+                                        <http://www.w3.org/2004/02/skos/core#broader> ,
+                                        [ owl:inverseOf :hasRelatedAuthority
+                                        ] ,
+                                        [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#narrower>
+                                        ] ;
+                     rdfs:label "Has Broader Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasBroaderExternalAuthority
+:hasBroaderExternalAuthority rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :hasBroaderAuthority ,
+                                                <http://www.w3.org/2004/02/skos/core#broadMatch> ,
+                                                [ owl:inverseOf :hasNarrowerAuthority
+                                                ] ;
+                             rdfs:comment "Creates a direct relationship between an Authority and a more broadly defined Authority from a different MADS Scheme." ;
+                             rdfs:label "Has Broader External Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasChararacteristic
+:hasChararacteristic rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:comment "A term that specifies a characteristic that differentiates a work or expression from another one. " ;
+                     rdfs:label "Other characteristic" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasCloseExternalAuthority
+:hasCloseExternalAuthority rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :hasCloseExternalAuthority
+                                                  ] ;
+                           rdfs:subPropertyOf :hasRelatedAuthority ,
+                                              <http://www.w3.org/2004/02/skos/core#closeMatch> ,
+                                              [ owl:inverseOf :hasRelatedAuthority
+                                              ] ,
+                                              [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#closeMatch>
+                                              ] ;
+                           owl:inverseOf :hasCloseExternalAuthority ;
+                           rdf:type owl:SymmetricProperty ;
+                           rdfs:comment "Records a relationship between an Authority and one that is closely related from a different MADS Scheme." ;
+                           rdfs:label "Has Close External Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasCorporateParentAuthority
+:hasCorporateParentAuthority rdf:type owl:ObjectProperty ;
+                             owl:equivalentProperty [ owl:inverseOf :hasCorporateSubsidiaryAuthority
+                                                    ] ;
+                             rdfs:subPropertyOf :hasRelatedAuthority ,
+                                                [ owl:inverseOf :hasRelatedAuthority
+                                                ] ;
+                             rdfs:domain :CorporateName ;
+                             rdfs:range :CorporateName ;
+                             rdfs:comment "Establishes a relationship between a CorporateName Authority and one of the same that is more broadly defined." ;
+                             rdfs:label "Has Parent Organization" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasCorporateSubsidiaryAuthority
+:hasCorporateSubsidiaryAuthority rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf :hasRelatedAuthority ,
+                                                    [ owl:inverseOf :hasRelatedAuthority
+                                                    ] ;
+                                 owl:inverseOf :hasCorporateParentAuthority ;
+                                 rdfs:domain :CorporateName ;
+                                 rdfs:range :CorporateName ;
+                                 rdfs:comment "Establishes a relationship between a CorporateName Authority and one of the same that is more narrowly defined." ;
+                                 rdfs:label "Is Parent Organization Of" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasDemonym
+:hasDemonym rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :isDemonymFor
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:comment "Establishes a relationship between an Authority that represents the demonym - Japanese or Greek, for example - and an Authority that represents the Geographic place - Japan or Greece, respectively - associated with the demonym." ;
+            rdfs:label "Has Demonym" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasEarlierEstablishedForm
+:hasEarlierEstablishedForm rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :hasLaterEstablishedForm
+                                                  ] ;
+                           rdfs:subPropertyOf :see ,
+                                              [ owl:inverseOf :see
+                                              ] ;
+                           owl:inverseOf :hasLaterEstablishedForm ;
+                           rdfs:comment "Used to reference a resource that was an earlier form. This is Related type='earlier' in MADS XML."@en ;
+                           rdfs:label "Has Earlier Established Form" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasExactExternalAuthority
+:hasExactExternalAuthority rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :hasExactExternalAuthority
+                                                  ] ;
+                           rdfs:subPropertyOf :hasCloseExternalAuthority ,
+                                              <http://www.w3.org/2004/02/skos/core#exactMatch> ,
+                                              [ owl:inverseOf :hasCloseExternalAuthority
+                                              ] ,
+                                              [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#exactMatch>
+                                              ] ;
+                           owl:inverseOf :hasExactExternalAuthority ;
+                           rdf:type owl:SymmetricProperty ,
+                                    owl:TransitiveProperty ;
+                           rdfs:comment "Records a relationship between an Authority and one to which it matches exactly but from a different MADS Scheme." ;
+                           rdfs:label "Has Exact External Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasExpansionVariant
+:hasExpansionVariant rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasVariant ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:label "Has Expansion Variant" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasHiddenVariant
+:hasHiddenVariant rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/2008/05/skos-xl#hiddenLabel> ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Authority ;
+                  rdfs:range :Variant ;
+                  rdfs:comment "Use for variants that are searchable, but not necessarily for display."@en ;
+                  rdfs:label "Has Hidden Variant"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:range :Identifier ;
+               rdfs:comment "Associates a resource with a madsrdf:Identifier." ;
+               rdfs:label "Has Identifier" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasLaterEstablishedForm
+:hasLaterEstablishedForm rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :see ,
+                                            [ owl:inverseOf :see
+                                            ] ;
+                         rdfs:comment "Use to reference the later form of a resource. This is Related type='later' in MADS XML."@en ;
+                         rdfs:label "Has Later Established Form" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasMADSCollectionMember
+:hasMADSCollectionMember rdf:type owl:ObjectProperty ;
+                         owl:equivalentProperty [ owl:inverseOf :isMemberOfMADSCollection
+                                                ] ;
+                         rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#member> ;
+                         owl:inverseOf :isMemberOfMADSCollection ;
+                         rdfs:domain :MADSCollection ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( <http://org.semanticweb.owlapi/error#Error5>
+                                                    <http://org.semanticweb.owlapi/error#Error6>
+                                                  )
+                                    ] ;
+                         rdfs:comment "Associates an Authority or other Collection with a madsrdf:MADSCollection."@en ;
+                         rdfs:label "Has MADSCollection Member"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasMADSSchemeMember
+:hasMADSSchemeMember rdf:type owl:ObjectProperty ;
+                     owl:equivalentProperty [ owl:inverseOf :isMemberOfMADSScheme
+                                            ] ;
+                     rdfs:subPropertyOf [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#inScheme>
+                                        ] ;
+                     rdfs:domain :MADSScheme ;
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( <http://org.semanticweb.owlapi/error#Error3>
+                                                <http://org.semanticweb.owlapi/error#Error4>
+                                              )
+                                ] ;
+                     rdfs:comment "Associates an Authority or Collection with a madsrdf:MADSScheme."@en ;
+                     rdfs:label "Has MADS Scheme Member" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasNarrowerAuthority
+:hasNarrowerAuthority rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasRelatedAuthority ,
+                                         <http://www.w3.org/2004/02/skos/core#narrower> ,
+                                         [ owl:inverseOf :hasRelatedAuthority
+                                         ] ,
+                                         [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#broader>
+                                         ] ;
+                      owl:inverseOf :hasBroaderAuthority ;
+                      rdfs:comment "Creates a direct relationship between an Authority and one that is more narrowly defined." ;
+                      rdfs:label "Has Narrower Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasNarrowerExternalAuthority
+:hasNarrowerExternalAuthority rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :hasNarrowerAuthority ,
+                                                 <http://www.w3.org/2004/02/skos/core#narrowMatch> ,
+                                                 [ owl:inverseOf :hasBroaderAuthority
+                                                 ] ;
+                              rdfs:comment "Creates a direct relationship between an Authority and a more narrowly defined Authority from a different MADS Scheme." ;
+                              rdfs:label "Has Narrower External Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasReciprocalAuthority
+:hasReciprocalAuthority rdf:type owl:ObjectProperty ;
+                        owl:equivalentProperty [ owl:inverseOf :hasReciprocalAuthority
+                                               ] ;
+                        rdfs:subPropertyOf :hasRelatedAuthority ,
+                                           <http://www.w3.org/2004/02/skos/core#related> ,
+                                           [ owl:inverseOf :hasRelatedAuthority
+                                           ] ,
+                                           [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#related>
+                                           ] ;
+                        owl:inverseOf :hasReciprocalAuthority ;
+                        rdf:type owl:SymmetricProperty ;
+                        rdfs:comment "Establishes a relationship between two Authority resources. It is reciprocal, so the relationship must be shared. This is Related type='equivalent' in MADS XML."@en ;
+                        rdfs:label "Has Reciprocal Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasReciprocalExternalAuthority
+:hasReciprocalExternalAuthority rdf:type owl:ObjectProperty ;
+                                owl:equivalentProperty [ owl:inverseOf :hasReciprocalExternalAuthority
+                                                       ] ;
+                                rdfs:subPropertyOf :hasReciprocalAuthority ,
+                                                   <http://www.w3.org/2004/02/skos/core#relatedMatch> ,
+                                                   [ owl:inverseOf :hasReciprocalAuthority
+                                                   ] ,
+                                                   [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#relatedMatch>
+                                                   ] ;
+                                owl:inverseOf :hasReciprocalExternalAuthority ;
+                                rdf:type owl:SymmetricProperty ;
+                                rdfs:comment "Establishes a relationship between an Authority and one from a different MADS Scheme. It is reciprocal, so the relationship must be shared." ;
+                                rdfs:label "Has Reciprocal External Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority
+:hasRelatedAuthority rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Authority ;
+                     rdfs:range :Authority .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:range :Source ;
+           rdfs:comment "Associates a resource description with its Source."@en ;
+           rdfs:label "Has Source" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasTopMemberOfMADSScheme
+:hasTopMemberOfMADSScheme rdf:type owl:ObjectProperty ;
+                          owl:equivalentProperty [ owl:inverseOf :isTopMemberOfMADSScheme
+                                                 ] ;
+                          rdfs:subPropertyOf :hasMADSSchemeMember ,
+                                             <http://www.w3.org/2004/02/skos/core#hasTopConcept> ,
+                                             [ owl:inverseOf :isMemberOfMADSScheme
+                                             ] ,
+                                             [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#topConceptOf>
+                                             ] ;
+                          rdf:type owl:AsymmetricProperty ,
+                                   owl:IrreflexiveProperty ;
+                          rdfs:domain :MADSScheme ;
+                          rdfs:range :Authority ;
+                          rdfs:comment "Identifies an Authority that is at the top of the hierarchy of authorities within the MADS Scheme." ;
+                          rdfs:label "Has Top Member of MADS Scheme" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasTranslationVariant
+:hasTranslationVariant rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasVariant ;
+                       rdf:type owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:comment "A Variant whose label represents a translation of that of the authoritative label." ;
+                       rdfs:label "Has Translation Variant" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hasVariant
+:hasVariant rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://www.w3.org/2008/05/skos-xl#altLabel> ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Authority ;
+            rdfs:range :Variant ;
+            rdfs:comment "Associates a Variant with an Authority or Deprecrated Authority. Unless the variant type can be more specifically identified, use 'hasVariant.'"@en ;
+            rdfs:label "Has Variant" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#identifiesRWO
+:identifiesRWO rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :isIdentifiedByAuthority
+                                      ] ;
+               rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/focus> ;
+               rdfs:domain :Authority ;
+               rdfs:range :RWO ;
+               rdfs:comment "Associates a madsrdf:Authority with the Real World Object that is the subject of the authority's label." ;
+               rdfs:label "Identifies RWO" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#isDemonymFor
+:isDemonymFor rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :hasDemonym ;
+              rdfs:comment "Establishes a relationship between an Authority that represents a Geographic place - Japan or Greece, for example - and an Authority that represents the demonym - Japanese or Greek, respectively - associated with the place." ;
+              rdfs:label "Is Demonym For" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority
+:isIdentifiedByAuthority rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf [ owl:inverseOf <http://xmlns.com/foaf/0.1/focus>
+                                            ] ;
+                         owl:inverseOf :identifiesRWO ;
+                         rdfs:domain :RWO ;
+                         rdfs:range :Authority ;
+                         rdfs:comment "Associates a Real World Object with its Authority description." ;
+                         rdfs:label "Is Identified By Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#isMemberOfMADSCollection
+:isMemberOfMADSCollection rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#member>
+                                             ] ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( <http://org.semanticweb.owlapi/error#Error22>
+                                                      <http://org.semanticweb.owlapi/error#Error23>
+                                                    )
+                                      ] ;
+                          rdfs:range :MADSCollection ;
+                          rdfs:comment "Associates a Collection with a madsrdf:Authority or another madsrdf:MADSCollection."@en ;
+                          rdfs:label "Is Member Of MADSCollection"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme
+:isMemberOfMADSScheme rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                      owl:inverseOf :hasMADSSchemeMember ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( <http://org.semanticweb.owlapi/error#Error15>
+                                                  <http://org.semanticweb.owlapi/error#Error16>
+                                                )
+                                  ] ;
+                      rdfs:range :MADSScheme ;
+                      rdfs:label "Is Member of MADS Scheme" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#isTopMemberOfMADSScheme
+:isTopMemberOfMADSScheme rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isMemberOfMADSScheme ,
+                                            <http://www.w3.org/2004/02/skos/core#topConceptOf> ,
+                                            [ owl:inverseOf :hasMADSSchemeMember
+                                            ] ,
+                                            [ owl:inverseOf <http://www.w3.org/2004/02/skos/core#hasTopConcept>
+                                            ] ;
+                         owl:inverseOf :hasTopMemberOfMADSScheme ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( <http://org.semanticweb.owlapi/error#Error11>
+                                                     <http://org.semanticweb.owlapi/error#Error12>
+                                                   )
+                                     ] ;
+                         rdfs:range :MADSScheme ;
+                         rdfs:comment "Identifies a MADS Scheme in which the Authority is at the top of the hierarchy." ;
+                         rdfs:label "Is Top Member of MADS Scheme" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#occupation
+:occupation rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :RWO ;
+            rdfs:range :Occupation ;
+            rdfs:comment "A profession or occupation in which the person works or has worked." ;
+            rdfs:label "Occupation" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#see
+:see rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdfs:domain [ rdf:type owl:Class ;
+                   owl:unionOf ( <http://org.semanticweb.owlapi/error#Error13>
+                                 <http://org.semanticweb.owlapi/error#Error14>
+                               )
+                 ] ;
+     rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( <http://org.semanticweb.owlapi/error#Error1>
+                                <http://org.semanticweb.owlapi/error#Error2>
+                              )
+                ] .
+
+
+###  http://www.loc.gov/mads/rdf/v1#useFor
+:useFor rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :useInstead
+                               ] ;
+        rdfs:subPropertyOf :see ,
+                           [ owl:inverseOf :see
+                           ] ;
+        owl:inverseOf :useInstead ;
+        rdfs:comment "\"Use [This Resource] For.\" Traditional \"USE FOR\" reference." ;
+        rdfs:label "Use For" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#useInstead
+:useInstead rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :see ,
+                               [ owl:inverseOf :see
+                               ] ;
+            rdfs:comment "\"Use [This Other Resource] Instead.\" Traditional \"USE\" reference." ;
+            rdfs:label "Use Instead" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#workOrigin
+:workOrigin rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:range :Geographic ;
+            rdfs:comment "The country or other territorial jurisdiction from which a work originated." ;
+            rdfs:label "Work locale" .
+
+
+###  http://www.w3.org/2004/02/skos/core#broadMatch
+<http://www.w3.org/2004/02/skos/core#broadMatch> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+<http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#hasTopConcept
+<http://www.w3.org/2004/02/skos/core#hasTopConcept> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#member
+<http://www.w3.org/2004/02/skos/core#member> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowMatch
+<http://www.w3.org/2004/02/skos/core#narrowMatch> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+<http://www.w3.org/2004/02/skos/core#narrower> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+<http://www.w3.org/2004/02/skos/core#related> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+<http://www.w3.org/2004/02/skos/core#relatedMatch> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+<http://www.w3.org/2004/02/skos/core#topConceptOf> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2008/05/skos-xl#altLabel
+<http://www.w3.org/2008/05/skos-xl#altLabel> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2008/05/skos-xl#hiddenLabel
+<http://www.w3.org/2008/05/skos-xl#hiddenLabel> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/focus
+<http://xmlns.com/foaf/0.1/focus> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.loc.gov/mads/rdf/v1#activityEndDate
+:activityEndDate rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :RWO ;
+                 rdfs:comment "Latest date in a period of activity. " ;
+                 rdfs:label "Activity End" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#activityStartDate
+:activityStartDate rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :RWO ;
+                   rdfs:comment "Earliest date in a period of activity. " ;
+                   rdfs:label "Activity Start" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#affiliationEnd
+:affiliationEnd rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Affiliation ;
+                rdfs:range xsd:date ;
+                rdfs:comment "The date an individual ceased to be affiliated with an organization." ;
+                rdfs:label "Affiliation Ended" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#affiliationStart
+:affiliationStart rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Affiliation ;
+                  rdfs:range xsd:date ;
+                  rdfs:comment "The date an individual established an affiliation with an organization." ;
+                  rdfs:label "Affiliation Started" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#birthDate
+:birthDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :RWO ;
+           rdfs:comment "The year a person was born. Date of birth may also include the month and day of the person’s birth. (RDA 9.3.2.1)" ;
+           rdfs:label "Birth Date" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#citationStatus
+:citationStatus rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Source ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Should use a standard term - such as 'found' or 'not found' - to indicate whether the cited resource yielded information about the resource related to the madsrdf:Source."@en ;
+                rdfs:label "Citation Status"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#code
+:code rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#notation> ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( <http://org.semanticweb.owlapi/error#Error20>
+                                  <http://org.semanticweb.owlapi/error#Error21>
+                                )
+                  ] ;
+      rdfs:comment "A code is a string of characters associated with a the authoritative or deprecated label. It may record an historical notation once used to uniquely identify a concept." ;
+      rdfs:label "Code" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#creationDateEnd
+:creationDateEnd rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:comment "Ending date of the date range for which the beginning date is recorded in madsrdf:creationDateStart." ;
+                 rdfs:label "Work end" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#creationDateStart
+:creationDateStart rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:comment "For a work, earliest date (normally the year) associated with a work; that date may be the date the work was created or first published or released. For an expression, the earliest date (normally the year) associated with an expression; that date may be the date of the earliest known manifestation of that expression. In both cases the date may be the starting date of a range or a single date." ;
+                   rdfs:label "Work begun" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#deathDate
+:deathDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :RWO ;
+           rdfs:comment "The year a person died. Date of death may also include the month and day of the person’s death. (RDA 9.3.3.1)" ;
+           rdfs:label "Death Date" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#elementValue
+:elementValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Element ;
+              rdfs:range xsd:string ;
+              rdfs:label "Element Value" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Affiliation ;
+       rdfs:label "Email" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#entityDescriptor
+:entityDescriptor rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :RWO ;
+                  rdfs:comment "Any attribute that serves to characterize a person, family or corporate body or that may be needed for differentiation from other persons. families or corporate bodies and for which separate content designation is not already defined.Or " ;
+                  rdfs:label "Entity Descriptor" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#establishDate
+:establishDate rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :RWO ;
+               rdfs:comment "The year a corporate body was established. Date of establishment may also include the month and day of the corporate body’s establishment. " ;
+               rdfs:label "Established" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#extendedAddress
+:extendedAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Address ;
+                 rdfs:comment "The second address line, if needed." ;
+                 rdfs:label "Extended Address" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#fax
+:fax rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Affiliation ;
+     rdfs:comment "Fax number" ;
+     rdfs:label "Fax" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hiddenLabel
+:hiddenLabel rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf <http://www.w3.org/2008/05/skos-xl#literalForm> ;
+             rdfs:domain :Variant ;
+             rdfs:comment "A label entered for discovery purposes but not shown." ;
+             rdfs:label "Hidden Label" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#honoraryTitle
+:honoraryTitle rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :RWO ;
+               rdfs:comment "Designation indicative of royalty, nobility, or ecclesiastical rank or office, or a term of address for a person of religious vocation." ;
+               rdfs:label "Honorary Title" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#hours
+:hours rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Affiliation ;
+       rdfs:label "Hours" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#idValue
+:idValue rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Identifier ;
+         rdfs:range xsd:string ;
+         rdfs:comment "The value of the identifier conforming to the Identifier Scheme syntax." ;
+         rdfs:label "Identifier Value" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#phone
+:phone rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Affiliation ;
+       rdfs:label "Phone" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#postcode
+:postcode rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Address ;
+          rdfs:label "Post Code / Zip Code" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#prominentFamilyMember
+:prominentFamilyMember rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :RWO ;
+                       rdfs:comment "A well-known individual who is a member of the family." ;
+                       rdfs:label "Prominent Family Member" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#streetAddress
+:streetAddress rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Address ;
+               rdfs:comment "First line of address. For second line, use madsrdf:extendedAddress." ;
+               rdfs:label "Street Address" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#terminateDate
+:terminateDate rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :RWO ;
+               rdfs:comment "The year a corporate body was terminated. Date of termination may also include the month and day of the corporate body’s termination. " ;
+               rdfs:label "Terminated" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#variantLabel
+:variantLabel rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/2008/05/skos-xl#literalForm> ;
+              rdfs:domain :Variant ;
+              rdfs:comment "The lexical, variant form of an authoritative label." ;
+              rdfs:label "Variant Label" .
+
+
+###  http://www.w3.org/2004/02/skos/core#notation
+<http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.w3.org/2008/05/skos-xl#literalForm
+<http://www.w3.org/2008/05/skos-xl#literalForm> rdf:type owl:DatatypeProperty ;
+                                                rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error10
+<http://org.semanticweb.owlapi/error#Error10> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error11
+<http://org.semanticweb.owlapi/error#Error11> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error12
+<http://org.semanticweb.owlapi/error#Error12> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error13
+<http://org.semanticweb.owlapi/error#Error13> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error14
+<http://org.semanticweb.owlapi/error#Error14> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error15
+<http://org.semanticweb.owlapi/error#Error15> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error16
+<http://org.semanticweb.owlapi/error#Error16> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error17
+<http://org.semanticweb.owlapi/error#Error17> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error18
+<http://org.semanticweb.owlapi/error#Error18> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error19
+<http://org.semanticweb.owlapi/error#Error19> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error2
+<http://org.semanticweb.owlapi/error#Error2> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error20
+<http://org.semanticweb.owlapi/error#Error20> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error21
+<http://org.semanticweb.owlapi/error#Error21> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error22
+<http://org.semanticweb.owlapi/error#Error22> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error23
+<http://org.semanticweb.owlapi/error#Error23> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error3
+<http://org.semanticweb.owlapi/error#Error3> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error4
+<http://org.semanticweb.owlapi/error#Error4> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error5
+<http://org.semanticweb.owlapi/error#Error5> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error6
+<http://org.semanticweb.owlapi/error#Error6> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error7
+<http://org.semanticweb.owlapi/error#Error7> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error8
+<http://org.semanticweb.owlapi/error#Error8> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error9
+<http://org.semanticweb.owlapi/error#Error9> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/dc/terms/LinguisticSystem
+<http://purl.org/dc/terms/LinguisticSystem> rdf:type owl:Class ;
+                                            owl:equivalentClass :Language ;
+                                            rdfs:subClassOf :SimpleType .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Address
+:Address rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:label "Address"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Affiliation
+:Affiliation rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:comment "A resource that describes an individual's affiliation with an organization or group, such as the nature of the affiliation and the active dates."@en ;
+             rdfs:label "Affiliation"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Area
+:Area rdf:type owl:Class ;
+      rdfs:subClassOf :Geographic ;
+      rdfs:comment "Describes a resource whose label is a non-jurisdictional geographic entity." ;
+      rdfs:label "Area Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Authority
+:Authority rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ,
+                           <http://www.w3.org/2004/02/skos/core#Concept> ;
+           owl:disjointWith :DeprecatedAuthority ,
+                            :MADSCollection ,
+                            :MADSScheme ,
+                            :Variant ;
+           rdfs:comment "A concept with a controlled label." ;
+           rdfs:label "Authority"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :Geographic ;
+      rdfs:comment "Describes a resource whose label is an inhabited place incorporated as a city, town, etc." ;
+      rdfs:label "City Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#CitySection
+:CitySection rdf:type owl:Class ;
+             rdfs:subClassOf :Geographic ;
+             rdfs:comment "Describes a resource whose label is a smaller unit within a populated place, e.g., a neighborhood, park, or street." ;
+             rdfs:label "City Section Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#ComplexSubject
+:ComplexSubject rdf:type owl:Class ;
+                rdfs:subClassOf :ComplexType ;
+                rdfs:comment "The label of a madsrdf:ComplexSubject is the concatenation of labels from two or more madsrdf:SimpleType descriptions, except that the combination of madsrdf:SimpleType labels for the madsrdf:ComplexSubject does not meet the conditions to be the label of a madsrdf:NameTitle resource or madsrdf:HierarchicalGeographic resource."@en ;
+                rdfs:label "Complex Subject Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#ComplexType
+:ComplexType rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :componentList ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+             rdfs:subClassOf :MADSType ;
+             owl:disjointWith :SimpleType ;
+             owl:disjointUnionOf ( :ComplexSubject
+                                   :HierarchicalGeographic
+                                   :NameTitle
+                                 ) ;
+             rdfs:comment "madsrdf:ComplexType is a resource whose label is the concatenation of labels from two or more Authority descriptions or two or more Variant descriptions or some combination of Authority and Variant descriptions, each of a madsrdf:SimpleType."@en ;
+             rdfs:label "Complex Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#ConferenceName
+:ConferenceName rdf:type owl:Class ;
+                rdfs:subClassOf :Name ;
+                rdfs:comment "Describes a resource whose label represents a conference name." ;
+                rdfs:label "Conference Name Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Continent
+:Continent rdf:type owl:Class ;
+           rdfs:subClassOf :Geographic ;
+           rdfs:comment "Describes a resource whose label is one of seven large landmasses on Earth. These are: Asia, Africa, Europe, North America, South America, Australia, and Antarctica." ;
+           rdfs:label "Continent Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#CorporateName
+:CorporateName rdf:type owl:Class ;
+               rdfs:subClassOf :Name ;
+               rdfs:comment "Describes a resource whose label is the name of a corporate entity, which may include political or ecclesiastical entities." ;
+               rdfs:label "Corporate Name Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :Geographic ;
+         rdfs:comment "Describes a resource whose label is a country, i.e. a political entity considered a country. " ;
+         rdfs:label "Country Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#County
+:County rdf:type owl:Class ;
+        rdfs:subClassOf :Geographic ;
+        rdfs:comment "Describes a resource whose label is the largest local administrative unit, e.g. Warwickshire, in a country, e.g. England." ;
+        rdfs:label "County Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#DateNameElement
+:DateNameElement rdf:type owl:Class ;
+                 rdfs:subClassOf :NameElement ;
+                 rdfs:label "Date Name Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority
+:DeprecatedAuthority rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing ;
+                     owl:disjointWith :MADSCollection ,
+                                      :MADSScheme ;
+                     rdfs:comment "A former Authority." ;
+                     rdfs:label "Deprecated Authority" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Element
+:Element rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :elementValue ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:comment "madsrdf:Element types describe the various parts of labels." ;
+         rdfs:label "Element"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#ExtraterrestrialArea
+:ExtraterrestrialArea rdf:type owl:Class ;
+                      rdfs:subClassOf :Geographic ;
+                      rdfs:comment "Describes a resource whose label is any extraterrestrial entity or space, including a solar system, a galaxy, a star system, and a planet, including a geographic feature of an individual planet." ;
+                      rdfs:label "Extraterrestrial Area Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#FamilyName
+:FamilyName rdf:type owl:Class ;
+            rdfs:subClassOf :Name ;
+            rdfs:comment "Describes a resource whose label represents a family name." ;
+            rdfs:label "Family Name Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#FamilyNameElement
+:FamilyNameElement rdf:type owl:Class ;
+                   rdfs:subClassOf :NameElement ;
+                   rdfs:label "Family Name Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#FullNameElement
+:FullNameElement rdf:type owl:Class ;
+                 rdfs:subClassOf :NameElement ;
+                 rdfs:label "Fullname Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#GenreForm
+:GenreForm rdf:type owl:Class ;
+           rdfs:subClassOf :SimpleType ;
+           rdfs:comment "Describes a resource whose label is a genre or form term. Genre terms for textual materials designate specific kinds of materials distinguished by the style or technique of their intellectual contents; for example, biographies, catechisms, essays, hymns, or reviews. Form terms designate historically and functionally specific kinds of materials as distinguished by an examination of their physical character, characteristics of their intellectual content, or the order of information within them; for example, daybooks, diaries, directories, journals, memoranda, questionnaires, syllabi, or time sheets. In the context of graphic materials, genre headings denote categories of material distinguished by vantage point, intended purpose, characteristics of the creator, publication status, or method of representation."@en ;
+           rdfs:label "Genre/Form Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#GenreFormElement
+:GenreFormElement rdf:type owl:Class ;
+                  rdfs:subClassOf :Element ;
+                  rdfs:label "Genre/Form Element"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Geographic
+:Geographic rdf:type owl:Class ;
+            rdfs:subClassOf :SimpleType ;
+            rdfs:comment "Describes a resource whose label represents a geographic place or feature, especially when a more precise geographic determination (City, Country, Region, etc.) cannot be made."@en ;
+            rdfs:label "Geographic Authority"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#GeographicElement
+:GeographicElement rdf:type owl:Class ;
+                   rdfs:subClassOf :Element ;
+                   rdfs:label "Geographic Element"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#GivenNameElement
+:GivenNameElement rdf:type owl:Class ;
+                  rdfs:subClassOf :NameElement ;
+                  rdfs:label "Given Name Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#HierarchicalGeographic
+:HierarchicalGeographic rdf:type owl:Class ;
+                        rdfs:subClassOf :ComplexType ;
+                        rdfs:comment "A madsrdf:HierarchicalGeographic indicates that its label is the concatenation of labels from a sequence of madsrdf:Geographic types taken from one of the madsrdf:Geographic sub-classes such as madsrdf:City, madsrdf:Country, madsrdf:State, madsrdf:Region, madsrdf:Area, etc. The madsrdf:Geographic resources that constitute the madsrdf:HierarchicalGeographic should have a broader to narrower hierarchical relationship between them."@en ;
+                        rdfs:label "Hierarchical Geographic Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            rdfs:comment "A madsrdf:Identifier resource describes an identifier by associating the identifier value with its type. To be used to record identifiers for a resource in the absence of URIs." ;
+            rdfs:label "Other Identifier" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Island
+:Island rdf:type owl:Class ;
+        rdfs:subClassOf :Geographic ;
+        rdfs:comment "Describes a resource whose label is a tract of land surrounded by water and smaller than a continent but is not itself a separate country. " ;
+        rdfs:label "Island Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Language
+:Language rdf:type owl:Class ;
+          rdfs:subClassOf :SimpleType ;
+          rdfs:comment "Describes a resource whose label represents a language."@en ;
+          rdfs:label "Language Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#LanguageElement
+:LanguageElement rdf:type owl:Class ;
+                 rdfs:subClassOf :Element ;
+                 rdfs:label "Language Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#MADSCollection
+:MADSCollection rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Collection> ;
+                owl:disjointWith :MADSScheme ,
+                                 :MADSType ,
+                                 :Variant ;
+                rdfs:comment "A madsrdf:Collection is an organizational unit, members of which will have some form of intellectually unifying theme but not to the extent that it defines an independent knowledge organization system. It aggregates madsrdf:Authority descriptions or other madsrdf:MADSCollection resources." ;
+                rdfs:label "MADS Collection" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#MADSScheme
+:MADSScheme rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+            owl:disjointWith :MADSType ,
+                             :Variant ;
+            rdfs:comment "MADS Scheme is an organizational unit that describes a knowledge organization system. It aggregates madsrdf:Authority descriptions and/or madsrdf:MADSCollection resources included in the knowledge organization system. Including a madsrdf:MADSCollection within a madsrdf:MADSScheme should be done with care; when a madsrdf:MADSCollection is part of a madsrdf:MADSScheme, then any madsrdf:Authority within that madsrdf:MADSCollection is effectively also in the madsrdf:MADSScheme."@en ;
+            rdfs:label "MADS Scheme"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#MADSType
+:MADSType rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:label "MADS Type" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#MainTitleElement
+:MainTitleElement rdf:type owl:Class ;
+                  rdfs:subClassOf :TitleElement ;
+                  rdfs:label "Main Title Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :SimpleType ;
+      rdfs:comment "Describes a resource whose label represents a name, especially when a more precise Name type (madsrdf:ConferenceName, masdrdf:FamilyName, etc.) cannot be identified."@en ;
+      rdfs:label "Name Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#NameElement
+:NameElement rdf:type owl:Class ;
+             rdfs:subClassOf :Element ;
+             rdfs:label "Name Element"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#NameTitle
+:NameTitle rdf:type owl:Class ;
+           rdfs:subClassOf :ComplexType ;
+           rdfs:comment "The label of a madsrdf:NameTitle resource is the concatenation of a label of a madsrdf:Name description and the label of a madsrdf:Title description. Both description types (madsrdf:Name and madsrdf:Title) are of madsrdf:SimpleType types."@en ;
+           rdfs:label "Name/Title Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#NonSortElement
+:NonSortElement rdf:type owl:Class ;
+                rdfs:subClassOf :TitleElement ;
+                rdfs:label "Non-sort Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Occupation
+:Occupation rdf:type owl:Class ;
+            rdfs:subClassOf :SimpleType ;
+            rdfs:comment "Describes a resource whose label represents an occcupation." ;
+            rdfs:label "Occupation Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#PartNameElement
+:PartNameElement rdf:type owl:Class ;
+                 rdfs:subClassOf :TitleElement ;
+                 rdfs:label "Part Name Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#PartNumberElement
+:PartNumberElement rdf:type owl:Class ;
+                   rdfs:subClassOf :TitleElement ;
+                   rdfs:label "Part Number Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#PersonalName
+:PersonalName rdf:type owl:Class ;
+              rdfs:subClassOf :Name ;
+              rdfs:comment "Describes a resource whose label represents a personal name." ;
+              rdfs:label "Personal Name Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Province
+:Province rdf:type owl:Class ;
+          rdfs:subClassOf :Geographic ;
+          rdfs:comment "Describes a resource whose label is a first order political division, e.g. Ontario, within a country, e.g. Canada. " ;
+          rdfs:label "Province Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#RWO
+:RWO rdf:type owl:Class ;
+     rdfs:subClassOf owl:Thing ;
+     rdfs:comment "A madsrdf:RWO is an abstract entity and identifies a Real World Object (RWO) identified by the label of a madsrdf:Authority or madsrdf:DeprecatedAuthority." ;
+     rdfs:label "Real World Object" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :Geographic ;
+        rdfs:comment "Describes a resource whose label is an area that has the status of a jurisdiction, usually incorporating more than one first level jurisdiction. " ;
+        rdfs:label "Region Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#SimpleType
+:SimpleType rdf:type owl:Class ;
+            rdfs:subClassOf :MADSType ;
+            rdfs:comment "madsrdf:SimpleType is a resource with a label constituting a single word or phrase."@en ;
+            rdfs:label "Simple Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        rdfs:comment "A resource that represents the source of information about another resource. madsrdf:Source is a type of citation." ;
+        rdfs:label "Source" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :Geographic ;
+       rdfs:comment "Describes a resource whose label is a first order political division, e.g. Montana, within a country, e.g. U.S." ;
+       rdfs:label "State Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#SubTitleElement
+:SubTitleElement rdf:type owl:Class ;
+                 rdfs:subClassOf :TitleElement ;
+                 rdfs:label "Subtitle Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Temporal
+:Temporal rdf:type owl:Class ;
+          rdfs:subClassOf :SimpleType ;
+          rdfs:comment "Describes a resource whose label represents a time-based notion." ;
+          rdfs:label "Temporal Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#TemporalElement
+:TemporalElement rdf:type owl:Class ;
+                 rdfs:subClassOf :Element ;
+                 rdfs:label "Temporal Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#TermsOfAddressNameElement
+:TermsOfAddressNameElement rdf:type owl:Class ;
+                           rdfs:subClassOf :NameElement ;
+                           rdfs:label "Terms of Address Element" .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Territory
+:Territory rdf:type owl:Class ;
+           rdfs:subClassOf :Geographic ;
+           rdfs:comment "Describes a resource whose label is a geographical area belonging to or under the jurisdiction of a governmental authority. " ;
+           rdfs:label "Territory Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Title
+:Title rdf:type owl:Class ;
+       rdfs:subClassOf :SimpleType ;
+       rdfs:comment "Describes a resource whose label represents a title." ;
+       rdfs:label "Title Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#TitleElement
+:TitleElement rdf:type owl:Class ;
+              rdfs:subClassOf :Element ;
+              rdfs:label "Title Element"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:subClassOf :SimpleType ;
+       rdfs:comment "Describes a resource whose label represents a topic." ;
+       rdfs:label "Topic Type"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#TopicElement
+:TopicElement rdf:type owl:Class ;
+              rdfs:subClassOf :Element ;
+              rdfs:label "Topic Element"@en .
+
+
+###  http://www.loc.gov/mads/rdf/v1#Variant
+:Variant rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ,
+                         <http://www.w3.org/2008/05/skos-xl#Label> ;
+         rdfs:comment "A resource whose label is the alternate form of an Authority or Deprecated Authority."@en ;
+         rdfs:label "Variant"@en .
+
+
+###  http://www.w3.org/2002/07/owl#DataTypeProperty
+owl:DataTypeProperty rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+<http://www.w3.org/2004/02/skos/core#Collection> rdf:type owl:Class ;
+                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class ;
+                                                    rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2008/05/skos-xl#Label
+<http://www.w3.org/2008/05/skos-xl#Label> rdf:type owl:Class ;
+                                          rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.loc.gov/mads/rdf/v1#gender
+:gender rdf:type owl:NamedIndividual ,
+                 owl:DataTypeProperty ,
+                 owl:Thing .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:gender rdfs:comment "The gender with which a person identifies. " ;
+        rdfs:label "Gender" .
+
+
+:hasRelatedAuthority rdfs:comment "Unless the relationship can be more specifically identified, use 'hasRelatedAuthority.'"@en ;
+                     rdfs:label "Has Related Authority"@en .
+
+
+:see rdfs:comment "Denotes a relationship between an Authority and/or DeprecatedAuthority. The relationship may or may or may not be reciprocated and there is no certainty that the related resource will further illuminate the original resource." ;
+     rdfs:label "See Also" .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

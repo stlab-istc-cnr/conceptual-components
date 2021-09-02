@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#occupation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.snapdrgn.net/ontology/snap#disambiguatingFeature"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#BrotherOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#SiblingOf"/>
+    <owl:disjointWith rdf:resource="http://data.snapdrgn.net/ontology/snap#SisterOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#has-bond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+    <rdfs:range rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.snapdrgn.net/ontology/snap#has-link"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#DaughterOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ChildOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://data.snapdrgn.net/ontology/snap#SonOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#NieceOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ChildOfSiblingOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FreedSlaveOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedHouseholdOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GrandmotherOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#GrandparentOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ExtendedFamilyOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#FamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GrandfatherOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://data.snapdrgn.net/ontology/snap#GrandmotherOf"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#GrandparentOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#HereditaryFamilyOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#FamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#QuAC">
+    <owl:equivalentClass rdf:resource="http://lawd.info/ontology/Agent"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#AcknowledgedFamilyRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#EmnityFor">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ClaimedFamilyRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#PaternalFamilyRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#SeriousIntimateRelationshipWith">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#FamilyOf"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#IntimateRelationshipWith"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#associatedPlace">
+    <rdfs:subPropertyOf rdf:resource="http://data.snapdrgn.net/ontology/snap#disambiguatingFeature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FatherOf">
+    <owl:disjointWith rdf:resource="http://data.snapdrgn.net/ontology/snap#MotherOf"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ParentOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap">
+    <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
+    <owl:imports rdf:resource="http://lawd.info/ontology/"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
+    <owl:imports rdf:resource="http://purl.org/saws/ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#DescendentOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedFamilyOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#HalfFamilyRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#CasualIntimateRelationshipWith">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#IntimateRelationshipWith"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#InLawFamilyRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#SisterOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#SiblingOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#Bond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Link"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#link-with">
+    <rdfs:range rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#Link"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#KinOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#certainty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#NephewOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ChildOfSiblingOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#has-link">
+    <rdfs:range rdf:resource="http://data.snapdrgn.net/ontology/snap#Link"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#StepFamilyRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#associatedDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.snapdrgn.net/ontology/snap#disambiguatingFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#AuntOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#SiblingOfParentOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#SiblingOfParentOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedFamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ChildOf">
+    <owl:disjointWith rdf:resource="http://data.snapdrgn.net/ontology/snap#ParentOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#HereditaryFamilyOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FreedwomanOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#FreedSlaveOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ProfessionalRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ChildOfSiblingOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedFamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FriendshipFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#AllianceWith"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#AncestorOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedFamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#bond-with">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://data.snapdrgn.net/ontology/snap#link-with"/>
+    <rdfs:domain rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdfs:range rdf:resource="http://data.snapdrgn.net/ontology/snap#QuAC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GranddaughterOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#GrandchildOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FamilyOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#KinOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GreatGrandfatherOf">
+    <owl:disjointWith rdf:resource="http://data.snapdrgn.net/ontology/snap#GreatGrandmotherOf"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#GreatGrandparentOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GreatGrandparentOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#AncestorOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#HouseSlaveOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#SlaveOf"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#HouseholdOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FreedmanOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#FreedSlaveOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#AdoptedFamilyRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#LegallyRecognisedRelationshipWith">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#SeriousIntimateRelationshipWith"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E54_Dimension">
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E77_Persistent_Item"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#SiblingOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#HereditaryFamilyOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#CousinOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedFamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#FosterFamilyRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#SonOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ChildOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GreatGrandmotherOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#GreatGrandparentOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GrandsonOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#GrandchildOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#UncleOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#SiblingOfParentOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#HouseholdOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedHouseholdOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#QualifierRelationship">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#disambiguatingFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#MaternalFamilyRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#QualifierRelationship"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#AllianceWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ExtendedHouseholdOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GrandparentOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#AncestorOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#GrandchildOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#DescendentOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#IntimateRelationshipWith">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#Bond"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#Link">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/efrbroo/F10_Person">
+    <owl:equivalentClass rdf:resource="http://lawd.info/ontology/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#SlaveOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ExtendedHouseholdOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#ParentOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#HereditaryFamilyOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.snapdrgn.net/ontology/snap#MotherOf">
+    <rdfs:subClassOf rdf:resource="http://data.snapdrgn.net/ontology/snap#ParentOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/oa#Annotation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

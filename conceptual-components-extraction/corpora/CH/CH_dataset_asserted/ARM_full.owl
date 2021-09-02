@@ -1,0 +1,1857 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arm/activity/> a owl:Ontology ;
+    rdfs:label "Art and Rare Materials Activity Ontology"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    dcterms:title "Art and Rare Materials Activity Ontology"@en ;
+    vann:preferredNamespacePrefix "activity" ;
+    rdfs:comment "Time constraints have prevented deciding between the BIBFRAME Contribution model and the bibliotek-o (http://bibliotek-o.org/ontology/) Activity model to describe agents and roles. As a temporary measure, the Activity model is used, but the terms are defined in a separate file to signal their provisional nature and allow for easy removal. A thorough analysis and evaluation is recommended as future research, and this provisional implementation is not intended to prejudice the outcome."@en ;
+    owl:versionIRI <https://w3id.org/arm/activity/ontology/0.1/> ;
+    owl:versionInfo "Version 0.1.0"^^xsd:string ;
+    skos:definition "The Art and Rare Materials Activity Ontology provides classes and predicates to model agents and roles for the ARM Core Ontology (https://w3id.org/arm/core/ontology/0.1/)."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/AddresseeActivity> a owl:Class ;
+    rdfs:label "Addressee"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of receiving an addressed resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/rcp."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/AppellantActivity> a owl:Class ;
+    rdfs:label "Appellant"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of appealing a court decision."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/apl."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/AppelleeActivity> a owl:Class ;
+    rdfs:label "Appellee"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of defending against an appeal."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/apl."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ArchitectActivity> a owl:Class ;
+    rdfs:label "Architect"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating an architectural design."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/arc."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ArrangerActivity> a owl:Class ;
+    rdfs:label "Arranger"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of arranging a musical resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/arr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ArtCopyistActivity> a owl:Class ;
+    rdfs:label "Art copyist"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of making copies of works of visual art."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/acp."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ArtistActivity> a owl:Class ;
+    rdfs:label "Artist"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a work by conceiving, and implementing, an original graphic design, drawing, painting, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "For book illustrators, prefer IllustratorActivity.",
+        "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/art."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/AssigneeActivity> a owl:Class ;
+    rdfs:label "Assignee"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of receiving a transferred license for printing or publishing."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/asg."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/AuthorActivity> a owl:Class ;
+    rdfs:label "Author"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of authoring a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/aut."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/BinderActivity> a owl:Class ;
+    rdfs:label "Binder"@en ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of attaching a Binding to a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "Both instances and items can have Bindings, but generally there is need to describe this activity only in relation to an item"@en,
+        "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/bnd."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CartographerActivity> a owl:Class ;
+    rdfs:label "Cartographer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a map, atlas, globe, or other cartographic work."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ctg."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ChoreographerActivity> a owl:Class ;
+    rdfs:label "Choreographer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating or contributing to a work of movement."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/chr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CollectorActivity> a owl:Class ;
+    rdfs:label "Collector"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of bringing together items from various sources that are then arranged, described, and cataloged as a collection. A collector is neither the creator of the material nor a person to whom manuscripts in the collection may have been addressed."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/col."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CollotyperActivity> a owl:Class ;
+    rdfs:label "Collotyper"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of manufacturing a manifestation of photographic prints from film or other colloid that has ink-receptive and ink-repellent surfaces."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/clt."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ColoristActivity> a owl:Class ;
+    rdfs:label "Colorist"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of applying color to drawings, prints, photographs, maps, moving images, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/clr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CompilerActivity> a owl:Class ;
+    rdfs:label "Compiler"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a new work (e.g., a bibliography, a directory) through the act of compilation, e.g., selecting, arranging, aggregating, and editing data, information, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/com."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ConditionAssessmentActivity> a owl:Class ;
+    rdfs:label "Condition assessment activity"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of assessing and documenting the physical condition of an item, including damage, material vulnerabilities, special storage requirements, etc. This activity outputs a ConditionAssessment."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ConservatorActivity> a owl:Class ;
+    rdfs:label "Conservator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of preserving or treating printed or manuscript material, works of art, artifacts, or other objects."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/con."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ContributorActivity> a owl:Class ;
+    rdfs:label "Contributor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of making contributions to the resource. This includes those whose work has been contributed to a larger work, such as an anthology, serial publication, or other compilation of individual works. If a more specific role is available, prefer that activity type, e.g. EditorActivity, CompilerActivity, IllustratorActivity."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ctb."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CopyrightHolderActivity> a owl:Class ;
+    rdfs:label "Copyright holder"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of receiving copy and legal rights have been granted or transferred for the intellectual content of a work. The copyright holder, although not necessarily the creator of the work, usually has the exclusive right to benefit financially from the sale and use of the work to which the associated copyright protection applies."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/cph."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CorrespondentActivity> a owl:Class ;
+    rdfs:label "Correspondent"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of either the writer or recipient of a letter or other communication."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/crp."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CreatorActivity> a owl:Class ;
+    rdfs:label "Creator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/cre."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/CuratorActivity> a owl:Class ;
+    rdfs:label "Curator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of conceiving, aggregating, and/or organizing an exhibition, collection, or other item."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/cur."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/DedicateeActivity> a owl:Class ;
+    rdfs:label "Dedicatee"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of receiving a dedication."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/dte."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/DedicatorActivity> a owl:Class ;
+    rdfs:label "Dedicator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of making a dedication."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/dto."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/DesignerActivity> a owl:Class ;
+    rdfs:label "Designer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a design for an object."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/dsr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/DirectorActivity> a owl:Class ;
+    rdfs:label "Director"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of general management and supervision of a filmed performance, a radio or television program, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/drt."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/DistributorActivity> a owl:Class ;
+    rdfs:label "Distributor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of distributing a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/dst."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/DraftsmanActivity> a owl:Class ;
+    rdfs:label "Draftsman"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of making detailed plans or drawings for buildings, ships, aircraft, machines, objects, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/drm."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/EditorActivity> a owl:Class ;
+    rdfs:label "Editor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of editing a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/edt."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/EngraverActivity> a owl:Class ;
+    rdfs:label "Engraver"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of cutting into a surface, such as a wooden or metal plate used for printing."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/egr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/EtcherActivity> a owl:Class ;
+    rdfs:label "Etcher"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of producing text or images for printing by subjecting metal, glass, or some other surface to acid or the corrosive action of some other substance."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/etr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/FacsimilistActivity> a owl:Class ;
+    rdfs:label "Facsimilist"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of executing a facsimile."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/fac."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ForgerActivity> a owl:Class ;
+    rdfs:label "Forger"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of making or imitating something of value or importance, especially with the intent to defraud."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/fac."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/HonoreeActivity> a owl:Class ;
+    rdfs:label "Honoree"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of receiving an honor (e.g., the honoree of a festschrift, a person to whom a copy is presented)."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/etr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/IlluminatorActivity> a owl:Class ;
+    rdfs:label "Illuminator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of decorating a specific item using precious metals or color, often with elaborate designs and motifs."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ilu."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/IllustratorActivity> a owl:Class ;
+    rdfs:label "Illustrator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of illustrating a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ill."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/InscriberActivity> a owl:Class ;
+    rdfs:label "Inscriber"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of writing a statement of dedication or gift."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ins."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/InventorActivity> a owl:Class ;
+    rdfs:label "Inventor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a new device or process."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/inv."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/LicenseeActivity> a owl:Class ;
+    rdfs:label "Licensee"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of receiving the right to print or publish."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/lse."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/LicensorActivity> a owl:Class ;
+    rdfs:label "Licensor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of signing of the license, imprimatur, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/lso."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/LithographerActivity> a owl:Class ;
+    rdfs:label "Lithographer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of preparing the stone or plate for lithographic printing, including a graphic artist creating a design directly on the surface from which printing will be done."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ltg."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/LyricistActivity> a owl:Class ;
+    rdfs:label "Lyricist"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of authoring the words of a non-dramatic musical work (e.g. the text of a song), except for oratorios."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/lyr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ManufacturerActivity> a owl:Class ;
+    rdfs:label "Manufacturer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of printing, duplicating, casting, etc. a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/mfr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/MarblerActivity> a owl:Class ;
+    rdfs:label "Marbler"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of marbling paper, cloth, leather, etc. used in construction of a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/mrb."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ModeratorActivity> a owl:Class ;
+    rdfs:label "Moderator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of leading a program (often broadcast) where topics are discussed, usually with participation of experts in fields related to the discussion."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/mod."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/OrganizerActivity> a owl:Class ;
+    rdfs:label "Organizer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of organizing an exhibit, event, conference, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/orm."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PapermakerActivity> a owl:Class ;
+    rdfs:label "Papermaker"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of producing paper, usually from wood, cloth, or other fibrous material."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ppm."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PatronActivity> a owl:Class ;
+    rdfs:label "Patron"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of commissioning a work. Usually a patron uses his or her means or influence to support the work of artists, writers, etc. This includes those who commission and pay for individual works."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/pat."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PhotographerActivity> a owl:Class ;
+    rdfs:label "Photographer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a photographic work."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/pht."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PlatemakerActivity> a owl:Class ;
+    rdfs:label "Platemaker"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of manufacturing a manifestation by preparing plates used in the production of printed images and/or text."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/plt."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PrinterActivity> a owl:Class ;
+    rdfs:label "Printer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of manufacturing a manifestation of printed text, notated music, etc., from type or plates, such as a book, newspaper, magazine, broadside, score, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/prt."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PrintmakerActivity> a owl:Class ;
+    rdfs:label "Printmaker"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of making a relief, intaglio, or planographic printing surface."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/prm."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ProducerActivity> a owl:Class ;
+    rdfs:label "Producer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of producing a resource."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ProviderActivity> a owl:Class ;
+    rdfs:label "Provider"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of producing, publishing, manufacturing, or distributing a resource if specific Activities are not desired (i.e., DistributorActivity, ManufacturerActivity, ProducerActivity, PublisherActivity)."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/prv."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/PublisherActivity> a owl:Class ;
+    rdfs:label "Publishing"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of publishing a resource."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/pbl."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/RepositoryActivity> a owl:Class ;
+    rdfs:label "Repository"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of hosting data or material culture objects and provides services to promote long term, consistent and shared use of those data or objects."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/rps."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/ScribeActivity> a owl:Class ;
+    rdfs:label "Scribe"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of serving as an amanuensis and for a writer of manuscripts proper. For a person who makes pen-facsimiles, use FacsimilistActivity."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/scr."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/SculptorActivity> a owl:Class ;
+    rdfs:label "Sculptor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a three-dimensional work by modeling, carving, or similar technique."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/scl."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/SignerActivity> a owl:Class ;
+    rdfs:label "Signer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of signing a resource without a presentation or other statement indicative of provenance. When there is a presentation statement, use InscriberActivity."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/sgn."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/SponsorActivity> a owl:Class ;
+    rdfs:label "Sponsor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of sponsoring or funding some aspect of a resource, e.g., the entity \"under the auspices of which\" research was funded, an exhibition was held, a work was written, an instance was published, etc."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/spn."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/StereotyperActivity> a owl:Class ;
+    rdfs:label "Stereotyper"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of creating a new plate for printing by molding or copying another printing surface."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/str."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/TranscriberActivity> a owl:Class ;
+    rdfs:label "Transcriber"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of preparing a handwritten or typewritten copy from original material, including from dictated or orally recorded material."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/ths."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/TranslatorActivity> a owl:Class ;
+    rdfs:label "Translator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of rending a text from one language into another, or from an older form of a language into the modern form."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/trl."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/TypographerActivity> a owl:Class ;
+    rdfs:label "Typographer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of choosing and arranging the type used in an item. If the typographer is also responsible for other aspects of the graphic design of a book (e.g., DesignerActivity), activities for both functions may be needed."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/tyg."@en .
+
+<https://w3id.org/arm/award/ontology/> a owl:Ontology ;
+    rdfs:label "Art and Rare Materials Award Ontology"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    dcterms:title "Art and Rare Materials Award Ontology"@en ;
+    vann:preferredNamespacePrefix "award" ;
+    rdfs:comment "This ontology was developed in the context of art and rare materials, but is defined as an independent ontology for use in other knowledge domains."@en ;
+    owl:versionIRI <https://w3id.org/arm/award/ontology/0.1/> ;
+    owl:versionInfo "Version 0.1.0"^^xsd:string ;
+    skos:definition "The Art and Rare Materials Award Ontology models awards and their recipients."@en .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardCitation> a owl:Class ;
+    rdfs:label "Award citation" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    skos:definition "The specific nature of the award receipt is citation." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardGranterActivity> a owl:Class ;
+    rdfs:label "Award granter" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/Activity> ;
+    skos:definition "The activity of granting an award." ;
+    skos:scopeNote "This class is not derived from a MARC relator." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardHonoraryMention> a owl:Class ;
+    rdfs:label "Award honorary mention" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    skos:definition "The specific nature of the award receipt is honorary mention." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardLonglist> a owl:Class ;
+    rdfs:label "Award longlist" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    skos:definition "The specific nature of the award receipt is longlist." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardNominee> a owl:Class ;
+    rdfs:label "Award nominee" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    skos:definition "The specific nature of the award receipt is nominee." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardSelectorActivity> a owl:Class ;
+    rdfs:label "Award selector" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/Activity> ;
+    skos:definition "The activity of nominating or judging a resource in relation to an award, honor, etc." ;
+    skos:scopeNote "This class is not derived from a MARC relator." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardShortlist> a owl:Class ;
+    rdfs:label "Award shortlist" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    skos:definition "The specific nature of the award receipt is award shortlist." .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardWinner> a owl:Class ;
+    rdfs:label "Award winner" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    skos:definition "The specific nature of the award receipt is award winner." .
+
+<https://w3id.org/arm/core/ontology/> a owl:Ontology ;
+    rdfs:label "Art and Rare Materials Core Ontology"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    dcterms:title "Art and Rare Materials Core Ontology"@en ;
+    vann:preferredNamespacePrefix "arm" ;
+    voaf:extends <http://id.loc.gov/ontologies/bibframe/> ;
+    voaf:specializes <http://id.loc.gov/ontologies/bibframe/> ;
+    owl:versionIRI <https://w3id.org/arm/core/ontology/0.1/> ;
+    owl:versionInfo "Version 0.1.0"^^xsd:string ;
+    skos:definition "The Art and Rare Materials Core Ontology provides specialized modeling of bibliographic metadata in the art and rare materials domains. It is an extension to the BIBFRAME ontology for general bibliographic description."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Arrangement> a owl:Class ;
+    rdfs:label "Arrangement"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "Information about the organization and arrangement of a collection of items or a single item."@en ;
+    skos:example "For a scroll, the arrangement may be rolled or unrolled."@en,
+        "For an individual book on display in an exhibition, the arrangement may be the page to which the book is opened for display."@en,
+        "For computer files, organization and arrangement information may be the file structure and sort sequence of a file."@en,
+        "For visual materials, this information may be how a collection is arranged."@en ;
+    skos:scopeNote "An Arrangement may be a NamedIndividual, a term from a controlled vocabulary, or an unnamed resource with an rdf:value."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Autograph> a owl:Class ;
+    rdfs:label "Autograph"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "A person's name written on a resource in his or her own hand as part of the creation or production process."@en ;
+    skos:editorialNote "As currently defined, excludes post-production autographs on an item, such as on a gift. This distinction is subject to future review."@en ;
+    skos:example "A binder's signature"@en .
+
+<https://w3id.org/arm/core/ontology/0.1/BindersTicket> a owl:Class ;
+    rdfs:label "Binder's ticket"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "Small engraved or printed label, usually found on the upper outside corner of one of the front flyleaves, giving the name and usually the address of the bookbinder; common in the 18th and early 19th centuries."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Binding> a owl:Class ;
+    rdfs:label "Binding"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Enclosure> ;
+    skos:definition "Covering of a book which holds the sheets together to provide protection, and collectively all the parts of a book applied in the process of attaching the leaves and covering them."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/BoundCollection> a owl:Class ;
+    rdfs:label "Bound collection"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Item> ;
+    skos:definition "An artificial gathering of two or more items physically into or on a single carrier, whether bound, affixed, or otherwise brought together into a single bound unit, and lacking a collective title. Includes only collections gathered subsequent to publication, rather than issued or reissued together by the publisher."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/CaptionNote> a owl:Class ;
+    rdfs:label "Caption note"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "Use separate notes for multiple captions."@en ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A distinctive caption independent of the resource title, including mottos and headings."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Citation> a owl:Class ;
+    rdfs:label "Citation"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A single citation within a bibliographic source."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/ConditionAssessment> a owl:Class ;
+    rdfs:label "Condition assessment"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "Assessment and/or documentation of the physical condition of an item, including damage, material vulnerabilities, special storage requirements, etc. The assessment is generally the output of a condition assessment activity, and may or may not result in a conservator activity."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/ContentsNote> a owl:Class ;
+    rdfs:label "Contents note"@en ;
+    dcterms:issued "2018-01-29T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note to provide a main contents of the resource rather than linking to an external table of contents or creating separate part/whole relationships to the entities that comprise the whole. Ideally, part whole relationships would be created instead of the this type of note."@en ;
+    skos:editorialNote "This note type was created based on http://bibliotek-o.org/1.1/ontology/specifyingContents. Likely belongs in a general bf:Notes extension, but need to add it here for now." .
+
+<https://w3id.org/arm/core/ontology/0.1/DescriptiveNote> a owl:Class ;
+    rdfs:label "Descriptive note"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note that describes the resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/DustJacket> a owl:Class ;
+    rdfs:label "DustJacket"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Enclosure> ;
+    skos:definition "A detachable, flexible covering for a book, usually of paper cut flush with the covers, folding around the binding with the ends tucked in between the cover boards and the free end paper."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Entry> a owl:Class ;
+    rdfs:label "Entry"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A specific entry within a bibliographic resource."@en ;
+    skos:example "An entry locating a citation within a bibliographic source."@en,
+        "An exhibition catalog entry describing a specific item in the exhibition."@en ;
+    skos:scopeNote "Used in parsing out hierarchically structured location designators for citations."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/FontStyle> a owl:Class ;
+    rdfs:label "Font style"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "Style of the font, e.g. bold, italic"@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Frame> a owl:Class ;
+    rdfs:label "Frame"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Mount> ;
+    skos:definition "A supportive structure that surrounds or encloses an item."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Handwriting> a owl:Class ;
+    rdfs:label "Handwriting"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A specific example of a handwriting found in a textual resource. A handwriting can have a particular HandWritingType."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/InaccuracyNote> a owl:Class ;
+    rdfs:label "Inaccuracy note"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note explaining an unintentional or intentional inaccuracy, misspelling, or misprint relating to a specific resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Inscription> a owl:Class ;
+    rdfs:label "Inscription"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "Words, texts, lettering, or symbols written in manuscript on a resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Label> a owl:Class ;
+    rdfs:label "Label"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "A piece of paper, leather, fabric, or other material inscribed, printed, or engraved with information and affixed to a resource or part of a resource for identification or description."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/LimitationNote> a owl:Class ;
+    rdfs:label "Limitation note"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note relating to the size and nature of a print run limited to a specific quantity of copies produced, or a statement relating to the enumeration and nature of a copy in relation to the larger print run."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/OclcNumber> a owl:Class ;
+    rdfs:label "OCLC number"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Identifier> ;
+    skos:definition "Alphanumeric code assigned by OCLC to a resource. "@en ;
+    skos:editorialNote "Deprecate this class if defined in BIBFRAME."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Page> a owl:Class ;
+    rdfs:label "Page"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "Used in any page-level description, as well as in parsing out hierarchically structured location designators for citations."@en ;
+    skos:definition "A single page within a resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/PaginationFoliation> a owl:Class ;
+    rdfs:label "Pagination foliation"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Extent> ;
+    skos:definition "Sequential numbering of individual leaves, plates, pages (numbering on both sides), or columns (used as a sequence of numbering) of a resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Pedestal> a owl:Class ;
+    rdfs:label "Pedestal"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Mount> ;
+    skos:definition "A solid, fixed base or support on which an item or part of an item is mounted."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/PreferredCitation> a owl:Class ;
+    rdfs:label "Preferred citation"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note providing a specific citation format for citing the resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/RelatedMaterialNote> a owl:Class ;
+    rdfs:label "Related material note"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note providing information on materials (e.g. archival materials or publications) related to the described resource."@en ;
+    skos:scopeNote "Use if information describing the related material cannot be parsed into the appropriate relationship."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Seal> a owl:Class ;
+    rdfs:label "Seal"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "An impression that has been made in wax, clay, or another soft material by the impact of a hard engraved surface with monograms, writing, numbers, symbols, or design in intaglio, generally used to authenticate documents or for decoration."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/SlipCase> a owl:Class ;
+    rdfs:label "SlipCase"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Enclosure> ;
+    skos:definition "Protective container designed to protect a book or item with open end along one edge."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Stamp> a owl:Class ;
+    rdfs:label "Stamp"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "A mark that is impressed, printed, perforated, or embossed, made by a hard object, especially a die, block, or other tool, on a softer material such as paper or wax."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/StylePeriod> a owl:Class ;
+    rdfs:label "Style/Period"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A defined style, historical or artistic period, movement, group, or school whose characteristics are represented in a work."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/SubjectNote> a owl:Class ;
+    rdfs:label "Subject note"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "Textual information describing the subject or iconographic details of a resource."@en ;
+    skos:scopeNote "Use for textual notes only, not for subject terms from a controlled value vocabulary."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/SummaryNote> a owl:Class ;
+    rdfs:label "Summary note"@en ;
+    dcterms:issued "2018-01-29T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note providing a summary of the resource."@en ;
+    skos:editorialNote "This note type was created based on http://bibliotek-o.org/1.1/ontology/summarizing. Likely belongs in a general bf:Notes extension, but need to add it here for now." .
+
+<https://w3id.org/arm/core/ontology/0.1/SupplementaryContentNote> a owl:Class ;
+    rdfs:label "Supplementary content note"@en ;
+    dcterms:issued "2018-01-29T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> ;
+    skos:definition "A note indicating the existence of supplementary content such as bibliographies, discographies, filmographies, and/or other bibliographic references in the described resource or in accompanying material."@en ;
+    skos:editorialNote "This note type was created based on http://bibliotek-o.org/1.1/ontology/describingSupplementaryContent. Likely belongs in a general bf:Notes extension, but need to add it here for now." .
+
+<https://w3id.org/arm/core/ontology/0.1/TextBlock> a owl:Class ;
+    rdfs:label "Text block"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:disjointWith <https://w3id.org/arm/core/ontology/0.1/Enclosure> ;
+    skos:definition "Those parts of a book consisting of the stack of leaves or gatherings to be bound, exclusive of the materials, such as endpapers or boards, that are added in binding."@en ;
+    skos:scopeNote "The measurements of a book may include the binding or not. A text block resource can be used in the specification of measurements exclusive of the binding."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Volume> a owl:Class ;
+    rdfs:label ""@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "Used in any volume-level description, as well as in parsing out hierarchically structured location designators for citations."@en ;
+    skos:definition "A single bibliographic or physical volume of a resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Watermark> a owl:Class ;
+    rdfs:label "Watermark"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "A faint design or device incorporated into paper as it is made and appearing as translucent or shaded areas visual only through transmitted light. Often used to give the name of the manufacturer and the date of the paper's manufacture; a symbol, seal, or initials are also common. Often used to detect and prevent counterfeiting and forgery."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/WrapAroundBand> a owl:Class ;
+    rdfs:label "Wrap around band"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Enclosure> ;
+    skos:definition "A printed paper the length of the dust jacket but smaller in height and wrapped around the book. It typically has reviews and is used for promotional purposes; may be added post-publication."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Wrapper> a owl:Class ;
+    rdfs:label "Wrapper"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/core/ontology/0.1/Enclosure> ;
+    skos:definition "A flexible printed or unprinted cover, usually made of paper, attached to a book or pamphlet; commonly used as an inexpensive temporary binding in the late 18th and early 19th century."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/agentOf> a owl:ObjectProperty ;
+    rdfs:label "agent of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <http://id.loc.gov/ontologies/bibframe/Agent> ;
+    owl:inverseOf <http://id.loc.gov/ontologies/bibframe/agent> ;
+    skos:definition "Relates an agent to the activity it participated in."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/endDate> a owl:Datatype ;
+    rdfs:label "start date"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "The end date of a resource, such as an event."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasHandwritingType> a owl:ObjectProperty ;
+    rdfs:label "has handwriting type"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "Use on a :Handwriting"@en ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/HandwritingType> ;
+    skos:definition "A relationship between a resource that includes handwriting and the type of writing hand, e.g. Gothic, Secretary, Carolingian minuscule, and Sütterlin."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasOrigin> a owl:ObjectProperty ;
+    rdfs:label "has origin"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "Specifies the physical location from which this resource (e.g., a title) originates, such as spine, cover, container, etc."@en ;
+    skos:scopeNote "Distinct from https://w3id.org/arm/core/ontology/0.1/hasSource, which specifies an external organization or scheme from which the resource was obtained."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasSignatureStatement> a owl:ObjectProperty ;
+    rdfs:label "has signature statement"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/SignatureStatement> ;
+    skos:definition "Relationship between a Resource and a signature statement."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasStyle> a owl:ObjectProperty ;
+    rdfs:label "has style"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "Style vocabularies will vary depending on the type of resource. For example, in the context of Fonts, styles include bold, italic, etc. A resource may have more than one style; e.g., a font may be both bold and italic, with two separate hasStyle assertions."@en ;
+    skos:definition "A relationship between a resource and a style."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasTypeface> a owl:ObjectProperty ;
+    rdfs:label "has typeface"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/Font> ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/Typeface> ;
+    skos:definition "A relationship between a Font and its design or “font family”"@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isAppliedMaterialOf> a owl:ObjectProperty ;
+    rdfs:label "is applied material of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <http://rdaregistry.info/Elements/u/P60159> ;
+    skos:definition "Relates a material to the resource it was applied to."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isBaseMaterialOf> a owl:ObjectProperty ;
+    rdfs:label "is base material of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <http://rdaregistry.info/Elements/u/P60596> ;
+    skos:definition "Relates a material to the resource it is the base of."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isColorContentOf> a owl:ObjectProperty ;
+    rdfs:label "is color content of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <http://rdaregistry.info/Elements/u/P60596> ;
+    skos:definition "Relates a color content to a resource."@en-us .
+
+<https://w3id.org/arm/core/ontology/0.1/markedBy> a owl:ObjectProperty ;
+    rdfs:label "marked by"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "A resource’s relationship to a Marking it bears."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/marks> a owl:ObjectProperty ;
+    rdfs:label "marks"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/Marking> ;
+    skos:definition "A Marking’s relationship to the resource it is on or in."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/notates> a owl:ObjectProperty ;
+    rdfs:label "notates"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <http://id.loc.gov/ontologies/bibframe/Note> ;
+    owl:inverseOf <http://id.loc.gov/ontologies/bibframe/note> ;
+    skos:definition "A Note's relationship to the resource it notates."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/startDate> a owl:Datatype ;
+    rdfs:label "start date"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "The start date of a resource, such as an event."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/subjectOf> a owl:ObjectProperty ;
+    rdfs:label "subject of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "The relationship between a resource and another resource of which it is the subject."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/writtenIn> a owl:ObjectProperty ;
+    rdfs:label "written in"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "Use with BF Instance or Item"@en ;
+    skos:definition "The relationship between a resource containing text and the Font or HandWriting the textual information is displayed in."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/> a owl:Ontology ;
+    rdfs:label "Art and Rare Materials Custodial History Ontology"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    dcterms:title "Art and Rare Materials Custodial History Ontology"@en ;
+    vann:preferredNamespacePrefix "ch" ;
+    rdfs:comment "This ontology was developed in the context of art and rare materials, but is defined as an independent ontology for use in other knowledge domains."@en ;
+    owl:versionIRI <https://w3id.org/arm/custodial_history/ontology/0.1/> ;
+    owl:versionInfo "Version 0.1.0"^^xsd:string ;
+    skos:definition "The Art and Rare Materials Custodial History Ontology models the custodial history of resources, including events, such as transfer of ownership, and time periods, such as ownership. While developed for use in the bibliographic domain, it can be used in other descriptive contexts as well."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/AccessionerActivity> a owl:Class ;
+    rdfs:label "Accessioner"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of adding a resource to a collection."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Accessioning> a owl:Class ;
+    rdfs:label "Accessioning"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The act of adding an item to the accessions records of a cultural heritage institution."@en ;
+    skos:scopeNote "Typical associated Activities: AccessionerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/AcquisitionActivity> a owl:Class ;
+    rdfs:label "Acquisition"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of gaining possession of a resource."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Auction> a owl:Class ;
+    rdfs:label "Auction"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/SaleEvent>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/Sale> ;
+    skos:definition "The sale at auction of a resource."@en ;
+    skos:scopeNote "Refers to the transfer of ownership through auction, rather than the auction in which that occurs.",
+        "Typical associated Activities: BuyerActivity, SellerActivity, DealerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Bequest> a owl:Class ;
+    rdfs:label "Bequest"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/Inheritance> ;
+    skos:definition "The transfer of a resource under the terms of a will."@en ;
+    skos:scopeNote "Typical associated Activities: TestatorActivity, InheritorActivity, WitnessActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/BorrowerActivity> a owl:Class ;
+    rdfs:label "Borrower"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of taking possession, but not ownership, of a resource."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/BuyerActivity> a owl:Class ;
+    rdfs:label "Buyer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of purchasing a resource."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/ClaimOfOwnership> a owl:Class ;
+    rdfs:label "Claim of ownership"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "A legal claim to the right of possession of a resource."@en ;
+    skos:scopeNote "Typical associated Activities: ClaimantActivity, DisputantActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/ClaimantActivity> a owl:Class ;
+    rdfs:label "Claimant"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of declaring ownership of a resource, notably when the claim is not clearly substantiated."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DeaccessionerActivity> a owl:Class ;
+    rdfs:label "Deaccessioner"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of permanently removing accessioned items from a collection or repository."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Deaccessioning> a owl:Class ;
+    rdfs:label "Deaccessioning"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The removal of an item from the accessions records of a cultural heritage institution."@en ;
+    skos:scopeNote "Typical associated Activities: DeaccessionerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DealerActivity> a owl:Class ;
+    rdfs:label "Dealer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of negotiating or arranging for a transaction."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Deposit> a owl:Class ;
+    rdfs:label "Deposit"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The placement of an item in the collections of a cultural heritage institution."@en ;
+    skos:scopeNote "Typical associated Activities: DepositorActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DepositorActivity> a owl:Class ;
+    rdfs:label "Depositor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of placing a resource into the custody of another person, family, or organization."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Destruction> a owl:Class ;
+    rdfs:label "Destruction"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The permanent ruination of a resource."@en ;
+    skos:scopeNote "Typical associated Activities: DestructionActivity, OwnerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DestructionActivity> a owl:Class ;
+    rdfs:label "Destroyer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of permanently destroying a resource."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DiscarderActivity> a owl:Class ;
+    rdfs:label "Discarder"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of permanently removing a resource or part of a resource from a collection for disposal."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Discarding> a owl:Class ;
+    rdfs:label "Discarding"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The abandonment or disposal of a resource."@en ;
+    skos:scopeNote "Typical associated Activities: DiscarderActivity, OwnerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DisputantActivity> a owl:Class ;
+    rdfs:label "Disputant"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of challenging a claim, such as a claim of ownership."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Donation> a owl:Class ;
+    rdfs:label "Donation"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The giving of a resource, typically for charitable purposes and/or to benefit a cause."@en ;
+    skos:scopeNote "Typical associated Activities: DonorActivity, RecipientActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/DonorActivity> a owl:Class ;
+    rdfs:label "Donor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of donating a resource to another owner."@en ;
+    skos:editorialNote "Future work: consider more formal alignment between the class and corresponding MARC relator."@en ;
+    skos:scopeNote "This class is derived from the MARC relator: http://id.loc.gov/vocabulary/relators/dst."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/InheritorActivity> a owl:Class ;
+    rdfs:label "Inheritor"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of taking possession of a resource upon the death of the previous owner, either through bequest or application of law."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/LenderActivity> a owl:Class ;
+    rdfs:label "Lender"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of permitting the temporary possession of one more more Items."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Loan> a owl:Class ;
+    rdfs:label "Loan"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The temporary transfer of a resource."@en ;
+    skos:scopeNote "Typical associated Activities: LenderActivity, BorrowerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Loss> a owl:Class ;
+    rdfs:label "Loss"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The disappearance of a resource under unknown circumstances (e.g., not in the case of theft)."@en ;
+    skos:scopeNote "Typical associated Activities: LossActivity, OwnerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/LossActivity> a owl:Class ;
+    rdfs:label "Loss"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "Responsibility for the disappearance of a resource where the circumstances of the disappearance are unknown."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Offer> a owl:Class ;
+    rdfs:label "Offer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The provision of a resource for purchase or other form of acquisition."@en ;
+    skos:scopeNote "Typical associated Activities: OfferActivity, RecipientActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/OfferActivity> a owl:Class ;
+    rdfs:label "Offer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of providing a resource for purchase or other form of acquisition. Use for booksellers and sellers of other resources."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/OwnerActivity> a owl:Class ;
+    rdfs:label "Owner"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The legal possession of a resource."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Ownership> a owl:Class ;
+    rdfs:label "Ownership"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The possession of full and complete right of control over a resource."@en ;
+    skos:scopeNote "Typical associated Activities: OwnerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/RecipientActivity> a owl:Class ;
+    rdfs:label "Recipient"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of receiving a resource, via bequest, donation, etc."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/RecovererActivity> a owl:Class ;
+    rdfs:label "Recoverer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of re-assuming ownership of a resource following a period of loss, possibly due to theft."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Recovery> a owl:Class ;
+    rdfs:label "Recovery"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The restitution or regaining possession of a resource."@en ;
+    skos:scopeNote "Typical associated Activities: RecovererActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Repatriation> a owl:Class ;
+    rdfs:label "Repatriation"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The return of a resource to its country of origin."@en ;
+    skos:scopeNote "Typical associated Activities: RepatriatorActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/RepatriatorActivity> a owl:Class ;
+    rdfs:label "Repatriator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of returning a resource to its home country."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/SellerActivity> a owl:Class ;
+    rdfs:label "Seller"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of exchanging ownership of a resource for money or other object of value."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/TestatorActivity> a owl:Class ;
+    rdfs:label "Testator"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of bequeathing a resource in a will."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Theft> a owl:Class ;
+    rdfs:label "Theft"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The removal of a resource from the possession of the rightful owner without the latter’s consent."@en ;
+    skos:scopeNote "Typical associated Activities: ThiefActivity, OwnerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/ThiefActivity> a owl:Class ;
+    rdfs:label "Thief"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of acquiring a resource without the consent of the legal owner."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Transfer> a owl:Class ;
+    rdfs:label "Transfer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The passing of ownership or other right from one party to another."@en ;
+    skos:scopeNote "Typical associated Activities: TranfererActivity, RecipientActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/TransfererActivity> a owl:Class ;
+    rdfs:label "Transferer"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The act of giving possession of a resource to another party, notably without a defined sale or donation."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/WitnessActivity> a owl:Class ;
+    rdfs:label "Witness"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    skos:definition "The activity of verifying the truthfulness of an event or action."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/hasActivity> a owl:ObjectProperty ;
+    rdfs:label "has activity"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    owl:inverseOf <https://w3id.org/arm/activity/ontology/0.1/isActivityOf> ;
+    skos:definition "Relates this resource to an activity or contribution by a single agent that affects or alters its existence or state."@en .
+
+<https://w3id.org/arm/activity/ontology/0.1/isActivityOf> a owl:ObjectProperty ;
+    rdfs:label "is activity of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/activity/ontology/0.1/Activity> ;
+    owl:inverseOf <https://w3id.org/arm/activity/ontology/0.1/hasActivity> ;
+    skos:definition "Relates an activity to the affected resource."@en .
+
+<https://w3id.org/arm/award/ontology/0.1/hasAward> a owl:ObjectProperty ;
+    rdfs:label "has award" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    rdfs:range <http://vivoweb.org/ontology/core#Award> ;
+    owl:inverseOf <https://w3id.org/arm/award/ontology/0.1/isAwardOf> ;
+    skos:definition "This resource is a receipt of the specified award or honor." .
+
+<https://w3id.org/arm/award/ontology/0.1/isAwardOf> a owl:ObjectProperty ;
+    rdfs:label "is award of" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <http://vivoweb.org/ontology/core#Award> ;
+    rdfs:range <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    owl:inverseOf <https://w3id.org/arm/award/ontology/0.1/hasAward> ;
+    skos:definition "Links a specified award or honor to its receipt." .
+
+<https://w3id.org/arm/award/ontology/0.1/receivedBy> a owl:ObjectProperty ;
+    rdfs:label "received by" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    owl:inverseOf <https://w3id.org/arm/award/ontology/0.1/receives> ;
+    skos:definition "This AwardReceipt was received by the specified award recipient (such as an Agent or Work)." .
+
+<https://w3id.org/arm/award/ontology/0.1/receives> a owl:ObjectProperty ;
+    rdfs:label "receives" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/award/ontology/0.1/AwardReceipt> ;
+    owl:inverseOf <https://w3id.org/arm/award/ontology/0.1/receivedBy> ;
+    skos:definition "This resource, such as an Agent or Work, is the recipient of the specified AwardReceipt." .
+
+<https://w3id.org/arm/core/ontology/0.1/Font> a owl:Class ;
+    rdfs:label "Font"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A font is the digital representation of a typeface. It is a collection of all the characters of a typeface in one size (12pt/1in) and one style (bold/italic). For example, Arial in 12pt size is a font, Arial in 18pt size is a font, and Arial bold in 24pt is also a font."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/HandwritingType> a owl:Class ;
+    rdfs:label "Handwriting type"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A type of writing hand; not the same as a writing system or a handwriting style (such as cursive or block letters). Examples include Gothic, Secretary, Carolingian minuscule, and Sütterlin."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/SignatureStatement> a owl:Class ;
+    rdfs:label "Signature statement"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A formulaic statement describing the pattern followed in assembling the sheets of the book, as expressed in its signatures. Signatures are letters, numerals, symbols, or a group of such characters printed at the foot of the rectos of the first few leaves of each gathering (quire) to aid the binder in correctly assembling the sections."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Typeface> a owl:Class ;
+    rdfs:label "Typeface"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:comment "BIBFRAME uses bf:Script to refer to writing systems"@en ;
+    skos:definition "A design or “font family” created by a typographer or type designer. It defines specific stylistic features to determine the type display of a writing system."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/atLocation> a owl:ObjectProperty ;
+    rdfs:label "at location"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isLocationOf> ;
+    skos:definition "The resource being described is at the specified location."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/carries> a owl:ObjectProperty ;
+    rdfs:label "carries"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isOnCarrier> ;
+    skos:definition "A particular physical form, such as a volume, a sheet of paper, or a computer disk, contains or has on it the resource being described."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/citedBy> a owl:ObjectProperty ;
+    rdfs:label "cited by"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/relatedTo> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/cites> ;
+    skos:definition "Visual citation is an artistic process/practice in which a creator reproduces the totality or a section of a (well-known) work of art (here, the subject) to incorporate it into a new visual creation (here, the object)."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/cites> a owl:ObjectProperty ;
+    rdfs:label "cites"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/relatedTo> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/citedBy> ;
+    skos:definition "Visual citation is an artistic process/practice in which a creator reproduces the totality or a section of a (well-known) work of art (here, the object) to incorporate it a new visual creation (here, the subject)."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/coveredIn> a owl:ObjectProperty ;
+    rdfs:label "covered in"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/covers> ;
+    skos:definition "Specifies a resource whose content covers this time period or location."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/covers> a owl:ObjectProperty ;
+    rdfs:label "covers"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/coveredIn> ;
+    skos:definition "Specifies a time period or location covered in the content of this resource."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/describedBy> a owl:ObjectProperty ;
+    rdfs:label "described by"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/describes> ;
+    skos:definition "This resource is described by another, for example a PhysicalCondition is described by a ConditionAssessment"@en .
+
+<https://w3id.org/arm/core/ontology/0.1/describes> a owl:ObjectProperty ;
+    rdfs:label "describes"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/describedBy> ;
+    skos:definition "This resource provides a description of another, for example a ConditionAssessment describes a PhysicalCondition."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasArrangement> a owl:ObjectProperty ;
+    rdfs:label "has arrangement"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isArrangementOf> ;
+    skos:definition "Relates an object or collection of objects to information about its organization or arrangement."@en ;
+    skos:example "For a scroll, the arrangement may be rolled or unrolled."@en,
+        "For an individual book on display in an exhibition, the arrangement may be the page to which the book is opened for display."@en,
+        "For computer files, organization and arrangement information may be the file structure and sort sequence of a file."@en,
+        "For visual materials, this information may be how a collection is arranged."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasAttribution> a owl:ObjectProperty ;
+    rdfs:label "has attribution"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/Attribution> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isAttributionOf> ;
+    skos:definition "Used to attribute an Activity, such as ArtistActivity, to a particular agent or agents: relates the Activity (or other resource) to an Attribution resource, which carries information about the agent, source, date, etc. of the attribution."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasCitation> a owl:ObjectProperty ;
+    rdfs:label "has citation"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isCitationOf> ;
+    skos:definition "The resource that is the focus of description (e.g., a bf:Item or bf:Instance) has a citation located in a standard reference source."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasExhibition> a owl:ObjectProperty ;
+    rdfs:label "has exhibition"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/Exhibition> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isExhibitionOf> ;
+    skos:definition "Relates an item to the Exhibition resource representing the relationship between the item and an ExhibitionEvent."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasInput> a owl:ObjectProperty ;
+    rdfs:label "has input"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isInputTo> ;
+    skos:definition "One resource has another resource as input, for example when one resource is informed or acted on by another. A ConservatorActivity has input from a ConditionAssessment."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasMaterial> a owl:ObjectProperty ;
+    rdfs:label "has material"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isMaterialOf> ;
+    skos:definition "Relates a resource to a physical or chemical substance that it consists of or is constructed from, either in whole or in part."@en ;
+    skos:example "Linen rag or wood pulp for paper, leather or cloth for a binding, bronze or glass for a sculpture, etc."@en ;
+    skos:scopeNote "Distinct from arm:hasSource, which specifies an external organization or scheme from which the resource was obtained."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasPhysicalCondition> a owl:ObjectProperty ;
+    rdfs:label "has physical condition"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/PhysicalCondition> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isPhysicalConditionOf> ;
+    skos:definition "Relates an object or part of an object to a specific aspect of its physical condition."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasPreferredTitle> a owl:ObjectProperty ;
+    rdfs:label "has preferred title"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <http://id.loc.gov/ontologies/bibframe/Title> ;
+    rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/title> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isPreferredTitleOf> ;
+    skos:definition "Specifies the preferred title of this resource."@en ;
+    skos:scopeNote "A resource may have multiple directly linked titles, among which this is the preferred title."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasSource> a owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isSourceOf> ;
+    skos:definition "Relates this resource to the source from which it was derived."@en ;
+    skos:scopeNote "Has general applicability to many types of sources and resources."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/hasStylePeriod> a owl:ObjectProperty ;
+    rdfs:label "has style/period"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/isStylePeriodOf> ;
+    skos:definition "A resource’s relationship to a style/period it represents."@en ;
+    skos:editorialNote "Range is unspecified to allow values from controlled vocabularies not typed as arm:StylePeriod without unwanted entailments."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isArrangementOf> a owl:ObjectProperty ;
+    rdfs:label "is arrangement of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasArrangement> ;
+    skos:definition "Relates information about the organization or arrangement of an object or collection of objects to that object or collection."@en ;
+    skos:example "For a scroll, the arrangement may be rolled or unrolled."@en,
+        "For an individual book on display in an exhibition, the arrangement may be the page to which the book is opened for display."@en,
+        "For computer files, organization and arrangement information may be the file structure and sort sequence of a file."@en,
+        "For visual materials, this information may be how a collection is arranged."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isAttributionOf> a owl:ObjectProperty ;
+    rdfs:label "is attribution of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/Attribution> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasAttribution> ;
+    skos:definition "Used to attribute an Activity, such as ArtistActivity, to a particular agent or agents: relates an Attribution resource to the Activity (or other resource), where the Attribution carries information about the agent, source, date, etc. of the attribution."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isCitationOf> a owl:ObjectProperty ;
+    rdfs:label "is citation of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/Activity> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasCitation> ;
+    skos:definition ""@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isExhibitionOf> a owl:ObjectProperty ;
+    rdfs:label "is exhibition of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/Exhibition> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasExhibition> ;
+    skos:definition "Relates an Exhibition resource representing the relationship between an item and an ExhibitionEvent to the item."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isInputTo> a owl:ObjectProperty ;
+    rdfs:label "is input to"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasInput> ;
+    skos:definition "One resource provides input to another. For example, a ConditionAssessment provides input to a ConservatorActivity."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isLocationOf> a owl:ObjectProperty ;
+    rdfs:label "is location of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/atLocation> ;
+    skos:definition "The specified resource is at the location being described."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isMaterialOf> a owl:ObjectProperty ;
+    rdfs:label "has material"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasMaterial> ;
+    skos:definition "Relates a physical or chemical substance to an object that consists of or is constructed from it, either in whole or in part."@en ;
+    skos:example "Linen rag or wood pulp for paper, leather or cloth for a binding, bronze or glass for a sculpture, etc."@en ;
+    skos:scopeNote "Distinct from arm:isSourceOf, which describes an external organization or scheme from which the object resource was obtained."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isOnCarrier> a owl:ObjectProperty ;
+    rdfs:label "is on carrier"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/carries> ;
+    skos:definition "The resource being described is on or contained in a particular physical form, such as a volume, a sheet of paper, or a computer disk."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isPhysicalConditionOf> a owl:ObjectProperty ;
+    rdfs:label "is physical condition of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/PhysicalCondition> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasPhysicalCondition> ;
+    skos:definition "Relates a specific physical condition to an object or part of an object."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isPreferredTitleOf> a owl:ObjectProperty ;
+    rdfs:label "is preferred title of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <http://id.loc.gov/ontologies/bibframe/Title> ;
+    rdfs:subPropertyOf <https://w3id.org/arm/core/ontology/0.1/titleOf> ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasPreferredTitle> ;
+    skos:definition "Specifies the resource for which this is the preferred title."@en ;
+    skos:scopeNote "A resource may have multiple directly linked titles, among which this is the preferred title."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isSourceOf> a owl:ObjectProperty ;
+    rdfs:label "is source of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasSource> ;
+    skos:definition "Relates this resource to a resource of which it is the source."@en ;
+    skos:scopeNote "Has general applicability to many types of sources and resources."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/isStylePeriodOf> a owl:ObjectProperty ;
+    rdfs:label "is style/period of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    owl:inverseOf <https://w3id.org/arm/core/ontology/0.1/hasStylePeriod> ;
+    skos:definition "A resource’s relationship to a style/period representing it."@en ;
+    skos:editorialNote "Domain is unspecified to allow subjects from controlled vocabularies not typed as arm:StylePeriod without unwanted entailments."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/titleOf> a owl:ObjectProperty ;
+    rdfs:label "title of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <http://id.loc.gov/ontologies/bibframe/Title> ;
+    owl:inverseOf <http://id.loc.gov/ontologies/bibframe/title> ;
+    skos:definition "Resource that this title belongs to."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Inheritance> a owl:Class ;
+    rdfs:label "Inheritance"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/Event>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The transfer of a resource following the death of the previous owner, either by bequest or by the application of law."@en ;
+    skos:scopeNote "Typical associated Activities: TestatorActivity, InheritorActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/Sale> a owl:Class ;
+    rdfs:label "Sale"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://schema.org/SaleEvent>,
+        <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    skos:definition "The exchange of a resource for money or other object of value."@en ;
+    skos:scopeNote "A CustodialEvent may pertain to only a single Item (an individual CustodialEvent) in which case it is linked directly to the Item’s CustodialHistory, or it may encompass multiple Items (such as an auction lot), in which case the CustodialEvent aggregates multiple individual CustodialEvents. A CustodialEvent may be what is typically conceived of as an “event,” or a “static” event such as ownership. Subclasses of CustodialEvent are accordingly either defined as subclasses of schema:Event or not.",
+        "Typical associated Activities: BuyerActivity, SellerActivity, DealerActivity." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/accessionedBy> a owl:ObjectProperty ;
+    rdfs:label "accessioned by"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    rdfs:range <https://w3id.org/arm/core/ontology/0.1/AccessionNumber> ;
+    owl:inverseOf <https://w3id.org/arm/custodial_history/ontology/0.1/accessions> ;
+    skos:definition "The CustodialEvent being described is associated with the specified AccessionNumber."@en ;
+    skos:scopeNote "The AccessionNumber will also be linked to the Item via predicate bf:identifies."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/accessions> a owl:ObjectProperty ;
+    rdfs:label "accessions"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/core/ontology/0.1/AccessionNumber> ;
+    rdfs:range <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> ;
+    owl:inverseOf <https://w3id.org/arm/custodial_history/ontology/0.1/accessionedBy> ;
+    skos:definition "The AccessionNumber being described is associated with the specified CustodialEvent."@en ;
+    skos:scopeNote "The AccessionNumber will also be linked to the Item via predicate bf:identifies."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/hasCustodialHistory> a owl:ObjectProperty ;
+    rdfs:label "has custodial history"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:range <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialHistory> ;
+    owl:inverseOf <https://w3id.org/arm/custodial_history/ontology/0.1/isCustodialHistoryOf> ;
+    skos:definition "Relates a resource to its CustodialHistory."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/isCustodialHistoryOf> a owl:ObjectProperty ;
+    rdfs:label "is custodial history of"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:domain <https://w3id.org/arm/custodial_history/ontology/0.1/CustodialHistory> ;
+    owl:inverseOf <https://w3id.org/arm/custodial_history/ontology/0.1/hasCustodialHistory> ;
+    skos:definition "Relates a CustodialHistory resource to the resource it describes."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/AccessionNumber> a owl:Class ;
+    rdfs:label "Accession number"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Identifier> ;
+    skos:definition "Numeric, alphanumeric, or other identifying codes assigned when an art object, book, or other item enters the collection of a museum, library, or other repository. Such codes are unique within the set of codes, and specifically identify the particular item at hand. The numbers may be marked on the objects or not. "@en ;
+    skos:editorialNote "Deprecate this class when it is defined in BIBFRAME."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Attribution> a owl:Class ;
+    rdfs:label "Attribution"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "The ascribing of an activity to a particular agent or agents. This attribution may change over time based on new evidence."@en ;
+    skos:example "The activity of creating an artwork is ascribed to a particular artist."@en ;
+    skos:scopeNote "The Attribution is directly related to an Activity, and carries additional data about the agent, source, date, etc. of the attribution."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Exhibition> a owl:Class ;
+    rdfs:label "Exhibition"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "The relationship between an ExhibitionEvent and an Item in that event."@en ;
+    skos:scopeNote "Used to attach information to this relationship, such as title, dates, activities such as curatorship, exhibit number, physical arrangement, etc. which does not properly attach to the Item in and of itself."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Mount> a owl:Class ;
+    rdfs:label "Mount"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "An item placed on a pedestal or a case, or otherwise attached to a print, photographic image, or document protected by framing, usually against a backing material."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/PhysicalCondition> a owl:Class ;
+    rdfs:label "Physical Condition"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "One specific aspect of the condition of an object or part of an object, including perceptible or measurable characteristics such as physical appearance, level of damage, quality, or completeness."@en .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/CustodialHistory> a owl:Class ;
+    rdfs:label "Custodial history"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "Entity that aggregates all of the custodial events for a resource."@en ;
+    skos:scopeNote "A resource has a single CustodialHistory, which is composed of one or more CustodialEvent resources. The Item is directly linked only to its CustodialHistory." .
+
+<https://w3id.org/arm/core/ontology/0.1/Enclosure> a owl:Class ;
+    rdfs:label "Enclosure"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "Covering of a book which holds the sheets together to provide protection, and collectively all the parts of a book applied in the process of attaching the leaves and covering them."@en ;
+    skos:scopeNote "This class includes containers, such as a box containing a paper doll set."@en .
+
+<https://w3id.org/arm/core/ontology/0.1/Marking> a owl:Class ;
+    rdfs:label "Marking"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A standardized symbol, notation, or other marking present in or applied to the materials of which an object is composed, or applied to an object during or after creation, conveying information such as the object's origin or maker, its authenticity, or a change in its official status."@en ;
+    skos:editorialNote "As currently defined, contrasts with marginialia and other unofficial markings applied by individual users outside the creation or production process or custodial history of an object. This distinction may at times be subtle, and is subject to future review."@en .
+
+<https://w3id.org/arm/award/ontology/0.1/AwardReceipt> a owl:Class ;
+    rdfs:label "Award receipt" ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "The bestowal of an award, honor, or distinction to an Agent or Work. The award bestowed should be represented with the Award class. The AwardReceipt is a context node between the award and the recipient which may contain further information, such as date." .
+
+<https://w3id.org/arm/custodial_history/ontology/0.1/CustodialEvent> a owl:Class ;
+    rdfs:label "Custodial event"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "A custodial event encompassing one or more Items, such as a sale or loan."@en ;
+    skos:scopeNote "A CustodialEvent may pertain to only a single Item (an individual CustodialEvent) in which case it is linked directly to the Item’s CustodialHistory, or it may encompass multiple Items (such as an auction lot), in which case the CustodialEvent aggregates multiple individual CustodialEvents. A CustodialEvent may be what is typically conceived of as an “event,” or a “static” event such as ownership. Subclasses of CustodialEvent are accordingly either defined as subclasses of schema:Event or not." .
+
+<https://w3id.org/arm/activity/ontology/0.1/Activity> a owl:Class ;
+    rdfs:label "Activity"@en ;
+    dcterms:issued "2018-04-27T00:00:00-04:00" ;
+    dcterms:modified "2018-04-27T00:00:00-04:00" ;
+    skos:definition "An activity or contribution by a single agent that affects or alters the existence or state of a resource."@en .
+

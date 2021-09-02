@@ -1,0 +1,429 @@
+@prefix : <http://culturalis.org/cult/0.1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://culturalis.org/cult/0.1#> .
+
+<http://culturalis.org/cult/0.1> rdf:type owl:Ontology ;
+                                  <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/3.0/it/legalcode> ;
+                                  <http://purl.org/dc/elements/1.1/creator> <http://ibc.regione.emilia-romagna.it/> ,
+                                                                            <http://regesta.exe/> ;
+                                  <http://purl.org/dc/elements/1.1/date> "2015/09/25" ;
+                                  <http://purl.org/dc/elements/1.1/description> "L'ontologia Culturalis - Cultural Institution and Site Ontology è finalizzata alla descrizione degli istituti e luoghi della cultura, anche in combinazione con altre specifiche ontologie di settore."@it ;
+                                  <http://purl.org/dc/elements/1.1/publisher> <http://ibc.regione.emilia-romagna.it/> ;
+                                  <http://purl.org/dc/elements/1.1/title> "Cultural Institution and Site Ontology" ;
+                                  <http://purl.org/dc/terms/issued> "2015/09/25" ;
+                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "cult" ;
+                                  <http://purl.org/vocab/vann/preferredNamespaceUri> "http://culturalis.org/cult/0.1#" ;
+                                  rdfs:label "Cultural Institution and Site Ontology"@it ;
+                                  owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://culturalis.org/cult/0.1#actAs
+:actAs rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+       rdfs:range :CulturalInstitutionOrSite ;
+       rdfs:comment "Proprietà che associa la classe org:Organization con il ruolo che ricopre nei confronti di un istituto/luogo della cultura (ente preposto alla tutelaâ¦)"@it ;
+       rdfs:label "Act as"@en ,
+                  "Agisce in qualità di"@it ;
+       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#covers
+:covers rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Catalogue ;
+        rdfs:range owl:Thing ;
+        rdfs:comment "Questa proprietà associa il catalogo con la porzione di patrimonio culturale che descrive."@it ;
+        rdfs:label "Covers"@en ,
+                   "Descrive"@it ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#extend
+:extend rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Collections ;
+        rdfs:range :Extent ;
+        rdfs:label "Extend"@en ,
+                   "Ha consistenza"@it ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#hasBeginning
+:hasBeginning rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Name ;
+              rdfs:range <http://www.w3.org/2006/time#Interval> ;
+              rdfs:label "Is valid from"@en ,
+                         "Valido a partire da"@it ;
+              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#hasCatalogue
+:hasCatalogue rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Agent ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :Catalogue
+                                         <http://purl.org/dc/terms/BibliographicResource>
+                                       )
+                         ] ;
+              rdfs:comment "Questa proprietà consente di associare l'istituto culturale con i cataloghi che ne descrivono il patrimonio o l'istituto stesso."@it ;
+              rdfs:label "E' descritto in un catalogo"@it ,
+                         "Has catalogue"@en ;
+              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#hasEnd
+:hasEnd rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Name ;
+        rdfs:range <http://www.w3.org/2006/time#Interval> ;
+        rdfs:label "Is valid to"@en ,
+                   "Valido fino a"@it ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Organization ;
+         rdfs:range :RoleInTime ;
+         rdfs:comment "Proprietà che associa la classe org:Organization con il ruolo che ricopre nei confronti di un istituto/luogo della cultura o di un patrimonio culturale (ente preposto alla tutela, finanziatore, titolare proprietario di un fondo depositato presso un istituto culturale) "@it ;
+         rdfs:label "Has Role"@en ,
+                    "Ricopre il ruolo di"@it ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#include
+:include rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Collections ;
+         rdfs:range owl:Thing ;
+         rdfs:comment "Proprietà che associa la classe Collections con le singole collezioni che compongono il patrimonio culturale dellâistituto/luogo della cultura"@it ;
+         rdfs:label "Include"@en ,
+                    "Include"@it ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#involves
+:involves rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range owl:Thing ;
+          rdfs:label "Coinvolge"@it ,
+                     "Involves"@en ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#maintains
+:maintains rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :CulturalInstitutionOrSite ;
+           rdfs:range :Collections ;
+           rdfs:comment "Proprietà che associa la classe CulturalInstitutionOrSite con il patrimonio culturale che conserva, possiede o detiene."@it ;
+           rdfs:label "Conserva"@en ,
+                      "Maintains"@it ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#named
+:named rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdfs:domain :CulturalInstitutionOrSite ;
+       rdfs:range :Name ;
+       rdfs:label "E' denominato"@it ,
+                  "Is named"@en ;
+       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#performs
+:performs rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Organization ;
+          rdfs:range :Activity ;
+          rdfs:label "Esegue"@it ,
+                     "Performs"@en ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#regardsTo
+:regardsTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :RoleInTime ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Collections
+                                      :CulturalInstitutionOrSite
+                                    )
+                      ] ;
+           rdfs:label "Regards to"@en ,
+                      "Riferito a"@it ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#situated
+:situated rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Collections
+                                      :CulturalInstitutionOrSite
+                                    )
+                      ] ;
+          rdfs:range :Site ;
+          rdfs:comment "Proprietà che associa le classi CulturalInstitutionOrSite e Collections alle loro sedi."@it ;
+          rdfs:label "E' situato"@it ,
+                     "Situated in/at"@en ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://culturalis.org/cult/0.1#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:label "Activity"@en ,
+                     "Attività"@it ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://culturalis.org/cult/0.1#ArchaeologicalArea
+:ArchaeologicalArea rdf:type owl:Class ;
+                    rdfs:subClassOf :CulturalInstitutionOrSite ,
+                                    <http://culturalis.org/ocsa/1.0#Agent> ;
+                    rdfs:label "Archaeological Area"@en ,
+                               "Area archeologica"@it ;
+                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Catalogue
+:Catalogue rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "Catalogo"@it ,
+                      "Catalogue"@en ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Collections
+:Collections rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:comment "Patrimonio culturale, insieme dei beni culturali conservati da o presso un Istituto o luogo della cultura."@it ;
+             rdfs:label "Collections"@en ,
+                        "Patrimonio culturale"@it ;
+             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#CulturalInstitutionOrSite
+:CulturalInstitutionOrSite rdf:type owl:Class ;
+                           owl:equivalentClass <http://culturalis.org/ocsa/1.0#Agent> ;
+                           rdfs:subClassOf owl:Thing ;
+                           rdfs:label "Cultural institution/site"@en ,
+                                      "Istituto/luogo della cultura"@it ;
+                           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Extent
+:Extent rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        rdfs:comment "Consistenza fisica, cronologica e/o logica del patrimonio culturale."@it ;
+        rdfs:label "Consistenza"@it ,
+                   "Extent"@en ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#HolderOfArchives
+:HolderOfArchives rdf:type owl:Class ;
+                  rdfs:subClassOf :CulturalInstitutionOrSite ,
+                                  <http://culturalis.org/ocsa/1.0#Agent> ;
+                  rdfs:label "Conservatore d'archivio"@it ,
+                             "Holder of Archives"@en ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Library
+:Library rdf:type owl:Class ;
+         owl:equivalentClass <http://schema.org/Library> ;
+         rdfs:subClassOf :CulturalInstitutionOrSite ,
+                         <http://culturalis.org/ocsa/1.0#Agent> ;
+         rdfs:label "Biblioteca"@it ,
+                    "Library"@en ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#MonumentalArea
+:MonumentalArea rdf:type owl:Class ;
+                rdfs:subClassOf :CulturalInstitutionOrSite ,
+                                <http://culturalis.org/ocsa/1.0#Agent> ;
+                rdfs:label "Complesso monumentale"@it ,
+                           "Monumental Area"@en ;
+                <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Museum
+:Museum rdf:type owl:Class ;
+        owl:equivalentClass <http://schema.org/Museum> ;
+        rdfs:subClassOf :CulturalInstitutionOrSite ,
+                        <http://culturalis.org/ocsa/1.0#Agent> ;
+        rdfs:label "Museo"@it ,
+                   "Museum"@en ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:comment "Denominazione dellâistituto/luogo della cultura."@it ;
+      rdfs:label "Name"@en ,
+                 "Nome"@it ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Organization
+:Organization rdf:type owl:Class ;
+              owl:equivalentClass <http://www.w3.org/ns/org#Organization> ;
+              rdfs:subClassOf owl:Thing ;
+              rdfs:label "Organization"@en ,
+                         "Organizzazione"@it ;
+              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#RoleInTime
+:RoleInTime rdf:type owl:Class ;
+            owl:equivalentClass <http://purl.org/spar/pro/RoleInTime> ;
+            rdfs:subClassOf owl:Thing ;
+            rdfs:label "Role in time"@en ,
+                       "Ruolo nel tempo"@it ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/cult/0.1#Site
+:Site rdf:type owl:Class ;
+      owl:equivalentClass <http://culturalis.org/ocsa/1.0#Site> ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:comment "Sede dellâistituto/luogo della cultura."@it ;
+      rdfs:label "Sede"@it ,
+                 "Site"@en ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://culturalis.org/ocsa/1.0#Agent
+<http://culturalis.org/ocsa/1.0#Agent> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://culturalis.org/ocsa/1.0#Site
+<http://culturalis.org/ocsa/1.0#Site> rdf:type owl:Class ;
+                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/dc/terms/BibliographicResource
+<http://purl.org/dc/terms/BibliographicResource> rdf:type owl:Class ;
+                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/spar/pro/RoleInTime
+<http://purl.org/spar/pro/RoleInTime> rdf:type owl:Class ;
+                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://schema.org/Library
+<http://schema.org/Library> rdf:type owl:Class ;
+                            rdfs:subClassOf :CulturalInstitutionOrSite ,
+                                            <http://culturalis.org/ocsa/1.0#Agent> .
+
+
+###  http://schema.org/Museum
+<http://schema.org/Museum> rdf:type owl:Class ;
+                           rdfs:subClassOf :CulturalInstitutionOrSite ,
+                                           <http://culturalis.org/ocsa/1.0#Agent> .
+
+
+###  http://www.w3.org/2006/time#Interval
+<http://www.w3.org/2006/time#Interval> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/ns/org#Organization
+<http://www.w3.org/ns/org#Organization> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ibc.regione.emilia-romagna.it/
+<http://ibc.regione.emilia-romagna.it/> rdf:type owl:NamedIndividual ,
+                                                 owl:Thing ,
+                                                 <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  http://regesta.exe/
+<http://regesta.exe/> rdf:type owl:NamedIndividual ,
+                               owl:Thing ,
+                               <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

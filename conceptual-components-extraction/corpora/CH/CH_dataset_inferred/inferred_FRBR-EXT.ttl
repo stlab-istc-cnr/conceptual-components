@@ -1,0 +1,827 @@
+@prefix : <http://purl.org/vocab/frbr/extended#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/vocab/frbr/extended#> .
+
+<http://purl.org/vocab/frbr/extended> rdf:type owl:Ontology ;
+                                       <http://purl.org/dc/elements/1.1/creator> "Ian Davis <http://purl.org/NET/iand>" ,
+                                                                                 "Richard Newman" ;
+                                       <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+                                       <http://purl.org/dc/elements/1.1/identifier> "http://purl.org/vocab/frbr/frbr-extended-20050810" ;
+                                       <http://purl.org/dc/elements/1.1/rights> "Copyright © 2005 Richard Newman and Ian Davis" ;
+                                       <http://purl.org/dc/elements/1.1/title> "Expression of Extended FRBR Concepts in RDF"@en ;
+                                       <http://purl.org/dc/terms/hasFormat> <http://purl.org/vocab/frbr/frbr-extended-20050810.html> ,
+                                                                            <http://purl.org/vocab/frbr/frbr-extended-20050810.rdf> ;
+                                       <http://purl.org/dc/terms/isVersionOf> : ;
+                                       <http://purl.org/dc/terms/issued> "2005-07-29" ;
+                                       <http://purl.org/dc/terms/replaces> <http://purl.org/vocab/frbr/frbr-extended-20050729> ;
+                                       <http://purl.org/vocab/vann/preferredNamespacePrefix> "frbre" ;
+                                       <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/vocab/frbr/extended#" ;
+                                       <http://www.w3.org/2004/02/skos/core#changeNote> _:genid1 .
+
+_:genid1 <http://purl.org/dc/elements/1.1/creator> "Ian Davis" ;
+          <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Added isDefinedBy properties and updated documentation" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/format
+<http://purl.org/dc/elements/1.1/format> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasFormat
+<http://purl.org/dc/terms/hasFormat> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isVersionOf
+<http://purl.org/dc/terms/isVersionOf> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/replaces
+<http://purl.org/dc/terms/replaces> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://web.resource.org/cc/license
+<http://web.resource.org/cc/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://web.resource.org/cc/permits
+<http://web.resource.org/cc/permits> rdf:type owl:AnnotationProperty .
+
+
+###  http://web.resource.org/cc/requires
+<http://web.resource.org/cc/requires> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+rdf:value rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minCardinality
+owl:minCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+<http://www.w3.org/2004/02/skos/core#changeNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+<http://www.w3.org/2004/02/skos/core#historyNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/vocab/frbr/core#relatedEndeavour
+<http://purl.org/vocab/frbr/core#relatedEndeavour> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.org/vocab/frbr/extended#complementsExpression
+:complementsExpression rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isRelatedToExpression ;
+                       rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "complements expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#complementsWork
+:complementsWork rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isRelatedToWork ;
+                 rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                 rdfs:comment """Referential: cadenza, libretto, choreography, ending for unfinished work, etc.
+Autonomous: incidental music, musical setting for a text, pendant, etc."""@en ;
+                 rdfs:isDefinedBy : ;
+                 rdfs:label "complements work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasDependentPartExpression
+:hasDependentPartExpression rdf:type owl:ObjectProperty ;
+                            owl:equivalentProperty [ owl:inverseOf :isDependentPartOfExpression
+                                                   ] ;
+                            rdfs:subPropertyOf :hasPartExpression ,
+                                               [ owl:inverseOf :isPartOfExpression
+                                               ] ;
+                            owl:inverseOf :isDependentPartOfExpression ;
+                            rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                            rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                            rdfs:isDefinedBy : ;
+                            rdfs:label "has dependent part expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasDependentPartWork
+:hasDependentPartWork rdf:type owl:ObjectProperty ;
+                      owl:equivalentProperty [ owl:inverseOf :isDependentPartOfWork
+                                             ] ;
+                      rdfs:subPropertyOf :hasPartWork ,
+                                         [ owl:inverseOf :isPartOfWork
+                                         ] ;
+                      rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                      rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                      rdfs:isDefinedBy : ;
+                      rdfs:label "has dependent part work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasIndependentPartExpression
+:hasIndependentPartExpression rdf:type owl:ObjectProperty ;
+                              owl:equivalentProperty [ owl:inverseOf :isIndependentPartOfExpression
+                                                     ] ;
+                              rdfs:subPropertyOf :hasPartExpression ,
+                                                 [ owl:inverseOf :isPartOfExpression
+                                                 ] ;
+                              rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                              rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                              rdfs:isDefinedBy : ;
+                              rdfs:label "has independent part expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasIndependentPartWork
+:hasIndependentPartWork rdf:type owl:ObjectProperty ;
+                        owl:equivalentProperty [ owl:inverseOf :isIndependentPartOfWork
+                                               ] ;
+                        rdfs:subPropertyOf :hasPartWork ,
+                                           [ owl:inverseOf :isPartOfWork
+                                           ] ;
+                        owl:inverseOf :isIndependentPartOfWork ;
+                        rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                        rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                        rdfs:isDefinedBy : ;
+                        rdfs:label "has independent part work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasPartExpression
+:hasPartExpression rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty [ owl:inverseOf :isPartOfExpression
+                                          ] ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                   rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                   rdfs:isDefinedBy : ;
+                   rdfs:label "has part expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasPartItem
+:hasPartItem rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :isPartOfItem
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain <http://purl.org/vocab/frbr/core#Item> ;
+             rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+             rdfs:isDefinedBy : ;
+             rdfs:label "has part item"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasPartManifestation
+:hasPartManifestation rdf:type owl:ObjectProperty ;
+                      owl:equivalentProperty [ owl:inverseOf :isPartOfManifestation
+                                             ] ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                      rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                      rdfs:isDefinedBy : ;
+                      rdfs:label "has part manifestation"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#hasPartWork
+:hasPartWork rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :isPartOfWork
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :isPartOfWork ;
+             rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+             rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+             rdfs:isDefinedBy : ;
+             rdfs:label "has part work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAReconfigurationOfItem
+:isAReconfigurationOfItem rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :isRelatedToItem ;
+                          rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                          rdfs:isDefinedBy : ;
+                          rdfs:label "is a reconfiguration of item"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAReferentialSuccessorToExpression
+:isAReferentialSuccessorToExpression rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf :isASuccessorToExpression ,
+                                                        :isReferentiallyRelatedToExpression ;
+                                     rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                     rdfs:isDefinedBy : ;
+                                     rdfs:label "is a referential successor to expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAReferentialSuccessorToWork
+:isAReferentialSuccessorToWork rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :isASuccessorToWork ,
+                                                  :isReferentiallyRelatedToWork ;
+                               rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                               rdfs:isDefinedBy : ;
+                               rdfs:label "is a referential successor to work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAReproductionOfItem
+:isAReproductionOfItem rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isRelatedToItem ;
+                       rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "is a reproduction of item"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAReproductionOfManifestation
+:isAReproductionOfManifestation rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :isRelatedToManifestation ;
+                                rdfs:range <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                rdfs:isDefinedBy : ;
+                                rdfs:label "is a reproduction of manifestation"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isARevisionOfExpression
+:isARevisionOfExpression rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                         rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                         rdfs:comment "Between expressions of the SAME WORK."@en ;
+                         rdfs:isDefinedBy : ;
+                         rdfs:label "is a revision of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isASuccessorToExpression
+:isASuccessorToExpression rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :isRelatedToExpression ;
+                          rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                          rdfs:isDefinedBy : ;
+                          rdfs:label "is a successor to expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isASuccessorToWork
+:isASuccessorToWork rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :isRelatedToWork ;
+                    rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                    rdfs:comment """Referential: sequel, etc.
+Autonomous: sequel, succeeding work, etc."""@en ;
+                    rdfs:isDefinedBy : ;
+                    rdfs:label "is a sucessor to work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isASummaryOfExpression
+:isASummaryOfExpression rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                        rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                        rdfs:isDefinedBy : ;
+                        rdfs:label "is a summary of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isASummaryOfWork
+:isASummaryOfWork rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isAutonomouslyRelatedToWork ,
+                                     [ owl:inverseOf :isAnImitationOfWork
+                                     ] ;
+                  rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                  rdfs:comment """Digest, abstract, etc.
+The subject is not dependent on the object for meaning."""@en ;
+                  rdfs:isDefinedBy : ;
+                  rdfs:label "is a summary of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isATransformationOfExpression
+:isATransformationOfExpression rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                               rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                               rdfs:isDefinedBy : ;
+                               rdfs:label "is a transformation of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isATransformationOfWork
+:isATransformationOfWork rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isAutonomouslyRelatedToWork ,
+                                            [ owl:inverseOf :isAnImitationOfWork
+                                            ] ;
+                         rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                         rdfs:comment """Dramatisation, novelisation, versification, screenplay, etc.
+The subject is not dependent on the object for meaning."""@en ;
+                         rdfs:isDefinedBy : ;
+                         rdfs:label "is a transformation of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isATranslationOfExpression
+:isATranslationOfExpression rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                            rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                            rdfs:comment "Between expressions of the SAME WORK."@en ;
+                            rdfs:isDefinedBy : ;
+                            rdfs:label "is a translation of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnAbridgementOfExpression
+:isAnAbridgementOfExpression rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                             rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                             rdfs:comment "Between expressions of the SAME WORK."@en ;
+                             rdfs:isDefinedBy : ;
+                             rdfs:label "is an abridgement of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnAdaptationOfExpression
+:isAnAdaptationOfExpression rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                            rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                            rdfs:isDefinedBy : ;
+                            rdfs:label "is an adaptation of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnAdaptationOfWork
+:isAnAdaptationOfWork rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :isAutonomouslyRelatedToWork ,
+                                         [ owl:inverseOf :isAnImitationOfWork
+                                         ] ;
+                      rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                      rdfs:comment """Adaptation, paraphrase, free translation, variation (music), harmonisation (music), fantasy (music), etc.
+The subject is not dependent on the object for meaning."""@en ;
+                      rdfs:isDefinedBy : ;
+                      rdfs:label "is adaption of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnAlternativeManifestationTo
+:isAnAlternativeManifestationTo rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :isRelatedToManifestation ;
+                                rdfs:range <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                rdfs:comment "Alternate is an Americanism."@en ;
+                                rdfs:isDefinedBy : ;
+                                rdfs:label "is an alternative manifestation to"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnArrangementOfExpression
+:isAnArrangementOfExpression rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                             rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                             rdfs:comment "Between expressions of the SAME WORK."@en ;
+                             rdfs:isDefinedBy : ;
+                             rdfs:label "is an arrangement of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnImitationOfExpression
+:isAnImitationOfExpression rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :isAutonomouslyRelatedToExpression ;
+                           rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                           rdfs:isDefinedBy : ;
+                           rdfs:label "is an imitation of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAnImitationOfWork
+:isAnImitationOfWork rdf:type owl:ObjectProperty ;
+                     owl:equivalentProperty [ owl:inverseOf :isAutonomouslyRelatedToWork
+                                            ] ;
+                     rdfs:subPropertyOf [ owl:inverseOf :isRelatedToWork
+                                        ] ;
+                     owl:inverseOf :isAutonomouslyRelatedToWork ;
+                     rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                     rdfs:comment """Parody, imitation, travesty, etc.
+The subject is not dependent on the object for meaning."""@en ;
+                     rdfs:isDefinedBy : ;
+                     rdfs:label "is an imitation of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression
+:isAutonomouslyRelatedToExpression rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf :isRelatedToExpression ;
+                                   rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                   rdfs:comment "A relation between two expressions which does not result in the subject becoming a referential expression (i.e. one which has little meaning without the object)."@en ;
+                                   rdfs:isDefinedBy : ;
+                                   rdfs:label "is autonomously related to expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToWork
+:isAutonomouslyRelatedToWork rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :isRelatedToWork ;
+                             rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                             rdfs:comment "The subject is not dependent on the object for meaning."@en ;
+                             rdfs:isDefinedBy : ;
+                             rdfs:label "is autonomously related to work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isDependentPartOfExpression
+:isDependentPartOfExpression rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :isPartOfExpression ,
+                                                [ owl:inverseOf :hasPartExpression
+                                                ] ;
+                             rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                             rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                             rdfs:isDefinedBy : ;
+                             rdfs:label "is dependent part of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isDependentPartOfWork
+:isDependentPartOfWork rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isPartOfWork ,
+                                          [ owl:inverseOf :hasPartWork
+                                          ] ;
+                       owl:inverseOf :hasDependentPartWork ;
+                       rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                       rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "is dependent part of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isIndependentPartOfExpression
+:isIndependentPartOfExpression rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :isPartOfExpression ,
+                                                  [ owl:inverseOf :hasPartExpression
+                                                  ] ;
+                               owl:inverseOf :hasIndependentPartExpression ;
+                               rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                               rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                               rdfs:isDefinedBy : ;
+                               rdfs:label "is independent part of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isIndependentPartOfWork
+:isIndependentPartOfWork rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isPartOfWork ,
+                                            [ owl:inverseOf :hasPartWork
+                                            ] ;
+                         rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                         rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                         rdfs:isDefinedBy : ;
+                         rdfs:label "is independent part of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isPartOfExpression
+:isPartOfExpression rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :hasPartExpression ;
+                    rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                    rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                    rdfs:isDefinedBy : ;
+                    rdfs:label "is part of expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isPartOfItem
+:isPartOfItem rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :hasPartItem ;
+              rdfs:domain <http://purl.org/vocab/frbr/core#Item> ;
+              rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+              rdfs:isDefinedBy : ;
+              rdfs:label "is part of item"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isPartOfManifestation
+:isPartOfManifestation rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       owl:inverseOf :hasPartManifestation ;
+                       rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                       rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "is part of manifestation"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isPartOfWork
+:isPartOfWork rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+              rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+              rdfs:isDefinedBy : ;
+              rdfs:label "is part of work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToExpression
+:isReferentiallyRelatedToExpression rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :isRelatedToExpression ;
+                                    rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                    rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                    rdfs:comment "A relation between two expressions which results in the subject becoming a referential expression (i.e. one which has little meaning without the object)."@en ;
+                                    rdfs:isDefinedBy : ;
+                                    rdfs:label "is referentially related to expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToWork
+:isReferentiallyRelatedToWork rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :isRelatedToWork ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( :Expression
+                                                          :Work
+                                                        )
+                                          ] ;
+                              rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                              rdfs:isDefinedBy : ;
+                              rdfs:label "is referentially related to work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isRelatedToExpression
+:isRelatedToExpression rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+                       rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                       rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "is related to expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isRelatedToItem
+:isRelatedToItem rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+                 rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                 rdfs:isDefinedBy : ;
+                 rdfs:label "is related to item"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isRelatedToManifestation
+:isRelatedToManifestation rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+                          rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                          rdfs:isDefinedBy : ;
+                          rdfs:label "is related to manifestation"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#isRelatedToWork
+:isRelatedToWork rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                             <http://purl.org/vocab/frbr/core#Work>
+                                           )
+                             ] ;
+                 rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                 rdfs:isDefinedBy : ;
+                 rdfs:label "is related to work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#referentiallyComplementsExpression
+:referentiallyComplementsExpression rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :complementsExpression ,
+                                                       :isReferentiallyRelatedToExpression ;
+                                    rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                    rdfs:isDefinedBy : ;
+                                    rdfs:label "referentially complements expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#referentiallyComplementsWork
+:referentiallyComplementsWork rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :isReferentiallyRelatedToWork ;
+                              rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                              rdfs:isDefinedBy : ;
+                              rdfs:label "referentially complements work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#referentiallySupplementsExpression
+:referentiallySupplementsExpression rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :isReferentiallyRelatedToExpression ,
+                                                       :supplementsExpression ;
+                                    rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                    rdfs:isDefinedBy : ;
+                                    rdfs:label "referentially supplements expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#referentiallySupplementsWork
+:referentiallySupplementsWork rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :isReferentiallyRelatedToWork ,
+                                                 :supplementsWork ;
+                              rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                              rdfs:isDefinedBy : ;
+                              rdfs:label "referentially supplements work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#supplementsExpression
+:supplementsExpression rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isRelatedToExpression ;
+                       rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "supplements expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#supplementsWork
+:supplementsWork rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isRelatedToWork ;
+                 rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                 rdfs:comment """Referential: index, concordance, teacher's guide, gloss, supplement, appendix, etc.
+Autonomous: supplement, appendix, etc."""@en ;
+                 rdfs:isDefinedBy : ;
+                 rdfs:label "supplements work"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://org.semanticweb.owlapi/error#Error2
+<http://org.semanticweb.owlapi/error#Error2> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/dc/terms/IMT
+<http://purl.org/dc/terms/IMT> rdf:type owl:Class ;
+                               rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/core#Endeavour
+<http://purl.org/vocab/frbr/core#Endeavour> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/core#Expression
+<http://purl.org/vocab/frbr/core#Expression> rdf:type owl:Class ;
+                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( :AutonomousExpression
+                                                                                 :ReferentialExpression
+                                                                               )
+                                                                 ] ;
+                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/core#Item
+<http://purl.org/vocab/frbr/core#Item> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/core#Manifestation
+<http://purl.org/vocab/frbr/core#Manifestation> rdf:type owl:Class ;
+                                                rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/core#Work
+<http://purl.org/vocab/frbr/core#Work> rdf:type owl:Class ;
+                                       owl:equivalentClass [ rdf:type owl:Class ;
+                                                             owl:unionOf ( :AutonomousWork
+                                                                           :ReferentialWork
+                                                                         )
+                                                           ] ;
+                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/extended#AutonomousExpression
+:AutonomousExpression rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                 [ rdf:type owl:Class ;
+                                                                   owl:complementOf :ReferentialExpression
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> ;
+                      owl:disjointWith :ReferentialExpression ;
+                      rdfs:isDefinedBy : ;
+                      rdfs:label "autonomous expression"@en ;
+                      <http://www.w3.org/2004/02/skos/core#historyNote> _:genid48 .
+
+_:genid48 <http://purl.org/dc/elements/1.1/creator> "Ian Davis" ;
+           <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Changed complementOf to refer to ReferentialExpression instead of ReferentialWork" .
+
+
+###  http://purl.org/vocab/frbr/extended#AutonomousWork
+:AutonomousWork rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( <http://purl.org/vocab/frbr/core#Work>
+                                                           [ rdf:type owl:Class ;
+                                                             owl:complementOf :ReferentialWork
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf <http://purl.org/vocab/frbr/core#Work> ;
+                owl:disjointWith :ReferentialWork ;
+                rdfs:isDefinedBy : ;
+                rdfs:label "autonomous work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#Expression
+:Expression rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/extended#ReferentialExpression
+:ReferentialExpression rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( <http://org.semanticweb.owlapi/error#Error2>
+                                                                  <http://purl.org/vocab/frbr/core#Expression>
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error2> ,
+                                       <http://purl.org/vocab/frbr/core#Expression> ;
+                       rdfs:comment "A referential expression is one which has little meaning when not studied in conjunction with the expression it refers to."@en ;
+                       rdfs:isDefinedBy : ;
+                       rdfs:label "referential expression"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#ReferentialWork
+:ReferentialWork rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( <http://org.semanticweb.owlapi/error#Error1>
+                                                            <http://purl.org/vocab/frbr/core#Work>
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error1> ,
+                                 <http://purl.org/vocab/frbr/core#Work> ;
+                 rdfs:comment "A referential work is one which has little meaning when not studied in conjunction with the work it refers to."@en ;
+                 rdfs:isDefinedBy : ;
+                 rdfs:label "referential work"@en .
+
+
+###  http://purl.org/vocab/frbr/extended#Work
+:Work rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://web.resource.org/cc/License
+<http://web.resource.org/cc/License> rdf:type owl:Class ;
+                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://web.resource.org/cc/Work
+<http://web.resource.org/cc/Work> rdf:type owl:Class ;
+                                  rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-EXTENDED-20050810.rdf
+<file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-EXTENDED-20050810.rdf> rdf:type owl:NamedIndividual ,
+                                                                                                                              <http://web.resource.org/cc/Work> ,
+                                                                                                                              owl:Thing ;
+                                                                                                                     <http://purl.org/dc/elements/1.1/type> <http://purl.org/dc/dcmitype/Text> ;
+                                                                                                                     <http://web.resource.org/cc/license> <http://creativecommons.org/licenses/by/2.0/uk/> .
+
+
+###  http://creativecommons.org/licenses/by/2.0/uk/
+<http://creativecommons.org/licenses/by/2.0/uk/> rdf:type owl:NamedIndividual ,
+                                                          <http://web.resource.org/cc/License> ,
+                                                          owl:Thing ;
+                                                 <http://web.resource.org/cc/permits> <http://web.resource.org/cc/DerivativeWorks> ,
+                                                                                      <http://web.resource.org/cc/Distribution> ,
+                                                                                      <http://web.resource.org/cc/Reproduction> ;
+                                                 <http://web.resource.org/cc/requires> <http://web.resource.org/cc/Attribution> ,
+                                                                                       <http://web.resource.org/cc/Notice> .
+
+
+[ owl:minCardinality "1"^^xsd:int
+] .
+
+[ owl:minCardinality "1"^^xsd:int
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/vocab/frbr/frbr-extended-20050810.html> <http://purl.org/dc/elements/1.1/format> _:genid61 .
+
+_:genid61 rdf:type <http://purl.org/dc/terms/IMT> ;
+           rdf:value "text/html" ;
+           rdfs:label "HTML"@en .
+
+
+<http://purl.org/vocab/frbr/frbr-extended-20050810.rdf> <http://purl.org/dc/elements/1.1/format> _:genid62 .
+
+_:genid62 rdf:type <http://purl.org/dc/terms/IMT> ;
+           rdf:value "application/rdf+xml" ;
+           rdfs:label "RDF"@en .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

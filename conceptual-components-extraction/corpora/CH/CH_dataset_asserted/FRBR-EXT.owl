@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#referentiallySupplementsWork">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#supplementsWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">referentially supplements work</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToExpression"/>
+    <rdfs:comment xml:lang="en">A relation between two expressions which does not result in the subject becoming a referential expression (i.e. one which has little meaning without the object).</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is autonomously related to expression</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnAdaptationOfWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToWork"/>
+    <rdfs:comment xml:lang="en">Adaptation, paraphrase, free translation, variation (music), harmonisation (music), fantasy (music), etc.
+The subject is not dependent on the object for meaning.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is adaption of work</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#referentiallyComplementsWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToWork"/>
+    <rdfs:label xml:lang="en">referentially complements work</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasPartManifestation">
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfManifestation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:label xml:lang="en">has part manifestation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isIndependentPartOfExpression">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is independent part of expression</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#hasIndependentPartExpression"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended">
+    <vann:preferredNamespacePrefix>frbre</vann:preferredNamespacePrefix>
+    <dc:date>2005-08-10</dc:date>
+    <dct:issued>2005-07-29</dct:issued>
+    <dc:creator>Richard Newman</dc:creator>
+    <dc:identifier>http://purl.org/vocab/frbr/frbr-extended-20050810</dc:identifier>
+    <dct:hasFormat rdf:resource="http://purl.org/vocab/frbr/frbr-extended-20050810.rdf"/>
+    <vann:preferredNamespaceUri>http://purl.org/vocab/frbr/extended#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:rights>Copyright © 2005 Richard Newman and Ian Davis</dc:rights>
+    <dct:hasFormat rdf:resource="http://purl.org/vocab/frbr/frbr-extended-20050810.html"/>
+    <dc:title xml:lang="en">Expression of Extended FRBR Concepts in RDF</dc:title>
+    <skos:changeNote rdf:nodeID="Nf6e7f58be993419ea336f383657e1a84"/>
+    <dct:isVersionOf rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <dct:replaces rdf:resource="http://purl.org/vocab/frbr/frbr-extended-20050729"/>
+    <dc:creator>Ian Davis &lt;http://purl.org/NET/iand&gt;</dc:creator>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasPartExpression">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">has part expression</rdfs:label>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfExpression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isATransformationOfWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:label xml:lang="en">is a transformation of work</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToWork"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">Dramatisation, novelisation, versification, screenplay, etc.
+The subject is not dependent on the object for meaning.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#ReferentialExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">referential expression</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/vocab/frbr/extended#AutonomousExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:equivalentClass rdf:nodeID="N1c7db4d96718460eb3ace9b872e310e5"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:comment xml:lang="en">A referential expression is one which has little meaning when not studied in conjunction with the expression it refers to.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isIndependentPartOfWork">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfWork"/>
+    <rdfs:label xml:lang="en">is independent part of work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isDependentPartOfExpression">
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#hasDependentPartExpression"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfExpression"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is dependent part of expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasPartItem">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfItem"/>
+    <rdfs:label xml:lang="en">has part item</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnImitationOfWork">
+    <rdfs:label xml:lang="en">is an imitation of work</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">Parody, imitation, travesty, etc.
+The subject is not dependent on the object for meaning.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4407695ea9944d71871ea54d482b70ef">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/extended#AutonomousExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isDependentPartOfWork">
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfWork"/>
+    <rdfs:label xml:lang="en">is dependent part of work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#hasDependentPartWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isATranslationOfExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">Between expressions of the SAME WORK.</rdfs:comment>
+    <rdfs:label xml:lang="en">is a translation of expression</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToWork">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">The subject is not dependent on the object for meaning.</rdfs:comment>
+    <rdfs:label xml:lang="en">is autonomously related to work</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnArrangementOfExpression">
+    <rdfs:comment xml:lang="en">Between expressions of the SAME WORK.</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is an arrangement of expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9fc033babb3143658efce38bad21d169">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#isReferentiallyRelatedToWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAReproductionOfItem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is a reproduction of item</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToItem"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2e2412073dfe43c7934d33946d4b7a61">
+    <dc:date>2005-08-10</dc:date>
+    <dc:creator>Ian Davis</dc:creator>
+    <rdf:value>Changed complementOf to refer to ReferentialExpression instead of ReferentialWork</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAReproductionOfManifestation">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Endeavour"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is a reproduction of manifestation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToManifestation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-EXTENDED-20050810.rdf">
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by/2.0/uk/"/>
+    <rdf:type rdf:resource="http://web.resource.org/cc/Work"/>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#Expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAReferentialSuccessorToExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isASuccessorToExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToExpression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is a referential successor to expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isRelatedToExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#relatedEndeavour"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is related to expression</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1e2f5ee7535e436c9345b113ecfd600d">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/extended#ReferentialExpression"/>
+    <rdf:rest rdf:nodeID="N4407695ea9944d71871ea54d482b70ef"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasIndependentPartExpression">
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isIndependentPartOfExpression"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#hasPartExpression"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">has independent part expression</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAReferentialSuccessorToWork">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isASuccessorToWork"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToWork"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:label xml:lang="en">is a referential successor to work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N754a7f79314d4d43b962552b371634fe">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N741be019f26d4c9fa0b6e4d58e059e9e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9324449ae334825a7fdc05d0c2c9dc3">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdf:rest rdf:nodeID="N96ae647cf6db4d3986056bc88d424650"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1e1980966e514fea9a84bc2c47378169">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N7c5c8c83ce3a44788d958a71749923b3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnAdaptationOfExpression">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is an adaptation of expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#supplementsExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">supplements expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToWork">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToWork"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:domain rdf:nodeID="N89f7360ad8024d7ab9c704f0473c5c77"/>
+    <rdfs:label xml:lang="en">is referentially related to work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#ReferentialWork">
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:disjointWith rdf:resource="http://purl.org/vocab/frbr/extended#AutonomousWork"/>
+    <rdfs:comment xml:lang="en">A referential work is one which has little meaning when not studied in conjunction with the work it refers to.</rdfs:comment>
+    <rdfs:label xml:lang="en">referential work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="N555417c70e5b43e0a2a75aa68ef3cace"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N539e38c4786641a1aa423bb3e3803948">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/extended#Work"/>
+    <rdf:rest rdf:nodeID="Nceaf04d7b2e84980902bf6226aacaab0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#AutonomousWork">
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <owl:disjointWith rdf:resource="http://purl.org/vocab/frbr/extended#ReferentialWork"/>
+    <rdfs:label xml:lang="en">autonomous work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:equivalentClass rdf:nodeID="Naaf6d0da237a489888df57f7b79c63f3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#referentiallyComplementsExpression">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#complementsExpression"/>
+    <rdfs:label xml:lang="en">referentially complements expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isARevisionOfExpression">
+    <rdfs:comment xml:lang="en">Between expressions of the SAME WORK.</rdfs:comment>
+    <rdfs:label xml:lang="en">is a revision of expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isASummaryOfWork">
+    <rdfs:label xml:lang="en">is a summary of work</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToWork"/>
+    <rdfs:comment xml:lang="en">Digest, abstract, etc.
+The subject is not dependent on the object for meaning.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasDependentPartWork">
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:label xml:lang="en">has dependent part work</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#hasPartWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c5c8c83ce3a44788d958a71749923b3">
+    <rdf:rest rdf:nodeID="Ne0eca54b6ff74bb691303470bee87673"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#supplementsWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:label xml:lang="en">supplements work</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToWork"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">Referential: index, concordance, teacher's guide, gloss, supplement, appendix, etc.
+Autonomous: supplement, appendix, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnAlternativeManifestationTo">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToManifestation"/>
+    <rdfs:comment xml:lang="en">Alternate is an Americanism.</rdfs:comment>
+    <rdfs:label xml:lang="en">is an alternative manifestation to</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Endeavour"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasDependentPartExpression">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#hasPartExpression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has dependent part expression</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isDependentPartOfExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isPartOfManifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#hasPartManifestation"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:label xml:lang="en">is part of manifestation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/frbr-extended-20050810.rdf">
+    <dc:format rdf:nodeID="Nb1938125d4cb4164ba89cc4ca244918a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnImitationOfExpression">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is an imitation of expression</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasPartWork">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">has part work</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isPartOfWork"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne0eca54b6ff74bb691303470bee87673">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N02487735be5841feb807f903d915a215"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isRelatedToWork">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:label xml:lang="en">is related to work</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nef781a418c244c4dbe93765c08e084f4"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#relatedEndeavour"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd48384dab8134c449e81b43f9c47f3a6">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/IMT"/>
+    <rdfs:label xml:lang="en">HTML</rdfs:label>
+    <rdf:value>text/html</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c7db4d96718460eb3ace9b872e310e5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N8b84545b277447b4b9efe17172261de7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAnAbridgementOfExpression">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">Between expressions of the SAME WORK.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:label xml:lang="en">is an abridgement of expression</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isPartOfWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is part of work</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#complementsWork">
+    <rdfs:comment xml:lang="en">Referential: cadenza, libretto, choreography, ending for unfinished work, etc.
+Autonomous: incidental music, musical setting for a text, pendant, etc.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">complements work</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToWork"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nceaf04d7b2e84980902bf6226aacaab0">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/extended#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isPartOfItem">
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <rdfs:label xml:lang="en">is part of item</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#hasPartItem"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://creativecommons.org/licenses/by/2.0/uk/">
+    <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+    <cc:requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <rdf:type rdf:resource="http://web.resource.org/cc/License"/>
+    <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <cc:requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2d1c427bf8494b6cb5d7b3c45cb3a0a0">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N286d2201d394445582ef250f2df030ab">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#isReferentiallyRelatedToExpression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf6e7f58be993419ea336f383657e1a84">
+    <dc:creator>Ian Davis</dc:creator>
+    <rdf:value>Added isDefinedBy properties and updated documentation</rdf:value>
+    <dc:date>2005-08-10</dc:date>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#complementsExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">complements expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isRelatedToManifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is related to manifestation</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#relatedEndeavour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Work">
+    <owl:equivalentClass rdf:nodeID="Nafc6bb3eda6a4afe9affb86d72e8b60a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="N83f6606d79fa46b3aa3f55084b152978"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N96ae647cf6db4d3986056bc88d424650">
+    <rdf:first rdf:nodeID="N9fc033babb3143658efce38bad21d169"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b84545b277447b4b9efe17172261de7">
+    <rdf:rest rdf:nodeID="N08817329cc1449b08694bde8881bd58b"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N83f6606d79fa46b3aa3f55084b152978">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N1e2f5ee7535e436c9345b113ecfd600d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToExpression">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:comment xml:lang="en">A relation between two expressions which results in the subject becoming a referential expression (i.e. one which has little meaning without the object).</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is referentially related to expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#referentiallySupplementsExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isReferentiallyRelatedToExpression"/>
+    <rdfs:label xml:lang="en">referentially supplements expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#supplementsExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N02487735be5841feb807f903d915a215">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="http://purl.org/vocab/frbr/extended#ReferentialExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafc6bb3eda6a4afe9affb86d72e8b60a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nd846ceb87a0347cba96538ee9bc3006f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isASuccessorToWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToWork"/>
+    <rdfs:comment xml:lang="en">Referential: sequel, etc.
+Autonomous: sequel, succeeding work, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">is a sucessor to work</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd846ceb87a0347cba96538ee9bc3006f">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/extended#ReferentialWork"/>
+    <rdf:rest rdf:nodeID="N40cb6fad9874413db79ef449668bce8d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#hasIndependentPartWork">
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#isIndependentPartOfWork"/>
+    <rdfs:label xml:lang="en">has independent part work</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nef781a418c244c4dbe93765c08e084f4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Na405dea9d0df49a5919c886996b1bcd1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N40cb6fad9874413db79ef449668bce8d">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/extended#AutonomousWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N741be019f26d4c9fa0b6e4d58e059e9e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="http://purl.org/vocab/frbr/extended#ReferentialWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isRelatedToItem">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#relatedEndeavour"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is related to item</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#AutonomousExpression">
+    <rdfs:label xml:lang="en">autonomous expression</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <owl:disjointWith rdf:resource="http://purl.org/vocab/frbr/extended#ReferentialExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <skos:historyNote rdf:nodeID="N2e2412073dfe43c7934d33946d4b7a61"/>
+    <owl:equivalentClass rdf:nodeID="N1e1980966e514fea9a84bc2c47378169"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isAReconfigurationOfItem">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is a reconfiguration of item</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isASuccessorToExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is a successor to expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isRelatedToExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#Work">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfded99af7b8648f2b403a18abb6acc5b">
+    <rdf:rest rdf:nodeID="N754a7f79314d4d43b962552b371634fe"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isPartOfExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is part of expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/extended#hasPartExpression"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isATransformationOfExpression">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is a transformation of expression</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naaf6d0da237a489888df57f7b79c63f3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nfded99af7b8648f2b403a18abb6acc5b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N555417c70e5b43e0a2a75aa68ef3cace">
+    <owl:intersectionOf rdf:nodeID="Nb9324449ae334825a7fdc05d0c2c9dc3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N89f7360ad8024d7ab9c704f0473c5c77">
+    <owl:unionOf rdf:nodeID="N539e38c4786641a1aa423bb3e3803948"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/extended#isASummaryOfExpression">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/extended#isAutonomouslyRelatedToExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/extended#"/>
+    <rdfs:label xml:lang="en">is a summary of expression</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na405dea9d0df49a5919c886996b1bcd1">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdf:rest rdf:nodeID="N2d1c427bf8494b6cb5d7b3c45cb3a0a0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb1938125d4cb4164ba89cc4ca244918a">
+    <rdfs:label xml:lang="en">RDF</rdfs:label>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/IMT"/>
+    <rdf:value>application/rdf+xml</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N08817329cc1449b08694bde8881bd58b">
+    <rdf:first rdf:nodeID="N286d2201d394445582ef250f2df030ab"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/frbr-extended-20050810.html">
+    <dc:format rdf:nodeID="Nd48384dab8134c449e81b43f9c47f3a6"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://viaf.org/#EstablishedHeading">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://viaf.org/#XRef4xx"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:subClassOf rdf:resource="http://viaf.org/#Heading"/>
+    <owl:disjointWith rdf:resource="http://viaf.org/#XRef5xx"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#clusters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+    <rdfs:range rdf:resource="http://viaf.org/#NameAuthority"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#XRef4xx">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:subClassOf rdf:resource="http://viaf.org/#Heading"/>
+    <owl:disjointWith rdf:resource="http://viaf.org/#XRef5xx"/>
+    <owl:disjointWith rdf:resource="http://viaf.org/#EstablishedHeading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#establishedIn">
+    <rdfs:range rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+    <owl:inverseOf rdf:resource="http://viaf.org/#hasEstablishedForm"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#EstablishedHeading"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#hasXref4xx">
+    <owl:inverseOf rdf:resource="http://viaf.org/#xref4xxIn"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://viaf.org/#XRef4xx"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#hasXref5xx">
+    <owl:inverseOf rdf:resource="http://viaf.org/#xref5xxIn"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:range rdf:resource="http://viaf.org/#XRef5xx"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#wasCreatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://viaf.org/#AuthorityAgency"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#NameAuthority"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#xref4xxIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#XRef4xx"/>
+    <owl:inverseOf rdf:resource="http://viaf.org/#hasXref4xx"/>
+    <rdfs:range rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#AuthorityAgency"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#originatesIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://viaf.org/#AuthorityAgency"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#Heading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#AuthorityAgency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:comment xml:lang="en">
+			Note that instances of this class live under
+			http://viaf.org/authorityAgency/*
+		</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#Heading">
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#XRef5xx">
+    <owl:disjointWith rdf:resource="http://viaf.org/#XRef4xx"/>
+    <rdfs:subClassOf rdf:resource="http://viaf.org/#Heading"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <owl:disjointWith rdf:resource="http://viaf.org/#EstablishedHeading"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#hasEstablishedForm">
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:range rdf:resource="http://viaf.org/#EstablishedHeading"/>
+    <owl:inverseOf rdf:resource="http://viaf.org/#establishedIn"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#xref5xxIn">
+    <rdfs:domain rdf:resource="http://viaf.org/#XRef5xx"/>
+    <rdfs:range rdf:resource="http://viaf.org/#NameAuthorityCluster"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://viaf.org/#hasXref5xx"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#NameAuthority">
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">
+			Note that instances of this class live under
+			http://viaf.org/viaf/*
+		</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">The VIAF ontology</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#abbreviation">
+    <rdfs:domain rdf:resource="http://viaf.org/#AuthorityAgency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#NMTOKEN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://viaf.org/#NameAuthorityCluster">
+    <rdfs:isDefinedBy rdf:resource="http://viaf.org/"/>
+    <rdfs:comment xml:lang="en">
+			Note that instancess of this class live under
+			http://viaf.org/nameAuthorityCluster/*
+		</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

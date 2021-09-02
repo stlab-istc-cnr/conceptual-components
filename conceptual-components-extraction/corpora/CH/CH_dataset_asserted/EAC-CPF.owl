@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:terms="http://purl.org/dc/terms/"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#source">
+    <rdfs:label xml:lang="en">source</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="it">fonte</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/source"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#nameArea">
+    <rdfs:isDefinedBy rdf:resource="http://culturalis.org/dainserire"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/nameArea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name area</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#CorporateBody">
+    <rdfs:label xml:lang="it">ente</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2773"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/corporateBody"/>
+    <rdfs:label xml:lang="en">corporate body</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Instance">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa classe è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:label xml:lang="it">scheda descrittiva</rdfs:label>
+    <rdfs:comment xml:lang="it">La classe instance rappresenta la scheda descrittiva/record d'autorità dell'entity</rdfs:comment>
+    <rdfs:label xml:lang="en">instance</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndfd76401e0e24ebd943730074600ad7b">
+    <rdf:first rdf:resource="http://culturalis.org/oad#ArchivalResource"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#localControl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/localControl"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Local Control</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#involves">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa proprietà è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:label xml:lang="it">coinvolge</rdfs:label>
+    <rdfs:domain rdf:nodeID="N01d0ad624e284c76b00aba1ad4ac12c4"/>
+    <rdfs:comment xml:lang="it">La proprietà collega le diverse tipologie di relazione (CPFrelation, FunctionRelation e ResourceRelation) con entity, archival resource e function</rdfs:comment>
+    <rdfs:label xml:lang="en">involves</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:nodeID="N73ad837934a547a9a51d5d710f945a10"/>
+    <owl:inverseOf rdf:resource="http://culturalis.org/eac-cpf#isInvolvedIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#hasPlace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#Place"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/hasPlace"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa proprietà è stata inserita nella versione del 18 febbraio 2013</owl:versionInfo>
+    <rdfs:label xml:lang="it">ha luogo</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e5820"/>
+    <rdfs:label xml:lang="en">has place</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf/2.0/eac-cpf.rdf">
+    <terms:rights rdf:resource="https://creativecommons.org/licenses/by/4.0/it/legalcode"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:date>20180820</dc:date>
+    <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/it/"/>
+    <owl:priorVersion rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/eac-cpf1.2.rdf"/>
+    <dc:title>EAC-CPF Descriptions Ontology for Linked Archival Data</dc:title>
+    <vann:preferredNamespaceUri>http://culturalis.org/eac-cpf#</vann:preferredNamespaceUri>
+    <dc:creator>Regesta.exe</dc:creator>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dc:creator>Istituto per i beni artistici culturali e naturali della Regione Emilia-Romagna</dc:creator>
+    <rdfs:label>EAC-CPF Descriptions Ontology for Linked Archival Data</rdfs:label>
+    <vann:preferredNamespacePrefix>eac-cpf</vann:preferredNamespacePrefix>
+    <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#isDescribedBy">
+    <owl:versionInfo xml:lang="it">Questa proprietà è stata inserita nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:comment xml:lang="it">La proprietà collega un'entity con una risorsa informativa</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:label xml:lang="it">è descritta in</rdfs:label>
+    <rdfs:label xml:lang="en">is described by</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#relation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relation</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e6439"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/relation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#cpfRelation">
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2216"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/cpfRelation"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#relation"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corporate Body, Person, or Family Relation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#controlArea">
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">control area</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e1944"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/controlArea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Place">
+    <rdfs:label xml:lang="it">luogo</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">place</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/place"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e5921"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#maintenanceHistory">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maintenance History</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/maintenanceHistory"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#publicationStatus">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/publicationStatus"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Publication Status</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#recordID">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/recordID"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Record Identifier</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#descriptionArea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/descriptionArea"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2138"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">description area</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#languageUsed">
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Languages Used</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/languageUsed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#legalStatus">
+    <rdfs:label xml:lang="it">status giuridico</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/legalStatus"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+    <rdfs:label xml:lang="en">legal status</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#maintenanceStatus">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/maintenanceStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maintenance Status</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Person">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/person"/>
+    <rdfs:label xml:lang="en">person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2773"/>
+    <rdfs:label xml:lang="it">persona</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#isEntryOf">
+    <rdfs:label xml:lang="it">è scheda descrittiva di</rdfs:label>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:comment xml:lang="it">Functional property utilizzata per rappresentare il legame tra la scheda descrittiva e l'entity</rdfs:comment>
+    <rdfs:label xml:lang="en">is entry of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <owl:versionInfo xml:lang="it">Questa proprietà è stata inserita nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://culturalis.org/eac-cpf#hasEntry"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#resourceRelationType">
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#relation"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resource Relation Type</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/resourceRelationType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#description">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/description"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#descriptionArea"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2138"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description</rdfs:label>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#cpfRelationType">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/cpfRelationType"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#relation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corporate Body, Person, or Family Relation Type</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#isInvolvedIn">
+    <rdfs:label xml:lang="it">è coinvolto in</rdfs:label>
+    <rdfs:comment xml:lang="it">Proprietà inversa di involves</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa proprietà è stata inserita nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is involved in</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#placeRole">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa proprietà è stata inserita nella versione del 18 febbraio 2013</owl:versionInfo>
+    <rdfs:label xml:lang="it">relazione del luogo con il soggetto</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/placeRole"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Place"/>
+    <rdfs:label xml:lang="en">place role</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Entity">
+    <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <owl:equivalentClass rdf:resource="http://dati.san.beniculturali.it/SAN/produttore"/>
+    <rdfs:label xml:lang="it">soggetto</rdfs:label>
+    <rdfs:label xml:lang="en">entity</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/entity"/>
+    <rdfs:comment xml:lang="it">La classe entity rappresenta qualsiasi soggetto (ente, persona e famiglia) coinvolto nella produzione degli archivi: sia esso un produttore d'archivio o un soggetto che -in senso più ampio- concorre a formare il contesto di produzione, raccolta o sedimentazione di un archivio.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2773"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#biogHist">
+    <rdfs:label xml:lang="en">biographical or historical note</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/biogHist"/>
+    <rdfs:label xml:lang="it">nota storica o biografica</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#nameEntry">
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e5077"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/nameEntry"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#nameArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name Entry</rdfs:label>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#mandate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/mandate"/>
+    <rdfs:label xml:lang="en">mandate</rdfs:label>
+    <rdfs:label xml:lang="it">mandato o fonti normative</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#occupation">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="it">occupazione</rdfs:label>
+    <rdfs:label xml:lang="en">occupation</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/occupation"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#structureOrGenealogy">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">structure or genealogy</rdfs:label>
+    <rdfs:label xml:lang="it">struttura o genealogia</rdfs:label>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/structureOrGenealogy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Language">
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e3737"/>
+    <rdfs:label xml:lang="it">lingua</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">language</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/language"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#CPFrelation">
+    <rdfs:label xml:lang="en">relationship between entities</rdfs:label>
+    <rdfs:label xml:lang="it">relazione tra soggetti</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="it">La classe rappresenta la relazione che intercorre tra un soggetto e un altro soggetto</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa classe è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#maintenanceAgency">
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maintenance Agency</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/maintenanceAgency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Function">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa classe è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:label xml:lang="en">function</rdfs:label>
+    <rdfs:comment xml:lang="it">La classe rappresenta la funzione svolta dall'entity e può essere utilizzata per mettere l'entity in relazione con una funzione formalizzata.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="it">funzione</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#named">
+    <rdfs:label xml:lang="it">denominazione</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa proprietà è stata inserita nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#Name"/>
+    <rdfs:comment xml:lang="it">La proprietà collega un'entity con le sue denominazioni</rdfs:comment>
+    <rdfs:label xml:lang="en">named</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#existDates">
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/existDates"/>
+    <rdfs:label xml:lang="it">date di esistenza</rdfs:label>
+    <rdfs:label xml:lang="en">dates of existence</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#FunctionRelation">
+    <rdfs:label xml:lang="en">relation between entity and function</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="it">La classe rappresenta la relazione che intercorre tra un'entity e le sue funzioni</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa classe è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:label xml:lang="it">relazione tra soggetto e funzione</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/oad#ArchivalResource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#function">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Function</rdfs:label>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/function"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#generalContext">
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/generalContext"/>
+    <rdfs:label xml:lang="it">contesto generale</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Instance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">general context</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geonames.org/ontology#Feature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#localTypeDeclaration">
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Local Type Declaration</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/localTypeDeclaration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#resourceRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#relation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resource Relation</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/resourceRelation"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e6491"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Family">
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2773"/>
+    <rdfs:label xml:lang="en">family</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/family"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:label xml:lang="it">famiglia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N01d0ad624e284c76b00aba1ad4ac12c4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N3c695bc34d4e40a7b295523ed905311d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#control">
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e1944"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#controlArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/control"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Control</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#ResourceRelation">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa classe è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="it">La classe rappresenta la relazione che intercorre tra un'entity e la documentazione archivistica che ha prodotto o altre risorse collegate.</rdfs:comment>
+    <rdfs:label xml:lang="en">relation between entity and resource</rdfs:label>
+    <rdfs:label xml:lang="it">relazione tra un soggetto e una risorsa</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#hasMultipleIdentities">
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdfs:label xml:lang="en">multiple identities</rdfs:label>
+    <rdfs:label xml:lang="it">identità multipla</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/hasMultipleIdentities"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e4966"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N747b9b7f9bb1405aa01ad7ed172a0605">
+    <rdf:first rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdf:rest rdf:nodeID="Nf59923e2470b478ab167b964705d1108"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dati.san.beniculturali.it/SAN/produttore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#hasEntry">
+    <rdfs:label xml:lang="en">has entry</rdfs:label>
+    <rdfs:label xml:lang="it">è descritta da</rdfs:label>
+    <owl:versionInfo xml:lang="it">Questa proprietà è stata inserita nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Proprietà inversa di is entry of</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N73ad837934a547a9a51d5d710f945a10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N747b9b7f9bb1405aa01ad7ed172a0605"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#languageDeclaration">
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:label xml:lang="en">language declaration</rdfs:label>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/languageDeclaration"/>
+    <rdfs:isDefinedBy rdf:resource="http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e3791"/>
+    <rdfs:range rdf:resource="http://culturalis.org/eac-cpf#Language"/>
+    <rdfs:label xml:lang="it">dichiarazione della lingua</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3c695bc34d4e40a7b295523ed905311d">
+    <rdf:rest rdf:nodeID="N91453996a5d24e89bf716093760bf80a"/>
+    <rdf:first rdf:resource="http://culturalis.org/eac-cpf#CPFrelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#conventionDeclaration">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:backwardCompatibleWith rdf:resource="http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/conventionDeclaration"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#booelan">true</owl:deprecated>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Convention Declaration</rdfs:label>
+    <rdfs:domain rdf:resource="http://culturalis.org/eac-cpf#Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N91453996a5d24e89bf716093760bf80a">
+    <rdf:rest rdf:nodeID="N17bdda1db93347bab971b4b55438202d"/>
+    <rdf:first rdf:resource="http://culturalis.org/eac-cpf#FunctionRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N17bdda1db93347bab971b4b55438202d">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://culturalis.org/eac-cpf#ResourceRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#allValuesFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://culturalis.org/eac-cpf#Name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="it">denominazione</rdfs:label>
+    <rdfs:comment xml:lang="it">usage note (it)	La classe rappresenta la denominazione dell'entity.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questa classe è stata aggiunta nella versione del 20 agosto 2018</owl:versionInfo>
+    <rdfs:label xml:lang="en">name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf59923e2470b478ab167b964705d1108">
+    <rdf:first rdf:resource="http://culturalis.org/eac-cpf#Function"/>
+    <rdf:rest rdf:nodeID="Ndfd76401e0e24ebd943730074600ad7b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#booelan">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocommons/voaf#Vocabulary">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N314968a73c444eec89be07b181d8532f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#allValuesFrom"/>
+  </rdf:Description>
+</rdf:RDF>

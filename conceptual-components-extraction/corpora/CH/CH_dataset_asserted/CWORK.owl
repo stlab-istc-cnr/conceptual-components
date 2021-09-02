@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://www.w3.org/2002/07/owl#"
+   xmlns:ns2="http://www.bbc.co.uk/ontologies/provenance/"
+   xmlns:ns3="http://purl.org/dc/terms/"
+   xmlns:ns4="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/LiveEventPage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en-gb">LiveEventPage</rdfs:label>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:comment xml:lang="en-gb">This class is created to support the LiveEventPages from CPS. This will be soon deprecated for the sake of LiveCoverage</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/shortTitle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-gb">The sort title of the Creative Work</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-gb">shortTitle</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Format">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:label xml:lang="en-gb">Format</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">The primary format of the CreativeWork and it can be one of the five instances. This is needed for selecting the appropriate icon with which to overlay the preview thumbnail of the creative work.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Clip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:comment xml:lang="en-gb">The Clips subclass of programmes produced by the BBC.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:label xml:lang="en-gb">Clip</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Programme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/LiveCoverage">
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:comment xml:lang="en-gb">This class is used to describe that creative works which are coverage of a live event. (Note that this isn't meant to describe the fact that the event is live currently. An example of a Live Coverage creative work is the live event page covering live the England VS Australia cricket match, last saturday's football matches or last year's elections)</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">LiveCoverage</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/thumbnailType">
+    <rdfs:comment xml:lang="en-gb">Associates the Thumbnail instance with a Thumbnail type</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Thumbnail"/>
+    <rdfs:label xml:lang="en-gb">thumbnailType</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/altText">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Thumbnail"/>
+    <rdfs:label xml:lang="en-gb">altText</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-gb">The alternative text for a thumbnail in case the URL is not resolved</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/WeatherAlert">
+    <rdfs:label xml:lang="en-gb">WeatherAlert</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:comment xml:lang="en-gb">This class is used to describe creative works which are Weather Alerts.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.10"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework">
+    <ns4:creator rdf:resource="mailto:LinkedData@bbc.co.uk"/>
+    <rdfs:label xml:lang="en-gb">Creative Work Ontology</rdfs:label>
+    <ns1:priorVersion rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.10"/>
+    <ns2:provided rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-02-03T15:19:38+00:00</ns2:provided>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <ns1:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.11</ns1:versionInfo>
+    <ns2:slug rdf:datatype="http://www.w3.org/2001/XMLSchema#string">creativework</ns2:slug>
+    <rdfs:comment xml:lang="en-gb">This is the model we use to express the minimum metadata necessary to express a piece of creative content in the platform. The creative work ontology is continuously evolving based on our clients' requirements. There is a core class in this model, which is the CreativeWork class and properties that support information the LDP clients need to build their products such as title, thumbnail, URL e.t.c.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/provenance/Ontology"/>
+    <ns1:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    <ns2:public rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:public>
+    <ns2:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.11</ns2:version>
+    <ns1:imports rdf:resource="http://www.bbc.co.uk/ontologies/provenance"/>
+    <ns1:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <ns4:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-01</ns4:date>
+    <ns3:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-02-01</ns3:modified>
+    <ns2:provider rdf:resource="mailto:Matthew.Gamble@bbc.co.uk"/>
+    <ns2:canonicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/bbc/ontologies/blob/master/core/creativework.ttl</ns2:canonicalLocation>
+    <ns3:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <ns1:versionIRI rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.11"/>
+    <ns2:changeReason xml:lang="en-gb">Update label for Weather Alert.</ns2:changeReason>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/TextualFormat">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Used to represent that the primary format of a CreativeWork is Text</rdfs:comment>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+    <rdfs:label xml:lang="en-gb">TextualFormat</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/CreativeWork">
+    <rdfs:label xml:lang="en-gb">CreativeWork</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-gb">The class of creative works produced by the BBC.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/TravelIncident">
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.10"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-gb">This class is used to describe creative works which are Travel Incidents.</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">TravelIncident</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/FixedSize464Thumbnail">
+    <rdfs:label xml:lang="en-gb">FixedSize464Thumbnail</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">Fixed size thumbnail</rdfs:comment>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/NationalAudience">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">The national audience. The creative works linked to this instance are *only available to the national audience*.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Audience"/>
+    <rdfs:label xml:lang="en-gb">NationalAudience</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/FixedSize224Thumbnail">
+    <rdfs:comment xml:lang="en-gb">Fixed size thumbnail</rdfs:comment>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+    <rdfs:label xml:lang="en-gb">FixedSize224Thumbnail</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/language">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en-gb">language</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+    <rdfs:comment xml:lang="en-gb">The language of the creative work, please use BCP47 https://tools.ietf.org/html/bcp47</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/createdBy">
+    <rdfs:comment xml:lang="en-gb">associate a creative work with its creator</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">createdBy</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/coreconcepts/Thing"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-gb">title</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">The title of the Creative Work</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Programme">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:comment xml:lang="en-gb">The class of programmes produced by the BBC</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en-gb">Programme</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/StandardThumbnail">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+    <rdfs:comment xml:lang="en-gb">A 16x9 image used in most occasions</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">StandardThumbnail</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/CloseUpThumbnail">
+    <rdfs:comment xml:lang="en-gb">A 16x9 image, focused and zoomed in one part of the image, usually when the standard thumbnail is very small to be meaningful (e.g., in mobile).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:label xml:lang="en-gb">CloseUpThumbnail</rdfs:label>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/FixedSize144Thumbnail">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:label xml:lang="en-gb">FixedSize144Thumbnail</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">Fixed size thumbnail</rdfs:comment>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/about">
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:comment xml:lang="en-gb">Indicates that the creative work is about a tag concept</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/tag"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/tagging/TagConcept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:label xml:lang="en-gb">about</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/InteractiveFormat">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Used to represent that the primary format of a CreativeWork is Interactive</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">InteractiveFormat</rdfs:label>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/tag">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Indicates that the creative work is tagged with tag concept</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/tagging/TagConcept"/>
+    <rdfs:label xml:lang="en-gb">tag</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/primaryFormat">
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:label xml:lang="en-gb">primaryFormat</rdfs:label>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-gb">Associates the Creative Work with the Primary Format instance</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/ImageFormat">
+    <rdfs:label xml:lang="en-gb">ImageFormat</rdfs:label>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Used to represent that the primary format of a CreativeWork is Image</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Thumbnail">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:label xml:lang="en-gb">Thumbnail</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-gb">Used to associate a Creative Work with the canonical location of the thumbnail. The URI of each of its instances is the full canonical location of the thumbnail</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-gb">Enumerated class of the allowed thumbnail types</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">ThumbnailType</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/NewsItem">
+    <rdfs:comment xml:lang="en-gb">The class of all news items that the BBC produces. They can be textual articles, or media asset pages (audio or video) or live coverage of events (use the liveCoverage property).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:label xml:lang="en-gb">NewsItem</rdfs:label>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/FixedSize226Thumbnail">
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+    <rdfs:comment xml:lang="en-gb">Fixed size thumbnail</rdfs:comment>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:label xml:lang="en-gb">FixedSize226Thumbnail</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/PictureGalleryFormat">
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Used to represent that the primary format of a CreativeWork is of PictureGallery (this is a mid-term solution for the modelling of galleries)</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">PictureGalleryFormat</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/VideoFormat">
+    <rdfs:comment xml:lang="en-gb">Used to represent that the primary format of a CreativeWork is Video</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">VideoFormat</rdfs:label>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/BlogPost">
+    <rdfs:comment xml:lang="en-gb">This is the class of creative works that are associated with particular journalists or correspondents. The analysis, commentary and personal viewpoint of the creator is reflected on the blog post and the blog post is usually associated prominently with the name of the creator. BlogPost can have different types of formats.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:label xml:lang="en-gb">BlogPost</rdfs:label>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Category">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:label xml:lang="en-gb">Category</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-gb">A class to represent different categorisations of creative works from different clients. This class is instantiated in the clients' application logic models.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Audience">
+    <rdfs:comment xml:lang="en-gb">Enumerated class of the audiences the BBC creates content for.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en-gb">Audience</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/thumbnail">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Associates the Creative Work with the Thumbnail instance</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">thumbnail</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Thumbnail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/AudioFormat">
+    <rdfs:comment xml:lang="en-gb">Used to represent that the primary format of a CreativeWork is Audio.</rdfs:comment>
+    <rdfs:label xml:lang="en-gb">AudioFormat</rdfs:label>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Format"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/dateModified">
+    <rdfs:label xml:lang="en-gb">dateModified</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">Date modified of CreativeWork</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/audience">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en-gb">audience</rdfs:label>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Audience"/>
+    <rdfs:comment xml:lang="en-gb">Associates the Creative Work with an audience instance</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/dateCreated">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:label xml:lang="en-gb">dateCreated</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:comment xml:lang="en-gb">Date created of CreativeWork</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/FixedSize66Thumbnail">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:comment xml:lang="en-gb">Fixed size thumbnail</rdfs:comment>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:label xml:lang="en-gb">FixedSize66Thumbnail</rdfs:label>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/ThumbnailType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Episode">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <rdfs:comment xml:lang="en-gb">The Episodes subclass of programmes produced by the BBC.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en-gb">Episode</rdfs:label>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Programme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/InternationalAudience">
+    <rdfs:label xml:lang="en-gb">InternationalAudience</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">The international (non UK) audience. The creative works linked to this instance are *only available to the international audience*.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdf:type rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Audience"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/Commentary">
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework/1.4"/>
+    <ns1:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:deprecated>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:label xml:lang="en-gb">Commentary</rdfs:label>
+    <rdfs:comment xml:lang="en-gb">This class represents short form creative works in the shape of updates. These differ from the other types of creative works because they haven't got independent URLs  as (primaryContentOf) from which they can be retrieved.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/description">
+    <rdfs:label xml:lang="en-gb">description</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">The description of the Creative Work</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/category">
+    <rdfs:comment xml:lang="en-gb">The category property is another mid term solution for maintaining the functionality supporting individual clients. For example, the type of gossip is something that the sports pal use for the moment. The values of the property are decided by the client teams in collaboration with LDP</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdfs:label xml:lang="en-gb">category</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/creativework/Category"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.bbc.co.uk/ontologies/creativework/mentions">
+    <rdfs:domain rdf:resource="http://www.bbc.co.uk/ontologies/creativework/CreativeWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.bbc.co.uk/ontologies/creativework"/>
+    <rdfs:comment xml:lang="en-gb">Indicates that the creative work mentions a tag concept</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.bbc.co.uk/ontologies/creativework/tag"/>
+    <rdfs:range rdf:resource="http://www.bbc.co.uk/ontologies/tagging/TagConcept"/>
+    <rdfs:label xml:lang="en-gb">mentions</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

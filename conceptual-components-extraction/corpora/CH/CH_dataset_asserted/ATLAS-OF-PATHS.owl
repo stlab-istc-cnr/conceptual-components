@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:admsapit="https://w3id.org/italia/onto/ADMS/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:l0="https://w3id.org/italia/onto/l0/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyRestaurant">
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Restaurant"/>
+    <rdfs:label xml:lang="en">has nearby restaurant</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyRestaurantOf"/>
+    <rdfs:label xml:lang="it">ha un ristorante nelle vicinanze</rdfs:label>
+    <rdfs:comment xml:lang="it">Questa object property collega una tappa del cammino con un ristorante nelle vicinanze.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This object property connects a path stage with a nearby restaurant.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isQuantifiedPathwayPavingOf">
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasQuantifiedPathwayPaving.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="it">è quantificata pavimentazione del percorso di</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdfs:comment xml:lang="en">Inverse object property of hasQuantifiedPathwayPaving.</rdfs:comment>
+    <rdfs:label xml:lang="en">is quantified pathway paving of</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/forPathway">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving"/>
+    <rdfs:comment xml:lang="en">This object property correlates a pathway with the quantity of its specific paving, i.e. the asphalt.</rdfs:comment>
+    <rdfs:label xml:lang="it">per percorso</rdfs:label>
+    <rdfs:label xml:lang="en">for pathway</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="it">Questa object property mette in relazione un percorso con la quantità di una sua specifica pavimentazione, ovvero l'asfalto.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasQuantityOfPaving"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isSupportServiceOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Inverse property of hasSupportService.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SupportService"/>
+    <rdfs:label xml:lang="en">is support service of</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="it">è servizio di supporto di</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasSupportService.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e50e796bbbe4af5b258e644c6901c05">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/POI/PointOfInterest"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb05423bc47a478caadb2bc329fa211e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/isTripPlanOf"/>
+    <owl:onClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/COV/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Path">
+    <rdfs:subClassOf rdf:nodeID="N9e60e1e8c9f84547a77cd21789408d80"/>
+    <rdfs:subClassOf rdf:nodeID="N7a6ba9e83c9f44148776552eb8d595ea"/>
+    <rdfs:label xml:lang="it">Cammino</rdfs:label>
+    <owl:disjointWith rdf:resource="https://w3id.org/italia/onto/Route/TripPlan"/>
+    <rdfs:subClassOf rdf:nodeID="N27bec9b3e33346be89d90baed4777633"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/italia/onto/Route/Route"/>
+    <rdfs:subClassOf rdf:nodeID="N29b5c7725e814f119f32d0a3f2388b17"/>
+    <rdfs:comment xml:lang="en">This class represents the concept of a path that includes: its theme of interest, its different pathways (main, alternative and deviation), its encountered paths, its management and maintenance's entities, its website.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <rdfs:subClassOf rdf:nodeID="N3683ef2c1d6e4b6b8768bb7302dfcc25"/>
+    <rdfs:label xml:lang="en">Path</rdfs:label>
+    <owl:disjointWith rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdfs:subClassOf rdf:nodeID="Nc78b1950424148f3a0965e3912e70eb6"/>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta il concetto di cammino che ricomprende: la sua tematica d'interesse, i suoi diversi percorsi (principale, alternativo e deviazione), i cammini che lo incrociano, gli enti di gestione e manutenzione, il sito web.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N633dee9633b8404a8f371f808b4fa6af"/>
+    <rdfs:subClassOf rdf:nodeID="N492b971c073a46d7a2f52d4e319122a9"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Description"/>
+    <rdfs:subClassOf rdf:nodeID="Nc3a16f935c6b49d0ba6624f63e7b5e57"/>
+    <rdfs:subClassOf rdf:nodeID="Ncc357069344c4c038b8f685ba40944b3"/>
+    <rdfs:subClassOf rdf:nodeID="Naa6bc82b4d2f438fa3b5fcb5b851d52e"/>
+    <rdfs:subClassOf rdf:nodeID="Ne2a85892637543c793640b9c217cc135"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlaPfPaths">
+    <admsapit:status>initial draft</admsapit:status>
+    <admsapit:target xml:lang="it">Cittadini</admsapit:target>
+    <admsapit:target xml:lang="it">Pubbliche Amministrazioni</admsapit:target>
+    <owl:imports rdf:resource="https://w3id.org/italia/onto/Route"/>
+    <admsapit:depiction rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/v0.1/AtlasOfPaths-AP_IT.png"/>
+    <admsapit:hasContributor rdf:resource="http://spcdata.digitpa.gov.it/Amministrazione/agid"/>
+    <dct:description xml:lang="en">This is the Italian application profile of the ontology on the digital atlas of paths of Italy. The paths can be historical, naturalistic, cultural and religious, they cross the country from north to south and represent a fundamental part of the slow tourism offer. The digital atlas of paths is nothing more than a container of routes and ways designed and built on the guidelines indicated by the ministerial directive and regulated - with the development of appropriate criteria - within the related Committee, inter-institutional coordination formed by MiBAC, Regions and Autonomous Provinces</dct:description>
+    <admsapit:hasSemanticAssetDistribution rdf:resource="https://w3id.org/italia/data/distribution/AOPAPIT-JSON-LD"/>
+    <admsapit:hasKeyClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <admsapit:hasKeyClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <admsapit:officialURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/italia/onto/AtlasOfPaths</admsapit:officialURI>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+    <dct:rightsHolder rdf:resource="http://spcdata.digitpa.gov.it/Amministrazione/m_bac"/>
+    <rdfs:comment xml:lang="it">Questo è il profilo applicativo italiano dell'ontologia sull'atlante digitale dei cammini d'italia. I cammini possono essere storici, naturalistici, culturali e religiosi, attraversano il Paese da nord a sud e rappresentano una parte fondamentale nell’offerta del turismo lento. L'atlante digitale dei cammini non è altro che un contenitore di percorsi e vie pensato e realizzato sulle linee guida indicate dalla direttiva ministeriale e regolamentato – con la messa a punto degli opportuni criteri – nell’ambito del Comitato Cammini, coordinamento inter-istituzionale formato da MiBAC, Regioni e Provincie autonome</rdfs:comment>
+    <dct:title xml:lang="en">Atlas of Paths Ontology - Italian Application Profile</dct:title>
+    <admsapit:semanticAssetInUse rdf:resource="https://w3id.org/italia/data/project/OntoPiA"/>
+    <admsapit:hasTask rdf:resource="https://w3id.org/italia/onto/ADMS/AnnotationTask"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/0.3"/>
+    <admsapit:hasSemanticAssetDistribution rdf:resource="https://w3id.org/italia/data/distribution/AOPAPIT-RDF-TURTLE"/>
+    <dcat:keyword xml:lang="it">Vie</dcat:keyword>
+    <dct:creator rdf:resource="http://spcdata.digitpa.gov.it/Amministrazione/m_bac"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-24</dct:modified>
+    <rdfs:label xml:lang="en">Atlas of Paths Ontology</rdfs:label>
+    <dcat:contactPoint rdf:resource="https://w3id.org/italia/data/contact-point/onto-dgt"/>
+    <admsapit:prefix>aopapit</admsapit:prefix>
+    <dct:publisher rdf:resource="https://w3id.org/italia/data/support-unit/cnr-Z6HZEH/stlab"/>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-10-18</dct:issued>
+    <admsapit:hasOntologyLanguage rdf:resource="https://w3id.org/italia/onto/ADMS/OWL"/>
+    <admsapit:target xml:lang="it">Imprese</admsapit:target>
+    <dcat:keyword xml:lang="it">Atlante cammini</dcat:keyword>
+    <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/IRREG"/>
+    <dct:description rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/v0.1/AtlasOfPaths-AP_IT.png"/>
+    <dcat:keyword xml:lang="it">Percorso</dcat:keyword>
+    <dcat:keyword xml:lang="it">Tappa</dcat:keyword>
+    <admsapit:hasTask rdf:resource="https://w3id.org/italia/onto/ADMS/SearchTask"/>
+    <admsapit:hasSemanticAssetDistribution rdf:resource="https://w3id.org/italia/data/distribution/AOPAPIT-RDF-XML"/>
+    <dct:description xml:lang="it">Questo è il profilo applicativo italiano dell'ontologia sull'atlante digitale dei cammini d'italia. I cammini possono essere storici, naturalistici, culturali e religiosi, attraversano il Paese da nord a sud e rappresentano una parte fondamentale nell’offerta del turismo lento. L'atlante digitale dei cammini non è altro che un contenitore di percorsi e vie pensato e realizzato sulle linee guida indicate dalla direttiva ministeriale e regolamentato – con la messa a punto degli opportuni criteri – nell’ambito del Comitato Cammini, coordinamento inter-istituzionale formato da MiBAC, Regioni e Provincie autonome</dct:description>
+    <dcat:keyword xml:lang="it">Cammino</dcat:keyword>
+    <admsapit:hasFormalityLevel rdf:resource="https://w3id.org/italia/onto/ADMS/Formal"/>
+    <admsapit:acronym>AtlasOfPaths-AP_IT</admsapit:acronym>
+    <admsapit:semanticAssetInUse rdf:resource="https://w3id.org/italia/data/project/DAF"/>
+    <owl:versionInfo xml:lang="it">Versione 0.3 - 24 Aprile 2019 - Revisione di alcune proprietà (e.g., hasFirstMember) e alcune classi quali  Path, PathPlan, Pathway e QuantifiedPathwayPaving. Revisione di alcune restrizioni.</owl:versionInfo>
+    <rdfs:label xml:lang="it">Ontologia dell'Atlante dei Cammini</rdfs:label>
+    <admsapit:hasKeyClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan"/>
+    <admsapit:type rdf:resource="https://w3id.org/italia/onto/ADMS/DomainOntology"/>
+    <dct:title xml:lang="it">Ontologia dell'Atlante dei Cammini - Profilo applicativo italiano</dct:title>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths"/>
+    <rdfs:comment xml:lang="en">This is the Italian application profile of the ontology on the digital atlas of paths of Italy. The paths can be historical, naturalistic, cultural and religious, they cross the country from north to south and represent a fundamental part of the slow tourism offer. The digital atlas of paths is nothing more than a container of routes and ways designed and built on the guidelines indicated by the ministerial directive and regulated - with the development of appropriate criteria - within the related Committee, inter-institutional coordination formed by MiBAC, Regions and Autonomous Provinces</rdfs:comment>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/EDUC"/>
+    <owl:versionInfo xml:lang="en">Version 0.3 - 24 April 2019 - Revision of some properties (e.g., hasFirstMember) and classes such as  Path, PathPlan, Pathway e QuantifiedPathwayPaving. Revision of some restrictions.</owl:versionInfo>
+    <admsapit:hasTask rdf:resource="https://w3id.org/italia/onto/ADMS/QueryFormulationTask"/>
+    <admsapit:last rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/0.1"/>
+    <admsapit:semanticAssetInUse rdf:resource="https://w3id.org/italia/data/project/AtlanteCammini"/>
+    <dct:creator rdf:resource="https://w3id.org/italia/data/support-unit/cnr-Z6HZEH/stlab"/>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ENG"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan">
+    <rdfs:subClassOf rdf:nodeID="Ned3f0eecf2774d3cb9e22b92cc628044"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:subClassOf rdf:nodeID="Nba9e0d3ea5784aee9c3da153b68f3dc9"/>
+    <rdfs:subClassOf rdf:nodeID="Nfb05423bc47a478caadb2bc329fa211e"/>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta le informazioni relative alla pianificazione del percorso del cammino da intraprendere quali, ad esempio, il possibile metodo di viaggio o il periodo dell'anno preferibile.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/Route/TripPlan"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This class represents the information related to the path planning such as, for example, the possible travel method or the preferable period of the year.</rdfs:comment>
+    <rdfs:label xml:lang="en">Path Plan</rdfs:label>
+    <rdfs:label xml:lang="it">Piano di viaggio del percorso</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/TI/TemporalEntity">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme">
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This class represents the path theme of interest that can be of naturalistic, archaeological, cultural, historical and religious type.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta il tema d'interesse del cammino che può essere di tipo naturalistico, archeologico, culturale, storico e religioso.</rdfs:comment>
+    <rdfs:label xml:lang="en">Path Theme</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Topic"/>
+    <rdfs:label xml:lang="it">Tema di interesse del cammino</rdfs:label>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf76dab7e1b6445b2abb30cab54413fd6">
+    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:withRestrictions rdf:nodeID="N32067eb4e50140a7aa6e0af3c3aea51c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3167071a5bb94a3a840503ab0f458331">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/forPathway"/>
+    <owl:onClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Horseback">
+    <rdfs:label xml:lang="it">a cavallo</rdfs:label>
+    <rdfs:label xml:lang="en">horseback</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta un tipo di metodo di viaggio possibile lungo un certo percorso.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">This individual represents a type of possible travel method along a certain pathway.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyAccomodationOf">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf"/>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/ACCO/Accommodation"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Inverse object property of hasNearbyAccomodation.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasNearbyAccomodation.</rdfs:comment>
+    <rdfs:label xml:lang="it">è struttura alberghiera nelle vicinanze di</rdfs:label>
+    <rdfs:label xml:lang="en">is nearby accomodation of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Archaeological">
+    <rdfs:label xml:lang="en">archeological</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta la definizione del tipo di tematica associata a ciascun cammino.</rdfs:comment>
+    <rdfs:comment xml:lang="en">This individual represents the definition of the type of theme associated with each path.</rdfs:comment>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="it">archeologico</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Naturalistic">
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta la definizione del tipo di tematica associata a ciascun cammino.</rdfs:comment>
+    <rdfs:comment xml:lang="en">This individual represents the definition of the type of theme associated with each path.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="it">naturalistico</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">naturalistic</rdfs:label>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/MU/hasMeasurementUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#fn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isSecurityLevelOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasSecurityLevel.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SecurityLevel"/>
+    <rdfs:label xml:lang="en">is security level of</rdfs:label>
+    <rdfs:label xml:lang="it">è livello di sicurezza di</rdfs:label>
+    <rdfs:comment xml:lang="en">Inverse object property of hasSecurityLevel.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/PathStage">
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:subClassOf rdf:nodeID="Nf2ac6fa160814225aea110453199a42f"/>
+    <rdfs:label xml:lang="it">Tappa del percorso</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N6e50e796bbbe4af5b258e644c6901c05"/>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta una tappa georeferenziata di un cammino. Ad essa sono associate ulteriori informazioni: la presenza di segnaletica (indicante successive tappe, eventuali snodi verso altri cammini, percorsi alternativi o deviazioni) e di alloggi, ristoranti e servizi di supporto al camminatore nelle vicinanze.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Na9641a7a118347b88dcf7f1211bdfe3a"/>
+    <rdfs:subClassOf rdf:nodeID="N6759aaa335714d2bbf421455712f2e81"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/Route/Stage"/>
+    <rdfs:comment xml:lang="en">This class represents a georeferenced stage of a path. Further information is associated with it: the presence of signposting (indicating a successive stage, possible path intersections, alternative pathways or detours) and of accommodation, restaurants and walker support services nearby.</rdfs:comment>
+    <rdfs:label xml:lang="en">Path Stage</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Nf03ba04e49ac49aca559634f115c386a"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isGovernanceOrganOf">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/COV/isOrganizationOf"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/COV/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="it">è organo di governo di</rdfs:label>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasGovernanceOrgan.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Inverse object property of hasGovernanceOrgan.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdfs:label xml:lang="en">is governance organ of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasSignposting">
+    <rdfs:comment xml:lang="en">This object property connects an entity with its signposting.</rdfs:comment>
+    <rdfs:label xml:lang="it">ha segnaletica</rdfs:label>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isSignpostingOf"/>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Signposting"/>
+    <rdfs:comment xml:lang="it">Questa object property collega un'entità con la sua segnaletica.</rdfs:comment>
+    <rdfs:label xml:lang="en">has signposting</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasMaintainer">
+    <rdfs:comment xml:lang="en">This object property allows to associate a pathway with its maintenance organization.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <rdfs:comment xml:lang="it">Questa object property permette di associare un percorso con il suo ente di manutenzione.</rdfs:comment>
+    <rdfs:label xml:lang="it">ha manutentore</rdfs:label>
+    <rdfs:label xml:lang="en">has maintainer</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isMaintainerOf"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasSurveillance">
+    <rdfs:label xml:lang="it">ha sorveglianza</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This object property allows to associate a pathway with its surveillance organization.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Questa object property permette di associare un percorso con il suo ente di sorveglianza.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <rdfs:label xml:lang="en">has surveillance</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isSurveillanceOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyAccommodation">
+    <rdfs:label xml:lang="it">ha struttura alberghiera nelle vicinanze</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa object property collega una tappa del cammino con una struttura alberghiera nelle vicinanze.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/ACCO/Accommodation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyAccomodationOf"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest"/>
+    <rdfs:comment xml:lang="en">This object property connects a path stage with a nearby hotel.</rdfs:comment>
+    <rdfs:label xml:lang="en">has nearby accomodation</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/withPaving">
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving"/>
+    <rdfs:comment xml:lang="en">This object property correlates a specific paving, i.e. asphalt, with its quantity in a certain path.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Paving"/>
+    <rdfs:label xml:lang="en">with paving</rdfs:label>
+    <rdfs:label xml:lang="it">con pavimentazione</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa object property mette in relazione una specifica pavimentazione, ovvero l'asfalto, con la sua quantità in un certo percorso.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isMaintainerOf">
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasMaintainer.</rdfs:comment>
+    <rdfs:label xml:lang="en">is maintainer of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <rdfs:comment xml:lang="en">Inverse object property of hasMaintainer</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="it">è manutentore di</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasTheme">
+    <rdfs:comment xml:lang="en">This object property allows to associate a theme of interest to a path, such as, for example, archaeological, naturalistic, cultural, etc.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="it">Questa object property permette di associare un tema d'interesse a un cammino, quale, ad esempio, archeologico, naturalistico, culturale ecc.</rdfs:comment>
+    <rdfs:label xml:lang="it">ha tema</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+    <rdfs:label xml:lang="en">has theme</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isThemeOf"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasQuantifiedPathwayPaving">
+    <rdfs:label xml:lang="en">has quantified pathway paving</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isQuantifiedPathwayPavingOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdfs:comment xml:lang="it">Questa object property mette in relazione un cammino con la quantità di una sua specifica pavimentazione, ovvero l'asfalto.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This object property correlates a path with the quantity of its specific paving, i.e. the asphalt.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="it">ha quatificata pavimentazione del percorso</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/project/OntoPiA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <l0:name xml:lang="it">OntoPiA - la rete di ontologie della pubblica amministrazione italiana</l0:name>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/distribution/AOPAPIT-RDF-XML">
+    <dct:title xml:lang="en">RDF/XML distribution of AtlasOfPaths-AP_IT Ontology</dct:title>
+    <dcat:accessURL rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/latest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dct:license rdf:resource="https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40"/>
+    <dct:title xml:lang="it">Distribuzione RDF/XML ontologia AtlasOfPaths-AP_IT</dct:title>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/SemanticAssetDistribution"/>
+    <dct:description xml:lang="en">This is the distribution in RDF/XML of the Atlas of Paths ontology</dct:description>
+    <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/RDF_XML"/>
+    <dct:description xml:lang="it">Questa è la distribuzione RDF/XML dell'ontologia sull'atlante dei cammini</dct:description>
+    <dcat:downloadURL rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/latest/AtlasOfPaths-AP_IT.rdf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/bestWhen">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="en">best when</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan"/>
+    <rdfs:comment xml:lang="en">This object property correlates a path plan with a temporal entity that specifies the best period of the year to walk a certain pathway.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Questa object property collega un piano di viaggio con un'entità temporale che specifica quale sia il periodo migliore dell'anno per percorrere un certo percorso.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/TI/hasTemporalCoverage"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="it">periodo migliore</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/TI/TemporalEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N70013a8b7b0e456c8356bf63322a42e2">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasMaintainer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/support-unit/cnr-Z6HZEH/stlab">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dct:identifier>cnr - Z6HZEH - STLab</dct:identifier>
+    <foaf:name xml:lang="it">Istituto di Scienze e Tecnologie della Cognizione del CNR - Semantic Technology Lab (STLab)</foaf:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Agent"/>
+    <foaf:name xml:lang="en">Institute of Cognitive Sciences and Technologies of the Italian Research Council (CNR) - Semantic Technology Laboratory (STLab)</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3683ef2c1d6e4b6b8768bb7302dfcc25">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasTripPlan"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Pathway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N87d0c1b112094dc2a7b72fd41e1154aa"/>
+    <rdfs:comment xml:lang="it">Questa classe descrive un percorso di un cammino nella sua accezione prettamente fisica e rappresentabile come sequenza ordinata di tappe georeferenziate.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Nd075b201a6cd48cfa910d1de62921888"/>
+    <rdfs:subClassOf rdf:nodeID="N3bb686e22e2f479aa20fb50c60f227e9"/>
+    <rdfs:subClassOf rdf:nodeID="Ncf0bec4046a74111ba466411e676e194"/>
+    <rdfs:label xml:lang="en">Pathway</rdfs:label>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdfs:subClassOf rdf:nodeID="N70013a8b7b0e456c8356bf63322a42e2"/>
+    <rdfs:comment xml:lang="en">This class describes a pathway of a path in its purely physical meaning, which can be represented as an ordered sequence of georeferenced stages.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Ne45a2a2e209b4147a1b68735b366863f"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/Route/Route"/>
+    <rdfs:label xml:lang="it">Percorso</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N724425d23fa244be95454d27145dae46"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving">
+    <rdfs:comment xml:lang="it">Questa classe rappresenta la relazione n-aria capace di quantificare la percentuale di una specifica pavimentazione, ovvero l'asfalto, di un percorso.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Quantified Pathway Paving</rdfs:label>
+    <rdfs:comment xml:lang="en">This class represents the n-ary relation able to quantify the percentage of a pathway specific paving, i.e. the asphalt.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N3167071a5bb94a3a840503ab0f458331"/>
+    <rdfs:subClassOf rdf:nodeID="N82fe506e16dd4ccc950b8c03be69c0fb"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Object"/>
+    <rdfs:label xml:lang="it">Quantificazione della pavimentazione del percorso</rdfs:label>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/SecurityLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class represents information related to the pathway security level.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta le informazioni relative al livello di sicurezza del percorso.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Characteristic"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="en">Security Level</rdfs:label>
+    <rdfs:label xml:lang="it">Livello di sicurezza</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Paving">
+    <rdfs:label xml:lang="it">Pavimentazione</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Characteristic"/>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta uno specifico tipo di pavimentazione, ovvero l'asfalto.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class represents a specific type of paving, i.e. the asphalt.</rdfs:comment>
+    <rdfs:label xml:lang="en">Paving</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasSecurityLevel">
+    <rdfs:label xml:lang="en">has security level</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="it">ha livello di sicurezza</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isSecurityLevelOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This object property associates a pathway with information related to its security level.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SecurityLevel"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <rdfs:comment xml:lang="it">Questa object property associa un percorso alle informazioni relative al suo livello di sicurezza.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd075b201a6cd48cfa910d1de62921888">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/hasMember"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/CLV/SpatialObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/project/DAF">
+    <l0:name xml:lang="it">Data &amp; Analytics Framework</l0:name>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This class represents a possible travel method along a certain pathway.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Description"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/italia/onto/Route/TripPlan"/>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta un metodo di viaggio possibile lungo un certo percorso.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Travelling method</rdfs:label>
+    <rdfs:label xml:lang="it">Metodo di viaggio</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Cultural">
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta la definizione del tipo di tematica associata a ciascun cammino.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="it">culturale</rdfs:label>
+    <rdfs:comment xml:lang="en">This individual represents the definition of the type of theme associated with each path.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="en">cultural</rdfs:label>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/COV/hasOrganization">
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/COV/isOrganizationOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Historical">
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta la definizione del tipo di tematica associata a ciascun cammino.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">This individual represents the definition of the type of theme associated with each path.</rdfs:comment>
+    <rdfs:label xml:lang="it">storico</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+    <rdfs:label xml:lang="en">historical</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasSupportService">
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isSupportServiceOf"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa object property associa uno specifico oggetto con un servizio di supporto al camminatore.</rdfs:comment>
+    <rdfs:label xml:lang="en">has support service</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SupportService"/>
+    <rdfs:label xml:lang="it">ha servizio di supporto</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <rdfs:comment xml:lang="en">This object property associates a specific object to a walker support service.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Topic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/distribution/AOPAPIT-JSON-LD">
+    <dct:description xml:lang="it">Questa è la distribuzione JSON-LD dell'ontologia sull'atlante dei cammini</dct:description>
+    <dcat:downloadURL rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/latest/AtlasOfPaths-AP_IT.jsonld"/>
+    <dcat:accessURL rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/latest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dct:title xml:lang="en">JSON-LD distribution of AtlasOfPaths-AP_IT Ontology</dct:title>
+    <dct:license rdf:resource="https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40"/>
+    <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/JSON_LD"/>
+    <dct:title xml:lang="it">Distribuzione JSON-LD ontologia AtlasOfPaths-AP_IT</dct:title>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/SemanticAssetDistribution"/>
+    <dct:description xml:lang="en">This is the distribution in JSON-LD of the Atlas of Paths ontology</dct:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasQuantityOfPaving">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths"/>
+    <rdfs:comment xml:lang="it">Proprietà inversa di "per percorso"</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="en">has quantity of paving</rdfs:label>
+    <rdfs:label xml:lang="it">ha quantità di pavimentazione</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Inverse property of "for Pathway"</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf">
+    <rdfs:label xml:lang="en">is nearby point of interest of</rdfs:label>
+    <rdfs:comment xml:lang="en">Inverse object property of hasNearbyPointOfInterest.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="it">è punto di interesse nelle vicinanze di</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasNearbyPointOfInterest.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/POI/PointOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/stageNumber">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/Route/position"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa proprietà rappresenta il numero identificativo di una tappa del cammino.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <rdfs:label xml:lang="en">stage number</rdfs:label>
+    <rdfs:comment xml:lang="en">This data property represents the identification number of a path stage.</rdfs:comment>
+    <rdfs:label xml:lang="it">numero della tappa</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc357069344c4c038b8f685ba40944b3">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/encountersPath"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spcdata.digitpa.gov.it/Amministrazione/m_bac">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Agent"/>
+    <foaf:name xml:lang="it">Ministero dei Beni e delle Attivita' Culturali</foaf:name>
+    <dct:identifier>m_bac</dct:identifier>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isThemeOf">
+    <rdfs:label xml:lang="it">è tema di</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasTheme.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Inverse object property of hasTheme.</rdfs:comment>
+    <rdfs:label xml:lang="en">is theme of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isSurveillanceOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Inverse property of hasSurveillance.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <rdfs:label xml:lang="it">è sorverglianza di</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+    <rdfs:label xml:lang="en">is surveillance of</rdfs:label>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasSurveillance.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isServiceTypeOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SupportService"/>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasServiceType.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/ServiceType"/>
+    <rdfs:label xml:lang="en">is support service type of</rdfs:label>
+    <rdfs:comment xml:lang="en">Inverse object property hasServiceType.</rdfs:comment>
+    <rdfs:label xml:lang="it">è tipo di servizio di supporto di</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/SupportService">
+    <rdfs:label xml:lang="en">Support Service</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This class describes a walker support service along the pathway.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="it">Servizio di supporto</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="it">Questa classe descrive un servizio di supporto al camminatore lungo il percorso.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/ServiceType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="it">Questa classe descrive il tipo di servizio di supporto al camminatore lungo il percorso.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Concept"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This class describes the type of walker support service along the pathway.</rdfs:comment>
+    <rdfs:label xml:lang="it">Tipo di servizio di supporto</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="en">Support Service Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/CLV/Feature">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/CLV/SpatialObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Cycling">
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="it">in bicicletta</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This individual represents a type of possible travel method along a certain pathway.</rdfs:comment>
+    <rdfs:label xml:lang="en">cycling</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta un tipo di metodo di viaggio possibile lungo un certo percorso.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbc240115854640fb82904478e04d9d20">
+    <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.0</xsd:maxExclusive>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/POI/PointOfInterest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/encountersPathStage">
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <rdfs:comment xml:lang="it">Questa object property permette di associare una tappa di un cammino con quella di un cammino differente localizzata nello stesso luogo.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This object property allows to associate a stage of a path with that of a different path located in the same place.</rdfs:comment>
+    <rdfs:label xml:lang="en">encounters path stage</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="it">incontra tappa del cammino</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/pathNumber">
+    <rdfs:label xml:lang="en">path number</rdfs:label>
+    <rdfs:comment xml:lang="en">This data property represents the identification number of a path.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="it">numero del cammino</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="it">Questa proprietà rappresenta il numero identificativo di un cammino.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a6ba9e83c9f44148776552eb8d595ea">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/SM/hasWebSite"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/SM/WebSite"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/encountersPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdfs:label xml:lang="en">encounters path</rdfs:label>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdfs:comment xml:lang="en">This object property specifies which paths encounter a considered path, which is the subject of triples having as predicate encountersPath.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Questa object property permette di collegare un cammino con gli altri cammini incontrati.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <owl:propertyChainAxiom rdf:nodeID="N4d59ff12c6764beb928f3df9b93a8f27"/>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdfs:label xml:lang="it">incontra cammino</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isTravellingMethodOf">
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasTravellingMethod.</rdfs:comment>
+    <rdfs:label xml:lang="it">è metodo di viaggio di</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:label xml:lang="en">is travelling method of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Inverse object property of hasTravellingMethod.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29b5c7725e814f119f32d0a3f2388b17">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasDeviation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasGovernanceOrgan">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/COV/Organization"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa object property collega un cammino con il suo organo di governo.</rdfs:comment>
+    <rdfs:comment xml:lang="en">This object property connects a path with its governance organ.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/COV/hasOrganization"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isGovernanceOrganOf"/>
+    <rdfs:label xml:lang="it">ha organo di governo</rdfs:label>
+    <rdfs:label xml:lang="en">has governance organ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Path"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa6bc82b4d2f438fa3b5fcb5b851d52e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasPrefRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6759aaa335714d2bbf421455712f2e81">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Restaurant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyRestaurant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Restaurant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/POI/PointOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isSignpostingOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is signposting of</rdfs:label>
+    <owl:versionInfo xml:lang="it">stabile</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">stable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Inverse object property of hasSingposting.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Signposting"/>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasSignposting.</rdfs:comment>
+    <rdfs:label xml:lang="it">è segnaletica di</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasTravellingMethod">
+    <rdfs:label xml:lang="it">ha metodo di viaggio</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questa object property collega un piano di viaggio con un possibile metodo di viaggio quale, ad esempio, a piedi, a cavallo, in bicicletta ecc.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isTravellingMethodOf"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan"/>
+    <rdfs:label xml:lang="en">has travelling method</rdfs:label>
+    <rdfs:comment xml:lang="en">This object property connects a travel plan with a possible travel method such as, for example, on foot, on horseback, on a bike, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest">
+    <rdfs:label xml:lang="it">ha un punto d'interesse nelle vicinanze</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This object property connects a path stage with a point of interest nearby.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf"/>
+    <rdfs:label xml:lang="en">has nearby point of interest</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/POI/PointOfInterest"/>
+    <rdfs:comment xml:lang="en">Questa object property collega una tappa del cammino con un punto d'interesse nelle vicinanze.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/ACCO/Accommodation">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/POI/PointOfInterest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N724425d23fa244be95454d27145dae46">
+    <owl:allValuesFrom rdf:nodeID="Nb8b70e845f5244439c62946ec4509202"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="N1f032d25aca44a3aaa2f7691a6ddae45"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c9febf8f9a943c2a0601fd2a2d4ca93">
+    <rdf:rest rdf:nodeID="N48c3d4d881694e4eb0c0d776171ba25e"/>
+    <rdf:first rdf:resource="https://w3id.org/italia/onto/l0/hasMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne45a2a2e209b4147a1b68735b366863f">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/hasMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/CLV/hasSpatialCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/CLV/Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Religious">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta la definizione del tipo di tematica associata a ciascun cammino.</rdfs:comment>
+    <rdfs:comment xml:lang="en">This individual represents the definition of the type of theme associated with each path.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="en">religious</rdfs:label>
+    <rdfs:label xml:lang="it">religioso</rdfs:label>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathTheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4ff821e11db941539a1864adb8ff55e3">
+    <rdf:first rdf:nodeID="Nb04117cdf5f54871bffdef20d2fbcaa8"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N633dee9633b8404a8f371f808b4fa6af">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathPlan"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasTripPlan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyRestaurantOf">
+    <rdfs:label xml:lang="it">è ristorante nelle vicinanze di</rdfs:label>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Proprietà inversa di hasNearbyRestaurant.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Restaurant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Inverse object property of hasNearbyRestaurant.</rdfs:comment>
+    <rdfs:label xml:lang="en">is nearby restaurant of</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba9e0d3ea5784aee9c3da153b68f3dc9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/bestWhen"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/TI/TemporalEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc78b1950424148f3a0965e3912e70eb6">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasRoute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/hasServiceType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/isServiceTypeOf"/>
+    <rdfs:label xml:lang="en">has service type</rdfs:label>
+    <rdfs:comment xml:lang="en">This object property associates a walker support service along the path with its type.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Questa object property associare un servizio di supporto al camminatore lungo il percorso con il suo tipo.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SupportService"/>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/ServiceType"/>
+    <rdfs:label xml:lang="it">ha tipo di servizio</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncf0bec4046a74111ba466411e676e194">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/hasLastMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne9915ccb3c7f435bbdc609c954a2d7f2">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/withPaving"/>
+    <owl:hasValue rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/asphalt"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/project/AtlanteCammini">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/Project"/>
+    <l0:name xml:lang="it">Atlante dei Cammini d'Italia</l0:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spcdata.digitpa.gov.it/Amministrazione/agid">
+    <dct:identifier>agid</dct:identifier>
+    <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Agent"/>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <foaf:name xml:lang="en">Italian Digital Agency</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Walking">
+    <rdfs:label xml:lang="it">a piedi</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This individual represents a type of possible travel method  along a certain pathway.</rdfs:comment>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdfs:label xml:lang="en">walking</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta un tipo di metodo di viaggio possibile lungo un certo percorso.</rdfs:comment>
+    <owl:versionInfo xml:lang="it">provvisorio</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/contact-point/onto-dgt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Kind"/>
+    <vcard:fn>Direzione Generale Turismo</vcard:fn>
+    <vcard:hasEmail rdf:resource="mailto:dg-t@beniculturali.it"/>
+    <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Organization"/>
+    <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/Signposting">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This class describes the information related to the signposting of a path stage.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="it">Segnaletica</rdfs:label>
+    <rdfs:label xml:lang="en">Signposting</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Characteristic"/>
+    <rdfs:comment xml:lang="it">Questa classe rappresenta le informazioni relative alla segnaletica di una tappa del cammino.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/ADMS/SemanticAsset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf2ac6fa160814225aea110453199a42f">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/ACCO/Accommodation"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyAccommodation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N27bec9b3e33346be89d90baed4777633">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/description"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/data/distribution/AOPAPIT-RDF-TURTLE">
+    <dcat:accessURL rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/latest"/>
+    <dct:description xml:lang="en">This is the distribution in RDF/turtle of the Atlas of Paths ontology</dct:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dct:title xml:lang="it">Distribuzione RDF/Turtle ontologia AtlasOfPaths-AP_IT</dct:title>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/SemanticAssetDistribution"/>
+    <dct:license rdf:resource="https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40"/>
+    <dcat:downloadURL rdf:resource="https://raw.githubusercontent.com/italia/daf-ontologie-vocabolari-controllati/master/Ontologie/AtlasOfPaths/latest/AtlasOfPaths-AP_IT.ttl"/>
+    <dct:description xml:lang="it">Questa è la distribuzione RDF/Turtle dell'ontologia sull'atlante dei cammini</dct:description>
+    <dct:title xml:lang="en">RDF/Turtle distribution of AtlasOfPaths-AP_IT Ontology</dct:title>
+    <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/isTripPlanOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N82fe506e16dd4ccc950b8c03be69c0fb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/withPaving"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Paving"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb8b70e845f5244439c62946ec4509202">
+    <owl:intersectionOf rdf:nodeID="N2521cad4b8bc4ea3b1eebb39c024589b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3bb686e22e2f479aa20fb50c60f227e9">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/l0/Agent"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasSurveillance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/asphalt">
+    <rdfs:label xml:lang="en">asphalt</rdfs:label>
+    <rdfs:label xml:lang="it">asfalto</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdfs:comment xml:lang="en">This individual represents a specific type of paving, i.e. the asphalt.</rdfs:comment>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta uno spefifico tipo di pavimentazione, ovvero l'asfalto.</rdfs:comment>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Paving"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne2a85892637543c793640b9c217cc135">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/ADMS/SemanticAsset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na9a26964fe964f7eb0ec6d6d76aee1d0">
+    <rdf:first rdf:nodeID="Na77674cebc6f46e4a3ec0f09571106d8"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/ADMS/SemanticAssetDistribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/isMemberOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N48c3d4d881694e4eb0c0d776171ba25e">
+    <rdf:first rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/encountersPathStage"/>
+    <rdf:rest rdf:nodeID="Nb194b1c14891419a9d4331dca8225e08"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#hasEmail">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf03ba04e49ac49aca559634f115c386a">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/SupportService"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasSupportService"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9e60e1e8c9f84547a77cd21789408d80">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasGovernanceOrgan"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/COV/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87d0c1b112094dc2a7b72fd41e1154aa">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/PathStage"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/hasFirstMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/MU/maxPercentage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/hasLastMember">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/hasFirstMember">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/format">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2521cad4b8bc4ea3b1eebb39c024589b">
+    <rdf:first rdf:nodeID="Ne9915ccb3c7f435bbdc609c954a2d7f2"/>
+    <rdf:rest rdf:nodeID="Na9a26964fe964f7eb0ec6d6d76aee1d0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/hasPrefRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ned3f0eecf2774d3cb9e22b92cc628044">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasTravellingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na77674cebc6f46e4a3ec0f09571106d8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onDataRange rdf:nodeID="Nf76dab7e1b6445b2abb30cab54413fd6"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/MU/maxPercentage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/hasMember">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/Route">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/SM/hasWebSite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/italia/onto/SM/WebSite"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb04117cdf5f54871bffdef20d2fbcaa8">
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/Route/hasRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/hasDeviation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32067eb4e50140a7aa6e0af3c3aea51c">
+    <rdf:first rdf:nodeID="Nbc240115854640fb82904478e04d9d20"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/TI/Duration">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/TI/TemporalEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/AtlasOfPaths/percentage">
+    <owl:versionInfo xml:lang="it">provvisoria</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">This individual represents information related to the percentage of asphalt composing a path.</rdfs:comment>
+    <rdfs:label xml:lang="it">percentuale</rdfs:label>
+    <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
+    <rdfs:label xml:lang="en">percentage</rdfs:label>
+    <rdfs:comment xml:lang="it">Questo individuo rappresenta le informazioni relative alla percentuale di asfalto presente in un cammino.</rdfs:comment>
+    <rdf:type rdf:resource="https://w3id.org/italia/onto/MU/MeasurementUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/TI/hasTemporalCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/MU/MeasurementUnit">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Characteristic"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naba68dee07244cd2b05a0d2620323438">
+    <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb194b1c14891419a9d4331dca8225e08">
+    <rdf:rest rdf:nodeID="N4ff821e11db941539a1864adb8ff55e3"/>
+    <rdf:first rdf:resource="https://w3id.org/italia/onto/l0/isMemberOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d59ff12c6764beb928f3df9b93a8f27">
+    <rdf:rest rdf:nodeID="N5c9febf8f9a943c2a0601fd2a2d4ca93"/>
+    <rdf:first rdf:resource="https://w3id.org/italia/onto/Route/hasRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na9641a7a118347b88dcf7f1211bdfe3a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/hasSignposting"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Signposting"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/Stage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dati.gov.it/onto/dcatapit#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N492b971c073a46d7a2f52d4e319122a9">
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasAltRoute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/TripPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dati.gov.it/onto/dcatapit#Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/hasRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/MU/Value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/position">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f032d25aca44a3aaa2f7691a6ddae45">
+    <owl:inverseOf rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/forPathway"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/dcat#accessURL">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/l0/Characteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/SM/WebSite">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/l0/Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#Kind">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/COV/isOrganizationOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3a16f935c6b49d0ba6624f63e7b5e57">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/italia/onto/AtlasOfPaths/Pathway"/>
+    <owl:onProperty rdf:resource="https://w3id.org/italia/onto/Route/hasRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/hasAltRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/ADMS/Project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/MU/value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/dcat#downloadURL">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/italia/onto/Route/hasTripPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+</rdf:RDF>

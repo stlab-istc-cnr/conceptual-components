@@ -1,0 +1,582 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/P13_destroyed
+<http://www.cidoc-crm.org/cidoc-crm/P13_destroyed> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P13i_was_destroyed_by
+<http://www.cidoc-crm.org/cidoc-crm/P13i_was_destroyed_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to
+<http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by
+<http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10_destroyed
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10_destroyed> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P13_destroyed> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10i_was_destroyed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10i_was_destroyed_by> rdf:type owl:AnnotationProperty ;
+                                                                       rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P13i_was_destroyed_by> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16_assigned_attribute_to
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16_assigned_attribute_to> rdf:type owl:AnnotationProperty ;
+                                                                           rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16i_was_attributed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16i_was_attributed_by> rdf:type owl:AnnotationProperty ;
+                                                                        rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6_intended_to_approximate
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6_intended_to_approximate> rdf:type owl:AnnotationProperty ;
+                                                                            rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8_observed> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6i_was_approximated_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6i_was_approximated_by> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8i_was_observed_by> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7_produced
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7_produced> rdf:type owl:AnnotationProperty ;
+                                                             rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17_generated> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7i_was_produced_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7i_was_produced_by> rdf:type owl:AnnotationProperty ;
+                                                                     rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17i_was_generated_by> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17_generated
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17_generated> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17i_was_generated_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17i_was_generated_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8_observed
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8_observed> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8i_was_observed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8i_was_observed_by> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10_destroyed
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10_destroyed> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                               rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S22_Segment_of_Matter> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10i_was_destroyed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10i_was_destroyed_by> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S22_Segment_of_Matter> ;
+                                                                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP11_has_physical_relation
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP11_has_physical_relation> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                           rdfs:comment "This property identifies the physical relationship between two A8 Stratigraphic Units. The type of physical relationships found between stratigraphic units in archaeological documentation is documented through the property AP 11.1 has type"@en ;
+                                                                           rdfs:label "has physical relation"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP11i_is_physical_relation_of
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP11i_is_physical_relation_of> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                              rdfs:label "is physical relation of"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP12_confines
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP12_confines> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+                                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+                                                              rdfs:comment "This property identifies partly or completely the surface (A3 Stratigraphic Interface) of an A2 Stratigraphic Volume Unit. One A3 Stratigraphic Interface may confine two or more A2 Stratigraphic Volume Units."@en ;
+                                                              rdfs:label "confines"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP12i_is_confined_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP12i_is_confined_by> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+                                                                     rdfs:label "is confined by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP13_has_stratigraphic_relation
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP13_has_stratigraphic_relation> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                                rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                                rdfs:comment "This property identifies the stratigraphic relation between two A5 Stratigraphic modification events. This relation may be inferenced from the kind of physical relation that exists between the two AP 8 Stratigraphic Units that have been created or modified during the corresponding A5 Stratigraphic Modification events. The type of stratigraphic relationships in archaeological documentation assigned to two A5 Stratigraphic Modification events is documented through the property AP 13.1 has type."@en ;
+                                                                                rdfs:label "has stratigraphic relation"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP13i_is_stratigraphic_relation_of
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP13i_is_stratigraphic_relation_of> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                   rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                                   rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A5_Stratigraphic_Modification> ;
+                                                                                   rdfs:label "is stratigraphic relation of"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP15_is_or_contains_remains_of
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP15_is_or_contains_remains_of> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                               rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                               rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+                                                                               rdfs:comment "This property associates an E18 Physical Thing that is found within an A8 Stratigraphic  Unit with the stratigraphic unit. This property is a shortcut for the fully articulated path from E18 Physical Thing through A7 Embedding to A8 Stratigraphic Unit."@en ;
+                                                                               rdfs:label "is or contains remains of"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP15i_is_or_has_remains_contained_in
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP15i_is_or_has_remains_contained_in> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+                                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                                     rdfs:label "is or has remains contained in"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16_assigned_attribute_to
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16_assigned_attribute_to> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A6_Group_Declaration_Event> ;
+                                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16i_was_attributed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16i_was_attributed_by> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                        rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A6_Group_Declaration_Event> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP17_is_found_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP17_is_found_by> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                                 rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> ;
+                                                                 rdfs:comment "This property associates an instance of S19 Encounter Eventwith an instance of A7 Embedding that has been found during this even."@en ;
+                                                                 rdfs:label "is found by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP17i_found
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP17i_found> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> ;
+                                                            rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                            rdfs:label "found"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP18_is_embedding_of
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP18_is_embedding_of> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+                                                                     rdfs:comment "This property identifies the E18 Physical Thing that is contained in an A7 Embedding."@en ;
+                                                                     rdfs:label "is embedding of"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP18i_is_embedded
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP18i_is_embedded> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+                                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                                  rdfs:label "is embedded"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP19_is_embedding_in
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP19_is_embedding_in> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+                                                                     rdfs:comment "This property identifies the A2 Stratigraphic Volume Unit that contains the A7 Embedding."@en ;
+                                                                     rdfs:label "is embedding in"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP19i_contains_embedding
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP19i_contains_embedding> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+                                                                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                                         rdfs:label "contains embedding"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP1_produced
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP1_produced> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                             rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> ;
+                                                             rdfs:comment "This property identifies the S11 Amount of Matter, e.g. a basket, that is preserved (part or total of) from an A1 Excavation Process Unit for further examination or evidence keeping. "@en ;
+                                                             rdfs:label "produced"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP1i_was_produced_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP1i_was_produced_by> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                     rdfs:label "was produced by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP20_is_embedding_at
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP20_is_embedding_at> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                                     rdfs:comment "This property identifies the E53 Place that is documented as the E53 Place of the A7 Embedding."@en ;
+                                                                     rdfs:label "is embedding at"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP20i_contains
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP20i_contains> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                               rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+                                                               rdfs:label "contains"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP2_discarded_into
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP2_discarded_into> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                   rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> ;
+                                                                   rdfs:comment "This property identifies the S11 Amount of Matter (e.g. a heap) into which material from an A1 Excavation Process Unit is discarded."@en ;
+                                                                   rdfs:label "discarded into"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP2i_was_discarded_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP2i_was_discarded_by> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> ;
+                                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                      rdfs:label "was discarded by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP3_excavated
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP3_excavated> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                              rdfs:comment "This property identifies the 3D excavated volume instance of E53 Place, i.e., a three- dimensional volume, that was actually excavated during an A1 Excavation Process Unit. "@en ;
+                                                              rdfs:label "excavated"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP3i_was_excavated_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP3i_was_excavated_by> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                      rdfs:label "was excavated by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP4_produced_surface
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP4_produced_surface> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> ;
+                                                                     rdfs:comment "This property identifies the instance of S20 Physical Feature that constitutes the new surface produced during an A1 Excavation Process Unit in the excavated area. Frequently this surface or parts of it are documented through drawing and/or measured by technical means such as photography, tachymetry or laser scanning."@en ;
+                                                                     rdfs:label "produced surface"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP4i_was_surface_produced_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP4i_was_surface_produced_by> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                             rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> ;
+                                                                             rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                             rdfs:label "was surface produced by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP5_removed_part_or_all_of
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP5_removed_part_or_all_of> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                           rdfs:comment "This property identifies the instance of A8 Stratigraphic Unit that was cut during an A1 Excavation Process Unit."@en ;
+                                                                           rdfs:label "removed part or all of"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP5i_was_partially_or_totally_removed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP5i_was_partially_or_totally_removed_by> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                                         rdfs:label "was partially or totally removed by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6_intended_to_approximate
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6_intended_to_approximate> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+                                                                            rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6i_was_approximated_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6i_was_approximated_by> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+                                                                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7_produced
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7_produced> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> ;
+                                                             rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7i_was_produced_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7i_was_produced_by> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP8_disturbed
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP8_disturbed> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> ;
+                                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+                                                              rdfs:comment "This property identifies an A8 Stratigraphic Unit that was disturbed through an A5 Stratigraphic Modification. One A5 Stratigraphic Modification may disturb several A8   Stratigraphic Units."@en ;
+                                                              rdfs:label "disturbed"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP8i_was_disturbed_by
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP8i_was_disturbed_by> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+                                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> ;
+                                                                      rdfs:label "was disturbed by"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP9_took_matter_from
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP9_took_matter_from> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> ;
+                                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S10_Material_Substantial> ;
+                                                                     rdfs:comment "This property identifies the S10 Material Substantial from where matter was taken from during an A4 Stratigraphic Genesis Event."@en ;
+                                                                     rdfs:label "took matter from"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP9i_provided_matter_to
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP9i_provided_matter_to> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S10_Material_Substantial> ;
+                                                                        rdfs:range <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> ;
+                                                                        rdfs:label "provided matter to"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> rdf:type owl:Class ;
+                                                        rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E53_Place
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place> rdf:type owl:Class ;
+                                               rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E6_Destruction
+<http://www.cidoc-crm.org/cidoc-crm/E6_Destruction> rdf:type owl:Class ;
+                                                    rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E6_Destruction> ,
+                                                                                           <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal> ,
+                                                                                           <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation> ;
+                                                                           rdfs:comment """This class comprises activities of excavating in the sense of archaeology which are documented as a coherent set of actions of progressively recording and removing matter from a pre-specified location under specific rules. Typically, an excavation process unit would be terminated if significant discontinuities of substance or finds come to light, or if the activity should be interrupted due to external factors, such as end of a working day. In other cases, the termination would be based on predefined physical specifications, such as the boundaries of a maximal volume of matter intended to be excavated in one unit of excavation.
+Depending on the methodology, an instance of A1 Excavation Process Unit may intend to remove matter only within the boundaries of a particular stratigraphic unit, or it may follow a pre-declared spatial extent such as a trench. It may only uncover, clean or expose a structure or parts of it.
+The process of excavation results in the production of a set of recorded (documentation) data that should be sufficient to provide researchers enough information regarding the consistence and spatial distribution of the excavated Segment of Matter and things and features embedded in it. Some parts or all of the removed physical material (S11 Amount of Matter) may be dispersed, whereas others may be kept in custody in the form of finds or samples, while others (such as parts of walls) may be left at the place of their discovery. The data produced by an instance of excavation process unit should pertain to the material state of matter at excavation time only and should well be distinguished from subsequent interpretation about the causes for this state of matter.
+"""@en ;
+                                                                           rdfs:label "Excavation Process Unit"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                             rdfs:comment """This class comprises connected portions of terrain or other solid structure on, in, or under the surface of earth or seafloor exhibiting some homogeneity of structure or substance and completely bounded by surfaces or discontinuities in substance or structure with respect to other portions of the terrain or surfaces of objects/finds.
+An instance of A8 Stratigraphic Unit may contain physical objects. The internal continuity and the boundaries of an instance of A8 Stratigraphic Unit should  be of a kind that can be attributed to a single genesis event or process and have the potential to be observed.
+One genesis event may have created more than one SU. An instance of A8 Stratigraphic Unit is regarded to exist as long as a part of its matter is still in place with respect to a surrounding reference space such that its spatial features can be associated with effects of the genesis process of interest. Normally at least one of the surfaces (such as the lower one) from its genesis event will remain during its existence.
+This also implies that a certain degree of coherent (“conformal”) deformation is tolerable within its time-span of existence. Therefore the place an instance of A8 Stratigraphic Unit occupies can be uniquely identified with respect to the surrounding reference space of archaeological interest.
+"""@en ;
+                                                                             rdfs:label "Stratigraphic Volume Unit"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+                                                                           rdfs:comment "This class comprises coherent parts of the boundary surface, which appears as the result of a stratigraphic genesis event or process. The interface marks the extreme limit of the effect of a genesis or modification event, and indicates in particular where the effect of this event ended. Each event of creation/destruction of a deposition layer implies the creation of new interfaces. Thus there are two main types of interface: those that are surfaces of strata (that can be directly related to the corresponding stratum via the AP12 confines property), and those that are only surfaces, formed by the removal or destruction of existing stratifications."@en ;
+                                                                           rdfs:label "Stratigraphic Interface"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A5_Stratigraphic_Modification> ,
+                                                                                         <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S17_Physical_Genesis> ;
+                                                                         rdfs:comment "This class comprises activities or processes that have produced homogeneous, distinguishable units of stratification that are in a relatively stable form from the time of their genesis until they are observed. Such processes may be the aggregation of cycles of erosion/destruction, deposit/accumulation, transformation/modification occurring on a particular site throughout a particular period of time. These processes are usually due not only to natural forces (i.e., climate, the impact of flora and fauna, other natural events), but also to human activities, in particular, excavation and construction. An event of stratification genesis typically produces two main forms of stratification units both a deposit and an interface."@en ;
+                                                                         rdfs:label "Stratigraphic Genesis"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A5_Stratigraphic_Modification
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A5_Stratigraphic_Modification> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S18_Alteration> ;
+                                                                              rdfs:comment "This class comprises activities or processes resulting in the modification of Stratigraphic Units after their genesis through A4 Stratigraphic Genesis Events."@en ;
+                                                                              rdfs:label "Stratigraphic Modification"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A6_Group_Declaration_Event
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A6_Group_Declaration_Event> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S5_Inference_Making> ;
+                                                                           rdfs:comment "This class comprises activities resulting in the assignment of a common attribute to several Stratigraphic Units. This may be due to an archaeologists interpretation of them being part of one physical thing, like postholes being part of one building."@en ;
+                                                                           rdfs:label "Group Declaration Event"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S16_State> ;
+                                                             rdfs:comment "This class comprises the states of instances of E18 Physical Things of being partially or completely embedded at a particular position with relative stability in one or more A2 Stratigraphic Volume Units. Normally, an embedding is expected having been stable from the time of generation on of the first A2 Stratigraphic Volume Unit that surrounds it. However, it may also be due to later intrusion. As an empirical fact, the expert may only be able to decide that a particular embedding is not recent, i.e., has been persisting for longer than the activity that encountered it. This class can be used to document the fact of embedding generally with respect to the surrounding matter or more specifically with respect to a more precise position within this matter. It further allows for specifying temporal bounds for which a particular embedding has been existing as specified according to evidence."@en ;
+                                                             rdfs:label "Embedding"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> ;
+                                                                      rdfs:comment "This class comprises S20 Physical Features that are either A2 Stratigraphic Volume Units or A3 Stratigraphic Interfaces"@en ;
+                                                                      rdfs:label "Stratigraphic Unit"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A9_Archaeological_Excavation
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A9_Archaeological_Excavation> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal> ,
+                                                                                             <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation> ;
+                                                                             rdfs:comment "This class describes the general concept of archaeological escalation intended as a coordinated set of excavation process units (A1) performed on an area considered as part of a broader topographical, rural, urban, or monumental context. An archaeological excavation typically takes place in a predefined geographic area specifically defined after an investigation campaign or based on interpretation of sources, or evidenced by a different activity (such as: preparatory works for urban construction, rescue archaeology and similar) and is carried out according with specific authorisations provided by a competent authority. A specific identifier for each archaeological excavation is usually assigned by the same authority. The set of activities is not limited to matter removals but also comprises siblings activities, happening throughout the whole process, intended for observation and/or consolidation of the excavated strata. The archaeological excavation is usually under the responsibility of a coordinator, officially designated, which is legally and scientifically responsible for all the activities carried out within each of the excavation process units and is also responsible for the documentation of the whole process."@en ;
+                                                                             rdfs:label "Archaeological Excavation"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S10_Material_Substantial
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S10_Material_Substantial> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S16_State
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S16_State> rdf:type owl:Class ;
+                                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S17_Physical_Genesis
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S17_Physical_Genesis> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S18_Alteration
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S18_Alteration> rdf:type owl:Class ;
+                                                           rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> rdf:type owl:Class ;
+                                                                rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal> rdf:type owl:Class ;
+                                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S22_Segment_of_Matter
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S22_Segment_of_Matter> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation> rdf:type owl:Class ;
+                                                           rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/CRMsci/S5_Inference_Making
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S5_Inference_Making> rdf:type owl:Class ;
+                                                                rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10_destroyed> rdfs:comment ""@en ;
+                                                               rdfs:label "destroyed"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10i_was_destroyed_by> rdfs:label "was destroyed by"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16_assigned_attribute_to> rdfs:comment "This property indicates the Stratigraphic Unit that was assigned by an A6 Group Declaration Event."@en ;
+                                                                           rdfs:label "assigned attribute to"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16i_was_attributed_by> rdfs:label "was attributed by"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6_intended_to_approximate> rdfs:comment "This property identifies the A3 Stratigraphic Interface that was intended to approximate during an A1 Excavation Process Unit. This property should be assigned when a stratigraphic excavation methodology is used. It enables the linkage of the surface produced by an A1 Excavation Process Unit and an A3 Stratigraphic Interface."@en ;
+                                                                            rdfs:label "intended to approximate"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6i_was_approximated_by> rdfs:label "was approximated by"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7_produced> rdfs:comment "This property identifies the A8 Stratigraphic Unit that was produced during an  A4 Stratigraphic Genesis Event."@en ;
+                                                             rdfs:label "produced"@en .
+
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7i_was_produced_by> rdfs:label "was produced by"@en .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

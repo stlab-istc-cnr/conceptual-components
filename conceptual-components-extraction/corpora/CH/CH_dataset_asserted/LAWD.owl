@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:about="http://lawd.info/ontology/variantForm">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:comment xml:lang="en">Indicates a variant form of a lawd:Name</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/Name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/primaryForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/Name"/>
+    <rdfs:comment xml:lang="en">Indicates the primary form of a lawd:Name</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/">
+    <owl:imports rdf:resource="http://erlangen-crm.org/current/"/>
+    <dc:title>Linking Ancient World Data Ontology</dc:title>
+    <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
+    <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    <dc:rights>Copyright © 2013 Hugh A. Cayless</dc:rights>
+    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
+    <vann:preferredNamespacePrefix>lawd</vann:preferredNamespacePrefix>
+    <owl:imports rdf:resource="http://purl.org/ontology/olo/core#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:issued>2013-03-28</dc:issued>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dc:modified>2014-09-03</dc:modified>
+    <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    <cc:license rdf:resource="http://creativecommons.org/license/by/3.0/"/>
+    <vann:preferredNamespaceUri>http://lawd.info/ontology/</vann:preferredNamespaceUri>
+    <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/EvidentiaryItem">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Observation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Superclass for types of evidence that support assertions.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/variant">
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/represents">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+    <owl:inverseOf rdf:resource="http://lawd.info/ontology/representedBy"/>
+    <rdfs:comment xml:lang="en">Describes the relationship between a Citation or Siglum and the
+      Written Work it indicates.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/Citation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/conjecture">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/uncertainReading">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/representedBy">
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
+    <owl:deprecated xml:lang="en">Will be removed in a future release.</owl:deprecated>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Edition">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A published (whether officially or not) Written Work that relies on
+      one or more Written Works as sources</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/TextPart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+    <rdfs:comment xml:lang="en">Any portion of a larger WrittenWork.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/correction">
+    <skos:broader rdf:resource="http://lawd.info/ontology/intervention"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/readingScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">(Experimental) The SKOS scheme for classifying types of lawd:Reading.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/deletion">
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <skos:broader rdf:resource="http://lawd.info/ontology/intervention"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/reuseIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Links an instance of text reuse to a citation of the work in which the reuse appears.</rdfs:comment>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/TextReuse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/TextReuse">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Observation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A WrittenWork (or portion thereof) that quotes, translates, summarizes, or otherwise re-uses another WrittenWork.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/responsibleFor">
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Connects any kind of author or creator to the work he/she/it is responsible for creating or contributing to. The author may be anonymous or fictional.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/CollationItem">
+    <rdfs:comment>(Experimental) Part of a collation of witnesses to a text.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/abbreviation">
+    <rdfs:comment xml:lang="en">A label representing an abbreviated form of a name or title, e.g. of
+      an author or work. E.g. Homer -&gt; Hom.; Odyssey -&gt; Od.;</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/witness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/CollationItem"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Siglum"/>
+    <rdfs:comment xml:lang="en">(Experimental) Connects an item in a collation to the witness it derives from.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/MythologicalCreature">
+    <rdfs:comment>Class for non-human, non-divine Agents, e.g. Polyphemus or Medusa.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:deprecated xml:lang="en">Will be removed in a future release.</owl:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/addition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geovocab.org/spatial#Feature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:resource="http://lawd.info/ontology/Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Attestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+    <rdfs:comment xml:lang="en">An Attestation models a piece of evidence for something in a text (e.g. the mention of a person in a document). Typically it is the conjunction of a Citation and an entity like a name or person.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Citation">
+    <rdfs:comment xml:lang="en">A Citation models a bibliographic reference as a resource.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/foundAt">
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The place where an artifact was discovered.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/where"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/hasCitation">
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Indicates a Citation that contains the source for a lawd:Attestation</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/transposition">
+    <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/observerRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>observer role</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Role"/>
+    <rdfs:comment>The role of justifying a claim by appealing  to observed evidence.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/agreement">
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Observation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="N91942d17954a4d449c65e983e8451cc8"/>
+    <rdfs:label>Observation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:comment xml:lang="en">An Observation is a scholarly assertion based on looking at evidence. An Observation might state, for example, that an entity provides evidence for the existence of a person or that a text quotes from another text.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Siglum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A Siglum represents a witness (a Written Work of some kind) and
+      associates it with a symbol used to represent that work in the context of an
+      Edition.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Citation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/conjunctOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+    <rdfs:comment xml:lang="en">Indicates that a piece of evidence (any subclass of lawd:EvidentiaryItem) is joined to another—for example because they co-occur.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/intervention">
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0705fa1a14db49ba8008d03b0a79409c">
+    <owl:hasValue rdf:resource="http://lawd.info/ontology/observerRole"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#hadRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/AssembledWork">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A Written Work that collects together more than one Written Work.
+      Manuscripts are often AssembledWorks.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Agent">
+    <rdfs:comment xml:lang="en">An Agent is an abstract entity which has agency or is considered capable of acting in some way. Current subclasses include Deities and Persons.</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Hand">
+    <rdfs:comment xml:lang="en">A portion of a Written Work in a distinct hand. Written Works may
+      consist of one or more hands.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Name"/>
+    <rdfs:comment xml:lang="en">Indicates that (e.g.) a Person or Place has a lawd:Name that is the range of the property.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/reuseFrom">
+    <rdfs:comment xml:lang="en">Links an instance of text reuse to a citation of the work from which the text came.</rdfs:comment>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/TextReuse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/omission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/responsibleAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Agent"/>
+    <owl:inverseOf rdf:resource="http://lawd.info/ontology/responsibleFor"/>
+    <rdfs:comment xml:lang="en">Connects a work of any type to the person, group, or insitution
+      responsible for the creation of the work.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/origin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+    <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/where"/>
+    <rdfs:comment xml:lang="en">The place where an artifact originated.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocommons/voaf#Vocabulary">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Reading">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="en">(Experimental) The superclass for members of the readingScheme concept scheme. A Reading is a word, phrase, or larger chunk of text from a witness (or any observation of variance concerning the text, such as an omission or interpolation).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+    <rdfs:comment>Any person, whether historical, mythological, or fictional</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Deity">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment>Any divine Agent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/EditorialComment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/CollationItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/hasAttestation">
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Attestation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Indicates a lawd:Attestation providing evidence for a name, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/embodies">
+    <rdfs:range rdf:resource="http://lawd.info/ontology/ConceptualWork"/>
+    <rdfs:comment xml:lang="en">The relationship between a Written Work and the abstract Conceptual Work it embodies. For example, the OCT text of Homer's Iliad's relationship to the idea of Homer's Iliad.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/collation">
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Motivation"/>
+    <rdfs:comment xml:lang="en">a Motivation that represents the addition of a critical apparatus
+      comment upon a text</rdfs:comment>
+    <skos:broader rdf:resource="http://www.w3.org/ns/oa#commenting"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/PersonalName">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Name"/>
+    <rdfs:comment xml:lang="en">A name belonging to a lawd:Person</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E27_Site">
+    <owl:equivalentClass rdf:resource="http://lawd.info/ontology/Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Place">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Any conceivable place, such as a town, a mountain, or the site of a building.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E21_Person">
+    <owl:equivalentClass rdf:resource="http://lawd.info/ontology/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Group">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment>Any group of Agents referred to as a single entity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/readingType">
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Reading"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/interpolation">
+    <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
+    <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/ConceptualWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A Conceptual Work groups together one or more Written Works which
+      have the same intellectual source. E.g. The Iliad, as opposed to a particular manuscript witness or edition of the Iliad.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/PlaceName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The name of a lawd:Place</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N91942d17954a4d449c65e983e8451cc8">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#qualifiedAssociation"/>
+    <owl:someValuesFrom rdf:resource="http://lawd.info/ontology/ObserverRoleAssociation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/where">
+    <rdfs:comment xml:lang="en">Generic location relation. Useful when the nature of the related place 
+            (e.g. origin, findspot) is not clear.</rdfs:comment>
+    <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/ObserverRoleAssociation">
+    <rdfs:label>Observer Role Association</rdfs:label>
+    <rdfs:comment>An instance of lawd:ObserverRoleAssociation characterizes a prov:Agent's association to a prov:Activity as serving in a lawd:observer role.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Association"/>
+    <owl:equivalentClass rdf:nodeID="N0705fa1a14db49ba8008d03b0a79409c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Sigla">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+    <rdfs:comment xml:lang="en">An ordered collection that maps Written Works used as sources for an
+      Edition to symbols used to represent them in the context of that Edition.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/WrittenWork">
+    <rdfs:comment xml:lang="en">A written work, whether extant or not. May be considered to embody a Conceptual Work.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Translation">
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A Written Work that translates one or more other Written Works that embody the same Conceptual Work.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Reference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/CollationItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lawd.info/ontology/Name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A name is a resource providing a name for some thing. It may be specialized with subclasses like PersonalName or PlaceName</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E33_Linguistic_Object">
+    <owl:equivalentClass rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+  </rdf:Description>
+</rdf:RDF>

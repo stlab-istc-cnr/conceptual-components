@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:nodeID="N6717000858c64540b2a6af7ab5928a7a">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#hadActivity"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2f13d069774483baa24b7ab5ddcabfd">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#LocationReconstruction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">LocationReconstruction</rdfs:label>
+    <rdfs:comment xml:lang="en">A LocationReconstruction is the result of modelling one or multiple LocationObservation(s) into a single resource.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Reconstruction"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#onScan">
+    <rdfs:comment xml:lang="en">This property can be used to indicate the location of the EntityObservation in the source, for instance if the roar:Document is too general (e.g. it refers to multiple pages). This should refer to a URI or filename and assumes the source is digitized.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Observation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:label xml:lang="en">onScan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#PersonReconstruction">
+    <rdfs:comment xml:lang="en">A PersonReconstruction is the result of modelling one or multiple PersonObservation(s) into a single resource.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">PersonReconstruction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Person"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Reconstruction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
+    <vann:preferredNamespaceUri>https://w3id.org/roar#</vann:preferredNamespaceUri>
+    <rdfs:comment xml:lang="en">Ontology to describe person, location etc. observations in archival resources. One or multiple observations can be bundled into a reconstruction that combines complementary (or sometimes conflicting) information from the observation(s) so that a single entity is reconstructed out of several entity observations from one or multiple sources.</rdfs:comment>
+    <rdfs:label xml:lang="en">Reconstructions and Observations in Archival Resources</rdfs:label>
+    <dc:title xml:lang="en">Reconstructions and Observations in Archival Resources</dc:title>
+    <vann:preferredNamespacePrefix>roar</vann:preferredNamespacePrefix>
+    <foaf:depiction rdf:resource="https://www.leonvanwissen.nl/vocab/roar/docs/resources/roar-graph.svg"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/roar/0.1"/>
+    <foaf:logo rdf:resource="https://www.leonvanwissen.nl/vocab/roar/docs/resources/roar-logo.png"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Derivation">
+    <rdfs:subClassOf rdf:nodeID="N6717000858c64540b2a6af7ab5928a7a"/>
+    <rdfs:subClassOf rdf:nodeID="N352e295e6728481c8353bfe54618ac92"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">prov:Derivation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#Observation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Something of a type 'Observation' is something that is mentioned or described in a 'Document' (described by roar:inDocument). Two common subclasses are PersonObservation and LocationObservation, but one can also think about EventObservation and other entities.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Nb5d83719af954bc79dd5d369d9da0f3b"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/roar#Reconstruction"/>
+    <rdfs:label xml:lang="en">Observation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#Document">
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The source (e.g. document, act, legislation, text, picture, painting, recording, obelisk) in which some entity (e.g. Person or Location) can be observed.
+If the source that you are describing is not digitised or is not available as URI, you can define your own resource of class `roar:Document` and use for instance the properties defined by `schema:CreativeWork` to describe it. The `roar:onScan` property can then be used on an Observation to specify the location of the Entity in the source.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#hasLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">hasLocation</rdfs:label>
+    <rdfs:comment xml:lang="en">Use to indicate that an Entity has a relation to a Location. Use a structured value to indicate a specific role of this Entity (e.g. Person) to the Location or to specify a temporal validity in which this Entity-Location relation is valid (use `sem` timestamp properties for this). 
+
+Example:
+```ttl
+:person1 a roar:PersonObservation ;
+         roar:hasLocation [ rdf:value :location1 ;
+                            roar:role "resident" ;
+                            sem:hasBeginTimeStamp "1782-11-20" ;
+                            sem:hasEarliestEndTimesStamp "1782-11-20" ] .
+```</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Entity"/>
+    <rdfs:range rdf:resource="https://w3id.org/roar#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#Location">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Entity"/>
+    <rdfs:comment xml:lang="en">A Location can be any type of place where another entity can be located.</rdfs:comment>
+    <owl:disjointWith rdf:resource="https://w3id.org/roar#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#relationType">
+    <rdfs:label xml:lang="en">relationType</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Used to specify the kind of relation (e.g. "patron") in a person to person relation as specified by `roar:hasRelation`.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#hasPerson">
+    <rdfs:label xml:lang="en">hasPerson</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Use to indicate that an Entity has a relation to a Person. Use a structured value to indicate a specific role of this Entity (e.g. Location) to the Person or to specify a temporal validity in which this Entity-Person relation is valid (use `sem` timestamp properties for this). Use `roar:hasRelation` for Person to Person relations. 
+
+Example:
+```ttl
+:location1 a roar:LocationObservation ;
+           roar:hasPerson [ rdf:value :person1 ;
+                              roar:role "residence" ;
+                              sem:hasBeginTimeStamp "1782-11-20" ;
+                              sem:hasEarliestEndTimesStamp "1782-11-20" ] .
+```</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Entity"/>
+    <rdfs:range rdf:resource="https://w3id.org/roar#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#Reconstruction">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">Reconstruction</rdfs:label>
+    <rdfs:comment xml:lang="en">A 'Reconstruction' is a specific modelling of one or several entities of type 'Observation' into a single resource. The prov:wasDerivedFrom property is used to indicate on which Observations a Reconstruction was based. 
+It is also possible to derrive a Reconstruction from other Reconstructions.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N2988c2a8f5014153bf18f84c738998e5"/>
+    <rdfs:subClassOf rdf:nodeID="Nfe66bd57800e47aeba4f557684144493"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#Person">
+    <rdfs:subClassOf rdf:nodeID="Ncb4e661a510842029f196c6b59fa5818"/>
+    <rdfs:subClassOf rdf:nodeID="N6b1d7e8d98f94e4e9308d31d0f3c8f3c"/>
+    <rdfs:comment xml:lang="en">A Person is a human being that is mentioned in a Document. This can be a direct mention (e.g. 'Aaltie Jans') or indirect (e.g. 'husband of Aaltie Jans'), in which a name might not be known.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Entity"/>
+    <rdfs:subClassOf rdf:nodeID="N6c92d64600764591ba56ee5f45023457"/>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Person">
+    <owl:equivalentClass rdf:resource="https://w3id.org/roar#Person"/>
+    <rdfs:label xml:lang="en">schema:Person</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity">
+    <rdfs:subClassOf rdf:nodeID="Nd2f13d069774483baa24b7ab5ddcabfd"/>
+    <rdfs:label xml:lang="en">prov:Activity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The Activity in which the Derivation and thereby the Reconstruction was made. Use `rdfs:comment` to specify what the Activity did.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Nc2d13695c0584af88d29e04e8444e254"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/bio/0.1/birth">
+    <rdfs:range rdf:resource="http://purl.org/vocab/bio/0.1/Birth"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/event/0.1"/>
+    <rdfs:comment xml:lang="en">Even if there is no specific birth date mentioned in the source, it is recommended to provide a Birth event and estimate the dates based on other (life) events around the person. A concrete example would be the mentioning of a Baptism event, by which the date of birth can be estimated, for instance by setting the `sem:hasLatestEndTimeStamp` property to the date of the Baptism event.
+
+Example:
+```ttl
+_:person1 a roar:PersonReconstruction ;
+        rdfs:label "Susanna de Bock" ;
+        pnv:hasName [ a pnv:PersonName ;
+                pnv:baseSurname "Bock" ;
+                pnv:givenName "Susanna" ;
+                pnv:literalName "Susanna de Bock" ;
+                pnv:surnamePrefix "de" ] ;
+        bio:event [ a bio:Baptism ;
+                    bio:place _:location1 ;
+                    bio:principal _:person1 ;
+                    sem:hasActor [ a sem:Role ;
+                                   sem:roleType [ a sem:RoleType ;
+                                                  rdfs:label "baptized" ] ;
+                                   rdf:value _:person1 ] ;
+                    sem:hasTimeStamp "1697-02-28"^^xsd:date ] ;
+        bio:birth [ a bio:Birth ;
+                    bio:principal _:person1 ;
+                    sem:hasActor [ a sem:Role ;
+                                   sem:roleType [ a sem:RoleType ;
+                                                  rdfs:label "born" ] ;
+                                   rdf:value _:person1 ] ;
+                    sem:hasLatestEndTimeStamp "1697-02-28"^^xsd:date ] ;
+        roar:documentedIn _:saaId10160347 .
+```</rdfs:comment>
+    <rdfs:label xml:lang="en">bio:birth</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/bio/0.1/death">
+    <rdfs:label xml:lang="en">bio:death</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/event/0.1"/>
+    <rdfs:comment xml:lang="en">Even if there is no specific death date mentioned in the source, it is recommended to provide a Death event and estimate the dates based on other (life) events around the person. A concrete example would be the mentioning of a Burial event, by which the death date can be estimated, for instance by setting the `sem:hasEarliestBeginTimeStamp` property to the date of the Burial event.
+
+Example:
+```ttl
+_:person1 a roar:PersonReconstruction ;
+        rdfs:label "Susanna de Bock" ;
+        pnv:hasName [ a pnv:PersonName ;
+                pnv:baseSurname "Bock" ;
+                pnv:givenName "Susanna" ;
+                pnv:literalName "Susanna de Bock" ;
+                pnv:surnamePrefix "de" ] ;
+        bio:event [ a bio:Burial ;
+                    bio:place _:location1 ;
+                    bio:principal _:person1 ;
+                    sem:hasActor [ a sem:Role ;
+                                   sem:roleType [ a sem:RoleType ;
+                                                  rdfs:label "burried" ] ;
+                                   rdf:value _:person1 ] ;
+                    sem:hasTimeStamp "1697-02-28"^^xsd:date ] ;
+        bio:birth [ a bio:Birth ;
+                    bio:principal _:person1 ;
+                    sem:hasActor [ a sem:Role ;
+                                   sem:roleType [ a sem:RoleType ;
+                                                  rdfs:label "born" ] ;
+                                   rdf:value _:person1 ] ;
+                    sem:hasLatestEndTimeStamp "1697-02-28" ] ;
+        bio:death [ a bio:Death ;
+                    bio:principal _:person1 ;
+                    sem:hasActor [ a sem:Role ;
+                                   sem:roleType [ a sem:RoleType ;
+                                                  rdfs:label "died" ] ;
+                                   rdf:value _:person1 ] ;
+                    sem:hasEarliestBeginTimeStamp "1697-02-21" ; # Estimated, 7 days earlier
+                    sem:hasLatestEndTimeStamp "1697-02-28" ] ;
+        roar:documentedIn _:saaId10160347 .
+```</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/vocab/bio/0.1/Death"/>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb5d83719af954bc79dd5d369d9da0f3b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/roar#Document"/>
+    <owl:onProperty rdf:resource="https://w3id.org/roar#documentedIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#PersonObservation">
+    <rdfs:label xml:lang="en">PersonObservation</rdfs:label>
+    <rdfs:comment xml:lang="en">A PersonObservation is a person that can be observed in a `roar:Document`.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ned2767e9ff5e46408b0a89cb8295728e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/roar#hasLocation"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/roar#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Association"/>
+    <rdfs:label xml:lang="en">prov:qualifiedAssociation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#locationInDocument">
+    <rdfs:label xml:lang="en">locationInDocument</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Observation"/>
+    <rdfs:comment xml:lang="en">The locationInDocument property can hold any location reference relative to the Document an Observation is in. This can be used to indicate a location in the source, even when the source has not yet been digitized (then a roar:onScan can be used).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/logo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncb4e661a510842029f196c6b59fa5818">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/pnv#hasName"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/pnv#PersonName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4232d3c36bb84b1ab5759cb812d84dad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadActivity">
+    <rdfs:label xml:lang="en">prov:hadActivity</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#agent">
+    <rdfs:label xml:lang="en">prov:agent</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Association"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/pnv#PersonName">
+    <rdfs:label xml:lang="en">pnv:PersonName</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/bio/0.1/Event">
+    <rdfs:label xml:lang="en">bio:Event</rdfs:label>
+    <rdfs:comment xml:lang="en">A life event from the bio vocabulary.
+It is recommended to include timestamp properties from the sem vocabulary. If the exact date is known, sem:hasTimeStamp can be used. If dates are uncertain, use the other properties:
+- sem:hasTimeStamp
+- sem:hasBeginTimeStamp
+- sem:hasEarliestBeginTimeStamp
+- sem:hasLatestBeginTimeStamp
+- sem:hasEndTimeStamp
+- sem:hasEarliestEndTimeStamp
+- sem:hasLatestEndTimeStamp
+
+To make a bio:Event compliant to a sem:Event, also define a role (next to the bio:principal or bio:partner) by defining a sem:hasRole:
+```ttl
+_:event1 a bio:Event ;
+    rdfs:label "Living on the Keizersgracht"
+    bio:principal _:person1 ;
+    sem:hasActor [ a sem:Role ;
+                   sem:roleType [ a sem:RoleType ;
+                                  rdfs:label "Resident" ] ;
+                   rdf:value _:person1 ] .
+
+```</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://semanticweb.cs.vu.nl/2009/11/sem/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadPlan">
+    <rdfs:label xml:lang="en">prov:hadPlan</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Association">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N4232d3c36bb84b1ab5759cb812d84dad"/>
+    <rdfs:label xml:lang="en">prov:Association</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N84dad15462bb4d8cbd4a98f6dc0ea6f8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/bio/event/0.1">
+    <rdfs:comment xml:lang="en">Use to connect life events to a Person. Use more specific events, such as `bio:birth` and `bio:death` for respectively Birth and Death events.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Person"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/bio/0.1/Event"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">bio:event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2988c2a8f5014153bf18f84c738998e5">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent">
+    <rdfs:comment xml:lang="en">The Person or Organisation that was involved in the Derivation. In other words, who made the Reconstruction?</rdfs:comment>
+    <rdfs:label xml:lang="en">prov:Agent</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://semanticweb.cs.vu.nl/2009/11/sem/Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">sem:Event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedDerivation">
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Reconstruction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">prov:qualifiedDerivation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#Entity">
+    <rdfs:label xml:lang="en">Entity</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Ned2767e9ff5e46408b0a89cb8295728e"/>
+    <rdfs:subClassOf rdf:nodeID="Nc730224d76a04466bf156d59a64d3c9e"/>
+    <rdfs:comment xml:lang="en">Basic class to hold classes that can be combined with an Observation or Reconstruction class. Pre-modelled are Person and Location, but you are free to specify more types, such as Event or Organisation.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc730224d76a04466bf156d59a64d3c9e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/roar#Person"/>
+    <owl:onProperty rdf:resource="https://w3id.org/roar#hasPerson"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">prov:wasDerivedFrom</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Reconstruction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">A Reconstruction is derived from one or several Observation(s) or Reconstruction(s). 
+It is good practise to also specify the activity in which the derivation was made. This can be done by modelling a `prov:qualifiedDerivation` on the Reconstruction in which the Activity, Agent and Plan can be specified.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Place">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:resource="https://w3id.org/roar#Location"/>
+    <rdfs:label xml:lang="en">schema:Place</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/pnv#hasName">
+    <rdfs:label xml:lang="en">pnv:hasName</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/pnv#PersonName"/>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/bio/0.1/Birth">
+    <rdfs:label xml:lang="en">bio:Birth</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/bio/0.1/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/CreativeWork">
+    <owl:equivalentClass rdf:resource="https://w3id.org/roar#Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">schema:CreativeWork</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#hasRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/roar#Entity"/>
+    <rdfs:label xml:lang="en">hasRelation</rdfs:label>
+    <rdfs:comment xml:lang="en">Relation to another person or organisation, defined by a structured value to indicate the kind of relation. 
+
+*Example*:
+```ttl
+:person1 a roar:Person ;
+    schema:gender schema:Female ;
+    roar:hasRelation [ rdf:value :person2 ;
+                       roar:relationType "mother" ] .
+
+:person2 a roar:Person ;
+    schema:gender schema:Male ;
+    roar:hasRelation [ rdf:value :person1 ;
+                       roar:relationType "firstborn son" ] .
+```</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/roar#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N352e295e6728481c8353bfe54618ac92">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#entity"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/roar#Observation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b1d7e8d98f94e4e9308d31d0f3c8f3c">
+    <owl:onProperty rdf:resource="https://w3id.org/roar#hasRelation"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/roar#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">prov:Entity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#role">
+    <rdfs:label xml:lang="en">role</rdfs:label>
+    <rdfs:comment xml:lang="en">Can be used to indicate the role of an entity in a `roar:hasLocation` or `roar:hasPerson` relation. 
+In case of a Person to Location relation (through `roar:hasLocation`), the `roar:role` can for instance be 'inhabitant' or 'visitor'. Similarly, the role of a Location to Person (through `roar:hasPerson`) is for example 'country cottage' or 'residence'.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:label xml:lang="en">prov:wasAssociatedWith</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#LocationObservation">
+    <rdfs:comment xml:lang="en">A LocationObservation is a location that can be observed in a `roar:Document`.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">LocationObservation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/roar#Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c92d64600764591ba56ee5f45023457">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/bio/event/0.1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/vocab/bio/0.1/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#entity">
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">prov:entity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/role">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <owl:equivalentProperty rdf:resource="https://w3id.org/roar#role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/roar#documentedIn">
+    <rdfs:label xml:lang="en">documentedIn</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/roar#Document"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">Refers to the Document (source, act, legislation etc.) in which the Observation is made. It is recommended to point to a resource (URI) provided by some institute/archive that hold key information on this source. You are, however, free to fill `roar:Document` with additional information.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84dad15462bb4d8cbd4a98f6dc0ea6f8">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#hadPlan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/bio/0.1/Death">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/bio/0.1/Event"/>
+    <rdfs:label xml:lang="en">bio:Death</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/pav/createdBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc2d13695c0584af88d29e04e8444e254">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#qualifiedAssociation"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Association"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfe66bd57800e47aeba4f557684144493">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#qualifiedDerivation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/depiction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Plan">
+    <rdfs:comment xml:lang="en">Use a `rdfs:comment` to describe the goal the Agent had in the Activity.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">prov:Plan</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

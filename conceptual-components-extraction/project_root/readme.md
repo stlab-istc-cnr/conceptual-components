@@ -72,7 +72,7 @@ From the folder "/Users/goofy/conceptual-components-extraction/project_root/", r
 
 Output: it produces a filtered (no have and be lemmas) and enriched (top level ancestors frames) version of the disambiguated virtual documents of the communities.
 
-### 6a ``clustering_synsetframe_communities.py``
+### 6a ``clustering_synsetframe_communities.py`` (predefined number of clusters, needed for reproducing the results)
 Input:
 - csv with the filtered and enriched with ancestors synset and frames: it is generated in step 5
 - csv for storing the output
@@ -86,7 +86,14 @@ From the folder "/Users/goofy/conceptual-components-extraction/project_root/", r
 
 Output: it runs the clustering algorithm on the virtual documents of the communities
 
-### 6b ``elbowmethod``
+### 6b ``clustering_elbowmethod_synsetframe_communities.py`` (elbow method for defining the optimal number of clusters)
+Input:
+- csv with the filtered and enriched with ancestors synset and frames: it is generated in step 5
+- csv for storing the output
+
+From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
+
+    python clustering_elbowmethod_synsetframe_communities.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe_filtered_enriched.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_clusters.csv"
 
 ### 7 ``clusters_frame_analysis.py``
 Input:

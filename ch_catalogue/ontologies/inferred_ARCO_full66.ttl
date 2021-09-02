@@ -1,0 +1,78 @@
+<https://w3id.org/arco/ontology/catalogue/describes>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property was created as a generic property for specific subproperties, and represents the relationship between an entity that describes another entity."@en , "Questa proprietà è stata creata come proprietà generica di sottoproprietà specifiche, e rappresenta la relazione tra un'entità che descrive un'altra entità."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "descrive"@it , "describes"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/catalogue/isDescribedBy> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/catalogue/informationFormIdentifier>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà permette di associare l'identificativo a un modulo informativo che è collegato a un bene culturale."@it , "This property links an identifier to an information form related to a cultural property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/InformationForm> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "information form identifier"@en , "identificativo del modulo informativo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AC/MOD/MODI" .
+
+<https://w3id.org/arco/ontology/catalogue/InformationForm>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un modulo informativo, uno standard ICCD per attività di censimento e segnalazione di beni culturali, utilizzato per acquisire informazioni per qualsiasi tipo di entità, con un set minimo di dati standardizzati obbligatori."@it , "This class represents an information form, an ICCD standard for cultural heritage census and reporting activities, used to acquire information for any type of entity, with a minimum set of mandatory standardized data."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Modulo informativo"@it , "Information form"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasvesale 4.00: AC/MOD" .
+
+<https://w3id.org/arco/ontology/catalogue/isRelatedToInformationForm>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un bene culturale a un modulo informativo in relazione con il bene in esame."@it , "This property relates a cultural property to an information form."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is related to information form"@en , "è collegato a modulo informativo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/InformationForm> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasvesale 4.00: AC/MOD" .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

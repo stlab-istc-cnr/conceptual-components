@@ -1,0 +1,32 @@
+<http://purl.org/vocab/frbr/core#realizationOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#realizationOf), a property representing the work that has been realized by an expression."@en , "An expression that realizes a work."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is realization of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://purl.org/spar/fabio/Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A subclass of FRBR work, restricted to works that are published or potentially publishable, and that contain or are referred to by bibliographic references, or entities used to define bibliographic references. FaBiO works, and their expressions and manifestations, are primarily textual publications such as books, magazines, newspapers and journals, and items of their content.  However, they also include datasets, computer algorithms, experimental protocols, formal specifications and vocabularies, legal records, governmental papers, technical and commercial reports and similar publications, and also bibliographies, reference lists, library catalogues and similar collections. For this reason, fabio:Work is not an equivalent class to frbr:ScholarlyWork.  An example of a fabio:Work is your latest research paper."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Work> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A fabio:Work can only have part or be part of another fabio:Work. Moreover, it can be realized only by fabio:Expression(s)."@en .
+
+<http://purl.org/spar/fabio/Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A subclass of FRBR expression, restricted to expressions of fabio:Works.  For your latest research paper, the preprint submitted to the publisher, and the final published version to which the publisher assigned a unique digital object identifier, are both expressions of the same work.  "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Expression> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A fabio:Expression can only have part or be part of another fabio:Expression.  Moreover, it can be a representation only of a fabio:Work, and  it can be embodied only in fabio:Manifestation(s)."@en .

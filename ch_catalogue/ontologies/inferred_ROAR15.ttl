@@ -1,0 +1,67 @@
+<https://w3id.org/roar#hasPerson>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use to indicate that an Entity has a relation to a Person. Use a structured value to indicate a specific role of this Entity (e.g. Location) to the Person or to specify a temporal validity in which this Entity-Person relation is valid (use `sem` timestamp properties for this). Use `roar:hasRelation` for Person to Person relations. \n\nExample:\n```ttl\n:location1 a roar:LocationObservation ;\n           roar:hasPerson [ rdf:value :person1 ;\n                              roar:role \"residence\" ;\n                              sem:hasBeginTimeStamp \"1782-11-20\" ;\n                              sem:hasEarliestEndTimesStamp \"1782-11-20\" ] .\n```"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasPerson"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/roar#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<https://w3id.org/roar#Location>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Location can be any type of place where another entity can be located."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Location"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/roar#Person> .
+
+<https://w3id.org/roar#Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Basic class to hold classes that can be combined with an Observation or Reconstruction class. Pre-modelled are Person and Location, but you are free to specify more types, such as Event or Organisation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Entity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/roar#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person is a human being that is mentioned in a Document. This can be a direct mention (e.g. 'Aaltie Jans') or indirect (e.g. 'husband of Aaltie Jans'), in which a name might not be known."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/roar#Entity> .
+
+<https://w3id.org/roar#hasLocation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use to indicate that an Entity has a relation to a Location. Use a structured value to indicate a specific role of this Entity (e.g. Person) to the Location or to specify a temporal validity in which this Entity-Location relation is valid (use `sem` timestamp properties for this). \n\nExample:\n```ttl\n:person1 a roar:PersonObservation ;\n         roar:hasLocation [ rdf:value :location1 ;\n                            roar:role \"resident\" ;\n                            sem:hasBeginTimeStamp \"1782-11-20\" ;\n                            sem:hasEarliestEndTimesStamp \"1782-11-20\" ] .\n```"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasLocation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/roar#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<https://w3id.org/roar#hasRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relation to another person or organisation, defined by a structured value to indicate the kind of relation. \n\n*Example*:\n```ttl\n:person1 a roar:Person ;\n    schema:gender schema:Female ;\n    roar:hasRelation [ rdf:value :person2 ;\n                       roar:relationType \"mother\" ] .\n\n:person2 a roar:Person ;\n    schema:gender schema:Male ;\n    roar:hasRelation [ rdf:value :person1 ;\n                       roar:relationType \"firstborn son\" ] .\n```"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasRelation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

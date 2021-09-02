@@ -1,0 +1,65 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/R22i_was_realised_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F21_Recording_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was realised through"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F26_Recording>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises expressions which are created in instances of F29 Recording Event. A recording is intended to convey (and preserve) the features of one or more perdurants.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Recording"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R22_created_a_realization_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F29 Recording Event with the instance of F21 Recording Work it realised.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "created a realization of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F21_Recording_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that intend to convey (and preserve) the features of perdurants in a recording, such as a live recording of a performance, a documentary, or other capture of a perdurant. Such activities may follow the directions of a recording plan. They may include postproduction.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Recording Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R13_is_realised_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F21 Recording Work with an instance of F26 Recording realising the instance of F21 Recording Work.\nThis is a shortcut of the more elaborated path through R22 was realised through, F29 Recording Event and R21 created, which should be used when information about the recording event is available.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F21_Recording_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is realised in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F26_Recording> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F21_Recording_Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises works that conceptualise the capturing of features of perdurants. The characteristics of the manifestation of a recording work are those of the product of the capture process. The characteristics of any other works recorded are distinct from those of the recording work itself. In the case where the recorded perdurant expresses some Work, the respective instance of F21 is also an F16 Container Work.\nThe concept of recording is not necessarily linked to the use of modern devices that allow for mechanical recording, such as tape recorders or cameras. However, in practice, library catalogues tend to regard as recordings only the products of such mechanical devices.\nBut the concept of recording is very much linked to the notion that there is something that is recorded. In general, photographs or animated images are not to be regarded as instances of F21 Recording Work just because of the use of the medium, but simply as instances of F1 Work (or F15 Complex Work). Only such photographs and animated images that can be used as documentation are to be regarded as recordings.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Recording Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work> .

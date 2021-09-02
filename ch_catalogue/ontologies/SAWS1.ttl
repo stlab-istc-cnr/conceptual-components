@@ -1,0 +1,280 @@
+<http://purl.org/saws/ontology#isLooseRenderingOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made. This property indicates that the new LinguisticObject is a loose rendering of the original LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is loose rendering of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isLooseTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .
+
+<http://purl.org/saws/ontology#isCloseRenderingOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made.  This property indicates that the new LinguisticObject is a close rendering of the original LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is close rendering of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isCloseTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .
+
+<http://purl.org/saws/ontology#isLongerVersionOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is related to another LinguisticObject in that it conveys the same ideas (FRBRoo: Work), but is expressed in an expanded or enhanced version of the text (FRBRoo: a different and longer Expression). This need not imply that one is a direct copy of the other, nor which is the earlier."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is longer version of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isLongerTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionOf> .
+
+<http://purl.org/saws/ontology#isLooseTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property indicates that the translated text is a loose interpretation of the original text. This need not imply that one is a direct translation of the other, nor which is the earlier]."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is loose translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isCloseTranslationOf\nisLooseRenderingOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isDirectTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "the translator worked directly from an MS or text which we have identified. This does imply that the first Linguistic Object is a direct translation of the second Linguistic Object, meaning that the second Linguistic Object existed first. This relationship can be used in conjunction with other relationships which specify more details about the translation, e.g. isLooseTranslationOf, isLongerTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is direct translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isDirectTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P73i_is_translation_of> .
+
+<http://purl.org/saws/ontology#follows>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Section/ContentItem/CollectionInstance comes after another Section/ContentItem/CollectionInstance in the document"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "follows"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#precedes> .
+
+<http://purl.org/saws/ontology#isNotPresentIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To specify that a piece of text is missing from a LinguisticObject, for example if this text appears in a corresponding part of a manuscript from the same Family"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is not present in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> .
+
+<http://purl.org/saws/ontology#isTransliterationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is a transliteration of another LinguisticObject, i.e. same words but using a different set of characters, e.g. kai isTransliterationOf και . This need not imply that one is a direct translation of the other, nor which is the earlier]"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is transliteration of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isDirectTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isVersionOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is a version in the same language of another LinguisticObject. This relates to the other object, but matches less closely than isVariantOf. This need not imply that one is a direct copy of the other, nor which is the earlier."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is version of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isVersionInAnotherLanguageOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .
+
+<http://purl.org/saws/ontology#isVersionInAnotherLanguageOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is a version of another LinguisticObject in another language. This need not imply that one is a direct translation of the other, nor which is the earlier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is version (in another language) of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isVersionOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .
+
+<http://purl.org/saws/ontology#isShorterTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Linguistic Object is a condensed version of another Linguistic Object, in a different language. This need not imply that one is a direct translation of the other, nor which is the earlier]"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is shorter translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isShorterVersionOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isDirectCopyOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To say explicitly that one Linguistic Object is a direct copy of another Linguistic Object. This relationship can be used in conjunction with other relationships which specify more details about the copying, e.g. isLooseRenderingOf, isVersionOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is direct copy of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isDirectTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .
+
+<http://purl.org/saws/ontology#isLongerTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Linguistic Object is a enhanced or expanded version of another Linguistic Object, in a different language. This need not imply that one is a direct translation of the other, nor which is the earlier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is longer translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isLongerVersionOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isShorterVersionOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is related to another LinguisticObject in that it conveys the same ideas (FRBRoo: Work), but is expressed in a more concise version (FRBRoo: a different and shorter Expression)]"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is shorter version of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isShorterTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionOf> .
+
+<http://purl.org/saws/ontology#isVerbatimTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "word-for-word translation (ad pedem). This need not imply that one is a direct translation of the other, nor which is the earlier]"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is verbatim translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isVerbatimOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isCloseTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property indicates that the translated text is a close interpretation of the original text. This need not imply that one is a direct translation of the other, nor which is the earlier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is close translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isLooseTranslationOf\nisCloseRenderingOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isVariantTranslationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is a slightly modified copy of another LinguisticObject.\n\nFor comparing between different languages (where a translation act is known to have taken place directly between those documents, in a particular direction)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is variant translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isVariant"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isVersionInAnotherLanguageOf> .
+
+<http://purl.org/saws/ontology#isVerbatimOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is a verbatim, word-for-word copy of another LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is verbatim of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isVerbatimTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .
+
+<http://purl.org/saws/ontology#isVariantOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is a linguistically modified copy of a second LinguisticObject, in the same language/genre, and of the same length, with only small variation in use or order of words, e.g. one or two words substituted for another, or a connective inserted. This may or may not have different conceptual function. This need not imply that one is a direct copy of the other, nor which is the earlier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is variant of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isVariantTranslationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P130_shows_features_of> .

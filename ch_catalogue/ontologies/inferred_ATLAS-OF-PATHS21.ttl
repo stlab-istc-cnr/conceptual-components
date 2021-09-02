@@ -1,0 +1,53 @@
+<https://w3id.org/italia/onto/ACCO/Accommodation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/POI/PointOfInterest> .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/PathStage>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una tappa georeferenziata di un cammino. Ad essa sono associate ulteriori informazioni: la presenza di segnaletica (indicante successive tappe, eventuali snodi verso altri cammini, percorsi alternativi o deviazioni) e di alloggi, ristoranti e servizi di supporto al camminatore nelle vicinanze."@it , "This class represents a georeferenced stage of a path. Further information is associated with it: the presence of signposting (indicating a successive stage, possible path intersections, alternative pathways or detours) and of accommodation, restaurants and walker support services nearby."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Path Stage"@en , "Tappa del percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/Route/Stage> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/isNearbyAccomodationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse object property of hasNearbyAccomodation."@en , "Proprietà inversa di hasNearbyAccomodation."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/ACCO/Accommodation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è struttura alberghiera nelle vicinanze di"@it , "is nearby accomodation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyAccommodation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This object property connects a path stage with a nearby hotel."@en , "Questa object property collega una tappa del cammino con una struttura alberghiera nelle vicinanze."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha struttura alberghiera nelle vicinanze"@it , "has nearby accomodation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/ACCO/Accommodation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isNearbyAccomodationOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .

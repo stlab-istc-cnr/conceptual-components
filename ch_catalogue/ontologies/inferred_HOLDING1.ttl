@@ -1,0 +1,70 @@
+<http://purl.org/ontology/holding#Document>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use one of bibo:Document, foaf:Document, bf:Work or bf:Instance"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Document"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/holding#narrowerExemplar>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates a document to an item that is an exemplar of a part of the document."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/holding#Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "narrower exemplar"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/holding#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                <http://rdaregistry.info/Elements/i/containsItem> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/ontology/holding#narrowerExemplarOf> .
+
+<http://purl.org/ontology/holding#broaderExemplar>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates a document to an item that contains an exemplar of the document as part."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/holding#Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "broader exemplar"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/holding#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                <http://rdaregistry.info/Elements/i/containedInItem> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/ontology/holding#broaderExemplarOf> .
+
+<http://purl.org/ontology/holding#Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use one of bf:HeldItem frbr:Item rdac:Item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/holding#exemplarOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates an item to the document that is exemplified by the item."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/holding#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is examplar of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/holding#Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                <http://rdaregistry.info/Elements/i/manifestationExemplified> , <http://bibframe.org/vocab/holdingFor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

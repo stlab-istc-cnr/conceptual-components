@@ -1,0 +1,41 @@
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P71i_is_listed_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "é definido por"@pt , "περιλαμβάνεται σε"@el , "被条列於"@zh , "est défini par"@fr , "перечислен в"@ru , "wird aufgelistet in"@de , "is listed in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises encyclopaedia, thesauri, authority lists and other documents that define terminology or conceptual systems for consistent use.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Πηγή Καθιερωμένων Όρων"@el , "Documento de Referência"@pt , "权威文献"@zh , "Referenzdokument"@de , "Document de référence"@fr , "Authority Document"@en , "Официальный Документ"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E31_Document> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P71_lists>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property documents a source E32 Authority Document for an instance of an E1 CRM Entity.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "περιλαμβάνει"@el , "define"@pt , "définit"@fr , "lists"@en , "条列出"@zh , "listet"@de , "перечисляет"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .

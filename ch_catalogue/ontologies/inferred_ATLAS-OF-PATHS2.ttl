@@ -1,0 +1,74 @@
+<https://w3id.org/italia/onto/Route/routelLength>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La lunghezza del percorso. Essa può essere espressa in diverse unità di misura."@it , "The length of the route. The length can be expressed in different measurment units."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lunghezza del percorso"@it , "route length"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/Route/Route>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Una sequenza ordinata di tappe che possono essere seguite da persone e/o da qualsiasi tipo di veicolo di transito"@it , "A sequence of ordered stages that can be followed by a human being and/or any type of transit vehicle"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Route"@en , "Percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Sequence> , <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <http://www.w3.org/ns/prov#wasDerivedFrom>
+                <http://vocab.gtfs.org/terms#Route> .
+
+<https://w3id.org/italia/onto/Route/routeLongName>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The property represents the full name of the route. This name is generally more descriptive than the route short name and will often include the route's destination or stop. If the route long name does not exist, it is possible to include an empty string. However, it is necessary to specify the route short name"@en , "La proprietà rappresenta il nome completo o esteso del percoso. Il nome completo è più descrittivo del nome breve del percorso e spesso include anche la destinazione del percorso o le fermate. Se il nome per esteso non esiste, si può include la stringa vuota. Tuttavia è necessario specificare il nome breve del percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "route long name"@en , "nome esteso percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/name> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/l0/name>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<https://w3id.org/italia/onto/l0/description>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Datatype property that associates a literal value with a thing"@en , "Datatype property che associa un valore letterale a una cosa."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/l0> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "description"@en , "descrizione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

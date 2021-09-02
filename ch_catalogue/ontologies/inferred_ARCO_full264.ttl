@@ -1,0 +1,126 @@
+<https://w3id.org/arco/ontology/context-description/ArchaeologicalExcavation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a particular type of survey on a cultural property, that is an archaeological (stratigraphic) excavation."@en , "Questa classe rappresenta un tipo particolare di indagine su bene culturale, ovvero uno scavo archeologico, inteso come scavo stratigrafico."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Archaeological excavation"@en , "Scavo archeologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/DSC" .
+
+<https://w3id.org/arco/ontology/context-description/hasActivityResponsible>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un'attività (per esempio, un'indagine o un intervento su un bene culturale) all'ente o al soggetto responsabile del rilevamento. La relazione tra il ruolo e l'agente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe AgentRole, che permette di collegare l'agente e il suo ruolo."@it , "This property relates an activity to the institution or the survey's responsible entity. In the ontology this relationship is modelled also by the class AgentRole which allows more expressiveness."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has activity responsible"@en , "ha responsabile dell'attività"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/context-description/hasRelatedAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isActivityResponsibleOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/RCG/RCGR; RE/DSC/DSCF; RE/IND/INDE; RE/FOI/FOIE - Normativa SM e BDM 4.00: DR/DRV. RS/RST/RSTE. CM/ISP/ISPN. RS/ALB/ALBE; CO/ALB/ALBE." .
+
+<https://w3id.org/arco/ontology/context-description/hasSurveyScientificDirector>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a survey to its scientific director."@en , "Questa proprietà collega un'indagine al suo responsabile scientifico."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha responsabile scientifico dell'indagine"@it , "has survey scientific director"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/context-description/hasRelatedAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isSurveyScientificDirectorOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/RCG/RCGA; RE/DSC/DSCA; RE/FOI/FOIS" .
+
+<https://w3id.org/italia/onto/l0/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/context-description/archaeologicalExcavationICCDIdentifier>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta il codice, assegnato dall'ICCD, che individua lo scavo archeologico in modo univoco a livello nazionale."@it , "This property represents the code, assigned by the ICCD, which identifies the archaeological excavation unequivocally at national level."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchaeologicalExcavation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "archaeological excavation ICCD identifier"@en , "codice univoco ICCD dello scavo archeologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/catalogue/ICCDIdentifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/DSC/DSCK" .
+
+<https://w3id.org/arco/ontology/context-description/areaRoomSquare>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega uno scavo archeologico alla successione delle denominazioni, assegnate nell'ambito dello scavo, al settore (o\nl'area), all'ambiente e al quadrato da cui proviene il bene."@it , "This property relates an archaeological excavation to the succession of the denominations, assigned in the excavation, to the sector (or\nthe area), to the environment and to the square from which the good comes."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchaeologicalExcavation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "settore ambiente quadrato"@it , "area room square"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/DSC/DSCQ" .
+
+<https://w3id.org/arco/ontology/context-description/archaeologicalExcavationLocalIdentifier>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the identification code, numeric or alphanumeric, which identifies the archaeological excavation unambiguously in the context of a local repertoire."@en , "Questa proprietà rappresenta il codice identificativo, numerico o alfanumerico, che individua lo scavo archeologico in modo univoco nell'ambito di un repertorio locale."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchaeologicalExcavation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "archaeological excavation local identifier"@en , "codice identificativo locale dello scavo archeologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/catalogue/localIdentifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/DSC/DSCH" .

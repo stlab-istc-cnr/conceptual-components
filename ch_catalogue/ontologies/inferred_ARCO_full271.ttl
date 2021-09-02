@@ -1,0 +1,137 @@
+<https://w3id.org/arco/ontology/context-description/isAgentWithResponsibilityIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa è la proprietà inversa a \"ha agente con responsabilità\"."@it , "This is the inverse property of \"has agent with responsibility\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is agent with responsibility in"@en , "è agente con responsabilità in"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Responsibility> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/context-description/isAgentRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/Responsibility>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta l'individuazione di una responsabilità attribuibile a un agente relativamente ai processi di produzione e di divulgazione che caratterizzano specificamente i beni fotografici, quindi alle diverse personalità responsabili, a vario titolo, del ciclo produttivo del bene in esame, oltre che della sua circolazione, divulgazione, commercializzazione e promozione (committenti, stampatori, ritoccatori, coloritori, editori, distributori, sponsor, curatori e responsabili di edizioni e di serie, dedicanti e dedicatari, responsabili di collezioni e di collazioni, ecc.)."@it , "This class represents the attribution of a responsibility to an agent, relating to the activities of production and dissemination of photographic heritage (e.g.: committent, editor, printer, dedicatee, etc.)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Responsibility"@en , "Responsabilità"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Interpretation> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normative F e FF: PD/PDF" .
+
+<https://w3id.org/arco/ontology/context-description/hasAuthorityFileCataloguingAgency>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un'entità descritta in una scheda di Authority File all'ente schedatore dell'authority file stesso. Per esempio, l'attribuzione di un autore a un bene culturale, uno scavo archeologico, una ricognizione archeologica, una bibliografia. Questa proprietà, esprimendo il significato della relazione nel nome, dà una rappresentazione semplificata della relazione che lega questa entità, l'authority file, e l'ente schedatore dell'authority file."@it , "This property relates an entity described in a authority file to the file's cataloguing institution."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha ente schedatore dell'authority file"@it , "has authority file cataloguing agency"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/context-description/hasRelatedAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isAuthorityFileCataloguingAgencyOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AU/AUT/AUTJ; DO/BIB/BIBJ; RE/RCG/RCGJ; RE/DSC/DSCJ - ICCD Normativa F: PD/PDF/PDFJ" .
+
+<https://w3id.org/italia/onto/l0/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/arco/ontology/context-description/isResponsibilityFor>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the attribution of a responsibility to an agent, relating to the activities of production and dissemination of photographic heritage (e.g.: committent, editor, printer, dedicatee, etc.) to photographic heritage."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Responsibility> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is responsibility for"@en , "è responsibilità su"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: PD/PDF" .
+
+<https://w3id.org/arco/ontology/context-description/hasAgentWithResponsibility>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega l'individuazione di una responsabilità relativamente ai processi di produzione e di divulgazione che caratterizzano specificamente i beni fotografici all'agente che ha quella specifica responsabilità."@it , "This property relates the responsibility's identification to the agent which has that specific responsibility, focusing on the production process and dissemination of the photographic heritage."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Responsibility> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has agent with responsibility"@en , "ha agente con responsabilità"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/context-description/hasRelatedAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isAgentWithResponsibilityIn> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F e FF 4.00: PD/PDF/PDFN - ICCD Normativa F 3.00: PD/PDF/PDFN o PD/PDF/PDFB" .
+
+<https://w3id.org/arco/ontology/context-description/hasResponsibility>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un bene fotografico (fotografia o fondo fotografico) all'individuazione di una responsabilità attribuibile a un agente relativamente ai processi di produzione e di divulgazione che caratterizzano specificamente i beni fotografici, quindi alle diverse personalità responsabili, a vario titolo, del ciclo produttivo del bene in esame, oltre che della sua circolazione, divulgazione, commercializzazione e promozione (committenti, stampatori, ritoccatori, coloritori, editori, distributori, sponsor, curatori e responsabili di edizioni e di serie, dedicanti e dedicatari, responsabili di collezioni e di collazioni, ecc.)."@it , "This property relates a photographic cultural entity (photography or photographic fond) to the responsibility attribution of an agent. The agent is in charge of the production or disclosure process which characterises photographic heritage (i.e. printers, editors, distributors, sposors, collection responsibles etc.)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "This property relates a photographic heritage to the the attribution of a responsibility to an agent, relating to the activities of production and dissemination of photographic heritage (e.g.: committent, editor, printer, dedicatee, etc.)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has responsibility"@en , "ha responsabilità"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Responsibility> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isResponsibilityFor> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: PD/PDF" .

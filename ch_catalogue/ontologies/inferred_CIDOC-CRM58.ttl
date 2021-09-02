@@ -1,0 +1,198 @@
+<http://www.cidoc-crm.org/cidoc-crm/P116_starts>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows the starting point for a E2 Temporal Entity to be situated by reference to the starting point of another temporal entity of longer duration.  \nThis property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the \"starts / started-by\" relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "начинает"@ru , "inicia"@pt , "αρχίζει"@el , "开始了"@zh , "beginnt"@de , "starts"@en , "commence"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration. \nTime Span has no other semantic connotations. Time-Spans are used to define the temporal extent of instances of E4 Period, E5 Event and any other phenomena valid for a certain time. An E52 Time-Span may be identified by one or more instances of E49 Time Appellation. \nSince our knowledge of history is imperfect, instances of E52 Time-Span can best be considered as approximations of the actual Time-Spans of temporal entities. The properties of E52 Time-Span are intended to allow these approximations to be expressed precisely.  An extreme case of approximation, might, for example, define an E52 Time-Span having unknown beginning, end and duration. Used as a common E52 Time-Span for two events, it would nevertheless define them as being simultaneous, even if nothing else was known. \n\tAutomatic processing and querying of instances of E52 Time-Span is facilitated if data can be parsed into an E61 Time Primitive.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Χρονικό Διάστημα"@el , "Período de Tempo"@pt , "时段"@zh , "Time-Span"@en , "Zeitspanne"@de , "Durée"@fr , "Интервал Времени"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P120i_occurs_after>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "εμφανίζεται μετά"@el , "occurs after"@en , "a lieu après"@fr , "ocorre depois"@pt , "kommt nach"@de , "发生时段后於"@zh , "появляется после"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P116i_is_started_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "est commencée par"@fr , "начинается"@ru , "被开始于"@zh , "wurde begonnen mit"@de , "αρχίζει με"@el , "é iniciada por"@pt , "is started by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P119_meets_in_time_with>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property indicates that one E2 Temporal Entity immediately follows another. \nIt implies a particular order between the two entities: if A meets in time with B, then A must precede B. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated). \nThis property is the same as the \"meets / met-by\" relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "é temporalmente contíguo com"@pt , "προηγείται"@el , "trifft zeitlich auf"@de , "meets in time with"@en , "следует во времени за"@ru , "紧接续了"@zh , "est temporellement contiguë avec"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P118i_is_overlapped_in_time_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is overlapped in time by"@en , "recouvre partiellement dans le temps"@fr , "é sobreposto temporalmente por"@pt , "перекрывается во времени"@ru , "时段被重叠于"@zh , "wird zeitlich überlappt von"@de , "έπεται μερικώς επικαλυπτόμενο"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P117_occurs_during>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows the entire E52 Time-Span of an E2 Temporal Entity to be situated within the Time-Span of another temporal entity that starts before and ends after the included temporal entity.   \nThis property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the \"during / includes\" relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "εμφανίζεται κατά τη διάρκεια"@el , "ocorre durante"@pt , "时段被涵盖於"@zh , "occurs during"@en , "a lieu pendant"@fr , "появляется во течение"@ru , "fällt in"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the temporal confinement of an instance of an E2 Temporal Entity.\nThe related E52 Time-Span is understood as the real Time-Span during which the phenomena were active, which make up the temporal entity instance. It does not convey any other meaning than a positioning on the “time-line” of chronology. The Time-Span in turn is approximated by a set of dates (E61 Time Primitive). A temporal entity can have in reality only one Time-Span, but there may exist alternative opinions about it, which we would express by assigning multiple Time-Spans. Related temporal entities may share a Time-Span. Time-Spans may have completely unknown dates but other descriptions by which we can infer knowledge.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a pour durée"@fr , "tem período de tempo"@pt , "имеет временной отрезок"@ru , "has time-span"@en , "hat Zeitspanne"@de , "发生时段是"@zh , "βρισκόταν σε εξέλιξη"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all phenomena, such as the instances of E4 Periods, E5 Events and states, which happen over a limited extent in time. \n\tIn some contexts, these are also called perdurants. This class is disjoint from E77 Persistent Item. This is an abstract class and has no direct instances. E2 Temporal Entity is specialized into E4 Period, which applies to a particular geographic area (defined with a greater or lesser degree of precision), and E3 Condition State, which applies to instances of E18 Physical Thing.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Temporal Entity"@en , "Έγχρονη  Οντότητα"@el , "Entité temporelle"@fr , "Временная Сущность"@ru , "Geschehendes"@de , "时间实体"@zh , "Entidade Temporal"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P114_is_equal_in_time_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This symmetric property allows the instances of E2 Temporal Entity with the same E52 Time-Span to be equated. \nThis property is only necessary if the time span is unknown (otherwise the equivalence can be calculated).\nThis property is the same as the \"equal\" relationship of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "равен по времени"@ru , "zeitgleich zu"@de , "is equal in time to"@en , "é temporalmente igual a"@pt , "est temporellement égale à"@fr , "时段相同於"@zh , "συμπίπτει χρονικά με"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P118_overlaps_in_time_with>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies an overlap between the instances of E52 Time-Span of two instances of E2 Temporal Entity. \nIt implies a temporal order between the two entities: if A overlaps in time B, then A must start before B, and B must end after A. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).\nThis property is the same as the \"overlaps / overlapped-by\" relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "overlaps in time with"@en , "est partiellement recouverte dans le temps par"@fr , "überlappt zeitlich mit"@de , "προηγείται μερικώς επικαλύπτοντας"@el , "sobrepõe temporalmente"@pt , "时段重叠了"@zh , "перекрывает во времени"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P115i_is_finished_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wurde beendet mit"@de , "is finished by"@en , "é finalizada por"@pt , "被结束于"@zh , "заканчивается"@ru , "περατώνεται με"@el , "est terminée par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P120_occurs_before>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the relative chronological sequence of two temporal entities. \nIt implies that a temporal gap exists between the end of A and the start of B. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).\nThis property is the same as the \"before / after\" relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "kommt vor"@de , "εμφανίζεται πριν"@el , "a lieu avant"@fr , "ocorre antes"@pt , "发生时段先於"@zh , "появляется до"@ru , "occurs before"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is time-span of"@en , "είναι χρονικό διάστημα του/της"@el , "est la durée de"@fr , "é o período de tempo de"@pt , "является временным отрезком для"@ru , "ist Zeitspanne von"@de , "开始并完成了"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P117i_includes>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "περιλαμβάνει"@el , "comporte"@fr , "включает"@ru , "inclui"@pt , "beinhaltet"@de , "includes"@en , "时段涵盖了"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P115_finishes>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows the ending point for a E2 Temporal Entity to be situated by reference to the ending point of another temporal entity of longer duration.  \nThis property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the \"finishes / finished-by\" relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "termine"@fr , "finishes"@en , "结束了"@zh , "заканчивает"@ru , "περατώνει"@el , "finaliza"@pt , "beendet"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P119i_is_met_in_time_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is met in time by"@en , "est immédiatement précédé par"@fr , "wird zeitlich getroffen von"@de , "предшествует во времени"@ru , "紧接续於"@zh , "é imediatamente precedido por"@pt , "έπεται"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

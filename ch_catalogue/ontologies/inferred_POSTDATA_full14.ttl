@@ -1,0 +1,148 @@
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Representatives of a work, that is, of a Poetic Work. Each version and edition of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en , "Representatives of a work, that is, of an Poetic Work. Each version of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Redaction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> , <http://iflastandards.info/ns/fr/frbr/frbroo/F22> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Something that happens or takes place. It is generally mentioned in the text (Redaction) and represented using isMentionedin property.\nThis class is defined as a subclass of edm:Event. In the future, it may be also defined as a subclass of schema:Event or bibframe:Event, so as to facilitate linking with existing entities already defined according to schema.org or those available in knowledge graphs such as the one from the US Library of Congress."@en , "Something that happens or takes place.\nThis class is defined as a subclass of edm:Event. In the future, it may be also defined as a subclass of schema:Event or bibframe:Event, so as to facilitate linking with existing entities already defined according to schema.org or those available in knowledge graphs such as the one from the US Library of Congress."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/Event> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#retrievesText>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific location in a bibliographic item (an instance of Location) which contains the edition used as the base of text at hand"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "retrieves Text"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isRecordedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific location in the text of the bibliographic item  (an instance of Location) that registers the current event"@en , "This property points to the specific location in a bibliographic item (an instance of Location) that registers the current item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Recorded By"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A human being regarded as an individual. This person may have existed in real life (e.g., Miguel de Cervantes) or may be fictional (e.g., Don Quijote de la Mancha).\nThis class is defined as a subclass of pdcore:Agent (which is a subclass of edm:Agent) and foaf:Person, following the design principles used in the EDM ontology. In the future, it may be also defined as a subclass of schema:Person, so as to facilitate linking with existing entities already defined according to schema.org"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Agent> , <http://xmlns.com/foaf/0.1/Person> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#hasTranslation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific location in a bibliographic item (an instance of Location) which contains a translation of the text at hand"@en , "This property points to another work (an instance of Redaction) which is a translation of this one"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has Translation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> , <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#isTranslationOf> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isIndexedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific location in the text of the bibliographic item (an instance of Location) in which the current text (Redaction) is indexed."@en , "This property points to the specific location in a bibliographic item (an instance of Location) in which the current text is indexed."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Indexed In"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-transmission#Location>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Ensemble>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An abstract work that contains more than one Poetic Work. An Ensemble might be conceived as a collection of works, organized by author, by book song, by book of poems; or as a work mainly written in prose that contains more than one poetic pieces (each one of them being its own Poetic Work). For example, Les fleurs du mal"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ensemble"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F17> , <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#editedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific Location in a bibliographic item that contains an edition of the current instance of Redaction."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "edited In"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isReferencedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific location in a bibliographic item (an instance of Location) whose contents are related to the current item under analysis (usually, its specific bibliography)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Referenced In"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

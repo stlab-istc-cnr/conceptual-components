@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises statements relating a Thema with a particular Nomen and its usage in the context of a common Complex Work realized by one or more KOS.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nomen Use Statement"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> , <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R35_specified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F35 Nomen Use Statement with an instance of F34 KOS in which the Nomen Use Statement has a given status. The property R35.1 allows for specifying the particular status of the nomen use statement within the KOS. An instance of R35 is specified by should have only one status.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "specified by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R35i_specifies>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "specifies"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R34_has_validity_period>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F34 KOS with the instance of E52 Time-Span describing the period for which the particular KOS Expression was regarded as valid by its maintainers. Each change of validity status of a nomen use statement within a KOS should be associated with a release change of the KOS. The individual time-span of a validity state of a nomen would be the union of the time-spans of the KOS in which the Nomen was declared to have the particular validity status (provisional, accepted, obsolete etc...).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has validity period"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises documents that establish controlled terminology (nomina) for consistent use. They may also describe relationships between entities and controlled terminology and relationships between entities. Note that any meaningful change in a Knowledge Organisation System (KOS) that affects the validity status of its elements defines a new release (Expression) of the KOS. Note that identifiers created following a rule in a KOS are to be regarded as being taken from this KOS, even though not explicitly spelled out. This definition of KOS reflects current library practice and not the use of the term in general.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "KOS"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document> , <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> , <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R34i_is_validity_period_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is validity period of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

@@ -1,0 +1,97 @@
+<https://w3id.org/arco/ontology/denotative-description/sampleCollectedIdentifier>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta il numero che identifica il campione."@it , "This property represents the seample collected identifier."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/SampleCollected> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "identificativo del campione prelevato"@it , "sample collected identifier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa MA, CA, SI, SAS: MC/CMN" .
+
+<https://w3id.org/arco/ontology/denotative-description/SampleCollected>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a sample collected from an archeological property."@en , "Questa classe rappresenta un campione prelevato da un bene archeologico."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Campione prelevato"@it , "Sample collected"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa MA, CA, SI, SAS: MC/CMN" .
+
+<https://w3id.org/arco/ontology/denotative-description/positionOnCulturalProperty>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta la posizione di un oggetto (es.: elementi come stemmi, emblemi, timbri, etc., oppure i soggetti rappresentati) rispetto all'intero bene o a una sua specifica parte."@it , "This property represents a cultural entity's postion (e.g. elements like crests, emblems, stamps or the depicted subjects), with respect to the whole entity or to its specific part."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "position on cultural property"@en , "posizione su bene culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE/ISEP - Normative di versioni precedenti: DA/STM/STMP; DA/ISR/ISRP - Normativa A: LI/LSI/LSIU - Normativa PST: OG/SGT/SGTP - ICCD Normative MA, CA, SI, SAS: MC/CMN/CMNP"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/isSampleCollectedFrom>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is the inverse property of \"has sample collected\"."@en , "Questa è la proprietà inversa di \"ha campione prelevato\"."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/SampleCollected> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is sample collected from"@en , "è campione prelevato da"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/hasSampleCollected>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un bene archeologico a un campione prelevato da esso."@it , "This property connects a archaeological entity to a sample collected from it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has sample collected"@en , "ha campione prelevato"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/SampleCollected> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isSampleCollectedFrom> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa MA, CA, SI, SAS: MC/CMN" .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

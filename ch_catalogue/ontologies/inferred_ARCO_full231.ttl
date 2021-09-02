@@ -1,0 +1,171 @@
+<https://w3id.org/arco/ontology/denotative-description/hasVolumetricDimensionsMeasurement>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects a collection of observed measures on an object to one of these measures, when the latter is relative to an ancient or contemporary apparel's size. The volumetric dimensions measurements determine the size for storage and can be considered as the object's orthogonal coordinates."@en , "Questa proprietà collega un insieme di misure osservate per un oggetto a una dell misure, quando questa sia relativa all'ingombro di un vestimento antico o contemporaneo. Le misure ingombro determinano l'ingombro per l'immagazzinaggio e si possono quindiconsiderare le coordinate ortogonali dell'oggetto."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/MeasurementCollection> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has volumetric dimensions measurement" , "ha misura di imgombro" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/Measurement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/denotative-description/hasMeasurement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/object-collection/> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isVolumetricDimensionsMeasurementIn> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa VeAC: MT/MII" .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un bene culturale, sia materiale che immateriale. Un bene culturale è una testimonianza materiale o immateriale, riconosciuta come parte del patrimonio culturale nazionale in quanto utile alla conoscenza e alla ricostruzione della storia e del paesaggio."@it , "This class represents a cultural property, both tangible and intangible. A cultural property is the legacy, tangible or intangible, recognised as part of the national cultural heritage, since it helps know and reconstruct the history and the landscape."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cultural Property"@en , "Bene culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/Measurement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una misura osservata per un oggetto. Le misure sono relative alle dimensioni del bene in esame. Per la normativa F, le misure possono essere relative anche a supporti secondari, custodie, cornici, singoli fotogrammi, ecc. Per la normativa VeAC, le misure possono essere relative all'ingombro per l'immagazzinaggio; alla base (individuano l'oggetto e la conformazione fisica del proprietario e sono fondamentali per l'allestimento museale, per individuare i tipi di supporti necessari per l'esposizione); alle maniche."@it , "This class represents a measurement of an object. Measurements realte to the cultural property's dimensions."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Measurement"@en , "Misura"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso della classe \"Misura\" è il seguente:\nresource:Measurement/0500212021-1-height\n        a  dd:Measurement ;\n        rdfs:label  \"Misura del bene culturale 0500212021: 795mm.\"@it ;\n        dd:hasMeasurementType dd:Height ;\n        dd:hasValue resource:Value/0500212021-1-height-795 ."@it , "An example of usage of the class 'Measurement' is the following:\nresource:Measurement/0500212021-1-height\n        a  dd:Measurement ;\n        rdfs:label  \"Measurement of cultural property 0500212021: 795mm.\"@en ;\n        dd:hasMeasurementType dd:Height ;\n        dd:hasValue resource:Value/0500212021-1-height-795 ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "MT/MIS"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/hasMeasurementCollection>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un oggetto all'insieme delle misure osservate per quell'oggetto."@it , "This property connects an object to the collection of observed measures on it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha collezione di misure"@it , "has measurement collection"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/MeasurementCollection> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isMeasurementCollectionOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "MT/MIS - Normativa VeAC: anche MT/MII e MT/MIM - Normativa BNB: LR/LRI/LRIT, LRIH, LRIO)"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/Soil>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il suolo."@it , "This class represents the soil."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Suolo"@it , "Soil"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/validity>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta la validità, intesa come livello di accuratezza, di una misura osservata per un oggetto."@it , "This property represents the validity, intended as accurancy level, of an observed measure for an object."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/MeasurementCollection> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "validità"@it , "validity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/immovable-property/Construction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents an immovable cultural entity that has been built by humankind."@en , "Questa classe rappresenta un bene culturale immobile che è stato costruito dall'uomo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Costruzione"@it , "Construction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/isMeasurementCollectionOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa è la proprietà inversa di \"ha collezione di misure\"."@it , "This is the inverse property of \"has measurement collection\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/MeasurementCollection> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è collezione di misure di"@it , "is measurement collection of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/movable-property/UnitCell>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta la cella di un minerale."@it , "This class represents the unit cell of a mineral."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unit cell"@en , "Cella"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/MeasurementCollection>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta l'insieme delle misurazioni osservate per un oggetto. Per la normativa F, le misure possono essere relative anche a supporti secondari, custodie, cornici, singoli fotogrammi, ecc. Per la normativa VeAC, le misure possono essere relative all'ingombro per l'immagazzinaggio; alla base (individuano l'oggetto e la conformazione fisica del proprietario e sono fondamentali per l'allestimento museale, per individuare i tipi di supporti necessari per l'esposizione); alle maniche."@it , "This class represents the set of measurments observed for an object."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Measurement collection"@en , "Collezione di misure"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/object-collection/> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Measurement collection' is the following:\nresource:MeasurementCollection/1200865132-1\n        a  dd:MeasurementCollection ;\n        rdfs:label \"Measurements of cultural property 1200865132 7\"@en ;\n        dd:hasMeasurement resource:Measurement/1200865132-1-width , resource:Measurement/1200865132-1-height , resource:Measurement/1200865132-1-depth ."@en , "Un esempio d'uso della classe \"Collezione di misure\" è il seguente:\nresource:MeasurementCollection/1200865132-1\n        a  dd:MeasurementCollection ;\n        rdfs:label \"Misure del bene culturale 1200865132 7\"@it ;\n        dd:hasMeasurement resource:Measurement/1200865132-1-width , resource:Measurement/1200865132-1-height , resource:Measurement/1200865132-1-depth ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "MT/MIS - Normativa VeAC: anche MT/MII e MT/MIM"@it .

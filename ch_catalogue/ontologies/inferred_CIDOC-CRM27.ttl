@@ -1,0 +1,61 @@
+<http://www.cidoc-crm.org/cidoc-crm/P41i_was_classified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "был классифицирован посредством"@ru , "a été classifiée par le biais de"@fr , "被分类於"@zh , "was classified by"@en , "χαρακτηρίσθηκε από"@el , "foi classificada por"@pt , "wurde klassifiziert durch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P42_assigned>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property records the type that was assigned to an entity by an E17 Type Assignment activity. \nType assignment events allow a more detailed path from E1 CRM Entity through P41 classified (was classified by), E17 Type Assignment, P42 assigned (was assigned by) to E55 Type for assigning types to objects compared to the shortcut offered by P2 has type (is type of).\nFor example, a fragment of an antique vessel could be assigned the type “attic red figured belly handled amphora” by expert A. The same fragment could be assigned the type “shoulder handled amphora” by expert B.\nA Type may be intellectually constructed independent from assigning an instance of it.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a attribué"@fr , "atribuiu"@pt , "指定类型为"@zh , "wies zu"@de , "assigned"@en , "απέδωσε ως ιδιότητα"@el , "назначил"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141_assigned> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes. \nE55 Type is the CRM’s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader  term (has narrower term). Such hierarchies may be extended with additional properties. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo"@pt , "Type"@fr , "Type"@en , "Τύπος"@el , "Тип"@ru , "Typus"@de , "类型"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the actions of classifying items of whatever kind. Such items include objects, specimens, people, actions and concepts. \nThis class allows for the documentation of the context of classification acts in cases where the value of the classification depends on the personal opinion of the classifier, and the date that the classification was made. This class also encompasses the notion of \"determination,\" i.e. the systematic and molecular identification of a specimen in biology. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "类型指定"@zh , "Απόδοση Τύπου"@el , "Attribution de type"@fr , "Type Assignment"@en , "Typuszuweisung"@de , "Присвоение Типа"@ru , "Atribuição de Tipo"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P42i_was_assigned_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被指定类型於"@zh , "был присвоен посредством"@ru , "wurde zugewiesen durch"@de , "foi atribuído por"@pt , "was assigned by"@en , "a été attribué par"@fr , "αποδόθηκε από"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> .

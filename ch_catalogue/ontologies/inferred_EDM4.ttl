@@ -1,0 +1,42 @@
+<http://www.europeana.eu/schemas/edm/ProvidedCHO>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Provided CHO"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This class comprises the Cultural Heritage objects that Europeana collects descriptions about."@en ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "Mona Lisa, Winged Victory of Samothrace"@en ;
+        <http://www.w3.org/2004/02/skos/core#note>
+                "This class has been mostly motivated by the need to assign a type to the “central node” in the EDM pattern, during the ingestion process, related to the XML expression of EDM at that stage. It was especially intended to fit the cases where edm:PhysicalThing  cannot be used as the type of the resource standing for the real-world object (independently of any specific data contributor perspective)."@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Rationale: This class is the range of edm:aggregatedCHO. A resource of type ProvidedCHO can be the subject of statements using edm:isRelatedTo or any more specific property."@en .
+
+<http://www.europeana.eu/schemas/edm/EuropeanaAggregation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Europeana Aggregation" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/EuropeanaObject> , <http://www.openarchives.org/ore/terms/Aggregation> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "The set of resources related to a single Cultural Heritage Object that\ncollectively represent that object in Europeana. Such set consists of: all\ndescriptions about the object that Europeana collects from (possibly different) content providers, including thumbnails and other forms of abstractions, as well as of the description of the object Europeana builds." ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "The 56th issue of \"Le Temps\" is a (different) Cultural Heritage Object represented in Europeana by another EuropeanaAggregation instance"@en , "The painting Mona Lisa is a Cultural Heritage Object represented in Europeana by one EuropeanaAggregation instance"@en , "The journal \"Le Temps\" is a Cultural Heritage Object represented in Europeana by one EuropeanaAggregation instance"@en ;
+        <http://www.w3.org/2004/02/skos/core#note>
+                "An instance of EuropeanaAggregation is created at ingestion time for each different Cultural Heritage Object recognized by Europeana. Such instance is associated to the Cultural Heritage Object that it is about, by the property edm:aggregatedCHO"@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Rationale: This class is used in Europeana to gather in a single conceptual unit all the information about a Cultural Heritage Object, necessary for all operations on these objects."@en , "Obligation and Occurence: The relation between the Cultural Heritage Objects represented in Europeana and the instances of the class EuropeanaAggregation is one-to-one, in the data maintained by Europeana: every Cultural Heritage Object is represented by an instance of EuropeanaAggregation, and every instance of EuropeanaAggregation represent a Cultural Heritage Object."@en .
+
+<http://www.europeana.eu/schemas/edm/aggregatedCHO>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.openarchives.org/ore/terms/Aggregation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Aggregated Cultural Heritage Object"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/ProvidedCHO> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.openarchives.org/ore/terms/aggregates> , <http://www.cidoc-crm.org/rdfs/cidoc-crm#P129_is_about> , <http://purl.org/dc/elements/1.1/subject> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This property associates an ORE aggregation with the cultural heritage object(s) (CHO for short) it is about."@en .

@@ -1,0 +1,78 @@
+<http://purl.org/vocab/frbr/core#Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.\n\nAn expression is the specific intellectual or artistic form that a work takes each time it is \"realized.\" Expression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Endeavour> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/vocab/frbr/core#Work> , <http://purl.org/vocab/frbr/core#Manifestation> , <http://purl.org/vocab/frbr/core#Item> .
+
+<http://purl.org/vocab/frbr/core#reconfiguration>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An item reconfigured in another one.\n\nThe reconfiguration relationship is one in which one or more items are changed in such a way that a new item or items result. Most commonly, an item of one manifestation is bound with an item of a different manifestation to make a new item. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has reconfiguration"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/vocab/frbr/core#reconfigurationOf> .
+
+<http://purl.org/spar/fabio/isRepresentationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A property linking a particular item to the expression it represents.  This property is additional to the relationships between FRBR endeavours present in the classical FRBR data model."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is representation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/frbr/core#Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  .
+
+<http://purl.org/spar/fabio/hasRepresentation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A property linking a particular expression to its items.  This property is additional to the relationships between FRBR endeavours present in the classical FRBR data model."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/vocab/frbr/core#Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has representation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/spar/fabio/isRepresentationOf> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  .
+
+<http://purl.org/vocab/frbr/core#Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A single exemplar of a manifestation.\n\nThe entity defined as item is a concrete entity. It is in many instances a single physical object (e.g., a copy of a one-volume monograph, a single audio cassette, etc.). There are instances, however, where the entity defined as item comprises more than one physical object (e.g., a monograph issued as two separately bound volumes, a recording issued on three separate compact discs, etc.). "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Endeavour> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/vocab/frbr/core#Work> , <http://purl.org/vocab/frbr/core#Manifestation> .

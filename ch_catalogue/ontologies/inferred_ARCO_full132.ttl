@@ -1,0 +1,132 @@
+<https://w3id.org/arco/ontology/context-description/TitleType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il tipo di titolo di un oggetto (es.: originario, alternativo)."@it , "This class represents the type of an object title (e.g. original, alternative)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Title Type"@en , "Tipo di Titolo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: DA/AID/AIDN; DA/AID/AIDT - Normativa S e MI: OG/SGT/SGTP Normativa F: SG/SGL/SGLA; SG/SGL/SGLT; SG/SGL/SGLL - Altre normative di versioni precedenti alla 4.00: OG/SGT/SGTR; OG/SGT/SGTT - Normative VeAC e AT: DO/BSE/BSET e BSEC."@it .
+
+<https://w3id.org/arco/ontology/context-description/Title>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il titolo di un oggetto. Nel caso del dominio dei beni culturali, può rappresentare il titolo del soggetto di un bene culturale o di un'opera collegata a un bene culturale in quanto sua fase preparatoria o finale o in quanto pubblicazione contenente una stampa, oppure il titolo di una serie fotografica, etc."@it , "This class represents the title of an object, e.g. the title of the subject represented by a cultural property, or the title of a photographic series, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Title"@en , "Titolo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: DA/AID/AIDN (titolo alternativo); DA/AID/AIDT (titolo) - Normativa S e MI: OG/SGT/SGTP (titolo proprio); Normativa F: SG/SGL/SGLA (titolo attribuito); SG/SGL/SGLT (titolo proprio); SG/SGL/SGLL (titolo parallelo); - Altre normative di versioni precedenti alla 4.00: OG/SGT/SGTR (titolo parallelo); OG/SGT/SGTT (titolo); ICCD Normativa S 3: RO/ADL/ADLT"@it .
+
+<https://w3id.org/arco/ontology/context-description/isTitleOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a title to the entity to which it is referred."@en , "Questa proprietà collega un titolo all'entità cui si riferisce."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is title of"@en , "è titolo di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "OG/SGT/SGTP; SG/SGL/SGLT; SG/SGL/SGLL; OG/SGT/SGTR; DA/AID/AIDN; SG/SGL/SGLA; DA/AID/AIDT; OG/SGT/SGTT; RO/ROF/ROFT; DO/BSE/BSET; DO/BSE/BSEC." .
+
+<https://w3id.org/arco/ontology/context-description/hasTitle>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un oggetto al suo titolo. Nel caso del dominio dei beni culturali, può collegare un bene culturale o un'opera collegata al bene culturale perché sua fase finale o preparatoria (proprio, attribuito, parallelo, alternativo), oppure un'edizione al suo titolo (principale o secondario), oppure una serie fotografica al suo titolo, etc."@it , "This property relates an object to its title."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has title"@en , "ha titolo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isTitleOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "OG/SGT/SGTP; SG/SGL/SGLT; SG/SGL/SGLL; OG/SGT/SGTR; DA/AID/AIDN; SG/SGL/SGLA; DA/AID/AIDT; OG/SGT/SGTT; RO/ROF/ROFT; DO/BSE/BSET; DO/BSE/BSEC."@it .
+
+<https://w3id.org/arco/ontology/context-description/isTitleTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il tipo di titolo di un bene culturale al relativo titolo."@it , "This property relates the type of a cultural entity title to its title."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/TitleType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is title type of"@en , "è tipo di titolo di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/hasTitleType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a cultural entity's title to its title type."@en , "Questa proprietà collega un titolo di un bene culturale al tipo di titolo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has title type"@en , "ha tipo di titolo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/TitleType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isTitleTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "OG/SGT/SGTP; SG/SGL/SGLT; SG/SGL/SGLL; OG/SGT/SGTR; DA/AID/AIDN; SG/SGL/SGLA; DA/AID/AIDT; OG/SGT/SGTT" .
+
+<https://w3id.org/arco/ontology/core/specifications>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents specifications associated to a piece of information."@en , "Questa proprietà rappresenta eventuali specifiche, relative a una certa informazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/core> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "specifications"@en , "specifiche"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .

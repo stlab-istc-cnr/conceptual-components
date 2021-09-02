@@ -1,0 +1,114 @@
+<http://www.loc.gov/mods/rdf/v1#partEnd>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The value of the end of a part. For example, if unit of the part has value 'page', this is the number of the last page. " ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - End" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#partDetailType>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The type of the resource part, e.g. volume, issue, page." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - Detail Type" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#partUnit>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "the unit -- e.g. page, chapter -- applying to the start, end, and total values." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - Unit" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#partType>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The segment type of a part. (When parts are included, the resource is ususally a document, so the part type would be the segment type of the document.)" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - Type" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#partNumber>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A string that designates the part number." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - Number" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#part>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Information about a physical part of the resource, including the part number, its caption and title, and dimensions. " ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#Part> .
+
+<http://www.loc.gov/mods/rdf/v1#partStart>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The beginning unit of the part." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - Start" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#ModsResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\nThe resource which is the subject of this description.\n  " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - A  MODS Resource" ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://id.loc.gov/vocabulary/resourceTypes/Res> .
+
+<http://www.loc.gov/mods/rdf/v1#Part>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An aggregator for part properties."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - Part" .
+
+<http://www.loc.gov/mods/rdf/v1#partList>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A property of a part - a textual listing of the units within the part." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - List" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#partName>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A string that designates the part name." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#Part> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Part - Name" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .

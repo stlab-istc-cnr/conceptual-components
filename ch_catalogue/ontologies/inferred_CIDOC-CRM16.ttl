@@ -1,0 +1,41 @@
+<http://www.cidoc-crm.org/cidoc-crm/P56_bears_feature>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links an instance of E19 Physical Object to an instance of E26 Physical Feature that it bears.\nAn E26 Physical Feature can only exist on one object. One object may bear more than one E26 Physical Feature. An E27 Site should be considered as an E26 Physical Feature on the surface of the Earth.\nAn instance B of E26 Physical Feature being a detail of the structure of another instance A of E26 Physical Feature can be linked to B by use of the property P46 is composed of (forms part of). This implies that the subfeature B is P56i found on the same E19 Physical Object as A.\nP56 bears feature (is found on) is a shortcut. A more detailed representation can make use of the fully developed (i.e. indirect) path from E19 Physical Object through P59 has section (is located on or\nDefinition of the CIDOC Conceptual Reference Model 149 within), E53 Place, P53 has former or current location (is former or current location of) to E26 Physical Feature.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "несет признак"@ru , "possui característica"@pt , "trägt Merkmal"@de , "φέρει μόρφωμα"@el , "présente pour caractéristique"@fr , "有外貌表征"@zh , "bears feature"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises identifiable features that are physically attached in an integral way to particular physical objects. \nInstances of E26 Physical Feature share many of the attributes of instances of E19 Physical Object. They may have a one-, two- or three-dimensional geometric extent, but there are no natural borders that separate them completely in an objective way from the carrier objects. For example, a doorway is a feature but the door itself, being attached by hinges, is not. \nInstances of E26 Physical Feature can be features in a narrower sense, such as scratches, holes, reliefs, surface colours, reflection zones in an opal crystal or a density change in a piece of wood. In the wider sense, they are portions of particular objects with partially imaginary borders, such as the core of the Earth, an area of property on the surface of the Earth, a landscape or the head of a contiguous marble statue. They can be measured and dated, and it is sometimes possible to state who or what is or was responsible for them. They cannot be separated from the carrier object, but a segment of the carrier object may be identified (or sometimes removed) carrying the complete feature. \nThis definition coincides with the definition of \"fiat objects\" (Smith & Varzi, 2000, pp.401-420), with the exception of aggregates of “bona fide objects”. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Physical Feature"@en , "实体外貌表征"@zh , "Característica Material"@pt , "Materielles Merkmal"@de , "Физический Признак"@ru , "Caractéristique matérielle"@fr , "Υλικό Μόρφωμα"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P56i_is_found_on>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "βρίσκεται σε"@el , "se trouve sur"@fr , "é encontrada em"@pt , "is found on"@en , "найден на"@ru , "wird gefunden auf"@de , "被见於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises items of a material nature that are units for documentation and have physical boundaries that separate them completely in an objective way from other objects. \nThe class also includes all aggregates of objects made for functional purposes of whatever kind, independent of physical coherence, such as a set of chessmen. Typically, instances of E19 Physical Object can be moved (if not too heavy).\nIn some contexts, such objects, except for aggregates, are also called “bona fide objects” (Smith & Varzi, 2000, pp.401-420), i.e. naturally defined objects. \nThe decision as to what is documented as a complete item, rather than by its parts or components, may be a purely administrative decision or may be a result of the order in which the item was acquired.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Физический Объект"@ru , "Objeto Material"@pt , "Physical Object"@en , "Materieller Gegenstand"@de , "Objet matériel"@fr , "实体物件"@zh , "Υλικό Αντικείμενο"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .

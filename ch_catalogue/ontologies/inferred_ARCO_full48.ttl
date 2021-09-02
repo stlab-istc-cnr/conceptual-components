@@ -1,0 +1,101 @@
+<https://w3id.org/arco/ontology/context-description/isRelatedWorkSituationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property, inverse of 'has related work situation', relates a situation in which a cultural property is related to another work, that could even be another cultural property, to the cultural property."@en , "Questa proprietà, inversa di 'ha rapporto con opera collegata', collega la relazione tra il bene culturale e un'altra opera che ne costituisce una fase preparatoria o che ne rappresenta la fase finale al bene culturale stesso."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/RelatedWorkSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è rapporto con opera collegata di"@it , "is related work situation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isSituationOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/involvesRelatedWork>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the situation in which a cultural property is related to another work with the related work itself (e.g.: a preparatory work, a prototype, a copy, a reuse, etc.)."@en , "Questa proprietà collega il rapporto tra un bene culturale e un'opera collegata all'opera collegata stessa (es.: un lavoro preparatorio, un prototipo, una copia, un reimpiego di tutto il bene o di una sua parte, ecc.)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/RelatedWorkSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "involves related work"@en , "coinvolge opera collegata"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isRelatedWorkInvolvedIn> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa trasversale: RV/RSE/RSEC\nICCD Normative versioni precedenti a 4.00: RV/ROZ\nICCD Normative RA, SMO, PST, S, OAC, OA, MI, D, NU, CA, MA, F: RO" .
+
+<https://w3id.org/arco/ontology/context-description/RelatedWorkSituation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a situation in which a cultural property is related to another work, that could even be another cultural property. The cultural property stage is defined referring to this relationship with a related work, that can represent a preparatory, a final phase or a derivation of the cultural property. When the relationship is between two cultural properties, when possible, the nature of the relationship is specified (e.g.: finding location)"@en , "Questa classe rappresenta la relazione, il rapporto, tra il bene culturale in esame e un'altra opera, che può anche essere un bene culturale. In riferimento a questo rapporto, si definisce lo stadio di realizzazione del bene culturale in rapporto con l'oggetto che ne costituisce una fase preparatoria o che ne rappresenta la fase finale o che ne rappresenta una derivazione. Nel caso di una relazione tra un bene culturale e un altro bene culturale, in riferimento a questo rapporto si definisce, se possibile, il tipo di relazione tra i due beni (es.: luogo di realizzazione, luogo di ritrovamento, etc.)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Rapporto con opera collegata"@it , "Related work situation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Related work situation' is the following:\nresource:RelatedWorkSituation/0300199368-preparatory-final-work-1\n        a  cd:RelatedWorkSituation ;\n        rdfs:label  \"Relation 1 between the cultural property 0300199368 and preparatory or final work\"@en  ;\n      cd:hasCulturalPropertyStage resource:CulturalPropertyStage/bozzetto ;\n        cd:hasRelatedWork resource:FinalWork/0300199368-dipinto ."@en , "Un esempio d'uso della classe 'Rapporto con opera collegata' è il seguente:\nresource:RelatedWorkSituation/0300199368-preparatory-final-work-1\n        a  cd:RelatedWorkSituation ;\n        rdfs:label  \"Relation 1 between the cultural property 0300199368 and preparatory or final work\"@en , \"Rapporto 1 tra il bene culturale 0300199368 e opera originale o finale\"@it ;\n      cd:hasCulturalPropertyStage resource:CulturalPropertyStage/bozzetto ;\n        cd:hasRelatedWork resource:FinalWork/0300199368-dipinto ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/arco/ontology/context-description/isRelatedWorkInvolvedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a work related to a cultural property (e.g.: a preparatory work, a prototype, a copy, a reuse, etc.) to the situation in which that work is related to the cultural property itself."@en , "Questa proprietà collega un'opera collegata a un bene culturale al rapporto tra l'opera e il bene culturale (es.: un lavoro preparatorio, un prototipo, una copia, un reimpiego di tutto il bene o di una sua parte, ecc.)"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è opera collegata coinvolta in"@it , "is related work involved in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/RelatedWorkSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/hasRelatedWorkSituation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un bene culturale alla relazione tra il bene stesso e un'altra opera che ne costituisce una fase preparatoria o che ne rappresenta la fase finale, e in riferimento alla quale il bene culturale si trova in un determinato stadio."@it , "This property relates a cultural property to a situation in which this cultural property is related to another work, that could even be another cultural property, as its preparatory or final phase."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha rapporto con opera collegata"@it , "has related work situation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/RelatedWorkSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isRelatedWorkSituationOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

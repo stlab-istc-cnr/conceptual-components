@@ -1,0 +1,41 @@
+<http://www.europeana.eu/schemas/edm/PhysicalThing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Physical Thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "A persistent physical item such as a painting, a building, a book or a stone.\nPersons are not items. This class represents Cultural Heritage Objects known to Europeana to be physical things (such as Mona Lisa) as well as all physical things Europeana refers to in the descriptions of Cultural Heritage Objects (such as the Rosetta Stone)."@en .
+
+<http://www.europeana.eu/schemas/edm/realizes>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.europeana.eu/schemas/edm/PhysicalThing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Realizes"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/InformationResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.europeana.eu/schemas/edm/isRelatedTo> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This property describes a relation between a physical thing and the information resource that is contained in it, visible at it or otherwise carried by it, if applicable."@en .
+
+<http://www.europeana.eu/schemas/edm/InformationResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Information Resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en .
+
+<http://www.europeana.eu/schemas/edm/isRepresentationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.europeana.eu/schemas/edm/InformationResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is Representation Of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/rdfs/cidoc-crm#P138_represents> , <http://purl.org/dc/elements/1.1/subject> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This property associates an information resource to the resource (if any) that it represents"@en .

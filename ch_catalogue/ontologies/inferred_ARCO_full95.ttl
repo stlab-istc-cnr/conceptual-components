@@ -1,0 +1,61 @@
+<https://w3id.org/arco/ontology/context-description/isProfessionOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is the inverse property of \"has profession\"."@en , "Questa è la proprietà inversa di \"ha professione\"."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Profession> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è professione di"@it , "is profession of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/hasProfession>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates an agent to its job. For example the agent responsible of the production of a cultual entity."@en , "Questa proprietà collega un agente al suo mestiere o professione, per esempio l'utente del bene oppure il responsabile della fabbricazione di un bene con il suo mestiere o la sua professione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha professione"@it , "has profession"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Profession> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isProfessionOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BDM 2.00: UT/UTN/UTNM - ICCD Normativa BDM 4.00: AU/AUT/AUTE"@it .
+
+<https://w3id.org/italia/onto/l0/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/context-description/Profession>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il mestiere o la professione dell'utente del bene."@it , "This class represents the role of a cultural entity's user."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Professione"@it , "Profession"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/RO/Role> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/arco/ontology/context-description/UseFunction> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BDM 2: UT/UTN/UTNM"@it .

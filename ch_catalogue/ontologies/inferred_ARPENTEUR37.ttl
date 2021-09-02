@@ -1,0 +1,197 @@
+<http://www.w3.org/2006/time#ProperInterval>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProperInterval"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Interval> .
+
+<http://www.w3.org/2006/time#intervalOverlaps>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval overlaps"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalStartedBy> .
+
+<http://www.w3.org/2006/time#intervalFinishedBy>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval finished by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2006/time#intervalFinishes> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalFinishes> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalMeets> , <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalOverlaps> .
+
+<http://www.w3.org/2006/time#intervalEquals>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval Equals"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalFinishedBy> , <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalMeets> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalFinishes> .
+
+<http://www.w3.org/2006/time#intervalContains>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval Contains"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2006/time#intervalDuring> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalEquals> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalFinishes> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalDuring> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalFinishedBy> , <http://www.w3.org/2006/time#intervalMeets> .
+
+<http://www.w3.org/2006/time#intervalDuring>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval During"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalFinishes> , <http://www.w3.org/2006/time#intervalFinishedBy> , <http://www.w3.org/2006/time#intervalEquals> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalMeets> .
+
+<http://www.w3.org/2006/time#intervalFinishes>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval finishes"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalMeets> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalStarts> .
+
+<http://www.w3.org/2006/time#intervalStartedBy>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval started by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2006/time#intervalStarts> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalStarts> .
+
+<http://www.w3.org/2006/time#intervalBefore>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval Before"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalFinishedBy> , <http://www.w3.org/2006/time#intervalEquals> , <http://www.w3.org/2006/time#intervalContains> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalFinishes> , <http://www.w3.org/2006/time#intervalMeets> , <http://www.w3.org/2006/time#intervalDuring> .
+
+<http://www.w3.org/2006/time#intervalMetBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval met by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalStartedBy> .
+
+<http://www.w3.org/2006/time#intervalMeets>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval meets"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2006/time#intervalMetBy> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalOverlappedBy> .
+
+<http://www.w3.org/2006/time#intervalAfter>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval After"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2006/time#intervalBefore> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalOverlappedBy> , <http://www.w3.org/2006/time#intervalFinishes> , <http://www.w3.org/2006/time#intervalMetBy> , <http://www.w3.org/2006/time#intervalBefore> , <http://www.w3.org/2006/time#intervalStarts> , <http://www.w3.org/2006/time#intervalEquals> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalFinishedBy> , <http://www.w3.org/2006/time#intervalDuring> , <http://www.w3.org/2006/time#intervalMeets> , <http://www.w3.org/2006/time#intervalContains> .
+
+<http://www.w3.org/2006/time#intervalStarts>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval starts"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.w3.org/2006/time#intervalOverlappedBy>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interval overlapped by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2006/time#ProperInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2006/time#intervalOverlaps> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://www.w3.org/2006/time#intervalStartedBy> , <http://www.w3.org/2006/time#intervalOverlaps> , <http://www.w3.org/2006/time#intervalStarts> .

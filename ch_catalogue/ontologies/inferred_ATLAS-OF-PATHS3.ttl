@@ -1,0 +1,57 @@
+<https://w3id.org/italia/onto/CLV/SpatialObject>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Location> .
+
+<https://w3id.org/italia/onto/Route/isCrossedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The inverse relation of crosses."@en , "La relazione inversa di crosses."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/CLV/SpatialObject> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "attraversato da"@it , "is crossed by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/Route/Route>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Una sequenza ordinata di tappe che possono essere seguite da persone e/o da qualsiasi tipo di veicolo di transito"@it , "A sequence of ordered stages that can be followed by a human being and/or any type of transit vehicle"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Route"@en , "Percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Sequence> , <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <http://www.w3.org/ns/prov#wasDerivedFrom>
+                <http://vocab.gtfs.org/terms#Route> .
+
+<https://w3id.org/italia/onto/Route/crosses>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The relation between a route and a geospatial object. I.e. a route 'crosses' a certain geospatial point."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "attraversa"@it , "crosses"@en , "La relazione che permette di asserire che un percorso attraversa un certo punto geospaziale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/CLV/SpatialObject> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/Route/isCrossedBy> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .

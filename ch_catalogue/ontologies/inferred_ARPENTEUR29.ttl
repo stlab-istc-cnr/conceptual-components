@@ -1,0 +1,46 @@
+<http://www.arpenteur.org/ontology/Arpenteur.owl#ImagePoint>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ImagePoint"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#IPoint2D> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#Photograph>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Photograph"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Photogrammetry> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasPhotograph>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#ImagePoint> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has Photograph"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Photograph> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#isObservationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#ImagePoint> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is observation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Photograph> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasCorrelationCoef>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#ImagePoint> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has correlation coefficient"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .

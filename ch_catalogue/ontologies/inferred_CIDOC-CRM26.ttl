@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/P20i_was_purpose_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "era o propósito de"@pt , "ήταν σκοπός του/της"@el , "был целью для"@ru , "war Zweck von"@de , "之準備活動是"@zh , "was purpose of"@en , "était le but de"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P11i_participated_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "участвовал в"@ru , "συμμετείχε σε"@el , "participated in"@en , "参与了"@zh , "nahm Teil an"@de , "participa em"@pt , "a participé à"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P20_had_specific_purpose>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the relationship between a preparatory activity and the event it is intended to be preparation for.\nThis includes activities, orders and other organisational actions, taken in preparation for other activities or events. \nP20 had specific purpose (was purpose of) implies that an activity succeeded in achieving its aim. If it does not succeed, such as the setting of a trap that did not catch anything, one may document the unrealized intention using P21 had general purpose (was purpose of):E55 Type and/or  P33 used specific technique (was used by): E29 Design or Procedure."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "avait pour but spécifique"@fr , "hatte den bestimmten Zweck"@de , "had specific purpose"@en , "имел конкретную цель"@ru , "είχε συγκεκριμένο σκοπό"@el , "有特定目地"@zh , "tinha propósito específico"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E7_Activity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented. \nThis notion includes complex, composite and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράση"@el , "Activity"@en , "活动"@zh , "Atividade"@pt , "Handlung"@de , "Деятельность"@ru , "Activité"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E5_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises changes of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena. Such changes of state will affect instances of E77 Persistent Item or its subclasses.\nThe distinction between an E5 Event and an E4 Period is partly a question of the scale of observation. Viewed at a coarse level of detail, an E5 Event is an ‘instantaneous’ change of state. At a fine level, the E5 Event can be analysed into its component phenomena within a space and time frame, and as such can be seen as an E4 Period. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy change of state.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Événement"@fr , "Событие"@ru , "Evento"@pt , "Συμβάν"@el , "Ereignis"@de , "Event"@en , "事件"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E4_Period> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P11_had_participant>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the active or passive participation of instances of E39 Actors in an E5 Event. \nIt connects the life-line of the related E39 Actor with the E53 Place and E50 Date of the event. The property implies that the Actor was involved in the event but does not imply any causal relationship. The subject of a portrait can be said to have participated in the creation of the portrait.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "had participant"@en , "tem participante"@pt , "имел участника"@ru , "a eu pour participant"@fr , "有参与者"@zh , "hatte Teilnehmer"@de , "είχε συμμέτοχο"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .

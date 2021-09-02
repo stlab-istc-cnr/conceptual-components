@@ -1,0 +1,113 @@
+<https://w3id.org/arco/ontology/core/hasType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The object property that associates any object with a type."@en , "La object property che associa un qualunque oggetto a un tipo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/core> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha tipo"@it , "has type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/immovable-property/Flooring>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta la pavimentazione di una costruzione."@it , "This class represents the flooring of a construction."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Pavimentazione"@it , "Flooring"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/immovable-property/Covering> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/arco/ontology/immovable-property/Roofing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa A: PV/PVM" .
+
+<https://w3id.org/arco/ontology/immovable-property/FlooringLayout>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the pattern of the floor."@en , "Questa classe rappresenta lo schema compositivo del disegno della pavimentazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flooring layout"@en , "Schema di posa"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/immovable-property/Layout> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa A: PV/PVm/PVMS"@it .
+
+<https://w3id.org/arco/ontology/immovable-property/FlooringType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the type of a flooring."@en , "Questa classe rappresenta il tipo di pavimentazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flooring type"@en , "Tipo di pavimentazione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/immovable-property/CoveringType> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/arco/ontology/immovable-property/RoofingType> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa A: PV/PVM/PVMG" .
+
+<https://w3id.org/arco/ontology/immovable-property/hasFlooringLayout>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega la pavimentazione allo schema di posa."@it , "This property connects the flooring to the flooring layout."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/immovable-property/Flooring> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has flooring layout"@en , "ha schema di posa"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/immovable-property/FlooringLayout> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/hasDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/immovable-property/isFlooringLayoutOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/immovable-property/isFlooringLayoutOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects the flooring layout to a flooring."@en , "Questa proprietà collega lo schema di posa alla pavimentazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/immovable-property/FlooringLayout> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è schema di posa di"@it , "is flooring layout of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/immovable-property/Flooring> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/isDescriptionOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .

@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/E65_Creation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Creation"@en , "Création"@fr , "创造"@zh , "Событие Творения"@ru , "Δημιουργία"@el , "Criação"@pt , "Begriffliche Schöpfung"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> , <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P149i_identifies>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E75_Conceptual_Object_Appellation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "identifies"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P1i_identifies> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises non-material products of our minds and other human produced data that \t\thave become objects of a discourse about their identity, circumstances of creation or historical \t\timplication. The production of such information may have been supported by the use of    \t\ttechnical devices such as cameras or computers.\nCharacteristically, instances of this class are created, invented or thought by someone, and then may be documented or communicated between persons. Instances of E28 Conceptual Object have the ability to exist on more than one particular carrier at the same time, such as paper, electronic signals, marks, audio media, paintings, photos, human memories, etc.\nThey cannot be destroyed. They exist as long as they can be found on at least one carrier or in at least one human memory. Their existence ends when the last carrier and the last memory are lost. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Концептуальный Объект"@ru , "Begrifflicher Gegenstand"@de , "Objeto Conceitual"@pt , "Νοητικό Αντικείμενο"@el , "概念物件"@zh , "Objet conceptuel"@fr , "Conceptual Object"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P149_is_identified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies an instance of E28 Conceptual Object using an instance of E75 Conceptual Object Appellation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is identified by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E75_Conceptual_Object_Appellation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E75_Conceptual_Object_Appellation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises appellations that are by their form or syntax specific to identifying instances of E28 Conceptual Object, such as intellectual products, standardized patterns etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Обозначение Концептуального Объекта"@ru , "概念物件称号"@zh , "Designação de Objeto Conceitual"@pt , "Begriff- oder Konzeptbenennung "@de , "Ονομασία Νοητικού Αντικειμένου"@el , "Conceptual Object Appellation"@en , "Appellation d'objet conceptuel"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P94i_was_created_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "foi criado por"@pt , "被创造於"@zh , "wurde erschaffen durch"@de , "δημιουργήθηκε από"@el , "a été créé par"@fr , "was created by"@en , "был создан посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P94_has_created>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows a conceptual E65 Creation to be linked to the E28 Conceptual Object created by it. \nIt represents the act of conceiving the intellectual content of the E28 Conceptual Object. It does not represent the act of creating the first physical carrier of the E28 Conceptual Object. As an example, this is the composition of a poem, not its commitment to paper.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "criou"@pt , "has created"@en , "a créé"@fr , "hat erschaffen"@de , "создал"@ru , "创造了"@zh , "δημιούργησε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence> .

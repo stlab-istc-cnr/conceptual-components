@@ -1,0 +1,139 @@
+<https://w3id.org/arco/ontology/denotative-description/Dedication>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una dedica, intesa come iscrizione dell'autore (dedicante) su un bene culturale contenente un testo che ha lo scopo di offrire l'oggetto a una persona o un ente (dedicatario)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Dedica"@it , "Dedication"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/denotative-description/Inscription> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa MI 3.00: AU/DDC" .
+
+<https://w3id.org/arco/ontology/context-description/InterpretationCriterion>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the criterion that motivated an interpretation (e.g. inscription, bibliography, documentation)."@en , "Questa classe rappresenta il criterio o la motivazione che ha determinato una certa interpretazione (es.: bibliografia, documentazione, iscrizione)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Interpretation criterion"@en , "Criterio interpretativo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AU/AUT/AUTM; AU/CMM/CMMF; AU/AAT/AATM; AU/ATB/ATBM; DT/DTM/DTMM; SG/SGT/SGTL - Normativa VeAC: AU/FRU/FRUF - Normativa MI 3.00: AU/DC/DDCF. DA/SEM/SEMC. DA/STS/STSC. Normativa A e PG: RE/REN/RENF" .
+
+<https://w3id.org/arco/ontology/denotative-description/isDedicateeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is the inverse property of \"has dedicatee\"."@en , "Questa è la proprietà inversa a \"ha dedicatario\"."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è dedicatario di"@it , "is dedicatee of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/Dedication> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/hasCircumstance>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una situazione all'occasione che ha determinato quella situazione. Per esempio, può collegare una situazione in cui viene indicata la committenza di un bene culturale all'occasione che ha determinato quella committenza, oppure un luogo di ripresa di un bene fotografico all'occasione che ha determinato il motivo della ripresa, o ancora l'uso di un bene culturale all'occasione d'uso."@it , "This property relates a situation to the circumstance which led to the situation. For example it can connect a situation where is indicated a cultural entity's committment to its circumstance."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has circumstance"@en , "ha circostanza"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Circumstance> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isCircumstanceOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: UT/UTU/UTUO; normativa BDM: UT/UTO; AU/CMM/CMMC; normativa VeAC: AU/FRU/FRUC; normativa F: LR/LRO - ICCD Normativa MI: AU/DDC/DDCC" .
+
+<https://w3id.org/arco/ontology/denotative-description/hasDedicatee>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una dedica al dedicatario, cioè alla persona o ente cui è rivolta la dedica."@it , "This property connects a dedication to its dedicaatee, which is the person or institution to whom the dedication is addressed."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/Dedication> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has dedicatee"@en , "ha dedicatario"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isDedicateeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa MI 3.00: AU/DDC/DDCM" .
+
+<https://w3id.org/italia/onto/l0/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/context-description/hasInterpretationCriterion>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates an authorship, dating, commission, or other interpretation situations, to the reason or criterion which led to that interpretation."@en , "Questa proprietà associa una attribuzione di autore/responsabilità, una cronologia, una committenza, o altre situazioni che prevedono una interpretazione, alla motivazione o criterio che hanno determinato quella interpretazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha criterio interpretativo"@it , "has interpretation criterion"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/InterpretationCriterion> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/hasDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isInterpretationCriterionOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AU/AUT/AUTM; AU/CMM/CMMF; AU/AAT/AATM; AU/ATB/ATBM; DT/DTM/DTMM; SG/SGT/SGTL - ICCD Normativa F: PD/PDF/PDFM - ICCD Normativa VeAC: AU/FRU/FRUF - CCD Normative F, RA, SMO, PST, S, OAC, OA, MI, D, NU: RO/ROF/ROFM. DA/SEM/SEMC. DA/STS/STSC. Normativa A e PG: RE/REN/RENF" .
+
+<https://w3id.org/arco/ontology/context-description/Circumstance>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a circumstance that influenced a particular situation, e.g. the circumstance for which a cultural property was commissioned, tha circumstance in which a cultural property was used, etc."@en , "Questa classe rappresenta un'occasione che ha determinato una certa situazione, per esempio l'occasione per cui è stato commissionato un bene culturale, l'occasione che ha determinato la ripresa di un bene fotografico, l'occasione d'uso di un bene, l'occasione di un bene demoetnoantropologico immateriale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Occasion"@en , "Circumstance"@en , "Occasione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: UT/UTU/UTUO - Normativa BDM: UT/UTO; AU/CMM/CMMC - Normativa VeAC: AU/FRU/FRUC - Normativa F: LR/LRO - Normativa BDI: CA" .

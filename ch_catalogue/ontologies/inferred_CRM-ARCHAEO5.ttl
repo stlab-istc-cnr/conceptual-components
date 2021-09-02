@@ -1,0 +1,78 @@
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP5i_was_partially_or_totally_removed_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was partially or totally removed by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises S20 Physical Features that are either A2 Stratigraphic Volume Units or A3 Stratigraphic Interfaces"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Stratigraphic Unit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities of excavating in the sense of archaeology which are documented as a coherent set of actions of progressively recording and removing matter from a pre-specified location under specific rules. Typically, an excavation process unit would be terminated if significant discontinuities of substance or finds come to light, or if the activity should be interrupted due to external factors, such as end of a working day. In other cases, the termination would be based on predefined physical specifications, such as the boundaries of a maximal volume of matter intended to be excavated in one unit of excavation.\nDepending on the methodology, an instance of A1 Excavation Process Unit may intend to remove matter only within the boundaries of a particular stratigraphic unit, or it may follow a pre-declared spatial extent such as a trench. It may only uncover, clean or expose a structure or parts of it.\nThe process of excavation results in the production of a set of recorded (documentation) data that should be sufficient to provide researchers enough information regarding the consistence and spatial distribution of the excavated Segment of Matter and things and features embedded in it. Some parts or all of the removed physical material (S11 Amount of Matter) may be dispersed, whereas others may be kept in custody in the form of finds or samples, while others (such as parts of walls) may be left at the place of their discovery. The data produced by an instance of excavation process unit should pertain to the material state of matter at excavation time only and should well be distinguished from subsequent interpretation about the causes for this state of matter.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Excavation Process Unit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation> , <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal> , <http://www.cidoc-crm.org/cidoc-crm/E6_Destruction> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP13_has_stratigraphic_relation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the stratigraphic relation between two A5 Stratigraphic modification events. This relation may be inferenced from the kind of physical relation that exists between the two AP 8 Stratigraphic Units that have been created or modified during the corresponding A5 Stratigraphic Modification events. The type of stratigraphic relationships in archaeological documentation assigned to two A5 Stratigraphic Modification events is documented through the property AP 13.1 has type."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has stratigraphic relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP5_removed_part_or_all_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the instance of A8 Stratigraphic Unit that was cut during an A1 Excavation Process Unit."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "removed part or all of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP11_has_physical_relation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the physical relationship between two A8 Stratigraphic Units. The type of physical relationships found between stratigraphic units in archaeological documentation is documented through the property AP 11.1 has type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has physical relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP11i_is_physical_relation_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is physical relation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

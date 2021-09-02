@@ -1,0 +1,48 @@
+<http://www.loc.gov/mods/rdf/v1#NoteGroup>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Aggregates a note with its type.  " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - Note Typed" .
+
+<http://www.loc.gov/mods/rdf/v1#noteGroup>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Used for a note with a type (other than \"statement of responsibility\")" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Note  Group" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#NoteGroup> .
+
+<http://www.loc.gov/mods/rdf/v1#noteGroupType>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A property of NoteGroup - used when a type is supplied for the note.  The type." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#NoteGroup> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NoteGroup - Type" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#noteGroupValue>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A property of noteGroup - used when a type is supplied for the note. The text of the note." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#NoteGroup> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NoteGroup - Value" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#ModsResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\nThe resource which is the subject of this description.\n  " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - A  MODS Resource" ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://id.loc.gov/vocabulary/resourceTypes/Res> .

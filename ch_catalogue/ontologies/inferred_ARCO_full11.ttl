@@ -1,0 +1,113 @@
+<https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalDescription>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the technical description of a cultural entity, which uses all the technical concepts classifying the technical characteristics that a cultural entity can have. This class is a particular type of the class Description, which is the class for socially constructed objects (i.e. texts, values, categories, relations, contexts) used to describe other objects in a structured manner."@en , "Questa classe rappresenta la descrizione tecnica di un'entità culturale, la quale utilizza tutti i concetti tecnici che possono classificare caratteristiche tecniche possedute da un'entità culturale. Questa classe è un tipo particolare di Description, la classe degli oggetti costruiti socialmente (testi, valori, categorie, relazioni, contesti), usati per descrivere qualcos'altro in modo strutturato."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/denotative-description/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Descrizione tecnica di entità culturale"@it , "Cultural entity technical description"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/isTechnicalConceptUsedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a technical concept (e.g. material) used in the technical description of a cultural property."@en , "Questa proprietà collega un concetto tecnico (es.: materia) usato nella descrizione tecnica di un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/TechnicalConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is technical concept used in"@en , "è concetto tecnico usato in"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/usesTechnicalConcept> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/TechnicalCharacteristic>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a characteristic of a cultural property. For example it can represent a cultural property's particular costituent material or the technique with which it was made or its shape or color. Each technical characteristic is classified by a concept (i.e. \"clay\" is a techical characteristic classified by the technical concept \"material\" related to a cultural property). For each cultural property typology can be registered some specific technical characteristics."@en , "Questa classe rappresenta una caratteristica tecnica relativa a un bene culturale. Per esempio, può rappresentare una particolare materia di cui è composto, la tecnica con cui è stato realizzato, la sua forma, il suo colore. Ogni caratteristica tecnica utilizza è definito da un concetto (es.: \"terracotta\" è una caratteristica tecnica definita dal concetto \"materia\", relativamente a un bene culturale). Per ogni tipologia di bene culturale possono essere rilevati e registrate caratteristiche tecnice specifiche."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Caratteristica tecnica"@it , "Technical Characteristic"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Characteristic> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTC/MTCM; MT/MTC/MTCT - Normativa OA, D, F, S, MI: MT/FRM - Normativa OA, D, F, S: MT/FIL - Normativa VeAC: MT/MTC/MTCC; MT/MTC/MTCF - Normativa F: MT/FVC/FVCC; MT/FVC/FVCF; MT/FVC/FVCP; MT/FVC/FVCU; MT/FVC/FVCM; MT/FVM;" .
+
+<https://w3id.org/arco/ontology/denotative-description/classifiesCharacteristic>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà, inversa a \"è caratteristica classificata da\", collega un concetto tecnico a una caratteristica tecnica di un'entità - come un bene culturale."@it , "This property connects a techical concept to an entity's technical characteristic. It is the inverse property of isCharacteristicClassifiedBy."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/TechnicalConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "classifies technical characteristic"@en , "classifica caratteristica tecnica"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/TechnicalCharacteristic> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isConceptOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isCharacteristicClassifiedBy> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/TechnicalConcept>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a technical concept, a particular type of concept that classifies a technical characteristic of an entity, e.g. cultural property. For instance, \"material\" is a techincal concept that classifies the technical characteristic \"pottery\" related to a cultural property."@en , "Questa classe rappresenta un concetto tecnico, inteso come tipo particolare di concetto che fornisce una classificazione a una caratteristica tecnica di un'entità, es. un bene culturale. Per esempio, \"materia\" è un concetto tecnico che può essere utilizzato per classificare la caratteristica tecnica \"terracotta\" relativa a un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concetto tecnico"@it , "Technical concept"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Concept> , <https://w3id.org/italia/onto/l0/Concept> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTC/MTCM; MT/MTC/MTCT - Normativa OA, D, S, MI: MT/FRM - Normativa OA, D, F, S: MT/FIL - Normativa VeAC: MT/MTC/MTCC; MT/MTC/MTCF - Normativa F: MT/FVC/FVCC; MT/FVC/FVCF; MT/FVC/FVCP; MT/FVC/FVCU; MT/FVC/FVCM; MT/FVM; MT/MTX; MT/FVM; MT/FRM;" .
+
+<https://w3id.org/arco/ontology/denotative-description/isCharacteristicClassifiedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una caratteristica tecnica di un'entità - come un bene culturale - a un concetto tecnico, che la classifica."@it , "This property connects an entity's techincal characteristic to a technical concept, which classifies that characteristic."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/TechnicalCharacteristic> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è caratteristica tecnica classificata da"@it , "is technical characteristic classified by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/TechnicalConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .

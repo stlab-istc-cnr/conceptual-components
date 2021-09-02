@@ -1,0 +1,130 @@
+<https://w3id.org/arco/ontology/location/isUrbanAreaOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects the the urban area with the its old town."@en , "Questa proprietà collega la zona urbana con il suo centro storico."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/location/UrbanArea> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è area urbana di"@it , "is urban area of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/location/OldTown> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isPartOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/location/hasUrbanArea>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects the old town with the urban area that is part of it."@en , "Questa proprietà collega il centro storico con la zona urbana che ne fa parte."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/location/OldTown> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has urban area"@en , "ha zona urbana"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/location/UrbanArea> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasPart> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/location/isUrbanAreaOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normative A e PG: LC/ZUR/ZURD."@it .
+
+<https://w3id.org/arco/ontology/location/hasOldTownAdministrativeType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects a historical center with information related to its administrative type."@en , "Questa proprietà collega un centro storico con le informazioni relative al tipo del suo carattere amministrativo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/location/OldTown> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Old town administrative type"@en , "Tipo amministrativo del centro storico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/location/OldTownAdmistrativeType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/location/isOldTownAdministrativeTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normative A e PG: LC/CST/CSTA"@it .
+
+<https://w3id.org/arco/ontology/location/OldTown>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the information describing the old town where the cultural property is located."@en , "Questa classe rappresenta le informazioni che descrivono il centro storico in cui si trova il bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Centro storico"@it , "Old town"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/CLV/City> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD normative A e PG: LC/CST"@it .
+
+<https://w3id.org/arco/ontology/location/UrbanArea>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta le informazioni relative alla denominazione della zona urbana che fa parte del centro storico dove si trova il bene culturale."@it , "This class represents the informations on the denomination of the urban area that is part of the old town where the cultural property is located."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Urban area"@en , "Zona urbana"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/CLV/AdministrativeUnitComponent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/italia/onto/CLV/District> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normative A e PG: LC/ZUR/ZURD."@it .
+
+<https://w3id.org/arco/ontology/location/OldTownAdmistrativeType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta le informazioni che precisano il carattere amministrativo del centro storico, che può essere: un capoluogo, una frazione, un centro inglobato o una località."@it , "This class represents the information clarifying the administrative character of the old town, which may be: a chief town, a town fraction, an incorporated area or a locality."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Old town administrative type"@en , "Tipo di carattere amministrativo del centro storico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normative A e PG: LC/CST/CSTA"@it .
+
+<https://w3id.org/arco/ontology/location/isOldTownAdministrativeTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il tipo di carattere amministrativo alle informazioni relative al suo centro storico."@it , "This property connects the administrative type with the information related to its historical center."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/location/OldTownAdmistrativeType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is old town administrative type of"@en , "è tipo amministrativo del centro storico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/location/OldTown> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

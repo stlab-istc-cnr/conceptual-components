@@ -1,0 +1,77 @@
+<http://purl.org/saws/ontology#Edition>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Any edited material, known or unknown, including texts such as the Bible and Kekaumenos"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "edition"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/saws/ontology#Material> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/saws/ontology#OriginalMaterial> .
+
+<http://purl.org/saws/ontology#isSourceFor>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A textual material (manuscripts, collections etc) is one of the source documents on which a Linguistic Object is based. One <relation> per each textual material."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is source for"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Edition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#isEditedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An Edition is edited by an Editor (someone from the SAWS team or another modern-day scholar)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Edition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is edited by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Editor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isWrittenBy> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isEditorOf> .
+
+<http://purl.org/saws/ontology#isBasedOn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is based upon one or more textual materials (manuscripts, collections etc). One <relation> per each textual material)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Edition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is based on"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isSourceFor> .
+
+<http://purl.org/saws/ontology#isEditorOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An Editor (a modern-day scholar, e.g. someone from the SAWS team) has edited an Edition"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Editor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is editor of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Edition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#hasWritten> .
+
+<http://purl.org/saws/ontology#Editor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A modern scholar editing material to produce an edition, in the age of printing and beyond"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "editor"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E21_Person> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/saws/ontology#Scribe> , <http://purl.org/saws/ontology#Transmitter> .

@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that result in an instance of E24 Physical Man-Made Thing being increased, enlarged or augmented by the addition of a part. \nTypical scenarios include the attachment of an accessory, the integration of a component, the addition of an element to an aggregate object, or the accessioning of an object into a curated E78 Collection. Objects to which parts are added are, by definition, man-made, since the addition of a part implies a human activity. Following the addition of parts, the resulting man-made assemblages are treated objectively as single identifiable wholes, made up of constituent or component parts bound together either physically (for example the engine becoming a part of the car), or by sharing a common purpose (such as the 32 chess pieces that make up a chess set). This class of activities forms a basis for reasoning about the history and continuity of identity of objects that are integrated into other objects over time, such as precious gemstones being repeatedly incorporated into different items of jewellery, or cultural artifacts being added to different museum instances of E78 Collection over their lifespan.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Добавление Части"@ru , "Προσθήκη Μερών"@el , "部件增加"@zh , "Adição de Parte"@pt , "Addition d'élément"@fr , "Part Addition"@en , "Teilhinzufügung"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E11_Modification> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P110_augmented>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E24 Physical Man-Made Thing that is added to (augmented) in an E79 Part Addition.\nAlthough a Part Addition event normally concerns only one item of Physical Man-Made Thing, it is possible to imagine circumstances under which more than one item might be added to (augmented). For example, the artist Jackson Pollock trailing paint onto multiple canvasses.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "увеличил"@ru , "επαύξησε"@el , "扩增了"@zh , "erweiterte"@de , "a augmenté"@fr , "aumentou"@pt , "augmented"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P31_has_modified> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items with a relatively stable form, man-made or natural.\n\nDepending on the existence of natural boundaries of such things, the CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.\n\nAn instance of E18 Physical Thing occupies not only a particular geometric space, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. Physical things consisting of aggregations of physically unconnected objects, such as a set of chessmen, occupy a number of individually contiguous spacetime volumes equal to the number of unconnected objects that constitute the set.\n\nWe model E18 Physical Thing to be a subclass of E72 Legal Object and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E18 Physical Thing without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E18 Physical Thing is matter while a spacetime volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E18 Physical Thing is regarded to be unique to it, due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E18 Physical Thing. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.\n\nThe CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Υλικό Πράγμα"@el , "Chose matérielle"@fr , "Physical Thing"@en , "实体物"@zh , "Физическая Вещь"@ru , "Materielles"@de , "Coisa Material"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P111_added>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E18 Physical Thing that is added during an E79 Part Addition activity\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a ajouté"@fr , "附加上部件"@zh , "added"@en , "добавил"@ru , "fügte hinzu"@de , "προσέθεσε"@el , "adicionou"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> , <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P110i_was_augmented_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was augmented by"@en , "a été augmenté par"@fr , "foi aumentada por"@pt , "wurde erweitert durch"@de , "被扩增於"@zh , "επαυξήθηκε από"@el , "был увеличен посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P31i_was_modified_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items that are purposely created by human activity.\nThis class comprises man-made objects, such as a swords, and man-made features, such as rock art. No assumptions are made as to the extent of modification required to justify regarding an object as man-made. For example, a “cup and ring” carving on bedrock is regarded as instance of E24 Physical Man-Made Thing. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Hergestelltes"@de , "Chose matérielle fabriquée"@fr , "Coisa Material Fabricada"@pt , "人造实体物"@zh , "Physical Man-Made Thing"@en , "Ανθρωπογενές Υλικό Πράγμα"@el , "Физическая Рукотворная Вещь"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> , <http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P111i_was_added_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被附加於"@zh , "был добавлен посредством"@ru , "προστέθηκε από"@el , "was added by"@en , "a été ajouté par"@fr , "foi adicionado por"@pt , "wurde hinzugefügt durch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> , <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .

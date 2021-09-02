@@ -1,0 +1,50 @@
+<https://w3id.org/italia/onto/TI/atTime>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> .
+
+<http://dati.beniculturali.it/cis/isValidDuring>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property used to associate the situation name in time with a temporal validity interval"@en , "Proprietà usata per associare la situzione \"nome nel tempo\", ovvero una denominazione valida in un certo arco temporale, a un intervallo temporale di validità"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CISNameInTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is valid during"@en , "è valido durante"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable" , "stabile"@it .
+
+<https://w3id.org/italia/onto/TI/TimeInterval>
+        a       <http://www.w3.org/2002/07/owl#Class> .
+
+<http://dati.beniculturali.it/cis/CollectionCulEnt>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "It represents the cultural heritage included in a Cultural Institute or Site or single collections that compone the cultural heritage"@en , "Rappresenta il patrimonio complessivo dell'Istituto e Luogo della Cultura o le singole collezioni di cui esso si compone."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Collezione Entità Culturali"@it , "Collection of Cultural Entities"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://dati.beniculturali.it/cis/CulturalEntity> , <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Individuals of this class represent cultural heritage included in a Cultural Institute or Site.\n\nA Cultural Institute or Site can be related to a collection by means of the object property hasCollection.\n\nAdditionally, a collection can be composed of items that, in turn, can be individuals of the class 'Collection' or the class 'Cultural Heritage Object'.\n\nFor example, this allows to assert that the Biblioteca Centrale di Roma has its own cultural heritage (e.g,, Patrimonio di Biblioteca Centrale di Roma). This cultural heritage is composed of different items, e.g., Archivio Capizucchi, Fondo Ceccarius, etc.\n\nThis can be modelled by using turtle in the following way:\n\n<pre>\n\ncissite:Biblioteca_nazionale_centrale\n      a       cis:Library , cis:CulturalInstituteOrSite ;\n      cis:hasCollection collezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma .\n\ncollezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma\n      a       cis:CollectionCulEnt ;\n      l0:name \"Patrimonio di: Biblioteca nazionale centrale di Roma\" ;\n      cis:hasMemberColCultEnt collezioni:Archivio_Capizucchi, collezioni:Fondo_Ceccarius .\n\n\ncollezioni:Archivio_Capizucchi\n      a       cis:CollectionCultEnt ;\n      l0:name \"Archivio Capizucchi\" ;\n      cis:isMemberOfColCultEnt collezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma ;\n      l0:description \"materiale documentario relativo alla famiglia Capizucchi\"@it .\n\n\ncollezioni:Fondo_Ceccarius\n      a       cis:CollectionCultEnt ;\n      l0:name \"Fondo Ceccarius\" ;\n     cis:isMemberOfColCultEnt  collezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma ;\n      l0:description \"volumi, opuscoli, articoli e fotografie della biblioteca di G. Ceccarelli\"@it .\n\n\n</pre>"@en , "Individui di questa classe rappresentano il patrimonio culturale incluso in un Istituto e luogo della cultural.\n\nUn Istituto e luogo della cultural è relazionato a una collezione attraverso la proprietà \"ha collezione\".\n\nInoltre, una collezione può essere composta da elementi che a loro volta possono essere individui della classe \"Collezione\" o della classe \"Oggetto culturale\".\n\nL'esempio sotto riportato permette di asserire che la Biblioteca Centrale di Roma ha il proprio patrimonio (e..g, Patrimonio della Biblioteca Centrale di Roma). Questo patrimonio culturale è formato da diversi elementi, e.g., Archivio Cpizucchi, Fondo Ceccarius, ecc.\n\nNello specifico, questo può essere modellato in turtle come segue:\n\n<pre>\n\ncissite:Biblioteca_nazionale_centrale\n      a       cis:Library , cis:CulturalInstituteOrSite ;\n      cis:hasCollection collezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma .\n\ncollezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma\n      a       cis:CollectionCulEnt ;\n      l0:name \"Patrimonio di: Biblioteca nazionale centrale di Roma\" ;\n      cis:hasMemberColCultEnt collezioni:Archivio_Capizucchi, collezioni:Fondo_Ceccarius .\n\n\ncollezioni:Archivio_Capizucchi\n      a       cis:CollectionCultEnt ;\n      l0:name \"Archivio Capizucchi\" ;\n      cis:isMemberOfColCultEnt collezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma ;\n      l0:description \"materiale documentario relativo alla famiglia Capizucchi\"@it .\n\n\ncollezioni:Fondo_Ceccarius\n      a       cis:CollectionCultEnt ;\n      l0:name \"Fondo Ceccarius\" ;\n      cis:isMemberOfColCultEnt  collezioni:Patrimonio_di_Biblioteca_nazionale_centrale_di_Roma ;\n      l0:description \"volumi, opuscoli, articoli e fotografie della biblioteca di G. Ceccarelli\"@it .\n\n\n</pre>"@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<http://dati.beniculturali.it/cis/CISNameInTime>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Permette di rappresentare una situazione relativa alla denominazione di un istituto e luogo della cultura che cambia nel tempo."@it , "Permits to represent a situation in which a name of the Cultural Institute or Site change in time."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nome Luogo Cultura Nel Tempo"@it , "Cultural Site Name in Time"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/EventOrSituation> , <https://w3id.org/italia/onto/POI/NameInTime> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio di utilizzo della classe cis:CISNameInTime è il seguente:\n\n<pre>\n\ncissite:Museo_di_Capodimonte\n    a cis:CulturalInstituteOrSite, cis:Museum ;\n    l0:name \"Museo di Capodimonte\" ;\n    cis:institutionalCISName \"Museo di Capodimonte\" ;\n    cis:ISILIdentifier \"IT-EX0008\" ;\n    cis:hasCISNameInTime nit:Museo_di_Capodimonte ;\n    cis:hasSite site:Museo_di_Capodimonte .\n\nnit:Museo_di_Capodimonte\n    a cis:CISNameInTime ;\n    rdfs:label \"Denominazione nel tempo 'Museo di Capodimonte'\"@it ;\n    cis:institutionalCISName \"Museo di Capodimonte\"@it ;\n    cis:altCISName \"Museo Nazionale di Capodimonte\"@it ;\n    cis:isValidDuring ti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte  .\n\nti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte\n    a ti:TimeInterval ;\n    ti:startTime \"1957-01-01\"^^xsd:date .\n\n</pre>"@it , "An example of usage of the class cis:CISNameInTime is the following:\n\n<pre>\n\ncissite:Museo_di_Capodimonte\n    a cis:CulturalInstituteOrSite, cis:Museum ;\n    l0:name \"Museo di Capodimonte\" ;\n    cis:institutionalCISName \"Museo di Capodimonte\" ;\n    cis:ISILIdentifier \"IT-EX0008\" ;\n    cis:hasCISNameInTime nit:Museo_di_Capodimonte ;\n    cis:hasSite site:Museo_di_Capodimonte .\n\nnit:Museo_di_Capodimonte\n    a cis:CISNameInTime ;\n    rdfs:label \"Denominazione nel tempo 'Museo di Capodimonte'\"@it ;\n    cis:institutionalCISName \"Museo di Capodimonte\"@it ;\n    cis:altCISName \"Museo Nazionale di Capodimonte\"@it ;\n    cis:isValidDuring ti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte  .\n\nti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte\n    a ti:TimeInterval ;\n    ti:startTime \"1957-01-01\"^^xsd:date .\n\n</pre>"@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

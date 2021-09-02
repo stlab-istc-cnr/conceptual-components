@@ -1,0 +1,53 @@
+<http://purl.org/vocab/frbr/core#exemplarOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodimentOf), a property representing a manifestation that is exemplified by an item."@en , "An item that exemplifies a manifestation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is exemplar of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://purl.org/spar/fabio/AnalogManifestation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A manifestation in an analog form."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "analog manifestation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/spar/fabio/Manifestation> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/spar/fabio/DigitalManifestation> .
+
+<http://purl.org/spar/fabio/AnalogItem>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A real object that is an exemplar of a fabio:Manifestation, such as a particular copy of the book 'Alice's adventures in Wonderland', that a person may own."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "analog item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An analog item is an exemplar of an analog manifestation only and it is always stored in a storage medium suitable for analog objects, such as paper, vinyl discs and films."@en ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/spar/fabio/DigitalItem> .
+
+<http://purl.org/vocab/frbr/core#exemplar>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#exemplar), a property representing an item that exemplifies a manifestation."@en , "A manifestation exemplified in an item."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/vocab/frbr/core#Manifestation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has exemplar"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/vocab/frbr/core#exemplarOf> .

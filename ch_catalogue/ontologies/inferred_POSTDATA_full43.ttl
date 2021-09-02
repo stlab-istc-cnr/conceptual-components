@@ -1,0 +1,240 @@
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#isEchoOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to a following Word (echo) that that rhymes with the current instance of Word"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isEchoOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#isLemma>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to one of the inflected forms (an instance of Word) of the current headword (the Word at hand)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isLemma"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#isCallOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to a previous Word (call) that rhymes with the current instance of Word"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isCallOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.w3.org/2004/02/skos/core#Concept>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As a structure, a Word can be modelled from two points of view:\n- An item (a subclass of old:slot) of the Line \n- A list of Syllables"@en , "A single distinct meaningful element of writing, used with others (or sometimes alone) to form a sentence and typically shown with a space on either side when written or printed\nEg.: The word “life”"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Word"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#OrderedList> , <http://purl.org/ontology/olo/core#Slot> , <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> , <http://bakulf.github.io/raop/0.1#Word> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#sense>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "One of the meanings of a word or phrase"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sense"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#morphologicalAnnotation>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Any type of morphological analysis (from POS to morpheme composition)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "morphologicalAnnotation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#phoneticTranscription>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Phonetic transcription"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "phoneticTranscription"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As a structure, a Syllable is an item (a subclass of old:slot) of a Word"@en , "A single unit of speech sound as written or spoken; specifically, a vowel preceded by zero to three consonants (“awl,” “bring,” “strand”), and followed by zero to four consonants (“too,” “brag,” “gloss,” “stings,” “sixths”).\nIt is the reference unit of a literary analysis, in some poetic tradicions\nEg.: The onset and coda of the rhyme vowel" ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Syllable"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> , <http://purl.org/ontology/olo/core#Slot> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#isInflectedForm>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to its lemma (an instance of Word)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "inflectedForm"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#isLemma> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#translation>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Translation of the word"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "translation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#partOfSpeech>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A category of words (or, more generally, of lexical items) that have similar grammatical properties. \nCommonly listed  parts of speech are noun, verb, adjective, adverb, pronoun, preposition, conjunction, interjection, and sometimes numeral, article, or determiner."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements/"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "partOfSpeech"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#isLastSyllable>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to Word of which the current item under analysis is its last Syllable"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isLastSyllable"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#lemma>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Citation form, the particular form that is chosen by convention to represent the lexeme"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lemma"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#belongsToWord>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property refers to the Word (viewed as a list of syllables) the Syllable belongs to."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "belongsToWord"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/olo/core#ordered_list> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#hasSyllable> .

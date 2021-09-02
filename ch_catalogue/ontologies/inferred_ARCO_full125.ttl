@@ -1,0 +1,75 @@
+<https://w3id.org/arco/ontology/context-description/archivalRecordIdentifier>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the identifier of an archival record."@en , "Questa proprietà rappresenta l'identificativo di un'unità documentaria."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "archival record identifier"@en , "identificativo di unità documentaria"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa FF: PA/PAC/PACI; PA/PAC/PACA" .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecordSet>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un'unità archivistica complessa (fondo, serie, sottoserie, etc.) di cui un bene culturale può fare parte."@it , "This class represents an archival record set (fonds, series, subseries) of which a cultural property can be member."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unità archivistica complessa"@it , "Archival record set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <http://mklab.iti.gr/pericles/BornDigitalArchives_ODP.owl> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi di 'Unità archivistica complessa' è il seguente:\nresource:ArchivalSubseries/museo-civico-romano\n        a           cd:ArchivalSubseries ;\n        rdfs:label  \"Museo Civico Romano\" ;\n        cd:isArchivalRecordSetIn resource:ArchivalRecordSetMembership/1201251092 ;\n        core:isComponentOf resource:ArchivalSeries/brescia ."@it , "An example of usage of on of the subclasses of the class 'Archival Record Set' is the following:\nresource:ArchivalSubseries/museo-civico-romano\n        a           cd:ArchivalSubseries ;\n        rdfs:label  \"Museo Civico Romano\" ;\n        cd:isArchivalRecordSetIn resource:ArchivalRecordSetMembership/1201251092 ;\n        core:isComponentOf resource:ArchivalSeries/brescia ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/core/isPartOf>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the part of an entity to that entity."@en , "Questa proprietà collega una parte di un'entità all'entità."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/core> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is part of"@en , "è parte di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <http://www.ontologydesignpatterns.org/cp/owl/partof.owl> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "\"Riferimento alla parte\", presente in molti campi strutturati delle normative ICCD"@it .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecord>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una unità documentaria che fa parte di una unità archivistica complessa."@it , "This class represents the archival record that is part of an archival record set."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Archival record"@en , "Unità documentaria"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <http://mklab.iti.gr/pericles/BornDigitalArchives_ODP.owl> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .

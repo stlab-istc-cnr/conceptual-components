@@ -1,0 +1,85 @@
+<http://www.cidoc-crm.org/cidoc-crm/P24i_changed_ownership_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "转移了所有权於"@zh , "сменил владельца через"@ru , "ging über in Besitz durch"@de , "a changé de mains du fait de"@fr , "changed ownership through"@en , "mudou de proprietário por meio de"@pt , "άλλαξε ιδιοκτησία μέσω"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises transfers of legal ownership from one or more instances of E39 Actor to one or more other instances of E39 Actor. \nThe class also applies to the establishment or loss of ownership of instances of E18 Physical Thing. It does not, however, imply changes of any other kinds of right. The recording of the donor and/or recipient is optional. It is possible that in an instance of E8 Acquisition there is either no donor or no recipient. Depending on the circumstances, it may describe:\n1.\tthe beginning of ownership\n2.\tthe end of ownership\n3.\tthe transfer of ownership\n4.\tthe acquisition from an unknown source \n5.\tthe loss of title due to destruction of the item\nIt may also describe events where a collector appropriates legal title, for example by annexation or field collection. The interpretation of the museum notion of \"accession\" differs between institutions. The CRM therefore models legal ownership (E8 Acquisition) and physical custody (E10 Transfer of Custody) separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Απόκτηση"@el , "Aquisição"@pt , "Acquisition"@en , "Acquisition"@fr , "Erwerb"@de , "Событие Приобретения"@ru , "征集取得"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items with a relatively stable form, man-made or natural.\n\nDepending on the existence of natural boundaries of such things, the CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.\n\nAn instance of E18 Physical Thing occupies not only a particular geometric space, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. Physical things consisting of aggregations of physically unconnected objects, such as a set of chessmen, occupy a number of individually contiguous spacetime volumes equal to the number of unconnected objects that constitute the set.\n\nWe model E18 Physical Thing to be a subclass of E72 Legal Object and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E18 Physical Thing without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E18 Physical Thing is matter while a spacetime volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E18 Physical Thing is regarded to be unique to it, due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E18 Physical Thing. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.\n\nThe CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Υλικό Πράγμα"@el , "Chose matérielle"@fr , "Physical Thing"@en , "实体物"@zh , "Физическая Вещь"@ru , "Materielles"@de , "Coisa Material"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P22_transferred_title_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor that acquires the legal ownership of an object as a result of an E8 Acquisition. \nThe property will typically describe an Actor purchasing or otherwise acquiring an object from another Actor. However, title may also be acquired, without any corresponding loss of title by another Actor, through legal fieldwork such as hunting, shooting or fishing.\nIn reality the title is either transferred to or from someone, or both.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a fait passer le droit de propriété à"@fr , "transferred title to"@en , "übertrug Besitztitel auf"@de , "μετεβίβασε τον τίτλο σε"@el , "передал право собственности"@ru , "转交所有权给"@zh , "transferiu os direitos de propriedade para"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P23_transferred_title_from>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor or Actors who relinquish legal ownership as the result of an E8 Acquisition.\nThe property will typically be used to describe a person donating or selling an object to a museum. In reality title is either transferred to or from someone, or both.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "原所有权者是"@zh , "transferiu os direitos de propriedade de"@pt , "übertrug Besitztitel von"@de , "a fait passer le droit de propriété de"@fr , "передал право собственности от"@ru , "transferred title from"@en , "μετεβίβασε τον τίτλο από"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P22i_acquired_title_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "adquiriu os direitos de propriedade por meio da"@pt , "erwarb Besitztitel durch"@de , "получил право собственности через"@ru , "απέκτησε τον τίτλο μέσω"@el , "a acquis le droit de propriété du fait de"@fr , "acquired title through"@en , "获取所有权於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14i_performed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P23i_surrendered_title_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a perdu le droit de propriété du fait de"@fr , "право собственности отдано через"@ru , "交出所有权於"@zh , "surrendered title through"@en , "παρέδωσε τον τίτλο μέσω"@el , "perdeu os direitos de propriedade por meio da"@pt , "trat Besitztitel ab in"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14i_performed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .

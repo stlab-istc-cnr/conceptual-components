@@ -1,0 +1,62 @@
+<http://www.europeana.eu/schemas/edm/occurredAt>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.europeana.eu/schemas/edm/Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Occured At"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/TimeSpan> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/dc/elements/1.1/relation> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This property associates an event to the smallest known time span that\noverlaps with the occurrence of that event"@en .
+
+<http://www.europeana.eu/schemas/edm/Place>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#space-region> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "An \"extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter\" (CIDOC CRM)"@en .
+
+<http://www.europeana.eu/schemas/edm/TimeSpan>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Time Span"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/NonInformationResource> , <http://purl.org/dc/terms/PeriodOfTime> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#time-interval> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "The class of \"abstract temporal extents, in the sense of Galilean physics,\n having a beginning, an end and a duration\" (CIDOC CRM)"@en .
+
+<http://www.europeana.eu/schemas/edm/Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "An event is a change \"of states in cultural, social or physical systems,\n regardless of scale, brought about by a series or group of coherent physical,\ncultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)\n"@en ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "the change of custody of Mona Lisa"@en , "the act of painting Mona Lisa"@en , "the 2nd World War"@en ;
+        <http://www.w3.org/2004/02/skos/core#note>
+                "Events are identified either by the content provider or by Europeana enrichment at ingestion time"@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Rationale:This class is a domain of edm:happenedAt and the domain of edm:occurredAt"@en .
+
+<http://www.europeana.eu/schemas/edm/happenedAt>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.europeana.eu/schemas/edm/Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Happened At"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/dc/elements/1.1/relation> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This property associates an event with the place at which the event\nhappened."@en .

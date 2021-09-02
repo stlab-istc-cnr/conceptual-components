@@ -1,0 +1,84 @@
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecord>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Rappresenta una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni, e che può avere più versioni (in seguito ad aggiornamenti e revisioni)."@it , "This class represents a catalogue record, that is a descriptive model collecting and organising information on a cultural property, and which can have more than one version (after editing and updating)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Scheda di catalogo"@it , "Catalogue record"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Catalogue Record' is the following:\nresource:CatalogueRecordS/0500212038\n        a           cat:CatalogueRecordS ;\n        rdfs:label  \"Catalogue record n: 0500212038\"@en ;\n        cat:catalogueRecordIdentifier \"0500212038\" ;\n        cat:describesCulturalProperty resource:HistoricOrArtisticProperty/0500212038 ;\n        cat:hasAccessProfile resource:AccessProfile/0500212038-1 ;\n        cat:hasCatalogueRecordVersion resource:CatalogueRecordVersion/0500212038-rvm , resource:CatalogueRecordVersion/0500212038-agg-1 , resource:CatalogueRecordVersion/0500212038-compilation ;\n        cat:hasCataloguingLevel\n                cat:C ;\n        cat:systemRecordCode \"ICCD8403091\" ;\n        core:note>  \"Number of negative by \"Museco Civico\": MCBas G/ DLXXXIX/ 3775\" ."@en , "Un esempio di utilizzo della classe \"Scheda di Catalogo\" è il seguente:\nresource:CatalogueRecordS/0500212038\n        a           cat:CatalogueRecordS ;\n        rdfs:label  \"Scheda catalografica n: 0500212038\"@it ;\n        cat:catalogueRecordIdentifier \"0500212038\" ;\n        cat:describesCulturalProperty resource:HistoricOrArtisticProperty/0500212038 ;\n        cat:hasAccessProfile resource:AccessProfile/0500212038-1 ;\n        cat:hasCatalogueRecordVersion resource:CatalogueRecordVersion/0500212038-rvm , resource:CatalogueRecordVersion/0500212038-agg-1 , resource:CatalogueRecordVersion/0500212038-compilation ;\n        cat:hasCataloguingLevel\n                cat:C ;\n        cat:systemRecordCode \"ICCD8403091\" ;\n        core:note  \"Numero di negativo del Museo Civico: MCBas G/ DLXXXIX/ 3775\" ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/noticeDate>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the date of notification of the administrative provision to the owner."@en , "Questa proprietà rappresenta la data della notifica del provvedimento amministrativo al proprietario."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ProtectiveMeasure> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "data di notifica"@it , "notice date"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/date> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/NVC/NVCD" .
+
+<https://w3id.org/arco/ontology/catalogue/lastUpdateDate>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta la data dell'ultimo aggiornamento della scheda di catalogo"@it , "This property represents information about the last update date of a catalogue record."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "data dell'ultimo aggiornamento"@it , "last update date"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/date> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/ProtectiveMeasure>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un provvedimento di tutela nazionale o internazionale, che ha interessato un bene culturale."@it , "This class represents the protective measure, national or international, related to a cultural property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Protective measure"@en , "Provvedimento di tutela"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/NVC" .
+
+<https://w3id.org/arco/ontology/context-description/openingNoticeDate>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents date of interest declaration communication to the owner or holder."@en , "Questa proprietà rappresenta la data (nella forma “aaaa/mm/gg”) della comunicazione di avvio del procedimento di dichiarazione di interesse al proprietario, possessore o detentore."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ProtectiveMeasure> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "data di comunicazione di avvio"@it , "opening notice date"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/date> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/NVC/NVCI" .

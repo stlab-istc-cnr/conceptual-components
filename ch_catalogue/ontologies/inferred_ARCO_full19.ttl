@@ -1,0 +1,54 @@
+<https://w3id.org/arco/ontology/context-description/InterpretationCriterion>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the criterion that motivated an interpretation (e.g. inscription, bibliography, documentation)."@en , "Questa classe rappresenta il criterio o la motivazione che ha determinato una certa interpretazione (es.: bibliografia, documentazione, iscrizione)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Interpretation criterion"@en , "Criterio interpretativo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AU/AUT/AUTM; AU/CMM/CMMF; AU/AAT/AATM; AU/ATB/ATBM; DT/DTM/DTMM; SG/SGT/SGTL - Normativa VeAC: AU/FRU/FRUF - Normativa MI 3.00: AU/DC/DDCF. DA/SEM/SEMC. DA/STS/STSC. Normativa A e PG: RE/REN/RENF" .
+
+<https://w3id.org/arco/ontology/context-description/Interpretation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a situation in which pieces of information related to an object (e.g.: a cultural property) are detected and recorded by an agent, based on a specific source or motivation (e.g.:ithe authorship attribution, commission, etc.)"@en , "Questa classe rappresenta una situazione in cui viene individuata e registrata da un agente una certa informazione o un gruppo di informazioni relativamente a un oggetto, per esempio a un bene culturale o a una sua parte, supportata da una fonte o motivazione. Per esempio, l'attribuzione di autore, l'individuazione della committenza o delle entità responsabili di fasi successive alla creazione di un bene culturale sono tutte interpretazioni basate su fonti."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Interpretazione"@it , "Interpretation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of one of the subclasses of the class 'Interpretation' is the following:\nresource:PreferredAuthorshipAttribution/1200865600-1 a           cd:PreferredAuthorshipAttribution ;\n        rdfs:label  \"Preferred authorship attribution of cultural property: 1200865600\"@en ;\n        cd:hasAttributedAuthor resource:Agent/cavaceppi-bartolomeo-1717-1799 ;\n        cd:hasSource resource:Source/documentation ."@en , "Un esempio di utilizzo di una delle sottoclassi della classe \"Interpretazione\" è il seguente:\nresource:PreferredAuthorshipAttribution/1200865600-1 a           cd:PreferredAuthorshipAttribution ;\n        rdfs:label \"Attribuzione di autore preferita, maggiormente accreditata o convincente del bene: 1200865600\"@it ;\n        cd:hasAttributedAuthor resource:Agent/cavaceppi-bartolomeo-1717-1799 ;\n        cd:hasSource resource:Source/documentazione ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/hasInterpretationCriterion>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates an authorship, dating, commission, or other interpretation situations, to the reason or criterion which led to that interpretation."@en , "Questa proprietà associa una attribuzione di autore/responsabilità, una cronologia, una committenza, o altre situazioni che prevedono una interpretazione, alla motivazione o criterio che hanno determinato quella interpretazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha criterio interpretativo"@it , "has interpretation criterion"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/InterpretationCriterion> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/hasDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isInterpretationCriterionOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AU/AUT/AUTM; AU/CMM/CMMF; AU/AAT/AATM; AU/ATB/ATBM; DT/DTM/DTMM; SG/SGT/SGTL - ICCD Normativa F: PD/PDF/PDFM - ICCD Normativa VeAC: AU/FRU/FRUF - CCD Normative F, RA, SMO, PST, S, OAC, OA, MI, D, NU: RO/ROF/ROFM. DA/SEM/SEMC. DA/STS/STSC. Normativa A e PG: RE/REN/RENF" .

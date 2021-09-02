@@ -1,0 +1,109 @@
+<https://w3id.org/arco/ontology/arco/CulturalPropertyComponent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a component of a complex cultural property."@en , "Questa classe rappresenta una parte componente di un bene culturale complesso."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cultural Property Component"@en , "Parte Componente di Bene Culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/arco/CulturalPropertyResidual> , <https://w3id.org/arco/ontology/arco/CulturalProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "OG/OGT/OGTP" .
+
+<https://w3id.org/arco/ontology/arco/hasCulturalPropertyComponent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un bene culturale complesso a una delle sue parti componenti."@it , "This property relates a cultural property to its components."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/arco/ComplexCulturalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has cultural property component"@en , "ha parte componente di bene culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/arco/CulturalPropertyComponent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasComponent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/arco/isCulturalPropertyComponentOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "OG/OGT/OGTP" .
+
+<https://w3id.org/arco/ontology/arco/ComplexCulturalProperty>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un bene culturale complesso, cioè costituito da più parti componenti."@it , "This class represents a complex cultural property, that consists of different components."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Bene Culturale Complesso"@it , "Complex Cultural Property"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/arco/CulturalProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: se viene valorizzato il campo OG/OGT/OGTP, i valori dei campi OGTD e OGTT si riferiscono a un bene culturale complesso, rappresentato quindi per mezzo di questa classe, di cui OGTP è parte componente."@it .
+
+<https://w3id.org/arco/ontology/arco/numberOfElements>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa propietà rappresenta  il numero complessivo, espresso in cifre, degli elementi che costituiscono il bene catalogato, nel caso esso sia un insieme o una serie i cui esemplari/oggetti componenti comprendono ciascuno più elementi."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/arco/ComplexCulturalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "number of elements"@en , "This property represents the total number of elements of a complex cultural property, when it is composed by parts containing more elements."@en , "numero di elementi"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/arco/numberOfParts> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: OG/QNT/QNTI; OG/QNT/QNTS" .
+
+<https://w3id.org/arco/ontology/arco/numberOfComponents>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the number of components of a complex cultural property."@en , "Questa proprietà rappresenta il numero di oggetti componenti di un bene culturale identificato come serie o come insieme."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/arco/ComplexCulturalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "number of components"@en , "numero di componenti"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/arco/numberOfParts> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: OG/QNT/QNTN; OG/QNT/QNTS" .
+
+<https://w3id.org/arco/ontology/arco/definitionAndPositionOfComponents>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta le informazioni sulla definizione e posizione delle parti componenti di un bene culturale complesso."@it , "This property represents information on definition and position of the components of a complex cultural property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/arco/ComplexCulturalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "definizione e posizione delle parti componenti"@it , "definition and position of components"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: OG/OGC/OGCD" .

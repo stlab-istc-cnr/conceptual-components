@@ -1,0 +1,43 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the immaterial realisations of individual works at a particular time that are regarded as a complete whole. The quality of wholeness reflects the intention of its creator that this expression should convey the concept of the work. Such a whole can in turn be part of a larger whole.\nInherent to the notion of work is the completion of recognisable outcomes of the work. These outcomes, i.e. the Self-Contained Expressions, are regarded as the symbolic equivalents of Individual Works, which form the atoms of a complex work. A Self-Contained Expression may contain expressions or parts of expressions from other work, such as citations or items collected in anthologies. Even though they are incorporated in the Self-Contained Expression, they are not regarded as becoming members of the expressed container work by their inclusion in the expression, but are rather regarded as foreign or referred to elements.\nF22 Self-Contained Expression can be distinguished from F23 Expression Fragment in that an F23 Expression Fragment was not intended by its creator to make sense by itself. Normally creators would characterise an outcome of a work as finished. In other cases, one could recognise an outcome of a work as complete from the elaboration or logical coherence of its content, or if there is any historical knowledge about the creator deliberately or accidentally never finishing (completing) that particular expression. In all those cases, one would regard an expression as self-contained.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Self-Contained Expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises works that are realised by one and only one self-contained expression, i.e., works representing the concept as expressed by precisely this expression.\nInherent to the notion of work is the completion of recognisable outcomes of the work. These outcomes, i.e. the Self-Contained Expressions, are regarded as the symbolic equivalents of Individual Works, which form the atoms of a complex work. Normally creators would characterise an outcome of a work as finished. In other cases, one could recognise an outcome of a work as complete from the elaboration or logical coherence of its content, or if there is any historical knowledge about the creator deliberately or accidentally never finishing (completing) that particular expression. In all those cases, one would regard the corresponding expression as equivalent to one Individual Work.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Individual Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R9i_realises>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "realises"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R9_is_realised_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an F14 Individual Work with the unique F22 Self-Contained Expression that completely conveys it.\nIt is a shortcut for the more developed path: F14 Individual Work R19i was realised through F28 Expression Creation R17 created F22 Self-Contained Expression.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is realised in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

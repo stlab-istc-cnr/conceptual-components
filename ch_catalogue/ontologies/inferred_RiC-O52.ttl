@@ -1,0 +1,69 @@
+<https://www.ica.org/standards/RiC/ontology#Place>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Bounded, named geographic area or region."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "A Place may be a jurisdiction, a manmade structure, or a\n            natural feature. A manmade structure or natural feature may also be a jurisdiction. A\n            Place may be referenced to a Physical Location on the earth, or (if you don't want to\n            use the PhysicalLocation class) directly to geographic coordinates. Both jurisdictions\n            and natural features are historical entities. A Place thus may have begin and end dates,\n            and changing boundaries that result from human or natural events. A Jurisdiction is the\n            bounded geographic area within which an Agent has the authority to perform specified\n            activities constrained by rules."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E22 (Place\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasPlaceNameOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Place Name to a Place that was or is designated by\n            it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#PlaceName> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was place name of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasNameOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceName> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#PlaceName>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A label, title or term designating a Place in order to make it\n            distinguishable from other similar entities."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place Name"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Name> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of a specialization of\n            RiC-A28 (Name attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceName>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Place to one of its past or present\n            names."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had place name"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#PlaceName> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadName> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .

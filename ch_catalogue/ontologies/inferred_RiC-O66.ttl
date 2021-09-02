@@ -1,0 +1,71 @@
+<https://www.ica.org/standards/RiC/ontology#RecordSetType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A broad categorization of the type of Record Set."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Set Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Type> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Four instances of Record Set Type are included for now in\n            RiC-O; they also are instances of skos:Concept and, as such, part of a SKOS vocabulary.\n            Record Set Type may also be used to categorize types of Record Set that have not\n            traditionally been considered archival, e.g. search result list."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-A36 (Record Set Type\n            attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isRecordSetTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Set Type to a Record Set that it\n            categorizes."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordSetType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is record set type of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordSet> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasCategoryOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#RecordSet>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "One or more records that are associated by categorization and/or\n            physical aggregation by the creator or other Agent."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Record Set is a kind of Record Resource. The Record members in\n            a Record Set may physically reside together, though physical proximity is not essential.\n            In a particular context, an Agent (e.g. administrator, records manager, archivist,\n            end-user, etc.) may select the Record members of a Record Set based on a shared\n            attribute or attributes, or a shared Relation or Relations. The grouping of the Records\n            serves a purpose or purposes specific to the context of the Agent. All Record members of\n            a Record Set may share the attribute of having been accumulated by the same Agent, or\n            all share the same Documentary Form Type and are created over time by the same Activity.\n            A Record Set may represent the act of classifying the Records in accordance with a\n            formal classification scheme that may be based on Activity, subject, organizational\n            structure, or other criteria; an act of archival arrangement (e.g. based on common\n            provenance); or some other selection and grouping that fulfils a particular purpose or\n            purposes (e.g. a classification that reflects or supports the purposes of a researcher).\n            By exception, some Records are brought together based on their not belonging in the\n            context of selection to other designated groups: a ‘Miscellaneous’ series, for example.\n            A Record Set accumulated by an Agent in the course of life or work Activity should be\n            kept in a manner that preserves context and evidential value. Records Sets may also\n            contain other Records Sets. Both a Record Set and a Record may simultaneously be a\n            member of more than one Record Set, and over the course of its existence, a Record Set\n            or Record may be a member of an indeterminate number of Record Sets in an indeterminate\n            number of contexts. Record Sets and Records contained within a Record Set may be ordered\n            into a sequence based on a common property or relation, or common properties or\n            relations (e.g. alphabetical by Agent or related Place name; chronological order by an\n            allocated Date); or some other criterion (e.g. an imposed order by\n            relevance)."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E03 (Record Set\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasRecordSetType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Set to a Record Set Type that categorizes\n            it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordSet> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has record set type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordSetType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadCategory> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isRecordSetTypeOf> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .

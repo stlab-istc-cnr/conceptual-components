@@ -1,0 +1,45 @@
+<http://www.loc.gov/mads/rdf/v1#hasVariant>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Associates a Variant with an Authority or Deprecrated Authority. Unless the variant type can be more specifically identified, use 'hasVariant.'"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has Variant" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#Variant> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2008/05/skos-xl#altLabel> .
+
+<http://www.loc.gov/mads/rdf/v1#Variant>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A resource whose label is the alternate form of an Authority or Deprecated Authority."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Variant"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2008/05/skos-xl#Label> , <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.loc.gov/mads/rdf/v1#hasHiddenVariant>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use for variants that are searchable, but not necessarily for display."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has Hidden Variant"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#Variant> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2008/05/skos-xl#hiddenLabel> .
+
+<http://www.loc.gov/mads/rdf/v1#Authority>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A concept with a controlled label." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Authority"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2004/02/skos/core#Concept> , <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://www.loc.gov/mads/rdf/v1#Variant> , <http://www.loc.gov/mads/rdf/v1#MADSScheme> , <http://www.loc.gov/mads/rdf/v1#MADSCollection> , <http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority> .

@@ -1,0 +1,63 @@
+<http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises those material or immaterial items to which instances of E30 Right, such as the right of ownership or use, can be applied. \nThis is true for all E18 Physical Thing. In the case of instances of E28 Conceptual Object, however, the identity of the E28 Conceptual Object or the method of its use may be too ambiguous to reliably establish instances of E30 Right, as in the case of taxa and inspirations. Ownership of corporations is currently regarded as out of scope of the CRM. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Объект Права"@ru , "Legal Object"@en , "Objeto Jurídico"@pt , "Objet juridique"@fr , "Νομικό Αντικείμενο"@el , "Rechtsobjekt"@de , "法律物件"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P75_possesses>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies former or current instances of E30 Rights held by an E39 Actor."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "κατέχει"@el , "拥有"@zh , "possesses"@en , "владеет"@ru , "é detentor de"@pt , "est détenteur de"@fr , "besitzt"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E30_Right> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links a particular E72 Legal Object to the instances of E30 Right to which it is subject.\nThe Right is held by an E39 Actor as described by P75 possesses (is possessed by).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "υπόκειται σε"@el , "является объектом для"@ru , "Gegenstand von"@de , "est sujet à"@fr , "is subject to"@en , "está sujeito à"@pt , "受制於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E30_Right> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E30_Right>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises legal privileges concerning material and immaterial things or their derivatives. \nThese include reproduction and property rights"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Право"@ru , "Δικαίωμα"@el , "Droit"@fr , "Recht"@de , "Direitos"@pt , "Right"@en , "权限"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P75i_is_possessed_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E30_Right> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "κατέχεται από"@el , "принадлежит"@ru , "sind im Besitz von"@de , "is possessed by"@en , "são detidos por"@pt , "有拥有者"@zh , "est détenu par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .

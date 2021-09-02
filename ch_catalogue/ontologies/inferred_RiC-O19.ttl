@@ -1,0 +1,346 @@
+<https://www.ica.org/standards/RiC/ontology#AuthorityRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects at least one Agent, and at least one Thing over which\n            the Agent has some authority."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Authority Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Relation> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Would probably rarely be used as such (use its\n            sub-categories)"@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R036 and RiC-R036i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#SymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects two Agents. This object property is\n            symmetric."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is agent associated with agent "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Use to connect two Agents only if it is not possible to be\n            more accurate and use a narrower Agent to Agent relation, e.g. ‘has work relation\n            with’."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R044 ('is agent associated with agent'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadAuthorityOver>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Agent to a Thing the Agent has or had authority\n            over."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had authority over"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasUnderAuthorityOf> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R036 ('has or had authority over'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#agentIsSourceOfAuthorityRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Agent thas has the authority, to an Authority\n            Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "agent is source of authority relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#AuthorityRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#authorityRelationHasSource> .
+
+<https://www.ica.org/standards/RiC/ontology#authorityRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Authority Relation to an Agent that has the\n            authority"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#AuthorityRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "authority relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadWorkRelationWith>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects two Agents that have or had some type of work relation\n            in the course of their activities. This relation is symmetric."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had work relation with"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadWorkRelationWith> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R046 ('has or had work relation with'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadController>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'is or was controller of' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had controller"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasUnderAuthorityOf> , <https://www.ica.org/standards/RiC/ontology#isOrWasSubordinateTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasControllerOf> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R041i ('has or had controller'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasUnderAuthorityOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has or had authority over' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was under authority of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R036i ('is or was under authority of'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isSuccessorOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has successor' object property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is successor of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> , <https://www.ica.org/standards/RiC/ontology#followsInTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R016i (is successor\n            of)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadSubordinate>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Agent to an Agent that is hierarchically\n            inferior."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had subordinate"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasSubordinateTo> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "The hierarchical relation can be an authority relation, or a\n            whole/part relation between two Groups"@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R045 ('has or had subordinate '\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasSubordinateTo>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has or had subordinate' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was subordinate to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R045i ('is or was subordinate to'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person, or Group, or an entity created by a Person or Group\n            (Mechanism), or a Position, that acts in the world."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "An Agent may have one or more identities; an identity is a\n            constellation of properties or relations that together “identify” the Agent. A Person or\n            Group commonly has one identity, though each also may have one or more alternative\n            identities. Such alternative identities may be shared by more than one Person or Group.\n            Alternative identities include but are not limited to pseudonyms, heteronyms, DBA (Doing\n            Business As), and trade identities. An alternative identity should not be confused with\n            a Position in a Group, for example, presidents, prime ministers, governors, popes,\n            royalty, or bishops. Nor should an alternative identity be confused with a variant name\n            or identifier of the same identity. Agent also includes entities created by a Person or\n            Group that act on behalf of the creating Agent in an autonomous or semi-autonomous\n            manner. Examples of a Mechanism include software agents, robots, and space and\n            underwater probes that generate data (records) in the course of Activity assigned to and\n            in conformance with the instructions given to them by the creating Person or\n            Group."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E07 (Agent\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasSuccessor>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Agent to another Agent that succeeds it\n            chronologically."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has successor"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> , <https://www.ica.org/standards/RiC/ontology#precedesInTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isSuccessorOf> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "There may be zero to many intermediate Agents , ignored or\n            unknown, between the two connected Agents. Can be used when there is a transfer of\n            function from the first Agent to the second Agent."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RIC-R016 ('has successor'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasControllerOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Agent to another Agent it controls or controlled via\n            Activities, i.e. controls by function."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was controller of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadSubordinate> , <https://www.ica.org/standards/RiC/ontology#hasOrHadAuthorityOver> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R041 ('is or was controller of'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Any idea, material thing, or event within the realm of human\n            experience."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Includes all RiC entities as well as any concept, material\n            thing, or event that may be the subject of a Record Resource or associated with an\n            Activity. Examples of entities not explicitly addressed in RiC includes but is not\n            limited to the following: abstract concepts; cultural movements, named periods and\n            events; named things, objects and works; legendary, mythical or fictitious figures,\n            characters or beings."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E01 (Thing\n            entity)"@en .

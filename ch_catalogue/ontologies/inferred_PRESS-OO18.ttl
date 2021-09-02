@@ -1,0 +1,61 @@
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises instances of F19 Publication Work that are planned to result in an instance of F24 Publication Expression that should either be complete in one part, or completed within a finite (and predetermined) number of parts, as opposed to instances of F18 Serial Work. [Adapted from Appendix E: Glossary of ISBD, International Standard Bibliographic Description: Consolidated Edition, 2011]\nF18 Serial Work and Z13 Monograph are two distinct subclasses of F19 Publication Work; however, they are neither declared as disjoint nor complementary, in order to allow for a certain amount of uncertainty as to the actual nature of some publications."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Monograph"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y39_is_enhanced_by_monograph>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F18 Serial Work with an instance of Z13 Monograph that constitutes an enhancement of its content.\n[Note. The relationship between a series and a monograph published as a volume within that series, or between a periodical and one of its regular issues, is not expressed through this property, but by stating that the monograph or regular issue is a member of the series or periodical, i.e., F18 Serial Work R10 has member (is member of) F19 Publication Work. Special issues of a periodical that are included in that periodical’s numbering are also modelled simply as members of the periodical, not as monographs that enhance it.]\nThe Y39.1 has type property of the property allows the nature of the association to be specified; examples of types of enhancement of an instance of F18 Serial Work by a monograph include: supplementing monograph, special issue, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is enhanced by monograph"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y39i_enhances_serial>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "enhances serial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y40i_is_enhanced_by_serial>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is enhanced by serial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y40_enhances_monograph>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F18 Serial Work with an instance of Z13 Monograph the content of which is enhanced by the instance of F18 Serial Work.\nThe Y40.1 has type property of the property allows the nature of the association to be specified; examples of types of enhancement of a monograph by an instance of F18 Serial Work include: supplemented monograph, base volume for an updating loose-leaf, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "enhances monograph"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

@@ -1,0 +1,201 @@
+<https://d-nb.info/standards/elementset/gnd#variantNameForTheSubjectHeading>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Varianter Name des Schlagworts"@de , "Variant name for the subject heading"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#variantName> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "450 $a $g" .
+
+<https://d-nb.info/standards/elementset/gnd#SubjectHeading>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Subject heading"@en , "Schlagwort"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://d-nb.info/standards/elementset/gnd#AuthorityResource> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "079 $v=szz" , "079 $b=s" .
+
+<https://d-nb.info/standards/elementset/gnd#playedInstrument>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Played instrument"@en , "Gespieltes Instrument"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#instrument> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "550 $0 $4=istr" .
+
+<https://d-nb.info/standards/elementset/gnd#Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Work"@en , "Werk"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://d-nb.info/standards/elementset/gnd#AuthorityResource> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "079 $v=wit" , "079 $b=u" .
+
+<https://d-nb.info/standards/elementset/gnd#precedingSubject>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Vorheriges Schlagwort"@de , "Preceding subject heading"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#predecessor> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "550 $0 $4=vorg" .
+
+<https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Differentiated person"@en , "Individualisierte Person"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://d-nb.info/standards/elementset/gnd#Person> , <http://xmlns.com/foaf/0.1/Person> , <http://rdaregistry.info/Elements/c/C10004> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://d-nb.info/standards/elementset/gnd#UndifferentiatedPerson> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "079 $v=piz" , "079 $b=p" .
+
+<https://d-nb.info/standards/elementset/gnd#language>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Sprache, in der ein Werk verfasst wurde oder die eine Person, Familie oder Körperschaft benutzt."@de , "A language used by a person or family or in which a work was written"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sprache"@de , "Language"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<https://d-nb.info/standards/elementset/gnd#narrowerTermGeneric>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Eine generische Relation ist eine hierarchische Relation zwischen\n      zwei Begriffen, von denen der untergeordnete Begriff alle Merkmale des übergeordneten Begriffs\n      besitzt und zusätzlich noch mindestens ein weiteres Merkmal."@de , "The generic relation is a semantic relation between two concepts\n      where the intension of one of the concepts includes that of the other concepts and at least\n      one additional delimiting characteristic is added."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Narrower term (generic)"@en , "Unterbegriff generisch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#narrowerTermGeneral> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://d-nb.info/standards/elementset/gnd#broaderTermGeneric> .
+
+<https://d-nb.info/standards/elementset/gnd#succeedingSubjectHeading>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Succeeding subject heading"@en , "Nachfolgendes Schlagwort"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#successor> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "550 $0 $4=nach" .
+
+<http://www.w3.org/2000/01/rdf-schema#Literal>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://d-nb.info/standards/elementset/gnd#mediumOfPerformance>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Besetzung im Musikbereich"@de , "Medium of performance"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://rdaregistry.info/Elements/u/P60536> , <https://d-nb.info/standards/elementset/gnd#instrument> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "382 $0" , "550 $0 $4=istr" .
+
+<https://d-nb.info/standards/elementset/gnd#broaderTermGeneric>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Eine generische Relation ist eine hierarchische Relation zwischen\n      zwei Begriffen, von denen der untergeordnete Begriff alle Merkmale des übergeordneten Begriffs\n      besitzt und zusätzlich noch mindestens ein weiteres Merkmal."@de , "The generic relation is a semantic relation between two concepts\n      where the intension of one of the concepts includes that of the other concepts and at least\n      one additional delimiting characteristic is added."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Oberbegriff generisch"@de , "Broader term (generic)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#broaderTermGeneral> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "550 $0 $4=obge" .
+
+<https://d-nb.info/standards/elementset/gnd#preferredNameForTheSubjectHeading>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Preferred name for the subject heading"@en , "Bevorzugter Name des Schlagworts"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#preferredName> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "150 $a $g" .
+
+<https://d-nb.info/standards/elementset/gnd#fieldOfStudy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Studienfach einer Person."@de , "A person’s field of study"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Field of study"@en , "Studienfach"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#SubjectHeading> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "550 $0 $4=stud" .

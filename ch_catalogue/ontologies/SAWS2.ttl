@@ -1,0 +1,38 @@
+<http://purl.org/saws/ontology#physicalLocationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This lets you describe the physical location of the LinguisticObject, e.g. a particular piece of text, or Marginalia, by recording the Locus that the notes are physically written on in a Material. You can describe the Locus (e.g. folio number, or position on the page) in free text, in as much detail as required, if there is no formal way to describe the location of the text/marginalia] \n\nNB Use this relation if you are talking about the physical location for an abstract linguistic object. Use isLocationOf if you are talking about the physical location of a physically-existing object."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Locus> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "physical location of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isLocationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#physicallyLocatedAt> .
+
+<http://purl.org/saws/ontology#physicallyLocatedAt>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This lets you describe the physical location of the LinguisticObject, e.g. a particular piece of text, or Marginalia, by recording the Locus that the notes are physically written on in a Material. You can describe the Locus (e.g. folio number, or position on the page) in free text, in as much detail as required, if there is no formal way to describe the location of the text/marginalia\n\nNB Use this relation if you are talking about an abstract linguistic object which is to be found at a particular locus. Use isLocatedAt if you are talking about a physically-existing object being located at a physical place."@en , "physically located at"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Locus> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "isLocatedAt"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#Locus>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A physical location within a physical manuscript"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "locus"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E53_Place> .

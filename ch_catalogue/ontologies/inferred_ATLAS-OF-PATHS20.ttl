@@ -1,0 +1,55 @@
+<https://w3id.org/italia/onto/AtlasOfPaths/SupportService>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class describes a walker support service along the pathway."@en , "Questa classe descrive un servizio di supporto al camminatore lungo il percorso."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Support Service"@en , "Servizio di supporto"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/PathStage>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una tappa georeferenziata di un cammino. Ad essa sono associate ulteriori informazioni: la presenza di segnaletica (indicante successive tappe, eventuali snodi verso altri cammini, percorsi alternativi o deviazioni) e di alloggi, ristoranti e servizi di supporto al camminatore nelle vicinanze."@it , "This class represents a georeferenced stage of a path. Further information is associated with it: the presence of signposting (indicating a successive stage, possible path intersections, alternative pathways or detours) and of accommodation, restaurants and walker support services nearby."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Path Stage"@en , "Tappa del percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/Route/Stage> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/hasSupportService>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa object property associa uno specifico oggetto con un servizio di supporto al camminatore."@it , "This object property associates a specific object to a walker support service."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has support service"@en , "ha servizio di supporto"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/SupportService> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isSupportServiceOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/isSupportServiceOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà inversa di hasSupportService."@it , "Inverse property of hasSupportService."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/SupportService> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is support service of"@en , "è servizio di supporto di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .

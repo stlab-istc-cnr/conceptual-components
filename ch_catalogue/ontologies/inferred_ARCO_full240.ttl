@@ -1,0 +1,88 @@
+<https://w3id.org/arco/ontology/catalogue/referenceProject>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta il progetto nell'ambito del quale è stata prodotta una scheda, quella a cui si associa un codice alternativo, assegnato da enti diversi da ICCD, o quella che analizza un bene culturale per finalità diverse da quella specifica della catalogazione del patrimonio culturale."@it , "This property represents the reference project of a record about a cultural property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "reference project"@en , "progetto di riferimento"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AC/ACC/ACCP; AC/ACS/ACSP" .
+
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecord>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Rappresenta una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni, e che può avere più versioni (in seguito ad aggiornamenti e revisioni)."@it , "This class represents a catalogue record, that is a descriptive model collecting and organising information on a cultural property, and which can have more than one version (after editing and updating)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Scheda di catalogo"@it , "Catalogue record"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Catalogue Record' is the following:\nresource:CatalogueRecordS/0500212038\n        a           cat:CatalogueRecordS ;\n        rdfs:label  \"Catalogue record n: 0500212038\"@en ;\n        cat:catalogueRecordIdentifier \"0500212038\" ;\n        cat:describesCulturalProperty resource:HistoricOrArtisticProperty/0500212038 ;\n        cat:hasAccessProfile resource:AccessProfile/0500212038-1 ;\n        cat:hasCatalogueRecordVersion resource:CatalogueRecordVersion/0500212038-rvm , resource:CatalogueRecordVersion/0500212038-agg-1 , resource:CatalogueRecordVersion/0500212038-compilation ;\n        cat:hasCataloguingLevel\n                cat:C ;\n        cat:systemRecordCode \"ICCD8403091\" ;\n        core:note>  \"Number of negative by \"Museco Civico\": MCBas G/ DLXXXIX/ 3775\" ."@en , "Un esempio di utilizzo della classe \"Scheda di Catalogo\" è il seguente:\nresource:CatalogueRecordS/0500212038\n        a           cat:CatalogueRecordS ;\n        rdfs:label  \"Scheda catalografica n: 0500212038\"@it ;\n        cat:catalogueRecordIdentifier \"0500212038\" ;\n        cat:describesCulturalProperty resource:HistoricOrArtisticProperty/0500212038 ;\n        cat:hasAccessProfile resource:AccessProfile/0500212038-1 ;\n        cat:hasCatalogueRecordVersion resource:CatalogueRecordVersion/0500212038-rvm , resource:CatalogueRecordVersion/0500212038-agg-1 , resource:CatalogueRecordVersion/0500212038-compilation ;\n        cat:hasCataloguingLevel\n                cat:C ;\n        cat:systemRecordCode \"ICCD8403091\" ;\n        core:note  \"Numero di negativo del Museo Civico: MCBas G/ DLXXXIX/ 3775\" ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/catalogue/AlternativeIdentifier>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un codice che identifica la scheda di catalogo nell'ambito di altri sistemi informativi, assegnato da enti diversi da ICCD."@it , "This class represents an identifier of a catalogue record in information systems other than ICCD."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Codice alternativo"@it , "Alternative Identifier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AC/ACC" .
+
+<https://w3id.org/arco/ontology/catalogue/isAlternativeIdentifierOf>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is the inverse property of \"has alternative identifier\"."@en , "Questa è la proprietà inversa di \"ha altro codice identificativo\"."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/AlternativeIdentifier> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is alternative identifier of"@en , "è altro codice identificativo di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/catalogue/hasAlternativeIdentifier>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property used to associate a catalogue record with an identifier created in the context of information systems other than ICCD's SIGECweb."@en , "Questa proprietà collega una scheda di catalogo a un codice che identifica la scheda di catalogo nell'ambito di altri sistemi informativi, assegnato da enti diversi da ICCD."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha altro codice identificativo"@it , "has alternative identifier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/AlternativeIdentifier> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/catalogue/isAlternativeIdentifierOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AC/ACC"@it .

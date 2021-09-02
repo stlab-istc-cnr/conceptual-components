@@ -1,0 +1,2468 @@
+@prefix : <http://nomisma.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://nomisma.org/ontology#> .
+
+<http://nomisma.org/ontology#> rdf:type owl:Ontology ;
+                                rdfs:comment "Nomisma.org is a collaborative project to provide stable digital representations of numismatic concepts according to the principles of Linked Open Data. These take the form of http URIs that also provide access to reusable information about those concepts, along with links to other resources." ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "Nomisma.org is a collaborative project to provide stable digital representations of numismatic concepts according to the principles of Linked Open Data. These take the form of http URIs that also provide access to reusable information about those concepts, along with links to other resources." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://nomisma.org/ontology#hasAppearance
+:hasAppearance rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:comment "Describes the appearance of a numismatic object. Eg. Iconography, legends and physical characteristics."@en ;
+               rdfs:label "hasAppearance" ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Describes the appearance of a numismatic object. Eg. Iconography, legends and physical characteristics." .
+
+
+###  http://nomisma.org/ontology#hasAuthority
+:hasAuthority rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:comment "Identifies the authority in whose name (explicitly or implicitly) a numismatic object was issued. Eg. Charlemagne, Augustus, Sparta, Federal Republic of Germany, Bank of England"@en ;
+              rdfs:label "hasAuthority" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Identifies the authority in whose name (explicitly or implicitly) a numismatic object was issued. Eg. Charlemagne, Augustus, Sparta, Federal Republic of Germany, Bank of England" .
+
+
+###  http://nomisma.org/ontology#hasAxis
+:hasAxis rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:comment "Describes the directional relationship between the obverse and reverse of a numismatic object."@en ;
+         rdfs:label "hasAxis" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Describes the directional relationship between the obverse and reverse of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasBearsDate
+:hasBearsDate rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasAppearance ;
+              rdfs:comment "Describes a date that appears on an object"@en ;
+              rdfs:label "hasBearsDate" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Describes a date that appears on an object" .
+
+
+###  http://nomisma.org/ontology#hasCollection
+:hasCollection rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:comment "Identifies the modern collection or repository in which a numismatic object resides or has resided in the past. Collections are defined by Nomisma IDs."@en ;
+               rdfs:label "hasCollection" ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Identifies the modern collection or repository in which a numismatic object resides or has resided in the past. Collections are defined by Nomisma IDs." .
+
+
+###  http://nomisma.org/ontology#hasContext
+:hasContext rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:comment "Describes the context of a numismatic object."@en ;
+            rdfs:label "hasContext" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Describes the context of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasControlmark
+:hasControlmark rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasAppearance ;
+                rdfs:comment "Identifies a letter, symbol, monogram or an inscription on a numismatic object intended to distinguish it as part of a group of numismatic objects within an issue or series."@en ;
+                rdfs:label "hasControlmark" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Identifies a letter, symbol, monogram or an inscription on a numismatic object intended to distinguish it as part of a group of numismatic objects within an issue or series." .
+
+
+###  http://nomisma.org/ontology#hasCorrosion
+:hasCorrosion rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:comment "Describes degradation due to chemical reaction with an environment, commonly in terms prescribed by \"Abnutzung und Korrosion: Bestimmmungstafeln zur Bearbeitung von Fundmünzen = Usure et corrosion. (1995). Lausanne.\" (OCLC 174260520)"@en ;
+              rdfs:label "hasCorrosion" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Describes degradation due to chemical reaction with an environment, commonly in terms prescribed by \"Abnutzung und Korrosion: Bestimmmungstafeln zur Bearbeitung von Fundmünzen = Usure et corrosion. (1995). Lausanne.\" (OCLC 174260520)" .
+
+
+###  http://nomisma.org/ontology#hasCountermark
+:hasCountermark rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasIconography ,
+                                   :hasSecondaryTreatment ;
+                rdfs:comment "Identifies a mark or symbol punched into a coin or similar object  at some point during its time in circulation."@en ;
+                rdfs:label "hasCountermark" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Identifies a mark or symbol punched into a coin or similar object  at some point during its time in circulation." .
+
+
+###  http://nomisma.org/ontology#hasDate
+:hasDate rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:comment "Describes date (range) assigned in a numismatic context."@en ;
+         rdfs:label "hasDate" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Describes date (range) assigned in a numismatic context." .
+
+
+###  http://nomisma.org/ontology#hasDenomination
+:hasDenomination rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:comment "Describes the monetary value assigned to an object within a denominational system. Examples: tetradrachm, chalkous, denarius."@en ;
+                 rdfs:label "hasDenomination" ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Describes the monetary value assigned to an object within a denominational system. Examples: tetradrachm, chalkous, denarius." .
+
+
+###  http://nomisma.org/ontology#hasDepth
+:hasDepth rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:comment "Describes the depth of an object."@en ;
+          rdfs:label "hasDepth" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Describes the depth of an object." .
+
+
+###  http://nomisma.org/ontology#hasDiameter
+:hasDiameter rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:comment "Describes diameter of an object."@en ;
+             rdfs:label "hasDiameter" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes diameter of an object." .
+
+
+###  http://nomisma.org/ontology#hasDie
+:hasDie rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :hasProductionObject ;
+        rdfs:comment "Describes the die from which a numismatic object has been produced."@en ;
+        rdfs:label "hasDie" ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Describes the die from which a numismatic object has been produced." .
+
+
+###  http://nomisma.org/ontology#hasEdge
+:hasEdge rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasAppearance ;
+         rdfs:comment "Describes characteristics of the edge of a numismatic object."@en ;
+         rdfs:label "hasEdge" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Describes characteristics of the edge of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasEndDate
+:hasEndDate rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:comment "Identifies the final date in a range assigned in a numismatic context."@en ;
+            rdfs:label "hasEndDate" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Identifies the final date in a range assigned in a numismatic context." .
+
+
+###  http://nomisma.org/ontology#hasFace
+:hasFace rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasAppearance ;
+         rdfs:comment "Identifies a particular face of a numismatic object. Where possible and appropriate, the more specific properties hasObverse or hasReverse are preferred."@en ;
+         rdfs:label "hasFace" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Identifies a particular face of a numismatic object. Where possible and appropriate, the more specific properties hasObverse or hasReverse are preferred." .
+
+
+###  http://nomisma.org/ontology#hasFindType
+:hasFindType rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:label "hasFindType" ;
+             owl:deprecated "deprecated - please use nmo:hasContext instead, together with the class Context or its sub classes: Find, DepositionType and DiscoveryType" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the nature of and archaeological or other find. E.g. hoard, ritual deposit, single find, find in survey." .
+
+
+###  http://nomisma.org/ontology#hasFindspot
+:hasFindspot rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:comment "Describes the location of the discovery of an object, whether by accident or in archaeological excavation."@en ;
+             rdfs:label "hasFindspot" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the location of the discovery of an object, whether by accident or in archaeological excavation." .
+
+
+###  http://nomisma.org/ontology#hasHeight
+:hasHeight rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:comment "Describes the height of a numismatic object."@en ;
+           rdfs:label "hasHeight" ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Describes the height of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasIconography
+:hasIconography rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasAppearance ;
+                rdfs:comment "Describes an iconography placed on a numismatic object."@en ;
+                rdfs:label "hasIconography" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Describes an iconography placed on a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasIssuer
+:hasIssuer rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:comment "Identifies the person administratively responsible for the issue of a numismatic object, generally named in some capacity on the object."@en ;
+           rdfs:label "hasIssuer" ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Identifies the person administratively responsible for the issue of a numismatic object, generally named in some capacity on the object." .
+
+
+###  http://nomisma.org/ontology#hasLegend
+:hasLegend rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasAppearance ;
+           rdfs:comment "Describes the inscription or printing placed on a numismatic object as part of the production process."@en ;
+           rdfs:label "hasLegend" ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Describes the inscription or printing placed on a numismatic object as part of the production process." .
+
+
+###  http://nomisma.org/ontology#hasManufacture
+:hasManufacture rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:comment "Describes the method of manufacture of a numismatic object. Eg. struck, cast, printed"@en ;
+                rdfs:label "hasManufacture" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Describes the method of manufacture of a numismatic object. Eg. struck, cast, printed" .
+
+
+###  http://nomisma.org/ontology#hasMaterial
+:hasMaterial rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:comment "Describes the physical material from which a numismatic object is made."@en ;
+             rdfs:label "hasMaterial" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the physical material from which a numismatic object is made." .
+
+
+###  http://nomisma.org/ontology#hasMaxDepth
+:hasMaxDepth rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasDepth ;
+             rdfs:comment "Describes the maximum depth of a numismatic object."@en ;
+             rdfs:label "hasMaxDepth" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the maximum depth of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMaxDiameter
+:hasMaxDiameter rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasDiameter ;
+                rdfs:comment "Describes the maximum diameter of a numismatic object."@en ;
+                rdfs:label "hasMaxDiameter" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Describes the maximum diameter of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMaxHeight
+:hasMaxHeight rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasHeight ;
+              rdfs:comment "Describes the maximum height of a numismatic object."@en ;
+              rdfs:label "hasMaxHeight" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Describes the maximum height of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMaxWidth
+:hasMaxWidth rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasWidth ;
+             rdfs:comment "Describes the maximum width of a numismatic object."@en ;
+             rdfs:label "hasMaxWidth" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the maximum width of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMinDepth
+:hasMinDepth rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasDepth ;
+             rdfs:comment "Describes the minimum depth of a numismatic object."@en ;
+             rdfs:label "hasMinDepth" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the minimum depth of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMinDiameter
+:hasMinDiameter rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasDiameter ;
+                rdfs:comment "Describes the minimum diameter of a numismatic object."@en ;
+                rdfs:label "hasMinDiameter" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Describes the minimum diameter of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMinHeight
+:hasMinHeight rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasHeight ;
+              rdfs:comment "Describes the minimum height of a numismatic object."@en ;
+              rdfs:label "hasMinHeight" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Describes the minimum height of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMinWidth
+:hasMinWidth rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasWidth ;
+             rdfs:comment "Describes the minimum width of a numismatic object."@en ;
+             rdfs:label "hasMinWidth" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Describes the minimum width of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMint
+:hasMint rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:comment "Identifies the place of manufacture or issue of a numismatic object."@en ;
+         rdfs:label "hasMint" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Identifies the place of manufacture or issue of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasMintmark
+:hasMintmark rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasControlmark ;
+             rdfs:comment "Identifies the letter, symbol or an inscription on a numismatic object indicating the mint where it was produced."@en ;
+             rdfs:label "hasMintmark" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Identifies the letter, symbol or an inscription on a numismatic object indicating the mint where it was produced." .
+
+
+###  http://nomisma.org/ontology#hasObjectType
+:hasObjectType rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:comment "Identifies the type of numismatic object. E.g. Coin, token, banknote."@en ;
+               rdfs:label "hasObjectType" ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Identifies the type of numismatic object. E.g. Coin, token, banknote." .
+
+
+###  http://nomisma.org/ontology#hasObverse
+:hasObverse rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasFace ;
+            rdfs:comment "Identifies a particular face of a numismatic object. Normally it will be the face carrying the represenation, badge or inscription of the issuing authority. In ancient, hand-struck coinage it is generally the lower (anvil) die. In English often known as \"heads\"."@en ;
+            rdfs:label "hasObverse" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Identifies a particular face of a numismatic object. Normally it will be the face carrying the represenation, badge or inscription of the issuing authority. In ancient, hand-struck coinage it is generally the lower (anvil) die. In English often known as \"heads\"." .
+
+
+###  http://nomisma.org/ontology#hasPeculiarity
+:hasPeculiarity rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:comment "Describes a notable, characteristic or unusual physical feature of an individual numismatic object marks it out from other examples of the same group, or of a group of numismatic objects that marks it out from other groups. It can be the result of production, such as plating, or post-production activity, such as piercing, cutting or mounting."@en ;
+                rdfs:label "hasPeculiarity" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Describes a notable, characteristic or unusual physical feature of an individual numismatic object marks it out from other examples of the same group, or of a group of numismatic objects that marks it out from other groups. It can be the result of production, such as plating, or post-production activity, such as piercing, cutting or mounting." .
+
+
+###  http://nomisma.org/ontology#hasPeculiarityOfProduction
+:hasPeculiarityOfProduction rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :hasPeculiarity ;
+                            rdfs:comment "Describes a notable, characteristic or unusual physical feature of an individual numismatic object which distinguishes it from other examples of the same group, or of a group of numismatic objects that marks it out from other groups, and which is related to the process of production of a numismatic object."@en ;
+                            rdfs:label "hasPeculiarityOfProduction" ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "Describes a notable, characteristic or unusual physical feature of an individual numismatic object which distinguishes it from other examples of the same group, or of a group of numismatic objects that marks it out from other groups, and which is related to the process of production of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasPortrait
+:hasPortrait rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasIconography ;
+             rdfs:label "hasPortrait" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Identifies the person whose portrait appears on a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasProductionDate
+:hasProductionDate rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasDate ;
+                   rdfs:comment "Describes the date (range) of the production of a numismatic object."@en ;
+                   rdfs:label "hasProductionDate" ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Describes the date (range) of the production of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasProductionObject
+:hasProductionObject rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:comment "Objects used within the production process."@en ;
+                     rdfs:label "hasProductionObject" ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Objects used within the production process." .
+
+
+###  http://nomisma.org/ontology#hasReferenceWork
+:hasReferenceWork rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:comment "Specifies a published work of reference relevant to a numismatic object."@en ;
+                  rdfs:label "hasReferenceWork" ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Specifies a published work of reference relevant to a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasReverse
+:hasReverse rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasFace ;
+            rdfs:comment "Identifies a the face of a numismatic object opposed to the obverse. In ancient, hand-struck coinage it is generally the upper die. In English often known as \"tails\"."@en ;
+            rdfs:label "hasReverse" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Identifies a the face of a numismatic object opposed to the obverse. In ancient, hand-struck coinage it is generally the upper die. In English often known as \"tails\"." .
+
+
+###  http://nomisma.org/ontology#hasSecondaryTreatment
+:hasSecondaryTreatment rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasPeculiarity ;
+                       rdfs:comment "Describes anomalies or unusual features which arise subsequent to the actual production of a numismatic object; for example halving, chop-marking, etc."@en ;
+                       rdfs:label "hasSecondaryTreatment" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Describes anomalies or unusual features which arise subsequent to the actual production of a numismatic object; for example halving, chop-marking, etc." .
+
+
+###  http://nomisma.org/ontology#hasShape
+:hasShape rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:comment "Describes the shape of a numismatic object."@en ;
+          rdfs:label "hasShape" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Describes the shape of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasStartDate
+:hasStartDate rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:comment "Identifies the initial date in a range assigned in a numismatic context."@en ;
+              rdfs:label "hasStartDate" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Identifies the initial date in a range assigned in a numismatic context." .
+
+
+###  http://nomisma.org/ontology#hasStatedAuthority
+:hasStatedAuthority rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:comment "The authority as stated on a numismatic object. This may, but need not, be the same as the real authority behind the object (expressed separately as hasAuthority)."@en ;
+                    rdfs:label "hasStatedAuthority" ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "The authority as stated on a numismatic object. This may, but need not, be the same as the real authority behind the object (expressed separately as hasAuthority)." .
+
+
+###  http://nomisma.org/ontology#hasTypeSeriesItem
+:hasTypeSeriesItem rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:comment "Identifies the position of a numismatic object within a published or recognized reference list of types, such as a catalogue or corpus."@en ;
+                   rdfs:label "hasTypeSeriesItem" ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Identifies the position of a numismatic object within a published or recognized reference list of types, such as a catalogue or corpus." .
+
+
+###  http://nomisma.org/ontology#hasWear
+:hasWear rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:comment "Describes wear visible on a numismatic object due to use or circulation, commonly in terms prescribed by \"Abnutzung und Korrosion: Bestimmmungstafeln zur Bearbeitung von Fundmünzen = Usure et corrosion. (1995). Lausanne.\" (OCLC 174260520)"@en ;
+         rdfs:label "hasWear" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Describes wear visible on a numismatic object due to use or circulation, commonly in terms prescribed by \"Abnutzung und Korrosion: Bestimmmungstafeln zur Bearbeitung von Fundmünzen = Usure et corrosion. (1995). Lausanne.\" (OCLC 174260520)" .
+
+
+###  http://nomisma.org/ontology#hasWeight
+:hasWeight rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:comment "Describes the actual weight of a numismatic object."@en ;
+           rdfs:label "hasWeight" ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Describes the actual weight of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#hasWeightStandard
+:hasWeightStandard rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:comment "Describes the conventional weight system according to which a numismatic object of intrinsic value was produced."@en ;
+                   rdfs:label "hasWeightStandard" ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Describes the conventional weight system according to which a numismatic object of intrinsic value was produced." .
+
+
+###  http://nomisma.org/ontology#hasWidth
+:hasWidth rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:comment "Describes the width of a numismatic object."@en ;
+          rdfs:label "hasWidth" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Describes the width of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#isAbove
+:isAbove rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :isBelow
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:domain :StratigraphicUnit ;
+         rdfs:range :StratigraphicUnit ;
+         rdfs:comment "Based on the Harris Matrix system for units of archaeological stratification. The subject unit is above the object unit in the relative sequence of the units of stratification through time (see: Principles of archaeological stratigraphy by Edward Harris)."@en ;
+         rdfs:label "isAbove" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Based on the Harris Matrix system for units of archaeological stratification. The subject unit is above the object unit in the relative sequence of the units of stratification through time (see: Principles of archaeological stratigraphy by Edward Harris)." .
+
+
+###  http://nomisma.org/ontology#isBelow
+:isBelow rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isAbove ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:domain :StratigraphicUnit ;
+         rdfs:range :StratigraphicUnit ;
+         rdfs:comment "Based on the Harris Matrix system for units of archaeological stratification. The subject unit is below the object in the relative sequence of the units of stratification through time (see: Principles of archaeological stratigraphy by Edward Harris)." ;
+         rdfs:label "isBelow"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Based on the Harris Matrix system for units of archaeological stratification. The subject unit is below the object in the relative sequence of the units of stratification through time (see: Principles of archaeological stratigraphy by Edward Harris)." .
+
+
+###  http://nomisma.org/ontology#isEqual
+:isEqual rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :isEqual
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isEqual ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :StratigraphicUnit ;
+         rdfs:range :StratigraphicUnit ;
+         rdfs:comment "Based on the Harris Matrix system for units of archaeological stratification. The units are correlated (equated by the = sign) as separate parts (given different numbers in the field) of a once whole deposit or feature interface (see: Principles of archaeological stratigraphy by Edward Harris)." ;
+         rdfs:label "isEqual"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Based on the Harris Matrix system for units of archaeological stratification. The units are correlated (equated by the = sign) as separate parts (given different numbers in the field) of a once whole deposit or feature interface (see: Principles of archaeological stratigraphy by Edward Harris)." .
+
+
+###  http://nomisma.org/ontology#representsObjectType
+:representsObjectType rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:comment "To indicate what kind of object type is represented by (for example) an type series item (a coin, banknote, token, ...)."@en ;
+                      rdfs:label "representsObjectType" ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "To indicate what kind of object type is represented by (for example) an type series item (a coin, banknote, token, ...)." .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty owl:inverseOf owl:topObjectProperty ;
+                      rdf:type owl:SymmetricProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://nomisma.org/ontology#CoinWear
+:CoinWear rdf:type owl:Class ;
+          rdfs:subClassOf :Wear .
+
+
+###  http://nomisma.org/ontology#Collection
+:Collection rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Context
+:Context rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:comment "The archaeological context of a numismatic object."@en ;
+         rdfs:label "Context" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "The archaeological context of a numismatic object. " .
+
+
+###  http://nomisma.org/ontology#Controlmark
+:Controlmark rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:comment "A control mark is a letter, symbol or an inscription on a numismatic object intended to distinguish a group of coins within an issue or series."@en ;
+             rdfs:label "Controlmark" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A control mark is a letter, symbol or an inscription on a numismatic object intended to distinguish a group of coins within an issue or series." .
+
+
+###  http://nomisma.org/ontology#Corrosion
+:Corrosion rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:comment "Degradation to a numismatic object due to chemical reaction with its environment."@en ;
+           rdfs:label "Corrosion" ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Degradation to a numismatic object due to chemical reaction with its environment." .
+
+
+###  http://nomisma.org/ontology#Countermark
+:Countermark rdf:type owl:Class ;
+             rdfs:subClassOf :SecondaryTreatment ;
+             rdfs:comment "A mark or symbol punched into a coin or similar object at some point during its time in circulation."@en ;
+             rdfs:label "Countermark" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A mark or symbol punched into a coin or similar object at some point during its time in circulation." .
+
+
+###  http://nomisma.org/ontology#Denomination
+:Denomination rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#DepositionType
+:DepositionType rdf:type owl:Class ;
+                rdfs:subClassOf :Context ;
+                rdfs:comment "The circumstances under which an object or group of objects came to be deposited and part of the archaeological record, for example as a hoard, votive deposit or chance loss."@en ;
+                rdfs:label "DepositionType" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "The circumstances under which an object or group of objects came to be deposited and part of the archaeological record, for example as a hoard, votive deposit or chance loss." .
+
+
+###  http://nomisma.org/ontology#DieWear
+:DieWear rdf:type owl:Class ;
+         rdfs:subClassOf :Wear ;
+         rdfs:comment "Wear on a die occurring as a result of its use."@en ;
+         rdfs:label "DieWear" ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Wear on a die occurring as a result of its use." .
+
+
+###  http://nomisma.org/ontology#DiscoveryType
+:DiscoveryType rdf:type owl:Class ;
+               rdfs:subClassOf :Context ;
+               rdfs:comment "The circumstances under which an object or group of objects came to be discovered, for example as a chance stray find or a controlled excavation."@en ;
+               rdfs:label "DiscoveryType" ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The circumstances under which an object or group of objects came to be discovered, for example as a chance stray find or a controlled excavation." .
+
+
+###  http://nomisma.org/ontology#Ethnic
+:Ethnic rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#FieldOfNumismatics
+:FieldOfNumismatics rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Find
+:Find rdf:type owl:Class ;
+      rdfs:subClassOf :Context ;
+      rdfs:comment "A numismatic object or group of numismatic objects that was lost or deposited, whether intentionally or unintentionally, in previous times, and subsequently recovered. The recovery takes place independently of any intention of retrieval associated with the original deposition."@en ;
+      rdfs:label "Find" ;
+      <http://www.w3.org/2004/02/skos/core#definition> "A numismatic object or group of numismatic objects that was lost or deposited, whether intentionally or unintentionally, in previous times, and subsequently recovered. The recovery takes place independently of any intention of retrieval associated with the original deposition." .
+
+
+###  http://nomisma.org/ontology#Hoard
+:Hoard rdf:type owl:Class ;
+       rdfs:subClassOf :Find ;
+       rdfs:comment "A group of numismatic objects: a store of wealth concealed with intent of recovery but which, for reasons not usually known to us, was not recovered until modern times."@en ;
+       rdfs:label "Hoard" ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A group of numismatic objects: a store of wealth concealed with intent of recovery but which, for reasons not usually known to us, was not recovered until modern times." .
+
+
+###  http://nomisma.org/ontology#Manufacture
+:Manufacture rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Material
+:Material rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Mint
+:Mint rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Mintmark
+:Mintmark rdf:type owl:Class ;
+          rdfs:subClassOf :Controlmark ;
+          rdfs:comment "A mint mark is a letter, symbol or an inscription on a numismatic object indicating the mint where the numismatic object was produced."@en ;
+          rdfs:label "Mintmark" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "A mint mark is a letter, symbol or an inscription on a numismatic object indicating the mint where the numismatic object was produced." .
+
+
+###  http://nomisma.org/ontology#Monogram
+:Monogram rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:comment "A monogram is a symbol made by overlapping or combining of letters or other graphemes."@en ;
+          rdfs:label "Monogram" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "A monogram is a symbol made by overlapping or combining of letters or other graphemes." .
+
+
+###  http://nomisma.org/ontology#NumismaticObject
+:NumismaticObject rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing ;
+                  rdfs:comment "Objects considered to be within the numismatic domain such as coins, tokens, banknotes etc."@en ;
+                  rdfs:label "NumismaticObject" ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Objects considered to be within the numismatic domain such as coins, tokens, banknotes etc." .
+
+
+###  http://nomisma.org/ontology#NumismaticTerm
+:NumismaticTerm rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing ;
+                rdfs:comment "A term used within the field of numismatics to describe or to otherwise convey information specific to the numismatic discipline, or to numismatic objects."@en ;
+                rdfs:label "NumismaticTerm" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "A term used within the field of numismatics to describe or to otherwise convey information specific to the numismatic discipline, or to numismatic objects." .
+
+
+###  http://nomisma.org/ontology#ObjectType
+:ObjectType rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Peculiarity
+:Peculiarity rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:comment "A notable, characteristic or unusual physical feature of an individual numismatic object that marks it out from other examples of the same group, or of a group of numismatic objects that marks it out from other groups."@en ;
+             rdfs:label "Peculiarity" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A notable, characteristic or unusual physical feature of an individual numismatic object that marks it out from other examples of the same group, or of a group of numismatic objects that marks it out from other groups." .
+
+
+###  http://nomisma.org/ontology#PeculiarityOfProduction
+:PeculiarityOfProduction rdf:type owl:Class ;
+                         rdfs:subClassOf :Peculiarity ;
+                         rdfs:comment "A notable, characteristic or unusual physical feature of an individual numismatic object which distinguishes it from other examples of the same group, or of a group of numismatic objects that marks it out from other groups, and which is related to the process of production of a numismatic object."@en ;
+                         rdfs:label "PeculiarityOfProduction" ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "A notable, characteristic or unusual physical feature of an individual numismatic object which distinguishes it from other examples of the same group, or of a group of numismatic objects that marks it out from other groups, and which is related to the process of production of a numismatic object." .
+
+
+###  http://nomisma.org/ontology#ReferenceWork
+:ReferenceWork rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.org/dc/terms/BibliographicResource> .
+
+
+###  http://nomisma.org/ontology#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#SecondaryTreatment
+:SecondaryTreatment rdf:type owl:Class ;
+                    rdfs:subClassOf :Peculiarity ;
+                    rdfs:comment "Anomalies or unusual features which arise subsequent to the actual production of a numismatic object; for example halving, chop-marking, etc."@en ;
+                    rdfs:label "SecondaryTreatment" ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Anomalies or unusual features which arise subsequent to the actual production of a numismatic object; for example halving, chop-marking, etc." .
+
+
+###  http://nomisma.org/ontology#Shape
+:Shape rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       rdfs:comment "The possible shapes numismatic objects might have, could be standard like round or rectangular or even a polygon."@en ;
+       rdfs:label "Shape" ;
+       <http://www.w3.org/2004/02/skos/core#definition> "The possible shapes numismatic objects might have, could be standard like round or rectangular or even a polygon." .
+
+
+###  http://nomisma.org/ontology#StratigraphicUnit
+:StratigraphicUnit rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing ;
+                   rdfs:comment "A stratigraphic unit is a volume of identifiable origin and relative age range that is defined by the distinctive and dominant, easily mapped and recognizable features that characterize it." ;
+                   rdfs:label "StratigraphicUnit"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A stratigraphic unit is a volume of identifiable origin and relative age range that is defined by the distinctive and dominant, easily mapped and recognizable features that characterize it." .
+
+
+###  http://nomisma.org/ontology#TypeSeries
+:TypeSeries rdf:type owl:Class ;
+            rdfs:subClassOf :ReferenceWork .
+
+
+###  http://nomisma.org/ontology#TypeSeriesItem
+:TypeSeriesItem rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#Wear
+:Wear rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://nomisma.org/ontology#WeightStandard
+:WeightStandard rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.org/dc/terms/Standard> .
+
+
+###  http://purl.org/dc/terms/BibliographicResource
+<http://purl.org/dc/terms/BibliographicResource> rdf:type owl:Class ;
+                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/dc/terms/Standard
+<http://purl.org/dc/terms/Standard> rdf:type owl:Class ;
+                                    rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://nomisma.org/id/coin
+<http://nomisma.org/id/coin> rdf:type owl:NamedIndividual ,
+                                      owl:Thing ;
+                             owl:sameAs :Coin ;
+                             owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                   <http://nomisma.org/id/coin_wear> ,
+                                                   <http://nomisma.org/id/collection> ,
+                                                   <http://nomisma.org/id/denomination> ,
+                                                   <http://nomisma.org/id/ethnic> ,
+                                                   <http://nomisma.org/id/field_of_numismatics> ,
+                                                   <http://nomisma.org/id/manufacture> ,
+                                                   <http://nomisma.org/id/material> ,
+                                                   <http://nomisma.org/id/medal> ,
+                                                   <http://nomisma.org/id/mint> ,
+                                                   <http://nomisma.org/id/object_type> ,
+                                                   <http://nomisma.org/id/reference_work> ,
+                                                   <http://nomisma.org/id/region> ,
+                                                   <http://nomisma.org/id/seal> ,
+                                                   <http://nomisma.org/id/type_series> ,
+                                                   <http://nomisma.org/id/type_series_item> ,
+                                                   <http://nomisma.org/id/weight_standard> ,
+                                                   :Coin ,
+                                                   :CoinWear ,
+                                                   :Collection ,
+                                                   :Denomination ,
+                                                   :Ethnic ,
+                                                   :FieldOfNumismatics ,
+                                                   :Manufacture ,
+                                                   :Material ,
+                                                   :Medal ,
+                                                   :Medallion ,
+                                                   :Mint ,
+                                                   :ObjectType ,
+                                                   :ReferenceWork ,
+                                                   :Region ,
+                                                   :Seal ,
+                                                   :Tessera ,
+                                                   :Token ,
+                                                   :TypeSeries ,
+                                                   :TypeSeriesItem ,
+                                                   :Wear ,
+                                                   :WeightStandard .
+
+
+###  http://nomisma.org/id/coin_wear
+<http://nomisma.org/id/coin_wear> rdf:type owl:NamedIndividual ,
+                                           owl:Thing ;
+                                  owl:sameAs :CoinWear ;
+                                  owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                        <http://nomisma.org/id/coin_wear> ,
+                                                        <http://nomisma.org/id/collection> ,
+                                                        <http://nomisma.org/id/denomination> ,
+                                                        <http://nomisma.org/id/ethnic> ,
+                                                        <http://nomisma.org/id/field_of_numismatics> ,
+                                                        <http://nomisma.org/id/manufacture> ,
+                                                        <http://nomisma.org/id/material> ,
+                                                        <http://nomisma.org/id/medal> ,
+                                                        <http://nomisma.org/id/mint> ,
+                                                        <http://nomisma.org/id/object_type> ,
+                                                        <http://nomisma.org/id/reference_work> ,
+                                                        <http://nomisma.org/id/region> ,
+                                                        <http://nomisma.org/id/seal> ,
+                                                        <http://nomisma.org/id/type_series> ,
+                                                        <http://nomisma.org/id/type_series_item> ,
+                                                        <http://nomisma.org/id/weight_standard> ,
+                                                        :Coin ,
+                                                        :CoinWear ,
+                                                        :Collection ,
+                                                        :Denomination ,
+                                                        :Ethnic ,
+                                                        :FieldOfNumismatics ,
+                                                        :Manufacture ,
+                                                        :Material ,
+                                                        :Medal ,
+                                                        :Medallion ,
+                                                        :Mint ,
+                                                        :ObjectType ,
+                                                        :ReferenceWork ,
+                                                        :Region ,
+                                                        :Seal ,
+                                                        :Tessera ,
+                                                        :Token ,
+                                                        :TypeSeries ,
+                                                        :TypeSeriesItem ,
+                                                        :Wear ,
+                                                        :WeightStandard .
+
+
+###  http://nomisma.org/id/collection
+<http://nomisma.org/id/collection> rdf:type owl:NamedIndividual ,
+                                            owl:Thing ;
+                                   owl:sameAs :Collection ;
+                                   owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                         <http://nomisma.org/id/coin_wear> ,
+                                                         <http://nomisma.org/id/collection> ,
+                                                         <http://nomisma.org/id/denomination> ,
+                                                         <http://nomisma.org/id/ethnic> ,
+                                                         <http://nomisma.org/id/field_of_numismatics> ,
+                                                         <http://nomisma.org/id/manufacture> ,
+                                                         <http://nomisma.org/id/material> ,
+                                                         <http://nomisma.org/id/medal> ,
+                                                         <http://nomisma.org/id/mint> ,
+                                                         <http://nomisma.org/id/object_type> ,
+                                                         <http://nomisma.org/id/reference_work> ,
+                                                         <http://nomisma.org/id/region> ,
+                                                         <http://nomisma.org/id/seal> ,
+                                                         <http://nomisma.org/id/type_series> ,
+                                                         <http://nomisma.org/id/type_series_item> ,
+                                                         <http://nomisma.org/id/weight_standard> ,
+                                                         :Coin ,
+                                                         :CoinWear ,
+                                                         :Collection ,
+                                                         :Denomination ,
+                                                         :Ethnic ,
+                                                         :FieldOfNumismatics ,
+                                                         :Manufacture ,
+                                                         :Material ,
+                                                         :Medal ,
+                                                         :Medallion ,
+                                                         :Mint ,
+                                                         :ObjectType ,
+                                                         :ReferenceWork ,
+                                                         :Region ,
+                                                         :Seal ,
+                                                         :Tessera ,
+                                                         :Token ,
+                                                         :TypeSeries ,
+                                                         :TypeSeriesItem ,
+                                                         :Wear ,
+                                                         :WeightStandard .
+
+
+###  http://nomisma.org/id/denomination
+<http://nomisma.org/id/denomination> rdf:type owl:NamedIndividual ,
+                                              owl:Thing ;
+                                     owl:sameAs :Denomination ;
+                                     owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                           <http://nomisma.org/id/coin_wear> ,
+                                                           <http://nomisma.org/id/collection> ,
+                                                           <http://nomisma.org/id/denomination> ,
+                                                           <http://nomisma.org/id/ethnic> ,
+                                                           <http://nomisma.org/id/field_of_numismatics> ,
+                                                           <http://nomisma.org/id/manufacture> ,
+                                                           <http://nomisma.org/id/material> ,
+                                                           <http://nomisma.org/id/medal> ,
+                                                           <http://nomisma.org/id/mint> ,
+                                                           <http://nomisma.org/id/object_type> ,
+                                                           <http://nomisma.org/id/reference_work> ,
+                                                           <http://nomisma.org/id/region> ,
+                                                           <http://nomisma.org/id/seal> ,
+                                                           <http://nomisma.org/id/type_series> ,
+                                                           <http://nomisma.org/id/type_series_item> ,
+                                                           <http://nomisma.org/id/weight_standard> ,
+                                                           :Coin ,
+                                                           :CoinWear ,
+                                                           :Collection ,
+                                                           :Denomination ,
+                                                           :Ethnic ,
+                                                           :FieldOfNumismatics ,
+                                                           :Manufacture ,
+                                                           :Material ,
+                                                           :Medal ,
+                                                           :Medallion ,
+                                                           :Mint ,
+                                                           :ObjectType ,
+                                                           :ReferenceWork ,
+                                                           :Region ,
+                                                           :Seal ,
+                                                           :Tessera ,
+                                                           :Token ,
+                                                           :TypeSeries ,
+                                                           :TypeSeriesItem ,
+                                                           :Wear ,
+                                                           :WeightStandard .
+
+
+###  http://nomisma.org/id/ethnic
+<http://nomisma.org/id/ethnic> rdf:type owl:NamedIndividual ,
+                                        owl:Thing ;
+                               owl:sameAs :Ethnic ;
+                               owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                     <http://nomisma.org/id/coin_wear> ,
+                                                     <http://nomisma.org/id/collection> ,
+                                                     <http://nomisma.org/id/denomination> ,
+                                                     <http://nomisma.org/id/ethnic> ,
+                                                     <http://nomisma.org/id/field_of_numismatics> ,
+                                                     <http://nomisma.org/id/manufacture> ,
+                                                     <http://nomisma.org/id/material> ,
+                                                     <http://nomisma.org/id/medal> ,
+                                                     <http://nomisma.org/id/mint> ,
+                                                     <http://nomisma.org/id/object_type> ,
+                                                     <http://nomisma.org/id/reference_work> ,
+                                                     <http://nomisma.org/id/region> ,
+                                                     <http://nomisma.org/id/seal> ,
+                                                     <http://nomisma.org/id/type_series> ,
+                                                     <http://nomisma.org/id/type_series_item> ,
+                                                     <http://nomisma.org/id/weight_standard> ,
+                                                     :Coin ,
+                                                     :CoinWear ,
+                                                     :Collection ,
+                                                     :Denomination ,
+                                                     :Ethnic ,
+                                                     :FieldOfNumismatics ,
+                                                     :Manufacture ,
+                                                     :Material ,
+                                                     :Medal ,
+                                                     :Medallion ,
+                                                     :Mint ,
+                                                     :ObjectType ,
+                                                     :ReferenceWork ,
+                                                     :Region ,
+                                                     :Seal ,
+                                                     :Tessera ,
+                                                     :Token ,
+                                                     :TypeSeries ,
+                                                     :TypeSeriesItem ,
+                                                     :Wear ,
+                                                     :WeightStandard .
+
+
+###  http://nomisma.org/id/field_of_numismatics
+<http://nomisma.org/id/field_of_numismatics> rdf:type owl:NamedIndividual ,
+                                                      owl:Thing ;
+                                             owl:sameAs :FieldOfNumismatics ;
+                                             owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                                   <http://nomisma.org/id/coin_wear> ,
+                                                                   <http://nomisma.org/id/collection> ,
+                                                                   <http://nomisma.org/id/denomination> ,
+                                                                   <http://nomisma.org/id/ethnic> ,
+                                                                   <http://nomisma.org/id/field_of_numismatics> ,
+                                                                   <http://nomisma.org/id/manufacture> ,
+                                                                   <http://nomisma.org/id/material> ,
+                                                                   <http://nomisma.org/id/medal> ,
+                                                                   <http://nomisma.org/id/mint> ,
+                                                                   <http://nomisma.org/id/object_type> ,
+                                                                   <http://nomisma.org/id/reference_work> ,
+                                                                   <http://nomisma.org/id/region> ,
+                                                                   <http://nomisma.org/id/seal> ,
+                                                                   <http://nomisma.org/id/type_series> ,
+                                                                   <http://nomisma.org/id/type_series_item> ,
+                                                                   <http://nomisma.org/id/weight_standard> ,
+                                                                   :Coin ,
+                                                                   :CoinWear ,
+                                                                   :Collection ,
+                                                                   :Denomination ,
+                                                                   :Ethnic ,
+                                                                   :FieldOfNumismatics ,
+                                                                   :Manufacture ,
+                                                                   :Material ,
+                                                                   :Medal ,
+                                                                   :Medallion ,
+                                                                   :Mint ,
+                                                                   :ObjectType ,
+                                                                   :ReferenceWork ,
+                                                                   :Region ,
+                                                                   :Seal ,
+                                                                   :Tessera ,
+                                                                   :Token ,
+                                                                   :TypeSeries ,
+                                                                   :TypeSeriesItem ,
+                                                                   :Wear ,
+                                                                   :WeightStandard .
+
+
+###  http://nomisma.org/id/manufacture
+<http://nomisma.org/id/manufacture> rdf:type owl:NamedIndividual ,
+                                             owl:Thing ;
+                                    owl:sameAs :Manufacture ;
+                                    owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                          <http://nomisma.org/id/coin_wear> ,
+                                                          <http://nomisma.org/id/collection> ,
+                                                          <http://nomisma.org/id/denomination> ,
+                                                          <http://nomisma.org/id/ethnic> ,
+                                                          <http://nomisma.org/id/field_of_numismatics> ,
+                                                          <http://nomisma.org/id/manufacture> ,
+                                                          <http://nomisma.org/id/material> ,
+                                                          <http://nomisma.org/id/medal> ,
+                                                          <http://nomisma.org/id/mint> ,
+                                                          <http://nomisma.org/id/object_type> ,
+                                                          <http://nomisma.org/id/reference_work> ,
+                                                          <http://nomisma.org/id/region> ,
+                                                          <http://nomisma.org/id/seal> ,
+                                                          <http://nomisma.org/id/type_series> ,
+                                                          <http://nomisma.org/id/type_series_item> ,
+                                                          <http://nomisma.org/id/weight_standard> ,
+                                                          :Coin ,
+                                                          :CoinWear ,
+                                                          :Collection ,
+                                                          :Denomination ,
+                                                          :Ethnic ,
+                                                          :FieldOfNumismatics ,
+                                                          :Manufacture ,
+                                                          :Material ,
+                                                          :Medal ,
+                                                          :Medallion ,
+                                                          :Mint ,
+                                                          :ObjectType ,
+                                                          :ReferenceWork ,
+                                                          :Region ,
+                                                          :Seal ,
+                                                          :Tessera ,
+                                                          :Token ,
+                                                          :TypeSeries ,
+                                                          :TypeSeriesItem ,
+                                                          :Wear ,
+                                                          :WeightStandard .
+
+
+###  http://nomisma.org/id/material
+<http://nomisma.org/id/material> rdf:type owl:NamedIndividual ,
+                                          owl:Thing ;
+                                 owl:sameAs :Material ;
+                                 owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                       <http://nomisma.org/id/coin_wear> ,
+                                                       <http://nomisma.org/id/collection> ,
+                                                       <http://nomisma.org/id/denomination> ,
+                                                       <http://nomisma.org/id/ethnic> ,
+                                                       <http://nomisma.org/id/field_of_numismatics> ,
+                                                       <http://nomisma.org/id/manufacture> ,
+                                                       <http://nomisma.org/id/material> ,
+                                                       <http://nomisma.org/id/medal> ,
+                                                       <http://nomisma.org/id/mint> ,
+                                                       <http://nomisma.org/id/object_type> ,
+                                                       <http://nomisma.org/id/reference_work> ,
+                                                       <http://nomisma.org/id/region> ,
+                                                       <http://nomisma.org/id/seal> ,
+                                                       <http://nomisma.org/id/type_series> ,
+                                                       <http://nomisma.org/id/type_series_item> ,
+                                                       <http://nomisma.org/id/weight_standard> ,
+                                                       :Coin ,
+                                                       :CoinWear ,
+                                                       :Collection ,
+                                                       :Denomination ,
+                                                       :Ethnic ,
+                                                       :FieldOfNumismatics ,
+                                                       :Manufacture ,
+                                                       :Material ,
+                                                       :Medal ,
+                                                       :Medallion ,
+                                                       :Mint ,
+                                                       :ObjectType ,
+                                                       :ReferenceWork ,
+                                                       :Region ,
+                                                       :Seal ,
+                                                       :Tessera ,
+                                                       :Token ,
+                                                       :TypeSeries ,
+                                                       :TypeSeriesItem ,
+                                                       :Wear ,
+                                                       :WeightStandard .
+
+
+###  http://nomisma.org/id/medal
+<http://nomisma.org/id/medal> rdf:type owl:NamedIndividual ,
+                                       owl:Thing ;
+                              owl:sameAs :Medal ;
+                              owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                    <http://nomisma.org/id/coin_wear> ,
+                                                    <http://nomisma.org/id/collection> ,
+                                                    <http://nomisma.org/id/denomination> ,
+                                                    <http://nomisma.org/id/ethnic> ,
+                                                    <http://nomisma.org/id/field_of_numismatics> ,
+                                                    <http://nomisma.org/id/manufacture> ,
+                                                    <http://nomisma.org/id/material> ,
+                                                    <http://nomisma.org/id/medal> ,
+                                                    <http://nomisma.org/id/mint> ,
+                                                    <http://nomisma.org/id/object_type> ,
+                                                    <http://nomisma.org/id/reference_work> ,
+                                                    <http://nomisma.org/id/region> ,
+                                                    <http://nomisma.org/id/seal> ,
+                                                    <http://nomisma.org/id/type_series> ,
+                                                    <http://nomisma.org/id/type_series_item> ,
+                                                    <http://nomisma.org/id/weight_standard> ,
+                                                    :Coin ,
+                                                    :CoinWear ,
+                                                    :Collection ,
+                                                    :Denomination ,
+                                                    :Ethnic ,
+                                                    :FieldOfNumismatics ,
+                                                    :Manufacture ,
+                                                    :Material ,
+                                                    :Medal ,
+                                                    :Medallion ,
+                                                    :Mint ,
+                                                    :ObjectType ,
+                                                    :ReferenceWork ,
+                                                    :Region ,
+                                                    :Seal ,
+                                                    :Tessera ,
+                                                    :Token ,
+                                                    :TypeSeries ,
+                                                    :TypeSeriesItem ,
+                                                    :Wear ,
+                                                    :WeightStandard .
+
+
+###  http://nomisma.org/id/mint
+<http://nomisma.org/id/mint> rdf:type owl:NamedIndividual ,
+                                      owl:Thing ;
+                             owl:sameAs :Mint ;
+                             owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                   <http://nomisma.org/id/coin_wear> ,
+                                                   <http://nomisma.org/id/collection> ,
+                                                   <http://nomisma.org/id/denomination> ,
+                                                   <http://nomisma.org/id/ethnic> ,
+                                                   <http://nomisma.org/id/field_of_numismatics> ,
+                                                   <http://nomisma.org/id/manufacture> ,
+                                                   <http://nomisma.org/id/material> ,
+                                                   <http://nomisma.org/id/medal> ,
+                                                   <http://nomisma.org/id/mint> ,
+                                                   <http://nomisma.org/id/object_type> ,
+                                                   <http://nomisma.org/id/reference_work> ,
+                                                   <http://nomisma.org/id/region> ,
+                                                   <http://nomisma.org/id/seal> ,
+                                                   <http://nomisma.org/id/type_series> ,
+                                                   <http://nomisma.org/id/type_series_item> ,
+                                                   <http://nomisma.org/id/weight_standard> ,
+                                                   :Coin ,
+                                                   :CoinWear ,
+                                                   :Collection ,
+                                                   :Denomination ,
+                                                   :Ethnic ,
+                                                   :FieldOfNumismatics ,
+                                                   :Manufacture ,
+                                                   :Material ,
+                                                   :Medal ,
+                                                   :Medallion ,
+                                                   :Mint ,
+                                                   :ObjectType ,
+                                                   :ReferenceWork ,
+                                                   :Region ,
+                                                   :Seal ,
+                                                   :Tessera ,
+                                                   :Token ,
+                                                   :TypeSeries ,
+                                                   :TypeSeriesItem ,
+                                                   :Wear ,
+                                                   :WeightStandard .
+
+
+###  http://nomisma.org/id/object_type
+<http://nomisma.org/id/object_type> rdf:type owl:NamedIndividual ,
+                                             owl:Thing ;
+                                    owl:sameAs :ObjectType ;
+                                    owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                          <http://nomisma.org/id/coin_wear> ,
+                                                          <http://nomisma.org/id/collection> ,
+                                                          <http://nomisma.org/id/denomination> ,
+                                                          <http://nomisma.org/id/ethnic> ,
+                                                          <http://nomisma.org/id/field_of_numismatics> ,
+                                                          <http://nomisma.org/id/manufacture> ,
+                                                          <http://nomisma.org/id/material> ,
+                                                          <http://nomisma.org/id/medal> ,
+                                                          <http://nomisma.org/id/mint> ,
+                                                          <http://nomisma.org/id/object_type> ,
+                                                          <http://nomisma.org/id/reference_work> ,
+                                                          <http://nomisma.org/id/region> ,
+                                                          <http://nomisma.org/id/seal> ,
+                                                          <http://nomisma.org/id/type_series> ,
+                                                          <http://nomisma.org/id/type_series_item> ,
+                                                          <http://nomisma.org/id/weight_standard> ,
+                                                          :Coin ,
+                                                          :CoinWear ,
+                                                          :Collection ,
+                                                          :Denomination ,
+                                                          :Ethnic ,
+                                                          :FieldOfNumismatics ,
+                                                          :Manufacture ,
+                                                          :Material ,
+                                                          :Medal ,
+                                                          :Medallion ,
+                                                          :Mint ,
+                                                          :ObjectType ,
+                                                          :ReferenceWork ,
+                                                          :Region ,
+                                                          :Seal ,
+                                                          :Tessera ,
+                                                          :Token ,
+                                                          :TypeSeries ,
+                                                          :TypeSeriesItem ,
+                                                          :Wear ,
+                                                          :WeightStandard .
+
+
+###  http://nomisma.org/id/reference_work
+<http://nomisma.org/id/reference_work> rdf:type owl:NamedIndividual ,
+                                                owl:Thing ;
+                                       owl:sameAs :ReferenceWork ;
+                                       owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                             <http://nomisma.org/id/coin_wear> ,
+                                                             <http://nomisma.org/id/collection> ,
+                                                             <http://nomisma.org/id/denomination> ,
+                                                             <http://nomisma.org/id/ethnic> ,
+                                                             <http://nomisma.org/id/field_of_numismatics> ,
+                                                             <http://nomisma.org/id/manufacture> ,
+                                                             <http://nomisma.org/id/material> ,
+                                                             <http://nomisma.org/id/medal> ,
+                                                             <http://nomisma.org/id/mint> ,
+                                                             <http://nomisma.org/id/object_type> ,
+                                                             <http://nomisma.org/id/reference_work> ,
+                                                             <http://nomisma.org/id/region> ,
+                                                             <http://nomisma.org/id/seal> ,
+                                                             <http://nomisma.org/id/type_series> ,
+                                                             <http://nomisma.org/id/type_series_item> ,
+                                                             <http://nomisma.org/id/weight_standard> ,
+                                                             :Coin ,
+                                                             :CoinWear ,
+                                                             :Collection ,
+                                                             :Denomination ,
+                                                             :Ethnic ,
+                                                             :FieldOfNumismatics ,
+                                                             :Manufacture ,
+                                                             :Material ,
+                                                             :Medal ,
+                                                             :Medallion ,
+                                                             :Mint ,
+                                                             :ObjectType ,
+                                                             :ReferenceWork ,
+                                                             :Region ,
+                                                             :Seal ,
+                                                             :Tessera ,
+                                                             :Token ,
+                                                             :TypeSeries ,
+                                                             :TypeSeriesItem ,
+                                                             :Wear ,
+                                                             :WeightStandard .
+
+
+###  http://nomisma.org/id/region
+<http://nomisma.org/id/region> rdf:type owl:NamedIndividual ,
+                                        owl:Thing ;
+                               owl:sameAs :Region ;
+                               owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                     <http://nomisma.org/id/coin_wear> ,
+                                                     <http://nomisma.org/id/collection> ,
+                                                     <http://nomisma.org/id/denomination> ,
+                                                     <http://nomisma.org/id/ethnic> ,
+                                                     <http://nomisma.org/id/field_of_numismatics> ,
+                                                     <http://nomisma.org/id/manufacture> ,
+                                                     <http://nomisma.org/id/material> ,
+                                                     <http://nomisma.org/id/medal> ,
+                                                     <http://nomisma.org/id/mint> ,
+                                                     <http://nomisma.org/id/object_type> ,
+                                                     <http://nomisma.org/id/reference_work> ,
+                                                     <http://nomisma.org/id/region> ,
+                                                     <http://nomisma.org/id/seal> ,
+                                                     <http://nomisma.org/id/type_series> ,
+                                                     <http://nomisma.org/id/type_series_item> ,
+                                                     <http://nomisma.org/id/weight_standard> ,
+                                                     :Coin ,
+                                                     :CoinWear ,
+                                                     :Collection ,
+                                                     :Denomination ,
+                                                     :Ethnic ,
+                                                     :FieldOfNumismatics ,
+                                                     :Manufacture ,
+                                                     :Material ,
+                                                     :Medal ,
+                                                     :Medallion ,
+                                                     :Mint ,
+                                                     :ObjectType ,
+                                                     :ReferenceWork ,
+                                                     :Region ,
+                                                     :Seal ,
+                                                     :Tessera ,
+                                                     :Token ,
+                                                     :TypeSeries ,
+                                                     :TypeSeriesItem ,
+                                                     :Wear ,
+                                                     :WeightStandard .
+
+
+###  http://nomisma.org/id/seal
+<http://nomisma.org/id/seal> rdf:type owl:NamedIndividual ,
+                                      owl:Thing ;
+                             owl:sameAs :Seal ;
+                             owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                   <http://nomisma.org/id/coin_wear> ,
+                                                   <http://nomisma.org/id/collection> ,
+                                                   <http://nomisma.org/id/denomination> ,
+                                                   <http://nomisma.org/id/ethnic> ,
+                                                   <http://nomisma.org/id/field_of_numismatics> ,
+                                                   <http://nomisma.org/id/manufacture> ,
+                                                   <http://nomisma.org/id/material> ,
+                                                   <http://nomisma.org/id/medal> ,
+                                                   <http://nomisma.org/id/mint> ,
+                                                   <http://nomisma.org/id/object_type> ,
+                                                   <http://nomisma.org/id/reference_work> ,
+                                                   <http://nomisma.org/id/region> ,
+                                                   <http://nomisma.org/id/seal> ,
+                                                   <http://nomisma.org/id/type_series> ,
+                                                   <http://nomisma.org/id/type_series_item> ,
+                                                   <http://nomisma.org/id/weight_standard> ,
+                                                   :Coin ,
+                                                   :CoinWear ,
+                                                   :Collection ,
+                                                   :Denomination ,
+                                                   :Ethnic ,
+                                                   :FieldOfNumismatics ,
+                                                   :Manufacture ,
+                                                   :Material ,
+                                                   :Medal ,
+                                                   :Medallion ,
+                                                   :Mint ,
+                                                   :ObjectType ,
+                                                   :ReferenceWork ,
+                                                   :Region ,
+                                                   :Seal ,
+                                                   :Tessera ,
+                                                   :Token ,
+                                                   :TypeSeries ,
+                                                   :TypeSeriesItem ,
+                                                   :Wear ,
+                                                   :WeightStandard .
+
+
+###  http://nomisma.org/id/type_series
+<http://nomisma.org/id/type_series> rdf:type owl:NamedIndividual ,
+                                             owl:Thing ;
+                                    owl:sameAs :TypeSeries ;
+                                    owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                          <http://nomisma.org/id/coin_wear> ,
+                                                          <http://nomisma.org/id/collection> ,
+                                                          <http://nomisma.org/id/denomination> ,
+                                                          <http://nomisma.org/id/ethnic> ,
+                                                          <http://nomisma.org/id/field_of_numismatics> ,
+                                                          <http://nomisma.org/id/manufacture> ,
+                                                          <http://nomisma.org/id/material> ,
+                                                          <http://nomisma.org/id/medal> ,
+                                                          <http://nomisma.org/id/mint> ,
+                                                          <http://nomisma.org/id/object_type> ,
+                                                          <http://nomisma.org/id/reference_work> ,
+                                                          <http://nomisma.org/id/region> ,
+                                                          <http://nomisma.org/id/seal> ,
+                                                          <http://nomisma.org/id/type_series> ,
+                                                          <http://nomisma.org/id/type_series_item> ,
+                                                          <http://nomisma.org/id/weight_standard> ,
+                                                          :Coin ,
+                                                          :CoinWear ,
+                                                          :Collection ,
+                                                          :Denomination ,
+                                                          :Ethnic ,
+                                                          :FieldOfNumismatics ,
+                                                          :Manufacture ,
+                                                          :Material ,
+                                                          :Medal ,
+                                                          :Medallion ,
+                                                          :Mint ,
+                                                          :ObjectType ,
+                                                          :ReferenceWork ,
+                                                          :Region ,
+                                                          :Seal ,
+                                                          :Tessera ,
+                                                          :Token ,
+                                                          :TypeSeries ,
+                                                          :TypeSeriesItem ,
+                                                          :Wear ,
+                                                          :WeightStandard .
+
+
+###  http://nomisma.org/id/type_series_item
+<http://nomisma.org/id/type_series_item> rdf:type owl:NamedIndividual ,
+                                                  owl:Thing ;
+                                         owl:sameAs :TypeSeriesItem ;
+                                         owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                               <http://nomisma.org/id/coin_wear> ,
+                                                               <http://nomisma.org/id/collection> ,
+                                                               <http://nomisma.org/id/denomination> ,
+                                                               <http://nomisma.org/id/ethnic> ,
+                                                               <http://nomisma.org/id/field_of_numismatics> ,
+                                                               <http://nomisma.org/id/manufacture> ,
+                                                               <http://nomisma.org/id/material> ,
+                                                               <http://nomisma.org/id/medal> ,
+                                                               <http://nomisma.org/id/mint> ,
+                                                               <http://nomisma.org/id/object_type> ,
+                                                               <http://nomisma.org/id/reference_work> ,
+                                                               <http://nomisma.org/id/region> ,
+                                                               <http://nomisma.org/id/seal> ,
+                                                               <http://nomisma.org/id/type_series> ,
+                                                               <http://nomisma.org/id/type_series_item> ,
+                                                               <http://nomisma.org/id/weight_standard> ,
+                                                               :Coin ,
+                                                               :CoinWear ,
+                                                               :Collection ,
+                                                               :Denomination ,
+                                                               :Ethnic ,
+                                                               :FieldOfNumismatics ,
+                                                               :Manufacture ,
+                                                               :Material ,
+                                                               :Medal ,
+                                                               :Medallion ,
+                                                               :Mint ,
+                                                               :ObjectType ,
+                                                               :ReferenceWork ,
+                                                               :Region ,
+                                                               :Seal ,
+                                                               :Tessera ,
+                                                               :Token ,
+                                                               :TypeSeries ,
+                                                               :TypeSeriesItem ,
+                                                               :Wear ,
+                                                               :WeightStandard .
+
+
+###  http://nomisma.org/id/weight_standard
+<http://nomisma.org/id/weight_standard> rdf:type owl:NamedIndividual ,
+                                                 owl:Thing ;
+                                        owl:sameAs :WeightStandard ;
+                                        owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                                              <http://nomisma.org/id/coin_wear> ,
+                                                              <http://nomisma.org/id/collection> ,
+                                                              <http://nomisma.org/id/denomination> ,
+                                                              <http://nomisma.org/id/ethnic> ,
+                                                              <http://nomisma.org/id/field_of_numismatics> ,
+                                                              <http://nomisma.org/id/manufacture> ,
+                                                              <http://nomisma.org/id/material> ,
+                                                              <http://nomisma.org/id/medal> ,
+                                                              <http://nomisma.org/id/mint> ,
+                                                              <http://nomisma.org/id/object_type> ,
+                                                              <http://nomisma.org/id/reference_work> ,
+                                                              <http://nomisma.org/id/region> ,
+                                                              <http://nomisma.org/id/seal> ,
+                                                              <http://nomisma.org/id/type_series> ,
+                                                              <http://nomisma.org/id/type_series_item> ,
+                                                              <http://nomisma.org/id/weight_standard> ,
+                                                              :Coin ,
+                                                              :CoinWear ,
+                                                              :Collection ,
+                                                              :Denomination ,
+                                                              :Ethnic ,
+                                                              :FieldOfNumismatics ,
+                                                              :Manufacture ,
+                                                              :Material ,
+                                                              :Medal ,
+                                                              :Medallion ,
+                                                              :Mint ,
+                                                              :ObjectType ,
+                                                              :ReferenceWork ,
+                                                              :Region ,
+                                                              :Seal ,
+                                                              :Tessera ,
+                                                              :Token ,
+                                                              :TypeSeries ,
+                                                              :TypeSeriesItem ,
+                                                              :Wear ,
+                                                              :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Coin
+:Coin rdf:type owl:NamedIndividual ,
+               owl:Thing ;
+      owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                            <http://nomisma.org/id/coin_wear> ,
+                            <http://nomisma.org/id/collection> ,
+                            <http://nomisma.org/id/denomination> ,
+                            <http://nomisma.org/id/ethnic> ,
+                            <http://nomisma.org/id/field_of_numismatics> ,
+                            <http://nomisma.org/id/manufacture> ,
+                            <http://nomisma.org/id/material> ,
+                            <http://nomisma.org/id/medal> ,
+                            <http://nomisma.org/id/mint> ,
+                            <http://nomisma.org/id/object_type> ,
+                            <http://nomisma.org/id/reference_work> ,
+                            <http://nomisma.org/id/region> ,
+                            <http://nomisma.org/id/seal> ,
+                            <http://nomisma.org/id/type_series> ,
+                            <http://nomisma.org/id/type_series_item> ,
+                            <http://nomisma.org/id/weight_standard> ,
+                            :Coin ,
+                            :CoinWear ,
+                            :Collection ,
+                            :Denomination ,
+                            :Ethnic ,
+                            :FieldOfNumismatics ,
+                            :Manufacture ,
+                            :Material ,
+                            :Medal ,
+                            :Medallion ,
+                            :Mint ,
+                            :ObjectType ,
+                            :ReferenceWork ,
+                            :Region ,
+                            :Seal ,
+                            :Tessera ,
+                            :Token ,
+                            :TypeSeries ,
+                            :TypeSeriesItem ,
+                            :Wear ,
+                            :WeightStandard .
+
+
+###  http://nomisma.org/ontology#CoinWear
+:CoinWear rdf:type owl:NamedIndividual ,
+                   owl:Thing ;
+          owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                <http://nomisma.org/id/coin_wear> ,
+                                <http://nomisma.org/id/collection> ,
+                                <http://nomisma.org/id/denomination> ,
+                                <http://nomisma.org/id/ethnic> ,
+                                <http://nomisma.org/id/field_of_numismatics> ,
+                                <http://nomisma.org/id/manufacture> ,
+                                <http://nomisma.org/id/material> ,
+                                <http://nomisma.org/id/medal> ,
+                                <http://nomisma.org/id/mint> ,
+                                <http://nomisma.org/id/object_type> ,
+                                <http://nomisma.org/id/reference_work> ,
+                                <http://nomisma.org/id/region> ,
+                                <http://nomisma.org/id/seal> ,
+                                <http://nomisma.org/id/type_series> ,
+                                <http://nomisma.org/id/type_series_item> ,
+                                <http://nomisma.org/id/weight_standard> ,
+                                :Coin ,
+                                :CoinWear ,
+                                :Collection ,
+                                :Denomination ,
+                                :Ethnic ,
+                                :FieldOfNumismatics ,
+                                :Manufacture ,
+                                :Material ,
+                                :Medal ,
+                                :Medallion ,
+                                :Mint ,
+                                :ObjectType ,
+                                :ReferenceWork ,
+                                :Region ,
+                                :Seal ,
+                                :Tessera ,
+                                :Token ,
+                                :TypeSeries ,
+                                :TypeSeriesItem ,
+                                :Wear ,
+                                :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Collection
+:Collection rdf:type owl:NamedIndividual ,
+                     owl:Thing ;
+            owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                  <http://nomisma.org/id/coin_wear> ,
+                                  <http://nomisma.org/id/collection> ,
+                                  <http://nomisma.org/id/denomination> ,
+                                  <http://nomisma.org/id/ethnic> ,
+                                  <http://nomisma.org/id/field_of_numismatics> ,
+                                  <http://nomisma.org/id/manufacture> ,
+                                  <http://nomisma.org/id/material> ,
+                                  <http://nomisma.org/id/medal> ,
+                                  <http://nomisma.org/id/mint> ,
+                                  <http://nomisma.org/id/object_type> ,
+                                  <http://nomisma.org/id/reference_work> ,
+                                  <http://nomisma.org/id/region> ,
+                                  <http://nomisma.org/id/seal> ,
+                                  <http://nomisma.org/id/type_series> ,
+                                  <http://nomisma.org/id/type_series_item> ,
+                                  <http://nomisma.org/id/weight_standard> ,
+                                  :Coin ,
+                                  :CoinWear ,
+                                  :Collection ,
+                                  :Denomination ,
+                                  :Ethnic ,
+                                  :FieldOfNumismatics ,
+                                  :Manufacture ,
+                                  :Material ,
+                                  :Medal ,
+                                  :Medallion ,
+                                  :Mint ,
+                                  :ObjectType ,
+                                  :ReferenceWork ,
+                                  :Region ,
+                                  :Seal ,
+                                  :Tessera ,
+                                  :Token ,
+                                  :TypeSeries ,
+                                  :TypeSeriesItem ,
+                                  :Wear ,
+                                  :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Denomination
+:Denomination rdf:type owl:NamedIndividual ,
+                       owl:Thing ;
+              owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                    <http://nomisma.org/id/coin_wear> ,
+                                    <http://nomisma.org/id/collection> ,
+                                    <http://nomisma.org/id/denomination> ,
+                                    <http://nomisma.org/id/ethnic> ,
+                                    <http://nomisma.org/id/field_of_numismatics> ,
+                                    <http://nomisma.org/id/manufacture> ,
+                                    <http://nomisma.org/id/material> ,
+                                    <http://nomisma.org/id/medal> ,
+                                    <http://nomisma.org/id/mint> ,
+                                    <http://nomisma.org/id/object_type> ,
+                                    <http://nomisma.org/id/reference_work> ,
+                                    <http://nomisma.org/id/region> ,
+                                    <http://nomisma.org/id/seal> ,
+                                    <http://nomisma.org/id/type_series> ,
+                                    <http://nomisma.org/id/type_series_item> ,
+                                    <http://nomisma.org/id/weight_standard> ,
+                                    :Coin ,
+                                    :CoinWear ,
+                                    :Collection ,
+                                    :Denomination ,
+                                    :Ethnic ,
+                                    :FieldOfNumismatics ,
+                                    :Manufacture ,
+                                    :Material ,
+                                    :Medal ,
+                                    :Medallion ,
+                                    :Mint ,
+                                    :ObjectType ,
+                                    :ReferenceWork ,
+                                    :Region ,
+                                    :Seal ,
+                                    :Tessera ,
+                                    :Token ,
+                                    :TypeSeries ,
+                                    :TypeSeriesItem ,
+                                    :Wear ,
+                                    :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Ethnic
+:Ethnic rdf:type owl:NamedIndividual ,
+                 owl:Thing ;
+        owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                              <http://nomisma.org/id/coin_wear> ,
+                              <http://nomisma.org/id/collection> ,
+                              <http://nomisma.org/id/denomination> ,
+                              <http://nomisma.org/id/ethnic> ,
+                              <http://nomisma.org/id/field_of_numismatics> ,
+                              <http://nomisma.org/id/manufacture> ,
+                              <http://nomisma.org/id/material> ,
+                              <http://nomisma.org/id/medal> ,
+                              <http://nomisma.org/id/mint> ,
+                              <http://nomisma.org/id/object_type> ,
+                              <http://nomisma.org/id/reference_work> ,
+                              <http://nomisma.org/id/region> ,
+                              <http://nomisma.org/id/seal> ,
+                              <http://nomisma.org/id/type_series> ,
+                              <http://nomisma.org/id/type_series_item> ,
+                              <http://nomisma.org/id/weight_standard> ,
+                              :Coin ,
+                              :CoinWear ,
+                              :Collection ,
+                              :Denomination ,
+                              :Ethnic ,
+                              :FieldOfNumismatics ,
+                              :Manufacture ,
+                              :Material ,
+                              :Medal ,
+                              :Medallion ,
+                              :Mint ,
+                              :ObjectType ,
+                              :ReferenceWork ,
+                              :Region ,
+                              :Seal ,
+                              :Tessera ,
+                              :Token ,
+                              :TypeSeries ,
+                              :TypeSeriesItem ,
+                              :Wear ,
+                              :WeightStandard .
+
+
+###  http://nomisma.org/ontology#FieldOfNumismatics
+:FieldOfNumismatics rdf:type owl:NamedIndividual ,
+                             owl:Thing ;
+                    owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                          <http://nomisma.org/id/coin_wear> ,
+                                          <http://nomisma.org/id/collection> ,
+                                          <http://nomisma.org/id/denomination> ,
+                                          <http://nomisma.org/id/ethnic> ,
+                                          <http://nomisma.org/id/field_of_numismatics> ,
+                                          <http://nomisma.org/id/manufacture> ,
+                                          <http://nomisma.org/id/material> ,
+                                          <http://nomisma.org/id/medal> ,
+                                          <http://nomisma.org/id/mint> ,
+                                          <http://nomisma.org/id/object_type> ,
+                                          <http://nomisma.org/id/reference_work> ,
+                                          <http://nomisma.org/id/region> ,
+                                          <http://nomisma.org/id/seal> ,
+                                          <http://nomisma.org/id/type_series> ,
+                                          <http://nomisma.org/id/type_series_item> ,
+                                          <http://nomisma.org/id/weight_standard> ,
+                                          :Coin ,
+                                          :CoinWear ,
+                                          :Collection ,
+                                          :Denomination ,
+                                          :Ethnic ,
+                                          :FieldOfNumismatics ,
+                                          :Manufacture ,
+                                          :Material ,
+                                          :Medal ,
+                                          :Medallion ,
+                                          :Mint ,
+                                          :ObjectType ,
+                                          :ReferenceWork ,
+                                          :Region ,
+                                          :Seal ,
+                                          :Tessera ,
+                                          :Token ,
+                                          :TypeSeries ,
+                                          :TypeSeriesItem ,
+                                          :Wear ,
+                                          :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Manufacture
+:Manufacture rdf:type owl:NamedIndividual ,
+                      owl:Thing ;
+             owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                   <http://nomisma.org/id/coin_wear> ,
+                                   <http://nomisma.org/id/collection> ,
+                                   <http://nomisma.org/id/denomination> ,
+                                   <http://nomisma.org/id/ethnic> ,
+                                   <http://nomisma.org/id/field_of_numismatics> ,
+                                   <http://nomisma.org/id/manufacture> ,
+                                   <http://nomisma.org/id/material> ,
+                                   <http://nomisma.org/id/medal> ,
+                                   <http://nomisma.org/id/mint> ,
+                                   <http://nomisma.org/id/object_type> ,
+                                   <http://nomisma.org/id/reference_work> ,
+                                   <http://nomisma.org/id/region> ,
+                                   <http://nomisma.org/id/seal> ,
+                                   <http://nomisma.org/id/type_series> ,
+                                   <http://nomisma.org/id/type_series_item> ,
+                                   <http://nomisma.org/id/weight_standard> ,
+                                   :Coin ,
+                                   :CoinWear ,
+                                   :Collection ,
+                                   :Denomination ,
+                                   :Ethnic ,
+                                   :FieldOfNumismatics ,
+                                   :Manufacture ,
+                                   :Material ,
+                                   :Medal ,
+                                   :Medallion ,
+                                   :Mint ,
+                                   :ObjectType ,
+                                   :ReferenceWork ,
+                                   :Region ,
+                                   :Seal ,
+                                   :Tessera ,
+                                   :Token ,
+                                   :TypeSeries ,
+                                   :TypeSeriesItem ,
+                                   :Wear ,
+                                   :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Material
+:Material rdf:type owl:NamedIndividual ,
+                   owl:Thing ;
+          owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                <http://nomisma.org/id/coin_wear> ,
+                                <http://nomisma.org/id/collection> ,
+                                <http://nomisma.org/id/denomination> ,
+                                <http://nomisma.org/id/ethnic> ,
+                                <http://nomisma.org/id/field_of_numismatics> ,
+                                <http://nomisma.org/id/manufacture> ,
+                                <http://nomisma.org/id/material> ,
+                                <http://nomisma.org/id/medal> ,
+                                <http://nomisma.org/id/mint> ,
+                                <http://nomisma.org/id/object_type> ,
+                                <http://nomisma.org/id/reference_work> ,
+                                <http://nomisma.org/id/region> ,
+                                <http://nomisma.org/id/seal> ,
+                                <http://nomisma.org/id/type_series> ,
+                                <http://nomisma.org/id/type_series_item> ,
+                                <http://nomisma.org/id/weight_standard> ,
+                                :Coin ,
+                                :CoinWear ,
+                                :Collection ,
+                                :Denomination ,
+                                :Ethnic ,
+                                :FieldOfNumismatics ,
+                                :Manufacture ,
+                                :Material ,
+                                :Medal ,
+                                :Medallion ,
+                                :Mint ,
+                                :ObjectType ,
+                                :ReferenceWork ,
+                                :Region ,
+                                :Seal ,
+                                :Tessera ,
+                                :Token ,
+                                :TypeSeries ,
+                                :TypeSeriesItem ,
+                                :Wear ,
+                                :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Medal
+:Medal rdf:type owl:NamedIndividual ,
+                owl:Thing ;
+       owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                             <http://nomisma.org/id/coin_wear> ,
+                             <http://nomisma.org/id/collection> ,
+                             <http://nomisma.org/id/denomination> ,
+                             <http://nomisma.org/id/ethnic> ,
+                             <http://nomisma.org/id/field_of_numismatics> ,
+                             <http://nomisma.org/id/manufacture> ,
+                             <http://nomisma.org/id/material> ,
+                             <http://nomisma.org/id/medal> ,
+                             <http://nomisma.org/id/mint> ,
+                             <http://nomisma.org/id/object_type> ,
+                             <http://nomisma.org/id/reference_work> ,
+                             <http://nomisma.org/id/region> ,
+                             <http://nomisma.org/id/seal> ,
+                             <http://nomisma.org/id/type_series> ,
+                             <http://nomisma.org/id/type_series_item> ,
+                             <http://nomisma.org/id/weight_standard> ,
+                             :Coin ,
+                             :CoinWear ,
+                             :Collection ,
+                             :Denomination ,
+                             :Ethnic ,
+                             :FieldOfNumismatics ,
+                             :Manufacture ,
+                             :Material ,
+                             :Medal ,
+                             :Medallion ,
+                             :Mint ,
+                             :ObjectType ,
+                             :ReferenceWork ,
+                             :Region ,
+                             :Seal ,
+                             :Tessera ,
+                             :Token ,
+                             :TypeSeries ,
+                             :TypeSeriesItem ,
+                             :Wear ,
+                             :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Medallion
+:Medallion rdf:type owl:NamedIndividual ,
+                    owl:Thing ;
+           owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                 <http://nomisma.org/id/coin_wear> ,
+                                 <http://nomisma.org/id/collection> ,
+                                 <http://nomisma.org/id/denomination> ,
+                                 <http://nomisma.org/id/ethnic> ,
+                                 <http://nomisma.org/id/field_of_numismatics> ,
+                                 <http://nomisma.org/id/manufacture> ,
+                                 <http://nomisma.org/id/material> ,
+                                 <http://nomisma.org/id/medal> ,
+                                 <http://nomisma.org/id/mint> ,
+                                 <http://nomisma.org/id/object_type> ,
+                                 <http://nomisma.org/id/reference_work> ,
+                                 <http://nomisma.org/id/region> ,
+                                 <http://nomisma.org/id/seal> ,
+                                 <http://nomisma.org/id/type_series> ,
+                                 <http://nomisma.org/id/type_series_item> ,
+                                 <http://nomisma.org/id/weight_standard> ,
+                                 :Coin ,
+                                 :CoinWear ,
+                                 :Collection ,
+                                 :Denomination ,
+                                 :Ethnic ,
+                                 :FieldOfNumismatics ,
+                                 :Manufacture ,
+                                 :Material ,
+                                 :Medal ,
+                                 :Medallion ,
+                                 :Mint ,
+                                 :ObjectType ,
+                                 :ReferenceWork ,
+                                 :Region ,
+                                 :Seal ,
+                                 :Tessera ,
+                                 :Token ,
+                                 :TypeSeries ,
+                                 :TypeSeriesItem ,
+                                 :Wear ,
+                                 :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Mint
+:Mint rdf:type owl:NamedIndividual ,
+               owl:Thing ;
+      owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                            <http://nomisma.org/id/coin_wear> ,
+                            <http://nomisma.org/id/collection> ,
+                            <http://nomisma.org/id/denomination> ,
+                            <http://nomisma.org/id/ethnic> ,
+                            <http://nomisma.org/id/field_of_numismatics> ,
+                            <http://nomisma.org/id/manufacture> ,
+                            <http://nomisma.org/id/material> ,
+                            <http://nomisma.org/id/medal> ,
+                            <http://nomisma.org/id/mint> ,
+                            <http://nomisma.org/id/object_type> ,
+                            <http://nomisma.org/id/reference_work> ,
+                            <http://nomisma.org/id/region> ,
+                            <http://nomisma.org/id/seal> ,
+                            <http://nomisma.org/id/type_series> ,
+                            <http://nomisma.org/id/type_series_item> ,
+                            <http://nomisma.org/id/weight_standard> ,
+                            :Coin ,
+                            :CoinWear ,
+                            :Collection ,
+                            :Denomination ,
+                            :Ethnic ,
+                            :FieldOfNumismatics ,
+                            :Manufacture ,
+                            :Material ,
+                            :Medal ,
+                            :Medallion ,
+                            :Mint ,
+                            :ObjectType ,
+                            :ReferenceWork ,
+                            :Region ,
+                            :Seal ,
+                            :Tessera ,
+                            :Token ,
+                            :TypeSeries ,
+                            :TypeSeriesItem ,
+                            :Wear ,
+                            :WeightStandard .
+
+
+###  http://nomisma.org/ontology#ObjectType
+:ObjectType rdf:type owl:NamedIndividual ,
+                     owl:Thing ;
+            owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                  <http://nomisma.org/id/coin_wear> ,
+                                  <http://nomisma.org/id/collection> ,
+                                  <http://nomisma.org/id/denomination> ,
+                                  <http://nomisma.org/id/ethnic> ,
+                                  <http://nomisma.org/id/field_of_numismatics> ,
+                                  <http://nomisma.org/id/manufacture> ,
+                                  <http://nomisma.org/id/material> ,
+                                  <http://nomisma.org/id/medal> ,
+                                  <http://nomisma.org/id/mint> ,
+                                  <http://nomisma.org/id/object_type> ,
+                                  <http://nomisma.org/id/reference_work> ,
+                                  <http://nomisma.org/id/region> ,
+                                  <http://nomisma.org/id/seal> ,
+                                  <http://nomisma.org/id/type_series> ,
+                                  <http://nomisma.org/id/type_series_item> ,
+                                  <http://nomisma.org/id/weight_standard> ,
+                                  :Coin ,
+                                  :CoinWear ,
+                                  :Collection ,
+                                  :Denomination ,
+                                  :Ethnic ,
+                                  :FieldOfNumismatics ,
+                                  :Manufacture ,
+                                  :Material ,
+                                  :Medal ,
+                                  :Medallion ,
+                                  :Mint ,
+                                  :ObjectType ,
+                                  :ReferenceWork ,
+                                  :Region ,
+                                  :Seal ,
+                                  :Tessera ,
+                                  :Token ,
+                                  :TypeSeries ,
+                                  :TypeSeriesItem ,
+                                  :Wear ,
+                                  :WeightStandard .
+
+
+###  http://nomisma.org/ontology#ReferenceWork
+:ReferenceWork rdf:type owl:NamedIndividual ,
+                        owl:Thing ;
+               owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                     <http://nomisma.org/id/coin_wear> ,
+                                     <http://nomisma.org/id/collection> ,
+                                     <http://nomisma.org/id/denomination> ,
+                                     <http://nomisma.org/id/ethnic> ,
+                                     <http://nomisma.org/id/field_of_numismatics> ,
+                                     <http://nomisma.org/id/manufacture> ,
+                                     <http://nomisma.org/id/material> ,
+                                     <http://nomisma.org/id/medal> ,
+                                     <http://nomisma.org/id/mint> ,
+                                     <http://nomisma.org/id/object_type> ,
+                                     <http://nomisma.org/id/reference_work> ,
+                                     <http://nomisma.org/id/region> ,
+                                     <http://nomisma.org/id/seal> ,
+                                     <http://nomisma.org/id/type_series> ,
+                                     <http://nomisma.org/id/type_series_item> ,
+                                     <http://nomisma.org/id/weight_standard> ,
+                                     :Coin ,
+                                     :CoinWear ,
+                                     :Collection ,
+                                     :Denomination ,
+                                     :Ethnic ,
+                                     :FieldOfNumismatics ,
+                                     :Manufacture ,
+                                     :Material ,
+                                     :Medal ,
+                                     :Medallion ,
+                                     :Mint ,
+                                     :ObjectType ,
+                                     :ReferenceWork ,
+                                     :Region ,
+                                     :Seal ,
+                                     :Tessera ,
+                                     :Token ,
+                                     :TypeSeries ,
+                                     :TypeSeriesItem ,
+                                     :Wear ,
+                                     :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Region
+:Region rdf:type owl:NamedIndividual ,
+                 owl:Thing ;
+        owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                              <http://nomisma.org/id/coin_wear> ,
+                              <http://nomisma.org/id/collection> ,
+                              <http://nomisma.org/id/denomination> ,
+                              <http://nomisma.org/id/ethnic> ,
+                              <http://nomisma.org/id/field_of_numismatics> ,
+                              <http://nomisma.org/id/manufacture> ,
+                              <http://nomisma.org/id/material> ,
+                              <http://nomisma.org/id/medal> ,
+                              <http://nomisma.org/id/mint> ,
+                              <http://nomisma.org/id/object_type> ,
+                              <http://nomisma.org/id/reference_work> ,
+                              <http://nomisma.org/id/region> ,
+                              <http://nomisma.org/id/seal> ,
+                              <http://nomisma.org/id/type_series> ,
+                              <http://nomisma.org/id/type_series_item> ,
+                              <http://nomisma.org/id/weight_standard> ,
+                              :Coin ,
+                              :CoinWear ,
+                              :Collection ,
+                              :Denomination ,
+                              :Ethnic ,
+                              :FieldOfNumismatics ,
+                              :Manufacture ,
+                              :Material ,
+                              :Medal ,
+                              :Medallion ,
+                              :Mint ,
+                              :ObjectType ,
+                              :ReferenceWork ,
+                              :Region ,
+                              :Seal ,
+                              :Tessera ,
+                              :Token ,
+                              :TypeSeries ,
+                              :TypeSeriesItem ,
+                              :Wear ,
+                              :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Seal
+:Seal rdf:type owl:NamedIndividual ,
+               owl:Thing ;
+      owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                            <http://nomisma.org/id/coin_wear> ,
+                            <http://nomisma.org/id/collection> ,
+                            <http://nomisma.org/id/denomination> ,
+                            <http://nomisma.org/id/ethnic> ,
+                            <http://nomisma.org/id/field_of_numismatics> ,
+                            <http://nomisma.org/id/manufacture> ,
+                            <http://nomisma.org/id/material> ,
+                            <http://nomisma.org/id/medal> ,
+                            <http://nomisma.org/id/mint> ,
+                            <http://nomisma.org/id/object_type> ,
+                            <http://nomisma.org/id/reference_work> ,
+                            <http://nomisma.org/id/region> ,
+                            <http://nomisma.org/id/seal> ,
+                            <http://nomisma.org/id/type_series> ,
+                            <http://nomisma.org/id/type_series_item> ,
+                            <http://nomisma.org/id/weight_standard> ,
+                            :Coin ,
+                            :CoinWear ,
+                            :Collection ,
+                            :Denomination ,
+                            :Ethnic ,
+                            :FieldOfNumismatics ,
+                            :Manufacture ,
+                            :Material ,
+                            :Medal ,
+                            :Medallion ,
+                            :Mint ,
+                            :ObjectType ,
+                            :ReferenceWork ,
+                            :Region ,
+                            :Seal ,
+                            :Tessera ,
+                            :Token ,
+                            :TypeSeries ,
+                            :TypeSeriesItem ,
+                            :Wear ,
+                            :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Tessera
+:Tessera rdf:type owl:NamedIndividual ,
+                  owl:Thing ;
+         owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                               <http://nomisma.org/id/coin_wear> ,
+                               <http://nomisma.org/id/collection> ,
+                               <http://nomisma.org/id/denomination> ,
+                               <http://nomisma.org/id/ethnic> ,
+                               <http://nomisma.org/id/field_of_numismatics> ,
+                               <http://nomisma.org/id/manufacture> ,
+                               <http://nomisma.org/id/material> ,
+                               <http://nomisma.org/id/medal> ,
+                               <http://nomisma.org/id/mint> ,
+                               <http://nomisma.org/id/object_type> ,
+                               <http://nomisma.org/id/reference_work> ,
+                               <http://nomisma.org/id/region> ,
+                               <http://nomisma.org/id/seal> ,
+                               <http://nomisma.org/id/type_series> ,
+                               <http://nomisma.org/id/type_series_item> ,
+                               <http://nomisma.org/id/weight_standard> ,
+                               :Coin ,
+                               :CoinWear ,
+                               :Collection ,
+                               :Denomination ,
+                               :Ethnic ,
+                               :FieldOfNumismatics ,
+                               :Manufacture ,
+                               :Material ,
+                               :Medal ,
+                               :Medallion ,
+                               :Mint ,
+                               :ObjectType ,
+                               :ReferenceWork ,
+                               :Region ,
+                               :Seal ,
+                               :Tessera ,
+                               :Token ,
+                               :TypeSeries ,
+                               :TypeSeriesItem ,
+                               :Wear ,
+                               :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Token
+:Token rdf:type owl:NamedIndividual ,
+                owl:Thing ;
+       owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                             <http://nomisma.org/id/coin_wear> ,
+                             <http://nomisma.org/id/collection> ,
+                             <http://nomisma.org/id/denomination> ,
+                             <http://nomisma.org/id/ethnic> ,
+                             <http://nomisma.org/id/field_of_numismatics> ,
+                             <http://nomisma.org/id/manufacture> ,
+                             <http://nomisma.org/id/material> ,
+                             <http://nomisma.org/id/medal> ,
+                             <http://nomisma.org/id/mint> ,
+                             <http://nomisma.org/id/object_type> ,
+                             <http://nomisma.org/id/reference_work> ,
+                             <http://nomisma.org/id/region> ,
+                             <http://nomisma.org/id/seal> ,
+                             <http://nomisma.org/id/type_series> ,
+                             <http://nomisma.org/id/type_series_item> ,
+                             <http://nomisma.org/id/weight_standard> ,
+                             :Coin ,
+                             :CoinWear ,
+                             :Collection ,
+                             :Denomination ,
+                             :Ethnic ,
+                             :FieldOfNumismatics ,
+                             :Manufacture ,
+                             :Material ,
+                             :Medal ,
+                             :Medallion ,
+                             :Mint ,
+                             :ObjectType ,
+                             :ReferenceWork ,
+                             :Region ,
+                             :Seal ,
+                             :Tessera ,
+                             :Token ,
+                             :TypeSeries ,
+                             :TypeSeriesItem ,
+                             :Wear ,
+                             :WeightStandard .
+
+
+###  http://nomisma.org/ontology#TypeSeries
+:TypeSeries rdf:type owl:NamedIndividual ,
+                     owl:Thing ;
+            owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                  <http://nomisma.org/id/coin_wear> ,
+                                  <http://nomisma.org/id/collection> ,
+                                  <http://nomisma.org/id/denomination> ,
+                                  <http://nomisma.org/id/ethnic> ,
+                                  <http://nomisma.org/id/field_of_numismatics> ,
+                                  <http://nomisma.org/id/manufacture> ,
+                                  <http://nomisma.org/id/material> ,
+                                  <http://nomisma.org/id/medal> ,
+                                  <http://nomisma.org/id/mint> ,
+                                  <http://nomisma.org/id/object_type> ,
+                                  <http://nomisma.org/id/reference_work> ,
+                                  <http://nomisma.org/id/region> ,
+                                  <http://nomisma.org/id/seal> ,
+                                  <http://nomisma.org/id/type_series> ,
+                                  <http://nomisma.org/id/type_series_item> ,
+                                  <http://nomisma.org/id/weight_standard> ,
+                                  :Coin ,
+                                  :CoinWear ,
+                                  :Collection ,
+                                  :Denomination ,
+                                  :Ethnic ,
+                                  :FieldOfNumismatics ,
+                                  :Manufacture ,
+                                  :Material ,
+                                  :Medal ,
+                                  :Medallion ,
+                                  :Mint ,
+                                  :ObjectType ,
+                                  :ReferenceWork ,
+                                  :Region ,
+                                  :Seal ,
+                                  :Tessera ,
+                                  :Token ,
+                                  :TypeSeries ,
+                                  :TypeSeriesItem ,
+                                  :Wear ,
+                                  :WeightStandard .
+
+
+###  http://nomisma.org/ontology#TypeSeriesItem
+:TypeSeriesItem rdf:type owl:NamedIndividual ,
+                         owl:Thing ;
+                owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                      <http://nomisma.org/id/coin_wear> ,
+                                      <http://nomisma.org/id/collection> ,
+                                      <http://nomisma.org/id/denomination> ,
+                                      <http://nomisma.org/id/ethnic> ,
+                                      <http://nomisma.org/id/field_of_numismatics> ,
+                                      <http://nomisma.org/id/manufacture> ,
+                                      <http://nomisma.org/id/material> ,
+                                      <http://nomisma.org/id/medal> ,
+                                      <http://nomisma.org/id/mint> ,
+                                      <http://nomisma.org/id/object_type> ,
+                                      <http://nomisma.org/id/reference_work> ,
+                                      <http://nomisma.org/id/region> ,
+                                      <http://nomisma.org/id/seal> ,
+                                      <http://nomisma.org/id/type_series> ,
+                                      <http://nomisma.org/id/type_series_item> ,
+                                      <http://nomisma.org/id/weight_standard> ,
+                                      :Coin ,
+                                      :CoinWear ,
+                                      :Collection ,
+                                      :Denomination ,
+                                      :Ethnic ,
+                                      :FieldOfNumismatics ,
+                                      :Manufacture ,
+                                      :Material ,
+                                      :Medal ,
+                                      :Medallion ,
+                                      :Mint ,
+                                      :ObjectType ,
+                                      :ReferenceWork ,
+                                      :Region ,
+                                      :Seal ,
+                                      :Tessera ,
+                                      :Token ,
+                                      :TypeSeries ,
+                                      :TypeSeriesItem ,
+                                      :Wear ,
+                                      :WeightStandard .
+
+
+###  http://nomisma.org/ontology#Wear
+:Wear rdf:type owl:NamedIndividual ,
+               owl:Thing ;
+      owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                            <http://nomisma.org/id/coin_wear> ,
+                            <http://nomisma.org/id/collection> ,
+                            <http://nomisma.org/id/denomination> ,
+                            <http://nomisma.org/id/ethnic> ,
+                            <http://nomisma.org/id/field_of_numismatics> ,
+                            <http://nomisma.org/id/manufacture> ,
+                            <http://nomisma.org/id/material> ,
+                            <http://nomisma.org/id/medal> ,
+                            <http://nomisma.org/id/mint> ,
+                            <http://nomisma.org/id/object_type> ,
+                            <http://nomisma.org/id/reference_work> ,
+                            <http://nomisma.org/id/region> ,
+                            <http://nomisma.org/id/seal> ,
+                            <http://nomisma.org/id/type_series> ,
+                            <http://nomisma.org/id/type_series_item> ,
+                            <http://nomisma.org/id/weight_standard> ,
+                            :Coin ,
+                            :CoinWear ,
+                            :Collection ,
+                            :Denomination ,
+                            :Ethnic ,
+                            :FieldOfNumismatics ,
+                            :Manufacture ,
+                            :Material ,
+                            :Medal ,
+                            :Medallion ,
+                            :Mint ,
+                            :ObjectType ,
+                            :ReferenceWork ,
+                            :Region ,
+                            :Seal ,
+                            :Tessera ,
+                            :Token ,
+                            :TypeSeries ,
+                            :TypeSeriesItem ,
+                            :Wear ,
+                            :WeightStandard .
+
+
+###  http://nomisma.org/ontology#WeightStandard
+:WeightStandard rdf:type owl:NamedIndividual ,
+                         owl:Thing ;
+                owl:topObjectProperty <http://nomisma.org/id/coin> ,
+                                      <http://nomisma.org/id/coin_wear> ,
+                                      <http://nomisma.org/id/collection> ,
+                                      <http://nomisma.org/id/denomination> ,
+                                      <http://nomisma.org/id/ethnic> ,
+                                      <http://nomisma.org/id/field_of_numismatics> ,
+                                      <http://nomisma.org/id/manufacture> ,
+                                      <http://nomisma.org/id/material> ,
+                                      <http://nomisma.org/id/medal> ,
+                                      <http://nomisma.org/id/mint> ,
+                                      <http://nomisma.org/id/object_type> ,
+                                      <http://nomisma.org/id/reference_work> ,
+                                      <http://nomisma.org/id/region> ,
+                                      <http://nomisma.org/id/seal> ,
+                                      <http://nomisma.org/id/type_series> ,
+                                      <http://nomisma.org/id/type_series_item> ,
+                                      <http://nomisma.org/id/weight_standard> ,
+                                      :Coin ,
+                                      :CoinWear ,
+                                      :Collection ,
+                                      :Denomination ,
+                                      :Ethnic ,
+                                      :FieldOfNumismatics ,
+                                      :Manufacture ,
+                                      :Material ,
+                                      :Medal ,
+                                      :Medallion ,
+                                      :Mint ,
+                                      :ObjectType ,
+                                      :ReferenceWork ,
+                                      :Region ,
+                                      :Seal ,
+                                      :Tessera ,
+                                      :Token ,
+                                      :TypeSeries ,
+                                      :TypeSeriesItem ,
+                                      :Wear ,
+                                      :WeightStandard .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:CoinWear rdfs:comment "Wear on a coin or similar objects occurring as a result of its use."@en ;
+          rdfs:label "CoinWear" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Wear on a coin or similar objects occurring as a result of its use." .
+
+
+:Collection rdfs:comment "General term meaning the objects held by an institution or individual. Or the holding entity itself."@en ;
+            rdfs:label "Collection" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "General term meaning the objects held by an institution or individual. Or the holding entity itself." .
+
+
+:Denomination rdfs:comment "Term indicating the value of a numismatic object. Examples: tetradrachm, chalkous, denarius."@en ;
+              rdfs:label "Denomination" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Term indicating the value of a numismatic object. Examples: tetradrachm, chalkous, denarius." .
+
+
+:Ethnic rdfs:comment "Generally, a tribal or ethnic name appearing on a numismatic object. Distinct from personal authority as indicated by the presence of ruler's name."@en ;
+        rdfs:label "Ethnic" ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Generally, a tribal or ethnic name appearing on a numismatic object. Distinct from personal authority as indicated by the presence of ruler's name." .
+
+
+:FieldOfNumismatics rdfs:comment "Any widely recognized area of study within the discipline of numismatics."@en ;
+                    rdfs:label "FieldOfNumismatics" ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Any widely recognized area of study within the discipline of numismatics." .
+
+
+:Manufacture rdfs:comment "The technique of manufacture. For example, struck or cast."@en ;
+             rdfs:label "Manufacture" ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The technique of manufacture. For example, struck or cast." .
+
+
+:Material rdfs:comment "The physical material from which an object is made."@en ;
+          rdfs:label "Material" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "The physical material from which an object is made." .
+
+
+:Mint rdfs:comment "Generic term for a place of manufacture of a numismatic object or for the issuing city."@en ;
+      rdfs:label "Mint" ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Generic term for a place of manufacture of a numismatic object or for the issuing city." .
+
+
+:ObjectType rdfs:comment "The numismatic type of an object. Ex. 'coin'."@en ;
+            rdfs:label "ObjectType" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "The numismatic type of an object. Ex. 'coin'." .
+
+
+:ReferenceWork rdfs:comment "A published work of reference relevant to a numismatic object."@en ;
+               rdfs:label "ReferenceWork" ;
+               <http://www.w3.org/2004/02/skos/core#definition> "A published work of reference relevant to a numismatic object." .
+
+
+:Region rdfs:comment "An area of geographic significance and/or taxonomic importance, perhaps part of a larger geographic/administrative unit, having definable characteristics but not always fixed boundaries."@en ;
+        rdfs:label "Region" ;
+        <http://www.w3.org/2004/02/skos/core#definition> "An area of geographic significance and/or taxonomic importance, perhaps part of a larger geographic/administrative unit, having definable characteristics but not always fixed boundaries." .
+
+
+:TypeSeries rdfs:comment "A published or recognized reference list of numismatic object types, such as a catalogue or corpus."@en ;
+            rdfs:label "TypeSeries" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A published or recognized reference list of numismatic object types, such as a catalogue or corpus." .
+
+
+:TypeSeriesItem rdfs:comment "An item within a reference list of numismatic object types."@en ;
+                rdfs:label "TypeSeriesItem" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "An item within a reference list of numismatic object types." .
+
+
+:Wear rdfs:comment "Wear on a numismatic object occurring as a result of its use."@en ;
+      rdfs:label "Wear" ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Wear on a numismatic object occurring as a result of its use." .
+
+
+:WeightStandard rdfs:comment "The conventional weight system according to which a numismatic object was produced."@en ;
+                rdfs:label "WeightStandard" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "The conventional weight system according to which a numismatic object was produced." .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

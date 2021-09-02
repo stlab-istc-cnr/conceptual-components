@@ -1,0 +1,59 @@
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#corresponds>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the instance of Rhyme whose rhyming word is described by the current instance of RhymeMatch"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#RhymeMatch> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "corresponds"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Rhyme> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#matches> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Rhyme>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Repetition of similar sounding words occurring at the end of lines in poems or songs"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Rhyme"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez"@en .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#RhymeMatch>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Entity to define the correspondences between rhyming words"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RhymeMatch"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#matches>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the instance of RhymeMatch that contains the echo of the current rhyme word under analysis"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Rhyme> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "matches"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#RhymeMatch> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T20:30:43+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

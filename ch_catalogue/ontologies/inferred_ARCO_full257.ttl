@@ -1,0 +1,71 @@
+<https://w3id.org/arco/ontology/denotative-description/WritingSystem>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il sistema di scrittura/alfabeto adottati in una iscrizione, un timbro, uno stemma, etc."@it , "This class represents the writing system or alphabet of an inscription, postmark, crest etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sistema di scrittura"@it , "Writing system"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/System> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE/ISEF" .
+
+<https://w3id.org/arco/ontology/denotative-description/AffixedElement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents an element (i.e. crest, trademark, postmark, inscription) which is affixed on a cultural property."@en , "Questa classe rappresenta un elemento (stemma, marchio, timbro, emblema, logo, iscrizione, etc.) apposto su un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Element affixed on cultural property"@en , "Elemento apposto su bene culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi della classe \"Elemento apposto su bene culturale\" è il seguente:\nresource:Inscription/1200865151-inscription-1\n        a   dd:Inscription ;\n        rdfs:label \"Iscrizione 1 del bene culturale 1200865151\"@en ;\n        dd:hasFontStyle resource:FontStyle/lettere-capitali ;\n        dd:hasTechnicalDetailOccurrence resource:TechnicalDetailOccurrence/1200865151-inscription-1-material-technique-1 ;\n        dd:positionOnCulturalProperty \"al centro\" ;\n        dd:transcript \"PAVLVS VENETVS PAPA SECVNDVS SVIS IMPENSIS FIERI FECIT ANNO CRISTI MCCCLXVII\" ;\n        language:hasLanguage resource:Language/latino ."@it , "An example of usage of one of the subclasses of the class 'Affixed element' is the following:\nresource:Inscription/1200865151-inscription-1\n        a   dd:Inscription ;\n        rdfs:label \"Inscription 1 of cultural property 1200865151\"@en ;\n        dd:hasFontStyle resource:FontStyle/lettere-capitali ;\n        dd:hasTechnicalDetailOccurrence resource:TechnicalDetailOccurrence/1200865151-inscription-1-material-technique-1 ;\n        dd:positionOnCulturalProperty \"in the middle\" ;\n        dd:transcript \"PAVLVS VENETVS PAPA SECVNDVS SVIS IMPENSIS FIERI FECIT ANNO CRISTI MCCCLXVII\" ;\n        language:hasLanguage resource:Language/latino ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE - ICCD versioni precedenti alla 4.00: DA/ISR; DA/STM - ICCD Normativa A: LI/LSI"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/hasWritingSystem>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects an inscription, stamp, crest etc., to the adopted writing system or alphabet."@en , "Questa proprietà collega una iscrizione, un timbro, uno stemma, etc., al sistema di scrittura/alfabeto adottati."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/AffixedElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has writing system"@en , "ha sistema di scrittura"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/WritingSystem> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isWritingSystemOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE/ISEF. DA/DES/DEST, DESF" .
+
+<https://w3id.org/arco/ontology/denotative-description/isWritingSystemOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa è la proprietà inversa di \"ha sistema di scrittura\"."@it , "This is the inverse property of \"has writing system\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/WritingSystem> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is writing system of"@en , "è sistema di scrittura di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/AffixedElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

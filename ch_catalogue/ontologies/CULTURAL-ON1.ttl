@@ -1,0 +1,51 @@
+<http://www.w3.org/2000/01/rdf-schema#Literal>
+        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+
+<http://dati.beniculturali.it/cis/altCISName>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà utilizzata per associare la situazione name in time a una denominazione alternativa dell'istituto e luogo della cultura."@it , "Property used to associate the situation name in time with the alternative name of the cultural institute or site"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nome alternativo luogo cultura"@it , "alternative cultural site name"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/name> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable" , "stabile"@it .
+
+<http://dati.beniculturali.it/cis/institutionalCISName>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà identifica direttamente il nome istituzionale dell'Istituto e luogo della cultura"@it , "This data property identifies  the institutional name of the Cultural Institute or Site."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nome Istituzionale Luogo Cultura"@it , "Institutional Name of Cultural Site" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/name> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Stable"@en , "Stabile"@it .
+
+<http://dati.beniculturali.it/cis/CISNameInTime>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Permette di rappresentare una situazione relativa alla denominazione di un istituto e luogo della cultura che cambia nel tempo."@it , "Permits to represent a situation in which a name of the Cultural Institute or Site change in time."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nome Luogo Cultura Nel Tempo"@it , "Cultural Site Name in Time"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/EventOrSituation> , <https://w3id.org/italia/onto/POI/NameInTime> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio di utilizzo della classe cis:CISNameInTime è il seguente:\n\n<pre>\n\ncissite:Museo_di_Capodimonte\n    a cis:CulturalInstituteOrSite, cis:Museum ;\n    l0:name \"Museo di Capodimonte\" ;\n    cis:institutionalCISName \"Museo di Capodimonte\" ;\n    cis:ISILIdentifier \"IT-EX0008\" ;\n    cis:hasCISNameInTime nit:Museo_di_Capodimonte ;\n    cis:hasSite site:Museo_di_Capodimonte .\n\nnit:Museo_di_Capodimonte\n    a cis:CISNameInTime ;\n    rdfs:label \"Denominazione nel tempo 'Museo di Capodimonte'\"@it ;\n    cis:institutionalCISName \"Museo di Capodimonte\"@it ;\n    cis:altCISName \"Museo Nazionale di Capodimonte\"@it ;\n    cis:isValidDuring ti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte  .\n\nti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte\n    a ti:TimeInterval ;\n    ti:startTime \"1957-01-01\"^^xsd:date .\n\n</pre>"@it , "An example of usage of the class cis:CISNameInTime is the following:\n\n<pre>\n\ncissite:Museo_di_Capodimonte\n    a cis:CulturalInstituteOrSite, cis:Museum ;\n    l0:name \"Museo di Capodimonte\" ;\n    cis:institutionalCISName \"Museo di Capodimonte\" ;\n    cis:ISILIdentifier \"IT-EX0008\" ;\n    cis:hasCISNameInTime nit:Museo_di_Capodimonte ;\n    cis:hasSite site:Museo_di_Capodimonte .\n\nnit:Museo_di_Capodimonte\n    a cis:CISNameInTime ;\n    rdfs:label \"Denominazione nel tempo 'Museo di Capodimonte'\"@it ;\n    cis:institutionalCISName \"Museo di Capodimonte\"@it ;\n    cis:altCISName \"Museo Nazionale di Capodimonte\"@it ;\n    cis:isValidDuring ti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte  .\n\nti:Intervallo_di_tempo_per_denominazione_nel_tempo_Museo_di_Capodimonte\n    a ti:TimeInterval ;\n    ti:startTime \"1957-01-01\"^^xsd:date .\n\n</pre>"@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

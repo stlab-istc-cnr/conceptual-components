@@ -1,0 +1,134 @@
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Representatives of a work, that is, of a Poetic Work. Each version and edition of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en , "Representatives of a work, that is, of an Poetic Work. Each version of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Redaction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> , <http://iflastandards.info/ns/fr/frbr/frbroo/F22> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isAnonymous>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "In case the identity of current instance of Creator is unknown.\n\nTaking as example the creator of \"Libro de Alexandre\", \"isAnonymous\" is True because the author is unknown to this day."@en , "In case the identity of current instance of Creator is unknown"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Anonymous"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#boolean> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://www.w3.org/2004/02/skos/core#Concept>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#hasCreator>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the entity Creator that has created the current work under analysis"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has Creator"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#hasRole> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Abstract concept of an artistic creation. In the POSTDATA ontology network these creations must be in verse (e.g., poem, play, song). For example, Os Lusíadas by Luis Vaz de Camões; La Commedia by Dante; the poem Ad te deus by an Anonymous author written in between the 7th and 9th centuries."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F1> , <http://www.europeana.eu/schemas/edm/ProvidedCHO> , <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#typeOfDesignation>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Type of designation/name. E.g. pseudonym, heteronym, allonym, orthonym variant"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "type Of Designation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isWrongAttribution>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "In case the identity of the current instance of Creator is certainly a wrong attribution. This is applied to the Creator Role associated to a Redaction.\n\nTaking as example the poem \"Muere lentamente\" (by Martha Madeiros) which is erroneously attributed to Pablo Neruda, in the case Neruda is indicated as the author, \"is Wrong Attribution\" would be True."@en , "In case the identity of the current instance of Creator is certainly a wrong attribution"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Wrong Attribution"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#boolean> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#penName>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A fictitious name, especially a pen name. A variant name"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pen Name"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The CreatorRole class models the role that an agent plays with respect to the creation or authorship of a work. In this sense, it has specific properties that are important for the study of authorship of poetic works.\nThese properties are:\npenName - It is common for authors to use an alias\nenAnonymous - In many of the works, especially the older ones, the author is not known and this is an aspect that should be considered.\nisWorngAttribution - Sometimes, especially in older works as well, attributions of authorship have been made that are not correct, but this fact is considered an important aspect for scholars of the subject.\ntypeofDenomination, which is the type of name or designation used, e.g. pseudonyms, heteronyms, etc."@en , "The CreatorRole class models the role that an agent plays with respect to the creation or authorship of a work. In this sense, it has specific properties that are important for the study of authorship of poetic works.\nThese properties are:\npenName - It is common for authors to use an alias\nisAnonymous - In many of the works, especially the older ones, the author is not known and this is an aspect that should be considered.\nisWrongAttribution - Sometimes, especially in older works as well, attributions of authorship have been made that are not correct, but this fact is considered an important aspect for scholars of the subject.\ntypeofDesignation, which is the type of name or designation used, e.g. pseudonyms, heteronyms, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Creator Role"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Role> .

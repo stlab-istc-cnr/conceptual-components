@@ -1,0 +1,78 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/R6i_is_carried_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is carried by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises complete sets of signs present in publications, reflecting publishers’ final decisions as to both selection of content and layout of the publications. Frequently the creation of a Publication Expression includes both adding graphical form and fonts to Expressions consisting of words alone and selecting illustrations and other content. As such, an instance of Publication Expression incorporates all Expressions combined for the resulting final form of rendering, whether visual, audio or tactile. An instance of Publication Expression is one entity regardless of the number of independent Expressions published within it, as long as it represents one unit of release. The published third party content can be associated via the property P165 incorporates (is incorporated in).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R28_produced>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F32 Carrier Production Event with any one of the produced items (i.e., the instances of F5 Item or F53 Material Copy).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "produced"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises physical objects that carry one or more instances of F24 Publication Expression.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Utilized Information Carrier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R6_carries>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F54 Utilised Information Carrier with the unique instance of F24 Publication Expression it carries.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "carries"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R28i_was_produced_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was produced by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that result in instances of F54 Utilised Information Carrier coming into existence. Both the production of a series of physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) and the creation of a new copy of a file on an electronic carrier are regarded as instances of F32 Carrier Production Event.\nTypically, the production of copies of a publication (no matter whether it is a book, a sound recording, a DVD, a cartographic resource, etc.) strives to produce items all as similar as possible to a prototype that displays all the features that all the copies of the publication should also display, which is reflected in property R27 used as source material F24 Publication Expression.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Carrier Production Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E12_Production> .

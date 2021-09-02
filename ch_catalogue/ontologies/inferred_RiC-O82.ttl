@@ -1,0 +1,78 @@
+<https://www.ica.org/standards/RiC/ontology#proxyFor>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Proxy to the Record Resource it stands for in the\n            specific context of a Record Set."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Proxy> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "proxy for "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#RecordSet>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "One or more records that are associated by categorization and/or\n            physical aggregation by the creator or other Agent."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Record Set is a kind of Record Resource. The Record members in\n            a Record Set may physically reside together, though physical proximity is not essential.\n            In a particular context, an Agent (e.g. administrator, records manager, archivist,\n            end-user, etc.) may select the Record members of a Record Set based on a shared\n            attribute or attributes, or a shared Relation or Relations. The grouping of the Records\n            serves a purpose or purposes specific to the context of the Agent. All Record members of\n            a Record Set may share the attribute of having been accumulated by the same Agent, or\n            all share the same Documentary Form Type and are created over time by the same Activity.\n            A Record Set may represent the act of classifying the Records in accordance with a\n            formal classification scheme that may be based on Activity, subject, organizational\n            structure, or other criteria; an act of archival arrangement (e.g. based on common\n            provenance); or some other selection and grouping that fulfils a particular purpose or\n            purposes (e.g. a classification that reflects or supports the purposes of a researcher).\n            By exception, some Records are brought together based on their not belonging in the\n            context of selection to other designated groups: a ‘Miscellaneous’ series, for example.\n            A Record Set accumulated by an Agent in the course of life or work Activity should be\n            kept in a manner that preserves context and evidential value. Records Sets may also\n            contain other Records Sets. Both a Record Set and a Record may simultaneously be a\n            member of more than one Record Set, and over the course of its existence, a Record Set\n            or Record may be a member of an indeterminate number of Record Sets in an indeterminate\n            number of contexts. Record Sets and Records contained within a Record Set may be ordered\n            into a sequence based on a common property or relation, or common properties or\n            relations (e.g. alphabetical by Agent or related Place name; chronological order by an\n            allocated Date); or some other criterion (e.g. an imposed order by\n            relevance)."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E03 (Record Set\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#RecordResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Record, Record Set, or Record Part produced or acquired and\n            retained by an Agent in the course of Activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Producing a record resource may imply either its newly\n            creation or a reuse of previous existing information by combination, rearrangement,\n            selecting, reformatting etc. Records, Record Sets, and Record Parts are all evidence of\n            the activities of an Agent. More than one Agent may be involved in the creation of a\n            Record Resource. The role of the Agent in creating the Record Resource may take\n            different forms, for example, authoring of an individual record, accumulating a set of\n            records, or forming a set of records. Though a Record, Record Set, and Record Part,\n            under most circumstances, may be easily distinguished from one another, frequently\n            identifying the boundary of each and how the “bounded information regions” interrelate,\n            may present particular challenges. Documentary Forms provide the rules governing many\n            Records, providing criteria for identifying its boundary, and identifying its essential\n            Record Parts. Many Records, though, do not have well-established documentary forms,\n            particularly electronic records, where it may be difficult to determine whether\n            individual elements represented in separate bitstreams are record parts, records, or\n            record sets. For example, is a photograph represented independently in a bitstream\n            embedded in a text document a Record, or a Record Part ? Or is the same photograph\n            attached to an email, maintaining its independent representation, a Record or a Record\n            Part? When information is grouped for some purpose, for example, zip or tar “file\n            compression” for saving storage space, presents a further challenge. One file comprises\n            multiple bitstreams subjected to techniques that remove bits that can be losslessly\n            recovered when decompressed. Under what circumstances is such a compressed bitstream a\n            Record or a Record Set? Determining when an information object is a Record, Record Part,\n            or Record Set is based on perspective and judgement exercised in a particular context.\n            In one context, the Agent describing an information object may designate it a Record,\n            while another Agent in a different context may designate it a Record Part. Both\n            designations are supported by RiC, and the significance of the difference for users of\n            the records is ameliorated by the fact that attributes and relations employed in\n            describing each of the record entities are shared."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E02 (Record Resource\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Proxy>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Proxy represents (stands for) a Record Resource as it exists\n            in a specific Record Set."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Proxy"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Concept> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Useful for handling in RDF the sequencing of records or\n            records sets in the context of a Record set. A Record Resource has only one Proxy in the\n            context of one specific Record Set. It may have many Proxies simultaneously or through\n            time."@en ;
+        <https://www.ica.org/standards/RiC/ontology#closeTo>
+                "ORE Proxy (http://www.openarchives.org/ore/terms/Proxy)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#proxyIn>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Proxy to the Record Set in which it stands for\n            (represents) another Record Resource."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Proxy> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "proxy in "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordSet> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .

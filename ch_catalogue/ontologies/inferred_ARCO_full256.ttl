@@ -1,0 +1,73 @@
+<https://w3id.org/arco/ontology/denotative-description/Support>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il supporto sul quale può trovarsi un elemento, per esempio un'iscrizione, un emblema, un timbro, etc., rappresentati su un bene culturale (es. \"etichetta di carta\")."@it , "This class represents the support on which an element can be located, for instance an inscription, emblem, postmark represented on a cultural property (i.e. \"paper label\")."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Supporto"@it , "Support"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE/ISES" .
+
+<https://w3id.org/arco/ontology/denotative-description/AffixedElement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents an element (i.e. crest, trademark, postmark, inscription) which is affixed on a cultural property."@en , "Questa classe rappresenta un elemento (stemma, marchio, timbro, emblema, logo, iscrizione, etc.) apposto su un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Element affixed on cultural property"@en , "Elemento apposto su bene culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi della classe \"Elemento apposto su bene culturale\" è il seguente:\nresource:Inscription/1200865151-inscription-1\n        a   dd:Inscription ;\n        rdfs:label \"Iscrizione 1 del bene culturale 1200865151\"@en ;\n        dd:hasFontStyle resource:FontStyle/lettere-capitali ;\n        dd:hasTechnicalDetailOccurrence resource:TechnicalDetailOccurrence/1200865151-inscription-1-material-technique-1 ;\n        dd:positionOnCulturalProperty \"al centro\" ;\n        dd:transcript \"PAVLVS VENETVS PAPA SECVNDVS SVIS IMPENSIS FIERI FECIT ANNO CRISTI MCCCLXVII\" ;\n        language:hasLanguage resource:Language/latino ."@it , "An example of usage of one of the subclasses of the class 'Affixed element' is the following:\nresource:Inscription/1200865151-inscription-1\n        a   dd:Inscription ;\n        rdfs:label \"Inscription 1 of cultural property 1200865151\"@en ;\n        dd:hasFontStyle resource:FontStyle/lettere-capitali ;\n        dd:hasTechnicalDetailOccurrence resource:TechnicalDetailOccurrence/1200865151-inscription-1-material-technique-1 ;\n        dd:positionOnCulturalProperty \"in the middle\" ;\n        dd:transcript \"PAVLVS VENETVS PAPA SECVNDVS SVIS IMPENSIS FIERI FECIT ANNO CRISTI MCCCLXVII\" ;\n        language:hasLanguage resource:Language/latino ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE - ICCD versioni precedenti alla 4.00: DA/ISR; DA/STM - ICCD Normativa A: LI/LSI"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/isSupportOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects a support (e.g. \"paper label\") to an element (stamp, embelem, inscription, mark) which has been represented on it. It is the inverse property of hasSupport."@en , "Questa proprietà, inversa di \"ha supporto\", collega un supporto (es.: \"etichetta di carta\") all'elemento (timbro, emblema, iscrizione, marchio) che vi viene rappresentato."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/Support> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is support of"@en , "è supporto di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/AffixedElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE/ISES" .
+
+<https://w3id.org/arco/ontology/denotative-description/hasSupport>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property connects an inscription, stamp, emblem etc., represented on a cultural entity to the support on which the entity is located."@en , "Questa proprietà collega una iscrizione, un timbro, un emblema, etc., rappresentato su un bene culturale al supporto su cui si trova l'elemento."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/AffixedElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has support"@en , "ha supporto"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/Support> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isSupportOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DA/ISE/ISES" .

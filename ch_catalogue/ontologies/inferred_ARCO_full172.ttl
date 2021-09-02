@@ -1,0 +1,245 @@
+<https://w3id.org/arco/ontology/arco/endTime>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta la data di fine di un intervallo temporale, che può essere espressa secondo criteri diversi e a diverso livello di dettaglio (secolo, intervallo di secoli, anno, intervallo di anni, aaaa/mm/gg, periodo storico, etc.)"@it , "This property represents the end time of a time interval, according to different criteria and level of detail (century, century interval, year, yyyy/mm/dd, historical period, etc.)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "data di fine"@it , "end time"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/time> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/specificTime>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega l'evento (realizzazione, demolizione, etc.) cui si riferisce una specifica cronologia di un bene culturale alla cronologia specifica, cioè la cronologia in anni (anche a cavallo di secoli diversi) o con date precise (nella forma \"aaaa/mm/gg\"). Nel caso in cui la cronologia corrisponda ad uno specifico anno, l'intervallo di tempo avrà lo stesso valore per data di inizio e data di fine."@it , "This property relates the event (creation, distruction) to which a dating of a cultural property is related to the \"specific time\", as the dating expressed in year or as a date yyyy/mm/dd."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/EventOrSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "specific time"@en , "cronologia specifica"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/atTime> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/specificTimeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: DT/DTS/DTSI + DT/DTS/DTSV + DT/DTS/DTSF + DT/DTS/DTSL" .
+
+<https://w3id.org/italia/onto/TI/atTime>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<https://w3id.org/arco/ontology/catalogue/editingTimeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa è la proprietà inversa di \"compilato al tempo\"."@it , "This is the inverse property of \"edited at time\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "editing time of"@en , "tempo di compilazione di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecordVersion> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/CollectionMembership>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the membership of a cultural property in a collection."@en , "Questa classe rappresenta l'appartenenza di un bene culturale a una collezione, in un certo intervallo di tempo. Uno stesso bene culturale può aver fatto parte di più collezioni nel corso del tempo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Appartenenza a Collezione"@it , "Collection Membership"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Membership> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "UB/COL" .
+
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecordVersion>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a version (after creation, editing, updating) of a catalogue record on a cultural property."@en , "Rappresenta una versione (relativa a operazioni di redazione, aggiornamento, revisione) di una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Versione della scheda"@it , "Catalogue record version"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "CM/CMP; CM/RVM; CM/AGG" .
+
+<https://w3id.org/italia/onto/l0/EventOrSituation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/catalogue/editedAtTime>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property used to associate a catalogue record version with the time interval in which it was edited."@en , "Proprietà che associa una versione di una scheda di catalogo all'intervallo temporale in cui è stata compilata."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecordVersion> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "compilato al tempo"@it , "edited at time"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/catalogue/editingTimeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "CM/CMP/CMPD; CM/RVM/RVMD; CM/AGG/AGGD" .
+
+<https://w3id.org/arco/ontology/movable-property/Outcrop>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the outcrop"@en , "Questa classe rappresenta l'affioramento"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/movable-property/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Affioramento"@it , "Outcrop"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BNM: IM/IMA/IMAF, IMAD" .
+
+<https://w3id.org/arco/ontology/denotative-description/isTimeIntervalValidFor>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un intervallo temporale entro il quale è valido uno stato tecnico di un'entità culturale allo stato tecnico stesso, relativamente al momento in cui quelle caratteristiche sono state rilevate."@it , "This property relates the time interval, at which a cultural entity technical status is valid, to that technical status, with regard to the moment in which the characteristics are observed."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is time interval valid for"@en , "è intervallo di tempo valido per"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalStatus> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/movable-property/Accession>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta l'informazione (dato) sulla/e persona fisica o giuridica/che che a vario titolo ha/hanno fatto pervenire il bene (campione, raccolta, collezione ecc.) all'Ente di riferimento."@it , "This class represents the information about the way in which the cultural property has arrived to the organization"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Accession"@en , "Accessione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/TimeIndexedEvent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/arco/ontology/movable-property/SpecimenHarvesting> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BNB: SB/ABC" .
+
+<https://w3id.org/italia/onto/TI/TimeInterval>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/denotative-description/isTechnicalStatusValidAt>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega uno stato tecnico di un'entità culturale all'intervallo temporale entro il quale è valido, relativamente al momento in cui quelle caratteristiche sono state rilevate."@it , "This property relates a cultural entity technical status to the time interval until which that status is valid, with regard to the moment in which the characteristics are observed."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalStatus> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è stato tecnico di entità culturale valido fino a"@it , "is cultural entity technical status valid at"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/isTimeIntervalValidFor> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/arco/startTime>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta la data di inizio di un intervallo temporale, che può essere espressa secondo criteri diversi e a diverso livello di dettaglio (secolo, intervallo di secoli, anno, intervallo di anni, aaaa/mm/gg, periodo storico, etc.)"@it , "This property represents the start time of a time interval, according to different criteria and level of detail (century, century interval, year, yyyy/mm/dd, historical period, etc.)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/arco> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "start time"@en , "data di inizio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/time> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalStatus>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta lo stato tecnico di un'entità culturale, cioè una situazione in cui un'entità culturale ha associate una serie di caratteristiche tecniche. Lo stato di un'entità ha associata una validità temporale, relativa al momento in cui quelle caratteristiche sono state rilevate. Per esempio, una occorrenza di un dettaglio tecnico è: \"bene culturale X realizzato con la materia terracotta e di forma cilindrica\"."@it , "This class represents the technical status of a cultural entity, that is a situation in which the cultural entity is associated to technical characteristics. The technical status has a temporal validity, related to the moment when the characteristics were observed. For instance, a cultural property techncal status is: \"the cultural property X realized with pottery material and cylindrical in shape\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Stato tecnico di entità culturale"@it , "Technical status of cultural entity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Cultural entity technical status' is the following:\nresource:CulturalEntityTechnicalStatus/0900281817-4\n        a           a-dd:CulturalEntityTechnicalStatus ;\n        rdfs:label  \"Technical status of cultural property 0900281817-4\"@en ;\n        a-dd:includesTechnicalCharacteristic\n                resource:TechnicalCharacteristic/centinato, resource:TechnicalCharacteristic/stone-sculpture .\n\nresource:TechnicalCharacteristic/stone-sculpture\n        a                    a-dd:TechnicalCharacteristic ;\n        rdfs:label           \"stone/ sculpture\" ;\n        a-dd:isClassifiedBy  a-dd:MaterialOrTechnique ."@en , "Un esempio d'uso della classe \"Stato tecnico di entità culturale\" è il seguente:\nresource:CulturalEntityTechnicalStatus/0900281817-4\n        a           a-dd:CulturalEntityTechnicalStatus ;\n        rdfs:label  \"Stato tecnico del bene culturale 0900281817-4\"@it ;\n        a-dd:includesTechnicalCharacteristic\n                resource:TechnicalCharacteristic/centinato, resource:TechnicalCharacteristic/pietra-scultura .\n\nresource:TechnicalCharacteristic/pietra-scultura\n        a                    a-dd:TechnicalCharacteristic ;\n        rdfs:label           \"pietra/ scultura\" ;\n        a-dd:isClassifiedBy  a-dd:MaterialOrTechnique ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTC/MTCM; MT/MTC/MTCT - Normativa OA, D, F, S, MI: MT/FRM - Normativa OA, D, F, S: MT/FIL - Normativa VeAC: MT/MTC/MTCC; MT/MTC/MTCF - Normativa F: MT/FVC/FVCC; MT/FVC/FVCF; MT/FVC/FVCP; MT/FVC/FVCU; MT/FVC/FVCM; MT/FVM; DA/APF/APFE" .
+
+<https://w3id.org/arco/ontology/movable-property/SpecimenHarvesting>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta l'informazione sulla raccolta del campione"@it , "This class represents the information about the harvesting of the specimen"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Specimen harvesting"@en , "Raccolta del campione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/TimeIndexedEvent> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa BNB: LR/LRD. BNM: LR" .

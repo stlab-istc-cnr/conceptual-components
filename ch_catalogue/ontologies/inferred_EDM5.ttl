@@ -1,0 +1,41 @@
+<http://www.europeana.eu/schemas/edm/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This class comprises people, either individually or in groups, who have the\npotential to perform intentional actions for which they can be held responsible." ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "Leonardo da Vinci, the British Museum, W3C" ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Rationale: This class is a domain of edm:wasPresentAt" .
+
+<http://www.europeana.eu/schemas/edm/dataProvider>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.openarchives.org/ore/terms/Aggregation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Data Provider"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> , <http://purl.org/dc/terms/provenance> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "The name or identifier of the organisation who contributes data indirectly to an aggregation service (e.g. Europeana)."@en .
+
+<http://www.europeana.eu/schemas/edm/provider>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Provider"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.europeana.eu/schemas/edm/hasMet> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "The name or identifier of the organization who delivers data directly to an aggregation service (e.g. Europeana)"@en .
+
+<http://www.openarchives.org/ore/terms/Aggregation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

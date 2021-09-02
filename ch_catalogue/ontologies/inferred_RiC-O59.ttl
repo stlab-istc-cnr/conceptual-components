@@ -1,0 +1,114 @@
+<https://www.ica.org/standards/RiC/ontology#Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A superclass for any category of some thing. A type\n            characterizes an entity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Concept> .
+
+<https://www.ica.org/standards/RiC/ontology#thingIsTargetOfTypeRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Thing (that is categorized by a Type) to a Type\n            Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "thing is target of type relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#TypeRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#typeRelationHasTarget> .
+
+<https://www.ica.org/standards/RiC/ontology#TypeRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a category (a Type) and at least one Thing that belongs\n            to this category."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Type Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Relation> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "may be useful at least for some types (e.g. demographic\n            group)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#typeIsSourceOfTypeRelation>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Type (a category) to a Type Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "type is source of type relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#TypeRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#typeRelationHasSource> .
+
+<https://www.ica.org/standards/RiC/ontology#typeRelationHasTarget>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Type Relation to a Thing (that is categorized by the\n            involved Type)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#TypeRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "type relation has target "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationHasTarget> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#typeRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Type Relation to the Type (that categorizes the\n            involved Thing(s))."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#TypeRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "type relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Any idea, material thing, or event within the realm of human\n            experience."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Includes all RiC entities as well as any concept, material\n            thing, or event that may be the subject of a Record Resource or associated with an\n            Activity. Examples of entities not explicitly addressed in RiC includes but is not\n            limited to the following: abstract concepts; cultural movements, named periods and\n            events; named things, objects and works; legendary, mythical or fictitious figures,\n            characters or beings."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E01 (Thing\n            entity)"@en .

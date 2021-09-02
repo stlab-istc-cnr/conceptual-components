@@ -1,0 +1,77 @@
+<https://w3id.org/arco/ontology/context-description/isInterventionTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il tipo di intervento, a fini conservativi o di altro tipo, che ha interessato un bene culturale al relativo intervento."@it , "This property relates the type of intervention on a cultural property to the related intervention."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/InterventionType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is intervention type of"@en , "è tipo di intervento di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Intervention> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/Intervention>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un intervento che ha interessato un bene culturale, a fini conservativi (per i quali si crea una sottoclasse di \"Intervento\") oppure di altro tipo: restauri (termine obsoleto che attualmente corrisponde a \"intervento a fine conservativo\"), rilavorazioni, ripristini, trasformazioni per recuperare aspetto e funzionalità rispondenti ai mutati gusti, ecc. In generale, per interventi si intendono attività che riguardano il bene, effettuate per la sua realizzazione/modifica e conservazione materiale."@it , "This class represents an intervention on a cultural property, that is an activity carried out for its conservation or for other purposes: conservation interventions, reprocessing, restoring, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Intervention"@en , "Intervento"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Activity> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Intervention' is the following:\nresource:Intervention/0800640527-10-intervention-1\n        a           cd:Intervention ;\n        rdfs:label  \"Intervention 1 on cultural property 0800640527-10\"@en ;\n        cd:hasActivityOperator resource:Agent/tonelli-elvira ;\n        cd:hasActivityResponsible resource:Agent/soprintendenza-per-i-beni-ambientali-ed-architettonici-di-bologna-modena-e-reggio-emilia ;\n        cd:hasInterventionType resource:InterventionType/restauro ;\n        tiapit:atTime resource:TimeInterval/1994 ."@en , "Un esempio di utilizzo della classe \"Intervento\" è il seguente:\nresource:Intervention/0800640527-10-intervention-1\n        a           cd:Intervention ;\n        rdfs:label  \"Intervento 1 sul bene culturale 0800640527-10\"@it ;\n        cd:hasActivityOperator resource:Agent/tonelli-elvira ;\n        cd:hasActivityResponsible resource:Agent/soprintendenza-per-i-beni-ambientali-ed-architettonici-di-bologna-modena-e-reggio-emilia ;\n        cd:hasInterventionType resource:InterventionType/restauro ;\n        tiapit:atTime resource:TimeInterval/1994 ."@it ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: CO/RST - normative di versioni precedenti: RS/RST; Normativa VeAC: CO/RIA; Normativa CA: RO/RIS"@it .
+
+<https://w3id.org/arco/ontology/context-description/InterventionType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il tipo di intervento (a fini conservativi o di altro tipo) che ha interessato un bene culturale."@it , "This class represents the type of intervention on a cultural property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo di intervento"@it , "Intervention type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: valori di CO/RST/RSTI - Normativa VeAC: CO/RIA (riadattamento/modifica) - Normativa CA: RO/RIS (intervento successivo)"@it .
+
+<https://w3id.org/arco/ontology/context-description/hasInterventionType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates an intervention on a cultural property (i.e. conservation, interventions, reprocessing, restoring, etc.) to its intervention type."@en , "Questa proprietà collega un intervento, a fini conservativi o di altro tipo, che ha interessato un bene culturale al tipo di intervento."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Intervention> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha tipo di intervento"@it , "has intervention type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/InterventionType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isInterventionTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: valori di CO/RST/RSTI\nNormativa VeAC: CO/RIA (riadattamento/modifica)\nNormativa CA: RO/RIS (intervento successivo)"@it .

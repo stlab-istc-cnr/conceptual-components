@@ -1,0 +1,75 @@
+<http://culturalis.org/oad#hasNameOfCreator>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://lod.xdams.org/reload/oad/isadOntology/isad_3.2.1_name_of_creators> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nome del soggetto produttore"@it , "Name of creator(s)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/eac-cpf#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#backwardCompatibleWith>
+                <http://lod.xdams.org/reload/oad/has_nameOfCreator> ;
+        <http://www.w3.org/2002/07/owl#deprecated>
+                true .
+
+<http://culturalis.org/oad#Instance>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The class represents the descriptive entry of an archival resource"@en , "La classe Archival instance rappresenta l'istanziazione dell'archival resource"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Instanza archivistica"@it , "Archival instance"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#ArchivalResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "oad:ArchivalResource is the class that represents the object of the description (i.e., a single document or a set of document)."@en , "La classe Archival resource indica un corpus documentale oggetto di descrizione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Risorsa archivistica"@it , "Archival resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://dati.san.beniculturali.it/SAN/complessoArchivistico> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#isProducedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The property links the archival resource described to the entity responsible for the production of the resource"@en , "La proprietà collega la risorsa archivistica descritta alla entity responsabile della sua produzione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#ArchivalResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "È prodotta da"@it , "Is produced by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/eac-cpf#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa proprietà è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/eac-cpf#Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://culturalis.org/oad#hasRepository>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Soggetto conservatore"@it , "Has repository"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/eac-cpf#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#backwardCompatibleWith>
+                <http://lod.xdams.org/reload/oad/has_repository> ;
+        <http://www.w3.org/2002/07/owl#deprecated>
+                true .

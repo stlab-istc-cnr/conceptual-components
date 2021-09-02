@@ -1,0 +1,71 @@
+<http://purl.org/vocab/frbr/core#Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.\n\nAn expression is the specific intellectual or artistic form that a work takes each time it is \"realized.\" Expression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Endeavour> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/vocab/frbr/core#Work> , <http://purl.org/vocab/frbr/core#Manifestation> , <http://purl.org/vocab/frbr/core#Item> .
+
+<http://purl.org/vocab/frbr/core#embodimentOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodimentOf), a property representing an expression that is embodied by a manifestation."@en , "A manifestation that embodies an expression."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is embodiment of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<http://purl.org/spar/fabio/Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A subclass of FRBR expression, restricted to expressions of fabio:Works.  For your latest research paper, the preprint submitted to the publisher, and the final published version to which the publisher assigned a unique digital object identifier, are both expressions of the same work.  "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Expression> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A fabio:Expression can only have part or be part of another fabio:Expression.  Moreover, it can be a representation only of a fabio:Work, and  it can be embodied only in fabio:Manifestation(s)."@en .
+
+<http://purl.org/vocab/frbr/core#realization>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A work realized through an expression."@en , "As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#realization), a property representing an expression that is an intellectual or artistic realization of a work."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/vocab/frbr/core#Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has realization"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/frbr/core#Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<http://purl.org/vocab/frbr/core#Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A distinct intellectual or artistic creation.\n\nA work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of content between and among the various expressions of the work. When we speak of Homer's Iliad as a work, our point of reference is not a particular recitation or text of the work, but the intellectual creation that lies behind all the various expressions of the work. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Endeavour> .
+
+<http://purl.org/spar/fabio/Manifestation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A subclass of FRBR manifestation, restricted to manifestations of fabio:Expressions. fabio:Manifestation specifically applies to electronic (digital) as well as to physical manifestations of expressions.  \n\nExamples of different manifestations of a single 'version of record' expression of a scholarly work include an article in a print journal or the on-line version of that article as a web page."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "manifestation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Manifestation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A fabio:Manifestation can only have part or be part of another fabio:Manifestation.  Moreover, it can be an embodiment only of a fabio:Expression and it can be exemplified only by fabio:Item(s)."@en .

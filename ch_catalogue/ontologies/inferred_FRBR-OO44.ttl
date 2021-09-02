@@ -1,0 +1,43 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/F12_Nomen>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises any sign or arrangements of signs following a specific syntax (sequences of alphanumeric characters, chemical structure symbols, sound symbols, ideograms etc.) that are used or can be used to refer to and identify a specific instance of some class or category within a certain context. The scripts or type sets for the types of symbols used to compose an instance of F12 Nomen have to be explicitly specified. The identity of an instance of F12 Nomen is given by the order of its symbols and their individual role with respect to their scripts, regardless of the semantics of the larger structural components it may be built from. Structural tags occurring in the nomen string are regarded as symbols constituting the nomen. Spelling variants are regarded as different nomina, whereas the use of different fonts (visual representation variants) or different digital encodings do not change the identity.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nomen"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/CLP57_should_have_number_of_parts>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates a publication, i.e. an instance of F3 Manifestation Product Type, with an instance of E60 Number, which denotes the number of physical units all exemplars of that publication should consist of, as long as they are recognised as complete exemplars of that publication. Typically, this property is observed on one exemplar of a publication, and extrapolated to all other exemplars of the same publication. This logical inference is an induction along the path that can be modelled as: F3 Manifestation Product Type R7i has example F5 Item P57 has number of parts E60 Number.\nIt can happen that a given exemplar, or subset of exemplars, originally produced, or intended to be produced, with that characteristic, accidentally lacks it. This fact should be recorded as a property of F5 Item, and not of F3 Manifestation Product Type.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "should have number of parts"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R33_has_content>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F12 Nomen with one or more equivalent serialized content models for it. In digital form the symbol arrangement constituting an instance of F12 Nomen can only be represented through a particular encoding, for example ASCII or Latin1 for the Latin script. We call such a representation a content model. The property R33.1 has encoding: E55 Type allows for specifying the encoding of a particular associated content model. Together with this specification, a content model allows for unambiguously defining a nomen independently from the encoding used for representing the content.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F12_Nomen> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has content"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the definitions of publication products.\nAn instance of F3 Manifestation Product Type is the “species”, and all copies of a given object are “specimens” of it. An instance of F3 Manifestation Product Type defines all of the features or traits that instances of F5 Item normally display in order that they may be recognised as copies of a particular publication. However, due to production problems or subsequent events, one or more instances of F5 Item may not exhibit all these features or traits; yet such instances still retain their relationship to the same instance of F3 Manifestation Product Type.\nThe features that characterise a given instance of F3 Manifestation Product Type include: one instance of F24 Publication Expression, containing one or more than one instance of F2 Expression, reflecting the authors’ content of the manifestation and all additional input by the publisher; and the appropriate types of physical features for that form of the object. For example, hardcover and paperback are two distinct publications (i.e. two distinct instances of F3 Manifestation Product Type) even though authorial and editorial content are otherwise identical in both publications. The activity of cataloguing aims at the most accurate listing of features or traits of an instance of F3 Manifestation Product Type that are sufficient to distinguish it from another instance of F3 Manifestation Product Type.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Manifestation Product Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .

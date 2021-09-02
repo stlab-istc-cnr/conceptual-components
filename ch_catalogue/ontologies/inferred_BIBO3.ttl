@@ -1,0 +1,178 @@
+<http://purl.org/ontology/bibo/citedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates a document to another document that cites the\nfirst document."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cited by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/ontology/bibo/cites> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "unstable" .
+
+<http://purl.org/ontology/bibo/reproducedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The resource in which another resource is reproduced."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/dc/terms/isPartOf> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "unstable" .
+
+<http://purl.org/ontology/bibo/edition>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The name defining a special edition of a document. Normally its a literal value composed of a version number and words."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "edition"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .
+
+<http://purl.org/ontology/bibo/pages>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A string of non-contiguous page spans that locate a Document within a Collection. Example: 23-25, 34, 54-56. For continuous page ranges, use the pageStart and pageEnd properties."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pages"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/bibo/locator> , <http://prismstandard.org/namespaces/1.2/basic/number> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .
+
+<http://purl.org/ontology/bibo/cites>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates a document to another document that is cited\nby the first document as reference, comment, review, quotation or for\nanother purpose."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cites"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/dc/terms/references> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "unstable" .
+
+<http://purl.org/ontology/bibo/volume>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A volume number"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "volume"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/bibo/locator> , <http://prismstandard.org/namespaces/1.2/basic/number> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .
+
+<http://purl.org/ontology/bibo/shortDescription>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://purl.org/ontology/bibo/translationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates a translated document to the original document."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "translation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/dc/terms/isVersionOf> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .
+
+<http://purl.org/ontology/bibo/Document>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A document (noun) is a bounded physical representation of body of information designed with the capacity (and usually intent) to communicate. A document may manifest symbolic, diagrammatic or sensory-representational information."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Document"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://xmlns.com/foaf/0.1/Document> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .
+
+<http://purl.org/ontology/bibo/numPages>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The number of pages contained in a document"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "number of pages"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .
+
+<http://purl.org/ontology/bibo/pageEnd>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Ending page number within a continuous page range."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/bibo/Document> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "page end"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/bibo/locator> , <http://prismstandard.org/namespaces/1.2/basic/number> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable" .

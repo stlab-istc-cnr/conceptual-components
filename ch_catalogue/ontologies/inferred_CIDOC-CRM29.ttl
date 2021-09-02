@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/P34i_was_assessed_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被评估於"@zh , "wurde beurteilt durch"@de , "εκτιμήθηκε από"@el , "was assessed by"@en , "expertisé par le biais de"@fr , "foi avaliada por"@pt , "был оценен посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class describes the act of assessing the state of preservation of an object during a particular period. \nThe condition assessment may be carried out by inspection, measurement or through historical research. This class is used to document circumstances of the respective assessment that may be relevant to interpret its quality at a later stage, or to continue research on related documents. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Оценка Состояния"@ru , "Condition Assessment"@en , "状态评估"@zh , "Zustandsfeststellung"@de , "Avaliação do Estado Material"@pt , "Εκτίμηση Κατάστασης"@el , "Expertise de l'état matériel"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items with a relatively stable form, man-made or natural.\n\nDepending on the existence of natural boundaries of such things, the CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.\n\nAn instance of E18 Physical Thing occupies not only a particular geometric space, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. Physical things consisting of aggregations of physically unconnected objects, such as a set of chessmen, occupy a number of individually contiguous spacetime volumes equal to the number of unconnected objects that constitute the set.\n\nWe model E18 Physical Thing to be a subclass of E72 Legal Object and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E18 Physical Thing without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E18 Physical Thing is matter while a spacetime volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E18 Physical Thing is regarded to be unique to it, due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E18 Physical Thing. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.\n\nThe CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Υλικό Πράγμα"@el , "Chose matérielle"@fr , "Physical Thing"@en , "实体物"@zh , "Физическая Вещь"@ru , "Materielles"@de , "Coisa Material"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P35i_was_identified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was identified by"@en , "foi identificado por"@pt , "被评估认定於"@zh , "идентифицирован посредством"@ru , "wurde identifiziert durch"@de , "έχει διαπιστωθεί από"@el , "est identifié par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the states of objects characterised by a certain condition over a time-span. \nAn instance of this class describes the prevailing physical condition of any material object or feature during a specific E52 Time Span. In general, the time-span for which a certain condition can be asserted may be shorter than the real time-span, for which this condition held.\n The nature of that condition can be described using P2 has type. For example, the E3 Condition State “condition of the SS Great Britain between 22 September 1846 and 27 August 1847” can be characterized as E55 Type “wrecked”. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Κατάσταση"@el , "Zustandsphase"@de , "État matériel"@fr , "状态"@zh , "Estado Material"@pt , "Состояние"@ru , "Condition State"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P35_has_identified>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E3 Condition State that was observed in an E14 Condition Assessment activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "评估认定了"@zh , "identificou"@pt , "a identifié"@fr , "идентифицировал"@ru , "έχει διαπιστώσει"@el , "hat identifiziert"@de , "has identified"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141_assigned> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P34_concerned>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E18 Physical Thing that was assessed during an E14 Condition Assessment activity. \nConditions may be assessed either by direct observation or using recorded evidence. In the latter case the E18 Physical Thing does not need to be present or extant.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "αφορούσε σε"@el , "betraf"@de , "a concerné"@fr , "interessada"@pt , "имел дело с"@ru , "concerned"@en , "评估了"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> .

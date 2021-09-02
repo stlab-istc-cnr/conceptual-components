@@ -1,0 +1,65 @@
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a reçu un attribut par"@fr , "was attributed by"@en , "foi atribuído por"@pt , "получил атрибут посредством"@ru , "被指定属性於"@zh , "χαρακτηρίστηκε από"@el , "bekam Merkmal zugewiesen durch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P141_assigned>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property indicates the attribute that was assigned or the item that was related to the item denoted by a property P140 assigned attribute to in an Attribute assignment action.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "απέδωσε"@el , "a attribué"@fr , "wies zu"@de , "atribuiu"@pt , "指定了属性值"@zh , "присвоил"@ru , "assigned"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "foi atribuído por"@pt , "被指定了属性值於"@zh , "был присвоен посредством"@ru , "wurde zugewiesen durch"@de , "αποδόθηκε από"@el , "was assigned by"@en , "a été attribué par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property indicates the item to which an attribute or relation is assigned. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a affecté un attribut à"@fr , "atribuiu atributo para"@pt , "assigned attribute to"@en , "απέδωσε ιδιότητα σε"@el , "wies Merkmal zu"@de , "присвоил атрибут для"@ru , "指定属性给"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the actions of making assertions about properties of an object or any relation between two items or concepts. \nThis class allows the documentation of how the respective assignment came about, and whose opinion it was. All the attributes or properties assigned in such an action can also be seen as directly attached to the respective item or concept, possibly as a collection of contradictory values. All cases of properties in this model that are also described indirectly through an action are characterised as \"short cuts\" of this action. This redundant modelling of two alternative views is preferred because many implementations may have good reasons to model either the action or the short cut, and the relation between both alternatives can be captured by simple rules. \nIn particular, the class describes the actions of people making propositions and statements during certain museum procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on if this information should be accessible by structured queries. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Απόδοση Ιδιοτήτων"@el , "屬性指定"@zh , "Affectation d'attribut"@fr , "Attribute Assignment"@en , "Merkmalszuweisung"@de , "Atribuição de Característica"@pt , "Присвоение Атрибута"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .

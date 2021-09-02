@@ -1,0 +1,43 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises sets of instructions relating to the formulation of a unique identifier.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier Rule"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> , <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R52_used_rule>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates the event of assigning an instance of F13 Identifier with the instructions followed by an actor, such as a Bibliographic Agency, in creating that identifier.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F40_Identifier_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "used rule"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F40_Identifier_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that result in the allocation of an identifier to an instance of any subclass of E1 CRM Entity. An F40 Identifier Assignment may include the creation of the identifier from multiple constituents. Explicit reference to the used constituents can be made using the property P142 used constituent (was used in). The syntax of the identifier and the kinds of constituents to be used in constructing it may be declared in a rule. The construction of controlled access points for the names of persons, families and corporate bodies following specific cataloguing rules is a typical library application of identifier assignment. F40 Identifier Assignment also includes the assignment of controlled access points for works or expressions.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier Assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R52i_was_the_rule_used_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was the rule used in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F40_Identifier_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

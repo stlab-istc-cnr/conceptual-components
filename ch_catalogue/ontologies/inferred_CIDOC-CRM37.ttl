@@ -1,0 +1,63 @@
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P39i_was_measured_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was measured by"@en , "wurde vermessen durch"@de , "μετρήθηκε από"@el , "был измерен посредством"@ru , "foi medida por"@pt , "a été mesuré par"@fr , "被测量於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E16_Measurement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P40_observed_dimension>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property records the dimension that was observed in an E16 Measurement Event.\nE54 Dimension can be any quantifiable aspect of E70 Thing. Weight, image colour depth and monetary value are dimensions in this sense. One measurement activity may determine more than one dimension of one object.\nDimensions may be determined either by direct observation or using recorded evidence. In the latter case the measured Thing does not need to be present or extant.\nEven though knowledge of the value of a dimension requires measurement, the dimension may be an object of discourse prior to, or even without, any measurement being made.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E16_Measurement> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "observed dimension"@en , "παρατήρησε"@el , "определил величину"@ru , "verificou a dimensão"@pt , "beobachtete Dimension"@de , "观察认定的规模是"@zh , "a relevé comme dimension"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141_assigned> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P39_measured>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of E16 Measurement with the instance of E1 CRM Entity to which it applied. An instance of E1 CRM Entity may be measured more than once. Material and immaterial things and processes may be measured, e.g. the number of words in a text, or the duration of an event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E16_Measurement> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "vermaß"@de , "измерил"@ru , "mediu"@pt , "测量了"@zh , "a mesuré"@fr , "measured"@en , "μέτρησε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E54_Dimension>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises quantifiable properties that can be measured by some calibrated means and can be approximated by values, i.e. points or regions in a mathematical or conceptual space, such as natural or real numbers, RGB values etc.\nAn instance of E54 Dimension represents the true quantity, independent from its numerical approximation, e.g. in inches or in cm. The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of an instance of E54 Dimension. If the true values belong to a non-discrete space, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that interoperability of values described in different units depends critically on the representation as value regions.\nNumerical approximations in archaic instances of E58 Measurement Unit used in historical records should be preserved. Equivalents corresponding to current knowledge should be recorded as additional instances of E54 Dimension as appropriate.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "规模数量"@zh , "Dimensão"@pt , "Dimensions"@fr , "Величина"@ru , "Μέγεθος"@el , "Dimension"@en , "Maß"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E16_Measurement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises actions measuring physical properties and other values that can be determined by a systematic procedure. \nExamples include measuring the monetary value of a collection of coins or the running time of a specific video cassette. \nThe E16 Measurement may use simple counting or tools, such as yardsticks or radiation detection devices. The interest is in the method and care applied, so that the reliability of the result may be judged at a later stage, or research continued on the associated documents. The date of the event is important for dimensions, which may change value over time, such as the length of an object subject to shrinkage. Details of methods and devices are best handled as free text, whereas basic techniques such as \"carbon 14 dating\" should be encoded using P2 has type (is type of:) E55 Type.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Measurement"@en , "Messung"@de , "Mesurage"@fr , "Medição"@pt , "Событие Измерения"@ru , "Μέτρηση"@el , "测量"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .

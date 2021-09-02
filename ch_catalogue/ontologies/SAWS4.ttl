@@ -1,0 +1,159 @@
+<http://purl.org/saws/ontology#precedes>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Section/ContentItem/CollectionInstance comes before another Section/ContentItem/CollectionInstance in the document"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "precedes"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#isParentOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The parent OriginalMaterial is a direct source for the production of part or all of the child OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is parent of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isAncestorOf> .
+
+<http://purl.org/saws/ontology#isSiblingOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The two OriginalMaterials are produced using the same source(s) OriginalMaterial(s) (as indirect or direct source)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isInSameFamilyAs> .
+
+<http://purl.org/saws/ontology#isAncestorOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is ancestor of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isInSameFamilyAs> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://purl.org/saws/ontology#isDescendantOf> .
+
+<http://purl.org/saws/ontology#contains>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> , <http://erlangen-crm.org/current/P10i_contains> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#fallsWithin> .
+
+<http://purl.org/saws/ontology#isDescendantOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is descendant of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isInSameFamilyAs> .
+
+<http://purl.org/saws/ontology#hasChild>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The parent OriginalMaterial is a direct source for the production of part or all of the child OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasChild"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#hasDescendant> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isChildOf> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://purl.org/saws/ontology#hasParent> .
+
+<http://purl.org/saws/ontology#hasParent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The parent OriginalMaterial is a known direct source for the production of part or all of the child OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has parent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#hasAncestor> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isParentOf> .
+
+<http://purl.org/saws/ontology#isDifferentTo>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#SymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To explicitly say that two things are different from each other"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is different to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/saws/ontology#isRelatedTo>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#SymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Two things are related in some way. This relation may be used where the details of the link are to be refined at a later date, or where some relation is seen but the annotater cannot be more specific than to indicate that this relationship exists."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is related to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://purl.org/saws/ontology#isUnrelatedTo> .
+
+<http://purl.org/saws/ontology#isTwinOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The two OriginalMaterials are produced using the same direct source OriginalMaterial(s)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is twin of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isSiblingOf> .
+
+<http://purl.org/saws/ontology#fallsWithin>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P10_falls_within> , <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#hasDescendant>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has descendant"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isInSameFamilyAs> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isDescendantOf> .
+
+<http://purl.org/saws/ontology#isUnrelatedTo>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To explicitly say two things are not at all related but are completely independent of each other"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is unrelated to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/saws/ontology#hasAncestor>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has ancestor"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isInSameFamilyAs> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isAncestorOf> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://purl.org/saws/ontology#hasDescendant> .
+
+<http://purl.org/saws/ontology#isChildOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The parent OriginalMaterial is a direct source for the production of part or all of the child OriginalMaterial"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is child of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isDescendantOf> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <http://purl.org/saws/ontology#isParentOf> .

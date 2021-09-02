@@ -1,0 +1,71 @@
+<https://w3id.org/arco/ontology/movable-property/hasGeologicalContext>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega la localizzazione del luogo di raccolta al contesto geologico"@it , "This property relates the collecting site to the geological context"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has geological context"@en , "ha contesto geologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/movable-property/GeologicalContext> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/movable-property/isGeologicalContextOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BNM: IM/IMA/IMAC" .
+
+<https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a localization of a cultural property, within a timeframe and qualified according to the role that the localization plays in relation to the cultural property."@en , "Questa classe rappresenta una localizzazione di un bene culturale, inserita in un arco temporale e qualificata in base al ruolo che la localizzazione riveste nei confronti del bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Localizzazione tipizzata nel tempo"@it , "Time Indexed Typed Location"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/TimeIndexedSituation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso della classe \"Localizzazione tipizzata nel tempo' è il seguente:\nresource:TimeIndexedTypedLocation/0800055566-alternative-1\n        a           a-loc:TimeIndexedTypedLocation ;\n        rdfs:label \"Altra localizzazione 1 del bene culturale: 0800055566\"@en ;\n       a-loc:atSite  resource:Site/7761991208459c29ef5c7cee8ff29deb ;\n        a-loc:hasLocationType a-loc:LastLocation ;\n        tiapit:atTime resource:TimeInterval/2002 ."@it , "An example of usage of the class 'Time Indexed Typed Location' is the following:\nresource:TimeIndexedTypedLocation/0800055566-alternative-1\n        a  a-loc:TimeIndexedTypedLocation ;\n        rdfs:label \"Alternative location 1 of cultural property: 0800055566\"@en ;  a-loc:atSite  resource:Site/7761991208459c29ef5c7cee8ff29deb ;\n        a-loc:hasLocationType a-loc:LastLocation ;\n        tiapit:atTime resource:TimeInterval/2002 ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: LC; LA; per normativa F: anche LR"@it .
+
+<https://w3id.org/arco/ontology/movable-property/GeologicalContext>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il contesto geologico del luogo di raccolta di un bene."@it , "This class represents geological context of a collecting location."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/movable-property/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Geological context"@en , "Contesto geologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BNM: IM/IMA/IMAC" .
+
+<https://w3id.org/arco/ontology/movable-property/isGeologicalContextOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the geological context to the collecting site"@en , "Questa proprietà collega il contesto geologico alla localizzazione del luogo di raccolta"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/movable-property/GeologicalContext> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "iss geological context of"@en , "è contesto geologico di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .

@@ -1,0 +1,80 @@
+<https://w3id.org/arco/ontology/immovable-property/originalElement>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents a original construction element."@en , "Questa proprietà indica se un elemento della costruzione è originale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/immovable-property/ConstructionElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "elemento originale"@it , "original element"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#boolean> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/immovable-property/hasConstructionElement>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una costruzione all'elemento della costruzione."@it , "This property connects a construction to the construction element."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/immovable-property/Construction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha elemento della costruzione"@it , "has construction element"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/immovable-property/ConstructionElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasPart> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/immovable-property/isConstructionElementOf> .
+
+<https://w3id.org/arco/ontology/immovable-property/isConstructionElementOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un elemento della costruzione ad una costruzione."@it , "This property connects a construction element to a construction."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/immovable-property/ConstructionElement> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is construction element of"@en , "è elemento della costruzione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/immovable-property/Construction> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isPartOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/immovable-property/Construction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents an immovable cultural entity that has been built by humankind."@en , "Questa classe rappresenta un bene culturale immobile che è stato costruito dall'uomo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Costruzione"@it , "Construction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/immovable-property/ConstructionElement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta tutti gli elementi fisici che fanno parte di una costruzione."@it , "This class represents all the physical elements that are part of a construction."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Elemento della costruzione"@it , "Construction element"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/immovable-property/Construction> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/arco/ontology/immovable-property/ConstructionSpace> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .

@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/P135i_was_created_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wurde geschaffen durch"@de , "был создан посредством"@ru , "δημιουργήθηκε από"@el , "被创造於"@zh , "was created by"@en , "foi criado por"@pt , "a été créé par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P94i_was_created_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes. \nE55 Type is the CRM’s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader  term (has narrower term). Such hierarchies may be extended with additional properties. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo"@pt , "Type"@fr , "Type"@en , "Τύπος"@el , "Тип"@ru , "Typus"@de , "类型"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P136_was_based_on>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies one or more items that were used as evidence to declare a new E55 Type.\nThe examination of these items is often the only objective way to understand the precise characteristics of a new Type. Such items should be deposited in a museum or similar institution for that reason. The taxonomic role renders the specific relationship of each item to the Type, such as \"holotype\" or \"original element\".\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "foi baseado em"@pt , "stützte sich auf"@de , "βασίστηκε σε"@el , "был основан на"@ru , "根据了"@zh , "s’est fondée sur"@fr , "was based on"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities formally defining new types of items. \nIt is typically a rigorous scholarly or scientific process that ensures a type is exhaustively described and appropriately named. In some cases, particularly in archaeology and the life sciences, E83 Type Creation requires the identification of an exemplary specimen and the publication of the type definition in an appropriate scholarly forum. The activity of E83 Type Creation is central to research in the life sciences, where a type would be referred to as a “taxon,” the type description as a “protologue,” and the exemplary specimens as “orgininal element” or “holotype”.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Criação de Tipo"@pt , "Type Creation"@en , "Création de type"@fr , "类型创造"@zh , "Typuserfindung"@de , "Создание Типа"@ru , "Δημιουργία Τύπου"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P136i_supported_type_creation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "υποστήριξε τη δημιουργία τύπου"@el , "belegte"@de , "supported type creation"@en , "提供證據给类型创造"@zh , "поддержал создание типа"@ru , "suportou a criação de tipo"@pt , "a justifié la création de type"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P15i_influenced> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P135_created_type>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E55 Type, which is created in an E83Type Creation activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "created type"@en , "δημιούργησε τύπο"@el , "erschuf Typus"@de , "a créé le type"@fr , "criou tipo"@pt , "创造了类型"@zh , "создал тип"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P94_has_created> .

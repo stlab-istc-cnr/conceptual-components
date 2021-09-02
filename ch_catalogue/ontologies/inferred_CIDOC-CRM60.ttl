@@ -1,0 +1,146 @@
+<http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links an E67Birth event to an E21 Person in the role of offspring.\nTwins, triplets etc. are brought into life by the same Birth event. This is not intended for use with general Natural History material, only people. There is no explicit method for modelling conception and gestation except by using extensions.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "brachte zur Welt"@de , "诞生了"@zh , "a donné vie à"@fr , "породил"@ru , "έφερε στη ζωή"@el , "brought into life"@en , "trouxe à vida"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E21_Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises real persons who live or are assumed to have lived. \nLegendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CRM does not propose a specific form to support reasoning about possible identity.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "人物"@zh , "Pessoa"@pt , "Πρόσωπο"@el , "Личность"@ru , "Personne"@fr , "Person"@en , "Person"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> , <http://www.cidoc-crm.org/cidoc-crm/E20_Biological_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P152_has_parent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of E21 Person with another instance of E21 Person who plays the role of the first instance’s parent, regardless of whether the relationship is biological parenthood, assumed or pretended biological parenthood or an equivalent legal status of rights and obligations obtained by a social or legal act. \n\tThis property is, among others, a shortcut of the fully developed paths from ‘E21Person’ through ‘P98i was born’, ‘E67 Birth’, ‘P96 by mother’ to ‘E21 Person’, and from ‘E21Person’ through ‘P98i was born’, ‘E67 Birth’, ‘P97 from father’ to ‘E21 Person’.\n\t"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has parent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P96_by_mother>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links an E67 Birth event to an E21 Person as a participant in the role of birth-giving mother.\n\nNote that biological fathers are not necessarily participants in the Birth (see P97 from father (was father for)). The Person being born is linked to the Birth with the property P98 brought into life (was born). This is not intended for use with general natural history material, only people. There is no explicit method for modelling conception and gestation except by using extensions. This is a sub-property of P11 had participant (participated in).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "de mère"@fr , "είχε μητέρα"@el , "посредством матери"@ru , "pela mãe"@pt , "durch Mutter"@de , "by mother"@en , "来自生母"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P11_had_participant> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P96i_gave_birth>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gave birth"@en , "a donné naissance à"@fr , "дал рождение"@ru , "成为生母於"@zh , "gebar"@de , "ήταν μητέρα του/της"@el , "deu nascimento"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P11i_participated_in> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E67_Birth>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the births of human beings. E67 Birth is a biological event focussing on the context of people coming into life. (E63 Beginning of Existence comprises the coming into life of any living beings). \nTwins, triplets etc. are brought into life by the same E67 Birth event. The introduction of the E67 Birth event as a documentation element allows the description of a range of family relationships in a simple model. Suitable extensions may describe more details and the complexity of motherhood with the intervention of modern medicine. In this model, the biological father is not seen as a necessary participant in the E67 Birth event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "诞生"@zh , "Рождение"@ru , "Geburt"@de , "Nascimento"@pt , "Naissance"@fr , "Γέννηση"@el , "Birth"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P100i_died_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "est mort par"@fr , "morreu em"@pt , "starb in"@de , "πέθανε σε"@el , "死亡於"@zh , "died in"@en , "умер в"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E69_Death> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P93i_was_taken_out_of_existence_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P97i_was_father_for>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "war Vater für"@de , "ήταν πατέρας του/της"@el , "成为生父於"@zh , "was father for"@en , "foi pai para"@pt , "был отцом для"@ru , "a été père dans"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P152i_is_parent_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is parent of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property property links an E69 Death event to the E21 Person that died."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E69_Death> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "был смертью для"@ru , "was death of"@en , "灭亡了"@zh , "ήταν θάνατος του/της"@el , "Tod von"@de , "foi a morte para "@pt , "a été la mort de"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P93_took_out_of_existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E69_Death>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the deaths of human beings. \nIf a person is killed, their death should be instantiated as E69 Death and as E7 Activity. The death or perishing of other living beings should be documented using E64 End of Existence.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Смерть"@ru , "Mort"@fr , "Θάνατος"@el , "Death"@en , "Morte"@pt , "死亡"@zh , "Tod"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P97_from_father>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links an E67 Birth event to an E21 Person in the role of biological father.\nNote that biological fathers are not seen as necessary participants in the Birth, whereas birth-giving mothers are (see P96 by mother (gave birth)). The Person being born is linked to the Birth with the property P98 brought into life (was born).\nThis is not intended for use with general natural history material, only people. There is no explicit method for modelling conception and gestation except by using extensions. \nA Birth event is normally (but not always) associated with one biological father.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "είχε πατέρα"@el , "gab Vaterschaft"@de , "от отца"@ru , "from father"@en , "来自父亲"@zh , "de père"@fr , "pelo pai"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P98i_was_born>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "был рожден"@ru , "was born"@en , "wurde geboren durch"@de , "veio à vida pelo"@pt , "est né"@fr , "诞生於"@zh , "γεννήθηκε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by> .

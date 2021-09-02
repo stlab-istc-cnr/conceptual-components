@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP12i_is_confined_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is confined by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP19i_contains_embedding>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "contains embedding"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises coherent parts of the boundary surface, which appears as the result of a stratigraphic genesis event or process. The interface marks the extreme limit of the effect of a genesis or modification event, and indicates in particular where the effect of this event ended. Each event of creation/destruction of a deposition layer implies the creation of new interfaces. Thus there are two main types of interface: those that are surfaces of strata (that can be directly related to the corresponding stratum via the AP12 confines property), and those that are only surfaces, formed by the removal or destruction of existing stratifications."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Stratigraphic Interface"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP19_is_embedding_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the A2 Stratigraphic Volume Unit that contains the A7 Embedding."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is embedding in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP12_confines>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies partly or completely the surface (A3 Stratigraphic Interface) of an A2 Stratigraphic Volume Unit. One A3 Stratigraphic Interface may confine two or more A2 Stratigraphic Volume Units."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "confines"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises connected portions of terrain or other solid structure on, in, or under the surface of earth or seafloor exhibiting some homogeneity of structure or substance and completely bounded by surfaces or discontinuities in substance or structure with respect to other portions of the terrain or surfaces of objects/finds.\nAn instance of A8 Stratigraphic Unit may contain physical objects. The internal continuity and the boundaries of an instance of A8 Stratigraphic Unit should  be of a kind that can be attributed to a single genesis event or process and have the potential to be observed.\nOne genesis event may have created more than one SU. An instance of A8 Stratigraphic Unit is regarded to exist as long as a part of its matter is still in place with respect to a surrounding reference space such that its spatial features can be associated with effects of the genesis process of interest. Normally at least one of the surfaces (such as the lower one) from its genesis event will remain during its existence.\nThis also implies that a certain degree of coherent (“conformal”) deformation is tolerable within its time-span of existence. Therefore the place an instance of A8 Stratigraphic Unit occupies can be uniquely identified with respect to the surrounding reference space of archaeological interest.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Stratigraphic Volume Unit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the states of instances of E18 Physical Things of being partially or completely embedded at a particular position with relative stability in one or more A2 Stratigraphic Volume Units. Normally, an embedding is expected having been stable from the time of generation on of the first A2 Stratigraphic Volume Unit that surrounds it. However, it may also be due to later intrusion. As an empirical fact, the expert may only be able to decide that a particular embedding is not recent, i.e., has been persisting for longer than the activity that encountered it. This class can be used to document the fact of embedding generally with respect to the surrounding matter or more specifically with respect to a more precise position within this matter. It further allows for specifying temporal bounds for which a particular embedding has been existing as specified according to evidence."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Embedding"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S16_State> .

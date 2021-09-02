@@ -1,0 +1,93 @@
+<http://www.w3.org/2001/XMLSchema#date>
+        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+
+<https://w3id.org/arco/ontology/movable-property/dateOfLastChangePreservative>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietàrappresenta la data in cui per l’ultima volta il conservante del preparato è stato cambiato"@it , "This preperty represents the date in which the preservative has been changed for the last time"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/movable-property/FruitSample> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "date of last change preservative"@en , "data ultimo cambio conservante"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/date> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa BNB: DB/DBC/DBCE"@en .
+
+<https://w3id.org/arco/ontology/movable-property/hasPreservationType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un campione al tipo di conservazione"@it , "This property relates a specimen to the type of preservation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/movable-property/FruitSample> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has preservation type"@en , "ha tipo di conservazione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/movable-property/PreservationType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/movable-property/isPreservationTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa ICCD BNB: DB/DBC/DBCX" .
+
+<https://w3id.org/arco/ontology/movable-property/isPreservationTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il tipo di conservazione al campione"@it , "This property relates the conservation type to a  specimen"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/movable-property/PreservationType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is preservation type of"@en , "è tipo di conservazione di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/movable-property/FruitSample> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/movable-property/FruitSample>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un reperto carpologico (frutti)"@it , "This class represents a sample from the fruit collection"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Fruit  sample"@en , "Reperto carpologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/movable-property/Sample> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BNB: DB/DBC" .
+
+<https://w3id.org/arco/ontology/movable-property/PreservationType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the preparation type of a sample"@en , "Questa classe rappresenta il tipo di conservazione di un campione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo di conservazione"@it , "Preservation type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Normativa ICCD BNB: DB/DBC/DBCX"@en .

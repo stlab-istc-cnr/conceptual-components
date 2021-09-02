@@ -1,0 +1,96 @@
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P41_classified>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property records the item to which a type was assigned in an E17 Type Assignment activity.\nAny instance of a CRM entity may be assigned a type through type assignment. Type assignment events allow a more detailed path from E1 CRM Entity through P41 classified (was classified), E17 Type Assignment, P42 assigned (was assigned by) to E55 Type for assigning types to objects compared to the shortcut offered by P2 has type (is type of).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "classified"@en , "a classifié"@fr , "分类了"@zh , "klassifizierte"@de , "classificou"@pt , "классифицировал"@ru , "χαρακτήρισε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes. \nE55 Type is the CRM’s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader  term (has narrower term). Such hierarchies may be extended with additional properties. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo"@pt , "Type"@fr , "Type"@en , "Τύπος"@el , "Тип"@ru , "Typus"@de , "类型"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the actions of classifying items of whatever kind. Such items include objects, specimens, people, actions and concepts. \nThis class allows for the documentation of the context of classification acts in cases where the value of the classification depends on the personal opinion of the classifier, and the date that the classification was made. This class also encompasses the notion of \"determination,\" i.e. the systematic and molecular identification of a specimen in biology. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "类型指定"@zh , "Απόδοση Τύπου"@el , "Attribution de type"@fr , "Type Assignment"@en , "Typuszuweisung"@de , "Присвоение Типа"@ru , "Atribuição de Tipo"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is a high level property, which captures the relationship between an E7 Activity and anything that may have had some bearing upon it.\nThe property has more specific sub properties.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "находился под влиянием"@ru , "επηρεάστηκε από"@el , "a été influencée par"@fr , "foi influenciado por "@pt , "wurde beeinflußt durch"@de , "was influenced by"@en , "有影响事物"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E7_Activity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented. \nThis notion includes complex, composite and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράση"@el , "Activity"@en , "活动"@zh , "Atividade"@pt , "Handlung"@de , "Деятельность"@ru , "Activité"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P137i_is_exemplified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "δειγματίζεται από"@el , "有例示"@zh , "est exemplifié par"@fr , "is exemplified by"@en , "exemplifica"@pt , "erläutert durch Beispiel"@de , "поясняется посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P15i_influenced>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "оказал влияние на"@ru , "a influencé"@fr , "影响了"@zh , "beeinflußte"@de , "influenciou"@pt , "επηρέασε"@el , "influenced"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes an item or items that are regarded as a reason for carrying out the E7 Activity. \nFor example, the discovery of a large hoard of treasure may call for a celebration, an order from head quarters can start a military manoeuvre. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "был обусловлен посредством"@ru , "wurde angeregt durch"@de , "a été motivée par"@fr , "有促动事物"@zh , "είχε ως αφορμή"@el , "foi motivado por"@pt , "was motivated by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by> .

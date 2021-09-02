@@ -1,0 +1,41 @@
+<http://www.cidoc-crm.org/cidoc-crm/P58i_defines_section>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E46_Section_Definition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "definiert Abschitt auf oder von"@de , "ορίζει τμήμα σε"@el , "defines section"@en , "define uma seção de"@pt , "définit une section de"@fr , "界定了区域於"@zh , "определяет район"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items with a relatively stable form, man-made or natural.\n\nDepending on the existence of natural boundaries of such things, the CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.\n\nAn instance of E18 Physical Thing occupies not only a particular geometric space, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. Physical things consisting of aggregations of physically unconnected objects, such as a set of chessmen, occupy a number of individually contiguous spacetime volumes equal to the number of unconnected objects that constitute the set.\n\nWe model E18 Physical Thing to be a subclass of E72 Legal Object and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E18 Physical Thing without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E18 Physical Thing is matter while a spacetime volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E18 Physical Thing is regarded to be unique to it, due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E18 Physical Thing. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.\n\nThe CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Υλικό Πράγμα"@el , "Chose matérielle"@fr , "Physical Thing"@en , "实体物"@zh , "Физическая Вещь"@ru , "Materielles"@de , "Coisa Material"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E46_Section_Definition>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises areas of objects referred to in terms specific to the general geometry or structure of its kind. \nThe 'prow' of the boat, the 'frame' of the picture, the 'front' of the building are all instances of E46 Section Definition. The class highlights the fact that parts of objects can be treated as locations. This holds in particular for features without natural boundaries, such as the “head” of a marble statue made out of one block (cf. E53 Place). In answer to the question 'where is the signature?' one might reply 'on the lower left corner'. (Section Definition is closely related to the term “segment” in Gerstl, P.& Pribbenow, S, 1996 “ A conceptual theory of part – whole relations and its applications”, Data & Knowledge \tEngineering 20 305-322, North Holland- Elsevier ).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Désignation de section"@fr , "Section Definition"@en , "Ονομασία Τμήματος"@el , "区域定义"@zh , "Определение Района"@ru , "Designação de Seção"@pt , "Abschnittsdefinition"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E44_Place_Appellation> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P58_has_section_definition>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links an area (section) named by a E46 Section Definition to the instance of E18 Physical Thing upon which it is found.\nThe CRM handles sections as locations (instances of E53 Place) within or on E18 Physical Thing that are identified by E46 Section Definitions. Sections need not be discrete and separable components or parts of an object.\nThis is part of a more developed path from E18 Physical Thing through P58, E46 Section Definition, P87 is identified by (identifies) that allows a more precise definition of a location found on an object than the shortcut P59 has section (is located on or within).\nA particular instance of a Section Definition only applies to one instance of Physical Thing."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has section definition"@en , "tem designação de seção"@pt , "имеет определение района"@ru , "a pour désignation de section"@fr , "hat Abschittsdefinition"@de , "有区域定义"@zh , "έχει ορισμό τμήματος"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E46_Section_Definition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

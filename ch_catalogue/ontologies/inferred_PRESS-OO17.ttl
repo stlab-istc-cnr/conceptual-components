@@ -1,0 +1,70 @@
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is exemplified by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> , <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y22i_is_sequencing_pattern_foreseen_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is sequencing pattern foreseen in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F23 Expression Fragment with the instance of Z10 Sequencing Pattern of which it provides an example."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is indicative of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> , <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises ‘forms anticipated to be used in designating volumes/issues, etc. and/or dates for the individual units of the serial (e.g. Volume ..., number ...)’ [FRBR definition].\nA sequencing pattern is a type exemplified in one or more than one statement transcribed from one or more than one issue of a serial. The type itself is never recorded as such, but is only inferred from the transcribed statements."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequencing Pattern"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises plans that specify bits of the issuing policy followed at some point in time for instances of F18 Serial Work.\nThe notion of issuing policy may include: regularity, frequency, sequencing pattern, the language of the linguistic objects contained in each issue, dimension of each issue, the font used to print each issue, the layout and editorial rules adhered to in each issue, etc.\n[Note: The notion of issuing rule is to be understood differently in PRESSOO than in FRBROO. In FRBROO, property R11 has issuing rule (is issuing rule) points to a complete issuing policy that comprises a variety of parameters (regularity, frequency, dimension, language, etc.), while in PRESSOO an instance of Z12 Issuing Rule focuses on only one of those parameters and consists of a plan for just the expected regularity, just the expected frequency, just the expected dimension, etc. This perspective shift was made necessary when it was realized that any change (i.e., any instance of Z5 Issuing Rule Change) in just one of those parameters led to a new instantiation of Z12 Issuing Rule and new instantiations of all the ranges of the associated properties, with exactly the same value for each of them except for the one parameter that changes. It was deemed preferable to associate an instance of Z12 Issuing Rule with just one parameter of the issuing policy, which makes it possible that, e.g., a monthly was transformed into a quarterly without having to repeat that the expected language of its issues remains English.]"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Issuing Rule"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y22_foresees_sequencing_pattern>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of Z12 Issuing Rule with a sequencing pattern foreseen for the issues of a serial that follows that policy.\nTypically, a sequencing pattern is not recorded in its archetypical form, but through the transcription of a statement found on one or more than one issue of the serial. The complete semantics of the relation between the serial described and the statement transcribed is contained in the following circle: F18 Serial Work R10 has member F19 Publication Work [ = the concepts of the individual issue from which the statement is transcribed] R3 is realised in F24 Publication Expression R15 has fragment F23 Expression Fragment Y43 is indicative of Z10 Sequencing Pattern Y22i is sequencing pattern foreseen in Z12 Issuing Rule Y37i is former or current issuing rule of F18 Serial Work.\nFRBRER distinguishes between the archetypical Sequencing Pattern, an attribute of the Expression entity, and the actual Numbering, an attribute of the Manifestation entity. The FRBRER Sequencing Pattern notion corresponds to Z10 Sequencing Pattern in PRESSOO, while the FRBRER Numbering corresponds to the instance of F23 Expression Fragment used to convey the archetypical sequencing pattern and does not call for a specific class in PRESSOO."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "foresees sequencing pattern"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

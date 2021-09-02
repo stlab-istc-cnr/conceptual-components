@@ -1,0 +1,51 @@
+<http://purl.org/saws/ontology#commentMadeBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A comment has been made by a modern-day scholar/editor. \n\nNB to represent marginalia physically written in the margins of the manuscript, use: Marginalia marginaliaAddedBy Scribe."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Comment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "comment made by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Editor> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "LinguisticObject isWrittenBy Person\nMarginalia marginaliaAddedBy Scribe"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#hasMadeComment> .
+
+<http://purl.org/saws/ontology#Comment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Comment on a part of the material, usually from the modern editor. \n\nN.B. The Comment class is for comments on a material that do not physically exist on that material. If a comment has been physically written on a material (usually in the margin), then this should be represented as an instance of Marginalia. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "comment"@en ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/saws/ontology#Marginalia> .
+
+<http://purl.org/saws/ontology#Editor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A modern scholar editing material to produce an edition, in the age of printing and beyond"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "editor"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E21_Person> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/saws/ontology#Scribe> , <http://purl.org/saws/ontology#Transmitter> .
+
+<http://purl.org/saws/ontology#hasMadeComment>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A modern-day scholar/editor has made a comment. \n\nNB to represent scribes physically writing marginalia on the manuscript, use: Scribe hasAddedMarginalia."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Editor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has made comment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Comment> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "Person hasWritten LinguisticObject\nScribe hasAddedMarginalia Marginalia "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .

@@ -1,0 +1,159 @@
+<https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the time period that elapses between one of the member events of a recurrent event, as a collection of events, and the next one."@en , "Questa classe rappresenta il periodo di tempo che intercorre tra un evento membro di un evento ricorrente, inteso come collezione di eventi, e un evento membro successivo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Recurrent time period"@en , "Periodo di tempo ricorrente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/l0/EventOrSituation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/cultural-event/isRecurrentTimePeriodOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the maximum time period that elapses between one of the member events of a recurrent event and the next one."@en , "Questa proprietà collega il periodo di tempo massimo che intercorre tra uno degli eventi membri di un evento ricorrente e l'evento successivo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è periodo di tempo di"@it , "is recurrent time period of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentSituationSeries> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/cultural-event/timePeriodValue>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the value associated to the time period that elapses between one of the member events of a recurrent event, as a collection of events, and the next one."@en , "Questa proprietà rappresenta il valore del periodo di tempo che intercorre tra il verificarsi di due eventi membri di un evento ricorrente."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "valore del periodo di tempo"@it , "time period value"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#integer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/cultural-event/isTimePeriodBeforeNextEventOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa è la proprietà inversa a \"ha periodo di tempo prima di evento successivo\"."@it , "This is the inverse property of \"has time period before next event\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è periodo di tempo prima di evento successivo di"@it , "is time period before next event of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/EventOrSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/cultural-event/RecurrentSituationSeries>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un evento ricorrente, ovvero un evento inteso come collezione di eventi, posti in una sequenza temporale, e caratterizzato da almeno un fattore unificante (es.: il topic, il luogo)."@it , "This class represents a recurrent event, that is an event as a collection of sequential events and identified by at least one unifying factor (e.g.: topic, place)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Recurrent situation series"@en , "Situazione ricorrente"@it , "Evento ricorrente"@it , "Recurrent event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> , <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BDI 4.00: RC" .
+
+<https://w3id.org/arco/ontology/cultural-event/hasTimePeriodMeasurementUnit>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the maximum time period that elapses between one of the member events of a recurrent event, as a collection of events, and the next one, to the unit of measurement associated to it."@en , "Questa proprietà collega il periodo di tempo massimo che intercorre tra un evento membro di un evento ricorrente, inteso come collezione di eventi, e un evento membro successivo alla sua unità di misura."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has time period measurement unit"@en , "ha unità di misura di periodo di tempo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cultural-event/TimePeriodMeasurementUnit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasCharacteristic> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cultural-event/isTimePeriodMeasurementUnitOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/cultural-event/isTimePeriodMeasurementUnitOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa è la proprietà inversa a \"ha unità di misura di periodo di tempo\"."@it , "This is the inverse property of \"has time period measurement unit\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cultural-event/TimePeriodMeasurementUnit> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is time period measurement unit of"@en , "è unità di misura di periodo di tempo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isCharacteristicOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/cultural-event/hasTimePeriodBeforeNextEvent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates an event, member of a recurrent event as a collection of events, to the time period that is between that event and the next one."@en , "Questa proprietà collega un evento, membro di un evento ricorrente inteso come collezione di eventi, al periodo di tempo che intercorre tra l'evento stesso e l'evento successivo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/EventOrSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has time period before next event"@en , "ha periodo di tempo prima di evento successivo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cultural-event/isTimePeriodBeforeNextEventOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/cultural-event/TimePeriodMeasurementUnit>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta l'unità di misura associata al periodo di tempo massimo che intercorre tra un evento membro di un evento ricorrente, inteso come collezione di eventi, e un evento membro successivo."@it , "This class represents the unit of measurement associated to the maximum time period that elapses between one of the member events of a recurrent event, as a collection of events, and the next one."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/cultural-event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unità di misura del periodo di tempo"@it , "Time period measurement unit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/MU/MeasurementUnit> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .

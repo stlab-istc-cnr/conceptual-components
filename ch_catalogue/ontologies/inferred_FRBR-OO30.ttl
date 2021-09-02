@@ -1,0 +1,78 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/R26_produced_things_of_type>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F32 Carrier Production Event with the instance of F3 Manifestation Product Type it produced items of.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "produced things of type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the definitions of publication products.\nAn instance of F3 Manifestation Product Type is the “species”, and all copies of a given object are “specimens” of it. An instance of F3 Manifestation Product Type defines all of the features or traits that instances of F5 Item normally display in order that they may be recognised as copies of a particular publication. However, due to production problems or subsequent events, one or more instances of F5 Item may not exhibit all these features or traits; yet such instances still retain their relationship to the same instance of F3 Manifestation Product Type.\nThe features that characterise a given instance of F3 Manifestation Product Type include: one instance of F24 Publication Expression, containing one or more than one instance of F2 Expression, reflecting the authors’ content of the manifestation and all additional input by the publisher; and the appropriate types of physical features for that form of the object. For example, hardcover and paperback are two distinct publications (i.e. two distinct instances of F3 Manifestation Product Type) even though authorial and editorial content are otherwise identical in both publications. The activity of cataloguing aims at the most accurate listing of features or traits of an instance of F3 Manifestation Product Type that are sufficient to distinguish it from another instance of F3 Manifestation Product Type.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Manifestation Product Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises complete sets of signs present in publications, reflecting publishers’ final decisions as to both selection of content and layout of the publications. Frequently the creation of a Publication Expression includes both adding graphical form and fonts to Expressions consisting of words alone and selecting illustrations and other content. As such, an instance of Publication Expression incorporates all Expressions combined for the resulting final form of rendering, whether visual, audio or tactile. An instance of Publication Expression is one entity regardless of the number of independent Expressions published within it, as long as it represents one unit of release. The published third party content can be associated via the property P165 incorporates (is incorporated in).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R27i_was_used_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was used by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R27_used_as_source_material>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F32 Carrier Production Event with the set of signs provided by the publisher to be carried by all of the produced items.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "used as source material"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that result in instances of F54 Utilised Information Carrier coming into existence. Both the production of a series of physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) and the creation of a new copy of a file on an electronic carrier are regarded as instances of F32 Carrier Production Event.\nTypically, the production of copies of a publication (no matter whether it is a book, a sound recording, a DVD, a cartographic resource, etc.) strives to produce items all as similar as possible to a prototype that displays all the features that all the copies of the publication should also display, which is reflected in property R27 used as source material F24 Publication Expression.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Carrier Production Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E12_Production> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R26i_was_produced_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was produced by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

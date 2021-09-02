@@ -1,0 +1,49 @@
+<https://w3id.org/italia/onto/AtlasOfPaths/PathStage>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una tappa georeferenziata di un cammino. Ad essa sono associate ulteriori informazioni: la presenza di segnaletica (indicante successive tappe, eventuali snodi verso altri cammini, percorsi alternativi o deviazioni) e di alloggi, ristoranti e servizi di supporto al camminatore nelle vicinanze."@it , "This class represents a georeferenced stage of a path. Further information is associated with it: the presence of signposting (indicating a successive stage, possible path intersections, alternative pathways or detours) and of accommodation, restaurants and walker support services nearby."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Path Stage"@en , "Tappa del percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/Route/Stage> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This object property connects a path stage with a point of interest nearby."@en , "Questa object property collega una tappa del cammino con un punto d'interesse nelle vicinanze."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has nearby point of interest"@en , "ha un punto d'interesse nelle vicinanze"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/POI/PointOfInterest> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse object property of hasNearbyPointOfInterest."@en , "Proprietà inversa di hasNearbyPointOfInterest."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/POI/PointOfInterest> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is nearby point of interest of"@en , "è punto di interesse nelle vicinanze di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/POI/PointOfInterest>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .

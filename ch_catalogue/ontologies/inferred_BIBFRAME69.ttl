@@ -1,0 +1,92 @@
+<http://id.loc.gov/ontologies/bibframe/Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Item" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Single example of an Instance." .
+
+<http://id.loc.gov/ontologies/bibframe/AdminMetadata>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Administrative metadata" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Metadata about the metadata, especially provenance information." .
+
+<http://id.loc.gov/ontologies/bibframe/agent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Used with Unspecified" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Associated agent" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Entity associated with a resource or element of description, such as the name of the entity responsible for the content or of the publication, printing, distribution, issue, release or production of a resource." .
+
+<http://id.loc.gov/ontologies/bibframe/heldBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Held by" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Entity holding the item or from which it is available." .
+
+<http://id.loc.gov/ontologies/bibframe/assigner>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/AdminMetadata> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Assigner" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Entity that assigned the metadata, such as the entity that assigned a classification number, entity that assigned a name, entity that assigned an identifier." .
+
+<http://id.loc.gov/ontologies/bibframe/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://xmlns.com/foaf/0.1/Agent> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-05-13 (New subclass)" , "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Entity having a role in a resource, such as a person or organization." .
+
+<http://id.loc.gov/ontologies/bibframe/descriptionModifier>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/AdminMetadata> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Description modifier" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Agency that modified a description." .

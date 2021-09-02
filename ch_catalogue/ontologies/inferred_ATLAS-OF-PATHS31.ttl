@@ -1,0 +1,146 @@
+<https://w3id.org/italia/onto/Route/hasSuperTripPlan>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property used to indicate the super trip plan which contains other trip plans"@en , "Proprietà utilizzata per indicare il piano di viaggio che contiene altri piani di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "super piano di viaggio"@it , "has super trip plan"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/Route/Route>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Una sequenza ordinata di tappe che possono essere seguite da persone e/o da qualsiasi tipo di veicolo di transito"@it , "A sequence of ordered stages that can be followed by a human being and/or any type of transit vehicle"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Route"@en , "Percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Sequence> , <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <http://www.w3.org/ns/prov#wasDerivedFrom>
+                <http://vocab.gtfs.org/terms#Route> .
+
+<https://w3id.org/italia/onto/Route/isTripPlanOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse property of has trip plan"@en , "Proprietà inversa di ha piano di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is trip plan of"@en , "piano viaggio di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/Route/hasTripPlan>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property that links any thing to a trip plan"@en , "Proprietà che lega qualsiasi cosa a un piano di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has trip plan"@en , "ha piano di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/Route/isTripPlanOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/Route/TripPlan>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The class represents a specific trip plan that is part of the route. This is used to associated an estimated duration to the route. A trip plan can be detailed in additional trip plans."@en , "La classe rappresenta uno specifico piano di viaggio che è parte di un percorso. Esso è utilizzato anche per associare una durata stimata del percorso. Il piano di viaggio può essere dettagliato in ulteriori piani di viaggio."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Trip Plan"@en , "Piano di Viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/Route/hasRoute>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property used to connect any thing to a route"@en , "Proprietà utilizzata per collegare qualsiasi cosa a un percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha percorso"@it , "has route"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/Route/isRouteOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/Route/hasEstimatedDuration>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà che consente di specificare una durata per il piano di viaggio."@it , "Property that links the trip plan to its duration"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has estimated duration"@en , "ha durata stimata"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/TI/Duration> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/Route/hasSubTripPlan>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property used to specify additional trip plans that compose a bigger one."@en , "Proprietà utilizzata per suddividere un piano di viaggio in ulteriori piani"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sotto piano di viaggio"@it , "has sub trip plan"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/Route/hasSuperTripPlan> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/TI/Duration>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> , <https://w3id.org/italia/onto/TI/TemporalEntity> .

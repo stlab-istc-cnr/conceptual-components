@@ -1,0 +1,79 @@
+<https://www.ica.org/standards/RiC/ontology#performsOrPerformed>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'is or was performed by' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "performs or performed"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasParticipantIn> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasPerformedBy> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R060i ('performs or performed'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasPerformedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Activity to an Agent that performed or performs the\n            Activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was performed by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadParticipant> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R060 ('is or was performed by'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Activity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The doing of something for some human purpose."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Activity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Event> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Activity is a kind of Event. Activity is specifically used to\n            designate purposeful human activity. Activity may be understood from two perspectives.\n            First it can be understood as leading to an end. The end is the purpose of the Activity,\n            or why the Activity is performed. Second, it can be understood in terms of the processes\n            that lead to achieving the end, how the end is realized through coordinated actions.\n            Purpose and process are complementary understandings of Activity. Together the two\n            perspectives address why the Activity is performed, the expected ends or outcomes; and\n            how the Activity fulfills the purpose. While activity has an intended end, it also has\n            unintended consequences and results, or side-effects. By and large, these may not be the\n            focus of the description, but they are, unquestionably, context. |In a corporate or\n            government context an Activity may also be called a 'function'. An Activity exists in a\n            specific social and cultural context, and within that context is subject to change over\n            time. An Activity may be composed of other Activities."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E15 (Activity\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person, or Group, or an entity created by a Person or Group\n            (Mechanism), or a Position, that acts in the world."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "An Agent may have one or more identities; an identity is a\n            constellation of properties or relations that together “identify” the Agent. A Person or\n            Group commonly has one identity, though each also may have one or more alternative\n            identities. Such alternative identities may be shared by more than one Person or Group.\n            Alternative identities include but are not limited to pseudonyms, heteronyms, DBA (Doing\n            Business As), and trade identities. An alternative identity should not be confused with\n            a Position in a Group, for example, presidents, prime ministers, governors, popes,\n            royalty, or bishops. Nor should an alternative identity be confused with a variant name\n            or identifier of the same identity. Agent also includes entities created by a Person or\n            Group that act on behalf of the creating Agent in an autonomous or semi-autonomous\n            manner. Examples of a Mechanism include software agents, robots, and space and\n            underwater probes that generate data (records) in the course of Activity assigned to and\n            in conformance with the instructions given to them by the creating Person or\n            Group."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E07 (Agent\n            entity)"@en .

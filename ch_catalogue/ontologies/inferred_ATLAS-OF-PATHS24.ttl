@@ -1,0 +1,53 @@
+<https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyRestaurant>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This object property connects a path stage with a nearby restaurant."@en , "Questa object property collega una tappa del cammino con un ristorante nelle vicinanze."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has nearby restaurant"@en , "ha un ristorante nelle vicinanze"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/Restaurant> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/hasNearbyPointOfInterest> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isNearbyRestaurantOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/isNearbyRestaurantOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse object property of hasNearbyRestaurant."@en , "Proprietà inversa di hasNearbyRestaurant."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/Restaurant> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is nearby restaurant of"@en , "è ristorante nelle vicinanze di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathStage> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isNearbyPointOfInterestOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/Restaurant>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/POI/PointOfInterest> .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/PathStage>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta una tappa georeferenziata di un cammino. Ad essa sono associate ulteriori informazioni: la presenza di segnaletica (indicante successive tappe, eventuali snodi verso altri cammini, percorsi alternativi o deviazioni) e di alloggi, ristoranti e servizi di supporto al camminatore nelle vicinanze."@it , "This class represents a georeferenced stage of a path. Further information is associated with it: the presence of signposting (indicating a successive stage, possible path intersections, alternative pathways or detours) and of accommodation, restaurants and walker support services nearby."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Path Stage"@en , "Tappa del percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/Route/Stage> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .

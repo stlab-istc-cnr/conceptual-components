@@ -1,0 +1,44 @@
+<http://www.arpenteur.org/ontology/Arpenteur.owl#Model>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is a photogrammetric model. It contains a set of oriented photograph and a set of 3D points which are at least visible on two oriented photographs." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Model"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Photogrammetry> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasCameraManager>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Model> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has CameraManager"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#CameraManager> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#CameraManager>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CameraManager"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#GenericManager> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasPhotoManager>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Model> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has PhotoManager"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#PhotoManager> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#PhotoManager>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PhotoManager"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#GenericManager> .

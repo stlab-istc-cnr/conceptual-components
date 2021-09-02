@@ -1,0 +1,62 @@
+<http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Associates a Real World Object with its Authority description." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#RWO> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is Identified By Authority" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.loc.gov/mads/rdf/v1#identifiesRWO> .
+
+<http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Unless the relationship can be more specifically identified, use 'hasRelatedAuthority.'"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has Related Authority"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> , <http://www.w3.org/2004/02/skos/core#semanticRelation> .
+
+<http://www.loc.gov/mads/rdf/v1#RWO>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A madsrdf:RWO is an abstract entity and identifies a Real World Object (RWO) identified by the label of a madsrdf:Authority or madsrdf:DeprecatedAuthority." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Real World Object" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.loc.gov/mads/rdf/v1#Authority>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A concept with a controlled label." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Authority"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2004/02/skos/core#Concept> , <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://www.loc.gov/mads/rdf/v1#Variant> , <http://www.loc.gov/mads/rdf/v1#MADSScheme> , <http://www.loc.gov/mads/rdf/v1#MADSCollection> , <http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority> .
+
+<http://www.loc.gov/mads/rdf/v1#identifiesRWO>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Associates a madsrdf:Authority with the Real World Object that is the subject of the authority's label." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifies RWO" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#RWO> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://xmlns.com/foaf/0.1/focus> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .

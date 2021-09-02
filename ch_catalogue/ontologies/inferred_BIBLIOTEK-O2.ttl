@@ -1,0 +1,59 @@
+<http://bibliotek-o.org/1.1/ontology/isTitleOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is title of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/terms/issued>
+                "2017-04-22T00:00:00-04:00" ;
+        <http://purl.org/dc/terms/modified>
+                "2017-04-22T00:00:00-04:00" ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://id.loc.gov/ontologies/bibframe/title> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Resource of which this title is the title."@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Expected value Work, Instance or Item"@en .
+
+<http://bibliotek-o.org/1.1/ontology/hasPreferredTitle>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has preferred title"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://id.loc.gov/ontologies/bibframe/title> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Specifies the preferred title of this resource."@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "A resource may have multiple directly linked titles, among which this is the preferred title."@en .
+
+<http://id.loc.gov/ontologies/bibframe/Title>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://bibliotek-o.org/1.1/ontology/isPreferredTitleOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is preferred title of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://bibliotek-o.org/1.1/ontology/isTitleOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://bibliotek-o.org/1.1/ontology/hasPreferredTitle> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Specifies the resource for which this is the preferred title."@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "A resource may have multiple directly linked titles, among which this is the preferred title."@en .

@@ -1,0 +1,82 @@
+<https://w3id.org/arco/ontology/immovable-property/ConstructionDesign>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the main features of the design of a construction, referring to its shape and its function."@en , "Questa classe rappresenta i principali caratteri del progetto di una costruzione, relative alla  sua forma e alla sua funzione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Construction design"@en , "Progetto della costruzione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/location/maxAlt>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta l'altitudine massima assoluta rispetto al livello del mare."@it , "This property represents the absolute maximum altitude above sea level."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/location/Altitude> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maximum altitude"@en , "altitudine massima"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#decimal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/location/alt> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTA/MTAX - Normative precedenti: GP/GPC/GPCS; GA/GAQS; GL/GLQ/GLQS"@it .
+
+<https://w3id.org/arco/ontology/immovable-property/refersToFloorOrLevel>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the floor or the quote of the construction design."@en , "Questa proprietà rappresenta il piano o la quota (m., cm.) del livello a cui si riferisce la pianta che\nviene descritta."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/immovable-property/ConstructionDesign> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/immovable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "riferimento a piano o quota"@it , "refers to floor or level"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#decimal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/location/Altitude>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta l'altitudine, ovvero l'altezza di un oggetto rispetto al livello del mare, che può essere specificata da un'altitudine massima, minima, relativa."@it , "This class represents the altitude, that is the height of an object above the sea level, which can be specified as maximum, minimum and relative altitude."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Altitudine"@it , "Altitude"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Characteristic> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "quota minima: GP/GPC/GPCI -GA/GAQ/GAQI - GL/GLQ/GLQI - MT/MTA/MTAM; quota massima: GP/GPC/GPCS - GA/GAQS - GL/GLQ/GLQS - MT/MTA/MTAX; quota relativa: MT/MTA/MTAR; coordinata z: 4.00 GE/GEC/GECZ - 3.00GP/GPC/GPCL"@it .
+
+<https://w3id.org/arco/ontology/location/relativeAlt>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta l'altezza relativa dell'oggetto rispetto a un punto, un elemento o una situazione da specificare."@it , "This property represents the object relative height by reference to a point or an element or a situation to be specified."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/location/Altitude> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/location> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "altitudine relativa"@it , "relative altitude"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#decimal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/location/alt> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTA/MTAR" .

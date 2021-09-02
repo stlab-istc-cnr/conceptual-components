@@ -1,0 +1,78 @@
+<http://purl.org/saws/ontology#hasAddedDecoration>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person has physically added a DecorativeItem onto the manuscript\n\nNB to represent where scribes have written marginalia notes (text) physically onto the manuscript, use: Scribe hasAddedMarginalia Marginalia"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has added decoration"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#DecorativeItem> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "Scribe hasAddedMarginalia Marginalia"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#decorationAddedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A DecorativeItem has been physically added onto the manuscript by a Person\n\nNB to represent marginalia notes (text) physically written in the margins of the manuscript, use: Marginalia marginaliaAddedBy Scribe"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#DecorativeItem> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "decoration added by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "Marginalia marginaliaAddedBy Scribe"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#hasAddedDecoration> .
+
+<http://erlangen-crm.org/current/E21_Person>
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Note for SAWS: this includes any human being, named or otherwise"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "person"@en .
+
+<http://purl.org/saws/ontology#hasWritten>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person has written (or has transcribed) a LinguisticObject.\nNB This also includes:\nEditor hasWritten Comment\nScribe hasWritten Marginalia"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has written"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "Editor hasMadeComment Comment\nScribe hasAddedMarginalia Marginalia"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isWrittenBy> .
+
+<http://purl.org/saws/ontology#isWrittenBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A LinguisticObject is written (or transcribed) by a specified Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is written by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E21_Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "Comment commentMadeBy Editor\nMarginalia marginaliaAddedBy Scribe"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#DecorativeItem>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Decorative element (picture, ornamentation, etc) within the material, either meaning-bearing or non meaning-bearing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "decorative item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E36_Visual_Item> .

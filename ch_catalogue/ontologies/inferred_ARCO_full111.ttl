@@ -1,0 +1,75 @@
+<https://w3id.org/arco/ontology/context-description/hasDocumentationType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a documentation to its type."@en , "Questa proprietà collega una documentazione al tipo di documentazione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Documentation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has documentation type"@en , "ha tipo di documentazione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/DocumentationType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isDocumentationTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "FTAP, DRAT, FNTP (+VDCP, REGP), ADMP (v. 3.00 e 3.01)" .
+
+<https://w3id.org/arco/ontology/context-description/Documentation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the documentation, with subclasses for each specific type of documentation (images, drawings, audio, video, etc.)"@en , "Classe che rappresenta la documentazione, specializzata nelle sottoclassi che rappresentano tipi specifici di documentazione di corredo (immagini, disegni e rilievi, cartografia, documenti audio e video, fonti e documenti editi e inediti, referenze bibliografiche)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Documentazione"@it , "Documentation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi della classe 'Documentazione' è il seguente:\nresource:AudioDocumentation/1200924650-audio-documentation-1\n        a   cd:AudioDocumentation ;\n        rdfs:label  \"Documentazione audio 1 del bene culturale: 1200924650\"@it ;\n        cd:documentationIdentifier \"New_1401358982589\" ;\n        cd:hasDocumentationType resource:DocumentationType/cassetta-dat ;\n        cd:hasFormat resource:Format/cassetta-dat ;\n        core:hasCategory cd:AttachedDocumentation ."@en , "An example of usage of one of the subclasses of the class 'Documentation' is the following:\nresource:AudioDocumentation/1200924650-audio-documentation-1\n        a   cd:AudioDocumentation ;\n        rdfs:label  \"Audio documentation 1 of cultural property: 1200924650\"@en ;\n        cd:documentationIdentifier \"New_1401358982589\" ;\n        cd:hasDocumentationType resource:DocumentationType/cassetta-dat ;\n        cd:hasFormat resource:Format/cassetta-dat ;\n        core:hasCategory cd:AttachedDocumentation ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DO"@it .
+
+<https://w3id.org/arco/ontology/context-description/isDocumentationTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the type of documentation to its documentation."@en , "Questa proprietà collega il tipo di documentazione alla sua documetanzione."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/DocumentationType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is documentation type of"@en , "è tipo di documentazione di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Documentation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/DocumentationType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il tipo di documentazione."@it , "This class represents the type of documentation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo di documentazione"@it , "Documentation type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "FTAP, DRAT, FNTP (+VDCP, REGP), ADMP (v. 3.00 e 3.01)"@it .

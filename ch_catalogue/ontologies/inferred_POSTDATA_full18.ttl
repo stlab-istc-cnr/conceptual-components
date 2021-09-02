@@ -1,0 +1,66 @@
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Representatives of a work, that is, of a Poetic Work. Each version and edition of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en , "Representatives of a work, that is, of an Poetic Work. Each version of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Redaction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> , <http://iflastandards.info/ns/fr/frbr/frbroo/F22> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A human being regarded as an individual. This person may have existed in real life (e.g., Miguel de Cervantes) or may be fictional (e.g., Don Quijote de la Mancha).\nThis class is defined as a subclass of pdcore:Agent (which is a subclass of edm:Agent) and foaf:Person, following the design principles used in the EDM ontology. In the future, it may be also defined as a subclass of schema:Person, so as to facilitate linking with existing entities already defined according to schema.org"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Agent> , <http://xmlns.com/foaf/0.1/Person> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#portrait>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "URL to a digital image file that depicts the person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "portrait"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#text>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Reference to textual contents . The contents of this property do not allow finer analysis by stanza or line. It can be a text of a diplomatic edition, semidiplomatic edition or of a critical edition (among others) or even a translation. The property typeOfRedaction defines the type of Edition or if it is a translation"@en , "Reference to textual contents . The contents of this property do not allow finer analysis by stanza or line. It can be a text of a diplomatic edition, semidiplomatic edition or of a critical edition (among others) or even a translation. The property typeOfRedaction defines the type of Edition or if it is a translation. There is only one possible text for each Redaction."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "text"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> , <http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#additionalFile>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A file (XML, PFD, plain text) which contains the Redaction and, likely, other type of analytical information.\n\nTaking as example the poem \"Amadís de Gaula a Don Quijote de la Mancha\": Redaction could be an XML-TEI file (for example, the TEI annotated text of ADSO corpus (https://github.com/bncolorado/CorpusSonetosSigloDeOro/blob/master/Cervantes/Cervantes_1.xml)), whereas \"additionalFile\" could be another file containing a plain text version of the same poem."@en , "A file (XML, PFD, plain text) which contains the Redaction and, likely, other type of analytical information"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "additional File"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#anyURI> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .

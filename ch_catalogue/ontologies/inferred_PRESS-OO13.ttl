@@ -1,0 +1,41 @@
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is URL foreseen in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> , <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises plans that specify bits of the issuing policy followed at some point in time for instances of F18 Serial Work.\nThe notion of issuing policy may include: regularity, frequency, sequencing pattern, the language of the linguistic objects contained in each issue, dimension of each issue, the font used to print each issue, the layout and editorial rules adhered to in each issue, etc.\n[Note: The notion of issuing rule is to be understood differently in PRESSOO than in FRBROO. In FRBROO, property R11 has issuing rule (is issuing rule) points to a complete issuing policy that comprises a variety of parameters (regularity, frequency, dimension, language, etc.), while in PRESSOO an instance of Z12 Issuing Rule focuses on only one of those parameters and consists of a plan for just the expected regularity, just the expected frequency, just the expected dimension, etc. This perspective shift was made necessary when it was realized that any change (i.e., any instance of Z5 Issuing Rule Change) in just one of those parameters led to a new instantiation of Z12 Issuing Rule and new instantiations of all the ranges of the associated properties, with exactly the same value for each of them except for the one parameter that changes. It was deemed preferable to associate an instance of Z12 Issuing Rule with just one parameter of the issuing policy, which makes it possible that, e.g., a monthly was transformed into a quarterly without having to repeat that the expected language of its issues remains English.]"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Issuing Rule"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises identifiers for servers from which digital files can be obtained online."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of Z12 Issuing Rule with an instance of Z11 URL that identifies the server from which digital files containing the issues of the continuing resource with which the instance of Z12 Issuing Rule is associated are available on the Web."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "foresees URL"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> , <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .

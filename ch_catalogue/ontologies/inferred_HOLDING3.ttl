@@ -1,0 +1,55 @@
+<http://purl.org/ontology/holding#Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use one of bf:Agent or foaf:Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/holding#heldBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates an item to an agent who holds the item."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/holding#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "held by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/holding#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                <http://rdaregistry.info/Elements/i/owner> , <http://rdaregistry.info/Elements/i/currentOwner> , <http://bibframe.org/vocab/heldBy> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/holding#collectedBy> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://purl.org/ontology/holding#holds>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates an agent to an item which the agent holds."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/holding#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "holds"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/ontology/holding#Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                <http://rdaregistry.info/Elements/a/currentOwnerOf> , <http://rdaregistry.info/Elements/a/ownerOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/holding#collects> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/ontology/holding#heldBy> .
+
+<http://purl.org/ontology/holding#Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use one of bf:HeldItem frbr:Item rdac:Item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

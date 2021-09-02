@@ -1,0 +1,108 @@
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Representatives of a work, that is, of a Poetic Work. Each version and edition of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en , "Representatives of a work, that is, of an Poetic Work. Each version of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Redaction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> , <http://iflastandards.info/ns/fr/frbr/frbroo/F22> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#hasOrderedTextUnitList>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "List of text units that form the redaction"@en , "List of text units that form the Redaction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has Ordered Text Unit List"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#OrderedTextUnitList> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#firstPartOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the container (an instance of Redaction) of which the item at hand is its first part"@en , "first Part of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#hasFirstPart> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Text unit of an ordered list"@en , "Text unit of an ordered list. For example, a word, a line or a stanza."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Text Unit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#Slot> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#hasFirstPart>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the first text unit  which form the current element under analysis"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#OrderedTextUnitList> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has First Part"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#hasPart> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#OrderedTextUnitList>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An ordered list of text units with a given length and indexed elements. Examples of these lists are the list of stanzas and the list of lines, associated to a Redaction."@en , "An ordered list of text units with a given length and indexed elements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ordered Text Unit List"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#OrderedList> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#hasTextUnit>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A text unit in an ordered list."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#OrderedTextUnitList> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasTextUnit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/olo/core#slot> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .

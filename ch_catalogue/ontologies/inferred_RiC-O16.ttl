@@ -1,0 +1,67 @@
+<https://www.ica.org/standards/RiC/ontology#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A human being with a social identity or persona."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Person is a kind of Agent. Most commonly, a human being\n            (biological person) has a single coeval social identity or persona. In everyday\n            discourse, this is the “real person.” Less common though not rare, over the course of a\n            lifetime, personae in addition to the coeval (or “original”) persona may be associated\n            with the human being. Such “alternative personae” are most often created by the original\n            person for specific purposes. Under some circumstances, an alternative persona might\n            eclipse or replace the original person (Mark Twain eclipsing Samuel Clemens; John Wayne\n            eclipsing Marion Mitchell Morrison), that is, the social (shared) alternative identity\n            becomes the predominate identity. Less common is whentwo or more persons collaborate to\n            create a shared persona. Persona shared by two or more Persons constitute a kind of\n            Group. Within the archival context, the original Person generally will be the focus of\n            the description, with alternative personae noted. Exceptionally, an alternative persona\n            may displace the coeval persona.s."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E08 (Person\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#knowingRelationConnects>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects Knowing Relation to any known Person\n            involved."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#KnowingRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "knowing relation connects "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#agentRelationConnects> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#personHasKnowingRelation> .
+
+<https://www.ica.org/standards/RiC/ontology#personHasKnowingRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Person to a Knowing Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "person has knowing relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#KnowingRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#agentIsConnectedToAgentRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#KnowingRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects at least two Persons that directly know each other\n            during their existence. This relation is symmetric."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Knowing Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#AgentToAgentRelation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Cass implementation of RiC-R051 and RiC—R051i\n            relations"@en .

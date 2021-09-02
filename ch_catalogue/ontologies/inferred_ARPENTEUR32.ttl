@@ -1,0 +1,51 @@
+<http://www.opengis.net/ont/sf#Point>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasInterval>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Intersection> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has interval"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Interval> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasIntervalEndPoint>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Interval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has Interval End Point"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.opengis.net/ont/sf#Point> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasIntervalStartPoint>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Interval> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has Interval Start Point"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.opengis.net/ont/sf#Point> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> , <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#Intersection>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Intersection"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#PlaneObject> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#Interval>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Interval"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#PlaneObject> .

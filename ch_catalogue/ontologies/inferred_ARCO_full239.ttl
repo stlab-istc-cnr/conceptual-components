@@ -1,0 +1,188 @@
+<https://w3id.org/arco/ontology/catalogue/isCatalogueRecordVersionOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property, inverse of \"has catalogue record version\", used to associate a catalogue record version (e.g. after update) to the catalogue record."@en , "Proprietà, inversa di \"ha versione\", che permette di collegare una versione  (corrispondente a un particolare stato dovuto a operazioni di redazione, aggiornamento, revisione) di una scheda di catalogo alla scheda di catalogo intesa come oggetto informativo che descrive un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecordVersion> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è versione di"@it , "is catalogue record version of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/catalogue/catalogueRecordIdentifier>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà permette di associare l'identificativo a una scheda catalografica che descrive un bene culturale."@it , "This property represents the identifier of a catalogue record describing a cultural property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "catalogue record identifier"@en , "identificativo della scheda di catalogo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "Concatenazione dei sottocampi di CD/NCT (NCTR, NCTN, NCTS) e RV/RVE/RVEL"@it .
+
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecordVersion>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a version (after creation, editing, updating) of a catalogue record on a cultural property."@en , "Rappresenta una versione (relativa a operazioni di redazione, aggiornamento, revisione) di una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Versione della scheda"@it , "Catalogue record version"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "CM/CMP; CM/RVM; CM/AGG" .
+
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecord>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Rappresenta una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni, e che può avere più versioni (in seguito ad aggiornamenti e revisioni)."@it , "This class represents a catalogue record, that is a descriptive model collecting and organising information on a cultural property, and which can have more than one version (after editing and updating)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Scheda di catalogo"@it , "Catalogue record"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Catalogue Record' is the following:\nresource:CatalogueRecordS/0500212038\n        a           cat:CatalogueRecordS ;\n        rdfs:label  \"Catalogue record n: 0500212038\"@en ;\n        cat:catalogueRecordIdentifier \"0500212038\" ;\n        cat:describesCulturalProperty resource:HistoricOrArtisticProperty/0500212038 ;\n        cat:hasAccessProfile resource:AccessProfile/0500212038-1 ;\n        cat:hasCatalogueRecordVersion resource:CatalogueRecordVersion/0500212038-rvm , resource:CatalogueRecordVersion/0500212038-agg-1 , resource:CatalogueRecordVersion/0500212038-compilation ;\n        cat:hasCataloguingLevel\n                cat:C ;\n        cat:systemRecordCode \"ICCD8403091\" ;\n        core:note>  \"Number of negative by \"Museco Civico\": MCBas G/ DLXXXIX/ 3775\" ."@en , "Un esempio di utilizzo della classe \"Scheda di Catalogo\" è il seguente:\nresource:CatalogueRecordS/0500212038\n        a           cat:CatalogueRecordS ;\n        rdfs:label  \"Scheda catalografica n: 0500212038\"@it ;\n        cat:catalogueRecordIdentifier \"0500212038\" ;\n        cat:describesCulturalProperty resource:HistoricOrArtisticProperty/0500212038 ;\n        cat:hasAccessProfile resource:AccessProfile/0500212038-1 ;\n        cat:hasCatalogueRecordVersion resource:CatalogueRecordVersion/0500212038-rvm , resource:CatalogueRecordVersion/0500212038-agg-1 , resource:CatalogueRecordVersion/0500212038-compilation ;\n        cat:hasCataloguingLevel\n                cat:C ;\n        cat:systemRecordCode \"ICCD8403091\" ;\n        core:note  \"Numero di negativo del Museo Civico: MCBas G/ DLXXXIX/ 3775\" ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/catalogue/hasCatalogueRecordVersion>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà che permette di collegare una scheda di catalogo, intesa come oggetto informativo che descrive un bene culturale, a una sua versione (corrispondente a un particolare stato dovuto a operazioni di redazione, aggiornamento, revisione)."@it , "Property used to associate a catalogue record to one of its versions (e.g. after update)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha versione"@it , "has version"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecordVersion> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/catalogue/isCatalogueRecordVersionOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/catalogue/describesCulturalProperty>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà che consente di associare la scheda di catalogo al bene culturale che essa descrive."@it , "Property used to associate the catalogue record with the cultural property that the catalogue record describes."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "describes"@en , "descrive"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/catalogue/describes> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/catalogue/isDescribedByCatalogueRecord> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/catalogue/systemRecordCode>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the identifier associated in the context of the SIGECweb to the xml file containing a catalogue record."@en , "Questa proprietà rappresenta l'identificativo di sistema che viene associato all'interno del sistema Sigec al file xml contenente una scheda di catalogo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "identificativo di sistema"@it , "system record code"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/arco/ontology/catalogue/deletedICCDIdentifier>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the ICCD's identifier deleted for many reasons, used to search for obsolete catalogue records."@en , "Questa proprietà rappresenta un codice ICCD eventualmente soppresso per motivi di diversa natura, utile per poter ricercare e consultare le schede pregresse nell'Archivio storico gestito dall'Istituto o da altri Enti."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "codice ICCD soppresso"@it , "deleted ICCD identifier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RV/RSP; versioni precedenti: RV/RVE/RVES"@it .
+
+<https://w3id.org/arco/ontology/catalogue/recoveredData>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta eventuali informazioni provenienti da schede pregresse redatte sulla base di standard obsoleti, per le quali non è stato possibile effettuare il trasferimento nel tracciato della scheda aggiornato, secondo la sintassi: “acronimocampo: valore; acronimocampo: valore”"@it , "This property represents information extracted from versions of a catalogue record using obsolete standards."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dati pregressi recuperati"@it , "recovered data"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: AN/RDP" .
+
+<https://w3id.org/arco/ontology/catalogue/isDescribedByCatalogueRecord>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà, inversa di \"descrive\", permette di associare un bene culturale alla scheda di catalogo che lo descrive."@it , "This property, inverse of \"describes\", is used to associate a cultural property with the catalogue record that describes it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/catalogue> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è descritto da"@it , "is described by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/catalogue/CatalogueRecord> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/catalogue/isDescribedBy> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

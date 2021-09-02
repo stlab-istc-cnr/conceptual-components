@@ -1,0 +1,89 @@
+<https://w3id.org/italia/onto/AtlasOfPaths/Pathway>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe descrive un percorso di un cammino nella sua accezione prettamente fisica e rappresentabile come sequenza ordinata di tappe georeferenziate."@it , "This class describes a pathway of a path in its purely physical meaning, which can be represented as an ordered sequence of georeferenced stages."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Percorso"@it , "Pathway"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta la relazione n-aria capace di quantificare la percentuale di una specifica pavimentazione, ovvero l'asfalto, di un percorso."@it , "This class represents the n-ary relation able to quantify the percentage of a pathway specific paving, i.e. the asphalt."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Quantified Pathway Paving"@en , "Quantificazione della pavimentazione del percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/forPathway>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa object property mette in relazione un percorso con la quantità di una sua specifica pavimentazione, ovvero l'asfalto."@it , "This object property correlates a pathway with the quantity of its specific paving, i.e. the asphalt."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "per percorso"@it , "for pathway"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/Pathway> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/hasQuantityOfPaving> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/Path>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the concept of a path that includes: its theme of interest, its different pathways (main, alternative and deviation), its encountered paths, its management and maintenance's entities, its website."@en , "Questa classe rappresenta il concetto di cammino che ricomprende: la sua tematica d'interesse, i suoi diversi percorsi (principale, alternativo e deviazione), i cammini che lo incrociano, gli enti di gestione e manutenzione, il sito web."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cammino"@it , "Path"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod> , <https://w3id.org/italia/onto/Route/Route> , <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/hasQuantifiedPathwayPaving>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa object property mette in relazione un cammino con la quantità di una sua specifica pavimentazione, ovvero l'asfalto."@it , "This object property correlates a path with the quantity of its specific paving, i.e. the asphalt."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/Path> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha quatificata pavimentazione del percorso"@it , "has quantified pathway paving"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isQuantifiedPathwayPavingOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/hasQuantityOfPaving>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse property of \"for Pathway\""@en , "Proprietà inversa di \"per percorso\""@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/Pathway> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/AtlasOfPaths> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha quantità di pavimentazione"@it , "has quantity of paving"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/QuantifiedPathwayPaving> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .

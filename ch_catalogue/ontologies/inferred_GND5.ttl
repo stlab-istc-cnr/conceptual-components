@@ -1,0 +1,127 @@
+<https://d-nb.info/standards/elementset/gnd#Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Work"@en , "Werk"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://d-nb.info/standards/elementset/gnd#AuthorityResource> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "079 $v=wit" , "079 $b=u" .
+
+<https://d-nb.info/standards/elementset/gnd#abbreviatedNameForTheCorporateBody>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#CorporateBody> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Abgekürzter Name der Körperschaft"@de , "Abbreviated name for the corporate body"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#variantNameForTheCorporateBody> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "410 $a $b $g $n $4=abku" .
+
+<https://d-nb.info/standards/elementset/gnd#placeOrGeographicNameIsMember>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place or geographic name is member"@en , "Geografikum ist Mitglied"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#CorporateBody> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#member> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "510 $0 $4=mitg" .
+
+<https://d-nb.info/standards/elementset/gnd#CorporateBody>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Körperschaft"@de , "Corporate Body"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://d-nb.info/standards/elementset/gnd#AuthorityResource> , <http://rdaregistry.info/Elements/c/C10005> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "079 $v=kiz" , "079 $b=b" .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfBusiness>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#CorporateBody> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sitz"@de , "Place of business"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#associatedPlace> , <http://rdaregistry.info/Elements/a/P50018> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "551 $0 $4=orta" .
+
+<https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#CorporateBody> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Preferred name for the corporate body"@en , "Bevorzugter Name der Körperschaft"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#preferredName> , <http://xmlns.com/foaf/0.1/name> , <http://rdaregistry.info/Elements/a/P50041> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "110 $a $b $g $n" .
+
+<https://d-nb.info/standards/elementset/gnd#scriptorium>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A scriptorium in a monastery"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Skriptorium"@de , "Scriptorium"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://d-nb.info/standards/elementset/gnd#CorporateBody> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.w3.org/2000/01/rdf-schema#Literal>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place or geographic name"@en , "Geografikum"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://d-nb.info/standards/elementset/gnd#AuthorityResource> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "079 $v=giz" , "079 $b=g" .
+
+<https://d-nb.info/standards/elementset/gnd#variantNameForTheCorporateBody>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://d-nb.info/standards/elementset/gnd#CorporateBody> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://d-nb.info/standards/elementset/gnd#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Variant name for the corporate body"@en , "Varianter Name der Körperschaft"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://d-nb.info/standards/elementset/gnd#variantName> , <http://rdaregistry.info/Elements/a/P50025> , <http://xmlns.com/foaf/0.1/name> ;
+        <https://d-nb.info/standards/elementset/gnd#marc21equivalent>
+                "410 $a $b $g $n" .

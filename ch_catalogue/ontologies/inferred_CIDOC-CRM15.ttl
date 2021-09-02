@@ -1,0 +1,87 @@
+<http://www.cidoc-crm.org/cidoc-crm/E9_Move>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises changes of the physical location of the instances of E19 Physical Object. \nNote, that the class E9 Move inherits the property P7 took place at (witnessed): E53 Place. This property should be used to describe the trajectory or a larger area within which a move takes place, whereas the properties P26 moved to (was destination of), P27 moved from (was origin of) describe the start and end points only. Moves may also be documented to consist of other moves (via P9 consists of (forms part of)), in order to describe intermediate stages on a trajectory. In that case, start and end points of the partial moves should match appropriately between each other and with the overall event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Перемещение"@ru , "Μετακίνηση"@el , "Locomoção"@pt , "移动"@zh , "Objektbewegung"@de , "Déplacement"@fr , "Move"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "в данный момент содержит"@ru , "hält derzeitig"@de , "é localização atual de"@pt , "currently holds"@en , "είναι θέση του"@el , "目前置放了"@zh , "est localisation actuelle de"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P53i_is_former_or_current_location_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P25_moved>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies an instance of E19 Physical Object that was moved by a move event. A move must concern at least one object.\n\nThe property implies the object's passive participation. For example, Monet's painting \"Impression sunrise\" was moved for the first Impressionist exhibition in 1874. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "μετεκίνησε"@el , "locomoveu"@pt , "移动了"@zh , "moved"@en , "переместил"@ru , "a déplacé"@fr , "bewegte"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises items of a material nature that are units for documentation and have physical boundaries that separate them completely in an objective way from other objects. \nThe class also includes all aggregates of objects made for functional purposes of whatever kind, independent of physical coherence, such as a set of chessmen. Typically, instances of E19 Physical Object can be moved (if not too heavy).\nIn some contexts, such objects, except for aggregates, are also called “bona fide objects” (Smith & Varzi, 2000, pp.401-420), i.e. naturally defined objects. \nThe decision as to what is documented as a complete item, rather than by its parts or components, may be a purely administrative decision or may be a result of the order in which the item was acquired.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Физический Объект"@ru , "Objeto Material"@pt , "Physical Object"@en , "Materieller Gegenstand"@de , "Objet matériel"@fr , "实体物件"@zh , "Υλικό Αντικείμενο"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter. \nThe instances of E53 Place are usually determined by reference to the position of “immobile” objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks. A Place can be determined by combining a frame of reference and a location with respect to this frame. It may be identified by one or more instances of E44 Place Appellation.\n It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, we are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object – H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.\nAny object can serve as a frame of reference for E53 Place determination. The model foresees the notion of a \"section\" of an E19 Physical Object as a valid E53 Place determination."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place"@en , "Место"@ru , "Local"@pt , "Τόπος"@el , "地点"@zh , "Ort"@de , "Lieu"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property records the foreseen permanent location of an instance of E19 Physical Object at the time of validity of the record or database containing the statement that uses this property.\nP54 has current permanent location (is current permanent location of) is similar to P55 has current location (currently holds). However, it indicates the E53 Place currently reserved for an object, such as the permanent storage location or a permanent exhibit location. The object may be temporarily removed from the permanent location, for example when used in temporary exhibitions or loaned to another institution. The object may never actually be located at its permanent location.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a actuellement pour localisation à demeure"@fr , "hat derzeitigen permanenten Standort"@de , "é localizado permanentemente em"@pt , "έχει μόνιμη θέση"@el , "目前的永久位置位於"@zh , "имеет текущее постоянное местоположение"@ru , "has current permanent location"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "é localização permanente de"@pt , "is current permanent location of"@en , "est actuellement localisation à demeure de"@fr , "ist derzeitiger permanenter Standort von"@de , "目前被用来永久置放"@zh , "είναι μόνιμη θέση του/της"@el , "является текущим постоянным местоположением для"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property records the location of an E19 Physical Object at the time of validity of the record or database containing the statement that uses this property. \n\tThis property is a specialisation of P53 has former or current location (is former or current location of). It indicates that the E53 Place associated with the E19 Physical Object is the current location of the object. The property does not allow any indication of how long the Object has been at the current location. \nP55 has current location (currently holds) is a shortcut. A more detailed representation can make use of the fully developed (i.e. indirect) path from E19 Physical Object through P25 moved (moved by), E9 Move P26 moved to (was destination of) to E53 Place if and only if this Move is the most recent.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hat derzeitigen Standort"@de , "в данный момент находится в"@ru , "é localizado em"@pt , "a pour localisation actuelle"@fr , "目前被置放於"@zh , "βρίσκεται σε"@el , "has current location"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location> .

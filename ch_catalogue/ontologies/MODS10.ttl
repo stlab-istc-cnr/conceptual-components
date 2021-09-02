@@ -1,0 +1,61 @@
+<http://www.loc.gov/mods/rdf/v1#identifierGroup>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Used when identifier type is not in controlled vocabulary. Bundles together the identifier with its type." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier Group" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#IdentifierGroup> .
+
+<http://www.loc.gov/mods/rdf/v1#identifierGroupType>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The identifier type." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#IdentifierGroup> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier Group - Type" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#identifierValue>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Used in conjuction with identifierType, when the type is not from the controlled vocabulary." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#IdentifierGroup> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier - Value" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#identifierGroupValue>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The identifier value\t." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#IdentifierGroup> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier Group - Value" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#ModsResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\nThe resource which is the subject of this description.\n  " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - A  MODS Resource" ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://id.loc.gov/vocabulary/resourceTypes/Res> .
+
+<http://www.loc.gov/mods/rdf/v1#IdentifierGroup>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Used when the identifier type is not from the controlled list. Bundles together an identifier and its type." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - Identifier - Typed" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

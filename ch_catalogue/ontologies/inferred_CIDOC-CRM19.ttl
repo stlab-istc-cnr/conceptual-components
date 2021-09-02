@@ -1,0 +1,85 @@
+<http://www.cidoc-crm.org/cidoc-crm/P25i_moved_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "μετακινήθηκε από"@el , "a été déplacé par"@fr , "wurde bewegt durch"@de , "moved by"@en , "перемещен посредством"@ru , "foi locomovido por"@pt , "被移动於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E9_Move>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises changes of the physical location of the instances of E19 Physical Object. \nNote, that the class E9 Move inherits the property P7 took place at (witnessed): E53 Place. This property should be used to describe the trajectory or a larger area within which a move takes place, whereas the properties P26 moved to (was destination of), P27 moved from (was origin of) describe the start and end points only. Moves may also be documented to consist of other moves (via P9 consists of (forms part of)), in order to describe intermediate stages on a trajectory. In that case, start and end points of the partial moves should match appropriately between each other and with the overall event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Перемещение"@ru , "Μετακίνηση"@el , "Locomoção"@pt , "移动"@zh , "Objektbewegung"@de , "Déplacement"@fr , "Move"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises items of a material nature that are units for documentation and have physical boundaries that separate them completely in an objective way from other objects. \nThe class also includes all aggregates of objects made for functional purposes of whatever kind, independent of physical coherence, such as a set of chessmen. Typically, instances of E19 Physical Object can be moved (if not too heavy).\nIn some contexts, such objects, except for aggregates, are also called “bona fide objects” (Smith & Varzi, 2000, pp.401-420), i.e. naturally defined objects. \nThe decision as to what is documented as a complete item, rather than by its parts or components, may be a purely administrative decision or may be a result of the order in which the item was acquired.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Физический Объект"@ru , "Objeto Material"@pt , "Physical Object"@en , "Materieller Gegenstand"@de , "Objet matériel"@fr , "实体物件"@zh , "Υλικό Αντικείμενο"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter. \nThe instances of E53 Place are usually determined by reference to the position of “immobile” objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks. A Place can be determined by combining a frame of reference and a location with respect to this frame. It may be identified by one or more instances of E44 Place Appellation.\n It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, we are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object – H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.\nAny object can serve as a frame of reference for E53 Place determination. The model foresees the notion of a \"section\" of an E19 Physical Object as a valid E53 Place determination."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place"@en , "Место"@ru , "Local"@pt , "Τόπος"@el , "地点"@zh , "Ort"@de , "Lieu"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P27i_was_origin_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "era origem de"@pt , "被作为移出地於"@zh , "war Ausgangsort von"@de , "a été l'origine de"@fr , "was origin of"@en , "был исходной точкой для"@ru , "ήταν αφετηρία του/της"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P26i_was_destination_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "era destinação de"@pt , "被作为移入地於"@zh , "war Zielort von"@de , "was destination of"@en , "был пунктом назначения для"@ru , "a été la destination de"@fr , "ήταν προορισμός του/της"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P26_moved_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies a destination of a E9 Move. \nA move will be linked to a destination, such as the move of an artefact from storage to display. A move may be linked to many terminal instances of E53 Place by multiple instances of this property. In this case the move describes a distribution of a set of objects. The area of the move includes the origin(s), route and destination(s).\nTherefore the described destination is an instance of E53 Place which P89 falls within (contains) the instance of E53 Place the move P7 took place at.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "moved to"@en , "移入物件至"@zh , "locomoveu para"@pt , "перемещен в"@ru , "μετακινήθηκε προς"@el , "bewegte bis zu"@de , "a déplacé vers"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P27_moved_from>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies a starting E53 Place of an E9 Move.\n\nA move will be linked to an origin, such as the move of an artefact from storage to display. A move may be linked to many starting instances of E53 Place by multiple instances of this property. In this case the move describes the picking up of a set of objects. The area of the move includes the origin(s), route and destination(s).\nTherefore the described origin is an instance of E53 Place which P89 falls within (contains) the instance of E53 Place the move P7 took place at.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "μετακινήθηκε από"@el , "locomoveu de"@pt , "有移出地"@zh , "a retiré de"@fr , "moved from"@en , "bewegte weg von"@de , "перемещен из"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

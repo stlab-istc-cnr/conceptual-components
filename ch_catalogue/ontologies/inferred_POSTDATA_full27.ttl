@@ -1,0 +1,202 @@
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Representatives of a work, that is, of a Poetic Work. Each version and edition of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en , "Representatives of a work, that is, of an Poetic Work. Each version of a work is its own redaction.\nEg.: The palaeographic edition of A solis ortu usque ad occidua preserved in Lat. 1154 (BNF) and its critical edition are two Redaction of the same Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Redaction"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> , <http://iflastandards.info/ns/fr/frbr/frbroo/F22> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isCalligram>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Whether it is a calligram, that is, a text visually arranged in a way that it forms an image associated with the text contents.\n\nTaking as example the (calligram) poem \"La Colombe poignardée et le Jet d’eau\" by Apollinaire, \"is Calligram\" value is True."@en , "Whether it is a calligram, that is, a text visually arranged in a way that it forms an image associated with the text contents"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Calligram"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#boolean> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#theme>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Subject of a text, song or image"@en , "Subject of a Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "theme"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://www.w3.org/2004/02/skos/core#Concept>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#literaryTradition>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The literary tradition assigned to a composition"@en , "The literary tradition assigned to a Poetic Work. There might be several values for this property.\n\nTaking as example the theatre play \"La vida es sueño\" by Calderón de la Barca, \"literary Tradition\" is \"Baroque\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "literary Tradition"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#authorEducationLevel>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Level of education of the creator of a text/song. This property has as Domain PoeticWork and not Person since the education level of a person changes during time. That is, this is the education level of the author in the moment of writing the poem."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "author Education Level"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#poeticType>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Major literary genre of the composition, that is, drama or poetry. The values of this property are defined in a controlled vocabulary about poetic types"@en , "Major literary genre of a Poetic Work, that is, drama or poetry. The values of this property are defined in a controlled vocabulary about poetic types"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "poetic Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Abstract concept of an artistic creation. In the POSTDATA ontology network these creations must be in verse (e.g., poem, play, song). For example, Os Lusíadas by Luis Vaz de Camões; La Commedia by Dante; the poem Ad te deus by an Anonymous author written in between the 7th and 9th centuries."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Poetic Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F1> , <http://www.europeana.eu/schemas/edm/ProvidedCHO> , <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#realises>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the work (an instance of Poetic Work) of which the text at hand (the current Redaction) is a materialisation"@en , "This property points to the work (an instance of Opus) of which the text at hand (the current Redaction) is a materialisation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "realises"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-transmission#Location>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isRealisedThrough>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to a text (an instance of Redaction) which is one of the materialisations of the work under analysis"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Realised Through"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#realises> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#genre>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Type of art, literature or music characterized by a specific form, content and style"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genre"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#isReferencedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the specific location in a bibliographic item (an instance of Location) whose contents are related to the current item under analysis (usually, its specific bibliography)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-core#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-core/" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is Referenced In"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

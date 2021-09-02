@@ -1,0 +1,44 @@
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOf3DPointWithObs>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#MeasuredPointManager> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has a set of 3D point with observations"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Point_3D> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#Model>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is a photogrammetric model. It contains a set of oriented photograph and a set of 3D points which are at least visible on two oriented photographs." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Model"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Photogrammetry> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#MeasuredPointManager>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MeasuredPointManager"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Point3DManager> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#Point_3D>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Point_3D"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#IPoint3D> , <http://www.arpenteur.org/ontology/Arpenteur.owl#IColoredPoint> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl#hasMeasuredPointManager>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#Model> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has MeasuredPointManager"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.arpenteur.org/ontology/Arpenteur.owl#MeasuredPointManager> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

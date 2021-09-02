@@ -1,0 +1,28 @@
+<http://purl.org/vocab/bio/0.1/Death>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bio:Death"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/bio/0.1/Event> .
+
+<http://purl.org/vocab/bio/0.1/death>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Even if there is no specific death date mentioned in the source, it is recommended to provide a Death event and estimate the dates based on other (life) events around the person. A concrete example would be the mentioning of a Burial event, by which the death date can be estimated, for instance by setting the `sem:hasEarliestBeginTimeStamp` property to the date of the Burial event.\n\nExample:\n```ttl\n_:person1 a roar:PersonReconstruction ;\n        rdfs:label \"Susanna de Bock\" ;\n        pnv:hasName [ a pnv:PersonName ;\n                pnv:baseSurname \"Bock\" ;\n                pnv:givenName \"Susanna\" ;\n                pnv:literalName \"Susanna de Bock\" ;\n                pnv:surnamePrefix \"de\" ] ;\n        bio:event [ a bio:Burial ;\n                    bio:place _:location1 ;\n                    bio:principal _:person1 ;\n                    sem:hasActor [ a sem:Role ;\n                                   sem:roleType [ a sem:RoleType ;\n                                                  rdfs:label \"burried\" ] ;\n                                   rdf:value _:person1 ] ;\n                    sem:hasTimeStamp \"1697-02-28\"^^xsd:date ] ;\n        bio:birth [ a bio:Birth ;\n                    bio:principal _:person1 ;\n                    sem:hasActor [ a sem:Role ;\n                                   sem:roleType [ a sem:RoleType ;\n                                                  rdfs:label \"born\" ] ;\n                                   rdf:value _:person1 ] ;\n                    sem:hasLatestEndTimeStamp \"1697-02-28\" ] ;\n        bio:death [ a bio:Death ;\n                    bio:principal _:person1 ;\n                    sem:hasActor [ a sem:Role ;\n                                   sem:roleType [ a sem:RoleType ;\n                                                  rdfs:label \"died\" ] ;\n                                   rdf:value _:person1 ] ;\n                    sem:hasEarliestBeginTimeStamp \"1697-02-21\" ; # Estimated, 7 days earlier\n                    sem:hasLatestEndTimeStamp \"1697-02-28\" ] ;\n        roar:documentedIn _:saaId10160347 .\n```"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/roar#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bio:death"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/bio/0.1/Death> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/vocab/bio/event/0.1> .
+
+<https://w3id.org/roar#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person is a human being that is mentioned in a Document. This can be a direct mention (e.g. 'Aaltie Jans') or indirect (e.g. 'husband of Aaltie Jans'), in which a name might not be known."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/roar#Entity> .

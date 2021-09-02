@@ -1,0 +1,22 @@
+<http://lawd.info/ontology/responsibleFor>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects any kind of author or creator to the work he/she/it is responsible for creating or contributing to. The author may be anonymous or fictional."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://lawd.info/ontology/Agent> .
+
+<http://lawd.info/ontology/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An Agent is an abstract entity which has agency or is considered capable of acting in some way. Current subclasses include Deities and Persons."@en ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://www.w3.org/ns/prov#Agent> .
+
+<http://lawd.info/ontology/responsibleAgent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a work of any type to the person, group, or insitution\n      responsible for the creation of the work."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://lawd.info/ontology/Agent> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://lawd.info/ontology/responsibleFor> .

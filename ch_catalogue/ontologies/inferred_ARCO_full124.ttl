@@ -1,0 +1,109 @@
+<https://w3id.org/arco/ontology/context-description/isArchivalRecordSetIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà, inversa a \"ha unità archivistica complessa\", collega una unità archivistica complessa al rapporto tra l'unità stessa e un bene culturale che ne fa parte."@it , "This property relates an archival record set to the relationship (membership) between the set itself and a cultural property that is member of it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è unità archivistica complessa in"@it , "is archival record set in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/context-description/archivalRecordSetIdentifier>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the identifier of an archival record set."@en , "Questa proprietà rappresenta l'identificativo di un'unità archivistica complessa."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "archival record set identifier"@en , "identificativo di unità archivistica complessa"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/identifier> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa FF: PA/PAC/PACI; PA/PAC/PACA" .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the membership of a cultural property in an archival record set."@en , "Questa classe rappresenta l'appartenenza di un bene culturale a un'unità archivistica complessa (fondo, serie, sottoserie, etc.)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Archival record set membership"@en , "Appartenenza a unità archivistica complessa"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Membership> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/context-description/Title>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il titolo di un oggetto. Nel caso del dominio dei beni culturali, può rappresentare il titolo del soggetto di un bene culturale o di un'opera collegata a un bene culturale in quanto sua fase preparatoria o finale o in quanto pubblicazione contenente una stampa, oppure il titolo di una serie fotografica, etc."@it , "This class represents the title of an object, e.g. the title of the subject represented by a cultural property, or the title of a photographic series, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Title"@en , "Titolo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale: DA/AID/AIDN (titolo alternativo); DA/AID/AIDT (titolo) - Normativa S e MI: OG/SGT/SGTP (titolo proprio); Normativa F: SG/SGL/SGLA (titolo attribuito); SG/SGL/SGLT (titolo proprio); SG/SGL/SGLL (titolo parallelo); - Altre normative di versioni precedenti alla 4.00: OG/SGT/SGTR (titolo parallelo); OG/SGT/SGTT (titolo); ICCD Normativa S 3: RO/ADL/ADLT"@it .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecordSet>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un'unità archivistica complessa (fondo, serie, sottoserie, etc.) di cui un bene culturale può fare parte."@it , "This class represents an archival record set (fonds, series, subseries) of which a cultural property can be member."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unità archivistica complessa"@it , "Archival record set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <http://mklab.iti.gr/pericles/BornDigitalArchives_ODP.owl> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi di 'Unità archivistica complessa' è il seguente:\nresource:ArchivalSubseries/museo-civico-romano\n        a           cd:ArchivalSubseries ;\n        rdfs:label  \"Museo Civico Romano\" ;\n        cd:isArchivalRecordSetIn resource:ArchivalRecordSetMembership/1201251092 ;\n        core:isComponentOf resource:ArchivalSeries/brescia ."@it , "An example of usage of on of the subclasses of the class 'Archival Record Set' is the following:\nresource:ArchivalSubseries/museo-civico-romano\n        a           cd:ArchivalSubseries ;\n        rdfs:label  \"Museo Civico Romano\" ;\n        cd:isArchivalRecordSetIn resource:ArchivalRecordSetMembership/1201251092 ;\n        core:isComponentOf resource:ArchivalSeries/brescia ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/context-description/hasTitle>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega un oggetto al suo titolo. Nel caso del dominio dei beni culturali, può collegare un bene culturale o un'opera collegata al bene culturale perché sua fase finale o preparatoria (proprio, attribuito, parallelo, alternativo), oppure un'edizione al suo titolo (principale o secondario), oppure una serie fotografica al suo titolo, etc."@it , "This property relates an object to its title."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has title"@en , "ha titolo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Title> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isTitleOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "OG/SGT/SGTP; SG/SGL/SGLT; SG/SGL/SGLL; OG/SGT/SGTR; DA/AID/AIDN; SG/SGL/SGLA; DA/AID/AIDT; OG/SGT/SGTT; RO/ROF/ROFT; DO/BSE/BSET; DO/BSE/BSEC."@it .

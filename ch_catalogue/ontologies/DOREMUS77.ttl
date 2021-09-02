@@ -1,0 +1,60 @@
+<http://data.doremus.org/ontology#U41_has_catalogue_number>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://data.doremus.org/ontology#M1_Catalogue_Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://data.doremus.org/ontology#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "U41 has catalogue number"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://data.doremus.org/ontology#U16_has_catalogue_statement>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/efrbroo/F22_Self-Contained_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://data.doremus.org/ontology#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "U16 has catalogue statement"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://data.doremus.org/ontology#M1_Catalogue_Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P1_is_identified_by> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://data.doremus.org/ontology#U16i_is_catalogue_statement_of> .
+
+<http://data.doremus.org/ontology#M1_Catalogue_Statement>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Scope Note:\nCette classe permet de décrire, lorsqu’elles existent, les références de catalogue de l’œuvre musicale. Par catalogue, on comprend tous les catalogues thématiques à proprement parler (donc à l’exclusion des numéros d’opus) ainsi que les classifications spécifiques telles que WoO ou Anh.\nSelon le niveau de granularité initial, elle est décrite par une simple chaîne de caractères, ou par les objets symboliques M10 Catalogue Name et M11 Catalogue Number qui la composent. La classe M10 Catalogue Name peut-être documentée via la propriété p70i is documented in."@fr , "Exemples :\nLa cantate Ich habe genug de JS Bach [BWV 82] (F22) est identifiée par  (M1 Catalogue p3 has note E62 String) BWV 82\nLa cantate Ich habe genug de JS Bach [BWV 82] (F22) est identifiée par  (M1 Catalogue p106 is composed of M10 Catalogue Name) BWV et (M1 Catalogue p106 is composed of Catalogue Number) 82.\nKomm, Gott Schöpfer, heiliger Geist. No 1 de JS Bach [BWV deest] (F22) est identifiée par (M1 Catalogue p3 has note E62 String) BWV deest.\nDuncan Gray [WoO 156, no 2] de Beethoven (F22) est identifiée par (M1 Catalogue p106 is composed of M10 Catalogue Name) WoO et (M1 Catalogue p106 is composed of Catalogue Number) 156, no 2.\nLa Sonate pour Clavier en Ut majeur de Wilhelm Friedemann Bach identifiée BR A1 par le catalogue Bach Repertorium  et identifiée F200 par le catalogue Fasch (F22) : est identifiée par (M1 Catalogue p106 is composed of M10 Catalogue Name) BR et (M1 Catalogue p106 is composed of Catalogue Number) A1, et est identifiée par (M1 Catalogue p106 is composed of M10 Catalogue Name) F et (M1 Catalogue p106 is composed of Catalogue Number) 200."@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://data.doremus.org/ontology#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "M1 Mention de catalogue"@fr , "M1 Catalogue Statement"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E41_Appellation> .
+
+<http://data.doremus.org/ontology#M10_Catalogue_Name>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://data.doremus.org/ontology#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "M10 Catalogue Name"@en , "M10 Nom de catalogue"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E90_Symbolic_Object> .
+
+<http://data.doremus.org/ontology#U40_has_catalogue_name>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://data.doremus.org/ontology#M1_Catalogue_Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://data.doremus.org/ontology#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "U40 has catalogue name"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://data.doremus.org/ontology#M10_Catalogue_Name> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P106_is_composed_of> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://data.doremus.org/ontology#U40i_is_catalogue_name_of> .

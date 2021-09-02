@@ -1,0 +1,20 @@
+<https://w3id.org/italia/onto/SM/WebSite>
+        a       <http://www.w3.org/2002/07/owl#Class> .
+
+<http://dati.beniculturali.it/cis/Catalogue>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Concept used to represent the catalogue which describes the set of cultural heritage objects included in a Cultural Institute or Site"@en , "Concetto utilizzato per rappresentare il catalogo che descrive l'insieme delle opere contenute in un istituto e luogo della cultura."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Catalogue"@en , "Catalogo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un catalogo è sempre associato a un individuo della classe \"Istitute e luogo della cultura\" attraverso la proprietà ha catalogo (che ha dominio CulturaInstituteOrSite e codominio Catalogue).\n\nLa proprietà inversa di ha catalogo è \"è catalogo di\" e collega il catalogo all'istituto e luogo della cultura.\n\nUn esempio in turtle è il seguente:\n\n<pre>\ncatalogue:Catalogo_Generale_(autore)\n      a       cis:Catalogue ;\n      rdfs:label \"Catalogo Generale (autore)\"@it ;\n      l0:name \"Catalogo Generale (autore)\"@it ;\n      cis:isCatalogueOf cissite:Biblioteca_nazionale_centrale ;\n      l0:description \"Catalogo Generale per autore - online\"@it .\n\ncissite:Biblioteca_nazionale_centrale\n      a       cis:Library , cis:CulturalInstituteOrSite ;\n      cis:catalogue catalogue:Catalogo_Generale_(autore) .\n</pre>"@it , "A catalogue is always associated with an individual of the class 'CulturalInstituteOrSite' (CIS) by means of the object property hasCatalogue (with domain CulturalInstituteOrSite and range Catalogue).\n\nThe inverse property of hasCatalogue is isCatalogueOf and relates a catalogue to a CIS.\n\nAn example in turtle is the following:\n\n<pre>\ncatalogue:Catalogo_Generale_(autore)\n      a       cis:Catalogue ;\n      rdfs:label \"Catalogo Generale (autore)\"@it ;\n      l0:name \"Catalogo Generale (autore)\"@it ;\n      cis:isCatalogueOf cissite:Biblioteca_nazionale_centrale ;\n      l0:description \"Catalogo Generale per autore - online\"@it .\n\ncissite:Biblioteca_nazionale_centrale\n      a       cis:Library , cis:CulturalInstituteOrSite ;\n      cis:catalogue catalogue:Catalogo_Generale_(autore) .\n</pre>"@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/SM/hasWebSite>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> .

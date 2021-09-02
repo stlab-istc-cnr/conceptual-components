@@ -1,0 +1,164 @@
+<http://www.cidoc-crm.org/cidoc-crm/P124_transformed>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E77 Persistent Item or items that cease to exist due to a E81 Transformation. \nIt is replaced by the result of the Transformation, which becomes a new unit of documentation. The continuity between both items, the new and the old, is expressed by the link to the common Transformation.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a transformé"@fr , "转变了"@zh , "transformou"@pt , "μετέτρεψε"@el , "трансформировал"@ru , "wandelte um"@de , "transformed"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P93_took_out_of_existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises events that end the existence of any E77 Persistent Item. \nIt may be used for temporal reasoning about things (physical items, groups of people, living beings) ceasing to exist; it serves as a hook for determination of a terminus postquem and antequem. In cases where substance from a Persistent Item continues to exist in a new form, the process would be documented by E81 Transformation.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Конец Существования"@ru , "End of Existence"@en , "Τέλος Ύπαρξης"@el , "Fim da Existência"@pt , "Daseinsende"@de , "存在结束"@zh , "Fin d'existence"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the active or passive presence of an E77 Persistent Item in an E5 Event without implying any specific role. \nIt connects the history of a thing with the E53 Place and E50 Date of an event. For example, an object may be the desk, now in a museum on which a treaty was signed. The presence of an immaterial thing implies the presence of at least one of its carriers.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "συνέβη παρουσία του/της"@el , "est arrivé en présence de"@fr , "появился в присутствии"@ru , "occurred in the presence of"@en , "ocorreu na presença de"@pt , "fand statt im Beisein von"@de , "发生现场存在"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E81_Transformation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the events that result in the simultaneous destruction of one or more than one E77 Persistent Item and the creation of one or more than one E77 Persistent Item that preserves recognizable substance from the first one(s) but has fundamentally different nature and identity. \nAlthough the old and the new instances of E77 Persistent Item are treated as discrete entities having separate, unique identities, they are causally connected through the E81 Transformation; the destruction of the old E77 Persistent Item(s) directly causes the creation of the new one(s) using or preserving some relevant substance. Instances of E81 Transformation are therefore distinct from re-classifications (documented using E17 Type Assignment) or modifications (documented using E11 Modification) of objects that do not fundamentally change their nature or identity. Characteristic cases are reconstructions and repurposing of historical buildings or ruins, fires leaving buildings in ruins, taxidermy of specimen in natural history and the reorganization of a corporate body into a new one.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "转变"@zh , "Umwandlung"@de , "Трансформация"@ru , "Transformation"@fr , "Transformation"@en , "Transformação"@pt , "Μετατροπή"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> , <http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P93_took_out_of_existence>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows an E64 End of Existence event to be linked to the E77 Persistent Item taken out of existence by it.\nIn the case of immaterial things, the E64 End of Existence is considered to take place with the destruction of the last physical carrier.\nThis allows an “end” to be attached to any Persistent Item being documented i.e. E70 Thing, E72 Legal Object, E39 Actor, E41 Appellation, E51 Contact Point and E55 Type. For many Persistent Items we know the maximum life-span and can infer, that they must have ended to exist. We assume in that case an End of Existence, which may be as unnoticeable as forgetting the secret knowledge by the last representative of some indigenous nation.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a fait cesser d’exister"@fr , "cessou a existência de"@pt , "положил конец существованию"@ru , "took out of existence"@en , "beendete die Existenz von"@de , "结束了"@zh , "αναίρεσε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P123i_resulted_from>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "προέκυψε από"@el , "resultado de"@pt , "ergab sich aus"@de , "resulted from"@en , "est le résultat de"@fr , "был результатом"@ru , "肇因於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows an E63 Beginning of Existence event to be linked to the E77 Persistent Item brought into existence by it.\nIt allows a “start” to be attached to any Persistent Item being documented i.e. E70 Thing, E72 Legal Object, E39 Actor, E41 Appellation, E51 Contact Point and E55 Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a fait exister"@fr , "开始了"@zh , "brachte in Existenz"@de , "trouxe à existência"@pt , "создал"@ru , "brought into existence"@en , "γέννησε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises events that bring into existence any E77 Persistent Item. \nIt may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exist; it serves as a hook for determination of a terminus post quem and ante quem. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Αρχή Ύπαρξης"@el , "Début d'existence"@fr , "Início da Existência"@pt , "Начало Существования"@ru , "Beginning of Existence"@en , "Daseinsbeginn"@de , "存在开始"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P93i_was_taken_out_of_existence_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被结束於"@zh , "прекратил существование посредством"@ru , "a cessé d’exister du fait de"@fr , "was taken out of existence by"@en , "αναιρέθηκε από"@el , "deixou de existir"@pt , "wurde seiner Existenz beraubt durch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ήταν παρών/παρούσα/παρόν σε"@el , "estava presente no"@pt , "war anwesend bei"@de , "was present at"@en , "присутствовал при"@ru , "était présent à"@fr , "当时在场於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P124i_was_transformed_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wurde umgewandelt durch"@de , "foi transformado por"@pt , "被转变於"@zh , "μετατράπηκε από"@el , "был трансформирован посредством"@ru , "was transformed by"@en , "a été transformé par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P93i_was_taken_out_of_existence_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E5_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises changes of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena. Such changes of state will affect instances of E77 Persistent Item or its subclasses.\nThe distinction between an E5 Event and an E4 Period is partly a question of the scale of observation. Viewed at a coarse level of detail, an E5 Event is an ‘instantaneous’ change of state. At a fine level, the E5 Event can be analysed into its component phenomena within a space and time frame, and as such can be seen as an E4 Period. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy change of state.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Événement"@fr , "Событие"@ru , "Evento"@pt , "Συμβάν"@el , "Ereignis"@de , "Event"@en , "事件"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E4_Period> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises items that have a persistent identity, sometimes known as “endurants” in philosophy. \nThey can be repeatedly recognized within the duration of their existence by identity criteria rather than by continuity or observation. Persistent Items can be either physical entities, such as people, animals or things, or conceptual entities such as ideas, concepts, products of the imagination or common names.\nThe criteria that determine the identity of an item are often difficult to establish -; the decision depends largely on the judgement of the observer. For example, a building is regarded as no longer existing if it is dismantled and the materials reused in a different configuration. On the other hand, human beings go through radical and profound changes during their life-span, affecting both material composition and form, yet preserve their identity by other criteria. Similarly, inanimate objects may be subject to exchange of parts and matter. The class E77 Persistent Item does not take any position about the nature of the applicable identity criteria and if actual knowledge about identity of an instance of this class exists. There may be cases, where the identity of an E77 Persistent Item is not decidable by a certain state of knowledge.\nThe main classes of objects that fall outside the scope the E77 Persistent Item class are temporal objects such as periods, events and acts, and descriptive properties. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Постоянная Сущность"@ru , "Seiendes"@de , "Persistent Item"@en , "持续性项目"@zh , "Ον"@el , "Entité persistante"@fr , "Entidade Persistente"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P123_resulted_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E77 Persistent Item or items that are the result of an E81 Transformation. \nNew items replace the transformed item or items, which cease to exist as units of documentation. The physical continuity between the old and the new is expressed by the link to the common Transformation.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultou em"@pt , "resulted in"@en , "a eu pour résultat"@fr , "είχε ως αποτέλεσμα"@el , "ergab"@de , "повлек появление"@ru , "转变出"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被开始於"@zh , "was brought into existence by"@en , "γεννήθηκε από"@el , "a commencé à exister du fait de"@fr , "был создан посредством"@ru , "passou a existir por"@pt , "wurde in Existenz gebracht durch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .

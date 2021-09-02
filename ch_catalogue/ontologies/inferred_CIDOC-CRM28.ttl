@@ -1,0 +1,319 @@
+<http://www.cidoc-crm.org/cidoc-crm/P30_transferred_custody_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies an item or items of E18 Physical Thing concerned in an E10 Transfer of Custody activity. \nThe property will typically describe the object that is handed over by an E39 Actor to another Actor’s custody. On occasion, physical custody may be transferred involuntarily or illegally – through accident, unsolicited donation, or theft.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "changement de détenteur concernant"@fr , "transferred custody of"@en , "有保管标的物"@zh , "μετεβίβασε κατοχή του/της/των"@el , "transferida custódia de"@pt , "передало опеку на"@ru , "übertrug Gewahrsam über"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P49i_is_former_or_current_keeper_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "é ou foi guardador de"@pt , "est ou a été détenteur de"@fr , "κατέχει ή κατείχε"@el , "is former or current keeper of"@en , "является бывшим или текущим смотрителем для"@ru , "目前或曾经保管"@zh , "ist früherer oder derzeitiger Betreuer von"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows instances of E18 Physical Thing to be analysed into component elements.\n\nComponent elements, since they are themselves instances of E18 Physical Thing, may be further analysed into sub-components, thereby creating a hierarchy of part decomposition. An instance of E18 Physical Thing may be shared between multiple wholes, for example two buildings may share a common wall. This property does not specify when and for how long a component element resided in the respective whole. If  a component is not part of a whole from the beginning of existence or until the end of existence of the whole, the classes E79 Part Addition and E90 Part Removal can be used to document when a component became part of a particular whole and/or when it stopped being a part of it. For the time-span of being part of the respective whole, the component is completely contained in the place the whole occupies.\n\nThis property is intended to describe specific components that are individually documented, rather than general aspects. Overall descriptions of the structure of an instance of E18 Physical Thing are captured by the P3 has note property.\n\nThe instances of E57 Material of which an item of E18 Physical Thing is composed should be documented using P45 consists of (is incorporated in).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "αποτελείται από"@el , "有组件"@zh , "is composed of"@en , "é composto de"@pt , "составлен из"@ru , "est composée de"@fr , "ist zusammengesetzt aus"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items with a relatively stable form, man-made or natural.\n\nDepending on the existence of natural boundaries of such things, the CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.\n\nAn instance of E18 Physical Thing occupies not only a particular geometric space, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. Physical things consisting of aggregations of physically unconnected objects, such as a set of chessmen, occupy a number of individually contiguous spacetime volumes equal to the number of unconnected objects that constitute the set.\n\nWe model E18 Physical Thing to be a subclass of E72 Legal Object and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E18 Physical Thing without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E18 Physical Thing is matter while a spacetime volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E18 Physical Thing is regarded to be unique to it, due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E18 Physical Thing. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.\n\nThe CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Υλικό Πράγμα"@el , "Chose matérielle"@fr , "Physical Thing"@en , "实体物"@zh , "Физическая Вещь"@ru , "Materielles"@de , "Coisa Material"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P156_occupies>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the largest volume in space that an instance of E18 Physical Thing has occupied at any time during its existence, with respect to the reference space relative to itself. This allows you to describe the thing itself as a place that may contain other things, such as a box that may contain coins. In other words, it is the volume that contains all the points which the thing has covered at some time during its existence. In the case of an E26 Physical Feature the default reference space is the one in which the object that bears the feature or at least the surrounding matter of the feature is at rest. In this case there is a 1:1 relation of E26 Feature and E53 Place. For simplicity of implementation multiple inheritance (E26 Feature IsA E53 Place) may be a practical approach.\n\nFor instances of E19 Physical Objects the default reference space is the one which is at rest to the object itself, i.e. which moves together with the object. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces. \n\nThis property is a subproperty of P161 has spatial projection because it refers to its own domain as reference space for its range, whereas P161 has spatial projection may refer to a place in terms of any reference space. For some instances of E18 Physical Object the relative stability of form may not be sufficient to define a useful local reference space, for instance for an amoeba. In such cases the fully developed path to an external reference space and using a temporal validity component may be adequate to determine the place they have occupied.\n\nIn contrast to P156  occupies, the property P53 has former or current location identifies an instance of E53 Place at which a thing is or has been for some unspecified time span.  Further it does not constrain the reference space of the referred instance of P53 Place.\n\t"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "occupies"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E4_Period>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises sets of coherent phenomena or cultural manifestations occurring in time and space.\n\nIt is the social or physical coherence of these phenomena that identify an E4 Period and not the associated spatiotemporal extent. This extent is only the \"ground\" or space in an abstract physical sense that the actual process of growth, spread and retreat has covered. Consequently, different periods can overlap and coexist in time and space, such as when a nomadic culture exists in the same area and time as a sedentary culture. This also means that overlapping land use rights, common among first nations, amounts to overlapping periods.\n\nOften, this class is used to describe prehistoric or historic periods such as the \"Neolithic Period\", the \"Ming Dynasty\" or the \"McCarthy Era\", but also geopolitical units and activities of settlements are regarded as special cases of E4 Period. However, there are no assumptions about the scale of the associated phenomena. In particular all events are seen as synthetic processes consisting of coherent phenomena. Therefore E4 Period is a superclass of E5 Event. For example, a modern clinical E67 Birth can be seen as both an atomic E5 Event and as an E4 Period that consists of multiple activities performed by multiple instances of E39 Actor.\n\nAs the actual extent of an E4 Period in spacetime we regard the trajectories of the participating physical things during their participation in an instance of E4 Period. This includes the open spaces via which these things have interacted and the spaces by which they had the potential to interact during that period or event in the way defined by the type of the respective period or event. Examples include the air in a meeting room transferring the voices of the participants. Since these phenomena are fuzzy, we assume the spatiotemporal extent to be contiguous, except for cases of phenomena spreading out over islands or other separated areas, including geopolitical units distributed over disconnected areas such as islands or colonies.\n\nWhether the trajectories necessary for participants to travel between these areas are regarded as part of the spatiotemporal extent or not has to be decided in each case based on a concrete analysis, taking use of the sea for other purposes than travel, such as fishing, into consideration. One may also argue that the activities to govern disconnected areas imply travelling through spaces connecting them and that these areas hence are spatially connected in a way, but it appears counterintuitive to consider for instance travel routes in international waters as extensions of geopolitical units.\n\nConsequently, an instance of E4 Period may occupy a number of disjoint spacetime volumes, however there must not be a discontinuity in the  timespan covered by these spacetime volumes. This means that an instance of E4 Period must be contiguous in time. If it has ended in all areas, it has ended as a whole. However it may end in one area before another, such as in the Polynesian migration, and it continues as long as it is ongoing in at least  one area.\n\nWe model E4 Period as a subclass of E2 Temporal Entity and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E4 Period without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E4 Period is a phenomena while a space-time volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E4 Period is regarded to be unique to it due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E4 Period. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.\n\nThere are two different conceptualisations of 'artistic style', defined either by physical features or by historical context. For example, “Impressionism” can be viewed as a period lasting from approximately 1870 to 1905 during which paintings with particular characteristics were produced by a group of artists that included (among others) Monet, Renoir, Pissarro, Sisley and Degas. Alternatively, it can be regarded as a style applicable to all paintings sharing the characteristics of the works produced by the Impressionist painters, regardless of historical context. The first interpretation is an instance of E4 Period, and the second defines morphological object types that fall under E55 Type.\n\nAnother specific case of an E4 Period is the set of activities and phenomena associated with a settlement, such as the populated period of Nineveh.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Período"@pt , "Период"@ru , "期间"@zh , "Période"@fr , "Period"@en , "Phase"@de , "Περίοδος"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> , <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises transfers of legal ownership from one or more instances of E39 Actor to one or more other instances of E39 Actor. \nThe class also applies to the establishment or loss of ownership of instances of E18 Physical Thing. It does not, however, imply changes of any other kinds of right. The recording of the donor and/or recipient is optional. It is possible that in an instance of E8 Acquisition there is either no donor or no recipient. Depending on the circumstances, it may describe:\n1.\tthe beginning of ownership\n2.\tthe end of ownership\n3.\tthe transfer of ownership\n4.\tthe acquisition from an unknown source \n5.\tthe loss of title due to destruction of the item\nIt may also describe events where a collector appropriates legal title, for example by annexation or field collection. The interpretation of the museum notion of \"accession\" differs between institutions. The CRM therefore models legal ownership (E8 Acquisition) and physical custody (E10 Transfer of Custody) separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Απόκτηση"@el , "Aquisição"@pt , "Acquisition"@en , "Acquisition"@fr , "Erwerb"@de , "Событие Приобретения"@ru , "征集取得"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P30i_custody_transferred_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a changé de détenteur du fait de"@fr , "custody transferred through"@en , "wechselte Gewahrsam durch"@de , "άλλαξε κατοχή μέσω"@el , "custódia transferida por meio de"@pt , "被移转了保管作业於"@zh , "опека передана через"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P8_took_place_on_or_within>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the location of an instance of E4 Period with respect to an E19 Physical Object. \nP8 took place on or within (witnessed) is a shortcut of the more fully developed path from E4 Period through P7 took place at, E53 Place, P156 occupies (is occupied by) to E18 Physical Thing.\n\nIt describes a period that can be located with respect to the space defined by an E19 Physical Object such as a ship or a building. The precise geographical location of the object during the period in question may be unknown or unimportant. \nFor example, the French and German armistice of 22 June 1940 was signed in the same railway carriage as the armistice of 11 November 1918.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E4_Period> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "took place on or within"@en , "发生所在物件是"@zh , "a eu lieu sur ou dans"@fr , "fand statt auf oder innerhalb von "@de , "ocorreu em ou dentro"@pt , "имел место на или в"@ru , "έλαβε χώρα σε ή εντός"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P157_is_at_rest_relative_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of P53 Place with the instance of E18 Physical Thing that determines a reference space for this instance of P53 Place by being at rest with respect to this reference space. The relative stability of form of an E18 Physical Thing defines its default reference space. The reference space is not spatially limited to the referred thing. For example, a ship determines a reference space in terms of which other ships in its neighbourhood may be described. Larger constellations of matter, such as continental plates, may comprise many physical features that are at rest with them and define the same reference space.\n\t"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is at rest relative to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P59i_is_located_on_or_within> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P157i_provides_reference_space_for>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "provides reference space for"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P59_has_section> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P50i_is_current_keeper_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "目前保管"@zh , "является текущим смотрителем для"@ru , "é guardador de"@pt , "ist derzeitiger Betreuer von"@de , "κατέχει"@el , "is current keeper of"@en , "est actuel détenteur de"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P49i_is_former_or_current_keeper_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P51_has_former_or_current_owner>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor that is or has been the legal owner (i.e. title holder) of an instance of E18 Physical Thing at some time.\nThe distinction with P52 has current owner (is current owner of) is that P51 has former or current owner (is former or current owner of) does not indicate whether the specified owners are current. P51 has former or current owner (is former or current owner of) is a shortcut for the more detailed path from E18 Physical Thing through P24 transferred title of (changed ownership through), E8 Acquisition, P23 transferred title from (surrendered title through), or P22 transferred title to (acquired title through) to E39 Actor.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "有前任或现任物主"@zh , "est ou a été possédée par"@fr , "é ou foi propriedade de"@pt , "has former or current owner"@en , "hat früheren oder derzeitigen Besitzer "@de , "έχει ή είχε ιδιοκτήτη"@el , "имеет бывшего или текущего владельца"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P49_has_former_or_current_keeper>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\nThis property identifies the E39 Actor or Actors who have or have had custody of an instance of E18 Physical Thing at\nsome time. This property leaves open the question if parts of this physical thing have\nbeen added or removed during the time-spans it has been under the custody of this\nactor, but it is required that at least a part which can unambiguously be identified as\nrepresenting the whole has been under this custody for its whole time. The way, in\nwhich a representative part is defined, should ensure that it is unambiguous who keeps\na part and who the whole and should be consistent with the identity criteria of the kept\ninstance of E18 Physical Thing.\nThe distinction with P50 has current keeper (is current keeper of) is that P49 has former or current\nkeeper (is former or current keeper of) leaves open the question as to whether the specified keepers are\ncurrent.\nP49 has former or current keeper (is former or current keeper of) is a shortcut for the more detailed\npath from E18 Physical Thing through P30 transferred custody of (custody transferred through), E10\nTransfer of Custody, P28 custody surrendered by (surrendered custody through) or P29 custody\nreceived by (received custody through) to E39 Actor.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "имеет бывшего или текущего смотрителя"@ru , "est ou a été détenu par"@fr , "είναι ή ήταν στην κατοχή του"@el , "hat früheren oder derzeitigen Betreuer"@de , "é ou foi guardada por"@pt , "有前任或现任保管者"@zh , "has former or current keeper"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P52i_is_current_owner_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "είναι ιδιοκτήτης του"@el , "is current owner of"@en , "目前拥有"@zh , "ist derzeitiger Besitzer von"@de , "est le propriétaire actuel de"@fr , "является текущим владельцем для"@ru , "é proprietário de"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P105i_has_right_on> , <http://www.cidoc-crm.org/cidoc-crm/P51i_is_former_or_current_owner_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter. \nThe instances of E53 Place are usually determined by reference to the position of “immobile” objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks. A Place can be determined by combining a frame of reference and a location with respect to this frame. It may be identified by one or more instances of E44 Place Appellation.\n It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, we are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object – H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.\nAny object can serve as a frame of reference for E53 Place determination. The model foresees the notion of a \"section\" of an E19 Physical Object as a valid E53 Place determination."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place"@en , "Место"@ru , "Local"@pt , "Τόπος"@el , "地点"@zh , "Ort"@de , "Lieu"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P52_has_current_owner>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E21 Person, E74 Group or E40 Legal Body that was the owner of an instance of E18 Physical Thing at the time of validity of the record or database containing the statement that uses this property.\nP52 has current owner (is current owner of) is a shortcut for the more detailed path from E18 Physical Thing through P24 transferred title of (changed ownership through), E8 Acquisition, P22 transferred title to (acquired title through) to E39 Actor, if and only if this acquisition event is the most recent.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hat derzeitigen Besitzer"@de , "有现任物主"@zh , "έχει ιδιοκτήτη"@el , "has current owner"@en , "имеет текущего владельца"@ru , "é propriedade de"@pt , "est actuellement possédée par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P51_has_former_or_current_owner> , <http://www.cidoc-crm.org/cidoc-crm/P105_right_held_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises transfers of physical custody of objects between instances of E39 Actor. \nThe recording of the donor and/or recipient is optional. It is possible that in an instance of E10 Transfer of Custody there is either no donor or no recipient. Depending on the circumstances it may describe:\n1.\tthe beginning of custody \n2.\tthe end of custody \n3.\tthe transfer of custody \n4.\tthe receipt of custody from an unknown source\n5.\tthe declared loss of an object\nThe distinction between the legal responsibility for custody and the actual physical possession of the object should be expressed using the property P2 has type (is type of). A specific case of transfer of custody is theft.\nThe interpretation of the museum notion of \"accession\" differs between institutions. The CRM therefore models legal ownership and physical custody separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Transferência de Custódia"@pt , "Transfer of Custody"@en , "Передача Опеки"@ru , "Μεταβίβαση  Κατοχής"@el , "保管作业转移"@zh , "Übertragung des Gewahrsams"@de , "Changement de détenteur"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P59_has_section>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property links an area to the instance of E18 Physical Thing upon which it is found.\nIt is typically used when a named E46 Section Definition is not appropriate.\nE18 Physical Thing may be subdivided into arbitrary regions. \nP59 has section (is located on or within) is a shortcut. If the E53 Place is identified by a Section Definition, a more detailed representation can make use of the fully developed (i.e. indirect) path from E18 Physical Thing through P58 has section definition (defines section), E46 Section Definition, P87 is identified by (identifies) to E53 Place. A Place can only be located on or within one Physical Object.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has section"@en , "有区域"@zh , "tem seção"@pt , "έχει τομέα"@el , "имеет район"@ru , "hat Bereich"@de , "a pour section"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P51i_is_former_or_current_owner_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is former or current owner of"@en , "é ou foi proprietário de"@pt , "ist früherer oder derzeitiger Besitzer von"@de , "目前或曾经拥有"@zh , "является бывшим или текущим владельцем для"@ru , "είναι ή ήταν ιδιοκτήτης του/της"@el , "est ou a été propriétaire de"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P50_has_current_keeper>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor or Actors who had custody of an instance of E18 Physical Thing at the time of validity of the record or database containing the statement that uses this property.\n\tP50 has current keeper (is current keeper of) is a shortcut for the more detailed path from E18 Physical Thing through P30 transferred custody of (custody transferred through), E10 Transfer of Custody, P29 custody received by (received custody through) to E39 Actor.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "有现任保管者"@zh , "είναι στην κατοχή του"@el , "hat derzeitigen Betreuer"@de , "имеет текущего смотрителя"@ru , "est actuellement détenu par"@fr , "é guardada por"@pt , "has current keeper"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P49_has_former_or_current_keeper> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P53i_is_former_or_current_location_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "είναι ή ήταν θέση του"@el , "is former or current location of"@en , "est ou a été localisation de"@fr , "é ou foi localização de"@pt , "является текущим или бывшим местоположением для"@ru , "目前或曾经被置放了"@zh , "ist früherer oder derzeitiger Standort von"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows an instance of E53 Place to be associated as the former or current location of an instance of E18 Physical Thing.\nIn the case of E19 Physical Objects, the property does not allow any indication of the Time-Span during which the Physical Object was located at this Place, nor if this is the current location.\nIn the case of immobile objects, the Place would normally correspond to the Place of creation.\nP53 has former or current location (is former or current location of) is a shortcut. A more detailed representation can make use of the fully developed (i.e. indirect) path from E19 Physical Object through P25 moved (moved by), E9 Move, P26 moved to (was destination of) or P27 moved from (was origin of) to E53 Place.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hat früheren oder derzeitigen Standort"@de , "имеет текущее или бывшее местоположение"@ru , "目前或曾经被置放於"@zh , "has former or current location"@en , "βρίσκεται ή βρισκόταν σε"@el , "é ou foi localizada em"@pt , "a ou a eu pour localisation"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fait partie de"@fr , "αποτελεί μέρος του/της"@el , "bildet Teil von"@de , "forms part of"@en , "формирует часть"@ru , "faz parte de"@pt , "被用来组成"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P24_transferred_title_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E18 Physical Thing or things involved in an E8 Acquisition. \nIn reality, an acquisition must refer to at least one transferred item.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a fait passer le droit de propriété sur"@fr , "transferiu os direitos de propriedade sobre o"@pt , "übertrug Besitz über"@de , "转移所有权的标的物是"@zh , "передал право собственности на"@ru , "μετεβίβασε τον τίτλο του/της"@el , "transferred title of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P156i_is_occupied_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is occupied by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P59i_is_located_on_or_within>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "befindet sich auf oder in"@de , "está localizada sobre ou dentro de"@pt , "is located on or within"@en , "βρίσκεται σε ή εντός"@el , "se situe sur ou dans"@fr , "位於"@zh , "находится на или внутри"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

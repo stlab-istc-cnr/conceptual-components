@@ -1,0 +1,41 @@
+<http://purl.org/saws/ontology#Marginalia>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Remark(s) physically written in the margin of the material by a scribe, not necessarily the original scribe. \n\nN.B. If a comment has been physically written on a material (usually in the margin), then this should be represented as an instance of Marginalia. The Comment class is for comments on a material that don’t physically exist on that material"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "marginalia"@en .
+
+<http://purl.org/saws/ontology#OriginalMaterial>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A material produced by scribe transcription rather than being edited in modern times"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "original material"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/saws/ontology#Material> .
+
+<http://purl.org/saws/ontology#hasMarginalia>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To indicate that a manuscript has had Marginalia written on it, e.g. in the margins"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#OriginalMaterial> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has marginalia"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Marginalia> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isReferencedBy> .
+
+<http://purl.org/saws/ontology#isInSameFamilyAs>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Two OriginalMaterials are related by being part of the same Family of Original Materials"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#OriginalMaterial> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is in same family as"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#OriginalMaterial> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .

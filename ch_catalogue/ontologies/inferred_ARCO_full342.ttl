@@ -1,0 +1,75 @@
+<https://w3id.org/arco/ontology/context-description/Acquisition>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a situation in which a cultural property is acquired, passing from an owner to another, and has a particular legal situation."@en , "Questa classe rappresenta un evento in cui un bene culturale è stato acquisito e si trova in una certa condizione giuridica."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Acquisition"@en , "Acquisizione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Acquisition' is the following:\n\nresource:Acquisition/1200865053-acquisition-1\n        a  cd:Acquisition ;\n        rdfs:label  \"Acquisition 1 of cultural property: 1200865053\"@it ;\n        cd:hasAcquisitionType resource:AcquisitionType/donazione ;\n        cd:hasPreviousOwner resource:Agent/auriti-giacinto ;\n        tiapit:time \"1963\" ."@en , "Un esempio d'uso della classe 'Acquisizione' è il seguente:\n\nresource:Acquisition/1200865053-acquisition-1\n        a  cd:Acquisition ;\n        rdfs:label  \"Acquisizione 1 del bene culturale: 1200865053\"@it ;\n        cd:hasAcquisitionType resource:AcquisitionType/donazione ;\n        cd:hasPreviousOwner resource:Agent/auriti-giacinto ;\n        tiapit:time \"1963\" ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/ACQ" .
+
+<https://w3id.org/arco/ontology/context-description/AcquisitionType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the type of acquisition (e.g. purchase, donation, etc.) of a cultural property."@en , "Questa classe rappresenta il tipo di acquisizione (es.: acquisto, alienazione, confisca, donazione) che ha interessato il bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo di acquisizione"@it , "Acquisition type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Type> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/ACQ/ACQT" .
+
+<https://w3id.org/arco/ontology/context-description/isAcquisitionTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a cultural entity's acquisition type (i.e. donation, seizure) to its acquisition."@en , "Questa proprietà collega il tipo di acquisizione (es.: donazione, alienazione, confisca) all'acquisizione di un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/AcquisitionType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is acquisition type of"@en , "è tipo di acqusizione di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isTypeOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/hasAcquisitionType>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a cultural entity's acquisition to its acquisition type (i.e. donation, seizure)."@en , "Questa proprietà collega un'acquisizione di un bene culturale al tipo di acquisizione (es.: donazione, alienazione, confisca)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/Acquisition> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha tipo di acquisizione"@it , "has acquisition type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/AcquisitionType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isAcquisitionTypeOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/ACQ/ACQT" .

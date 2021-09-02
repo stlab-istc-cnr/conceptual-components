@@ -1,0 +1,60 @@
+<http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration. \nTime Span has no other semantic connotations. Time-Spans are used to define the temporal extent of instances of E4 Period, E5 Event and any other phenomena valid for a certain time. An E52 Time-Span may be identified by one or more instances of E49 Time Appellation. \nSince our knowledge of history is imperfect, instances of E52 Time-Span can best be considered as approximations of the actual Time-Spans of temporal entities. The properties of E52 Time-Span are intended to allow these approximations to be expressed precisely.  An extreme case of approximation, might, for example, define an E52 Time-Span having unknown beginning, end and duration. Used as a common E52 Time-Span for two events, it would nevertheless define them as being simultaneous, even if nothing else was known. \n\tAutomatic processing and querying of instances of E52 Time-Span is facilitated if data can be parsed into an E61 Time Primitive.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Χρονικό Διάστημα"@el , "Período de Tempo"@pt , "时段"@zh , "Time-Span"@en , "Zeitspanne"@de , "Durée"@fr , "Интервал Времени"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P81a_end_of_the_begin>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is defined as the first boundary of the property P81"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "τέλος της αρχής"@el , "fim do início"@pt , "конец начала"@ru , "fin du début"@fr , "Ende des Anfangs"@de , "end of the begin"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P81_ongoing_throughout> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is defined as the first boundary of the property P82"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "начать с начала"@ru , "Anfang des Anfangs"@de , "begin of the begin"@en , "début du début"@fr , "começar do início"@pt , "αρχή της αρχής"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P81b_begin_of_the_end>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is defined as the second boundary of the property P81"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "begin of the end"@en , "начать в конце"@ru , "début de la fin"@fr , "αρχή του τέλους"@el , "começar do fim"@pt , "Anfang vom Ende"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P81_ongoing_throughout> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This is defined as the second boundary of the property P82"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "τέλος του τέλους"@el , "конец конец"@ru , "fim do fim"@pt , "end of the end"@en , "Ende vom Ende"@de , "fin de la fin"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within> .

@@ -1,0 +1,58 @@
+<http://purl.org/spar/fabio/TermDictionary>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A controlled vocabulary, usually referring to terms within a particular classification system, such as the ACM Computing Classification System or MeSH, the Medical Subject Headings, or a controlled vocabulary of disciplines."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "term dictionary"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A term dictionary is a collection of subject terms."@en .
+
+<http://purl.org/spar/fabio/hasSubjectTerm>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property is used to associate a frbr:Endeavour to a term in a particular classification system."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/vocab/frbr/core#Endeavour> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has subject term"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/spar/fabio/SubjectTerm> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://purl.org/spar/fabio/SubjectTerm>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A concept that defines a term within the controlled vocabulary of a particular classification system, such as the ACM Computing Classification System or MeSH, the Medical Subject Headings, used as an annotation to describe the subject, meaning or content of an entity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "subject term"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<http://purl.org/vocab/frbr/core#Endeavour>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "It describes different aspects of user interests in the products of intellectual or artistic artifact."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "endeavour"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/spar/fabio/isSchemeOf>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property expresses the fact that a scheme contains a concept."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is scheme of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.w3.org/2004/02/skos/core#inScheme> .

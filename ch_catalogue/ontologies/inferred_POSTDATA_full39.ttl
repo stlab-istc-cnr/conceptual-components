@@ -1,0 +1,83 @@
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Pattern>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#MetricalEncoding>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The notation employed to represent a metrical pattern.\nEg.: The definition of the plus sign to encode strong positions."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MetricalEncoding"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:37:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Symbol>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Each element of the notation used to describe a metrical pattern"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Symbol"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#isUsedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to an instance of LinePattern, StanzaPattern or WorkPattern which uses the convention defined in the current instance of MetricalEncoding"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#MetricalEncoding> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isUsedBy"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Pattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#uses> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#employs>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This propery points to a Symbol used in metrical notation being defined"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#MetricalEncoding> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "employs"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Symbol> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#isEmployedIn> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#isEmployedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the instance of MetricalEncoding that employs the item at hand"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Symbol> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isEmployedIn"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#MetricalEncoding> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

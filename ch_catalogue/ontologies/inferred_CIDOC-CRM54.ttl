@@ -1,0 +1,52 @@
+<http://www.cidoc-crm.org/cidoc-crm/E42_Identifier>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences. The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agents."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Kennung"@de , "Identificador de Objeto"@pt , "Κωδικός Αναγνώρισης"@el , "标识符"@zh , "Идентификатор Объекта"@ru , "Identificateur d'objet"@fr , "Identifier"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P38i_was_deassigned_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was deassigned by"@en , "ακυρώθηκε από"@el , "wurde aufgehoben durch"@de , "был отменен посредством"@ru , "foi retirada a atribuição por"@pt , "被取消标识符於"@zh , "a été désattribué par"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that result in the allocation of an identifier to an instance of E1 CRM Entity. An E15 Identifier Assignment may include the creation of the identifier from multiple constituents, which themselves may be instances of E41 Appellation. The syntax and kinds of constituents to be used may be declared in a rule constituting an instance of E29 Design or Procedure.\nExamples of such identifiers include Find Numbers, Inventory Numbers, uniform titles in the sense of librarianship and Digital Object Identifiers (DOI). Documenting the act of identifier assignment and deassignment is especially useful when objects change custody or the identification system of an organization is changed. In order to keep track of the identity of things in such cases, it is important to document by whom, when and for what purpose an identifier is assigned to an item.\nThe fact that an identifier is a preferred one for an organisation can be expressed by using the property E1 CRM Entity. P48 has preferred identifier (is preferred identifier of): E42 Identifier. It can better be expressed in a context independent form by assigning a suitable E55 Type, such as “preferred identifier assignment”, to the respective instance of E15 Identifier Assignment via the P2 has type property.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Identifier Assignment"@en , "Назначение Идентификатора"@ru , "Kennzeichenzuweisung"@de , "Απόδοση Αναγνωριστικού"@el , "标识符指定"@zh , "Attribution d’identificateur"@fr , "Atribuição de Identificador"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P37i_was_assigned_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was assigned by"@en , "был присвоен посредством"@ru , "wurde zugewiesen durch"@de , "αποδόθηκε ως ιδιότητα από"@el , "a été attribuée par"@fr , "foi atribuído por"@pt , "被指定为标识符於"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P37_assigned>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property records the identifier that was assigned to an item in an Identifier Assignment activity.\nThe same identifier may be assigned on more than one occasion.\nAn Identifier might be created prior to an assignment.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a attribué"@fr , "απέδωσε"@el , "wies zu"@de , "atribuiu"@pt , "назначил"@ru , "指定标识符为"@zh , "assigned"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P141_assigned> .

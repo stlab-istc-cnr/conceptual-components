@@ -1,0 +1,105 @@
+<https://www.ica.org/standards/RiC/ontology#instantiationIsTargetOfMigrationRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Instantiation which results from a migration, to a\n            Migration Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Instantiation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "instantiation is target of migration relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#MigrationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#instantiationIsTargetOfDerivationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#migrationRelationHasTarget> .
+
+<https://www.ica.org/standards/RiC/ontology#MigrationRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Instantiation and at least another Instantiation,\n            when the first is migrated into the second one(s)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Migration Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#DerivationRelation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R015 and RiC-R015i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#instantiationIsSourceOfMigrationRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Instantiation (from which at least one Instantiation\n            is migrated) to a Migration Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Instantiation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "instantiation is source of migration relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#MigrationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#instantiationIsSourceOfDerivationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#migrationRelationHasSource> .
+
+<https://www.ica.org/standards/RiC/ontology#Instantiation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The inscription of information made by an Agent on a physical\n            carrier in any persistent, recoverable form as a means of communicating information\n            through time and space."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Instantiation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "A Record or Record Part must have been instantiated at least\n            once, though this instantiation may no longer exist at the moment of description. An\n            instantiation might also exist at the moment of description, but be destroyed at a later\n            moment in time, when, for example, a derived instantiation might become the only\n            remaining instantiation. A Record Set may have an instantiation, which is to say that it\n            is not a necessary condition. An Instantiation may be derived from another\n            Instantiation. A Record Resource may have many Instantiations simultaneously (for\n            instance, a record printed and saved in the same time as DOCX and PDF/A would have 3\n            concurrent instantiations) or through time (for example, copy of a record). Depending on\n            the context, a new instantiation may be seen as a new or as the same record resource.\n            During in the process of re-instantiation something is lost and something is preserved,\n            but it is up to the context and the Agent that produces or uses that Instantiation to\n            assess whether the two instantiations are functionally equivalent or not. For instance,\n            a postcard representing a town map from 1874 (Instantiation 1) is digitized and kept as\n            a JPEG file (Instantiation 2). The digital copy may be considered as instantiating the\n            \"same\" Record by an Agent considering the information transmitted by the Record (e.g.,\n            the urban landscape displayed), but as a\" different\" Record by an antiquarian more\n            focused on the materiality of the carrier. Successive instantiations may change the\n            perceivable boundaries of a Record Resource. For instance, a case file comprising many\n            records may be digitized and saved as one single PDF file, which, from management\n            perspective, may be treated as one Record. Similarly, a large Record Set (a fonds or a\n            series) may be maintained as one database. On the other hand, one record (main document\n            and its annexes) may be digitized in separate files and each one may be managed as a\n            discrete “physical” item. Instantiations may require mediation to communicate the\n            information in the Record Resource. While a traditional Record on paper can simply be\n            read by an Agent in order to understand the information, a vinyl recording, a video\n            cassette or a digital file needs a device (mediator) to codify or decodify the\n            information conveyed. This mediator may imply simple physical components (a turntable\n            needle, for example), or a complex gallery of software and hardware elements.\n            Instantiations are more than the mere informational content of Record Resource and may\n            be the focus of preservation and physical management of records. The use of particular\n            document types for records, such as a medieval charter, may have implications for the\n            authenticity of the records. Hence, the way a Record Resource is instantiated\n            contributes to the contextualizing of the content.record resource is instantiated\n            contributes to the contextualizing the content. Distinguishing the message conveyed\n            (Record Resource) and its physical representations (Instantiation) allows for the\n            efficient management of their descriptions, and preserve information about a Record\n            Resource even when no physical representation of it exists or is known to exist anymore.\n            The relations between distinct instantiations can then be expressed wherever they\n            coexist, and they can be related to the Record Resource they\n            instantiate."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E06 (Instantiation\n            entity)"@en ;
+        <https://www.ica.org/standards/RiC/ontology#closeTo>
+                "PREMIS Representation"@en .
+
+<https://www.ica.org/standards/RiC/ontology#migrationRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Migration Relation to the migrated\n            Instantiation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#MigrationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "migration relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Instantiation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#derivationRelationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#migrationRelationHasTarget>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Migration Relation to a resulting\n            Instantiation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#MigrationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "migration relation has target "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Instantiation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#derivationRelationHasTarget> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .

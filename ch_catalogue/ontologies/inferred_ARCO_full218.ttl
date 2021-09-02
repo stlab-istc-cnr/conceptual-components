@@ -1,0 +1,91 @@
+<https://w3id.org/arco/ontology/cataloguing-campaign/Application>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta la richiesta dei numeri identificativi univoci da parte dell'ente schedatore"@it , "This class represents the application of unique identifier by a cataloguing agency"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Application"@en , "Richiesta"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/Protocol>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the protocol related to a thing"@en , "Questa classe rappresenta il protocollo associato a una cosa"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Protocollo"@it , "Protocol"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/isAgencyProtocolOf>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il numero di protocollo assegnato dall'ente richiedente ad una richiesta di assegnazione dei numeri di catalogo"@it , "This property relates the protocol assigned by the applicant organization to a cataloguing number assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Protocol> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is agency protocol of"@en , "è protocollo ente richiedente per"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Application> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/hasIccdProtocol>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una richiesta di assegnazione dei numeri di catalogo al numero di protocollo assegnato dall'ICCD"@it , "This property relates a cataloguing number assignment to the protocol assigned by ICCD"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Application> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha protocollo ICCD"@it , "has Iccd protocol"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Protocol> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/isIccdProtocolOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/hasAgencyProtocol>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una richiesta di assegnazione dei numeri di catalogo al numero di protocollo assegnato dall'ente richiedente"@it , "This property relates a cataloguing number assignment to the protocol assigned by the applicant organization"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Application> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has agency protocol"@en , "ha protocollo dell'ente richiedente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Protocol> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/isAgencyProtocolOf> ;
+        <http://www.w3.org/2002/07/owl#propertyDisjointWith>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/isIccdProtocolOf> , <https://w3id.org/arco/ontology/cataloguing-campaign/hasIccdProtocol> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/isIccdProtocolOf>
+        a       <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the protocol assigned by ICCD to a cataloguing number assignment"@en , "Questa proprietà collega il numero di protocollo assegnato dall'ICCD ad una richiesta di assegnazione dei numeri di catalogo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Protocol> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è protocollo iccd per"@it , "is iccd protocol of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Application> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .

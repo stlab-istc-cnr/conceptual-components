@@ -1,0 +1,96 @@
+<http://purl.org/saws/ontology#isMemberOf>
+        a       <http://www.w3.org/2002/07/owl#TransitiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "We use isMemberOf to indicate:\n- An OriginalMaterial is member of a Family of related\nOriginalMaterials\n- A Person is member of an Institution"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is member of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "dct:isPartOf\nefrbroo:R10i_is_member_of\necrm:P107i_is_current_or_former_member_of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#refersTo>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows you to say that the text of a LinguisticObject makes a reference to (or mentions) some other text or object, either within the text (e.g. as allusion) or external to the text (for external things, please give a URI for that object) This can include references to summaries (eg ToC)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "refers to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> , <http://erlangen-crm.org/current/P67_refers_to> .
+
+<http://purl.org/saws/ontology#isCommentOn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To indicate that an editorial Comment is being made about something"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Comment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is comment on"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#refersTo> .
+
+<http://purl.org/saws/ontology#hasMember>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "We use hasMember to indicate:\n- A Family contains the specified original material (i.e. one\nproduced by Scribe transcription rather than being edited in modern times)\n- An Institution has as a member this Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has member"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "dct:hasPart\nefrbroo:R10_has_member\necrm:P107_has_current_or_former_member"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isMemberOf> .
+
+<http://purl.org/saws/ontology#Comment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Comment on a part of the material, usually from the modern editor. \n\nN.B. The Comment class is for comments on a material that do not physically exist on that material. If a comment has been physically written on a material (usually in the margin), then this should be represented as an instance of Marginalia. "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "comment"@en ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/saws/ontology#Marginalia> .
+
+<http://purl.org/saws/ontology#hasComment>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To indicate that something has been commented about in an editorial Comment "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has comment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Comment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isReferencedBy> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isCommentOn> .
+
+<http://purl.org/saws/ontology#isReferencedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property allows you to say that an object or some text (internal to that document or from an external source) is referred to in the text of a LinguisticObject, e.g. by being described or being alluded to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is referenced by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> , <http://erlangen-crm.org/current/P67i_is_referred_to_by> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#refersTo> .

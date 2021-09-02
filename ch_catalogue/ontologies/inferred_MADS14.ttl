@@ -1,0 +1,42 @@
+<http://www.loc.gov/mads/rdf/v1#hasCorporateParentAuthority>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Establishes a relationship between a CorporateName Authority and one of the same that is more broadly defined." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#CorporateName> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has Parent Organization" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#CorporateName> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://www.loc.gov/mads/rdf/v1#hasCorporateSubsidiaryAuthority>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Establishes a relationship between a CorporateName Authority and one of the same that is more narrowly defined." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#CorporateName> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is Parent Organization Of" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#CorporateName> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://www.loc.gov/mads/rdf/v1#hasCorporateParentAuthority> .
+
+<http://www.loc.gov/mads/rdf/v1#CorporateName>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Describes a resource whose label is the name of a corporate entity, which may include political or ecclesiastical entities." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Corporate Name Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.loc.gov/mads/rdf/v1#Name> .

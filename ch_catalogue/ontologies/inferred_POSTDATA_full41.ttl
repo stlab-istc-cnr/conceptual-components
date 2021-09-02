@@ -1,0 +1,72 @@
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As a structure, a List can be modelled from two points of view:\n- An item (a subclass of old:slot) of the list of lines of the Redaction \n- A list of tokens"@en , "A unit of verse that usually ends in a visual or typographic break and generally characterized by its length and meter\nEg.: “As armas e os barões assinalados” - from Os Lusíadas" ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Line"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#Slot> , <http://purl.org/ontology/olo/core#OrderedList> , <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://www.w3.org/2004/02/skos/core#Concept>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#successIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A metaplasm is presented in Line"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Metaplasm> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "successIn"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#typeOfMetaplasm>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Type of Metaplasm"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Metaplasm> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "typeOfMetaplasm"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2004/02/skos/core#Concept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Metaplasm>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A figure of transformation or metaplasm is a figure of diction that consists of altering the writing or pronunciation of words without altering their meaning.\nSome examples are dieresis, syneresis, sinalefa or hiatus.\nThere is a pdprosodic:typeOfMetaplasm property whose range of values is a controlled metaplasm type vocabulary, which allows to specify the nature of it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Metaplasm"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#affectsFirst>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property points to the first of the words affected by a metaplasm"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Metaplasm> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "affectsFirst"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.w3.org/2002/07/owl#Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> .

@@ -1,0 +1,97 @@
+<https://www.ica.org/standards/RiC/ontology#RuleRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects at least one Rule to at least one Thing, when it is\n            associated with existence and lifecycle of the Thing."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Rule Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Relation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R062 and RiC-R062i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Rule>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Conditions that govern the existence or authority of an Agent or the performance of an Activity, or that contribute to the distinct characteristics of things created or managed by an Agent."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Rule"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Rule can be related directly to Agent, Activity, or anything created or managed by agents, such as a Record Resource or Instantiation.\n            A Rule may be unwritten or written or otherwise documented. Unwritten rules may include though are not limited to the following:  social mores, customs, or community expectations. Written rules may include though are not limited to the following: constitutions, legislation, acts (legal), statutes, legal codes, ordinances, charters, mission statements, regulations, policies, procedures, instructions, codes of conduct or ethics, professional standards, work assignments or work plans.\n            The source or sources of some Rules are external to the Agent (for example, expressed in elections, social mores, customs, community expectations, laws, regulations, standards and best practice codes), while others are expressed within the Agent’s immediate context (for example, policies, or written or verbal instructions).\n            The evidence for identifying Rules may be found in their entirety in one documentary source (for example, a law or regulation) or may be found in two or more sources.\n            Rule should not be confused with the one or more documentary sources that serve as evidence of its identity. A documentary source is a Record.\n           "@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E16 (Rule\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#ruleRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Rule Relation to a Rule."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RuleRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "rule relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Rule> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#ruleRelationHasTarget>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Rule Relation to a Thing (that is associated to a\n            Rule)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RuleRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "rule relation has target "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationHasTarget> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRuleRelation> .
+
+<https://www.ica.org/standards/RiC/ontology#Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Any idea, material thing, or event within the realm of human\n            experience."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Includes all RiC entities as well as any concept, material\n            thing, or event that may be the subject of a Record Resource or associated with an\n            Activity. Examples of entities not explicitly addressed in RiC includes but is not\n            limited to the following: abstract concepts; cultural movements, named periods and\n            events; named things, objects and works; legendary, mythical or fictitious figures,\n            characters or beings."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E01 (Thing\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRuleRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Thing (that is associated with a Rule) to a Rule\n            Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "thing is target of rule relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RuleRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .

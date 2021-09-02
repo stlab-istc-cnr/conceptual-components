@@ -1,0 +1,82 @@
+<http://dati.beniculturali.it/cis/SiteDescription>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Permette di rappresentare una descrizione della sede fisica dell'istituto e luogo della cultura (per esempio, la sede ha una metratura complessiva di XX mq suddivisa in metratura al pubblico e una scaffalatura complessiva di n. YYY)."@it , "Permits to represents a description of a site of the cultural institute or site (for instance, the site has a total space available XXX, and a shelving that consists of a set of XX X shelves, etc.)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Site Description"@en , "Descrizione della sede"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio di utilizzo della classe cis:SiteDescription è il seguente:\n<pre>\n\nsite:Sede_di_Biblioteca_nazionale_centrale_di_Roma\n      a       cis:Site ;\n      rdfs:label \"Sede Biblioteca nazionale centrale di Roma\"@it ;\n      cis:siteAddress address:Indirizzo_della_sede_di_Biblioteca_nazionale_centrale_di_Roma ;\n      cis:isSiteOf cissite:Biblioteca_nazionale_centrale ;\n      cis:hasSiteDescription sd:Sede_di_Biblioteca_nazionale_centrale_di_Roma ;\n      l0:name \"Sede di: Biblioteca nazionale centrale di Roma\"@it .\n\nsd:Sede_di_Biblioteca_nazionale_centrale_di_Roma\n    a cis:SiteDescription ;\n    rdfs:label\"Description of the 'Sede di Biblioteca Nazionale Centrale di Roma'\"@en , \"Descrizione della 'Sede di Biblioteca Nazionale Centrale di Roma'\"@it ;\n    l0:description \"La libreria 1000 metri di scaffalature\"@it , \"The Library has 1000 meters of shelves\"@en ;\n    cis:hasAttribute attribute:Shelving .\n\nattribute:Shelving\n    a cis:Attribute ;\n    rdfs:label \"Shelving\"@en , \"Scaffalature\";@it ;\n    l0:name \"Shelving\"@en , \"Scaffalature\"@it ;\n    l0:description \"The linear dimension of a shelf unit (e.g. 3 meters)\"@en , \";La dimensione di uno scaffale in metri lineari (es. 3 metri)\"@it .\n\n</pre>"@it , "An example of usage of the class cis:SiteDescription is the following:\n<pre>\n\nsite:Sede_di_Biblioteca_nazionale_centrale_di_Roma\n      a       cis:Site ;\n      rdfs:label \"Sede Biblioteca nazionale centrale di Roma\"@it ;\n      cis:siteAddress address:Indirizzo_della_sede_di_Biblioteca_nazionale_centrale_di_Roma ;\n      cis:isSiteOf cissite:Biblioteca_nazionale_centrale ;\n      cis:hasSiteDescription sd:Sede_di_Biblioteca_nazionale_centrale_di_Roma ;\n      l0:name \"Sede di: Biblioteca nazionale centrale di Roma\"@it .\n\nsd:Sede_di_Biblioteca_nazionale_centrale_di_Roma\n    a cis:SiteDescription ;\n    rdfs:label\"Description of the 'Sede di Biblioteca Nazionale Centrale di Roma'\"@en , \"Descrizione della 'Sede di Biblioteca Nazionale Centrale di Roma'\"@it ;\n    l0:description \"La libreria 1000 metri di scaffalature\"@it , \"The Library has 1000 meters of shelves\"@en ;\n    cis:hasAttribute attribute:Shelving .\n\nattribute:Shelving\n    a cis:Attribute ;\n    rdfs:label \"Shelving\"@en , \"Scaffalature\";@it ;\n    l0:name \"Shelving\"@en , \"Scaffalature\"@it ;\n    l0:description \"The linear dimension of a shelf unit (e.g. 3 meters)\"@en , \";La dimensione di uno scaffale in metri lineari (es. 3 metri)\"@it .\n\n</pre>"@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<http://dati.beniculturali.it/cis/Site>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "It represents a georeferenced physical site related to the Cultural Institute or Site. A Cultural Institute or Site can be located in more than one physical site. For instance, a Site can be \"Palazzo Venezia\" which is the site of the \"Museum of Palazzo Venezia\" and of \"Library of Archaelogy and Art History\"."@en , "Rappresenta un luogo fisico georeferenziato relativo all'Istituto e luogo della Cultura. Un Istituto e Luogo della Cultura può avere più di un luogo fisico associato. Nell'ambito dell'Istituto Centrale per il Catalogo e la Documentazione (ICC)D) tale concetto rappresenta il contenitore fisico. Per esempio, un luogo fisico può essere \"Palazzo Venezia\" dove ha sede il \"Museo Nazionale di Palazzo Venezia\" o la \"Biblioteca di Archeologia e Storia dell'Arte\"."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Site"@en , "Sede"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/POI/PointOfInterest> , <https://w3id.org/italia/onto/CLV/Feature> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A site is always associated with an individual of the class 'Cultural Institute or Site' (CIS) by means of the object property hasSite.\n\nA site, which is a subclass of the PointOfInterest class of the POI ontology is additionally characterised by the following properties:\n\n * siteAddress (subproperty of hasAddress of the Location ontology) that allows associating the site with an address;\n * hasOnlineContactPoint that associates the site with an individual identifying an online contact point;\n * hasSpatialCoverage for relating the site to the description of its AdminUnitComponent (City, Country, District, Province, Region)';\n * isSiteOf that is the inverse property of hasSite.\n * hasSiteDescription for relating the site to its general description ;\n * hostsCulturalEvent for associating the site with a possible cultural event that hosts.\n\nThe following is an example of a Site and its association with a CIS\n\n<pre>\nsite:Sede_di_Biblioteca_nazionale_centrale_di_Roma\n      a       cis:Site , poiapit:PointOfInterest ;\n      rdfs:label \"Sede Biblioteca nazionale centrale di Roma\"@it ;\n      poiapit:POIofficialName \"Sede Biblioteca nazionale centrale di Roma\"@it ;\n      poiapit:POIID \"1\" ;\n      cis:siteAddress address:Indirizzo_della_sede_di_Biblioteca_nazionale_centrale_di_Roma ;\n      smapit:hasOnlineContactPoint contactPoint:Contatti_di_Biblioteca_nazionale_centrale_di_Roma ;\n      clvapit:hasSpatialCoverage        <https://w3id.org/italia/controlled-vocabulary/territorial-classifications/cities/058091-(1992-04-04)> ;\n      cis:isSiteOf cissite:Biblioteca_nazionale_centrale ;\n      clvapit:hasGeometry geo_sede_biblioteca_nazionale ;\n      poiapit:hasPOICategory <https://w3id.org/italia/controlled-vocabulary/poi-category-classification/cat_2_recreation> , <https://w3id.org/italia/controlled-vocabulary/poi-category-classification/cat_6_travel> .\n\ncissite:Biblioteca_nazionale_centrale\n      a       cis:Library , cis:CulturalInstituteOrSite  , ;poiapit:PointOfInterest ;\n      cis:hasSite site:Sede_di_Biblioteca_nazionale_centrale_di_Roma .\n\naddress:Indirizzo_della_sede_di_Biblioteca_nazionale_centrale_di_Roma\n      a clvapit:Address ;\n      clvapit:hasIdentifier <https://w3id.org/italia/data/identifiers/national-access-incremental-number/1>  ;\n    clvapit:hasStreetToponym <https://w3id.org/italia/data/street-toponym/pippo> ;\n    clvapit:hasNumber <https://w3id.org/italia/data/civic-numbering/24> ;\n    clvapit:hasCity <https://w3id.org/italia/controlled-vocabulary/territorial-classifications/cities/18110-(2005-02-19)>  .\n\n\n<https://w3id.org/italia/data/identifiers/national-access-incremental-number/1>\n     a clvapit:Identifier ;\n     clvapit:identifierType \"Progressivo nazionale accesso\"@it ;\n     l0:identifier \"1\"  .\n\n<https://w3id.org/italia/data/civic-numbering/24>\n    a clvapit:CivicNumbering ;\n    clvapit:streetNumber \"24\" .\n\n<https://w3id.org/italia/data/street-toponym/pippo> ;\n    a clvapit:StreetToponym ;\n    clvapit:officialStreetName \"PIPPO\"@it ;\n    clvapit:toponymQualifier \"VIA\"@it ;\n    clvapit:hasIdentifier <https://w3id.org/italia/data/identifiers/progressivo-nazionale-area/105382> , <https://w3id.org/italia/data/identifiers/cod-com/C228> , <https://w3id.org/italia/data/identifiers/codice-istat/098013> .\n\n</pre>"@en , "Una sede è sempre associata agli individui della classe \"Istituto e Luogo della Cultura\" attraverso la proprietà ha sede.\n\nUna sede è caratterizzata dalle seguenti proprietà:\n * ha indirizzo nel tempo: consente di associare una sede con un individuo della classe indirizzo nel tempo che fornisce la descrizione dell'indirizzo che varia nel tempo.;\n * ha punto di contatto: consente di associare una sede con un individuo che identifica un punto di contatto online;\n * ha copertura geografica: consente di associare la sede con la descrizione dell'area geografica\n* è sede di: la proprietà inversa di ha sede\n* ospita evento culturale: consente di associare una sede a un evento culturale ospitato in quel luogo fisico.\n\nIl seguente esempio in turle mostra una sede associata a un istituto e luogo della cultura:\n\n\n<pre>\nsite:Sede_di_Biblioteca_nazionale_centrale_di_Roma\n      a       cis:Site , poiapit:PointOfInterest ;\n      rdfs:label \"Sede Biblioteca nazionale centrale di Roma\"@it ;\n      poiapit:POIofficialName \"Sede Biblioteca nazionale centrale di Roma\"@it ;\n      poiapit:POIID \"1\" ;\n      cis:siteAddress address:Indirizzo_della_sede_di_Biblioteca_nazionale_centrale_di_Roma ;\n      smapit:hasOnlineContactPoint contactPoint:Contatti_di_Biblioteca_nazionale_centrale_di_Roma ;\n      clvapit:hasSpatialCoverage        <https://w3id.org/italia/controlled-vocabulary/territorial-classifications/cities/058091-(1992-04-04)> ;\n      cis:isSiteOf cissite:Biblioteca_nazionale_centrale ;\n      clvapit:hasGeometry geo_sede_biblioteca_nazionale ;\n      poiapit:hasPOICategory <https://w3id.org/italia/controlled-vocabulary/poi-category-classification/cat_2_recreation> , <https://w3id.org/italia/controlled-vocabulary/poi-category-classification/cat_6_travel> .\n\ncissite:Biblioteca_nazionale_centrale\n      a       cis:Library , cis:CulturalInstituteOrSite  , ;poiapit:PointOfInterest ;\n      cis:hasSite site:Sede_di_Biblioteca_nazionale_centrale_di_Roma .\n\naddress:Indirizzo_della_sede_di_Biblioteca_nazionale_centrale_di_Roma\n      a clvapit:Address ;\n      clvapit:hasIdentifier <https://w3id.org/italia/data/identifiers/national-access-incremental-number/1>  ;\n    clvapit:hasStreetToponym <https://w3id.org/italia/data/street-toponym/pippo> ;\n    clvapit:hasNumber <https://w3id.org/italia/data/civic-numbering/24> ;\n    clvapit:hasCity <https://w3id.org/italia/controlled-vocabulary/territorial-classifications/cities/18110-(2005-02-19)>  .\n\n\n<https://w3id.org/italia/data/identifiers/national-access-incremental-number/1>\n     a clvapit:Identifier ;\n     clvapit:identifierType \"Progressivo nazionale accesso\"@it ;\n     l0:identifier \"1\"  .\n\n<https://w3id.org/italia/data/civic-numbering/24>\n    a clvapit:CivicNumbering ;\n    clvapit:streetNumber \"24\" .\n\n<https://w3id.org/italia/data/street-toponym/pippo> ;\n    a clvapit:StreetToponym ;\n    clvapit:officialStreetName \"PIPPO\"@it ;\n    clvapit:toponymQualifier \"VIA\"@it ;\n    clvapit:hasIdentifier <https://w3id.org/italia/data/identifiers/progressivo-nazionale-area/105382> , <https://w3id.org/italia/data/identifiers/cod-com/C228> , <https://w3id.org/italia/data/identifiers/codice-istat/098013> .\n\n</pre>"@it ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/italia/onto/CLV/Address> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<http://dati.beniculturali.it/cis/Attribute>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Rappresenta gli attributi di una certa descrizione della sede fisica di un istituto e luogo della cultura. Per esempio, metratura, scaffalatura, ecc."@it , "It represents the attribute that a site description of a site of a cultural institute or site may have. For instance, length, the shelving in a library, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Attributo"@it , "Attribute"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Characteristic> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class cis:Attribute is the following:\n\n<pre>\n\nattribute:Shelving\n    a cis:Attribute ;\n    rdfs:label \"Shelving\"@en , \"Scaffalature\"@it ;\n    l0:name \"Shelving\"@en , \"Scaffalature\"@it ;\n    l0:description \"The linear dimension of a shelf unit (e.g. 3 meters)\"@en , \"La dimensione di uno scaffale in metri lineari (es. 3 metri)\"@it .\n\n</pre>"@en , "Un esempio di utilizzo della classe cis:Attribute è il seguente:\n\n<pre>\n\nattribute:Shelving\n    a cis:Attribute ;\n    rdfs:label \"Shelving\"@en , \"Scaffalature\"@it ;\n    l0:name \"Shelving\"@en , \"Scaffalature\"@it ;\n    l0:description \"The linear dimension of a shelf unit (e.g. 3 meters)\"@en , \"La dimensione di uno scaffale in metri lineari (es. 3 metri)\"@it .\n\n</pre>"@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<http://www.w3.org/2000/01/rdf-schema#Literal>
+        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+
+<http://dati.beniculturali.it/cis/hasAttribute>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà che permette di associare una descrizione del sito dell'istituto e luogo della cultura a un attributo, inteso come caratteristica del sito (metratura, scaffalatura, etc)"@it , "Property used to associate the description of the site of the cultural institute or site an attribute (e.g., total space, shelving, etc.)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/SiteDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has attribute"@en , "ha attribute"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/Attribute> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/l0/description>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+
+<http://dati.beniculturali.it/cis/hasSiteDescription>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà che permette di associare una descrizione alla sede dell'istituto e luogo della cultura."@it , "Propery that permits to associate a site of a cultural institute or site with its description."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/Site> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha descrizione della sede"@it , "has site description"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/SiteDescription> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable" , "stabile"@it .

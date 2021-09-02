@@ -1,0 +1,65 @@
+<http://www.cidoc-crm.org/cidoc-crm/P29_custody_received_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor or Actors who receive custody of an instance of E18 Physical Thing in an E10 Transfer of Custody activity. \nThe property will typically describe Actors receiving custody of an object when it is handed over from another Actor’s care. On occasion, physical custody may be received involuntarily or illegally – through accident, unsolicited donation, or theft.\nIn reality, custody is either transferred to someone or from someone, or both.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "changement de détenteur au profit de"@fr , "custódia recebida por"@pt , "custody received by"@en , "übertrug Gewahrsam auf"@de , "移转保管作业给"@zh , "опека получена"@ru , "μετεβίβασε κατοχή σε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P28_custody_surrendered_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor or Actors who surrender custody of an instance of E18 Physical Thing in an E10 Transfer of Custody activity. \nThe property will typically describe an Actor surrendering custody of an object when it is handed over to someone else’s care. On occasion, physical custody may be surrendered involuntarily – through accident, loss or theft.\nIn reality, custody is either transferred to someone or from someone, or both.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "übergab Gewahrsam an"@de , "有原保管人"@zh , "custody surrendered by"@en , "опека отдана"@ru , "μετεβίβασε κατοχή από"@el , "changement de détenteur au détriment de"@fr , "custódia concedida por"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P28i_surrendered_custody_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a cessé d’être détenteur à cause de"@fr , "final da custódia por meio de"@pt , "交出保管作业於"@zh , "wurde Gewahrsam übergeben durch"@de , "παρέδωσε κατοχή μέσω"@el , "surrendered custody through"@en , "опека отдана через"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14i_performed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P29i_received_custody_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "received custody through"@en , "erhielt Gewahrsam durch"@de , "est devenu détenteur grâce à"@fr , "получил опеку через"@ru , "παρέλαβε κατοχή μέσω"@el , "取得保管作业於"@zh , "início da custódia por meio de"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P14i_performed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises transfers of physical custody of objects between instances of E39 Actor. \nThe recording of the donor and/or recipient is optional. It is possible that in an instance of E10 Transfer of Custody there is either no donor or no recipient. Depending on the circumstances it may describe:\n1.\tthe beginning of custody \n2.\tthe end of custody \n3.\tthe transfer of custody \n4.\tthe receipt of custody from an unknown source\n5.\tthe declared loss of an object\nThe distinction between the legal responsibility for custody and the actual physical possession of the object should be expressed using the property P2 has type (is type of). A specific case of transfer of custody is theft.\nThe interpretation of the museum notion of \"accession\" differs between institutions. The CRM therefore models legal ownership and physical custody separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Transferência de Custódia"@pt , "Transfer of Custody"@en , "Передача Опеки"@ru , "Μεταβίβαση  Κατοχής"@el , "保管作业转移"@zh , "Übertragung des Gewahrsams"@de , "Changement de détenteur"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .

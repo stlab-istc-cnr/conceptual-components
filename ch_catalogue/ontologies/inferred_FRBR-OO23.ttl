@@ -1,0 +1,100 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises works that have other works as members. The members of a Complex Work may constitute alternatives to, derivatives of, or self-contained components of other members of the same Complex Work.\nIn practice, no clear line can be drawn between parallel and subsequent processes in the evolution of a work. One part may not be finished when another is already revised. An initially monolithic work may be taken up and evolve in pieces. The member relationship of Work is based on the conceptual relationship, and should not be confused with the internal structural parts of an individual expression. The fact that an expression may contain parts from other work(s) does not make the expressed work complex. For instance, an anthology for which only one version exists is not a complex work.\nThe boundaries of a Complex Work have nothing to do with the value of the intellectual achievement but only with the dominance of a concept. Thus, derivations such as translations are regarded as belonging to the same Complex Work, even though in addition they constitute an Individual Work themselves. In contrast, a Work that significantly takes up and merges concepts of other works so that it is no longer dominated by the initial concept is regarded as a new work. In cataloguing practice, detailed rules are established prescribing which kinds of derivation should be regarded as crossing the boundaries of a complex work. Adaptation and derivation graphs allow the recognition of distinct sub-units, i.e. a complex work contained in a larger complex work.\nAs a Complex Work can be taken up by any creator who acquires the spirit of its concept, it is never finished in an absolute sense.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Complex Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities through which an Agency declares (implicitly or explicitly) that a given instance of F2 Expression is representative for a given F15 Complex Work, i.e., that some attributes of that instance of F2 Expression (most prominently, information about the title) can be inferred to also apply to that instance of F15 Complex Work, no matter in which particular expression it is realised.\nThe reasoning behind this is that the Work title is known through the title of an Expression that is deemed representative of the Work, and the title of the representative Expression is known through the title of a Manifestation that is deemed representative of the Expression that is representative of the Work.\nFor instance, by using the qualified controlled access point ‘Poe, Edgar Allan, 1809-1849. Murders in the rue Morgue (French)’ for the French rendition of Poe’s ‘Murders in the rue Morgue’ by Baudelaire, an Agency implicitly states that the French text does not constitute a representative F2 Expression for Poe’s F1 Work, however the original English text does constitute a representative F2 Expression for Poe’s F1 Work.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Representative Expression Assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R51i_was_assigned_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was assigned by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R51_assigned>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates the event of assigning a representative instance of F2 Expression with the F2 Expression which has been assigned.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "assigned"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the intellectual or artistic realisations of works in the form of identifiable immaterial objects, such as texts, poems, jokes, musical or choreographic notations, movement pattern, sound pattern, images, multimedia objects, or any combination of such forms that have objectively recognisable structures. The substance of F2 Expression is signs.\nExpressions cannot exist without a physical carrier, but do not depend on a specific physical carrier and can exist on one or more carriers simultaneously. Carriers may include human memory.\nInasmuch as the form of F2 Expression is an inherent characteristic of the F2 Expression, any change in form (e.g., from alpha-numeric notation to spoken word, a poem created in capitals and rendered in lower case) is a new F2 Expression. Similarly, changes in the intellectual conventions or instruments that are employed to express a work (e.g., translation from one language to another) result in the creation of a new F2 Expression. Thus, if a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression. Minor changes, such as corrections of spelling and punctuation, etc., are normally considered variations within the same F2 Expression. On a practical level, the degree to which distinctions are made between variant expressions of a work will depend to some extent on the nature of the F1 Work itself, and on the anticipated needs of users.\nThe genre of the work may provide an indication of which features are essential to the expression. In some cases, aspects of physical form, such as typeface and page layout, are not integral to the intellectual or artistic realisation of the work as such, and therefore are not distinctive criteria for the respective expressions. For another work, features such as layout may be essential. For instance, the author or a graphic designer may wrap a poem around an image.\nAn expression of a work may include expressions of other works within it. For instance, an anthology of poems is regarded as a work in its own right that makes use of expressions of the individual poems that have been selected and ordered as part of an intellectual process. This does not make the contents of the aggregated expressions part of this work, but only parts of the resulting expression.\nIf an instance of F2 Expression is of a specific form, such as text, image, etc., it may be simultaneously instantiated in the specific classes representing these forms in CIDOC CRM. Thereby one can make use of the more specific properties of these classes, such as language (which is applicable to instances of E33 Linguistic Object only).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R50_assigned_to>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates the event of assigning a representative instance of F2 Expression with the instance of F15 Complex Work to which it was assigned.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "assigned to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises distinct concepts or combinations of concepts identified in artistic and intellectual expressions, such as poems, stories or musical compositions. Such concepts may appear in the course of the coherent evolution of an original idea into one or more expressions that are dominated by the original idea. A Work may be elaborated by one or more Actors simultaneously or over time. The substance of Work is ideas. A Work may have members that are works in their own right.\nA Work can be either individual or complex. If it is individual its concept is completely realised in a single F22 Self-Contained Expression. If it is complex its concept is embedded in an F15 Complex Work. An F15 Complex Work consists of alternative members that are either F15 Complex Works themselves or F14 Individual Works. \nA Work is the product of an intellectual process of one or more persons, yet only indirect evidence about it is at our hands. This can be contextual information such as the existence of an order for a work, reflections of the creators themselves that are documented somewhere, and finally the expressions of the work created. As ideas normally take shape during discussion, elaboration and implementation, it is not reasonable to assume that a work starts with a complete concept. In some cases, it can be very difficult or impossible to define the whole of the concept of a work at a particular time. The objective evidence for such a notion can only be based on a stage of expressions at a given time. In this sense, the sets of ideas that constitute  particular self-contained expressions may be regarded as a kind of “snap-shot” of a work.\nA Work may include the concept of aggregating expressions of other works into a new expression. For instance, an anthology of poems is regarded as a work in its own right that makes use of expressions of the individual poems that have been selected and ordered as part of an intellectual process. This does not make the contents of the aggregated expressions part of this work, but only parts of the resulting expression.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R50i_was_assigned_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was assigned by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R10_has_member>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F15 Complex Work with an instance of F1 Work that forms part of it. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has member"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

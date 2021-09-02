@@ -1,0 +1,111 @@
+<https://w3id.org/italia/onto/AtlasOfPaths/isTravellingMethodOf>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse object property of hasTravellingMethod."@en , "Proprietà inversa di hasTravellingMethod."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is travelling method of"@en , "è metodo di viaggio di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/Route/hasTripPlan>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property that links any thing to a trip plan"@en , "Proprietà che lega qualsiasi cosa a un piano di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has trip plan"@en , "ha piano di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/Route/isTripPlanOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/bestWhen>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa object property collega un piano di viaggio con un'entità temporale che specifica quale sia il periodo migliore dell'anno per percorrere un certo percorso."@it , "This object property correlates a path plan with a temporal entity that specifies the best period of the year to walk a certain pathway."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "best when"@en , "periodo migliore"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/TI/TemporalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/TI/hasTemporalCoverage> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/PathPlan>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the information related to the path planning such as, for example, the possible travel method or the preferable period of the year."@en , "Questa classe rappresenta le informazioni relative alla pianificazione del percorso del cammino da intraprendere quali, ad esempio, il possibile metodo di viaggio o il periodo dell'anno preferibile."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Piano di viaggio del percorso"@it , "Path Plan"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/Path>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the concept of a path that includes: its theme of interest, its different pathways (main, alternative and deviation), its encountered paths, its management and maintenance's entities, its website."@en , "Questa classe rappresenta il concetto di cammino che ricomprende: la sua tematica d'interesse, i suoi diversi percorsi (principale, alternativo e deviazione), i cammini che lo incrociano, gli enti di gestione e manutenzione, il sito web."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cammino"@it , "Path"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod> , <https://w3id.org/italia/onto/Route/Route> , <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/hasTravellingMethod>
+        a       <http://www.w3.org/2002/07/owl#AsymmetricProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa object property collega un piano di viaggio con un possibile metodo di viaggio quale, ad esempio, a piedi, a cavallo, in bicicletta ecc."@it , "This object property connects a travel plan with a possible travel method such as, for example, on foot, on horseback, on a bike, etc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/AtlasOfPaths/PathPlan> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha metodo di viaggio"@it , "has travelling method"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/italia/onto/AtlasOfPaths/isTravellingMethodOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "provvisoria"@it , "unstable"@en .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a possible travel method along a certain pathway."@en , "Questa classe rappresenta un metodo di viaggio possibile lungo un certo percorso."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Travelling method"@en , "Metodo di viaggio"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://w3id.org/italia/onto/Route/TripPlan> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "provvisoria"@it .
+
+<https://w3id.org/italia/onto/TI/TemporalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .

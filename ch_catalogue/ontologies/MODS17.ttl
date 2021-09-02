@@ -1,0 +1,48 @@
+<http://www.loc.gov/mods/rdf/v1#roleRelationshipName>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The name included in a roleRelationship.  The roleRelationship binds an name and a role, where the name is a name associated with the resource and is specified elsewhere via the hasName property.  This mechanism is used when the role is not part of a known vocabulary.  Otherwise, the relationship is expressed by using the role vocabulary term as the property; for example, see relator:creator." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#RoleRelationship> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Role Relationship - Name" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#Name> .
+
+<http://www.loc.gov/mods/rdf/v1#RoleRelationship>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Aggregates a name with its role. " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - Role Relationship" .
+
+<http://www.loc.gov/mods/rdf/v1#ModsResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\nThe resource which is the subject of this description.\n  " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - A  MODS Resource" ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://id.loc.gov/vocabulary/resourceTypes/Res> .
+
+<http://www.loc.gov/mods/rdf/v1#roleRelationship>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Binds a name to the role that the named entity played for the resource. " ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Role Relationship" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#RoleRelationship> .
+
+<http://www.loc.gov/mods/rdf/v1#roleRelationshipRole>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The role associated with a name, where the name and role are bound together in a roleRelationship." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#RoleRelationship> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Role Relationship -  Role" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .

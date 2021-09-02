@@ -1,0 +1,48 @@
+<https://w3id.org/italia/onto/Route/RouteType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La classe che consente di modellare il tipo di percorso a seconda del mezzo di  trasporto utiizzato nel percorso stesso. L'ontologia definisce attualmente un vocabolario controllato sui tipi di percorso (percorso dell'autobus, percorso del treno, percorso del tram, percorso della nave).\nIl vocabolario controllato si base su quanto proposto nella specifica GTFS (con gli stessi codici) e ulteriori voci aggiunte allo scopo di modellare i tipi di percorso per l'ontologia del'atlante dei cammini"@it , "The class represents the type of route in terms of means of transportation used in the route itself. The ontology uses a controlled vocabulary on the type of transportation (bus, ferry, rail, LightRail, horseback, etc.)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tipo di percorso"@it , "Route Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Characteristic> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <http://www.w3.org/ns/prov#wasInfluencedBy>
+                <http://vocab.gtfs.org/terms#RouteType> ;
+        <https://w3id.org/italia/onto/l0/controlledVocabulary>
+                <https://w3id.org/italia/controlled-vocabulary/classifications-for-routes/route-types> .
+
+<https://w3id.org/italia/onto/Route/Route>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Una sequenza ordinata di tappe che possono essere seguite da persone e/o da qualsiasi tipo di veicolo di transito"@it , "A sequence of ordered stages that can be followed by a human being and/or any type of transit vehicle"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Route"@en , "Percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Sequence> , <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <http://www.w3.org/ns/prov#wasDerivedFrom>
+                <http://vocab.gtfs.org/terms#Route> .
+
+<https://w3id.org/italia/onto/Route/hasRouteType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Property that links the route to its type (walking route, bus route, etc.)"@en , "Proprietà che lega un percorso al suo tipo (percorso in bici, percorso a piedi, percorso in autobus, ecc.)"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/Route/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/italia/onto/Route> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has route type"@en , "tipo percorso"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/Route/RouteType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

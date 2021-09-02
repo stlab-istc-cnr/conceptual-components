@@ -1,0 +1,26 @@
+<http://www.europeana.eu/schemas/edm/hasView>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.openarchives.org/ore/terms/Aggregation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has View"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.europeana.eu/schemas/edm/WebResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.openarchives.org/ore/terms/aggregates> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "This property relates a ORE aggregation about a CHO with a web resource\nproviding a view of that CHO. Examples of view are: a thumbnail, a textual\nabstract and a table of contents. The ORE aggregation may be a Europeana\nAggregation, in which case the view is an object owned by Europeana (i.e., an instance of edm:EuropeanaObject) or an aggregation contributed by a content provider. In order to capture both these cases, the domain of edm:hasView is ore:Aggregation and its range is edm:WebResource"@en .
+
+<http://www.europeana.eu/schemas/edm/WebResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Web Resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.europeana.eu/schemas/edm/InformationResource> , <http://www.cidoc-crm.org/rdfs/cidoc-crm#E89_Propositional_Object> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Information Resources that have at least one Web Representation and at least\na URI."@en .
+
+<http://www.openarchives.org/ore/terms/Aggregation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

@@ -1,0 +1,188 @@
+<https://w3id.org/arco/ontology/cataloguing-campaign/CataloguingOrDigitizationCampaign>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta la campagna di catalogazione o di digitalizzazione pianificata e organizzata dall'ente schedatore"@it , "This class represents cataloguing or digitization campaign, organized by a cataloguing agency."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cataloguing or Digitization Campaign"@en , "Campagna di catalogazione o digitalizzazione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/TI/TimeIndexedEvent> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/lastNumberAssigned>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the last catalogue number assigned by ICCD to the applicant agency"@en , "Questa proprietà rappresenta l'ultimo numero catalogo assegnato da ICCD all'ente richiedente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ultimo numero assegnato"@it , "last number assigned"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#integer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/hasApplicantAgency>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il processo di assegnazione dei numeri di catalogo all'ente richiedente"@it , "This property relates  the catalogue numbers assignment to the applicant agency"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has applicant agency"@en , "ha ente richiedente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/involvesAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/isApplicantAgencyFor> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/isApplicantAgencyFor>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega l'ente richiedente al processo di assegnazione dei numeri di catalogo"@it , "This property relates the applicant agency to  the catalogue numbers assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/italia/onto/l0/Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è ente richiedente per"@it , "is applicant agency for"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isAgentInvolvedIn> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/hasApplication>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the catalogue numbers assignment to the application"@en , "Questa proprietà collega il processo di assegnazione dei numeri di catalogo alla richiesta"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha richiesta"@it , "has application"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Application> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/isApplicationOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta il processo di assegnazione dei numeri di catalogo univoci agli enti richiedenti"@it , "This class represents the process to assign unique identifiers to an applicant agency."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Catalogue Numbers Assignment"@en , "Assegnazione dei numeri di catalogo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/TI/TimeIndexedEvent> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/italia/onto/l0/Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/totalOfAssignedNumber>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the total number of catalogue number assigned by ICCD to the applicant agency"@en , "Questa proprietà rappresenta il numero totale di numeri di catalogo assegnati da ICCD all'ente richiedente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "numero totale di numeri assegnati"@it , "total of assigned number"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#integer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/isCatalogueNumberAssignmentOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega il procedimento di assegnazione dei numeri di catalogo alla campagna"@it , "This property relates the catalogue numbers assignment to a campaign"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is catalogue numebrs assignment of"@en , "è assegnazione dei numeri di catalgo di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CataloguingOrDigitizationCampaign> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/Application>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta la richiesta dei numeri identificativi univoci da parte dell'ente schedatore"@it , "This class represents the application of unique identifier by a cataloguing agency"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Application"@en , "Richiesta"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/isApplicationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega la richesta di numeri di catalogo al processo di assegnazione dei numeri di catalogo"@it , "This property relates the application to the catalogue numbers assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/Application> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is application of"@en , "è richiesta di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/hasCatalogueNumberAssignment>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a campaign to  the catalogue numbers assignment"@en , "Questa proprietà collega una campagna al procedimento di assegnazione dei numeri di catalogo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CataloguingOrDigitizationCampaign> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has catalogue numbers assignment"@en , "ha assegnazione dei numeri di catalogo"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/isCatalogueNumberAssignmentOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/firstNumberAssigned>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property represents the first catalogue number assigned by ICCD to the applicant agency"@en , "Questa proprietà rappresenta il primo numero catalogo assegnato da ICCD all'ente richiedente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "primo numero assegnato"@it , "first number assigned"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#integer> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .

@@ -1,0 +1,40 @@
+<http://www.loc.gov/mads/rdf/v1#MADSScheme>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "MADS Scheme is an organizational unit that describes a knowledge organization system. It aggregates madsrdf:Authority descriptions and/or madsrdf:MADSCollection resources included in the knowledge organization system. Including a madsrdf:MADSCollection within a madsrdf:MADSScheme should be done with care; when a madsrdf:MADSCollection is part of a madsrdf:MADSScheme, then any madsrdf:Authority within that madsrdf:MADSCollection is effectively also in the madsrdf:MADSScheme."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MADS Scheme"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://www.loc.gov/mads/rdf/v1#Variant> , <http://www.loc.gov/mads/rdf/v1#MADSType> .
+
+<http://www.loc.gov/mads/rdf/v1#hasTopMemberOfMADSScheme>
+        a       <http://www.w3.org/2002/07/owl#IrreflexiveProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Identifies an Authority that is at the top of the hierarchy of authorities within the MADS Scheme." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has Top Member of MADS Scheme" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2004/02/skos/core#hasTopConcept> , <http://www.loc.gov/mads/rdf/v1#hasMADSSchemeMember> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<http://www.loc.gov/mads/rdf/v1#Authority>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A concept with a controlled label." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Authority"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2004/02/skos/core#Concept> , <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://www.loc.gov/mads/rdf/v1#Variant> , <http://www.loc.gov/mads/rdf/v1#MADSScheme> , <http://www.loc.gov/mads/rdf/v1#MADSCollection> , <http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority> .

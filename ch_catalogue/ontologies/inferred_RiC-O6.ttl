@@ -1,0 +1,109 @@
+<https://www.ica.org/standards/RiC/ontology#PositionToGroupRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects at least one Position, and a Group, when the first\n            one(s) exist(s) in/is defined within the second one."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Position to Group Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#AgentToAgentRelation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R056 and RiC-R056i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Group>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Two or more Agents that act together as an Agent."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Group"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://www.ica.org/standards/RiC/ontology#Position> , <https://www.ica.org/standards/RiC/ontology#Person> , <https://www.ica.org/standards/RiC/ontology#Mechanism> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Group is a kind of Agent. A Group has a socially recognized\n            identity. Each member of the Group plays a particular role or roles (that is has a\n            particular Position) in the coordinated activity of the Group. Corporate bodies and\n            families are kinds of groups, though other kinds of groups are possible. For example,\n            the “electorate” -- all of the voters in a given election. Complex, large groups may be\n            subdivided into other groups."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E09 (Group\n            Entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Position>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The functional role of a Person within a Group."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Position"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Position is a kind of Agent. Position is the intersection of a\n            Person and a Group. Position exists independently of the Person that holds the Position\n            within a Group. More than one Person may hold a Position. Position is commonly defined\n            in a Mandate, often called a position description or job description. The Mandate may\n            specify the work to be performed (Activity) as well as the competencies for performing\n            the Activity. A Position is often given a Name. A Position may be tied to a project or\n            to a set of tasks and thus have a defined duration. A Position may change over time, as\n            the Group that establishes it changes over time. Position is not to be confused with\n            Occupation or Activity. Within the records created by a Corporate Body, a Position may\n            be used to identify the record sets resulting from activities performed by one or more\n            persons holding the Position over time, without necessarily identifying or describing\n            the Person or persons, or identifying which records were created by each\n            Person."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E12 (Position\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#positionToGroupRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Position to Group Relation to a Position (that exists\n            in a Group)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#PositionToGroupRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "position to group relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#agentRelationConnects> , <https://www.ica.org/standards/RiC/ontology#relationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#positionIsSourceOfPositionToGroupRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Position (that exists within a Group) to a Position\n            to Group Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "position is source of position to group relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#PositionToGroupRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#agentIsConnectedToAgentRelation> , <https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#positionToGroupRelationHasSource> .
+
+<https://www.ica.org/standards/RiC/ontology#groupIsTargetOfPositionToGroupRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects the Group (in which a Position exists) to a Position To\n            Group Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Group> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "group is target of position to group relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#PositionToGroupRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation> , <https://www.ica.org/standards/RiC/ontology#agentIsConnectedToAgentRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#positionToGroupRelationHasTarget> .

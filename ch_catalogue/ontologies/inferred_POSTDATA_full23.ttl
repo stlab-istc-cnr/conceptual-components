@@ -1,0 +1,275 @@
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#WorkPattern>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The prosodic analysis using a Redaction as the unit of reference\nEg.: The complete distribution of accented syllables of a work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WorkPattern"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Pattern> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:37:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As a structure, a Word can be modelled from two points of view:\n- An item (a subclass of old:slot) of the Line \n- A list of Syllables"@en , "A single distinct meaningful element of writing, used with others (or sometimes alone) to form a sentence and typically shown with a space on either side when written or printed\nEg.: The word “life”"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Word"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#OrderedList> , <http://purl.org/ontology/olo/core#Slot> , <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> , <http://bakulf.github.io/raop/0.1#Word> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Foot>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A unit of poetic meter consisting of stressed and unstressed syllables or long and short syllables in any of various set combinations"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Foot"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/linguistics/gold/Foot> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:37:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#lineNumber>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Number of the verse" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lineNumber"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/olo/core#index> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#numberOfFeet>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Number of feet"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#LinePattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "numberOfFeet"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:39:21+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As a structure, a Stanza can be modelled from two points of view:\n- An item (a subclass of old:slot) of the list of Stanzas of the Redaction \n- A list of lines"@en , "Group of lines. Usually, this grouping forms the basic recurring metrical unit of a poem, song or play\nEg.: As armas e os barões assinalados,\nQue da ocidental praia Lusitana,\nPor mares nunca de antes navegados,\nPassaram ainda além da Taprobana,\nEm perigos e guerras esforçados,\nMais do que prometia a força humana,\nE entre gente remota edificaram\nNovo Reino, que tanto sublimaram;" ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Stanza"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#Slot> , <http://purl.org/ontology/olo/core#OrderedList> , <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#numberOfStanzas>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Number of stanzas" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#WorkPattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "numberOfStanzas"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:39:21+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://purl.org/ontology/olo/core#Slot>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A slot in an ordered list with a fixed index."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://purl.org/ontology/olo/core#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Slot"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable"@en .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#numberOfSyllables>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The exact number of syllables, that is, without paying attention to any metrical phenomena that may affect the counting"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#LinePattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "numberOfSyllables"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:39:21+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://purl.org/ontology/olo/core#index>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An index of a slot in an ordered list."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/ontology/olo/core#Slot> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://purl.org/ontology/olo/core#> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has index"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status>
+                "stable"@en .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#numberOfMorae>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The number of morae the foot contains"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Foot> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "numberOfMorae"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#stanzaNumber>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Position of the stanza inside the composition"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stanzaNumber"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/olo/core#index> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#wordNumber>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Position of the word within the line to which it belongs"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wordNumber"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/olo/core#index> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#numberOfLines>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Number of lines in item" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#StanzaPattern> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-prosodicElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "numberOfLines"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:39:21+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#StanzaPattern>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The prosodic analysis using a Stanza as the unit of reference\nEg.: The number of lines of a Stanza or its categorisation according to metrics (such as “quatrain”)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StanzaPattern"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Pattern> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:37:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "As a structure, a List can be modelled from two points of view:\n- An item (a subclass of old:slot) of the list of lines of the Redaction \n- A list of tokens"@en , "A unit of verse that usually ends in a visual or typographic break and generally characterized by its length and meter\nEg.: “As armas e os barões assinalados” - from Os Lusíadas" ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements" ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Line"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/ontology/olo/core#Slot> , <http://purl.org/ontology/olo/core#OrderedList> , <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#altStanzaNumber>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Position of the stanza inside the composition when a different ordering is possible"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                "http://postdata.linhd.uned.es/ontology/postdata-structuralElements"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "altStanzaNumber"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#positiveInteger> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/ontology/olo/core#index> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" .
+
+<http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#LinePattern>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The prosodic analysis using a Line as the unit of reference\nEg.: The number of syllables of the Line"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LinePattern"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#Pattern> ;
+        <http://purl.org/dc/elements/1.1/creator>
+                "mluisadiez" ;
+        <http://purl.org/dc/elements/1.1/date>
+                "2018-06-16T18:37:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

@@ -1,0 +1,41 @@
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P131i_identifies>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "identifies"@en , "identifiziert"@de , "被用来识别"@zh , "идентифицирует"@ru , "identifica"@pt , "identifie"@fr , "είναι αναγνωριστικό"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P1i_identifies> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises any sort of name, number, code or symbol characteristically used to identify an E39 Actor. \nAn E39 Actor will typically have more than one E82 Actor Appellation, and instances of E82 Actor Appellation in turn may have alternative representations. The distinction between corporate and personal names, which is particularly important in library applications, should be made by explicitly linking the E82 Actor Appellation to an instance of either E21 Person or E74 Group/E40 Legal Body. If this is not possible, the distinction can be made through the use of the P2 has type mechanism. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Обозначение Агента"@ru , "角色称号"@zh , "Actor Appellation"@en , "Designação de Agente"@pt , "Akteurbenennung"@de , "Ονομασία Δράστη"@el , "Appellation d'agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P131_is_identified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies a name used specifically to identify an E39 Actor. \nThis property is a specialisation of P1 is identified by (identifies) is identified by.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is identified by"@en , "有称号"@zh , "идентифицируется посредством"@ru , "est identifié par"@fr , "αναγνωρίζεται ως"@el , "wird identifziert durch"@de , "é identificado por"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> .

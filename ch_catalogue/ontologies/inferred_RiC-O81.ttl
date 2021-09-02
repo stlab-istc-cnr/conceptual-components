@@ -1,0 +1,65 @@
+<https://www.ica.org/standards/RiC/ontology#RecordResourceToRecordResourceRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects at least two Record Resources."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource to Record Resource Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Relation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R022 and RiC-022i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#recordResourceIsConnectedToRecordResourceRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to a Record Resource\n            Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "record resource is connected to record resource relation\n        "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResourceToRecordResourceRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsConnectedToRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#recordResourceRelationConnects>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource relation to one of the related Record\n            Resources."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResourceToRecordResourceRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "record resource relation connects "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationConnects> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#recordResourceIsConnectedToRecordResourceRelation> .
+
+<https://www.ica.org/standards/RiC/ontology#RecordResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Record, Record Set, or Record Part produced or acquired and\n            retained by an Agent in the course of Activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Producing a record resource may imply either its newly\n            creation or a reuse of previous existing information by combination, rearrangement,\n            selecting, reformatting etc. Records, Record Sets, and Record Parts are all evidence of\n            the activities of an Agent. More than one Agent may be involved in the creation of a\n            Record Resource. The role of the Agent in creating the Record Resource may take\n            different forms, for example, authoring of an individual record, accumulating a set of\n            records, or forming a set of records. Though a Record, Record Set, and Record Part,\n            under most circumstances, may be easily distinguished from one another, frequently\n            identifying the boundary of each and how the “bounded information regions” interrelate,\n            may present particular challenges. Documentary Forms provide the rules governing many\n            Records, providing criteria for identifying its boundary, and identifying its essential\n            Record Parts. Many Records, though, do not have well-established documentary forms,\n            particularly electronic records, where it may be difficult to determine whether\n            individual elements represented in separate bitstreams are record parts, records, or\n            record sets. For example, is a photograph represented independently in a bitstream\n            embedded in a text document a Record, or a Record Part ? Or is the same photograph\n            attached to an email, maintaining its independent representation, a Record or a Record\n            Part? When information is grouped for some purpose, for example, zip or tar “file\n            compression” for saving storage space, presents a further challenge. One file comprises\n            multiple bitstreams subjected to techniques that remove bits that can be losslessly\n            recovered when decompressed. Under what circumstances is such a compressed bitstream a\n            Record or a Record Set? Determining when an information object is a Record, Record Part,\n            or Record Set is based on perspective and judgement exercised in a particular context.\n            In one context, the Agent describing an information object may designate it a Record,\n            while another Agent in a different context may designate it a Record Part. Both\n            designations are supported by RiC, and the significance of the difference for users of\n            the records is ameliorated by the fact that attributes and relations employed in\n            describing each of the record entities are shared."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E02 (Record Resource\n            entity)"@en .

@@ -1,0 +1,128 @@
+<https://www.ica.org/standards/RiC/ontology#Mandate>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Delegation of authority by an Agent to another Agent to perform\n            an Activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mandate"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Rule> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Mandate is a kind of Rule. A Mandate confers the authority or\n            competencies of Agents to perform a specified Activity. In addition to assigning an\n            Activity and delegating authority to perform the Activity to an Agent, a Mandate\n            commonly limits the Place (jurisdiction) and Date (time period) within which an Agent\n            may perform the Activity (where and when). Mandates exist in a specific social and\n            cultural context, and within that context are subject to change over time. While a\n            Mandate may be tacit, in whole or part, it may be explicitly expressed in a variety of\n            documentary sources (for example, constitutions, legislation, (legal) acts, statutes,\n            legal codes, ordinances, charges, charters, or mission statements). The evidence for\n            identifying a Mandate may be found in its entirety in one documentary source (for\n            example, a law or regulation), or may be found in two or more sources. A Mandate should\n            not be confused with the one or more documentary sources that serve as evidence of its\n            identity. A documentary source is a Record."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E17 (Mandate\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#authorizes>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Mandate to the Agent that the Mandate gives the\n            authority or competencies to act."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Mandate> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "authorizes"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRuleAssociatedWith> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R067 ('authorizes'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#mandateIsSourceOfMandateRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Mandate to a Mandate Relation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Mandate> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mandate is source of mandate relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#MandateRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#ruleIsSourceOfRuleRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#MandateRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects at least one Mandate, and at least one Agent, when the\n            first gives the second one the authority or competencies to act. May also involve one to\n            many Activities that the Mandate(s) assign(s) to the Agent(s)."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mandate Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#RuleRelation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R067 and RiC-R067i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#authorizedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'authorizes' object property"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "authorized by "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Mandate> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAssociatedWithRule> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#authorizes> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R067i ('authorizedBy'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#mandateRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Mandate Relation to a Mandate."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#MandateRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mandate relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Mandate> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#ruleRelationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#mandateIsSourceOfMandateRelation> .
+
+<https://www.ica.org/standards/RiC/ontology#Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person, or Group, or an entity created by a Person or Group\n            (Mechanism), or a Position, that acts in the world."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "An Agent may have one or more identities; an identity is a\n            constellation of properties or relations that together “identify” the Agent. A Person or\n            Group commonly has one identity, though each also may have one or more alternative\n            identities. Such alternative identities may be shared by more than one Person or Group.\n            Alternative identities include but are not limited to pseudonyms, heteronyms, DBA (Doing\n            Business As), and trade identities. An alternative identity should not be confused with\n            a Position in a Group, for example, presidents, prime ministers, governors, popes,\n            royalty, or bishops. Nor should an alternative identity be confused with a variant name\n            or identifier of the same identity. Agent also includes entities created by a Person or\n            Group that act on behalf of the creating Agent in an autonomous or semi-autonomous\n            manner. Examples of a Mechanism include software agents, robots, and space and\n            underwater probes that generate data (records) in the course of Activity assigned to and\n            in conformance with the instructions given to them by the creating Person or\n            Group."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E07 (Agent\n            entity)"@en .

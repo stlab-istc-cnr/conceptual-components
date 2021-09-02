@@ -1,0 +1,89 @@
+<http://culturalis.org/oad#FindingAid>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The class represents a finding aid."@en , "La classe rappresenta lo strumento di ricerca"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Strumento di ricerca"@it , "Finding aid"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://culturalis.org/cult/0.1/#Catalogue> ;
+        <http://www.w3.org/2002/07/owl#backwardCompatibleWith>
+                <http://lod.xdams.org/reload/oad/findingAid> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://dati.san.beniculturali.it/SAN/strumento> .
+
+<http://culturalis.org/oad#Instance>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The class represents the descriptive entry of an archival resource"@en , "La classe Archival instance rappresenta l'istanziazione dell'archival resource"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Instanza archivistica"@it , "Archival instance"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#ArchivalResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "oad:ArchivalResource is the class that represents the object of the description (i.e., a single document or a set of document)."@en , "La classe Archival resource indica un corpus documentale oggetto di descrizione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Risorsa archivistica"@it , "Archival resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://dati.san.beniculturali.it/SAN/complessoArchivistico> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#hasFindingAid>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La proprietà collega una archival instance allo strumento di ricerca che la contiene"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://lod.xdams.org/reload/oad/isadOntology/isad_3.4.5_finding_aids> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ha strumento di ricerca"@it , "Has finding aid"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/oad#FindingAid> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#backwardCompatibleWith>
+                <http://lod.xdams.org/reload/oad/has_findingAid> ;
+        <http://www.w3.org/2002/07/owl#deprecated>
+                "true"^^<http://www.w3.org/2001/XMLSchema#booelan> .
+
+<http://culturalis.org/oad#isDescribedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse property of oad:describes"@en , "Proprietà inversa di 'describes'."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#ArchivalResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Descritta da"@it , "Is described by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/oad#FindingAid> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa proprietà è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#describes>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La proprietà collega uno strumento di ricerca alla risorsa archivistica descritta"@it , "This functional property links a finding aid to the archival resource described"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#FindingAid> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Descrive"@it , "Describes"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/oad#ArchivalResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://culturalis.org/oad#isDescribedBy> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa proprietà è stata aggiunta nella versione del 2 agosto 2018" .

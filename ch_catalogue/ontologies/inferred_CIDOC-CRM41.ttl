@@ -1,0 +1,61 @@
+<http://www.cidoc-crm.org/cidoc-crm/E57_Material>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class is a specialization of E55 Type and comprises the concepts of materials. \nInstances of E57 Material may denote properties of matter before its use, during its use, and as incorporated in an object, such as ultramarine powder, tempera paste, reinforced concrete. Discrete pieces of raw-materials kept in museums, such as bricks, sheets of fabric, pieces of metal, should be modelled individually in the same way as other objects. Discrete used or processed pieces, such as the stones from Nefer Titi's temple, should be modelled as parts (cf. P46 is composed of).\nThis type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E57 Material, e.g.: “instances of  gold”.\nIt is recommended that internationally or nationally agreed codes and terminology are used."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Материал"@ru , "Υλικό"@el , "材料"@zh , "Material"@pt , "Material"@en , "Matériau"@fr , "Material"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E11_Modification>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all instances of E7 Activity that create, alter or change E24 Physical Man-Made Thing. \nThis class includes the production of an item from raw materials, and other so far undocumented objects, and the preventive treatment or restoration of an object for conservation. \nSince the distinction between modification and production is not always clear, modification is regarded as the more generally applicable concept. This implies that some items may be consumed or destroyed in a Modification, and that others may be produced as a result of it. An event should also be documented using E81 Transformation if it results in the destruction of one or more objects and the simultaneous production of others using parts or material from the originals. In this case, the new items have separate identities. \nIf the instance of the E29 Design or Procedure utilized for the modification prescribes the use of specific materials, they should be documented using property P68 foresees use of (use foreseen by): E57 Material of E29 Design or Procedure, rather than via P126 employed (was employed in): E57 Material.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Τροποποίηση"@el , "Modificação"@pt , "修改"@zh , "Modification"@fr , "Modification"@en , "Bearbeitung"@de , "Событие Изменения"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P31i_was_modified_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wurde verändert durch"@de , "τροποποιήθηκε από"@el , "被修改於"@zh , "was modified by"@en , "a été modifié par"@fr , "foi modificada por"@pt , "был изменен посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E11_Modification> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P126i_was_employed_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E57_Material> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被使用於"@zh , "was employed in"@en , "foi empregado em"@pt , "использовался в"@ru , "χρησιμοποιήθηκε σε"@el , "a été employé dans"@fr , "wurde verwendet bei"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E11_Modification> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P31_has_modified>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E24 Physical Man-Made Thing modified in an E11 Modification.\nIf a modification is applied to a non-man-made object, it is regarded as an E22 Man-Made Object from that time onwards. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E11_Modification> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has modified"@en , "veränderte"@de , "修改了"@zh , "a modifié"@fr , "modificou"@pt , "изменил"@ru , "τροποποίησε"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items that are purposely created by human activity.\nThis class comprises man-made objects, such as a swords, and man-made features, such as rock art. No assumptions are made as to the extent of modification required to justify regarding an object as man-made. For example, a “cup and ring” carving on bedrock is regarded as instance of E24 Physical Man-Made Thing. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Hergestelltes"@de , "Chose matérielle fabriquée"@fr , "Coisa Material Fabricada"@pt , "人造实体物"@zh , "Physical Man-Made Thing"@en , "Ανθρωπογενές Υλικό Πράγμα"@el , "Физическая Рукотворная Вещь"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> , <http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing> .

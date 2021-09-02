@@ -1,0 +1,71 @@
+<http://purl.org/saws/ontology#marginaliaAddedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Marginalia have been physically added onto the manuscript by a Scribe\n\nNB to represent where a comment has been made by a modern-day scholar/editor, not written onto the manuscript, use: Comment commentMadeBy Editor"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Marginalia> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "marginalia added by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Scribe> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "LinguisticObject isWrittenBy Person\nComment commentMadeBy Editor"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#hasAddedMarginalia>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Scribe has physically added Marginalia onto a manuscript.\n\nNB to represent where a modern-day scholar/editor makes a comment, not written onto the manuscript, use: Editor hasMadeComment Comment "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Scribe> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has added marginalia"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#Marginalia> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "Person hasWritten LinguisticObject\nEditor hasMadeComment Comment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#marginaliaAddedBy> .
+
+<http://purl.org/saws/ontology#Scribe>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The producer / author / copier of a linguistic object (excluding editions), in the medieval age. The scribe can be named or unnamed"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "scribe"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://erlangen-crm.org/current/E21_Person> .
+
+<http://purl.org/saws/ontology#Marginalia>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Remark(s) physically written in the margin of the material by a scribe, not necessarily the original scribe. \n\nN.B. If a comment has been physically written on a material (usually in the margin), then this should be represented as an instance of Marginalia. The Comment class is for comments on a material that don’t physically exist on that material"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "marginalia"@en .
+
+<http://purl.org/saws/ontology#OriginalMaterial>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A material produced by scribe transcription rather than being edited in modern times"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "original material"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/saws/ontology#Material> .
+
+<http://purl.org/saws/ontology#areMarginaliaOn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "To indicate that Marginalia have been written on the manuscript,e .g. in the margins"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/saws/ontology#Marginalia> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "are marginalia on"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/saws/ontology#OriginalMaterial> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#refersTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#hasMarginalia> .

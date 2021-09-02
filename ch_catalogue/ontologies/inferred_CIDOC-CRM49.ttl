@@ -1,0 +1,41 @@
+<http://www.cidoc-crm.org/cidoc-crm/E54_Dimension>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises quantifiable properties that can be measured by some calibrated means and can be approximated by values, i.e. points or regions in a mathematical or conceptual space, such as natural or real numbers, RGB values etc.\nAn instance of E54 Dimension represents the true quantity, independent from its numerical approximation, e.g. in inches or in cm. The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of an instance of E54 Dimension. If the true values belong to a non-discrete space, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that interoperability of values described in different units depends critically on the representation as value regions.\nNumerical approximations in archaic instances of E58 Measurement Unit used in historical records should be preserved. Equivalents corresponding to current knowledge should be recorded as additional instances of E54 Dimension as appropriate.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "规模数量"@zh , "Dimensão"@pt , "Dimensions"@fr , "Величина"@ru , "Μέγεθος"@el , "Dimension"@en , "Maß"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P91_has_unit>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property shows the type of unit an E54 Dimension was expressed in."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "имеет единицу"@ru , "hat Einheit"@de , "tem unidade"@pt , "έχει μονάδα μέτρησης"@el , "has unit"@en , "有单位"@zh , "a pour unité"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "é unidade de"@pt , "est l'unité de"@fr , "被当做单位来表示"@zh , "ist Einheit von"@de , "is unit of"@en , "является единицей для"@ru , "αποτελεί μονάδα μέτρησης του/της"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc. \nThis type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E58 Measurement Unit, e.g.: “instances of cm”.\nSyst?me International (SI) units or internationally recognized non-SI terms should be used whenever possible. (ISO 1000:1992). Archaic Measurement Units used in historical records should be preserved.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Maßeinheit"@de , "Единица Измерения"@ru , "测量单位"@zh , "Unité de mesure"@fr , "Μονάδα Μέτρησης"@el , "Unidade de Medida"@pt , "Measurement Unit"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .

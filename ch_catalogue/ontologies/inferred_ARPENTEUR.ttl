@@ -1,0 +1,2710 @@
+@prefix : <http://www.arpenteur.org/ontology/Arpenteur.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.arpenteur.org/ontology/Arpenteur.owl#> .
+
+<http://www.arpenteur.org/ontology/Arpenteur.owl> rdf:type owl:Ontology ;
+                                                   rdfs:comment """
+	Arpenteur ontology is dedicated to photogrammetry, archeology and oceanology communities 
+	in order to perform tasks such as image processing, photogrammetry and modelling.
+	Website: http://www.arpenteur.org
+
+	v. 0.0.1: general ontology dedicated to photogrammetric survey and measured object.
+	v. 0.0.2: Now unified ontology for photogrammetry and measured items.
+	v. 0.0.3: Adding PetraData Class to manage several Siti.
+	v. 0.0.4: Starting using time from CRM for stratigraphy.
+	v. 0.0.5: Adding ashlar Bloc to stratigraphy.
+	v. 0.0.5: Cancelling all FunctionalProperties.
+	v. 0.0.6: Now Element coming from Architecture have a link toward a stratigraphic Unit.
+	v. 0.0.7: Adding Stratigraphic relation between two ElementoStratigrafico.
+			Before this version these relation was done with ID.
+	v. 0.0.8: All link with E54 relation from CRM CIDOC are commented.
+	v. 0.0.9: Introduction to redCoral.
+	v. 0.0.10: Changing BoundingBoxParallel to BoundingBox.
+	v. 0.0.11: Connecting GeoSPARQL ontology: SpatialObject, IPoint.
+	v. 0.0.12: Modeling Plane Objects for 2D Plane Locatization.
+	v. 0.0.13: Modeling datatypes properties for amphorae to match the typologies
+	Rhodian, Thasian, Koan, Mushroom Rim and Chian. Acknowledgment 
+	to Laboratory (MARE Lab) of the University of Cyprus team.
+	v. 0.0.14: Modeling Intervals and Directions 
+	"""@en ;
+                                                   owl:versionInfo "v. 0.0.12" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+<http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Eof
+:Eof rdf:type owl:ObjectProperty ;
+     owl:equivalentProperty [ owl:inverseOf :Wof
+                            ] ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     owl:inverseOf :Wof ;
+     rdf:type owl:AsymmetricProperty ,
+              owl:IrreflexiveProperty ;
+     rdfs:domain :SpatialObject ;
+     rdfs:range :SpatialObject ;
+     rdfs:label "East of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#NEof
+:NEof rdf:type owl:ObjectProperty ;
+      owl:equivalentProperty [ owl:inverseOf :SWof
+                             ] ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      owl:inverseOf :SWof ;
+      rdf:type owl:AsymmetricProperty ,
+               owl:IrreflexiveProperty ;
+      rdfs:domain :SpatialObject ;
+      rdfs:range :SpatialObject ;
+      rdfs:label "North East Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#NWof
+:NWof rdf:type owl:ObjectProperty ;
+      owl:equivalentProperty [ owl:inverseOf :SEof
+                             ] ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      owl:inverseOf :SEof ;
+      rdf:type owl:AsymmetricProperty ,
+               owl:IrreflexiveProperty ;
+      rdfs:domain :SpatialObject ;
+      rdfs:range :SpatialObject ;
+      rdfs:label "North West Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Nof
+:Nof rdf:type owl:ObjectProperty ;
+     owl:equivalentProperty [ owl:inverseOf :Sof
+                            ] ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     owl:inverseOf :Sof ;
+     rdf:type owl:AsymmetricProperty ,
+              owl:IrreflexiveProperty ;
+     rdfs:domain :SpatialObject ;
+     rdfs:range :SpatialObject ;
+     rdfs:label "North Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#SEof
+:SEof rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdf:type owl:AsymmetricProperty ,
+               owl:IrreflexiveProperty ;
+      rdfs:domain :SpatialObject ;
+      rdfs:range :SpatialObject ;
+      rdfs:label "South East Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#SWof
+:SWof rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdf:type owl:AsymmetricProperty ,
+               owl:IrreflexiveProperty ;
+      rdfs:domain :SpatialObject ;
+      rdfs:range :SpatialObject ;
+      rdfs:label "South West Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Sof
+:Sof rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdf:type owl:AsymmetricProperty ,
+              owl:IrreflexiveProperty ;
+     rdfs:domain :SpatialObject ;
+     rdfs:range :SpatialObject ;
+     rdfs:label "South Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Wof
+:Wof rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdf:type owl:AsymmetricProperty ,
+              owl:IrreflexiveProperty ;
+     rdfs:domain :SpatialObject ;
+     rdfs:range :SpatialObject ;
+     rdfs:label "West Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has2DTransformation
+:has2DTransformation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :PlaneProjection ;
+                     rdfs:range :Transformation2D ;
+                     rdfs:label "has 2D Transformation"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOf3DPoint
+:hasASetOf3DPoint rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Point3DManager ;
+                  rdfs:range :IPoint3D ;
+                  rdfs:label "has a set of 3D points"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOf3DPointWithObs
+:hasASetOf3DPointWithObs rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain :MeasuredPointManager ;
+                         rdfs:range :Point_3D ;
+                         rdfs:label "has a set of 3D point with observations"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfCA
+:hasASetOfCA rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Sito ;
+             rdfs:range :ComplessoArchitettonico ;
+             rdfs:label "has a set of Complesso Architettonico"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfCF
+:hasASetOfCF rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :ComplessoArchitettonico ;
+             rdfs:range :CorpoDiFabbrica ;
+             rdfs:label "has a set of CorpoDiFabbrica"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfCamera
+:hasASetOfCamera rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :CameraManager ;
+                 rdfs:range :Camera ;
+                 rdfs:label "has a set of camera"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfObservation
+:hasASetOfObservation rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdf:type owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :ImagePointManager ;
+                      rdfs:range :ImagePoint ;
+                      rdfs:label "has a set of observations"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfPP
+:hasASetOfPP rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :CorpoDiFabbrica ;
+             rdfs:range :ProspettoParticolare ;
+             rdfs:label "has a set of ProspettoParticolare"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfSiti
+:hasASetOfSiti rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :PetraData ;
+               rdfs:range :ManagerCA ;
+               rdfs:label "has a set of Siti"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfSito
+:hasASetOfSito rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :SitiList ;
+               rdfs:range :Sito ;
+               rdfs:label "has a set of Sito"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfUS
+:hasASetOfUS rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :CorpoDiFabbrica
+                                         :Prospetto
+                                         :UnitaTopografica
+                                       )
+                         ] ;
+             rdfs:range :UnitaStratigrafica ;
+             rdfs:label "has a set of UnitaStratigrafica"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasASetOfUT
+:hasASetOfUT rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Sito ;
+             rdfs:range :UnitaTopografica ;
+             rdfs:label "has a set of UnitaTopografica"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasBoundingBox
+:hasBoundingBox rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :SpatialObject ;
+                rdfs:range :BoundingBox ;
+                rdfs:label "has bounding box"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCA
+:hasCA rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdf:type owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :CorpoDiFabbrica ;
+       rdfs:range :ComplessoArchitettonico ;
+       rdfs:label "has ComplessoArchitettonico"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCF
+:hasCF rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdf:type owl:AsymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :UnitaFunzionale ;
+       rdfs:range :CorpoDiFabbrica ;
+       rdfs:label "has CorpoDiFabbrica"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCamera
+:hasCamera rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Photograph ;
+           rdfs:range :Camera ;
+           rdfs:label "has camera"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCameraManager
+:hasCameraManager rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Model ;
+                  rdfs:range :CameraManager ;
+                  rdfs:label "has CameraManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCenter
+:hasCenter rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :UnitaStratigrafica ;
+           rdfs:range :IPoint3D ;
+           rdfs:label "has center"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDistortion
+:hasDistortion rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :Camera ;
+               rdfs:range :RadialDecenteringDistortion ;
+               rdfs:label "has distortion"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasImagePointManager
+:hasImagePointManager rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdf:type owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :Point_3D ;
+                      rdfs:range :ImagePointManager ;
+                      rdfs:label "has an ImagePointManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasInterval
+:hasInterval rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Intersection ;
+             rdfs:range :Interval ;
+             rdfs:label "has interval"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasIntervalEndPoint
+:hasIntervalEndPoint rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Interval ;
+                     rdfs:range <http://www.opengis.net/ont/sf#Point> ;
+                     rdfs:label "has Interval End Point"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasIntervalStartPoint
+:hasIntervalStartPoint rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :Interval ;
+                       rdfs:range <http://www.opengis.net/ont/sf#Point> .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasLogicalCameraObservation
+:hasLogicalCameraObservation rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdfs:domain :LogicalCamera ;
+                             rdfs:range :LogicalOrientation .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasMeasuredPointManager
+:hasMeasuredPointManager rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:AsymmetricProperty ,
+                                  owl:IrreflexiveProperty ;
+                         rdfs:domain :Model ;
+                         rdfs:range :MeasuredPointManager ;
+                         rdfs:label "has MeasuredPointManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasMeasuredSource
+:hasMeasuredSource rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :Trace ;
+                   rdfs:range :Measurable ;
+                   rdfs:label "has Measured Source"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPhotoManager
+:hasPhotoManager rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Model ;
+                 rdfs:range :PhotoManager ;
+                 rdfs:label "has PhotoManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPhotograph
+:hasPhotograph rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :ImagePoint ;
+               rdfs:range :Photograph ;
+               rdfs:label "has Photograph"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPointManager
+:hasPointManager rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :TriangleManager ;
+                 rdfs:range :Point3DManager ;
+                 rdfs:label "has Point3DManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPrimitiveGeometry
+:hasPrimitiveGeometry rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :PlaneObject ;
+                      rdfs:range :Geometry ;
+                      rdfs:label "has Primitive Geometry" .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRotationMatrix
+:hasRotationMatrix rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Transformation3D ;
+                   rdfs:range :RotationMatrix ;
+                   rdfs:label "has RotationMatrix"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRotationMatrix2D
+:hasRotationMatrix2D rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Transformation2D ;
+                     rdfs:range :RotationMatrix ;
+                     rdfs:label "has RotationMatrix"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasSito
+:hasSito rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :ComplessoArchitettonico
+                                     :UnitaTopografica
+                                   )
+                     ] ;
+         rdfs:range :Sito ;
+         rdfs:label " has Sito"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :CardinalRelation ;
+           rdfs:range :SpatialObject .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasSourceIntersection
+:hasSourceIntersection rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdf:type owl:FunctionalProperty ,
+                                owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :Intersection ;
+                       rdfs:range :Trace ;
+                       rdfs:label "has Source Intersection"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasSourceObservation
+:hasSourceObservation rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :LogicalCamera
+                                                  :ModernArtifact
+                                                )
+                                  ] ;
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( :LogicalCamera
+                                                 :ModernArtifact
+                                               )
+                                 ] .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationAnteriorita
+:hasStratigraphicRelationAnteriorita rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                     rdfs:domain :ElementoStratigrafico ;
+                                     rdfs:range :ElementoStratigrafico ;
+                                     rdfs:label " has Stratigraphic Relation: Anteriorita"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationAppoggiatoA
+:hasStratigraphicRelationAppoggiatoA rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                     rdf:type owl:AsymmetricProperty ,
+                                              owl:IrreflexiveProperty ;
+                                     rdfs:domain :ElementoStratigrafico ;
+                                     rdfs:range :ElementoStratigrafico ;
+                                     rdfs:label " has Stratigraphic Relation: Appoggiato A"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationCollegatoA
+:hasStratigraphicRelationCollegatoA rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    rdf:type owl:AsymmetricProperty ,
+                                             owl:IrreflexiveProperty ;
+                                    rdfs:domain :ElementoStratigrafico ;
+                                    rdfs:range :ElementoStratigrafico ;
+                                    rdfs:label " has Stratigraphic Relation: Collegato A"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationContemporaneita
+:hasStratigraphicRelationContemporaneita rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                         rdfs:domain :ElementoStratigrafico ;
+                                         rdfs:range :ElementoStratigrafico ;
+                                         rdfs:label "has Stratigraphic Relation: Contemporaneita"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationCopertoDa
+:hasStratigraphicRelationCopertoDa rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   rdf:type owl:AsymmetricProperty ,
+                                            owl:IrreflexiveProperty ;
+                                   rdfs:domain :ElementoStratigrafico ;
+                                   rdfs:range :ElementoStratigrafico ;
+                                   rdfs:label " has Stratigraphic Relation: Coperto Da"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationCopre
+:hasStratigraphicRelationCopre rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdf:type owl:AsymmetricProperty ,
+                                        owl:IrreflexiveProperty ;
+                               rdfs:domain :ElementoStratigrafico ;
+                               rdfs:range :ElementoStratigrafico ;
+                               rdfs:label "has Stratigraphic Relation: Copre"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationGliSiAppoggia
+:hasStratigraphicRelationGliSiAppoggia rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                       rdf:type owl:AsymmetricProperty ,
+                                                owl:IrreflexiveProperty ;
+                                       rdfs:domain :ElementoStratigrafico ;
+                                       rdfs:range :ElementoStratigrafico ;
+                                       rdfs:label " has stratigraphic relation leans against a"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationLegatoA
+:hasStratigraphicRelationLegatoA rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                 rdf:type owl:AsymmetricProperty ,
+                                          owl:IrreflexiveProperty ;
+                                 rdfs:domain :ElementoStratigrafico ;
+                                 rdfs:range :ElementoStratigrafico ;
+                                 rdfs:label "has Stratigraphic Relation: Legato A"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationPosteriorita
+:hasStratigraphicRelationPosteriorita rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                      rdfs:domain :ElementoStratigrafico ;
+                                      rdfs:range :ElementoStratigrafico ;
+                                      rdfs:label "has Stratigraphic Relation: Posteriorita"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationRiempie
+:hasStratigraphicRelationRiempie rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                 rdf:type owl:AsymmetricProperty ,
+                                          owl:IrreflexiveProperty ;
+                                 rdfs:domain :ElementoStratigrafico ;
+                                 rdfs:range :ElementoStratigrafico ;
+                                 rdfs:label "has Stratigraphic Relation: Riempie"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationRiempitoDa
+:hasStratigraphicRelationRiempitoDa rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    rdf:type owl:AsymmetricProperty ,
+                                             owl:IrreflexiveProperty ;
+                                    rdfs:domain :ElementoStratigrafico ;
+                                    rdfs:range :ElementoStratigrafico ;
+                                    rdfs:label "has Stratigraphic Relation: RiempitoDa"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationTaglia
+:hasStratigraphicRelationTaglia rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdf:type owl:AsymmetricProperty ,
+                                         owl:IrreflexiveProperty ;
+                                rdfs:domain :ElementoStratigrafico ;
+                                rdfs:range :ElementoStratigrafico ;
+                                rdfs:label "has Stratigraphic Relation: Taglia"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationTagliatoDa
+:hasStratigraphicRelationTagliatoDa rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    rdf:type owl:AsymmetricProperty ,
+                                             owl:IrreflexiveProperty ;
+                                    rdfs:domain :ElementoStratigrafico ;
+                                    rdfs:range :ElementoStratigrafico ;
+                                    rdfs:label "has Stratigraphic Relation: Tagliato Da"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStratigraphicRelationUgualeA
+:hasStratigraphicRelationUgualeA rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                 rdfs:domain :ElementoStratigrafico ;
+                                 rdfs:range :ElementoStratigrafico ;
+                                 rdfs:label "has Stratigraphic Relation: Uguale A"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTarget
+:hasTarget rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :CardinalRelation ;
+           rdfs:range :SpatialObject .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTargetIntersection
+:hasTargetIntersection rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdf:type owl:FunctionalProperty ,
+                                owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :Intersection ;
+                       rdfs:range :Trace ;
+                       rdfs:label "has Target Intersection"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTargetObservation
+:hasTargetObservation rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :LogicalCamera
+                                                  :ModernArtifact
+                                                )
+                                  ] ;
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( :LogicalCamera
+                                                 :ModernArtifact
+                                               )
+                                 ] .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTile
+:hasTile rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :FitBall ;
+         rdfs:range :Tile .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTransformation3D
+:hasTransformation3D rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Photograph
+                                                 :SpatialLocalization
+                                               )
+                                 ] ;
+                     rdfs:range :Transformation3D ;
+                     rdfs:label "has 3D transformation"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTranslation
+:hasTranslation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Transformation3D ;
+                rdfs:range :IPoint3D ;
+                rdfs:label "has translation"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTranslation2D
+:hasTranslation2D rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :Transformation2D ;
+                  rdfs:range :IPoint2D ;
+                  rdfs:label "hasTranslation 2D "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasUnitaStratigrafica
+:hasUnitaStratigrafica rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :UnitaStratigrafica ;
+                       rdfs:range :Architecture ;
+                       rdfs:label "has UnitaStratigrafica"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#haveASetOfPhotograph
+:haveASetOfPhotograph rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdf:type owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :PhotoManager ;
+                      rdfs:range :Photograph ;
+                      rdfs:label "have a set of photograph"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isDirectNeighborOf
+:isDirectNeighborOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :SpatialObject ;
+                    rdfs:range :SpatialObject ;
+                    rdfs:label "is Direct Neighbor Of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isElementOf
+:isElementOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :IIdentifiedObject ;
+             rdfs:range :GenericManager ;
+             rdfs:label "is element of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isFarFrom
+:isFarFrom rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :isFarFrom
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isFarFrom ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :SpatialObject ;
+           rdfs:range :SpatialObject ;
+           rdfs:label "is Far From"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isObservationOf
+:isObservationOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :ImagePoint ;
+                 rdfs:range :Photograph ;
+                 rdfs:label "is observation of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isPhotographOf
+:isPhotographOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Photograph ;
+                rdfs:range :PhotoManager ;
+                rdfs:label "is photograph of"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isTooFarFrom
+:isTooFarFrom rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :SpatialObject ;
+              rdfs:range :SpatialObject ;
+              rdfs:label "is too Far From"@en .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty owl:inverseOf owl:topObjectProperty ;
+                      rdf:type owl:SymmetricProperty .
+
+
+###  http://www.w3.org/2006/time#intervalAfter
+<http://www.w3.org/2006/time#intervalAfter> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://www.w3.org/2006/time#intervalBefore>
+                                                                   ] ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            owl:inverseOf <http://www.w3.org/2006/time#intervalBefore> ;
+                                            rdf:type owl:AsymmetricProperty ,
+                                                     owl:IrreflexiveProperty ;
+                                            rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                            rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                            owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalBefore> ,
+                                                                     <http://www.w3.org/2006/time#intervalContains> ,
+                                                                     <http://www.w3.org/2006/time#intervalDuring> ,
+                                                                     <http://www.w3.org/2006/time#intervalEquals> ,
+                                                                     <http://www.w3.org/2006/time#intervalFinishedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalFinishes> ,
+                                                                     <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                     <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                     <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalStarts> ;
+                                            rdfs:label "interval After"@en .
+
+
+###  http://www.w3.org/2006/time#intervalBefore
+<http://www.w3.org/2006/time#intervalBefore> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                             rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                             owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalContains> ,
+                                                                      <http://www.w3.org/2006/time#intervalDuring> ,
+                                                                      <http://www.w3.org/2006/time#intervalEquals> ,
+                                                                      <http://www.w3.org/2006/time#intervalFinishedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalFinishes> ,
+                                                                      <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                      <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                      <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalStarts> ;
+                                             rdfs:label "interval Before"@en .
+
+
+###  http://www.w3.org/2006/time#intervalContains
+<http://www.w3.org/2006/time#intervalContains> rdf:type owl:ObjectProperty ;
+                                               owl:equivalentProperty [ owl:inverseOf <http://www.w3.org/2006/time#intervalDuring>
+                                                                      ] ;
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               owl:inverseOf <http://www.w3.org/2006/time#intervalDuring> ;
+                                               rdf:type owl:AsymmetricProperty ,
+                                                        owl:IrreflexiveProperty ;
+                                               rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                               rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                               owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalDuring> ,
+                                                                        <http://www.w3.org/2006/time#intervalEquals> ,
+                                                                        <http://www.w3.org/2006/time#intervalFinishedBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalFinishes> ,
+                                                                        <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                        <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                        <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalStarts> ;
+                                               rdfs:label "interval Contains"@en .
+
+
+###  http://www.w3.org/2006/time#intervalDuring
+<http://www.w3.org/2006/time#intervalDuring> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                             rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                             owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalEquals> ,
+                                                                      <http://www.w3.org/2006/time#intervalFinishedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalFinishes> ,
+                                                                      <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                      <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                      <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalStarts> ;
+                                             rdfs:label "interval During"@en .
+
+
+###  http://www.w3.org/2006/time#intervalEquals
+<http://www.w3.org/2006/time#intervalEquals> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                             rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                             owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalFinishedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalFinishes> ,
+                                                                      <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                      <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                      <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                      <http://www.w3.org/2006/time#intervalStarts> ;
+                                             rdfs:label "interval Equals"@en .
+
+
+###  http://www.w3.org/2006/time#intervalFinishedBy
+<http://www.w3.org/2006/time#intervalFinishedBy> rdf:type owl:ObjectProperty ;
+                                                 owl:equivalentProperty [ owl:inverseOf <http://www.w3.org/2006/time#intervalFinishes>
+                                                                        ] ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                 owl:inverseOf <http://www.w3.org/2006/time#intervalFinishes> ;
+                                                 rdf:type owl:AsymmetricProperty ,
+                                                          owl:IrreflexiveProperty ;
+                                                 rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                                 rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                                 owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalFinishes> ,
+                                                                          <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                          <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                          <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                          <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                          <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                          <http://www.w3.org/2006/time#intervalStarts> ;
+                                                 rdfs:label "interval finished by"@en .
+
+
+###  http://www.w3.org/2006/time#intervalFinishes
+<http://www.w3.org/2006/time#intervalFinishes> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdf:type owl:AsymmetricProperty ,
+                                                        owl:IrreflexiveProperty ;
+                                               rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                               rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                               owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalMeets> ,
+                                                                        <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                        <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalStarts> ;
+                                               rdfs:label "interval finishes"@en .
+
+
+###  http://www.w3.org/2006/time#intervalMeets
+<http://www.w3.org/2006/time#intervalMeets> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://www.w3.org/2006/time#intervalMetBy>
+                                                                   ] ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            owl:inverseOf <http://www.w3.org/2006/time#intervalMetBy> ;
+                                            rdf:type owl:AsymmetricProperty ,
+                                                     owl:IrreflexiveProperty ;
+                                            rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                            rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                            owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalMetBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                     <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalStarts> ;
+                                            rdfs:label "interval meets"@en .
+
+
+###  http://www.w3.org/2006/time#intervalMetBy
+<http://www.w3.org/2006/time#intervalMetBy> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:AsymmetricProperty ,
+                                                     owl:IrreflexiveProperty ;
+                                            rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                            rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                            owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalOverlappedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                     <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                     <http://www.w3.org/2006/time#intervalStarts> ;
+                                            rdfs:label "interval met by"@en .
+
+
+###  http://www.w3.org/2006/time#intervalOverlappedBy
+<http://www.w3.org/2006/time#intervalOverlappedBy> rdf:type owl:ObjectProperty ;
+                                                   owl:equivalentProperty [ owl:inverseOf <http://www.w3.org/2006/time#intervalOverlaps>
+                                                                          ] ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   owl:inverseOf <http://www.w3.org/2006/time#intervalOverlaps> ;
+                                                   rdf:type owl:AsymmetricProperty ,
+                                                            owl:IrreflexiveProperty ;
+                                                   rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                                   rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                                   owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalOverlaps> ,
+                                                                            <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                            <http://www.w3.org/2006/time#intervalStarts> ;
+                                                   rdfs:label "interval overlapped by"@en .
+
+
+###  http://www.w3.org/2006/time#intervalOverlaps
+<http://www.w3.org/2006/time#intervalOverlaps> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdf:type owl:AsymmetricProperty ,
+                                                        owl:IrreflexiveProperty ;
+                                               rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                               rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                               owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalStartedBy> ,
+                                                                        <http://www.w3.org/2006/time#intervalStarts> ;
+                                               rdfs:label "interval overlaps"@en .
+
+
+###  http://www.w3.org/2006/time#intervalStartedBy
+<http://www.w3.org/2006/time#intervalStartedBy> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty [ owl:inverseOf <http://www.w3.org/2006/time#intervalStarts>
+                                                                       ] ;
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                owl:inverseOf <http://www.w3.org/2006/time#intervalStarts> ;
+                                                rdf:type owl:AsymmetricProperty ,
+                                                         owl:IrreflexiveProperty ;
+                                                rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                                rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                                owl:propertyDisjointWith <http://www.w3.org/2006/time#intervalStarts> ;
+                                                rdfs:label "interval started by"@en .
+
+
+###  http://www.w3.org/2006/time#intervalStarts
+<http://www.w3.org/2006/time#intervalStarts> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                                             rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                                             rdfs:label "interval starts"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#belongToUSM
+:belongToUSM rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Bloc ;
+             rdfs:range xsd:integer ;
+             rdfs:label "belong To USM"@en ,
+                        "belong to a mural stratigraphic unit"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasBellyDiameter
+:hasBellyDiameter rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Amphorae ;
+                  rdfs:range xsd:double ;
+                  rdfs:comment "Unit of measure: Meter"@en ;
+                  rdfs:label "has belly diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoef_K1
+:hasCoef_K1 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :RadialDecenteringDistortion ;
+            rdfs:range xsd:double ;
+            rdfs:comment "has radial distortion coefficient K1"@en ;
+            rdfs:label "has  coefficient K1"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoef_K2
+:hasCoef_K2 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :RadialDecenteringDistortion ;
+            rdfs:range xsd:double ;
+            rdfs:comment "has radial distortion coefficient K2"@en ;
+            rdfs:label "has coefficient K2"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoef_K3
+:hasCoef_K3 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :RadialDecenteringDistortion ;
+            rdfs:range xsd:double ;
+            rdfs:comment "has radial distortion coefficient K3"@en ;
+            rdfs:label "has coefficient K3"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoef_K4
+:hasCoef_K4 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :RadialDecenteringDistortion ;
+            rdfs:range xsd:double ;
+            rdfs:comment "has radial distortion coefficient K4"@en ;
+            rdfs:label "has radial distortion coefficient K4"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoef_P1
+:hasCoef_P1 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :RadialDecenteringDistortion ;
+            rdfs:range xsd:double ;
+            rdfs:comment "has decentring distortion coefficient P1"@en ;
+            rdfs:label "has coefficient P1"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoef_P2
+:hasCoef_P2 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :RadialDecenteringDistortion ;
+            rdfs:range xsd:double ;
+            rdfs:label "has coefficient P2"@en ,
+                       "has decentring distortion coefficient P2"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasColor_B
+:hasColor_B rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :FitBall
+                                        :IColoredPoint
+                                      )
+                        ] ;
+            rdfs:range xsd:integer ;
+            rdfs:label "has color B"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasColor_G
+:hasColor_G rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :FitBall
+                                        :IColoredPoint
+                                      )
+                        ] ;
+            rdfs:range xsd:integer ;
+            rdfs:label "has color G"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasColor_R
+:hasColor_R rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :FitBall
+                                        :IColoredPoint
+                                      )
+                        ] ;
+            rdfs:range xsd:integer ;
+            rdfs:label "has color R"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasComment
+:hasComment rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :CoralliumRubrum ;
+            rdfs:range xsd:string ;
+            rdfs:comment "manual evaluation of the Percent of necrosed part in a colony" ;
+            rdfs:label "has comment"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoordinateX
+:hasCoordinateX rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain <http://www.opengis.net/ont/sf#Point> ;
+                rdfs:range xsd:double ;
+                rdfs:label "has Coordinate X"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCoordinateY
+:hasCoordinateY rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain <http://www.opengis.net/ont/sf#Point> ;
+                rdfs:range xsd:double ;
+                rdfs:label "has Coordinate Y"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasCorrelationCoef
+:hasCorrelationCoef rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :ImagePoint ;
+                    rdfs:range xsd:double ;
+                    rdfs:label "has correlation coefficient"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasData
+:hasData rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :UnitaArcheologica ;
+         rdfs:range xsd:string ;
+         rdfs:label "has data"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDefinition
+:hasDefinition rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :UnitaArcheologica ;
+               rdfs:range xsd:string ;
+               rdfs:label "has definition"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :UnitaArcheologica ;
+                rdfs:range xsd:string ;
+                rdfs:label "has description"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDiameter
+:hasDiameter rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :RecipientTransport ;
+             rdfs:range xsd:double ;
+             rdfs:comment "Unit of measure: Meter"@en ,
+                          "Should be max Diameter" ;
+             rdfs:label "has diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDiameterNeck
+:hasDiameterNeck rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Amphorae ;
+                 rdfs:range xsd:double ;
+                 rdfs:comment "Unit of measure: Meter"@en ;
+                 rdfs:label "has diameter neck"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDiameterSupport
+:hasDiameterSupport rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Amphorae ;
+                    rdfs:range xsd:double ;
+                    rdfs:comment "Unit of measure: Meter"@en ;
+                    rdfs:label "has diameter support"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDirettore
+:hasDirettore rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :UnitaArcheologica ;
+              rdfs:range xsd:string ;
+              rdfs:label "has direttore"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasDistanceHandles
+:hasDistanceHandles rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Amphorae ;
+                    rdfs:range xsd:double ;
+                    rdfs:comment "Unit of measure: Meter"@en ;
+                    rdfs:label "has distance handles"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudeDepth
+:hasExtrudeDepth rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extrude depth"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedData1
+:hasExtrudedData1 rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Bloc ;
+                  rdfs:range xsd:double ;
+                  rdfs:label "has extruded data 1"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedData2
+:hasExtrudedData2 rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Bloc ;
+                  rdfs:range xsd:double ;
+                  rdfs:label "has extruded data 2"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt1X
+:hasExtrudedPt1X rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extruded point 1 X"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt1Y
+:hasExtrudedPt1Y rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extruded point 1 Y"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt1Z
+:hasExtrudedPt1Z rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extruded point 1 Z"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt2X
+:hasExtrudedPt2X rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extruded point 2 X"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt2Y
+:hasExtrudedPt2Y rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extruded point 2 Y"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasExtrudedPt2Z
+:hasExtrudedPt2Z rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Bloc ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "has extruded point 2 Z"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFinitura
+:hasFinitura rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Bloc ;
+             rdfs:range xsd:string ;
+             rdfs:label "has finitura"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFocalLength
+:hasFocalLength rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Camera ;
+                rdfs:range xsd:double ;
+                rdfs:label "has focal lenth"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFootDiameter
+:hasFootDiameter rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :CoralliumRubrum ;
+                 rdfs:range xsd:double ;
+                 rdfs:comment "manual evaluation of the Percent of necrosed part in a colony" ;
+                 rdfs:label "has foot diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFrameHeigthInPixel
+:hasFrameHeigthInPixel rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :DigitalCamera ;
+                       rdfs:range xsd:int ;
+                       rdfs:label "has Frame Heigth In Pixel"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFrameHeigthInmm
+:hasFrameHeigthInmm rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :DigitalCamera ;
+                    rdfs:range xsd:double ;
+                    rdfs:label "has frame height in mm"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFrameWidthInPixel
+:hasFrameWidthInPixel rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :DigitalCamera ;
+                      rdfs:range xsd:int ;
+                      rdfs:label "has frame widht in pixel"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFrameWidthInmm
+:hasFrameWidthInmm rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :DigitalCamera ;
+                   rdfs:range xsd:double ;
+                   rdfs:label "has frame width in mm"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasFullFileName
+:hasFullFileName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Photograph ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has full file name"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasHandlesDiameterX
+:hasHandlesDiameterX rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Amphorae ;
+                     rdfs:range xsd:double ;
+                     rdfs:label "has Handles Diameter X"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasHandlesDiameterY
+:hasHandlesDiameterY rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Amphorae ;
+                     rdfs:range xsd:double ;
+                     rdfs:label "has Handles Diameter Y"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasHandlesHeight
+:hasHandlesHeight rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Amphorae ;
+                  rdfs:range xsd:double ;
+                  rdfs:comment "Unit of measure: Meter"@en ;
+                  rdfs:label "has handles height"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasHandlesWidth
+:hasHandlesWidth rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Amphorae ;
+                 rdfs:range xsd:double ;
+                 rdfs:comment "Unit of measure: Meter"@en ;
+                 rdfs:label "has handles width"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasHeight
+:hasHeight rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :SpatialObject ;
+           rdfs:range xsd:double ;
+           rdfs:comment "Unit of measure: Meter"@en ;
+           rdfs:label "has height"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasHeightLips
+:hasHeightLips rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Amphorae ;
+               rdfs:range xsd:double ;
+               rdfs:comment "Unit of measure: Meter"@en ;
+               rdfs:label "has height lips"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasId
+:hasId rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :UnitaArcheologica ;
+       rdfs:range xsd:integer ;
+       rdfs:label "has id"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasIdn
+:hasIdn rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :IIdentifiedObject ;
+        rdfs:range xsd:integer ;
+        rdfs:label "has idn"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasInternalVolume
+:hasInternalVolume rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :RecipientTransport ;
+                   rdfs:range xsd:double ;
+                   rdfs:comment "Unit of meseaure: Cubic Meters"@en ;
+                   rdfs:label "has internal volume"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasIntersectionsRelationName
+:hasIntersectionsRelationName rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain :Intersection ;
+                              rdfs:range xsd:string ;
+                              rdfs:comment "Relation name of Allen's interval"@en ;
+                              rdfs:label "has Intersection Relation Name"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasIntervalStartPoint
+:hasIntervalStartPoint rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasLavorazione
+:hasLavorazione rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Bloc ;
+                rdfs:range xsd:string ;
+                rdfs:label "has lavorazione"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasLength
+:hasLength rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :SpatialObject ;
+           rdfs:range xsd:double ;
+           rdfs:comment "Unit of measure: Meter"@en ;
+           rdfs:label "has length"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasLitotipo
+:hasLitotipo rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Bloc ;
+             rdfs:range xsd:string ;
+             rdfs:label "has litotipo"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasMass
+:hasMass rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :SpatialObject ;
+         rdfs:range xsd:double ;
+         rdfs:comment "Unit of meseaure: kg"@en ;
+         rdfs:label "has mass"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasMaxDiameter
+:hasMaxDiameter rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Amphorae ;
+                rdfs:range xsd:double ;
+                rdfs:comment "Unit of measure: Meter" ;
+                rdfs:label "has maximum diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :IIdentifiedObject ;
+         rdfs:range xsd:string ;
+         rdfs:label "has name"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasNbBranch
+:hasNbBranch rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :CoralliumRubrum ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "manual evaluation of the Percent of necrosed part in a colony" ;
+             rdfs:label "has branch number"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasNormalizedDiamMaxPos
+:hasNormalizedDiamMaxPos rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain :Amphorae ;
+                         rdfs:range xsd:double ;
+                         rdfs:label "has normalized diameter max position"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasOZRotation
+:hasOZRotation rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :LogicalCamera ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasObservation
+:hasObservation rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :UnitaArcheologica ;
+                rdfs:range xsd:string ;
+                rdfs:label "has observation"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasOrientaionObservation
+:hasOrientaionObservation rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain :LogicalOrientation ;
+                          rdfs:range xsd:int .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPPX
+:hasPPX rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Camera ;
+        rdfs:range xsd:double ;
+        rdfs:label "has PPX"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPPY
+:hasPPY rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Camera ;
+        rdfs:range xsd:double ;
+        rdfs:label "has PPY"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPercentNecrose
+:hasPercentNecrose rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :CoralliumRubrum ;
+                   rdfs:range xsd:double ;
+                   rdfs:comment "manual evaluation of the Percent of necrosed part in a colony" ;
+                   rdfs:label "has percent necrose"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPixelHeight_mm
+:hasPixelHeight_mm rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :DigitalCamera ;
+                   rdfs:range xsd:double ;
+                   rdfs:label "has pixel height mm"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasPixelWidth_mm
+:hasPixelWidth_mm rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :DigitalCamera ;
+                  rdfs:range xsd:double ;
+                  rdfs:label "has pixel widht mm"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasProvenance
+:hasProvenance rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :FitBall ;
+               rdfs:range xsd:string ;
+               rdfs:label "has provenance"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRatioDiamHeight
+:hasRatioDiamHeight rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Amphorae ;
+                    rdfs:range xsd:double ;
+                    rdfs:label "has ratio diameter height"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationAnteriorita
+:hasRelationAnteriorita rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :ElementoStratigrafico ;
+                        rdfs:range xsd:integer ;
+                        rdfs:label " has Relation: Anteriorita"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationAppoggiatoA
+:hasRelationAppoggiatoA rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :ElementoStratigrafico ;
+                        rdfs:range xsd:integer ;
+                        rdfs:label "has Relation: Appoggiato A"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationCollegatoA
+:hasRelationCollegatoA rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :ElementoStratigrafico ;
+                       rdfs:range xsd:integer ;
+                       rdfs:label "has Relation: Collegato A"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationContemporaneita
+:hasRelationContemporaneita rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain :ElementoStratigrafico ;
+                            rdfs:range xsd:integer ;
+                            rdfs:label "has Relation: Contemporaneita"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationCopertoDa
+:hasRelationCopertoDa rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :ElementoStratigrafico ;
+                      rdfs:range xsd:integer ;
+                      rdfs:label "has Relation: CopertoDa"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationCopre
+:hasRelationCopre rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :ElementoStratigrafico ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "has Relation: Copre"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationGliSiAppoggia
+:hasRelationGliSiAppoggia rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain :ElementoStratigrafico ;
+                          rdfs:range xsd:integer ;
+                          rdfs:label "has Relation: GliSiAppoggia"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationLegatoA
+:hasRelationLegatoA rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :ElementoStratigrafico ;
+                    rdfs:range xsd:integer ;
+                    rdfs:label " has Relation: LegatoA"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationPosteriorita
+:hasRelationPosteriorita rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain :ElementoStratigrafico ;
+                         rdfs:range xsd:integer ;
+                         rdfs:label " has Relation: Posteriorita"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationRiempie
+:hasRelationRiempie rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :ElementoStratigrafico ;
+                    rdfs:range xsd:integer ;
+                    rdfs:label " has Relation: Riempie"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationRiempitoDa
+:hasRelationRiempitoDa rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :ElementoStratigrafico ;
+                       rdfs:range xsd:integer ;
+                       rdfs:label " has Relation: RiempitoDa"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationTaglia
+:hasRelationTaglia rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :ElementoStratigrafico ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label " has Relation: Taglia"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationTagliatoDa
+:hasRelationTagliatoDa rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :ElementoStratigrafico ;
+                       rdfs:range xsd:integer ;
+                       rdfs:label " has Relation: TagliatoDa"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRelationUgualeA
+:hasRelationUgualeA rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :ElementoStratigrafico ;
+                    rdfs:range xsd:integer ;
+                    rdfs:label " has Relation: UgualeA"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasReprojectionResidual
+:hasReprojectionResidual rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain :Point_3D ;
+                         rdfs:range xsd:double ;
+                         rdfs:label "has Reprojection Residual"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasResidual
+:hasResidual rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :ImagePoint
+                                         :Point_3D
+                                       )
+                         ] ;
+             rdfs:range xsd:double ;
+             rdfs:label "has residual"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasResidualX
+:hasResidualX rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :ImagePoint
+                                          :Point_3D
+                                        )
+                          ] ;
+              rdfs:range xsd:double ;
+              rdfs:label "has residual X"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasResidualY
+:hasResidualY rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :ImagePoint
+                                          :Point_3D
+                                        )
+                          ] ;
+              rdfs:range xsd:double ;
+              rdfs:label "has residual Y"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasResidualZ
+:hasResidualZ rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Point_3D ;
+              rdfs:range xsd:double ;
+              rdfs:label "has residual Z"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRimExternalDiameter
+:hasRimExternalDiameter rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :Amphorae ;
+                        rdfs:range xsd:double ;
+                        rdfs:label "has Rim External Diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRimHeight
+:hasRimHeight rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Amphorae ;
+              rdfs:range xsd:double ;
+              rdfs:comment "Unit of measure: Meter"@en ;
+              rdfs:label "has Rim Height"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRimInternalDiameter
+:hasRimInternalDiameter rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :Amphorae ;
+                        rdfs:range xsd:double ;
+                        rdfs:label "has Rim Internal Diameter "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasRimThickness
+:hasRimThickness rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Amphorae ;
+                 rdfs:range xsd:double ;
+                 rdfs:comment "Unit of measure: Meter"@en ;
+                 rdfs:label "has Rim Thickness"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasScale
+:hasScale rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Transformation3D ;
+          rdfs:range xsd:double ;
+          rdfs:label "has scale"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasSigla
+:hasSigla rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :UnitaArcheologica
+                                      :UnitaStratigrafica
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:label "has sigla"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasStateOfConservation
+:hasStateOfConservation rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :UnitaArcheologica ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has state of conservation"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasToeHeight
+:hasToeHeight rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Amphorae ;
+              rdfs:range xsd:double ;
+              rdfs:label "has Toe Height"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasToeMaxDiameter
+:hasToeMaxDiameter rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Amphorae ;
+                   rdfs:range xsd:double ;
+                   rdfs:label "has Toe Max Diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasToeMinDiameter
+:hasToeMinDiameter rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Amphorae ;
+                   rdfs:range xsd:double ;
+                   rdfs:comment "Unit of measure: Meter"@en ;
+                   rdfs:label "has Toe Min Diameter"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasTypologyName
+:hasTypologyName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Artifact ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Typology name, often used to compute the paradigm filename in ply" ;
+                 rdfs:label "has typology name"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasVolume
+:hasVolume rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :SpatialObject ;
+           rdfs:range xsd:double ;
+           rdfs:comment "Unit of meseaure: Litre"@en ;
+           rdfs:label "has volume"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasWidth
+:hasWidth rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :SpatialObject ;
+          rdfs:range xsd:double ;
+          rdfs:comment "Unit of meseaure: Meter"@en ;
+          rdfs:label "has width"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasWidthBetweenUpperHandles
+:hasWidthBetweenUpperHandles rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain :Amphorae ;
+                             rdfs:range xsd:double ;
+                             rdfs:comment """Unit of measure: Meter.
+For more accuracy we take widht between upper hadles in adition to the diameter which is between down handles"""@en ;
+                             rdfs:label "has width between upper handles"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasWidthLips
+:hasWidthLips rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Amphorae ;
+              rdfs:range xsd:double ;
+              rdfs:comment "Unit of meseaure: Meter"@en ;
+              rdfs:label "has width lips"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasX
+:hasX rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :IPoint2D ;
+      rdfs:range xsd:double ;
+      rdfs:label "has X"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasXMax
+:hasXMax rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :BoundingBox ;
+         rdfs:range xsd:double ;
+         rdfs:label "has X Max"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasXMin
+:hasXMin rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :BoundingBox ;
+         rdfs:range xsd:double ;
+         rdfs:label "has X Min"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasY
+:hasY rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :IPoint2D ;
+      rdfs:range xsd:double ;
+      rdfs:label "has Y"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasYMax
+:hasYMax rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :BoundingBox ;
+         rdfs:range xsd:double ;
+         rdfs:label "has Y Max"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasYMin
+:hasYMin rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :BoundingBox ;
+         rdfs:range xsd:double ;
+         rdfs:label "has Y Min"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasZ
+:hasZ rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :IPoint3D ;
+      rdfs:range xsd:double ;
+      rdfs:label "has Z"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasZMax
+:hasZMax rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :BoundingBox ;
+         rdfs:range xsd:double ;
+         rdfs:label "has Z Max"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#hasZMin
+:hasZMin rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :BoundingBox ;
+         rdfs:range xsd:double ;
+         rdfs:label "has Z Min"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m00
+:has_m00 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (0,0) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m01
+:has_m01 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (0,1) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m02
+:has_m02 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (0,2) matrix coordinate (0,2)"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m10
+:has_m10 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (1,0) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m11
+:has_m11 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (1,1) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m12
+:has_m12 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (1,2) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m20
+:has_m20 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (2,0) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m21
+:has_m21 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (2,1) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#has_m22
+:has_m22 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :RotationMatrix ;
+         rdfs:range xsd:double ;
+         rdfs:label "has (2,2) matrix coordinate "@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isActive
+:isActive rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :IIdentifiedObject ;
+          rdfs:range xsd:boolean ;
+          rdfs:label "is active"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isExtruded
+:isExtruded rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Bloc ;
+            rdfs:range xsd:boolean ;
+            rdfs:label "is extruded"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isExtrudedBy
+:isExtrudedBy rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Bloc ;
+              rdfs:range xsd:string ;
+              rdfs:label "is extruded by"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isNegative
+:isNegative rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :UnitaStratigrafica ;
+            rdfs:range xsd:boolean ;
+            rdfs:label "is negative"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#isValid
+:isValid rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :IIdentifiedObject ;
+         rdfs:range xsd:boolean ;
+         rdfs:label "is valid"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#percentOfMeasured
+:percentOfMeasured rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Amphorae ;
+                   rdfs:range xsd:double ;
+                   rdfs:label "percent of measured"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://erlangen-crm.org/current/E18_Physical_Thing
+<http://erlangen-crm.org/current/E18_Physical_Thing> rdf:type owl:Class ;
+                                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://erlangen-crm.org/current/E24_Physical_Man-Made_Thing
+<http://erlangen-crm.org/current/E24_Physical_Man-Made_Thing> rdf:type owl:Class ;
+                                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Alcyonacea
+:Alcyonacea rdf:type owl:Class ;
+            rdfs:subClassOf :Zoology ;
+            rdfs:label "alcyonacea"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Amphorae
+:Amphorae rdf:type owl:Class ;
+          rdfs:subClassOf :RecipientTransport ;
+          rdfs:label "Amphorae"@en ;
+          <http://www.w3.org/2004/02/skos/core#closeMatch> <http://ark.frantiq.fr/ark:/26678/pcrtVFfTq3JlGu> ,
+                                                           <http://heritagedata.org/live/schemes/mda_obj/concepts/96750> ,
+                                                           <http://vocab.getty.edu/aat/300148696> .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Archaeology
+:Archaeology rdf:type owl:Class ;
+             rdfs:subClassOf :Measurable ;
+             rdfs:label "Archaeology_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Architecture
+:Architecture rdf:type owl:Class ;
+              rdfs:subClassOf :Archaeology ;
+              rdfs:label "Architecture_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#AreaFunzionale
+:AreaFunzionale rdf:type owl:Class ;
+                rdfs:subClassOf :UnitaArcheologica ;
+                rdfs:label "AreaFunzionale"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Artifact
+:Artifact rdf:type owl:Class ;
+          rdfs:subClassOf <http://erlangen-crm.org/current/E24_Physical_Man-Made_Thing> ,
+                          :Archaeology ;
+          rdfs:label "Artifact_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Attivita
+:Attivita rdf:type owl:Class ;
+          rdfs:subClassOf :ElementoStratigrafico ;
+          rdfs:label "Attivita"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Bloc
+:Bloc rdf:type owl:Class ;
+      rdfs:subClassOf :ElementDeParement ;
+      rdfs:label "Bloc"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#BoundingBox
+:BoundingBox rdf:type owl:Class ;
+             rdfs:subClassOf :MathematicalObject ;
+             rdfs:label "BoundingBox"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Brique
+:Brique rdf:type owl:Class ;
+        rdfs:subClassOf :ElementDeParement ;
+        rdfs:label "Brique"@fr .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#BundleModel
+:BundleModel rdf:type owl:Class ;
+             rdfs:subClassOf :Model ;
+             rdfs:label "BundleModel"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Camera
+:Camera rdf:type owl:Class ;
+        rdfs:subClassOf :Photogrammetry ;
+        rdfs:label "Camera"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#CameraManager
+:CameraManager rdf:type owl:Class ;
+               rdfs:subClassOf :GenericManager ;
+               rdfs:label "CameraManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#CardinalDirection
+:CardinalDirection rdf:type owl:Class ;
+                   rdfs:subClassOf :Topography ;
+                   rdfs:label "CardinalDirection"^^rdfs:Literal .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#CardinalRelation
+:CardinalRelation rdf:type owl:Class ;
+                  rdfs:subClassOf :Topography ;
+                  rdfs:label "CardinalRelation"^^rdfs:Literal .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Cassettone
+:Cassettone rdf:type owl:Class ;
+            rdfs:subClassOf :ElementDeCouverture ;
+            rdfs:label "Cassettone"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ComplessoArchitettonico
+:ComplessoArchitettonico rdf:type owl:Class ;
+                         rdfs:subClassOf :ElementoStratigrafico ;
+                         rdfs:label "ComplessoArchitettonico"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ConstraintManager
+:ConstraintManager rdf:type owl:Class ;
+                   rdfs:subClassOf :GenericManager ;
+                   rdfs:label "ConstraintManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ControlPoint
+:ControlPoint rdf:type owl:Class ;
+              rdfs:subClassOf :IPoint3D ;
+              rdfs:label "ControlPoint"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Coralliidae
+:Coralliidae rdf:type owl:Class ;
+             rdfs:subClassOf :Alcyonacea ;
+             rdfs:label "Coralliidae"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#CoralliumRubrum
+:CoralliumRubrum rdf:type owl:Class ;
+                 rdfs:subClassOf :Coralliidae ;
+                 rdfs:label "CoralliumRubrum"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#CorpoDiFabbrica
+:CorpoDiFabbrica rdf:type owl:Class ;
+                 rdfs:subClassOf :ElementoStratigrafico ;
+                 rdfs:label "CorpoDiFabbrica"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#DigitalCamera
+:DigitalCamera rdf:type owl:Class ;
+               rdfs:subClassOf :Camera ;
+               owl:disjointWith :FilmBasedCamera ;
+               rdfs:label "DigitalCamera"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Dolia
+:Dolia rdf:type owl:Class ;
+       rdfs:subClassOf :RecipientTransport ;
+       rdfs:label "Dolia"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ElementDeCouverture
+:ElementDeCouverture rdf:type owl:Class ;
+                     rdfs:subClassOf :Architecture ;
+                     rdfs:label "ElementDeCouverture"@fr .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ElementDeParement
+:ElementDeParement rdf:type owl:Class ;
+                   rdfs:subClassOf :Architecture ;
+                   rdfs:label "ElementDeParement"@fr .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ElementoStratigrafico
+:ElementoStratigrafico rdf:type owl:Class ;
+                       rdfs:subClassOf :UnitaArcheologica ;
+                       rdfs:label "ElementoStratigrafico"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#FilmBasedCamera
+:FilmBasedCamera rdf:type owl:Class ;
+                 rdfs:subClassOf :Camera ;
+                 rdfs:label "FilmBasedCamera"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#FitBall
+:FitBall rdf:type owl:Class ;
+         rdfs:subClassOf :ModernArtifact ;
+         rdfs:label "FitBall"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#GenericManager
+:GenericManager rdf:type owl:Class ;
+                rdfs:subClassOf :IIdentifiedObject ;
+                rdfs:label "GenericManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Geometry
+:Geometry rdf:type owl:Class ;
+          rdfs:subClassOf :IIdentifiedObject ;
+          rdfs:label "Geometry_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#GrindingStone
+:GrindingStone rdf:type owl:Class ;
+               rdfs:subClassOf :StoneTool ;
+               rdfs:label "GrindingStone"@en ;
+               <http://www.w3.org/2004/02/skos/core#closeMatch> <http://heritagedata.org/live/schemes/mda_obj/concepts/96370> ,
+                                                                <http://vocab.getty.edu/aat/300148696> .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#IColoredPoint
+:IColoredPoint rdf:type owl:Class ;
+               rdfs:subClassOf :Photogrammetry ;
+               rdfs:label "Item_ColoredPoint"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#IFixedPoint
+:IFixedPoint rdf:type owl:Class ;
+             rdfs:subClassOf :IPoint3D ;
+             rdfs:label "Item_FixedPoint"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#IIdentifiedObject
+:IIdentifiedObject rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing ;
+                   rdfs:label "Item_Identified_Object"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#IPoint
+:IPoint rdf:type owl:Class ;
+        rdfs:subClassOf :IColoredPoint ;
+        rdfs:label "Item_Point"@en ;
+        <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.opengis.net/ont/sf#Point> .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#IPoint2D
+:IPoint2D rdf:type owl:Class ;
+          rdfs:subClassOf :IPoint ;
+          rdfs:label "Item_Point2D"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#IPoint3D
+:IPoint3D rdf:type owl:Class ;
+          rdfs:subClassOf :IPoint2D ;
+          rdfs:label "Item_Point3D"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ImagePoint
+:ImagePoint rdf:type owl:Class ;
+            rdfs:subClassOf :IPoint2D ;
+            rdfs:label "ImagePoint"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ImagePointManager
+:ImagePointManager rdf:type owl:Class ;
+                   rdfs:subClassOf :Point2DManager ;
+                   rdfs:label "ImagePointManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Intersection
+:Intersection rdf:type owl:Class ;
+              rdfs:subClassOf :PlaneObject ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasSourceIntersection ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Trace
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasTargetIntersection ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Trace
+                              ] ;
+              rdfs:label "Intersection"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Interval
+:Interval rdf:type owl:Class ;
+          rdfs:subClassOf :PlaneObject ;
+          rdfs:label "Interval"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#LogicalCamera
+:LogicalCamera rdf:type owl:Class ;
+               rdfs:subClassOf :Camera ;
+               rdfs:label "Logical Camera"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#LogicalOrientation
+:LogicalOrientation rdf:type owl:Class ;
+                    rdfs:subClassOf :Geometry ;
+                    rdfs:label "Logical Orientation"^^rdfs:Literal .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ManagerCA
+:ManagerCA rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "ManagerCA"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#MathematicalObject
+:MathematicalObject rdf:type owl:Class ;
+                    rdfs:subClassOf :IIdentifiedObject ;
+                    rdfs:label "Mathematical_Object"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Matrix
+:Matrix rdf:type owl:Class ;
+        rdfs:subClassOf :MathematicalObject ;
+        rdfs:label "Matrix"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Measurable
+:Measurable rdf:type owl:Class ;
+            rdfs:subClassOf :SpatialObject ;
+            rdfs:label "Measurable_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#MeasuredPointManager
+:MeasuredPointManager rdf:type owl:Class ;
+                      rdfs:subClassOf :Point3DManager ;
+                      rdfs:label "MeasuredPointManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :Photogrammetry ;
+       rdfs:comment "This is a photogrammetric model. It contains a set of oriented photograph and a set of 3D points which are at least visible on two oriented photographs." ;
+       rdfs:label "Model"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ModernArtifact
+:ModernArtifact rdf:type owl:Class ;
+                rdfs:subClassOf :SpatialObject ;
+                rdfs:label "ModernArtifact"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#NauticalArchaeology
+:NauticalArchaeology rdf:type owl:Class ;
+                     rdfs:subClassOf :Archaeology ;
+                     rdfs:label "NauticalArchaeology_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Ollae
+:Ollae rdf:type owl:Class ;
+       rdfs:subClassOf :RecipientTransport ;
+       rdfs:label "Ollae"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#PetraData
+:PetraData rdf:type owl:Class ;
+           rdfs:subClassOf :UnitaArcheologica ;
+           rdfs:label "PetraData"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#PhotoManager
+:PhotoManager rdf:type owl:Class ;
+              rdfs:subClassOf :GenericManager ;
+              rdfs:label "PhotoManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Photogrammetry
+:Photogrammetry rdf:type owl:Class ;
+                rdfs:subClassOf :IIdentifiedObject ;
+                rdfs:label "Photogrammetry_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Photograph
+:Photograph rdf:type owl:Class ;
+            rdfs:subClassOf :Photogrammetry ;
+            rdfs:label "Photograph"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#PlaneObject
+:PlaneObject rdf:type owl:Class ;
+             rdfs:subClassOf :PlaneProjection ;
+             rdfs:label "Plane_Object"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#PlaneProjection
+:PlaneProjection rdf:type owl:Class ;
+                 rdfs:subClassOf :SpatialObject ;
+                 rdfs:label "PlaneProjection"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Point2DManager
+:Point2DManager rdf:type owl:Class ;
+                rdfs:subClassOf :PointManager ;
+                rdfs:label "Point_2D_Manager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Point3DManager
+:Point3DManager rdf:type owl:Class ;
+                rdfs:subClassOf :PointManager ;
+                rdfs:label "Point_3D_Manager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#PointManager
+:PointManager rdf:type owl:Class ;
+              rdfs:subClassOf :GenericManager ;
+              rdfs:label "PointManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Point_3D
+:Point_3D rdf:type owl:Class ;
+          rdfs:subClassOf :IColoredPoint ,
+                          :IPoint3D ;
+          rdfs:label "Point_3D"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Prospetto
+:Prospetto rdf:type owl:Class ;
+           rdfs:subClassOf :ElementoStratigrafico ;
+           rdfs:label "Prospetto"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ProspettoGenerale
+:ProspettoGenerale rdf:type owl:Class ;
+                   rdfs:subClassOf :Prospetto ;
+                   owl:disjointWith :ProspettoParticolare ;
+                   rdfs:label "ProspettoGenerale"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ProspettoParticolare
+:ProspettoParticolare rdf:type owl:Class ;
+                      rdfs:subClassOf :Prospetto ;
+                      rdfs:label "ProspettoParticolare"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#RadialDecenteringDistortion
+:RadialDecenteringDistortion rdf:type owl:Class ;
+                             rdfs:subClassOf :MathematicalObject ;
+                             rdfs:label "RadialDecenteringDistortion"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#RecipientTransport
+:RecipientTransport rdf:type owl:Class ;
+                    rdfs:subClassOf :Artifact ;
+                    rdfs:label "RecipientTransport_Item"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#RotationMatrix
+:RotationMatrix rdf:type owl:Class ;
+                rdfs:subClassOf :Matrix ,
+                                :Transformation3D ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRotationMatrix ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Transformation3D
+                                ] ;
+                rdfs:label "RotationMatrix"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#RotationMatrix2D
+:RotationMatrix2D rdf:type owl:Class ;
+                  rdfs:subClassOf :Matrix ;
+                  rdfs:label "Rotation Matrix 2D"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#SitiList
+:SitiList rdf:type owl:Class ;
+          rdfs:subClassOf :UnitaArcheologica ;
+          rdfs:label "SitiList"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Sito
+:Sito rdf:type owl:Class ;
+      rdfs:subClassOf :UnitaArcheologica ;
+      rdfs:label "Sito"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#SpatialLocalization
+:SpatialLocalization rdf:type owl:Class ;
+                     rdfs:subClassOf :IIdentifiedObject ;
+                     rdfs:label "Spatial_Localization_Object"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#SpatialObject
+:SpatialObject rdf:type owl:Class ;
+               rdfs:subClassOf <http://erlangen-crm.org/current/E18_Physical_Thing> ,
+                               :SpatialLocalization ;
+               rdfs:label "Spatial_Object"@en ;
+               <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.opengis.net/ont/geosparql#SpatialObject> .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#StoneTool
+:StoneTool rdf:type owl:Class ;
+           rdfs:subClassOf :Artifact ;
+           rdfs:label "StoneTool"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Subergorgia
+:Subergorgia rdf:type owl:Class ;
+             rdfs:subClassOf :Alcyonacea ;
+             rdfs:label "Subergorgia"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Tile
+:Tile rdf:type owl:Class ;
+      rdfs:subClassOf :ModernArtifact .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Topography
+:Topography rdf:type owl:Class ;
+            rdfs:subClassOf :IIdentifiedObject ;
+            rdfs:label "Topography_Item"^^rdfs:Literal .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Trace
+:Trace rdf:type owl:Class ;
+       rdfs:subClassOf :PlaneObject ;
+       rdfs:label "Trace"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Transformation2D
+:Transformation2D rdf:type owl:Class ;
+                  rdfs:subClassOf :Geometry ;
+                  rdfs:label "Transformation 2D"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Transformation3D
+:Transformation3D rdf:type owl:Class ;
+                  rdfs:subClassOf :Geometry ;
+                  rdfs:label "Transformation 3D"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#TriangleManager
+:TriangleManager rdf:type owl:Class ;
+                 rdfs:subClassOf :GenericManager ;
+                 rdfs:label "TriangleManager"@en .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Tuile
+:Tuile rdf:type owl:Class ;
+       rdfs:subClassOf :ElementDeCouverture ;
+       rdfs:label "Tuile"@fr .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#TuileRonde
+:TuileRonde rdf:type owl:Class ;
+            rdfs:subClassOf :Tuile ;
+            rdfs:label "TuileRonde"@fr .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#UnitaArcheologica
+:UnitaArcheologica rdf:type owl:Class ;
+                   rdfs:subClassOf :Archaeology ;
+                   rdfs:label "UnitaArcheologica"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#UnitaFunzionale
+:UnitaFunzionale rdf:type owl:Class ;
+                 rdfs:subClassOf :CorpoDiFabbrica ;
+                 rdfs:label "UnitaFunzionale"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#UnitaStratigrafica
+:UnitaStratigrafica rdf:type owl:Class ;
+                    rdfs:subClassOf :ElementoStratigrafico ;
+                    rdfs:label "UnitaStratigrafica"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#UnitaStratigraficaMurale
+:UnitaStratigraficaMurale rdf:type owl:Class ;
+                          rdfs:subClassOf :UnitaStratigrafica ;
+                          rdfs:label "UnitaStratigraficaMurale"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#UnitaTopografica
+:UnitaTopografica rdf:type owl:Class ;
+                  rdfs:subClassOf :UnitaArcheologica ;
+                  rdfs:label "UnitaTopografica"@it .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#Zoology
+:Zoology rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  http://www.arpenteur.org/ontology/Arpenteur.owl#ZoologyItem
+:ZoologyItem rdf:type owl:Class ;
+             rdfs:subClassOf :Measurable ;
+             rdfs:label "Zoology_Item"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf owl:Thing .
+
+
+###  http://www.opengis.net/ont/sf#Geometry
+<http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class ;
+                                         rdfs:subClassOf owl:Thing .
+
+
+###  http://www.opengis.net/ont/sf#Point
+<http://www.opengis.net/ont/sf#Point> rdf:type owl:Class ;
+                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:comment "" ;
+          rdfs:label "Thing"@en .
+
+
+###  http://www.w3.org/2006/time#ProperInterval
+<http://www.w3.org/2006/time#ProperInterval> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Interval ;
+                                             rdfs:label "ProperInterval"@en .
+
+
+###  http://xmlns.com/foaf/0.1/#Person
+<http://xmlns.com/foaf/0.1/#Person> rdf:type owl:Class ;
+                                    rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:hasIntervalStartPoint rdfs:label "has Interval Start Point"@en .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

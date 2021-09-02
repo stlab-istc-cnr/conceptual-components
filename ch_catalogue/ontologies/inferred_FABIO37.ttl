@@ -1,0 +1,49 @@
+<http://purl.org/spar/fabio/stores>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a storage medium to the fabio:Item stored upon it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/spar/fabio/StorageMedium> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stores"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://purl.org/spar/fabio/isStoredOn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a fabio:Item to the medium upon which it is stored."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is stored on"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/spar/fabio/StorageMedium> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/spar/fabio/stores> .
+
+<http://purl.org/spar/fabio/Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A subclass of FRBR item, restricted to exemplars of fabio:Manifestations.  An example of a fabio:Item is a printed copy of a journal article on your desk, or a PDF file of that article that you purchased from a publisher and that now resides in digital form on your computer hard drive.  "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A fabio:Item can only have part or be part of another fabio:Item. Moreover, it can be an exemplar only of a fabio:Manifestation."@en .
+
+<http://purl.org/spar/fabio/StorageMedium>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A device for recording information or storing data."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "storage medium"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .

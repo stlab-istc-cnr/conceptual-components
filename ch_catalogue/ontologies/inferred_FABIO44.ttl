@@ -1,0 +1,51 @@
+<http://purl.org/spar/fabio/AnalogStorageMedium>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A means of storing information in non-digital form, e.g. paper, film (for analogue photographs or movies), magnetic tape (for analogue sound recordings or video recordings) or vinyl disc."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "analog storage medium"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/spar/fabio/StorageMedium> .
+
+<http://purl.org/spar/fabio/isStoredOn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a fabio:Item to the medium upon which it is stored."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is stored on"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/spar/fabio/StorageMedium> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/spar/fabio/stores> .
+
+<http://purl.org/spar/fabio/stores>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a storage medium to the fabio:Item stored upon it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/spar/fabio/StorageMedium> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stores"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://purl.org/spar/fabio/AnalogItem>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A real object that is an exemplar of a fabio:Manifestation, such as a particular copy of the book 'Alice's adventures in Wonderland', that a person may own."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "analog item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An analog item is an exemplar of an analog manifestation only and it is always stored in a storage medium suitable for analog objects, such as paper, vinyl discs and films."@en ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <http://purl.org/spar/fabio/DigitalItem> .

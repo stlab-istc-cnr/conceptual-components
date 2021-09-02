@@ -1,0 +1,63 @@
+<https://w3id.org/arco/ontology/context-description/ChangeOfAvailability>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un evento che modifica la disponibilità materiale del bene culturale (es. per distruzione, furto, perdita, recupero)"@it , "This class represents the change of availability of a cultural property (e.g.: theft, distruction, rescue, etc.)"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mutamento condizione materiale"@it , "Change of availability"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso della classe 'Mutamento condizione materiale' è il seguente: resource:ChangeOfAvailability/0900041230-change-of-availability\n        a  cd:ChangeOfAvailability ;\n        rdfs:label \"Mutamento condizione materiale del bene culturale: 0900041230\"@it ;\n        cd:hasChangeOfAvailabilityType resource:ChangeOfAvailabilityType/furto ;\n        tiapit:time \"1998/11/15\" ."@it , "An example of usage of the class 'Change of availability' is the following: resource:ChangeOfAvailability/0900041230-change-of-availability\n        a  cd:ChangeOfAvailability ;\n        rdfs:label \"Change of availability of cultural property: 0900041230\"@en ;\n        cd:hasChangeOfAvailabilityType resource:ChangeOfAvailabilityType/furto ;\n        tiapit:time \"1998/11/15\" ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: TU/ALN" .
+
+<https://w3id.org/arco/ontology/context-description/hasChangeOfAvailability>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a cultural enity involved in a change of availability event (i.e. theft, destruction, recovery) to the event."@en , "Questa proprietà collega un bene culturale coinvolto in un un evento di mutamento di condizione materiale (furto, distruzione, recupero) all'evento stesso."@it , "TU/ALN" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has change of availability"@en , "ha mutamento condizione materiale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/ChangeOfAvailability> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasSituation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isChangeOfAvailabilityOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/arco/ontology/context-description/isChangeOfAvailabilityOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a change of availability to a cultural entity."@en , "Questa proprietà collega un mutamento di condizione materiale a un'entità culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ChangeOfAvailability> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è mutamento di condizione materiale di"@it , "is change of availability of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/isSituationOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .

@@ -1,0 +1,57 @@
+<http://culturalis.org/oad#isEntryOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La proprietà mette in relazione l'istanziazione di una risorsa archivistica alla risorsa archivistica oggetto della descrizione"@it , "The property links an instance to an archival resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is entry of"@en , "È scheda descrittiva di"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/oad#ArchivalResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://culturalis.org/oad#hasEntry> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa proprietà è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#hasEntry>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà inversa di 'isEntryOf'."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/oad#ArchivalResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has entry"@en , "Ha scheda descrittiva"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/oad#Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa proprietà è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#Instance>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The class represents the descriptive entry of an archival resource"@en , "La classe Archival instance rappresenta l'istanziazione dell'archival resource"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Instanza archivistica"@it , "Archival instance"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 2 agosto 2018" .
+
+<http://culturalis.org/oad#ArchivalResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "oad:ArchivalResource is the class that represents the object of the description (i.e., a single document or a set of document)."@en , "La classe Archival resource indica un corpus documentale oggetto di descrizione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Risorsa archivistica"@it , "Archival resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://dati.san.beniculturali.it/SAN/complessoArchivistico> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 2 agosto 2018" .

@@ -1,0 +1,71 @@
+<https://www.ica.org/standards/RiC/ontology#Place>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Bounded, named geographic area or region."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "A Place may be a jurisdiction, a manmade structure, or a\n            natural feature. A manmade structure or natural feature may also be a jurisdiction. A\n            Place may be referenced to a Physical Location on the earth, or (if you don't want to\n            use the PhysicalLocation class) directly to geographic coordinates. Both jurisdictions\n            and natural features are historical entities. A Place thus may have begin and end dates,\n            and changing boundaries that result from human or natural events. A Jurisdiction is the\n            bounded geographic area within which an Agent has the authority to perform specified\n            activities constrained by rules."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E22 (Place\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceType>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Place to a Place Type that categorized or categorizes\n            it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had place type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#PlaceType> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadCategory> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#PlaceType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Categorization of a Place."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Place Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Type> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Broadly, a Place may be a member of three broad categories:\n            jurisdiction, manmade structure, or a natural feature. Each of these three categories\n            can subdivided into narrower categories."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-A32 (Place Type\n            attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasPlaceTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Place Type to a Place that is or was categorized by\n            it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#PlaceType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was place type of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasCategoryOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceType> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .

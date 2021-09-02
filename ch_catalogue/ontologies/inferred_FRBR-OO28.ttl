@@ -1,0 +1,65 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/R23_created_a_realization_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F30 Publication Event with the instance of F19 Publication Work it realised.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "created a realization of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises works that have been planned to result in a manifestation product type or an electronic publishing service and that pertain to the rendering of expressions from other works\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Work"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F16_Container_Work> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R23i_was_realised_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was realised through"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises complete sets of signs present in publications, reflecting publishers’ final decisions as to both selection of content and layout of the publications. Frequently the creation of a Publication Expression includes both adding graphical form and fonts to Expressions consisting of words alone and selecting illustrations and other content. As such, an instance of Publication Expression incorporates all Expressions combined for the resulting final form of rendering, whether visual, audio or tactile. An instance of Publication Expression is one entity regardless of the number of independent Expressions published within it, as long as it represents one unit of release. The published third party content can be associated via the property P165 incorporates (is incorporated in).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R24i_was_created_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was created through"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the activities of publishing. Such an event includes the creation of an F24 Publication Expression and setting up the means of production. The end of this event is regarded as the date of publication, regardless of whether the carrier production is started. Publishing can be either physical or electronic. Electronic publishing is regarded as making an instance of F24 Publication Expression available in electronic form on a public network. Electronic Publishing does not mean producing a physical instance of F5 Item by partially electronic means. Making an electronic file available on a physical carrier can be regarded as equivalent to setting up the means of production; downloading the file is regarded as the electronic equivalent of F32 Carrier Production Event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> .

@@ -1,0 +1,272 @@
+<http://www.loc.gov/mods/rdf/v1#relatedSeries>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described resource to a another MODS resource which is a series of which the described resource is a part." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Series" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedReference>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which the described resource references." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Reference" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#cartographics>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A geographic entity expressed in cartographic terms." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cartographics " ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#Cartographics> .
+
+<http://www.loc.gov/mods/rdf/v1#ModsResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\nThe resource which is the subject of this description.\n  " ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - A  MODS Resource" ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://id.loc.gov/vocabulary/resourceTypes/Res> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedPreceding>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to a MODS resource which preceded the described resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Preceding" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#edition>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Version of the resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Edition" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedVersion>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which is a different version of the described resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related Item - Other Version" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#note>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Textual information about the resource. This property is used when no type is specified. (In contrast to hasTypedNote, whose object is an aggregator that includes both the type and note.)" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Note" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedOriginal>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which is an original of the described resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Original" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedHost>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which is a host of the described resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Host" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedInstantiation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described resource to a another MODS resource with different origination information." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Instantiation" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#issuance>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Describes the issuance of the resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Issuance" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#physicalExtent>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "a statement of the number and specific material of the units of the resource that express physical extent." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Physical Extent" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#frequency>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "publication frequency" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Frequency" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedSucceeding>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described resource to a another MODS resource which suceeded it." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Suceeding" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedReferencedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which references the described resource." , "" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Referenced By" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#statementOfResponsibility>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A note, when the note type is \"statement of responsibility\"" ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Statement of Responsibility" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedReview>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which is review of the described resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Review" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedConstituent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another MODS resource which is a constituent of the described resource. " ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Constituent" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#Cartographics>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Aggregates cartographic properties." ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MODS - Cartographic Information" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedFormat>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to a similar MODS resource of a different format." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related item - Other Format" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.loc.gov/mods/rdf/v1#relatedItem> .
+
+<http://www.loc.gov/mods/rdf/v1#mediaType>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "An Internet Media (MIME) type e.g. text/html. " ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Media Type" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://www.loc.gov/mods/rdf/v1#relatedItem>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relates the described MODS resource to another, related MODS resource." ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Related Item" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.loc.gov/mods/rdf/v1#ModsResource> .

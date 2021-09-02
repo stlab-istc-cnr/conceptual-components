@@ -1,0 +1,87 @@
+<http://id.loc.gov/ontologies/bibframe/Instance>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Instance" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Resource reflecting an individual, material embodiment of a Work." .
+
+<http://id.loc.gov/ontologies/bibframe/hasItem>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has holding" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://id.loc.gov/ontologies/bibframe/relatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://purl.org/dc/terms/modified>
+                "2017-02-07 (slight revision of definition)" , "2016-04-21 (New)" , "2016-04-29 (added inverse)" ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://id.loc.gov/ontologies/bibframe/itemOf> ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Item which is an example of the described Instance." .
+
+<http://id.loc.gov/ontologies/bibframe/Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Item" ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Single example of an Instance." .
+
+<http://id.loc.gov/ontologies/bibframe/itemOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Holding for" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://id.loc.gov/ontologies/bibframe/Instance> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://id.loc.gov/ontologies/bibframe/relatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://purl.org/dc/terms/modified>
+                "2017-02-07 (slight revision of definition)" , "2016-04-21 (New)" , "2016-04-29 (added inverse)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Instance for which the described Item is an example." .
+
+<http://id.loc.gov/ontologies/bibframe/physicalLocation>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Storing or shelving location" ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Location in the holding agency where the item is shelved or stored." .
+
+<http://id.loc.gov/ontologies/bibframe/electronicLocator>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://id.loc.gov/ontologies/bibframe/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Electronic location" ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://purl.org/dc/terms/modified>
+                "2016-04-21 (New)" ;
+        <http://www.w3.org/2004/02/skos/core#definition>
+                "Electronic location from which the resource is available." .

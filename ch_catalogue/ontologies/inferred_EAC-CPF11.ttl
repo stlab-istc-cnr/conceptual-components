@@ -1,0 +1,40 @@
+<http://culturalis.org/eac-cpf#Name>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "usage note (it)\tLa classe rappresenta la denominazione dell'entity."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "name"@en , "denominazione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa classe è stata aggiunta nella versione del 20 agosto 2018" .
+
+<http://culturalis.org/eac-cpf#Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La classe entity rappresenta qualsiasi soggetto (ente, persona e famiglia) coinvolto nella produzione degli archivi: sia esso un produttore d'archivio o un soggetto che -in senso più ampio- concorre a formare il contesto di produzione, raccolta o sedimentazione di un archivio."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://www3.iath.virginia.edu/eac/cpf/tagLibrary/cpfTagLibrary.html#d1e2773> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "soggetto"@it , "entity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2002/07/owl#backwardCompatibleWith>
+                <http://archivi.ibc.regione.emilia-romagna.it/ontology/eac-cpf/entity> ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                <http://xmlns.com/foaf/0.1/Agent> , <http://dati.san.beniculturali.it/SAN/produttore> .
+
+<http://culturalis.org/eac-cpf#named>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "La proprietà collega un'entity con le sue denominazioni"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://culturalis.org/eac-cpf#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "named"@en , "denominazione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://culturalis.org/eac-cpf#Name> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "Questa proprietà è stata inserita nella versione del 20 agosto 2018" .

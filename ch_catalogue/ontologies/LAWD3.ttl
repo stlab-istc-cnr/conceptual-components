@@ -1,0 +1,29 @@
+<http://lawd.info/ontology/represents>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Describes the relationship between a Citation or Siglum and the\n      Written Work it indicates."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://lawd.info/ontology/Citation> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://lawd.info/ontology/WrittenWork> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://lawd.info/ontology/representedBy> .
+
+<http://lawd.info/ontology/representedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://lawd.info/ontology/WrittenWork> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://lawd.info/ontology/Citation> ;
+        <http://www.w3.org/2002/07/owl#deprecated>
+                "Will be removed in a future release."@en .
+
+<http://lawd.info/ontology/Citation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Citation models a bibliographic reference as a resource."@en .
+
+<http://lawd.info/ontology/WrittenWork>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A written work, whether extant or not. May be considered to embody a Conceptual Work."@en .

@@ -1,0 +1,65 @@
+<https://w3id.org/arco/ontology/movable-property/Family>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents one level of a biological taxon, the family."@en , "Questa classe rappresenta uno dei livelli di classificazione di una tassonomia biologica, ovvero la famiglia"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/movable-property/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Family"@en , "Famiglia"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/movable-property/BiologicalTaxon> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa BNB: SB/SBS/SBSF" .
+
+<https://w3id.org/arco/ontology/movable-property/Genus>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta uno dei livelli di classificazione di una tassonomia biologica, ovvero il genere."@it , "This class represents one level of a biological taxon, the genus."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/movable-property/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Genere"@it , "Genus"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/movable-property/BiologicalTaxon> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa AT: OG/OGS/OGSG. - Normativa BNB: RB/RBN/RBNA; SB/NAA/NAAA; SB/NAT/NATA" .
+
+<https://w3id.org/arco/ontology/movable-property/Order>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents one level of a biological taxon, the order"@en , "Questa classe rappresenta uno dei livelli di classificazione di una tassonomia biologica, ovvero l'ordine"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/movable-property/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ordine"@it , "Order"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/movable-property/BiologicalTaxon> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "unstable"@en , "instabile"@it .
+
+<https://w3id.org/arco/ontology/movable-property/hasDirectHigherRank>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega due taxa, dove la prima è più specifica della seconda e non ci sono altri taxa che siano più generali del primo e più specifici del secondo."@it , "This property relates two taxa, where the first is more specific then the second and there is no other taxon that is both more general than the first and more specific than the second."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/movable-property/Taxon> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/movable-property> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha rango superiore diretto"@it , "has direct higher rank"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/movable-property/Taxon> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/movable-property/hasHigherRank> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/movable-property/hasDirectLowerRank> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "instabile"@it , "unstable"@en .

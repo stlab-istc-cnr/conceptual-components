@@ -1,0 +1,59 @@
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Class that provides a generalization of three classes; that is , cultural institute or site, collection and cultural heritage object. It does not correspond to a concept used typically in the cultural domain but it is used in order to model properties and property restrictions that are common to all the these three classes. The class will never be directly instanziated."@en , "Classe che fornisce una generalizzazione per le tre classi di istituto e luogo della cultura,  collezione e oggetto culturale. Non corrisponde ad un concetto usato normalmente nel linguaggio del dominio, ma risponde all'esigenza di modellare proprietà e assiomi di property-restriction comuni ad ognuna di queste tre classi. La classe CulturalEntity non sarà mai istanziata direttamente"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Entità culturale"@it , "Cultural Entity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Entity> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<http://dati.beniculturali.it/cis/isInvolvedInCulturalEvent>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Proprietà inversa di \"coinvolge entità culturale\" che collega direttamente l'entità culturale con gli eventi culturali che la coinvolgono"@it , "Inverse property of \"involves cultural entity\". It is used to directly connect a cultural entity to  the cultural events that involve it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is involved in cultural event"@en , "è coinvolta in evento culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEvent> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<http://dati.beniculturali.it/cis/involvesCulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Involvement property that associates a cultural event with a general cultural entity"@en , "Proprietà di coinvolgimento che associa un evento culturale a una generica entità culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://dati.beniculturali.it/cis/CulturalEvent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "involves cultural entity"@en , "coinvolge entità culturale"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://dati.beniculturali.it/cis/isInvolvedInCulturalEvent> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable" , "stabile"@it .
+
+<http://dati.beniculturali.it/cis/CulturalEvent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Rappresenta un evento culturale."@it , "it represents an event that typically is related to the cultural domain"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <http://dati.beniculturali.it/cis/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Evento Culturale"@it , "Cultural Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/CPEV/PublicEvent> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio di utilizzo della classe cis:Event è il seguente:\n\n<pre>\n\nculturalEvent:Vincenzo_Gemito_al_Museo_di_Capodimonte\n    a cis:CulturalEvent, cpevapit:PublicEvent ;\n    cis:isHostedBySite site:Museo_di_Capodimonte;\n    cpevapit:eventTitle \"Vincenzo Gemito, dal salotto Minozzi al Museo di Capodimonte\" ;\n    rdfs:comment \"Apre al pubblico al Museo di Capodimonte la mostra ‘Vincenzo Gemito, dal salotto Minozzi\n    al Museo di Capodimonte’,\n    organizzata dalla Soprintendenza speciale per il patrimonio storico\"@it ;\n    cis:involvesCulturalEntity culturalheritageobject:Il_giocatore_di_carte ;\n    cpevapit:hasPublicEventTypology <https://w3id.org/italia/controlled-vocabulary/public-event-types/11_Exposure> ;\n    cpevapit:hasRiT rit:Role_Org_Vincenzo_Gemito_al_Museo_di_Capodimonte ;\n    l0:identifier \"Gemito-1\" ;\n    cpevapit:hasSubEvent culturaleEvent:Vincenzo_Gemito_Il_Pescatorello ;\n    l0:description \"Apre al pubblico al Museo di Capodimonte la mostra ‘Vincenzo Gemito, dal salotto Minozzi\n    al Museo di Capodimonte’,\n    organizzata dalla Soprintendenza speciale per il patrimonio storico\"@it ;\n    rdfs:label \"Vincenzo Gemito, dal salotto Minozzi al Museo di Capodimonte\"@it ;\n    tiapit::atTime ti:Durata_di_Vincenzo_Gemito_dal_salotto_Minozzi_al_Museo_di_Capodimonte .\n\nculturalEvent:Vincenzo_Gemito_Il_Pescatorello\n    a cis:CulturalEvent , cpevapit:PublicEvent ;\n    cis:isHostedBySite site:Museo_di_Capodimonte;\n    rdfs:label \"Vincenzo Gemito, esposizione de Il Pescatorello\"@it ;\n    cpevapit:eventTitle \"Vincenzo Gemito, esposizione de Il Pescatorello&apos@it\" ;\n    l0:description \"Evento racchiuso nell'esposizione generale Vincenzo Gemito\"@it ;\n    l0:identifier \"Gemito-Pescatorello-2\";\n   cpevapit:hasRiT rit:Role_Org_Vincenzo_Gemito_al_Museo_di_Capodimonte ;\n    cpevapit:hasPublicEventTypology <https://w3id.org/italia/controlled-vocabulary/public-event-types/11_Exposure> ;\n    cis:involvesCulturalEntity culturalheritageobject:Il_Pescatorello ;\n    tiapit:atTime ti:urata_di_Vincenzo_Gemito_dal_salotto_Minozzi_al_Museo_di_Capodimonte .\n\nrit:Role_Org_Vincenzo_Gemito_al_Museo_di_Capodimonte\n   a roapit:TimeIndexedRole ;\n   roapit:forEntity culturalEvent:Vincenzo_Gemito_al_Museo_di_Capodimonte ;\n   roapit:withRole role:Organizer ;\n   tiapit:hasTemporalEntity ti:Durata_incarico ;\n   roapit:isRoleInTimeOf <https://w3id.org/italia/data/organization/public-organization/m_bac> .\n\nrole:Organizer\n    a roapit:Role ;\n    l0name \"Organizzatore\"@it .\n\nti:Durata_incarico\n  a tiapit:TimeInterval ;\n  tiapit:startTime \"2013-11-28T00:00:00\"^^xsd:dateTime;\n  tiapit:endTime \"2015-07-16T00:00:00\"^^xsd:dateTime .\n\nti:Durata_di_Vincenzo_Gemito_dal_salotto_Minozzi_al_Museo_di_Capodimonte\n    a tiapit:TimeInterval ;\n    rdfs:label \"Intervallo di durata dell'evento 'Vincenzo Gemito, dal salotto Minozzi al Museo di Capodimonte'\" ;\n    tiapit:startTime \"2014-11-28T00:00:00\"^^xsd:dateTime;\n    tiapit:endTime \"2015-07-16T00:00:00\"^^xsd:dateTime .\n\nculturalheritageobject:Il_giocatore_di_carte\n    a cis:CulturalHeritageObject ;\n    rdfs:label \"Il giocatore di carte\" ;;\n    l0:name \"l giocatore di carte\" ;\n    cis:isInSite site:Museo_di_Capodimonte .\n\ncultualheritageobject:Il_Pescatorello\n    a cis:CulturalHeritageObject ;\n    rdfs:label \"Il Pescatorello\" ;\n    l0:name \"Il Pescatorello&quot\" ;\n    cis:isInSite site:Museo_di_Capodimonte .\n\n</pre>"@it , "An example of usage of the class cis:CulturalEvent is the following:\n\n<pre>\n\nculturalEvent:Vincenzo_Gemito_al_Museo_di_Capodimonte\n    a cis:CulturalEvent, cpevapit:PublicEvent ;\n    cis:isHostedBySite site:Museo_di_Capodimonte;\n    cpevapit:eventTitle \"Vincenzo Gemito, dal salotto Minozzi al Museo di Capodimonte\" ;\n    rdfs:comment \"Apre al pubblico al Museo di Capodimonte la mostra ‘Vincenzo Gemito, dal salotto Minozzi\n    al Museo di Capodimonte’,\n    organizzata dalla Soprintendenza speciale per il patrimonio storico\"@it ;\n    cis:involvesCulturalEntity culturalheritageobject:Il_giocatore_di_carte ;\n    cpevapit:hasPublicEventTypology <https://w3id.org/italia/controlled-vocabulary/public-event-types/11_Exposure> ;\n    cpevapit:hasRiT rit:Role_Org_Vincenzo_Gemito_al_Museo_di_Capodimonte ;\n    l0:identifier \"Gemito-1\" ;\n    cpevapit:hasSubEvent culturaleEvent:Vincenzo_Gemito_Il_Pescatorello ;\n    l0:description \"Apre al pubblico al Museo di Capodimonte la mostra ‘Vincenzo Gemito, dal salotto Minozzi\n    al Museo di Capodimonte’,\n    organizzata dalla Soprintendenza speciale per il patrimonio storico\"@it ;\n    rdfs:label \"Vincenzo Gemito, dal salotto Minozzi al Museo di Capodimonte\"@it ;\n    tiapit::atTime ti:Durata_di_Vincenzo_Gemito_dal_salotto_Minozzi_al_Museo_di_Capodimonte .\n\nculturalEvent:Vincenzo_Gemito_Il_Pescatorello\n    a cis:CulturalEvent , cpevapit:PublicEvent ;\n    cis:isHostedBySite site:Museo_di_Capodimonte;\n    rdfs:label \"Vincenzo Gemito, esposizione de Il Pescatorello\"@it ;\n    cpevapit:eventTitle \"Vincenzo Gemito, esposizione de Il Pescatorello&apos@it\" ;\n    l0:description \"Evento racchiuso nell'esposizione generale Vincenzo Gemito\"@it ;\n    l0:identifier \"Gemito-Pescatorello-2\";\n   cpevapit:hasRiT rit:Role_Org_Vincenzo_Gemito_al_Museo_di_Capodimonte ;\n    cpevapit:hasPublicEventTypology <https://w3id.org/italia/controlled-vocabulary/public-event-types/11_Exposure> ;\n    cis:involvesCulturalEntity culturalheritageobject:Il_Pescatorello ;\n    tiapit:atTime ti:urata_di_Vincenzo_Gemito_dal_salotto_Minozzi_al_Museo_di_Capodimonte .\n\nrit:Role_Org_Vincenzo_Gemito_al_Museo_di_Capodimonte\n   a roapit:TimeIndexedRole ;\n   roapit:forEntity culturalEvent:Vincenzo_Gemito_al_Museo_di_Capodimonte ;\n   roapit:withRole role:Organizer ;\n   tiapit:hasTemporalEntity ti:Durata_incarico ;\n   roapit:isRoleInTimeOf <https://w3id.org/italia/data/organization/public-organization/m_bac> .\n\nrole:Organizer\n    a roapit:Role ;\n    l0name \"Organizzatore\"@it .\n\nti:Durata_incarico\n  a tiapit:TimeInterval ;\n  tiapit:startTime \"2013-11-28T00:00:00\"^^xsd:dateTime;\n  tiapit:endTime \"2015-07-16T00:00:00\"^^xsd:dateTime .\n\nti:Durata_di_Vincenzo_Gemito_dal_salotto_Minozzi_al_Museo_di_Capodimonte\n    a tiapit:TimeInterval ;\n    rdfs:label \"Intervallo di durata dell'evento 'Vincenzo Gemito, dal salotto Minozzi al Museo di Capodimonte'\" ;\n    tiapit:startTime \"2014-11-28T00:00:00\"^^xsd:dateTime;\n    tiapit:endTime \"2015-07-16T00:00:00\"^^xsd:dateTime .\n\nculturalheritageobject:Il_giocatore_di_carte\n    a cis:CulturalHeritageObject ;\n    rdfs:label \"Il giocatore di carte\" ;;\n    l0:name \"l giocatore di carte\" ;\n    cis:isInSite site:Museo_di_Capodimonte .\n\ncultualheritageobject:Il_Pescatorello\n    a cis:CulturalHeritageObject ;\n    rdfs:label \"Il Pescatorello\" ;\n    l0:name \"Il Pescatorello&quot\" ;\n    cis:isInSite site:Museo_di_Capodimonte .\n\n</pre>"@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .

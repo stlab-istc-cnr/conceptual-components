@@ -1,0 +1,103 @@
+<https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalDescription>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the technical description of a cultural entity, which uses all the technical concepts classifying the technical characteristics that a cultural entity can have. This class is a particular type of the class Description, which is the class for socially constructed objects (i.e. texts, values, categories, relations, contexts) used to describe other objects in a structured manner."@en , "Questa classe rappresenta la descrizione tecnica di un'entità culturale, la quale utilizza tutti i concetti tecnici che possono classificare caratteristiche tecniche possedute da un'entità culturale. Questa classe è un tipo particolare di Description, la classe degli oggetti costruiti socialmente (testi, valori, categorie, relazioni, contesti), usati per descrivere qualcos'altro in modo strutturato."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3di.org/arco/ontology/denotative-description/> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Descrizione tecnica di entità culturale"@it , "Cultural entity technical description"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/isTechnicalDescriptionSatisfiedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a technical description of a cultural entity to a situation that satisfies that description."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è descrizione di entità culturale soddisfatta da"@it , "is cultural entity description satisfied by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalStatus> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/denotative-description/satisfiesTechnicalDescription> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/satisfiesTechnicalDescription>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates a technical status (intended as a situaiton) of a cultural entity to the technical description satisfied by that situation."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalStatus> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "soddisfa descrizione tecnica"@it , "satisfies technical description"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/denotative-description/TechnicalConcept>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a technical concept, a particular type of concept that classifies a technical characteristic of an entity, e.g. cultural property. For instance, \"material\" is a techincal concept that classifies the technical characteristic \"pottery\" related to a cultural property."@en , "Questa classe rappresenta un concetto tecnico, inteso come tipo particolare di concetto che fornisce una classificazione a una caratteristica tecnica di un'entità, es. un bene culturale. Per esempio, \"materia\" è un concetto tecnico che può essere utilizzato per classificare la caratteristica tecnica \"terracotta\" relativa a un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concetto tecnico"@it , "Technical concept"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Concept> , <https://w3id.org/italia/onto/l0/Concept> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTC/MTCM; MT/MTC/MTCT - Normativa OA, D, S, MI: MT/FRM - Normativa OA, D, F, S: MT/FIL - Normativa VeAC: MT/MTC/MTCC; MT/MTC/MTCF - Normativa F: MT/FVC/FVCC; MT/FVC/FVCF; MT/FVC/FVCP; MT/FVC/FVCU; MT/FVC/FVCM; MT/FVM; MT/MTX; MT/FVM; MT/FRM;" .
+
+<https://w3id.org/arco/ontology/denotative-description/usesTechnicalConcept>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega una descrizione tecnica di un bene culturale a uno dei concetti usati in quella descrizione."@it , "This property relates a technical description of a cultural property to one of the concepts used in that description."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "usa concetto tecnico"@it , "uses technical concept"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/denotative-description/TechnicalConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/denotative-description/CulturalEntityTechnicalStatus>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta lo stato tecnico di un'entità culturale, cioè una situazione in cui un'entità culturale ha associate una serie di caratteristiche tecniche. Lo stato di un'entità ha associata una validità temporale, relativa al momento in cui quelle caratteristiche sono state rilevate. Per esempio, una occorrenza di un dettaglio tecnico è: \"bene culturale X realizzato con la materia terracotta e di forma cilindrica\"."@it , "This class represents the technical status of a cultural entity, that is a situation in which the cultural entity is associated to technical characteristics. The technical status has a temporal validity, related to the moment when the characteristics were observed. For instance, a cultural property techncal status is: \"the cultural property X realized with pottery material and cylindrical in shape\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/denotative-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Stato tecnico di entità culturale"@it , "Technical status of cultural entity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Situation> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <https://w3id.org/arco/pattern/technical-characteristic/> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "An example of usage of the class 'Cultural entity technical status' is the following:\nresource:CulturalEntityTechnicalStatus/0900281817-4\n        a           a-dd:CulturalEntityTechnicalStatus ;\n        rdfs:label  \"Technical status of cultural property 0900281817-4\"@en ;\n        a-dd:includesTechnicalCharacteristic\n                resource:TechnicalCharacteristic/centinato, resource:TechnicalCharacteristic/stone-sculpture .\n\nresource:TechnicalCharacteristic/stone-sculpture\n        a                    a-dd:TechnicalCharacteristic ;\n        rdfs:label           \"stone/ sculpture\" ;\n        a-dd:isClassifiedBy  a-dd:MaterialOrTechnique ."@en , "Un esempio d'uso della classe \"Stato tecnico di entità culturale\" è il seguente:\nresource:CulturalEntityTechnicalStatus/0900281817-4\n        a           a-dd:CulturalEntityTechnicalStatus ;\n        rdfs:label  \"Stato tecnico del bene culturale 0900281817-4\"@it ;\n        a-dd:includesTechnicalCharacteristic\n                resource:TechnicalCharacteristic/centinato, resource:TechnicalCharacteristic/pietra-scultura .\n\nresource:TechnicalCharacteristic/pietra-scultura\n        a                    a-dd:TechnicalCharacteristic ;\n        rdfs:label           \"pietra/ scultura\" ;\n        a-dd:isClassifiedBy  a-dd:MaterialOrTechnique ."@it ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: MT/MTC/MTCM; MT/MTC/MTCT - Normativa OA, D, F, S, MI: MT/FRM - Normativa OA, D, F, S: MT/FIL - Normativa VeAC: MT/MTC/MTCC; MT/MTC/MTCF - Normativa F: MT/FVC/FVCC; MT/FVC/FVCF; MT/FVC/FVCP; MT/FVC/FVCU; MT/FVC/FVCM; MT/FVM; DA/APF/APFE" .

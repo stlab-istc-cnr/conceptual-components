@@ -1,0 +1,131 @@
+<https://w3id.org/arco/ontology/context-description/isSurveyMotivationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property relates the main motivation that led to an archeological, archaeometric or diagnostic survey or a photo interpretation rendering to each of them."@it , "Questa proprietà collega il motivo principale che ha determinato uno scavo archeologico, una ricognizione archeologica, un'indagine archeometrica e diagnostica o una fotointerpretazione e fotorestituzione a ciascuno di essi."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/SurveyMotivation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "è motivo di indagine di"@it , "is survey motivation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/isDescriptionOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/ArchaeologicalExcavation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a particular type of survey on a cultural property, that is an archaeological (stratigraphic) excavation."@en , "Questa classe rappresenta un tipo particolare di indagine su bene culturale, ovvero uno scavo archeologico, inteso come scavo stratigrafico."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Archaeological excavation"@en , "Scavo archeologico"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/DSC" .
+
+<https://w3id.org/arco/ontology/context-description/PhotoInterpretationRendering>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un tipo particolare di indagine su bene culturale, ovvero una fotointerpretazione e fotorestituzione, intesa come indagine territoriale."@it , "This class represents a particular type of survey on a cultural property, that is photo interpretation and rendering."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Photo interpretation and rendering"@en , "Fotointerpretazione e fotorestituzione"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/FOI" .
+
+<https://w3id.org/arco/ontology/context-description/Survey>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a survey carried out on a cultural property, that is an activity related to a cultural property and carried out for its identification, study or observation of its technical characteristics."@en , "Questa classe rappresenta un'indagine effettuata su un bene culturale. Per indagine, si intende un'attività che riguarda il bene, effettuata per la sua individuazione (nel caso dei beni archeologici), per il suo studio e per l'approfondimento delle sue caratteristiche tecniche (indagini di scavo, di ricognizione, indagini geognostiche, analisi di vario genere e tipo, etc.). Questa classe viene specializzata in sottoclassi, per la rappresentazione di tipologie di indagini specifiche."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Indagine"@it , "Survey"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Activity> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi della classe \"Indagine\" è il seguente:\nresource:ArchaeologicalExcavation/0500590557-survey-1\n        a           cd:ArchaeologicalExcavation ;\n        rdfs:label  \"Scavo archeologico 1 del bene 0500590557: Monselice, via Valli\"@it ;\n        cd:hasActivityResponsible resource:Agent/sba ;\n        cd:hasStratigraphicUnit resource:StratigraphicUnit/325 ;\n        cd:hasSurveyMethod resource:SurveyMethod/scavo-stratigrafico ;\n        cd:hasSurveyMotivation resource:SurveyMotivation/opere-pubbliche ; cd:hasSurveyScientificDirector resource:Agent/bianchin-citton-elodia ;\n        core:hasAgentRole resource:AgentRole/0500590557-archaeological-excavation-1-activity-responsible , resource:AgentRole/0500590557-archaeological-excavation-1-scientific-director ;\n        tiapit:time \"2004\" ."@it , "An example of usage of one of the subclasses of the class 'Survey' is the following:\nresource:ArchaeologicalExcavation/0500590557-survey-1\n        a           cd:ArchaeologicalExcavation ;\n        rdfs:label  \"Archaeological excavation 1 of cultural property 0500590557: Monselice, via Valli\"@en ;\n        cd:hasActivityResponsible resource:Agent/sba ;\n        cd:hasStratigraphicUnit resource:StratigraphicUnit/325 ;\n        cd:hasSurveyMethod resource:SurveyMethod/scavo-stratigrafico ;\n        cd:hasSurveyMotivation resource:SurveyMotivation/opere-pubbliche ; cd:hasSurveyScientificDirector resource:Agent/bianchin-citton-elodia ;\n        core:hasAgentRole resource:AgentRole/0500590557-archaeological-excavation-1-activity-responsible , resource:AgentRole/0500590557-archaeological-excavation-1-scientific-director ;\n        tiapit:time \"2004\" ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE; CM/ISP - ICCD Normative NU, RA, BNB, MA, CA: RS/ALB - ICCD Normativa AT 3.00: IN/INI - ICCD Normativa SM: DR" .
+
+<https://w3id.org/arco/ontology/context-description/SurveyMotivation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the main motivation of a survey."@en , "Questa classe rappresenta il motivo principale che ha determinato una ricognizione archeologica o uno scavo archeologico."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Survey Motivation"@en , "Motivo di indagine"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Description> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it .
+
+<https://w3id.org/arco/ontology/context-description/ArchaeologicalPropertySurvey>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a particular type of survey on a cultural property, that is a survey on anthropological materials (e.g.: chemical analysis, histological analysis, CT scan, etc.)."@en , "Questa classe rappresenta un'indagine su una tipologia particolare di bene archeologico, ovvero i reperti antropologici (es.: analisi istologica, analisi chimica, TC, etc.)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Indagine su bene archeologico"@it , "Archaeological property survey"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa AT 3.01: IN/INI" .
+
+<https://w3id.org/arco/ontology/context-description/hasSurveyMotivation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà collega uno scavo archeologico, una ricognizione archeologica, un'indagine archeometrica e diagnostica o una fotointerpretazione e fotorestituzione al motivo principale che li ha determinati."@it , "This property relates an archeological, archaeometric or diagnostic survey or a photo interpretation rendering to the the main motivation that led to it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has survey motivation"@en , "ha motivo di indagine"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/SurveyMotivation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/italia/onto/l0/hasDescription> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isSurveyMotivationOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .
+
+<https://w3id.org/arco/ontology/context-description/ArchaeometricDiagnosticSurvey>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents a particular type of survey on a cultural property, that is an archaeometric and diagnostic survey (coring, geophysical prospecting, etc.)."@en , "Questa classe rappresenta un tipo particolare di indagine su bene culturale, ovvero un'indagine archeometrica e diagnostica (carotaggi, prospezioni geofisiche, analisi di vario tipo)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Indagine archeometrica e diagnostica"@it , "Archaeometric and diagnostic survey"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Survey> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: RE/IND - ICCD normative di versioni precedenti: RE/AIN"@it .

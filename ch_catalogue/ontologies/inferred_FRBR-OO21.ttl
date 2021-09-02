@@ -1,0 +1,65 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/R44i_performed>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F44_Bibliographic_Agency> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "performed"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities through which an Agency declares (implicitly or explicitly) that a given instance of F2 Expression is representative for a given F15 Complex Work, i.e., that some attributes of that instance of F2 Expression (most prominently, information about the title) can be inferred to also apply to that instance of F15 Complex Work, no matter in which particular expression it is realised.\nThe reasoning behind this is that the Work title is known through the title of an Expression that is deemed representative of the Work, and the title of the representative Expression is known through the title of a Manifestation that is deemed representative of the Expression that is representative of the Work.\nFor instance, by using the qualified controlled access point ‘Poe, Edgar Allan, 1809-1849. Murders in the rue Morgue (French)’ for the French rendition of Poe’s ‘Murders in the rue Morgue’ by Baudelaire, an Agency implicitly states that the French text does not constitute a representative F2 Expression for Poe’s F1 Work, however the original English text does constitute a representative F2 Expression for Poe’s F1 Work.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Representative Expression Assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R44_carried_out_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates a bibliographic agency (represented by one or more of its cataloguers) and the assigning of which expression is representative for a given Work.\nIn cataloguing practice, such a relationship is usually just implicit. However, it can become explicit, for example when a bibliographic agency creates an authority record for a given work and fills the “Source” field with information about the publication that contains the expression that was used by the bibliographic agency to establish the controlled access point for the work realised in that expression.\n\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "carried out by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F44_Bibliographic_Agency> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F41_Representative_Manifestation_Assignment>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities through which an Agency declares (implicitly or explicitly) that a given instance of F3 Manifestation Product Type or F4 Manifestation Singleton is representative for a given F2 Expression, i.e., that some features found on that instance of F3 Manifestation Product Type or F4 Manifestation Singleton (most prominently, information about the title) can be inferred to also apply to that instance of F2 Expression, no matter within which manifestation it is embodied.\nThe reasoning behind is that the Work title is known through the title of an Expression that is deemed representative of the Work, and the title of the representative Expression is known through the title proper of a Manifestation that is deemed representative of the Expression representative of the Work.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Representative Manifestation Assignment"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F44_Bibliographic_Agency>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises agents who create the bibliographic description of publications and perform the authority control associated with such descriptions, for the description of copies of such publications actually held by libraries, and for the description of unique documents (manuscripts, objects…) held by libraries.\nThe activity of creating such descriptions implies that one has to make decisions (as to the controlled access point for a work, as to whether an arrangement still belongs to the same work or is definitely a new work, etc.). Since such decisions always are debatable and different agencies can make different decisions about the same real-world entities, it is important to document which agency made which decision.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Bibliographic Agency"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E40_Legal_Body> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R43i_performed>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F44_Bibliographic_Agency> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "performed"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F41_Representative_Manifestation_Assignment> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

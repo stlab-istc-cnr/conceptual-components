@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/P108_has_produced>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E24 Physical Man-Made Thing that came into existence as a result of an E12 Production.\nThe identity of an instance of E24 Physical Man-Made Thing is not defined by its matter, but by its existence as a subject of documentation. An E12 Production can result in the creation of multiple instances of E24 Physical Man-Made Thing.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E12_Production> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "有产出物"@zh , "has produced"@en , "παρήγαγε"@el , "produziu"@pt , "a produit"@fr , "hat hergestellt"@de , "произвел"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P31_has_modified> , <http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. \nIt is an abstract concept providing for three general properties:\n1.\tIdentification by name or appellation, and in particular by a preferred identifier\n2.\tClassification by type, allowing further refinement of the specific subclass an instance belongs to \n3.\tAttachment of free text for the expression of anything not captured by formal properties\nWith the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CRM Entity"@en , "CRM实体"@zh , "Entidade CRM"@pt , "Entité CRM"@fr , "CRM Entität"@de , "Οντότητα CIDOC CRM"@el , "CRM Сущность"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E12_Production>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that are designed to, and succeed in, creating one or more new items. \nIt specializes the notion of modification into production. The decision as to whether or not an object is regarded as new is context sensitive. Normally, items are considered “new” if there is no obvious overall similarity between them and the consumed items and material used in their production. In other cases, an item is considered “new” because it becomes relevant to documentation by a modification. For example, the scribbling of a name on a potsherd may make it a voting token. The original potsherd may not be worth documenting, in contrast to the inscribed one. \nThis entity can be collective: the printing of a thousand books, for example, would normally be considered a single event. \nAn event should also be documented using E81 Transformation if it results in the destruction of one or more objects and the simultaneous production of others using parts or material from the originals. In this case, the new items have separate identities and matter is preserved, but identity is not.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Production"@en , "Herstellung"@de , "Παραγωγή"@el , "Produção"@pt , "生产"@zh , "Событие Производства"@ru , "Production"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> , <http://www.cidoc-crm.org/cidoc-crm/E11_Modification> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P62_depicts>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies something that is depicted by an instance of E24 Physical Man-Made Thing. Depicting is meant in the sense that the surface of the E24 Physical Man-Made Thing shows, through its passive optical qualities or form, a representation of the entity depicted. It does not pertain to inscriptions or any other information encoding.\n\nThis property is a shortcut of the more fully developed path from E24 Physical Man-Made Thing through P65 shows visual item (is shown by), E36 Visual Item, P138 represents (has representation) to E1 CRM Entity. P62.1 mode of depiction allows the nature of the depiction to be refined.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "描绘"@zh , "απεικονίζει"@el , "depicts"@en , "figure"@fr , "retrata"@pt , "bildet ab"@de , "описывает"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P62i_is_depicted_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "απεικονίζεται σε"@el , "é retratada por"@pt , "описан посредством"@ru , "被描绘於"@zh , "wird abgebildet durch"@de , "est figurée sur"@fr , "is depicted by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "был произведен посредством"@ru , "a été produit par"@fr , "wurde hergestellt durch"@de , "被制作於"@zh , "παρήχθη από"@el , "was produced by"@en , "foi produzido por"@pt ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E12_Production> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P31i_was_modified_by> , <http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises all persistent physical items that are purposely created by human activity.\nThis class comprises man-made objects, such as a swords, and man-made features, such as rock art. No assumptions are made as to the extent of modification required to justify regarding an object as man-made. For example, a “cup and ring” carving on bedrock is regarded as instance of E24 Physical Man-Made Thing. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Hergestelltes"@de , "Chose matérielle fabriquée"@fr , "Coisa Material Fabricada"@pt , "人造实体物"@zh , "Physical Man-Made Thing"@en , "Ανθρωπογενές Υλικό Πράγμα"@el , "Физическая Рукотворная Вещь"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> , <http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing> .

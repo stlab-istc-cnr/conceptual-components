@@ -1,0 +1,122 @@
+<https://w3id.org/arco/ontology/context-description/hasMemberOfArchivalRecordSet>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà, inversa a \"è membro di unità archivistica complessa\", collega l'appartenenza di un bene culturale a un'unità archivistica al bene coinvolto nella relazione."@it , "This property relates the membership of a cultural entity to an archival record set. It is the inverse property of \"isMemberofArchivalRecordSet\"."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha membro di unità archivistica complessa"@it , "has member of archival record set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://dati.beniculturali.it/cis/CulturalEntity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isMemberOfArchivalRecordSetOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the membership of a cultural property in an archival record set."@en , "Questa classe rappresenta l'appartenenza di un bene culturale a un'unità archivistica complessa (fondo, serie, sottoserie, etc.)."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Archival record set membership"@en , "Appartenenza a unità archivistica complessa"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/context-description/Membership> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/context-description/archivalRecordLocation>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta la collocazione di un'unità documentaria all'interno di un'unità archivistica complessa."@it , "This property represents the location of a documentary unit within a complex archival unit."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "archival record location"@en , "collocazione di unità documentaria"@it ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF/UBFC" .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecordSet>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa classe rappresenta un'unità archivistica complessa (fondo, serie, sottoserie, etc.) di cui un bene culturale può fare parte."@it , "This class represents an archival record set (fonds, series, subseries) of which a cultural property can be member."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unità archivistica complessa"@it , "Archival record set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Collection> ;
+        <http://ontologydesignpatterns.org/opla/isNativeTo>
+                <http://mklab.iti.gr/pericles/BornDigitalArchives_ODP.owl> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "Un esempio d'uso di una delle sottoclassi di 'Unità archivistica complessa' è il seguente:\nresource:ArchivalSubseries/museo-civico-romano\n        a           cd:ArchivalSubseries ;\n        rdfs:label  \"Museo Civico Romano\" ;\n        cd:isArchivalRecordSetIn resource:ArchivalRecordSetMembership/1201251092 ;\n        core:isComponentOf resource:ArchivalSeries/brescia ."@it , "An example of usage of on of the subclasses of the class 'Archival Record Set' is the following:\nresource:ArchivalSubseries/museo-civico-romano\n        a           cd:ArchivalSubseries ;\n        rdfs:label  \"Museo Civico Romano\" ;\n        cd:isArchivalRecordSetIn resource:ArchivalRecordSetMembership/1201251092 ;\n        core:isComponentOf resource:ArchivalSeries/brescia ."@en ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .
+
+<https://w3id.org/arco/ontology/context-description/archivalRecordSetTitle>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà rappresenta il titolo dell'unità archivistica complessa (fondo, serie, sottoserie, etc.) in cui si trova un'unità documentaria."@it , "This property represents the title of the archival record set in which a documentary unit is located."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "titolo di unità archivistica complessa"@it , "archival record set title"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF/UBFU" .
+
+<http://dati.beniculturali.it/cis/CulturalEntity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/arco/ontology/context-description/hasArchivalRecordSet>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Questa proprietà, inversa a \"è unità archivistica complessa in\", collega il rapporto tra una unità archivistica complessa e un bene culturale che ne fa parte alla unità archivistica stessa."@it , "This property relates the relationship of an archival set and a one of its belonging cultural entities."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSetMembership> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha unità archivistica complessa"@it , "has archival record set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/context-description/isArchivalRecordSetIn> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa F: UB/UBF" .

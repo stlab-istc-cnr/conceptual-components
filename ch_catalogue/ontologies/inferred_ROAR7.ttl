@@ -1,0 +1,30 @@
+<http://purl.org/vocab/bio/event/0.1>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Use to connect life events to a Person. Use more specific events, such as `bio:birth` and `bio:death` for respectively Birth and Death events."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/roar#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bio:event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://purl.org/vocab/bio/0.1/Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://purl.org/vocab/bio/0.1/Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A life event from the bio vocabulary.\nIt is recommended to include timestamp properties from the sem vocabulary. If the exact date is known, sem:hasTimeStamp can be used. If dates are uncertain, use the other properties:\n- sem:hasTimeStamp\n- sem:hasBeginTimeStamp\n- sem:hasEarliestBeginTimeStamp\n- sem:hasLatestBeginTimeStamp\n- sem:hasEndTimeStamp\n- sem:hasEarliestEndTimeStamp\n- sem:hasLatestEndTimeStamp\n\nTo make a bio:Event compliant to a sem:Event, also define a role (next to the bio:principal or bio:partner) by defining a sem:hasRole:\n```ttl\n_:event1 a bio:Event ;\n    rdfs:label \"Living on the Keizersgracht\"\n    bio:principal _:person1 ;\n    sem:hasActor [ a sem:Role ;\n                   sem:roleType [ a sem:RoleType ;\n                                  rdfs:label \"Resident\" ] ;\n                   rdf:value _:person1 ] .\n\n```"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bio:Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://semanticweb.cs.vu.nl/2009/11/sem/Event> .
+
+<https://w3id.org/roar#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person is a human being that is mentioned in a Document. This can be a direct mention (e.g. 'Aaltie Jans') or indirect (e.g. 'husband of Aaltie Jans'), in which a name might not be known."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/roar#Entity> .

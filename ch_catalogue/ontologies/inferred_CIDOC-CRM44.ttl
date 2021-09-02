@@ -1,0 +1,87 @@
+<http://www.cidoc-crm.org/cidoc-crm/P69_is_associated_with>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property generalises relationships like whole-part, sequence, prerequisite or inspired by between instances of E29 Design or Procedure. Any instance of E29 Design or Procedure may be associated with other designs or procedures. The property is considered to be symmetrical unless otherwise indicated by P69.1 has type.\nThe P69.1 has type property of P69 has association with allows the nature of the association to be specified reading from domain to range; examples of types of association between instances of E29 Design or Procedure include: has part, follows, requires, etc.\nThe property can typically be used to model the decomposition of the description of a complete workflow into a series of separate procedures.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ist verbunden mit"@de , "est associée à"@fr , "é associado com"@pt , "is associated with"@en , "ассоциирован с"@ru , "相关於"@zh , "σχετίζεται με"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E57_Material>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class is a specialization of E55 Type and comprises the concepts of materials. \nInstances of E57 Material may denote properties of matter before its use, during its use, and as incorporated in an object, such as ultramarine powder, tempera paste, reinforced concrete. Discrete pieces of raw-materials kept in museums, such as bricks, sheets of fabric, pieces of metal, should be modelled individually in the same way as other objects. Discrete used or processed pieces, such as the stones from Nefer Titi's temple, should be modelled as parts (cf. P46 is composed of).\nThis type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E57 Material, e.g.: “instances of  gold”.\nIt is recommended that internationally or nationally agreed codes and terminology are used."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Материал"@ru , "Υλικό"@el , "材料"@zh , "Material"@pt , "Material"@en , "Matériau"@fr , "Material"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P68_foresees_use_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies an E57 Material foreseeen to be used by an E29 Design or Procedure. \nE29 Designs and procedures commonly foresee the use of particular E57 Materials. The fabrication of adobe bricks, for example, requires straw, clay and water. This property enables this to be documented.\nThis property is not intended for the documentation of E57 Materials that were used on a particular occasion when an instance of E29 Design or Procedure was executed.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "συνήθως χρησιμοποιεί"@el , "normalmente emprega"@pt , " sieht den Gebrauch vor von"@de , "指定使用材料"@zh , "foresees use of"@en , "utilise habituellement"@fr , "обычно применяет"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E57_Material> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies a specific instance of E29 Design or Procedure in order to carry out an instance of E7 Activity or parts of it. \nThe property differs from P32 used general technique (was technique of) in that P33 refers to an instance of E29 Design or Procedure, which is a concrete information object in its own right rather than simply being a term or a method known by tradition. \nTypical examples would include intervention plans for conservation or the construction plans of a building.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "usou técnica específica"@pt , "benutzte das bestimmte Verfahren"@de , "использовал особую технику"@ru , "使用特定技术"@zh , "χρησιμοποίησε συγκεκριμένη τεχνική"@el , "a employé comme technique spécifique"@fr , "used specific technique"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises documented plans for the execution of actions in order to achieve a result of a specific quality, form or contents. In particular it comprises plans for deliberate human activities that may result in the modification or production of instances of E24 Physical Thing. \nInstances of E29 Design or Procedure can be structured in parts and sequences or depend on others. This is modelled using P69 has association with (is associated with). \nDesigns or procedures can be seen as one of the following:\n1.\tA schema for the activities it describes\n2.\tA schema of the products that result from their application. \n3.\tAn independent intellectual product that may have never been applied, such as Leonardo da Vinci’s famous plans for flying machines.\nBecause designs or procedures may never be applied or only partially executed, the CRM models a loose relationship between the plan and the respective product.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Projeto ou Procedimento"@pt , "Design or Procedure"@en , "Entwurf oder Verfahren"@de , "Conception ou procédure"@fr , "Проект или Процедура"@ru , "Σχέδιο"@el , "设计或程序"@zh ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E7_Activity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented. \nThis notion includes complex, composite and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράση"@el , "Activity"@en , "活动"@zh , "Atividade"@pt , "Handlung"@de , "Деятельность"@ru , "Activité"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P33i_was_used_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a été employée par"@fr , "被特别使用於"@zh , "wurde benutzt von"@de , "was used by"@en , "χρησιμοποιήθηκε για"@el , "foi usada por"@pt , "был использован посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P68i_use_foreseen_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E57_Material> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "est habituellement utilisé par"@fr , "vorgesehen für Gebrauch durch defined"@de , "use foreseen by"@en , "é empregado por"@pt , "被指定使用於"@zh , "συνήθως χρησιμοποιείται από"@el , "обычно используется посредством"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .

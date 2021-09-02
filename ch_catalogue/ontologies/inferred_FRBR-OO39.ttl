@@ -1,0 +1,61 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises activities that follow the directions of a performance plan, such as a theatrical play, an expression of a choreographic work or a musical work; i.e., they are intended to communicate directly or indirectly to an audience.\nSuch activities can be identified at various levels of granularity, and can be contiguous or not. Any individual performance (with or without intermissions) is a single instance of F31 Performance. In addition, a complete run of performances can also be seen as an instance of F31 Performance, with individual performances as parts. A complete run of performances may comprise an original run plus any of its extensions and tours.\nNote that a performance plan may be more or less elaborate, and may even foresee just improvisation.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Performance"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R25i_was_performed_in>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "was performed in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises sets of directions to which individual performances of theatrical, choreographic, or musical works and their combinations should conform.\nIn the case of theatrical performances, such directions incorporate, but are not limited nor reducible to, the text of a given version of the play performed (e.g., a translated text, some passages of which are deliberately omitted, with some rephrased lines, etc.).\nIn the case of choreographic performances, such directions may incorporate, but are neither limited nor reducible to, the notation of choreographic movements in systems such as labanotation.\nIn the case of musical performances, such directions may incorporate, but are neither limited nor reducible to, the musical score. In case of electronic music, they may incorporate software instructions.\nThese directions may or may not completely determine the form of the intended performance. Depending on the nature of the directions, the form of the intended performance, such as the sets of movements or the sound characteristics, may or may not be predictable from the directions.\nNote that a performance plan may be more or less elaborate, and may even foresee just improvisation.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Performance Plan"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> , <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R66_included_performed_version_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of F31 Performance with a product of the mind that was performed in the course of that instance of F31 Performance.\nAccording to the level of knowledge available about the performance, the range of this property can actually be specialised as either an instance of F1 Work (if nothing is known as to which specific expression of the work was performed), or of F2 Expression (if there is a reasonable amount of certainty as to which specific expression—e.g., a well identified translation of a play—of the work was performed).\nIn addition to being a subproperty of P16 used specific object (was used for), this property also is a shortcut of the fully developed path that goes from F31 Performance to F1 Work through: R25 performed F25 Performance Plan P165 incorporates F22 Self-Contained Expression R3i realises. In this fully developed path, the specific instance of F22 Self-Contained Expression can be precisely identified and described for its own sake, or it can just be known to have necessarily existed.\n\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "included performed version of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R66i_had_a_performed_version_through>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "had a performed version through"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

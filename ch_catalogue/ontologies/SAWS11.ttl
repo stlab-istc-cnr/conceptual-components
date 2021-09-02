@@ -1,0 +1,63 @@
+<http://erlangen-crm.org/current/E53_Place>
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "place"@en .
+
+<http://purl.org/saws/ontology#isLocatedAt>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A physical thing is (or was) located at a particular location (Place or Locus)\n\nNB Use this relation if you are talking about a physically-existing object being located at a physical place. Use physicallyLocatedAt if you are talking about an abstract linguistic object being found at a particular locus."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is located at"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "physicallyLocatedAt"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P53_has_former_or_current_location> , <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isLocationOf> .
+
+<http://purl.org/saws/ontology#isOlderThan>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Physical man-made thing (physical manuscript) is older than (i.e. was produced earlier in time than) another specified Physical man-made thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is older than"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <http://purl.org/saws/ontology#isYoungerThan> .
+
+<http://purl.org/saws/ontology#isYoungerThan>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Physical man-made thing (physical manuscript) is younger than (i.e. was produced later in time than) another specified Physical man-made thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is younger than"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/saws/ontology#isRelatedTo> .
+
+<http://purl.org/saws/ontology#isLocationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A particular Place or Locus is (or was) the location of a physical thing.\n\nNB Use this relation if you are talking about the physical location of a physically-existing object. Use physicalLocationOf if you are talking about the physical location for an abstract linguistic object."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://erlangen-crm.org/current/E53_Place> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is location of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://erlangen-crm.org/current/E18_Physical_Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+                "physicalLocationOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://erlangen-crm.org/current/P53i_is_former_or_current_location_of> , <http://purl.org/saws/ontology#isRelatedTo> .

@@ -1,0 +1,21 @@
+<https://w3id.org/roar#hasRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Relation to another person or organisation, defined by a structured value to indicate the kind of relation. \n\n*Example*:\n```ttl\n:person1 a roar:Person ;\n    schema:gender schema:Female ;\n    roar:hasRelation [ rdf:value :person2 ;\n                       roar:relationType \"mother\" ] .\n\n:person2 a roar:Person ;\n    schema:gender schema:Male ;\n    roar:hasRelation [ rdf:value :person1 ;\n                       roar:relationType \"firstborn son\" ] .\n```"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasRelation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/roar#Entity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<https://w3id.org/roar#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person is a human being that is mentioned in a Document. This can be a direct mention (e.g. 'Aaltie Jans') or indirect (e.g. 'husband of Aaltie Jans'), in which a name might not be known."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/roar#Entity> .

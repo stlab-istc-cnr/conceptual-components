@@ -1,0 +1,74 @@
+<http://www.cidoc-crm.org/cidoc-crm/P147i_was_curated_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "被典藏管理於"@zh , "wurde kuratorisch betreut durch"@de , "was curated by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the activities that result in the continuity of management and the preservation and evolution of instances of E78 Collection, following an implicit or explicit curation plan. \nIt specializes the notion of activity into the curation of a collection and allows the history of curation to be recorded.\nItems are accumulated and organized following criteria like subject, chronological period, material type, style of art etc. and can be added or removed from an E78 Collection for a specific purpose and/or audience. The initial aggregation of items of a collection is regarded as an instance of E12 Production Event while the activity of evolving, preserving and promoting a collection is regarded as an instance of E87 Curation Activity.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "典藏管理"@zh , "Kuratorische Tätigkeit"@de , "Curation Activity"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E78_Collection>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises aggregations of instances of E18 Physical Thing that are assembled and maintained (\"curated\" and \"preserved\", in museological terminology) by one or more instances of E39 Actor over time for a specific purpose and audience, and according to a particular collection development plan.  \nItems may be added or removed from an E78 Collection in pursuit of this plan. This class should not be confused with the E39 Actor maintaining the E78 Collection often referred to with the name of the E78 Collection (e.g. “The Wallace Collection decided…”).\nCollective objects in the general sense, like a tomb full of gifts, a folder with stamps or a set of chessmen, should be documented as instances of E19 Physical Object, and not as instances of E78 Collection. This is because they form wholes either because they are physically bound together or because they are kept together for their functionality.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Collection"@fr , "Collection"@en , "Коллекция"@ru , "Coleção"@pt , "收藏"@zh , "Sammlung"@de , "Συλλογή"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P109i_is_current_or_former_curator_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ist derzeitiger oder früherer Kurator von"@de , "είναι ή ήταν επιμελητής του/της"@el , "est ou a été le conservateur de"@fr , "é ou foi curador de"@pt , "is current or former curator of"@en , "目前或曾经典藏管理"@zh , "является действующим или бывшим хранителем"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P49i_is_former_or_current_keeper_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.\nThe CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Δράστης"@el , "Agente"@pt , "Akteur"@de , "角色"@zh , "Агент"@ru , "Actor"@en , "Agent"@fr ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P109_has_current_or_former_curator>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property identifies the E39 Actor or Actors who assume or have assumed overall curatorial responsibility for an E78 Collection.\n\nIt does not allow a history of curation to be recorded. This would require use of an Event  initiating a curator being responsible for  a Collection.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "有现任或前任典藏管理员"@zh , "имеет действующего или бывшего хранителя"@ru , "hat derzeitigen oder früheren Kurator"@de , "έχει ή είχε επιμελητή"@el , "tem ou teve curador"@pt , "a pour conservateur actuel ou ancien"@fr , "has current or former curator"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P49_has_former_or_current_keeper> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P147_curated>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates an instance of E87 Curation Activity with the instance of E78 Collection that is subject of that  curation activity.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "典藏管理了"@zh , "curated"@en , "betreute kuratorisch"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .

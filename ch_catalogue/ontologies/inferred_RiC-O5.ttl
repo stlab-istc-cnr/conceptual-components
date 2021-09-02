@@ -1,0 +1,146 @@
+<https://www.ica.org/standards/RiC/ontology#existsOrExistedIn>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Position to a Group in which that Position exists or\n            existed, or that is defined by that Group�s organizational structure."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "exists or existed in"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Group> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadPosition> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R056 ('exists or existed in'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#occupiesOrOccupied>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Person to a Position they occupy or\n            occupied."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "occupies or occupied"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasOccupiedBy> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R054 ('occupies or occupied'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadPosition>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'exists or existed in' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Group> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had position"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R056i ('has or had position'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Group>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Two or more Agents that act together as an Agent."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Group"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://www.ica.org/standards/RiC/ontology#Position> , <https://www.ica.org/standards/RiC/ontology#Person> , <https://www.ica.org/standards/RiC/ontology#Mechanism> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Group is a kind of Agent. A Group has a socially recognized\n            identity. Each member of the Group plays a particular role or roles (that is has a\n            particular Position) in the coordinated activity of the Group. Corporate bodies and\n            families are kinds of groups, though other kinds of groups are possible. For example,\n            the “electorate” -- all of the voters in a given election. Complex, large groups may be\n            subdivided into other groups."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E09 (Group\n            Entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Position>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The functional role of a Person within a Group."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Position"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Position is a kind of Agent. Position is the intersection of a\n            Person and a Group. Position exists independently of the Person that holds the Position\n            within a Group. More than one Person may hold a Position. Position is commonly defined\n            in a Mandate, often called a position description or job description. The Mandate may\n            specify the work to be performed (Activity) as well as the competencies for performing\n            the Activity. A Position is often given a Name. A Position may be tied to a project or\n            to a set of tasks and thus have a defined duration. A Position may change over time, as\n            the Group that establishes it changes over time. Position is not to be confused with\n            Occupation or Activity. Within the records created by a Corporate Body, a Position may\n            be used to identify the record sets resulting from activities performed by one or more\n            persons holding the Position over time, without necessarily identifying or describing\n            the Person or persons, or identifying which records were created by each\n            Person."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E12 (Position\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Person>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A human being with a social identity or persona."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Person"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2002/07/owl#disjointWith>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Person is a kind of Agent. Most commonly, a human being\n            (biological person) has a single coeval social identity or persona. In everyday\n            discourse, this is the “real person.” Less common though not rare, over the course of a\n            lifetime, personae in addition to the coeval (or “original”) persona may be associated\n            with the human being. Such “alternative personae” are most often created by the original\n            person for specific purposes. Under some circumstances, an alternative persona might\n            eclipse or replace the original person (Mark Twain eclipsing Samuel Clemens; John Wayne\n            eclipsing Marion Mitchell Morrison), that is, the social (shared) alternative identity\n            becomes the predominate identity. Less common is whentwo or more persons collaborate to\n            create a shared persona. Persona shared by two or more Persons constitute a kind of\n            Group. Within the archival context, the original Person generally will be the focus of\n            the description, with alternative personae noted. Exceptionally, an alternative persona\n            may displace the coeval persona.s."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E08 (Person\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasOccupiedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'occupies or occupied' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Position> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was occupied by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Person> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R054i ('is or was occupied by'\n            relation)"@en .

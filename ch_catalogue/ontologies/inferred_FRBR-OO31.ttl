@@ -1,0 +1,65 @@
+<http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the definitions of publication products.\nAn instance of F3 Manifestation Product Type is the “species”, and all copies of a given object are “specimens” of it. An instance of F3 Manifestation Product Type defines all of the features or traits that instances of F5 Item normally display in order that they may be recognised as copies of a particular publication. However, due to production problems or subsequent events, one or more instances of F5 Item may not exhibit all these features or traits; yet such instances still retain their relationship to the same instance of F3 Manifestation Product Type.\nThe features that characterise a given instance of F3 Manifestation Product Type include: one instance of F24 Publication Expression, containing one or more than one instance of F2 Expression, reflecting the authors’ content of the manifestation and all additional input by the publisher; and the appropriate types of physical features for that form of the object. For example, hardcover and paperback are two distinct publications (i.e. two distinct instances of F3 Manifestation Product Type) even though authorial and editorial content are otherwise identical in both publications. The activity of cataloguing aims at the most accurate listing of features or traits of an instance of F3 Manifestation Product Type that are sufficient to distinguish it from another instance of F3 Manifestation Product Type.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Manifestation Product Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> , <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises complete sets of signs present in publications, reflecting publishers’ final decisions as to both selection of content and layout of the publications. Frequently the creation of a Publication Expression includes both adding graphical form and fonts to Expressions consisting of words alone and selecting illustrations and other content. As such, an instance of Publication Expression incorporates all Expressions combined for the resulting final form of rendering, whether visual, audio or tactile. An instance of Publication Expression is one entity regardless of the number of independent Expressions published within it, as long as it represents one unit of release. The published third party content can be associated via the property P165 incorporates (is incorporated in).\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Expression"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/CLR6i_should_be_carried_by>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "should be carried by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/R24_created>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates the instance of F24 Publication Expression that was created during a particular F30 Publication Event with that F30 Publication Event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "created"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/CLR6_should_carry>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property associates a publication, i.e. an instance of F3 Manifestation Product Type, with an instance of F24 Publication Expression, which all exemplars of that publication should carry, as long as they are recognised as complete exemplars of that publication. Typically, this property is observed on one exemplar of a publication, and extrapolated to all other exemplars of the same publication. This logical inference is an induction along the path that can be modelled as: F3 Manifestation Product Type R7i has example F5 Item R6 carries F24 Publication Expression.\nIt can happen that a given exemplar, or a subset of exemplars, originally produced, or intended to be produced with that characteristic, accidentally lacks part of the publication expression. This fact should be recorded as a property of F5 Item, and not of F3 Manifestation Product Type.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "should carry"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises the activities of publishing. Such an event includes the creation of an F24 Publication Expression and setting up the means of production. The end of this event is regarded as the date of publication, regardless of whether the carrier production is started. Publishing can be either physical or electronic. Electronic publishing is regarded as making an instance of F24 Publication Expression available in electronic form on a public network. Electronic Publishing does not mean producing a physical instance of F5 Item by partially electronic means. Making an electronic file available on a physical carrier can be regarded as equivalent to setting up the means of production; downloading the file is regarded as the electronic equivalent of F32 Carrier Production Event.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Publication Event"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> .

@@ -1,0 +1,65 @@
+<http://www.cidoc-crm.org/cidoc-crm/P72_has_language>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the E56 Language of an E33 Linguistic Object. \nLinguistic Objects are composed in one or more human Languages. This property allows these languages to be documented.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "使用语言"@zh , "has language"@en , "é da língua "@pt , "hat Sprache"@de , "est en langue"@fr , "έχει γλώσσα"@el , "имеет язык"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E56_Language> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P73_has_translation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This property describes the source and target of instances of E33Linguistic Object involved in a translation.\nWhen a Linguistic Object is translated into a new language it becomes a new Linguistic Object, despite being conceptually similar to the source object.\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hat Übersetzung"@de , "has translation"@en , "έχει μετάφραση"@el , "tem tradução"@pt , "a pour traduction"@fr , "有译文"@zh , "имеет перевод"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E56_Language> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "является языком для"@ru , "被用来撰写"@zh , "é a língua de"@pt , "est la langue de"@fr , "ist Sprache von"@de , "is language of"@en , "είναι γλώσσα του/της"@el ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topObjectProperty> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P73i_is_translation_of>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "est la traduction de"@fr , "翻译自"@zh , "is translation of"@en , "είναι μετάφραση του/της"@el , "ist Übersetzung von"@de , "é tradução de"@pt , "является переводом"@ru ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class comprises identifiable expressions in natural language or languages. \nInstances of E33 Linguistic Object can be expressed in many ways: e.g. as written texts, recorded speech or sign language. However, the CRM treats instances of E33 Linguistic Object independently from the medium or method by which they are expressed. Expressions in formal languages, such as computer code or mathematical formulae, are not treated as instances of E33 Linguistic Object by the CRM. These should be modelled as instances of E73 Information Object.\nThe text of an instance of E33 Linguistic Object can be documented in a note by P3 has note: E62 String\n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Objet linguistique"@fr , "Objeto Lingüístico"@pt , "语言物件"@zh , "Γλωσσικό Αντικείμενο"@el , "Linguistic Object"@en , "Линвистический Объект"@ru , "Sprachlicher Gegenstand"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E56_Language>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class is a specialization of E55 Type and comprises the natural languages in the sense of concepts. \nThis type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E56 Language, e.g.: “instances of  Mandarin Chinese”.\nIt is recommended that internationally or nationally agreed codes and terminology are used to denote instances of E56 Language, such as those defined in ISO 639:1988. \n"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "语言"@zh , "Γλώσσα"@el , "Language"@en , "Langue"@fr , "Язык"@ru , "Língua"@pt , "Sprache"@de ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .

@@ -1,0 +1,50 @@
+<https://w3id.org/arco/ontology/context-description/Bibliography>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the bibliography of an entity, e.g. a cultural property."@en , "Questa classe rappresenta un riferimento bibliografico che riguarda un'entità, per esempio un bene culturale."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/context-description> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Bibliografia"@it , "Bibliography"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/italia/onto/l0/Object> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normativa Trasversale 4.00: DO/BIB; RE/RCG/RCGS - Normative VeAC e AT 3.01: DO/BIB; DO/BSE."@it .
+
+<https://w3id.org/arco/ontology/context-description/BibliographyCategory>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "This class represents the category associated to a bibliography (e.g. accompanying bibliography, comparative bibliography, specific bibliography)."@en , "Questa classe rappresenta la categoria della bibliografia. Nel contesto delle normative per la catalogazione ICCD, questa classe ha associato un vocabolario chiuso definito in tre tipi: bibliografia specifica, bibliografia di confronto e bibliografia di corredo."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Genere della bibliografia"@it , "Bibliography category"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://w3id.org/arco/ontology/core/Category> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stable"@en , "stabile"@it ;
+        <https://w3id.org/arco/ontology/catalogue/iccdNormTag>
+                "ICCD Normative OA-OAC-MI-D-S-RA-TMA-CA-MA-SAS-SI 3.00: DO/BIB/BIBX - Normative VeAC e AT 3.01: DO/BSE/BSEX."@it .
+
+<https://w3id.org/arco/ontology/core/hasCategory>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The object property that associates any object with a category."@en , "La object property che associa un qualunque oggetto a una categoria."@it ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://w3id.org/arco/ontology/core> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ha categoria"@it , "has category"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://w3id.org/arco/ontology/core/Category> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://w3id.org/arco/ontology/core/hasConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://w3id.org/arco/ontology/core/isCategoryOf> ;
+        <http://www.w3.org/2002/07/owl#versionInfo>
+                "stabile"@it , "stable"@en .

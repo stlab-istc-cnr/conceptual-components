@@ -1,0 +1,23 @@
+<http://purl.org/spar/fabio/hasAccessDate>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The date on which a particular digital item, such as a PDF or an HTML file, has been accessed by somebody."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://purl.org/spar/fabio/Item> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has access date"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://purl.org/dc/terms/date> .
+
+<http://purl.org/spar/fabio/Item>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A subclass of FRBR item, restricted to exemplars of fabio:Manifestations.  An example of a fabio:Item is a printed copy of a journal article on your desk, or a PDF file of that article that you purchased from a publisher and that now resides in digital form on your computer hard drive.  "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "item"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://purl.org/vocab/frbr/core#Item> ;
+        <http://purl.org/dc/elements/1.1/description>
+                "A fabio:Item can only have part or be part of another fabio:Item. Moreover, it can be an exemplar only of a fabio:Manifestation."@en .

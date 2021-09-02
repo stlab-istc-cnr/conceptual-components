@@ -1,0 +1,29 @@
+<http://lawd.info/ontology/hasCitation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Indicates a Citation that contains the source for a lawd:Attestation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://lawd.info/ontology/EvidentiaryItem> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://lawd.info/ontology/Citation> .
+
+<http://lawd.info/ontology/EvidentiaryItem>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Superclass for types of evidence that support assertions."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://lawd.info/ontology/Observation> .
+
+<http://lawd.info/ontology/conjunctOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#SymmetricProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Indicates that a piece of evidence (any subclass of lawd:EvidentiaryItem) is joined to another—for example because they co-occur."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://lawd.info/ontology/EvidentiaryItem> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://lawd.info/ontology/EvidentiaryItem> .
+
+<http://lawd.info/ontology/Citation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Citation models a bibliographic reference as a resource."@en .

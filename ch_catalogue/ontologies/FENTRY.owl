@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://w3id.org/people/essepuntato/fentry">
+    <dc:description rdf:resource="http://svn.code.sf.net/p/dwellonit/code/FEO/fentry.png"/>
+    <dc:title xml:lang="en">F Entry (Scheda F) Ontology
+FEO</dc:title>
+    <owl:imports rdf:resource="http://purl.org/spar/pro/"/>
+    <dc:creator xml:lang="en">Silvio Peroni</dc:creator>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://purl.org/emmedi/hico"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Description of a photograph: metadata and subjects.</rdfs:comment>
+    <owl:imports rdf:resource="http://purl.org/spar/scoro/"/>
+    <owl:imports rdf:resource="http://purl.org/spar/fabio"/>
+    <rdfs:label xml:lang="en">F Entry Ontology</rdfs:label>
+    <dc:creator>Marilena Daquino</dc:creator>
+    <owl:versionIRI rdf:resource="https://w3id.org/people/essepuntato/fentry/1.0"/>
+    <dc:date>2016-12-15</dc:date>
+    <owl:imports rdf:resource="http://purl.org/spar/cito/"/>
+    <dc:description xml:lang="en">The Scheda F is a document containing metadata describing a photograph having as subject a concrete object (or part of it) or a group of different objects. 
+
+Any Scheda F (F), as well as the photograph (P) it describes and the subjects of such photograph (S), can be described in terms of some entities of the Functional Requirements for Bibliographic Records, i.e., Work (referring to the essence of the object; it applies to F, P and S), Expression (referring to the content of the object; it applies to F and, P), Manifestation (referring to the format of the object; it applies to P and S) and Item (referring to the physical location of the object; it applies to F, P and S). All these objects, i.e., the Scheda F, the photograph and the related object portrayed, are subject to authorial attribution as result of some production activity involving someone.
+
+Exemples of [usage](http://svn.code.sf.net/p/dwellonit/code/FEO/examples.html) of this ontology as well as exemplar [SPARQL queries](http://svn.code.sf.net/p/dwellonit/code/FEO/sparql.html) are available online.</dc:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/hasManifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Manifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2014/03/fentry/describes">
+    <owl:inverseOf rdf:resource="http://www.essepuntato.it/2014/03/fentry/isDescribedBy"/>
+    <rdfs:comment xml:lang="en">It allows one to link a Scheda F to the photograph and the portrayed object the Scheda F describes.</rdfs:comment>
+    <rdfs:label>describes</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.essepuntato.it/2014/03/fentry/FEntry"/>
+    <rdfs:range rdf:nodeID="N7663938fce8044ac9a3fb564bc130387"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4c7686c22d15481faee96ad650a89981">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N1821947580484cfa867e60e84912e7d3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd6615472a9b04429bdbe9ca039927642">
+    <rdf:first rdf:nodeID="Nac4b3c82c5844838a123fd05bfe061ed"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1b5a757bd6aa45bb87b39ad29289f197">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#subjectOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2014/03/fentry/FEntry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/EntityMetadata"/>
+    <rdfs:label xml:lang="it">scheda F</rdfs:label>
+    <rdfs:comment xml:lang="en">It is a document containing metadata about a photograph and about the concrete object portrayed by the photograph.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4e200594fde64233be994834ae0175df">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#embodimentOf"/>
+    <owl:someValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Shot"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2014/03/fentry/Shot">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
+    <rdfs:comment xml:lang="en">The realisation of a photograph - it is strictly related with the act of taking the picture by someone.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N0f48a896ce2846b1a9f4faaafb961f84"/>
+    <rdfs:label xml:lang="en">shot</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Ncce0fdd0998748dbb314e0b2f44dbc2a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5f2d6e753bd14403a3d94fc0afea7b1d">
+    <owl:someValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#subjectOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7b27e7f3562344a7beb49b95e63b54e5">
+    <owl:intersectionOf rdf:nodeID="N3960d270956d49c4af6bed6e794b603f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9396ecbd45d54bdaa917e038f3bf6d59">
+    <rdf:first rdf:nodeID="Ne0835070743c40158b1bedc411bcf845"/>
+    <rdf:rest rdf:nodeID="N3c9c94b9b3284344ae1e30cb4c300b5e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2014/03/fentry/Photograph">
+    <rdfs:subClassOf rdf:nodeID="N81ec847e3c784ae2b4a3d985c94ad545"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">photograph</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Nf6bd64c1af8e4c27a3a4a69190c8a33e"/>
+    <rdfs:comment xml:lang="en">It is a static, visual representation of some concrete object (or part of it) or a group of different objects.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/StillImage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd6054177c464169a418c8ddb74f3507">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N4e200594fde64233be994834ae0175df"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda85c0803b054bafb0d4e20cddecd500">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N7605a2ced3d24874a1f4698111b75925"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7d7a34d79f54bb1a22f8ba4df56d495">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nc3f154a1ee2646a5924609bdd1a5e3be"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N53d5cd3110e840bf8bb04b7256717b7a">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#subjectOf"/>
+    <owl:someValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N88f45cd5f52f4c0aa2aec5fbc18667e1">
+    <owl:intersectionOf rdf:nodeID="Nf255e805aad74439b28b613cfc935eb4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N80cf8f6e815745449a1b774c0e1e654a">
+    <rdf:first rdf:nodeID="N1bd7f27f90ee43fa809f2083314e9071"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N49ade5f1507941e290ffe6ea27125582">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Item"/>
+    <rdf:rest rdf:nodeID="N208e6aef11f7416e8a2f31ac58932107"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6366ac5d313d4335b99f781cf4044d32">
+    <owl:onProperty rdf:resource="http://purl.org/spar/fabio/hasPortrayal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:nodeID="Nc149cf46972b4ea48bdf30d84fa4a9d1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/hasPortrayal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9cdde1f398244b2d8bfa838ff07e18e5">
+    <owl:allValuesFrom rdf:resource="http://purl.org/spar/fabio/ComputerFile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N59811749a1354b13a31e5f26db6903e5">
+    <rdf:first rdf:resource="http://www.essepuntato.it/2014/03/fentry/Shot"/>
+    <rdf:rest rdf:nodeID="Ne6af5d1c02a24325b4337e7c88411891"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfc859819e0154923b9addf89f436896d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#subjectOf"/>
+    <owl:someValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f48a896ce2846b1a9f4faaafb961f84">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#realizationOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na21912db0b50460fae9ed3d12f75b656">
+    <rdf:rest rdf:nodeID="N84772f4cb0094d78af7def61a61ccc66"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2014/03/fentry/isDescribedBy">
+    <rdfs:label xml:lang="en">is described by</rdfs:label>
+    <rdfs:comment xml:lang="en">It allows one to link a photograph and portrayed object to the scheda F that describes them.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd93bbe5e77de49c9880e827c5d406293">
+    <rdf:first rdf:nodeID="Nc856c26802cd49659e8a581c4641f715"/>
+    <rdf:rest rdf:nodeID="N4cad0cbed4824d2bb80f32d84f04fe1b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0859af701b5a4be29f2d4abc878daf58">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N2bc289cf8df249cf9253073d8b484389"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8576dfef1fbf46b690cc51f3a4255a91">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Item"/>
+    <rdf:rest rdf:nodeID="Nd12f2505bbf6421892cd41a33f82451d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac8ec9698ae140ddb5bf10bfa70c8d4e">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
+    <rdf:rest rdf:nodeID="Ndd6054177c464169a418c8ddb74f3507"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4793c6e14fd141d588d3baa6bca6d2cf">
+    <rdf:rest rdf:nodeID="N550025897cd244669de08f0777b9426b"/>
+    <rdf:first rdf:nodeID="N4c7686c22d15481faee96ad650a89981"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N81ec847e3c784ae2b4a3d985c94ad545">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#subject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:nodeID="Na50e5f16fe224ad9b994aa4b4f041015"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd12f2505bbf6421892cd41a33f82451d">
+    <rdf:first rdf:nodeID="N53d5cd3110e840bf8bb04b7256717b7a"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne0835070743c40158b1bedc411bcf845">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N80b441a26e0944d1b9b344db980baa6c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6af5d1c02a24325b4337e7c88411891">
+    <rdf:rest rdf:nodeID="N9396ecbd45d54bdaa917e038f3bf6d59"/>
+    <rdf:first rdf:nodeID="N7b27e7f3562344a7beb49b95e63b54e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#partOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na50e5f16fe224ad9b994aa4b4f041015">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N30880e50f5c74783810a7d8d7a6ccfbc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N55aea272c49641598476625efc48e717">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Object"/>
+    <rdf:rest rdf:nodeID="N93ae199c7dac4d2fbb680bcedf24b03a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc423240dd2534cee8d6572ae4af2ee4a">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/AnalogManifestation"/>
+    <rdf:rest rdf:nodeID="N449a115cb38e4f04a8f000ec5d80e788"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf6bd64c1af8e4c27a3a4a69190c8a33e">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#realization"/>
+    <owl:allValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Shot"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1821947580484cfa867e60e84912e7d3">
+    <rdf:rest rdf:nodeID="N8af7e4f9736f4034acbdaaedb99c1173"/>
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Work"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc149cf46972b4ea48bdf30d84fa4a9d1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N8576dfef1fbf46b690cc51f3a4255a91"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8af7e4f9736f4034acbdaaedb99c1173">
+    <rdf:first rdf:nodeID="N6366ac5d313d4335b99f781cf4044d32"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3f154a1ee2646a5924609bdd1a5e3be">
+    <owl:onProperty rdf:resource="http://purl.org/spar/fabio/hasRepresentation"/>
+    <owl:someValuesFrom rdf:nodeID="N7618b7761d4b4e8693524d83691ae8e7"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#exemplar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N30880e50f5c74783810a7d8d7a6ccfbc">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/AnalogItem"/>
+    <rdf:rest rdf:nodeID="N55aea272c49641598476625efc48e717"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncce0fdd0998748dbb314e0b2f44dbc2a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
+    <owl:allValuesFrom rdf:nodeID="N7762cc5969b2464184d63a9858b4007d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7663938fce8044ac9a3fb564bc130387">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N9a6bd1b078634917ae1968e44fccde1a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bd7f27f90ee43fa809f2083314e9071">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/spar/fabio/AnalogItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N485ad2133118464a8133cbdae97644c6">
+    <owl:intersectionOf rdf:nodeID="Nd93bbe5e77de49c9880e827c5d406293"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a09abd93fea4e57bec46a1a6b683805">
+    <rdf:first rdf:nodeID="Nf5edca94226a406d8a625611d93d501d"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N70cc72488a9242518c954b1970f5696e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N49ade5f1507941e290ffe6ea27125582"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Item">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7605a2ced3d24874a1f4698111b75925">
+    <rdf:rest rdf:nodeID="N55208671f8a347e7b46486fa84657a5f"/>
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/DigitalManifestation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N86aaa5e2f5264a66b76ede0d9c8c1c50">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Item"/>
+    <rdf:rest rdf:nodeID="Nac8d7b6811e64d5497b8a709d75831ed"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2bc289cf8df249cf9253073d8b484389">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
+    <rdf:rest rdf:nodeID="N9a09abd93fea4e57bec46a1a6b683805"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf5edca94226a406d8a625611d93d501d">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:nodeID="N70cc72488a9242518c954b1970f5696e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#endedAtTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84772f4cb0094d78af7def61a61ccc66">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4cad0cbed4824d2bb80f32d84f04fe1b">
+    <rdf:first rdf:nodeID="N5f2d6e753bd14403a3d94fc0afea7b1d"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N80b441a26e0944d1b9b344db980baa6c">
+    <rdf:rest rdf:nodeID="Nd6615472a9b04429bdbe9ca039927642"/>
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Item"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc856c26802cd49659e8a581c4641f715">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nd5ad423cfe1f492c8eafa9aed966c60e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N449a115cb38e4f04a8f000ec5d80e788">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nda85c0803b054bafb0d4e20cddecd500"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93ae199c7dac4d2fbb680bcedf24b03a">
+    <rdf:rest rdf:nodeID="N0f2e9d3b556f48a6a9f273197b275d76"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3c9c94b9b3284344ae1e30cb4c300b5e">
+    <rdf:rest rdf:nodeID="N8c0f64ab5f9b4cccb67f2721541c5fac"/>
+    <rdf:first rdf:nodeID="N7e57b14964224ae6a6102daf8098b897"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N208e6aef11f7416e8a2f31ac58932107">
+    <rdf:first rdf:nodeID="N1b5a757bd6aa45bb87b39ad29289f197"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N550025897cd244669de08f0777b9426b">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N485ad2133118464a8133cbdae97644c6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N55208671f8a347e7b46486fa84657a5f">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N9cdde1f398244b2d8bfa838ff07e18e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf255e805aad74439b28b613cfc935eb4">
+    <rdf:rest rdf:nodeID="N80cf8f6e815745449a1b774c0e1e654a"/>
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/ItemCollection"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a6bd1b078634917ae1968e44fccde1a">
+    <rdf:first rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+    <rdf:rest rdf:nodeID="N59811749a1354b13a31e5f26db6903e5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#generated">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7e57b14964224ae6a6102daf8098b897">
+    <owl:intersectionOf rdf:nodeID="Nac8ec9698ae140ddb5bf10bfa70c8d4e"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#ResponsibleEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#gMonthYear">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac8d7b6811e64d5497b8a709d75831ed">
+    <rdf:first rdf:nodeID="Nfc859819e0154923b9addf89f436896d"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd5ad423cfe1f492c8eafa9aed966c60e">
+    <rdf:rest rdf:nodeID="Na21912db0b50460fae9ed3d12f75b656"/>
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Item"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7618b7761d4b4e8693524d83691ae8e7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N86aaa5e2f5264a66b76ede0d9c8c1c50"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3960d270956d49c4af6bed6e794b603f">
+    <rdf:first rdf:resource="http://purl.org/spar/fabio/Expression"/>
+    <rdf:rest rdf:nodeID="Nd7d7a34d79f54bb1a22f8ba4df56d495"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#subject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7762cc5969b2464184d63a9858b4007d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nc423240dd2534cee8d6572ae4af2ee4a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac4b3c82c5844838a123fd05bfe061ed">
+    <owl:someValuesFrom rdf:resource="http://www.essepuntato.it/2014/03/fentry/Photograph"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/fabio/isPortrayalOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#gYear">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f2e9d3b556f48a6a9f273197b275d76">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N88f45cd5f52f4c0aa2aec5fbc18667e1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Work">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#startedAtTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c0f64ab5f9b4cccb67f2721541c5fac">
+    <rdf:rest rdf:nodeID="N4793c6e14fd141d588d3baa6bca6d2cf"/>
+    <rdf:first rdf:nodeID="N0859af701b5a4be29f2d4abc878daf58"/>
+  </rdf:Description>
+</rdf:RDF>

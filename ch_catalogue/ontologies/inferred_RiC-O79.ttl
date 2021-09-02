@@ -1,0 +1,637 @@
+<https://www.ica.org/standards/RiC/ontology#recordResourceExtent>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The quantity of information content as human experienced\n            represented in the Record Resource. The method and precision of expressing the quantity\n            of information represented in a Record Resource will vary by the kind of Record Resource\n            being described as well as by processing economy constraints. For record sets, quantity\n            may be expressed as number of records, or, for analogue records in particular, by the\n            physical storage dimensions of the Record members. For individual records or record\n            parts, quantity may be expressed in more precise terms. Use if you don't use\n            RecordResourceExtent class and its properties for handling such\n            information."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource extent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#physicalOrLogicalExtent> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "6 photographs"@en , "2 films"@en , "34 poems"@en , "6 maps"@en , "2.065.735 characters"@en , "1,500 words"@en , "3 minutes and 24 seconds"@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "The number, size or duration of the information content\n            unit(s) remains the same even if the information is instantiated in various carriers.\n            For example, a file of 1500 words (Record Resource Extent) may have Instantiation Extent\n            3kb as a Word document and 5kb as a PDF file, and instantiations may be represented on a\n            CD of 700mb (Carrier Extent). Use if you don't use RecordResourceExtent class and its\n            properties for handling such information."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-A35 (Record Resource extent\n            attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isPublisherOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects an Agent to a Record Resource that it\n            published."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isPublisherOf"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#Thing>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Any idea, material thing, or event within the realm of human\n            experience."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Thing"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2002/07/owl#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Includes all RiC entities as well as any concept, material\n            thing, or event that may be the subject of a Record Resource or associated with an\n            Activity. Examples of entities not explicitly addressed in RiC includes but is not\n            limited to the following: abstract concepts; cultural movements, named periods and\n            events; named things, objects and works; legendary, mythical or fictitious figures,\n            characters or beings."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E01 (Thing\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#RecordResourceToInstantiationRelation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to one or more Instantiations that\n            instantiate it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource to Instantiation Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Relation> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Class implementation of RiC-R025 and RiC-R025i\n            relations"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isContentTypeOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Content Type to a Record or Record Part whose content\n            it categorizes."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#ContentType> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is content type of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasCategoryOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasContentOfType> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'describes or described' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was described by"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasSubjectOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#describesOrDescribed> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R021i ('is or was described by'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasGeneticLinkToRecordResource>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects two Record Resources when there is a genetic link\n            between them. Genetic in this sense is as defined by diplomatics, i.e. the process by\n            which a Record Resource is developed. This relation is symmetric."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has genetic link to record resource "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRecordResourceAssociatedWithRecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasGeneticLinkToRecordResource> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Use to connect two Record Resources only if it is not possible\n            to be more accurate and specify a narrower, asymmetric relation, e.g. ‘is original\n            of’."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R023 ('has genetic link to record resource'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Agent>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Person, or Group, or an entity created by a Person or Group\n            (Mechanism), or a Position, that acts in the world."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Agent"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "An Agent may have one or more identities; an identity is a\n            constellation of properties or relations that together “identify” the Agent. A Person or\n            Group commonly has one identity, though each also may have one or more alternative\n            identities. Such alternative identities may be shared by more than one Person or Group.\n            Alternative identities include but are not limited to pseudonyms, heteronyms, DBA (Doing\n            Business As), and trade identities. An alternative identity should not be confused with\n            a Position in a Group, for example, presidents, prime ministers, governors, popes,\n            royalty, or bishops. Nor should an alternative identity be confused with a variant name\n            or identifier of the same identity. Agent also includes entities created by a Person or\n            Group that act on behalf of the creating Agent in an autonomous or semi-autonomous\n            manner. Examples of a Mechanism include software agents, robots, and space and\n            underwater probes that generate data (records) in the course of Activity assigned to and\n            in conformance with the instructions given to them by the creating Person or\n            Group."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E07 (Agent\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasSubjectOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has or had subject' object property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was subject of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RIc-R019i ('is or was subject of'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadMainSubject>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to a Thing that is or was its main\n            subject."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had main subject"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Use for specifying, for example, that a Record Set of type\n            personal file has main subject some person, which would help end users to retrieve the\n            main archival resources about this person."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R020 ('has or had main subject'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasPublisher>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record resource to an Agent who published\n            it."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hasPublisher"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Agent> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isPublisherOf> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#hasReply>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to a reply, usually in the form of\n            correspondence."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has reply"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#precedesInTime> , <https://www.ica.org/standards/RiC/ontology#isRecordResourceAssociatedWithRecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R013 ('has reply'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#classification>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A term, number or alphanumeric string that is usually taken from\n            an external classification vocabulary or scheme that qualifies the Record\n            Resource."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "classification"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "human resource management"@en , "BUD-01-F002 [example of a classification number from a corporate\n            file plan]"@en , "financial affairs"@en , "student registration"@en , "digitized items"@en ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "No further statement is made here about the nature of the\n            qualifier, nor about the relation it has with the Record Resource or with the management\n            of the Record Resource. The value of this property may in turn be used as a criterion\n            for identifying the qualified Record Resource as a member of a Record\n            Set."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-A07 (Classification\n            attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isCopyOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has copy' object property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is copy of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#followsInTime> , <https://www.ica.org/standards/RiC/ontology#hasGeneticLinkToRecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R012i ('is copy of'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isInstantiationOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has instantiation' object property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Instantiation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is instantiation of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R025i ('is instantiation of'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#recordResourceToInstantiationRelationHasSource>
+        a       <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource To Instantiation Relation to the\n            Record Resource (that was instantiated). "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResourceToInstantiationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "record resource to instantiation relation has source "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#relationHasSource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  .
+
+<https://www.ica.org/standards/RiC/ontology#describesOrDescribed>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to a Thing that it\n            describes."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "describes or described"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Can be used, among other situations, for specifying that some\n            finding aid (a Record that has Documentary Form Type Finding Aid) describes some Record\n            Set."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R021 (describes or\n            described)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#scopeAndContent>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Summary of the scope (such as time periods, geography) and\n            content (such as subject matter, administrative processes) of the Record Resource. It\n            should highlight the information conveyed in the Record Resource, why it was created,\n            received, and/or maintained, and the Agents connected to it. Scope and Content provides\n            a more complete summary of the informational content of the Record Resource. It may\n            include description of relations with agents, activities, dates and places, or with\n            other record resources. It is not to be confused with the History attribute which\n            focuses on the origination and subsequence changes to a Record Resource."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "scope and content"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2002/07/owl#topDataProperty> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "Se hace referencia a construcción del Gran Hotel, iniciada en\n            1899 bajo el nombre de Casa Celestino. Tras su interrupción en 1902, continuó la obra ya\n            con su nombre actual."@es , "Includes a detailed list of the lands and villages given by the\n            King to the Abbey."@en , "Among the witnesses, the duke of Normandy."@en , "Letter from Vlad the Impaler (Dracula) to the Council of\n            Kronstadt asking them to send military support against the Ottomans, within the\n            framework of their alliance treaty."@en , "The author explains why he does not agree with the decision made\n            and adds that it cannot be applied."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-A38 (Scope and Content\n            attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#RecordResource>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "A Record, Record Set, or Record Part produced or acquired and\n            retained by an Agent in the course of Activity."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Producing a record resource may imply either its newly\n            creation or a reuse of previous existing information by combination, rearrangement,\n            selecting, reformatting etc. Records, Record Sets, and Record Parts are all evidence of\n            the activities of an Agent. More than one Agent may be involved in the creation of a\n            Record Resource. The role of the Agent in creating the Record Resource may take\n            different forms, for example, authoring of an individual record, accumulating a set of\n            records, or forming a set of records. Though a Record, Record Set, and Record Part,\n            under most circumstances, may be easily distinguished from one another, frequently\n            identifying the boundary of each and how the “bounded information regions” interrelate,\n            may present particular challenges. Documentary Forms provide the rules governing many\n            Records, providing criteria for identifying its boundary, and identifying its essential\n            Record Parts. Many Records, though, do not have well-established documentary forms,\n            particularly electronic records, where it may be difficult to determine whether\n            individual elements represented in separate bitstreams are record parts, records, or\n            record sets. For example, is a photograph represented independently in a bitstream\n            embedded in a text document a Record, or a Record Part ? Or is the same photograph\n            attached to an email, maintaining its independent representation, a Record or a Record\n            Part? When information is grouped for some purpose, for example, zip or tar “file\n            compression” for saving storage space, presents a further challenge. One file comprises\n            multiple bitstreams subjected to techniques that remove bits that can be losslessly\n            recovered when decompressed. Under what circumstances is such a compressed bitstream a\n            Record or a Record Set? Determining when an information object is a Record, Record Part,\n            or Record Set is based on perspective and judgement exercised in a particular context.\n            In one context, the Agent describing an information object may designate it a Record,\n            while another Agent in a different context may designate it a Record Part. Both\n            designations are supported by RiC, and the significance of the difference for users of\n            the records is ameliorated by the fact that attributes and relations employed in\n            describing each of the record entities are shared."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E02 (Record Resource\n            entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasInstantiation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to one of its\n            Instantiations."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has instantiation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Instantiation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isInstantiationOf> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R025 ('has instantiation'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#Instantiation>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The inscription of information made by an Agent on a physical\n            carrier in any persistent, recoverable form as a means of communicating information\n            through time and space."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Instantiation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "A Record or Record Part must have been instantiated at least\n            once, though this instantiation may no longer exist at the moment of description. An\n            instantiation might also exist at the moment of description, but be destroyed at a later\n            moment in time, when, for example, a derived instantiation might become the only\n            remaining instantiation. A Record Set may have an instantiation, which is to say that it\n            is not a necessary condition. An Instantiation may be derived from another\n            Instantiation. A Record Resource may have many Instantiations simultaneously (for\n            instance, a record printed and saved in the same time as DOCX and PDF/A would have 3\n            concurrent instantiations) or through time (for example, copy of a record). Depending on\n            the context, a new instantiation may be seen as a new or as the same record resource.\n            During in the process of re-instantiation something is lost and something is preserved,\n            but it is up to the context and the Agent that produces or uses that Instantiation to\n            assess whether the two instantiations are functionally equivalent or not. For instance,\n            a postcard representing a town map from 1874 (Instantiation 1) is digitized and kept as\n            a JPEG file (Instantiation 2). The digital copy may be considered as instantiating the\n            \"same\" Record by an Agent considering the information transmitted by the Record (e.g.,\n            the urban landscape displayed), but as a\" different\" Record by an antiquarian more\n            focused on the materiality of the carrier. Successive instantiations may change the\n            perceivable boundaries of a Record Resource. For instance, a case file comprising many\n            records may be digitized and saved as one single PDF file, which, from management\n            perspective, may be treated as one Record. Similarly, a large Record Set (a fonds or a\n            series) may be maintained as one database. On the other hand, one record (main document\n            and its annexes) may be digitized in separate files and each one may be managed as a\n            discrete “physical” item. Instantiations may require mediation to communicate the\n            information in the Record Resource. While a traditional Record on paper can simply be\n            read by an Agent in order to understand the information, a vinyl recording, a video\n            cassette or a digital file needs a device (mediator) to codify or decodify the\n            information conveyed. This mediator may imply simple physical components (a turntable\n            needle, for example), or a complex gallery of software and hardware elements.\n            Instantiations are more than the mere informational content of Record Resource and may\n            be the focus of preservation and physical management of records. The use of particular\n            document types for records, such as a medieval charter, may have implications for the\n            authenticity of the records. Hence, the way a Record Resource is instantiated\n            contributes to the contextualizing of the content.record resource is instantiated\n            contributes to the contextualizing the content. Distinguishing the message conveyed\n            (Record Resource) and its physical representations (Instantiation) allows for the\n            efficient management of their descriptions, and preserve information about a Record\n            Resource even when no physical representation of it exists or is known to exist anymore.\n            The relations between distinct instantiations can then be expressed wherever they\n            coexist, and they can be related to the Record Resource they\n            instantiate."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-E06 (Instantiation\n            entity)"@en ;
+        <https://www.ica.org/standards/RiC/ontology#closeTo>
+                "PREMIS Representation"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isOrWasMainSubjectOf>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has or had main subject' object\n            property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is or was main subject of"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasSubjectOf> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasOrHadMainSubject> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R020i (is or was main subject\n            of)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#ContentType>
+        a       <http://www.w3.org/2002/07/owl#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "The fundamental form of communication in which a Record is\n            expressed and the human sense through which it is intended to be\n            perceived."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Content Type"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <https://www.ica.org/standards/RiC/ontology#Type> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Should not be confused with Representation Type or Carrier\n            Type of a related Instantiation since the form of communication can be independent of\n            the representation or carrier, for example, a map (Content Type: cartographic image) can\n            be represented as a sketch (Representation Type: graphic) or as a GIS-coded elements\n            (Representation Type: computer)."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Corresponds to RiC-A10 (Content Type\n            attribute)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#recordResourceIsSourceOfRecordResourceToInstantiationRelation>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource (that was instantiated) to a Record\n            Resource To Instantiation Relation"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "record resource is source of record resource to instantiation\n            relation "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResourceToInstantiationRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#recordResourceToInstantiationRelationHasSource> .
+
+<https://www.ica.org/standards/RiC/ontology#publicationDate>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Date of the publication of a Record Resource."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "publication date"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#date> ;
+        <http://www.w3.org/2004/02/skos/core#scopeNote>
+                "Provided for usability reasons. May be deprecated and removed\n            later on. Use only if you don't use Date classes for handling dates."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Data property specialized implementation of\n            RiC-E18 (Date entity)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isRecordResourceAssociatedWithRecordResource>
+        a       <http://www.w3.org/2002/07/owl#SymmetricProperty> , <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects two Record Resources. This object property is\n            symmetric."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is record resource associated with record resource "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isRecordResourceAssociatedWithRecordResource> ;
+        <http://www.w3.org/2002/07/owl#propertyChainAxiom>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R022 ('is record resource associated with\n            record resource' relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasCopy>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to a copy of that Record\n            Resource."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has copy "@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#hasGeneticLinkToRecordResource> , <https://www.ica.org/standards/RiC/ontology#precedesInTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isCopyOf> ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R012 ('has copy'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#isReplyTo>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Inverse of 'has reply' object property."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "is reply to"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRecordResourceAssociatedWithRecordResource> , <https://www.ica.org/standards/RiC/ontology#followsInTime> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#hasReply> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R013i ('is reply to'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#hasOrHadSubject>
+        a       <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Connects a Record Resource to a Thing that is or was its\n            subject."@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "has or had subject"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <https://www.ica.org/standards/RiC/ontology#Thing> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#isRelatedTo> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                []  ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                []  ;
+        <http://www.w3.org/2002/07/owl#inverseOf>
+                <https://www.ica.org/standards/RiC/ontology#isOrWasSubjectOf> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "RiC-R019 ('has or had subject'\n            relation)"@en .
+
+<https://www.ica.org/standards/RiC/ontology#recordResourceStructure>
+        a       <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+        <http://www.w3.org/2000/01/rdf-schema#comment>
+                "Information about the intellectual arrangement and composition\n            of a Record Resource. For Record and Record Part, it encompasses information about the\n            intellectual composition of the record, the presence of record parts and their\n            functions. For Record Set, it encompasses information about the methodology or criteria\n            used for arranging the Record Set members or Record members within the containing Record\n            Set"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <https://www.ica.org/standards/RiC/ontology#RecordResource> ;
+        <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+                <https://www.ica.org/standards/RiC/ontology> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Record Resource structure"@en ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <https://www.ica.org/standards/RiC/ontology#structure> ;
+        <http://www.w3.org/2004/02/skos/core#changeNote>
+                []  ;
+        <http://www.w3.org/2004/02/skos/core#example>
+                "The series have the files arranged according to the alphabetical\n            order of the places concerned."@en , "Inside each file, the records are arranged\n            chronologically."@en , "The database has 3 related tables: names, addresses, and\n            passport numbers."@en , "The record has 2 appendixes, comprising a full account of the\n            income from car taxes and real estate taxes."@en ;
+        <https://www.ica.org/standards/RiC/ontology#RiCCMCorrespondingComponent>
+                "Specialization of RiC-A40 (Structure\n            attribute)"@en .

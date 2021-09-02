@@ -2,8 +2,8 @@
 
 In this folder you can find the results of the experiments that we describe in the paper https://arxiv.org/abs/2106.12831.
 
-### CH: results from the CH corpus
-### Conf: results from the Conf corpus
+### CH: results from the Cultural Heritage corpus
+### Conf: results from the Conference corpus
 
 Each of the previous folders have the following subfolders:
 

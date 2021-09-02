@@ -4,6 +4,7 @@ In this folder you can find the results of the experiments that we describe in t
 
 ### CH: results from the Cultural Heritage corpus
 ### Conf: results from the Conference corpus
+### communities-manual-evaluation: the manual evaluation of the communities performed by the authors
 
 Each of the previous folders have the following subfolders:
 

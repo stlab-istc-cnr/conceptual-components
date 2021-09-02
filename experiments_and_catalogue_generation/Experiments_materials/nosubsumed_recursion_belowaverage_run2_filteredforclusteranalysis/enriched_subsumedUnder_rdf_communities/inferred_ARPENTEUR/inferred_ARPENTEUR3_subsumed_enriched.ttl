@@ -1,0 +1,23 @@
+@prefix ns1: <http://www.arpenteur.org/ontology/Arpenteur.owl#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:RotationMatrix ns1:has_m00 xsd:double ;
+    ns1:has_m01 xsd:double ;
+    ns1:has_m02 xsd:double ;
+    ns1:has_m10 xsd:double ;
+    ns1:has_m11 xsd:double ;
+    ns1:has_m12 xsd:double ;
+    ns1:has_m20 xsd:double ;
+    ns1:has_m21 xsd:double ;
+    ns1:has_m22 xsd:double ;
+    ns2:subsumedUnder ns1:Matrix,
+        ns1:Transformation3D .
+
+ns1:Matrix ns2:subsumedUnder ns1:MathematicalObject .
+
+ns1:Transformation3D ns2:subsumedUnder ns1:Geometry .
+

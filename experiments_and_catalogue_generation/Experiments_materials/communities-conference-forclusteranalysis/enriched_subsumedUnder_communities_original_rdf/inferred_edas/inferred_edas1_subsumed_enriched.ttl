@@ -1,0 +1,20 @@
+@prefix ns1: <http://edas#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Conference ns1:hasMember ns1:Person ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:ConferenceEvent ns1:hasAttendee ns1:Person ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Person ns1:attendeeAt ns1:ConferenceEvent ;
+    ns1:hasBiography xsd:string ;
+    ns1:hasFirstName xsd:string ;
+    ns1:hasLastName xsd:string ;
+    ns1:isMemberOf ns1:Conference ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

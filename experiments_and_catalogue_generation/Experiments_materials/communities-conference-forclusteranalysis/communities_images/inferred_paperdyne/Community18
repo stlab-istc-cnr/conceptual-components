@@ -1,0 +1,13 @@
+digraph "Community 18" {
+	Topic
+	Conference -> Topic [label=focusesOn]
+	Topic -> Contribution [label=coveredBy]
+	Contribution -> Topic [label=covers]
+	Author -> Contribution [label=changes]
+	Author
+	Contribution
+	Author -> Paper [label=speaks]
+	Author -> Contribution [label=creates]
+	Contribution -> Author [label=changedBy]
+	Contribution -> Author [label=createdBy]
+}

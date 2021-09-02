@@ -1,0 +1,18 @@
+@prefix ns1: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:F12_Nomen ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> .
+
+ns1:F13_Identifier ns1:R8_consists_of <http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object> ;
+    ns2:subsumedUnder ns1:F12_Nomen,
+        <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object> ns1:R8i_forms_part_of ns1:F13_Identifier ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

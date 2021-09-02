@@ -1,0 +1,32 @@
+@prefix ns1: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix ns2: <https://w3id.org/arco/ontology/location/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<https://w3id.org/arco/ontology/core/TimeIndexedEvent> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:TimeIndexedTypedLocation ns3:subsumedUnder <https://w3id.org/arco/ontology/core/TimeIndexedSituation> .
+
+ns1:Specimen ns1:hasSpecimenHarvesting ns1:SpecimenHarvesting ;
+    ns3:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/italia/onto/l0/Entity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:isHarvestingOperatorOf ns1:SpecimenHarvesting .
+
+<https://w3id.org/italia/onto/l0/Agent> ns1:isHarvestingResponsibleOf ns1:SpecimenHarvesting ;
+    ns1:isHarvestingSponsorOf ns1:SpecimenHarvesting ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns1:SpecimenHarvesting ns2:hasTimeIndexedTypedLocation ns2:TimeIndexedTypedLocation ;
+    ns1:hasHarvestingOperator <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasHarvestingResponsible <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasHarvestingSponsor <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:isSpecimenHarvestingOf ns1:Specimen ;
+    ns3:subsumedUnder <https://w3id.org/arco/ontology/core/TimeIndexedEvent> .
+

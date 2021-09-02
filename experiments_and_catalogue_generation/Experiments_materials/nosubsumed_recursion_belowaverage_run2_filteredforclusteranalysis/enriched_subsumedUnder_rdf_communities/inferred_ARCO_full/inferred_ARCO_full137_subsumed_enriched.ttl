@@ -1,0 +1,35 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix ns3: <https://w3id.org/arco/ontology/core/> .
+@prefix ns4: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Bibliography ns4:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns3:Classification ns4:subsumedUnder ns3:Situation .
+
+ns3:TimeIndexedSituation ns4:subsumedUnder ns3:Situation .
+
+ns2:Specimen ns3:hasClassificationInTime ns3:ClassificationInTime ;
+    ns4:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns2:Taxon ns4:subsumedUnder ns3:Concept,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns3:hasClassificationInTime ns3:ClassificationInTime .
+
+ns3:ClassificationInTime ns1:hasBibliography ns1:Bibliography ;
+    ns3:current xsd:boolean ;
+    ns3:isClassificationInTimeOf <http://www.w3.org/2002/07/owl#Thing>,
+        ns2:Specimen ;
+    ns2:currentClassification xsd:boolean ;
+    ns2:hasTaxon ns2:Taxon ;
+    ns2:originalClassification xsd:boolean ;
+    ns4:subsumedUnder ns3:Classification,
+        ns3:TimeIndexedSituation .
+

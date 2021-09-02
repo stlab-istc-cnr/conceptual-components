@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/arco/ontology/core/> .
+@prefix ns2: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns2:hasTitle ns2:Title .
+
+ns2:TitleType ns2:isTitleTypeOf ns2:Title ;
+    ns3:subsumedUnder ns1:Type .
+
+ns1:Type ns3:subsumedUnder ns1:Concept,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+<https://w3id.org/italia/onto/l0/Object> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns2:Title ns2:hasTitleType ns2:TitleType ;
+    ns2:isTitleOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:specifications rdfs:Literal ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+

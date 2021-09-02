@@ -1,0 +1,24 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns1:hasAuthorshipAttribution ns1:AuthorshipAttribution ;
+    ns2:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:Interpretation ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:hasAuthorshipAttribution ns1:AuthorshipAttribution ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:AuthorshipAttribution ns1:dubiuosAuthorshipAttribution xsd:boolean ;
+    ns1:hasAttributedAuthor <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasAuthorityFileCataloguingAgency <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:isAuthorshipAttributionOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:preferredAuthorshipAttribution xsd:boolean ;
+    ns2:subsumedUnder ns1:Interpretation .
+
+<https://w3id.org/italia/onto/l0/Agent> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

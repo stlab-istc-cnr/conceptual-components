@@ -1,0 +1,19 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E28_Conceptual_Object ns2:subsumedUnder ns1:E71_Man-Made_Thing .
+
+ns1:E1_CRM_Entity ns1:P129i_is_subject_of ns1:E89_Propositional_Object ;
+    ns1:P67i_is_referred_to_by ns1:E89_Propositional_Object ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:E89_Propositional_Object ns1:P129_is_about ns1:E1_CRM_Entity ;
+    ns1:P148_has_component ns1:E89_Propositional_Object ;
+    ns1:P148i_is_component_of ns1:E89_Propositional_Object ;
+    ns1:P67_refers_to ns1:E1_CRM_Entity ;
+    ns2:subsumedUnder ns1:E28_Conceptual_Object .
+

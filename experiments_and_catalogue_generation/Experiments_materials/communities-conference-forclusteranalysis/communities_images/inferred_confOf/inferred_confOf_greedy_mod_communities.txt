@@ -1,0 +1,69 @@
+Community 1 : 
+	Person hasEmail string
+	Person
+	Person hasFirstName string
+	Person hasPhone string
+	Person hasStreet string
+Community 2 : 
+	Person hasFax string
+	string
+	Person hasHomePage string
+	Person hasPostalCode string
+	Person hasSurname string
+Community 3 : 
+	Event ends_on string
+	Event
+	Event starts_on string
+Community 4 : 
+	Social_event
+	Social_event has_title string
+	Social_event location string
+Community 5 : 
+	Administrative_event
+	Administrative_event parallel_with Administrative_event
+	Working_event hasAdministrativeEvent Administrative_event
+	Administrative_event follows Administrative_event
+Community 6 : 
+	Social_event defaultChoice positiveInteger
+	positiveInteger
+	Working_event defaultChoice positiveInteger
+Community 7 : 
+	Working_event has_title string
+	Working_event
+	Working_event location string
+Community 8 : 
+	Contribution
+	Contribution abstract string
+	Contribution contactEmail string
+	Contribution hasKeyword string
+	Contribution hasTitle string
+	Contribution remark string
+Community 9 : 
+	Contribution writtenBy Author
+	Author
+	Author writes Contribution
+Community 10 : 
+	Member_PC expertOn Topic
+	Member_PC
+	Member_PC reviewes Contribution
+Community 11 : 
+	Topic
+	Contribution dealsWith Topic
+	Working_event hasTopic Topic
+Community 12 : 
+	Scholar studyAt University
+	Scholar
+	University
+Community 13 : 
+	Participant
+	Participant earlyRegistration boolean
+	boolean
+Community 14 : 
+	Person hasCountry Country
+	Country
+Community 15 : 
+	Person employedBy Organization
+	Organization
+Community 16 : 
+	City
+	Person hasCity City

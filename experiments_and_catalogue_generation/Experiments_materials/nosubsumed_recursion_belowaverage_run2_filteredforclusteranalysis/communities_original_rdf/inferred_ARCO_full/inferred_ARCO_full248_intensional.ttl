@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:CatalogueRecord ns2:hasAccessProfile ns2:AccessProfile .
+
+ns2:PrivacyLevel ns2:isPrivacyLevelOf ns2:AccessProfile .
+
+ns2:PrivacyReason ns2:isPrivacyReasonOf ns2:AccessProfile .
+
+ns2:AccessProfile ns2:hasPrivacyLevel ns2:PrivacyLevel ;
+    ns2:hasPrivacyReason ns2:PrivacyReason ;
+    ns2:isAccessProfileOf ns2:CatalogueRecord ;
+    ns1:expiryDate rdfs:Literal .
+

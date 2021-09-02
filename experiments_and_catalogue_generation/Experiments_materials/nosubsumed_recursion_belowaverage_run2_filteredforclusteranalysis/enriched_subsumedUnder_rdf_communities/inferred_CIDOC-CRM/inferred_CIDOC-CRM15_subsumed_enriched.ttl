@@ -1,0 +1,25 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E9_Move ns1:P25_moved ns1:E19_Physical_Object ;
+    ns2:subsumedUnder ns1:E7_Activity .
+
+ns1:E18_Physical_Thing ns2:subsumedUnder ns1:E72_Legal_Object,
+        ns1:E92_Spacetime_Volume .
+
+ns1:E1_CRM_Entity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:E7_Activity ns2:subsumedUnder ns1:E5_Event .
+
+ns1:E53_Place ns1:P54i_is_current_permanent_location_of ns1:E19_Physical_Object ;
+    ns1:P55i_currently_holds ns1:E19_Physical_Object ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E19_Physical_Object ns1:P54_has_current_permanent_location ns1:E53_Place ;
+    ns1:P55_has_current_location ns1:E53_Place ;
+    ns2:subsumedUnder ns1:E18_Physical_Thing .
+

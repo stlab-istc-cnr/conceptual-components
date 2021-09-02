@@ -1,0 +1,15 @@
+@prefix ns1: <https://w3id.org/arco/ontology/cultural-event/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:TimePeriodMeasurementUnit ns1:isTimePeriodMeasurementUnitOf ns1:RecurrentTimePeriod .
+
+<https://w3id.org/italia/onto/l0/EventOrSituation> ns1:hasTimePeriodBeforeNextEvent ns1:RecurrentTimePeriod .
+
+ns1:RecurrentTimePeriod ns1:hasTimePeriodMeasurementUnit ns1:TimePeriodMeasurementUnit ;
+    ns1:isRecurrentTimePeriodOf ns1:RecurrentSituationSeries ;
+    ns1:isTimePeriodBeforeNextEventOf <https://w3id.org/italia/onto/l0/EventOrSituation> ;
+    ns1:timePeriodValue xsd:integer .
+

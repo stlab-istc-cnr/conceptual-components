@@ -1,0 +1,21 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Syllable ns1:belongsToWord ns1:Word ;
+    ns1:isLastSyllable ns1:Word .
+
+ns1:Word ns2:isEchoOf ns1:Word ;
+    ns1:isCallOf ns1:Word ;
+    ns1:isInflectedForm ns1:Word ;
+    ns1:isLemma ns1:Word ;
+    ns1:lemma xsd:string ;
+    ns1:morphologicalAnnotation xsd:string ;
+    ns1:partOfSpeech <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:phoneticTranscription xsd:string ;
+    ns1:sense xsd:string ;
+    ns1:translation xsd:string .
+

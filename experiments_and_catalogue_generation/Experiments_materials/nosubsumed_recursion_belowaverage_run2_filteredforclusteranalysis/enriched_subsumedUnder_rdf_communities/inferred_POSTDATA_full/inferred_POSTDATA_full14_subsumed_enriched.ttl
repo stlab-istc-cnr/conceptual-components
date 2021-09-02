@@ -1,0 +1,41 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Ensemble ns1:isReferencedIn <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F17>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+ns1:Event ns1:isRecordedBy <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns2:subsumedUnder <http://www.europeana.eu/schemas/edm/Event> .
+
+ns1:Person ns1:isReferencedIn <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns2:subsumedUnder ns1:Agent,
+        <http://xmlns.com/foaf/0.1/Person> .
+
+ns1:Redaction ns1:editedIn <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns1:hasTranslation <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns1:isIndexedIn <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns1:isReferencedIn <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns1:retrievesText <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F17> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Agent ns2:subsumedUnder <http://www.europeana.eu/schemas/edm/Agent>,
+        <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> .
+
+<http://www.europeana.eu/schemas/edm/Event> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://xmlns.com/foaf/0.1/Person> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

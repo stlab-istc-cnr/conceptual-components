@@ -1,0 +1,20 @@
+@prefix ns1: <http://purl.org/co/> .
+@prefix ns2: <http://purl.org/vocab/frbr/core#> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/spar/biro/BibliographicCollection> ns2:realization <http://purl.org/spar/biro/BibliographicList> ;
+    ns3:subsumedUnder ns1:Set,
+        ns2:Work .
+
+<http://purl.org/spar/biro/BibliographicList> ns1:element <http://purl.org/spar/biro/BibliographicReference> ;
+    ns2:realizationOf <http://purl.org/spar/biro/BibliographicCollection> ;
+    ns3:subsumedUnder ns1:List,
+        ns2:Expression .
+
+<http://purl.org/spar/biro/BibliographicReference> ns3:subsumedUnder ns1:List,
+        ns2:Expression .
+

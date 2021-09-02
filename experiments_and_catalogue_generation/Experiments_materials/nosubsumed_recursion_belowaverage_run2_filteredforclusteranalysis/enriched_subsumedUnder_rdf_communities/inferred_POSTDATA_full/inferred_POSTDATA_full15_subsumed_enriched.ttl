@@ -1,0 +1,28 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Agent ns1:isInvolvedIn ns1:Event ;
+    ns2:subsumedUnder <http://www.europeana.eu/schemas/edm/Agent>,
+        <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> .
+
+ns1:Event ns1:date <http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ;
+    ns1:eventNarration xsd:string ;
+    ns1:isMentionedIn ns1:Redaction ;
+    ns1:typeOfEvent xsd:string ;
+    ns2:subsumedUnder <http://www.europeana.eu/schemas/edm/Event> .
+
+ns1:Redaction ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.europeana.eu/schemas/edm/Agent> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.europeana.eu/schemas/edm/Event> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> ns2:subsumedUnder <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+

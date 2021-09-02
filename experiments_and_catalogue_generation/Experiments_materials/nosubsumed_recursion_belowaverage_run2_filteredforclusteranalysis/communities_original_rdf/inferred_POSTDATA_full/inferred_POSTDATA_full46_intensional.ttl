@@ -1,0 +1,22 @@
+@prefix ns1: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix ns3: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns4: <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns3:PoeticWork ns1:isPartOf ns3:Ensemble .
+
+ns3:Redaction ns3:numberOfWitnessesUsed xsd:integer .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ns2:stressPosition xsd:integer .
+
+ns3:Ensemble ns3:date <http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ;
+    ns3:hasCreator ns3:CreatorRole ;
+    ns3:numberOfLines xsd:integer ;
+    ns3:numberOfPlays xsd:integer ;
+    ns3:numberOfPoems xsd:integer ;
+    ns4:hasRole ns3:Role .
+

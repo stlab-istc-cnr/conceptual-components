@@ -1,0 +1,416 @@
+Community 1 : 
+	Person hasDedication Redaction
+	Person
+	Person isFictional boolean
+	Person isMentionedIn Redaction
+	Person name string
+	Person nameLink string
+	Person nationality string
+	Person positionName string
+	Person religiousAffiliation Concept
+	Person socialStatus Concept
+	Person sourceNote string
+	Person surname string
+	Redaction dedicatedTo Person
+	Redaction hasEditor Person
+	Person additionalName string
+	Person alternativeName string
+	Person biography string
+	Person editorOf Redaction
+	Person ethnicity string
+	Person forename string
+	Person genName string
+Community 2 : 
+	LinePattern accentedVowels string
+	LinePattern
+	LinePattern accentedVowelsPattern string
+	LinePattern hasFirstFoot Foot
+	LinePattern initialPhonemesPattern string
+	LinePattern isHypometre boolean
+	LinePattern isRegular boolean
+	LinePattern phonemePattern string
+	LinePattern phoneticTranscription string
+	LinePattern vowelTypeScheme string
+Community 3 : 
+	LinePattern initialPhonemesPatternByManner string
+	string
+	LinePattern scannedLine string
+	LinePattern phonemePatternByManner string
+Community 4 : 
+	Symbol metricalSymbolExplanation string
+	Symbol
+	Symbol metricalSymbol string
+Community 5 : 
+	ApproximateDateExpression
+	ApproximateDateExpression stringContent string
+Community 6 : 
+	Organization
+	Organization address string
+Community 7 : 
+	Word isRhymeWord Rhyme
+	Rhyme
+	Rhyme ending string
+	Rhyme finalConsonant string
+	Rhyme hasRhymeWord Word
+	Rhyme label string
+	Thing presents Rhyme
+	Rhyme prefinalConsonants string
+	Rhyme rhymeCategory string
+	Rhyme rhymeGrapheme string
+	Rhyme rhymePhoneme string
+	Rhyme rhymeScheme string
+Community 8 : 
+	Rhyme matches RhymeMatch
+	RhymeMatch
+	RhymeMatch corresponds Rhyme
+Community 9 : 
+	Thing containsMentionToPlace Place
+	Place
+	Thing isFrom Place
+	Place birthPlaceOf Person
+	Place deathPlaceOf Person
+	Ensemble isFrom Place
+	Place latitude string
+	Person birthPlace Place
+	Place longitude string
+	Place typeOfPlace string
+	Person deathPlace Place
+Community 10 : 
+	DateEntity
+	Redaction date DateEntity
+	DateEntity dateNote string
+	DateEntity isExpressedAs DateExpression
+	Place date DateEntity
+	Person birthDate DateEntity
+	Person deathDate DateEntity
+	Person floruit DateEntity
+	PoeticWork date DateEntity
+	DateExpression
+Community 11 : 
+	Person isMemberOf Organisation
+	Organisation
+	Organisation address string
+	Organisation hasMember Person
+	Organisation isFrom Place
+Community 12 : 
+	Redaction originalTitle string
+	Redaction
+	Redaction paraphrasis string
+	Redaction audience string
+	Redaction audienceEducationLevel string
+	Redaction sampleText string
+	Redaction text string
+	Redaction typeOfRedaction string
+	Redaction explicit string
+	Redaction unusedWitnesses string
+	Redaction workNumber string
+	Redaction isSynthesisOf Redaction
+	Place isMentionedIn Redaction
+	Redaction hasSynthesis Redaction
+	Redaction hasTranslation Redaction
+	Redaction incipit string
+	Redaction layout string
+	Redaction isTranslationOf Redaction
+Community 13 : 
+	Intertextuality
+	Redaction usesAsSource Intertextuality
+	Redaction hasDerivedWork Intertextuality
+	Redaction isRelatedContemporaneouslyWith Intertextuality
+	Redaction hasRelationsWith Intertextuality
+	Intertextuality hasContemporaryRelation Redaction
+	Intertextuality isDerivedFrom Redaction
+	Intertextuality isRelatedWith Redaction
+	Intertextuality isSource Redaction
+	Intertextuality locus string
+	Intertextuality reference string
+	Intertextuality referenceLocation string
+	Intertextuality typeOfIntertextuality Concept
+Community 14 : 
+	Redaction retrievesText Location
+	Location
+	Person isReferencedIn Location
+	Redaction editedIn Location
+	Ensemble isReferencedIn Location
+	Redaction hasTranslation Location
+	Redaction isIndexedIn Location
+	Redaction isReferencedIn Location
+	Event isRecordedBy Location
+Community 15 : 
+	Agent isInvolvedIn Event
+	Event
+	Event date DateEntity
+	Event eventNarration string
+	Event isMentionedIn Redaction
+	Event typeOfEvent string
+Community 16 : 
+	Agent characterIn Redaction
+	Agent
+	Thing containsMentionToAgent Agent
+	Agent hasRole Role
+	Agent isMentionedIn Redaction
+	Redaction hasCharacter Agent
+Community 17 : 
+	TextUnit
+	TextUnit firstPartOf Redaction
+	OrderedTextUnitList hasFirstPart TextUnit
+	OrderedTextUnitList hasTextUnit TextUnit
+	OrderedTextUnitList
+	Redaction hasOrderedTextUnitList OrderedTextUnitList
+Community 18 : 
+	Person portrait anyURI
+	anyURI
+	Redaction additionalFile anyURI
+	Redaction text anyURI
+Community 19 : 
+	OrderedStanzaList isStanzaListOfRedaction Redaction
+	OrderedStanzaList
+	Stanza belongsToStanzaList OrderedStanzaList
+	Redaction hasStanzaList OrderedStanzaList
+Community 20 : 
+	Redaction hasLineList OrderedLineList
+	OrderedLineList
+	OrderedLineList isLineListOfRedaction Redaction
+Community 21 : 
+	Stanza hasFirstLine Line
+	Stanza
+	Line isFirstLine Stanza
+	Stanza isFirstStanza Redaction
+	OrderedStanzaList hasStanzaItem Stanza
+	Stanza isRefrainOmitted boolean
+	Stanza nextStanza Stanza
+	Stanza paraphrasis string
+	Stanza previousStanza Stanza
+	Stanza isTheSameAs Stanza
+	Stanza typeOfStanza Concept
+	Stanza typeOfStanzaEdition Concept
+	Line belongsToStanza Stanza
+Community 22 : 
+	Line containsMentionTo Thing
+	Line
+	Line firstHemistich string
+	OrderedLineList hasLineItem Line
+	Stanza hasLine Line
+	Line isRefrain boolean
+	Line nextLine Line
+	Line previousLine Line
+	Line rhymesWith Line
+	Line secondHemistich string
+	Line belongsToLineList OrderedLineList
+Community 23 : 
+	Stanza altStanzaNumber positiveInteger
+	positiveInteger
+	Line lineNumber positiveInteger
+	Word wordNumber positiveInteger
+	Stanza stanzaNumber positiveInteger
+	Foot numberOfMorae positiveInteger
+	WorkPattern numberOfStanzas positiveInteger
+	StanzaPattern numberOfLines positiveInteger
+	LinePattern numberOfFeet positiveInteger
+	LinePattern numberOfSyllables positiveInteger
+	Slot index positiveInteger
+Community 24 : 
+	Line hasFirstToken Token
+	Token
+	Line hasLastToken Token
+	Line hasToken Token
+	Token belongsToLine Line
+	Token isFirstToken Line
+	Token isLastToken Line
+	Token nextToken Token
+	Token previousToken Token
+Community 25 : 
+	Person literaryPeriod Concept
+	Concept
+	Foot footType Concept
+	Redaction typeOfTextualElement Concept
+	Person school Concept
+	WorkPattern metricalCategory Concept
+	WorkPattern metricalContext Concept
+	WorkPattern versificationType Concept
+	RhymeMatch typeOfRhymeMatching Concept
+	Person gender Concept
+Community 26 : 
+	Trope tropeVariety Concept
+	Trope
+Community 27 : 
+	PoeticWork literaryTradition string
+	PoeticWork
+	PoeticWork poeticType Concept
+	PoeticWork theme string
+	Redaction realises PoeticWork
+	PoeticWork authorEducationLevel Concept
+	PoeticWork genre Concept
+	PoeticWork isCalligram boolean
+	PoeticWork isRealisedThrough Redaction
+	PoeticWork isReferencedIn Location
+Community 28 : 
+	FigureOfSpeech figureReferent string
+	FigureOfSpeech
+	FigureOfSpeech figureVariety Concept
+	FigureOfSpeech hasSmallerUnits FigureOfSpeech
+	FigureOfSpeech isPresentIn Line
+	FigureOfSpeech isSmallerUnitOf FigureOfSpeech
+	FigureOfSpeech rhetoricalOperation Concept
+	FigureOfSpeech figureMeaning string
+Community 29 : 
+	Role roleFunction Concept
+	Role
+	Redaction hasEditor Role
+	Redaction hasRole Role
+	Role date DateEntity
+	PoeticWork hasRole Role
+	Role typeOfCharacter Concept
+Community 30 : 
+	StanzaPattern clausulaScheme string
+	StanzaPattern
+	StanzaPattern clausulaSchemeType Concept
+	StanzaPattern rhymeDispositionType Concept
+Community 31 : 
+	Scheme
+	Scheme schemeVariety Concept
+Community 32 : 
+	Foot clausula Concept
+	Foot
+	Foot isFirstFoot LinePattern
+	Foot isIrregular boolean
+	Foot nextFootAfterCaesura Foot
+	Foot nextFoot Foot
+	Foot previousFoot Foot
+	Foot previousFootBeforeCaesura Foot
+	Foot scheme string
+Community 33 : 
+	WorkPattern hasRefrain boolean
+	WorkPattern
+	WorkPattern interStrophicRelations string
+	WorkPattern isIsometric boolean
+	WorkPattern isIsostrophic boolean
+	WorkPattern isUnissonant boolean
+	WorkPattern metricalComplexity Concept
+	WorkPattern metricalTypeDescription string
+	WorkPattern rhymeTypeProportion string
+Community 34 : 
+	CreatorRole isAnonymous boolean
+	CreatorRole
+	CreatorRole isWrongAttribution boolean
+	CreatorRole penName string
+	CreatorRole typeOfDesignation Concept
+	Redaction hasCreator CreatorRole
+	PoeticWork hasCreator CreatorRole
+Community 35 : 
+	boolean
+	Stanza isNotMetricStanza boolean
+	Foot isCatalectic boolean
+	Foot isHypermetrical boolean
+	Rhyme isEcho boolean
+	LinePattern isHypermetre boolean
+Community 36 : 
+	Foot hasFirstUnit FootDivision
+	FootDivision
+	FootDivision isFirstUnit Foot
+	FootDivision nextUnit FootDivision
+	FootDivision previousUnit FootDivision
+Community 37 : 
+	Thing birthDate Thing
+	Thing
+	Thing certainty Concept
+	Thing deathDate Thing
+	Thing feetType Concept
+	Thing hasPart Thing
+	Thing inScheme Thing
+	Thing isAffectedBy Thing
+	Thing isPartOf Thing
+	Thing metricalType Concept
+	Thing presentsRhymeMatching Concept
+	Person birthPlaceCertainty Thing
+Community 38 : 
+	Pattern analyses Thing
+	Pattern
+	Pattern uses MetricalEncoding
+	Thing isAnalysedThrough Pattern
+Community 39 : 
+	MetricalEncoding
+	MetricalEncoding employs Symbol
+	Symbol isEmployedIn MetricalEncoding
+	MetricalEncoding isUsedBy Pattern
+Community 40 : 
+	Acrostic isAbecedarius boolean
+	Acrostic
+	Acrostic isContainedIn Redaction
+	Acrostic refersTo Thing
+	Redaction hasAcrostic Acrostic
+	Thing isReferencedIn Acrostic
+Community 41 : 
+	Metaplasm affectsFirst Thing
+	Metaplasm
+	Metaplasm successIn Line
+	Metaplasm typeOfMetaplasm Concept
+Community 42 : 
+	Concept classifies Thing
+	Concept
+	Thing isClassifiedBy Concept
+Community 43 : 
+	Word lemma string
+	Word
+	Word morphologicalAnnotation string
+	Word partOfSpeech Concept
+	Word phoneticTranscription string
+	Word sense string
+	Word isLemma Word
+	Word translation string
+	Syllable belongsToWord Word
+	Syllable isLastSyllable Word
+	Word isCallOf Word
+	Word isEchoOf Word
+	Word isInflectedForm Word
+Community 44 : 
+	Word hasFirstSyllable Syllable
+	Syllable
+	Word hasLastSyllable Syllable
+	Word hasSyllable Syllable
+	Syllable previousSyllable Syllable
+	Syllable coda string
+	Syllable isFirstSyllable Word
+	Syllable nextSyllable Syllable
+	Syllable nucleusType Concept
+	Syllable onset string
+	Syllable positionInWord string
+	Syllable weight string
+Community 45 : 
+	MetricalSyllable isFormedWith Syllable
+	MetricalSyllable
+Community 46 : 
+	Word stressPosition integer
+	integer
+	Ensemble numberOfLines integer
+	Ensemble numberOfPlays integer
+	Ensemble numberOfPoems integer
+	Redaction numberOfWitnessesUsed integer
+	Ensemble date DateEntity
+	Ensemble
+	Ensemble hasRole Role
+	Ensemble hasCreator CreatorRole
+	PoeticWork isPartOf Ensemble
+Community 47 : 
+	OpenedIntervalExpression notAfter date
+	OpenedIntervalExpression
+	date
+	OpenedIntervalExpression notBefore date
+	ClosedIntervalExpression
+	ClosedIntervalExpression endDate date
+	ClosedIntervalExpression startDate date
+	ExactDateExpression
+	ExactDateExpression dateContent date
+Community 48 : 
+	Slot ordered_list OrderedList
+	Slot
+	OrderedList
+	Slot previous Slot
+	OrderedList slot Slot
+	Slot next Slot
+	OrderedList length nonNegativeInteger
+	nonNegativeInteger
+Community 49 : 
+	Object hasRole Role
+	Object
+	Role
+	Role isRoleOf Object

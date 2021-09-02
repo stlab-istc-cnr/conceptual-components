@@ -1,0 +1,28 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Person ns1:hasBirthDate ns1:Date ;
+    ns1:hasDeathDate ns1:Date .
+
+ns1:Thing ns1:hasBeginningDate ns1:Date ;
+    ns1:hasEndDate ns1:Date ;
+    ns1:hasModificationDate ns1:Date ;
+    ns1:isAssociatedWithDate ns1:Date ;
+    ns1:wasLastUpdatedAtDate ns1:Date .
+
+ns1:Date ns1:calendar rdfs:Literal ;
+    ns1:dateQualifier rdfs:Literal ;
+    ns1:dateStandard rdfs:Literal ;
+    ns1:expressedDate rdfs:Literal ;
+    ns1:isBeginningDateOf ns1:Thing ;
+    ns1:isBirthDateOf ns1:Person ;
+    ns1:isDateAssociatedWith ns1:Thing ;
+    ns1:isDeathDateOf ns1:Person ;
+    ns1:isEndDateOf ns1:Thing ;
+    ns1:isLastUpdateDateOf ns1:Thing ;
+    ns1:isModificationDateOf ns1:Thing ;
+    ns1:normalizedDateValue rdfs:Literal .
+

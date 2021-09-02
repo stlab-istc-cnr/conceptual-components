@@ -1,0 +1,590 @@
+@prefix : <http://pcs#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://pcs#> .
+
+<http://pcs> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://pcs#accept
+:accept rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :accepted_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :accepted_by ;
+        rdf:type owl:InverseFunctionalProperty ;
+        rdfs:domain :CommitteeMember ;
+        rdfs:range :Paper .
+
+
+###  http://pcs#accepted_by
+:accepted_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :CommitteeMember .
+
+
+###  http://pcs#assign_review
+:assign_review rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :assigned_review_by
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :assigned_review_by ;
+               rdfs:domain :Primary_Reviewer ;
+               rdfs:range :Review .
+
+
+###  http://pcs#assigned_review_by
+:assigned_review_by rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Review ;
+                    rdfs:range :Primary_Reviewer .
+
+
+###  http://pcs#generate
+:generate rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :generated_by
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Administrator ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Electronic_proceeding
+                                     :Report
+                                   )
+                     ] .
+
+
+###  http://pcs#generated_by
+:generated_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :generate ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Electronic_proceeding
+                                          :Report
+                                        )
+                          ] ;
+              rdfs:range :Administrator .
+
+
+###  http://pcs#get
+:get rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdfs:domain :PERSON ;
+     rdfs:range :Email .
+
+
+###  http://pcs#has_conference_member
+:has_conference_member rdf:type owl:ObjectProperty ;
+                       owl:equivalentProperty [ owl:inverseOf :member_of_conference
+                                              ] ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       owl:inverseOf :member_of_conference ;
+                       rdfs:domain :Conference ;
+                       rdfs:range :ConferenceMember .
+
+
+###  http://pcs#loggin_in
+:loggin_in rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :PERSON ;
+           rdfs:range :System .
+
+
+###  http://pcs#member_of_conference
+:member_of_conference rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :ConferenceMember ;
+                      rdfs:range :Conference .
+
+
+###  http://pcs#rate_paper
+:rate_paper rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :rateed_paper_by
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :rateed_paper_by ;
+            rdf:type owl:InverseFunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :External_Reviewer
+                                        :Secondary_Reviewer
+                                      )
+                        ] ;
+            rdfs:range :Accepted_paper .
+
+
+###  http://pcs#rateed_paper_by
+:rateed_paper_by rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Accepted_paper ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( :External_Reviewer
+                                            :Secondary_Reviewer
+                                          )
+                            ] .
+
+
+###  http://pcs#read_paper
+:read_paper rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :read_paper_by
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :read_paper_by ;
+            rdf:type owl:InverseFunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :External_Reviewer
+                                        :Secondary_Reviewer
+                                      )
+                        ] ;
+            rdfs:range :Accepted_paper .
+
+
+###  http://pcs#read_paper_by
+:read_paper_by rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Accepted_paper ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :External_Reviewer
+                                          :Secondary_Reviewer
+                                        )
+                          ] .
+
+
+###  http://pcs#reject_paper
+:reject_paper rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :rejected_paper_by
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :rejected_paper_by ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:domain :CommitteeMember ;
+              rdfs:range :Paper .
+
+
+###  http://pcs#rejected_paper_by
+:rejected_paper_by rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :Paper ;
+                   rdfs:range :CommitteeMember .
+
+
+###  http://pcs#send
+:send rdf:type owl:ObjectProperty ;
+      owl:equivalentProperty [ owl:inverseOf :sended_by
+                             ] ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdfs:domain :Administrator ;
+      rdfs:range :Email .
+
+
+###  http://pcs#sended_by
+:sended_by rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :send ;
+           rdfs:domain :Email ;
+           rdfs:range :Administrator .
+
+
+###  http://pcs#submit
+:submit rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :submited_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :submited_by ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :PERSON ;
+        rdfs:range :DOCUMENT .
+
+
+###  http://pcs#submited_by
+:submited_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:InverseFunctionalProperty ;
+             rdfs:domain :DOCUMENT ;
+             rdfs:range :PERSON .
+
+
+###  http://pcs#write_paper
+:write_paper rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :written_paper_by
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :written_paper_by ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:InverseFunctionalProperty ;
+             rdfs:domain :Author ;
+             rdfs:range :Paper .
+
+
+###  http://pcs#write_review
+:write_review rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :written_review_by
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :written_review_by ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :External_Reviewer
+                                          :Secondary_Reviewer
+                                        )
+                          ] ;
+              rdfs:range :Review .
+
+
+###  http://pcs#written_paper_by
+:written_paper_by rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:FunctionalProperty ,
+                           owl:InverseFunctionalProperty ;
+                  rdfs:domain :Paper ;
+                  rdfs:range :Author .
+
+
+###  http://pcs#written_review_by
+:written_review_by rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :Review ;
+                   rdfs:range [ rdf:type owl:Class ;
+                                owl:unionOf ( :External_Reviewer
+                                              :Secondary_Reviewer
+                                            )
+                              ] .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://pcs#Date
+:Date rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Conference ;
+      rdfs:range xsd:date .
+
+
+###  http://pcs#Document_ID
+:Document_ID rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :DOCUMENT ;
+             rdfs:range xsd:int .
+
+
+###  http://pcs#E-mail
+:E-mail rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :PERSON ;
+        rdfs:range xsd:string .
+
+
+###  http://pcs#Message_of_email
+:Message_of_email rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Email ;
+                  rdfs:range xsd:string .
+
+
+###  http://pcs#NAME
+:NAME rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Conference
+                                  :PERSON
+                                )
+                  ] ;
+      rdfs:range xsd:string .
+
+
+###  http://pcs#Password
+:Password rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :PERSON
+                                      :System
+                                    )
+                      ] ;
+          rdfs:range xsd:int .
+
+
+###  http://pcs#Receiver_of_email
+:Receiver_of_email rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Email ;
+                   rdfs:range xsd:string .
+
+
+###  http://pcs#Score
+:Score rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Accepted_paper ;
+       rdfs:range [ rdf:type rdfs:Datatype ;
+                    owl:oneOf [ rdf:type rdf:List ;
+                                rdf:first "1"^^xsd:int ;
+                                rdf:rest [ rdf:type rdf:List ;
+                                           rdf:first "2"^^xsd:int ;
+                                           rdf:rest [ rdf:type rdf:List ;
+                                                      rdf:first "3"^^xsd:int ;
+                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                 rdf:first "4"^^xsd:int ;
+                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                            rdf:first "5"^^xsd:int ;
+                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                       rdf:first "6"^^xsd:int ;
+                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                  rdf:first "7"^^xsd:int ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ]
+                              ]
+                  ] .
+
+
+###  http://pcs#Subject_of_email
+:Subject_of_email rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Email ;
+                  rdfs:range xsd:string .
+
+
+###  http://pcs#Summary
+:Summary rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Paper ;
+         rdfs:range xsd:string .
+
+
+###  http://pcs#Title
+:Title rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Paper ;
+       rdfs:range xsd:string .
+
+
+###  http://pcs#Topic_of_conference
+:Topic_of_conference rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Conference ;
+                     rdfs:range xsd:string .
+
+
+###  http://pcs#User_ID
+:User_ID rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :PERSON
+                                     :System
+                                   )
+                     ] ;
+         rdfs:range xsd:int .
+
+
+###  http://pcs#WebSite
+:WebSite rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Conference ;
+         rdfs:range xsd:anyURI .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://pcs#Accepted_paper
+:Accepted_paper rdf:type owl:Class ;
+                rdfs:subClassOf :Paper .
+
+
+###  http://pcs#Administrator
+:Administrator rdf:type owl:Class ;
+               rdfs:subClassOf :PERSON ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :generate ;
+                                 owl:someValuesFrom :Electronic_proceeding
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :generate ;
+                                 owl:someValuesFrom :Report
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :send ;
+                                 owl:someValuesFrom :Email
+                               ] .
+
+
+###  http://pcs#Author
+:Author rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :submit ;
+                              owl:someValuesFrom :Paper
+                            ] ;
+        rdfs:subClassOf :ConferenceMember ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :write_paper ;
+                          owl:someValuesFrom :Paper
+                        ] .
+
+
+###  http://pcs#CD
+:CD rdf:type owl:Class ;
+    rdfs:subClassOf :Electronic_proceeding .
+
+
+###  http://pcs#CommitteeMember
+:CommitteeMember rdf:type owl:Class ;
+                 rdfs:subClassOf :ConferenceMember .
+
+
+###  http://pcs#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://pcs#ConferenceMember
+:ConferenceMember rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :get ;
+                                        owl:someValuesFrom :Invitation
+                                      ] ;
+                  rdfs:subClassOf :PERSON .
+
+
+###  http://pcs#DOCUMENT
+:DOCUMENT rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://pcs#Electronic_proceeding
+:Electronic_proceeding rdf:type owl:Class ;
+                       rdfs:subClassOf owl:Thing .
+
+
+###  http://pcs#Email
+:Email rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://pcs#External_Reviewer
+:External_Reviewer rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :submit ;
+                                         owl:someValuesFrom :Review
+                                       ] ;
+                   rdfs:subClassOf :PERSON ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :rate_paper ;
+                                     owl:someValuesFrom :Accepted_paper
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :read_paper ;
+                                     owl:someValuesFrom :Accepted_paper
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :write_review ;
+                                     owl:someValuesFrom :Review
+                                   ] .
+
+
+###  http://pcs#Information
+:Information rdf:type owl:Class ;
+             rdfs:subClassOf :Email .
+
+
+###  http://pcs#Invitation
+:Invitation rdf:type owl:Class ;
+            rdfs:subClassOf :Email .
+
+
+###  http://pcs#PERSON
+:PERSON rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :loggin_in ;
+                              owl:someValuesFrom :System
+                            ] ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :get ;
+                          owl:someValuesFrom :Information
+                        ] .
+
+
+###  http://pcs#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :DOCUMENT .
+
+
+###  http://pcs#Primary_Reviewer
+:Primary_Reviewer rdf:type owl:Class ;
+                  rdfs:subClassOf :CommitteeMember ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :accept ;
+                                    owl:someValuesFrom :Paper
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :assign_review ;
+                                    owl:someValuesFrom :Review
+                                  ] .
+
+
+###  http://pcs#Programme
+:Programme rdf:type owl:Class ;
+           rdfs:subClassOf :Conference .
+
+
+###  http://pcs#Rejected_paper
+:Rejected_paper rdf:type owl:Class ;
+                rdfs:subClassOf :Paper .
+
+
+###  http://pcs#Report
+:Report rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://pcs#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :DOCUMENT .
+
+
+###  http://pcs#Secondary_Reviewer
+:Secondary_Reviewer rdf:type owl:Class ;
+                    rdfs:subClassOf :CommitteeMember ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :write_review ;
+                                      owl:someValuesFrom :Review
+                                    ] .
+
+
+###  http://pcs#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://pcs#Web_site
+:Web_site rdf:type owl:Class ;
+          rdfs:subClassOf :Electronic_proceeding .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

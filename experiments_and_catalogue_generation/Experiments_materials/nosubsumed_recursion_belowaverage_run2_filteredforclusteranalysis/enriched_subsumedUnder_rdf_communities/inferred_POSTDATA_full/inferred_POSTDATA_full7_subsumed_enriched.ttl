@@ -1,0 +1,34 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://bakulf.github.io/raop/0.1#Word> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ns1:isRhymeWord ns1:Rhyme ;
+    ns2:subsumedUnder <http://bakulf.github.io/raop/0.1#Word>,
+        <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token>,
+        <http://purl.org/ontology/olo/core#OrderedList>,
+        <http://purl.org/ontology/olo/core#Slot> .
+
+<http://purl.org/ontology/olo/core#OrderedList> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/olo/core#Slot> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Rhyme ns1:ending xsd:string ;
+    ns1:finalConsonant xsd:string ;
+    ns1:hasRhymeWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+    ns1:label xsd:string ;
+    ns1:prefinalConsonants xsd:string ;
+    ns1:rhymeCategory xsd:string ;
+    ns1:rhymeGrapheme xsd:string ;
+    ns1:rhymePhoneme xsd:string ;
+    ns1:rhymeScheme xsd:string ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:presents ns1:Rhyme .
+

@@ -1,0 +1,32 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-literaryAnalysisElements#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2004/02/skos/core#Concept> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ns1:hasDerivedWork ns1:Intertextuality ;
+    ns1:hasRelationsWith ns1:Intertextuality ;
+    ns1:isRelatedContemporaneouslyWith ns1:Intertextuality ;
+    ns1:usesAsSource ns1:Intertextuality ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+ns1:Intertextuality ns1:hasContemporaryRelation <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+    ns1:isDerivedFrom <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+    ns1:isRelatedWith <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+    ns1:isSource <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+    ns1:locus xsd:string ;
+    ns1:reference xsd:string ;
+    ns1:referenceLocation xsd:string ;
+    ns1:typeOfIntertextuality <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+

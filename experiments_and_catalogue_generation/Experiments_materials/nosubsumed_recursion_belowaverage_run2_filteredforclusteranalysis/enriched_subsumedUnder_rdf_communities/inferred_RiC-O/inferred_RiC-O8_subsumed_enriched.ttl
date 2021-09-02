@@ -1,0 +1,22 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Agent ns2:subsumedUnder ns1:Thing .
+
+ns1:AgentHierarchicalRelation ns2:subsumedUnder ns1:AgentToAgentRelation .
+
+ns1:WholePartRelation ns2:subsumedUnder ns1:Relation .
+
+ns1:Group ns2:subsumedUnder ns1:Agent ;
+    ns1:groupIsSourceOfGroupSubdivisionRelation ns1:GroupSubdivisionRelation ;
+    ns1:groupIsTargetOfGroupSubdivisionRelation ns1:GroupSubdivisionRelation .
+
+ns1:GroupSubdivisionRelation ns2:subsumedUnder ns1:AgentHierarchicalRelation,
+        ns1:WholePartRelation ;
+    ns1:groupSubdivisionRelationHasSource ns1:Group ;
+    ns1:groupSubdivisionRelationHasTarget ns1:Group .
+

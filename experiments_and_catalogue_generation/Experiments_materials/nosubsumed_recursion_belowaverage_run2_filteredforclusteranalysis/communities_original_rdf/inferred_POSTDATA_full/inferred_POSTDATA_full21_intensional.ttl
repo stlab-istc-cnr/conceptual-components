@@ -1,0 +1,21 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:OrderedStanzaList ns1:hasStanzaItem ns1:Stanza .
+
+ns1:Line ns1:belongsToStanza ns1:Stanza ;
+    ns1:isFirstLine ns1:Stanza .
+
+ns1:Stanza ns1:hasFirstLine ns1:Line ;
+    ns1:isFirstStanza <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> ;
+    ns1:isRefrainOmitted xsd:boolean ;
+    ns1:isTheSameAs ns1:Stanza ;
+    ns1:nextStanza ns1:Stanza ;
+    ns1:paraphrasis xsd:string ;
+    ns1:previousStanza ns1:Stanza ;
+    ns1:typeOfStanza <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:typeOfStanzaEdition <http://www.w3.org/2004/02/skos/core#Concept> .
+

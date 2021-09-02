@@ -1,0 +1,12 @@
+digraph "Community 174" {
+	ToponymInTime -> Literal [label=name]
+	ToponymInTime
+	Organization -> Feature [label=hasSpatialCoverage]
+	Feature
+	TimeIndexedTypedLocation -> Feature [label=atLocation]
+	Feature -> ToponymInTime [label=hasToponymInTime]
+	Feature -> Use [label=isCulturalGeographicAreaOf]
+	Use -> Feature [label=hasCulturalGeographicArea]
+	ToponymInTime -> Feature [label=isToponymInTimeOf]
+	ToponymInTime -> TimeInterval [label=atTime]
+}

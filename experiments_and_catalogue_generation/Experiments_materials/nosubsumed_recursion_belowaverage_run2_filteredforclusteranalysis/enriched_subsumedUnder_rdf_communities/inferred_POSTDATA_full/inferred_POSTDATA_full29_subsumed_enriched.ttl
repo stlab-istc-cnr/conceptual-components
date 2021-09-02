@@ -1,0 +1,37 @@
+@prefix ns1: <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:PoeticWork ns1:hasRole ns2:Role ;
+    ns3:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F1>,
+        <http://www.europeana.eu/schemas/edm/ProvidedCHO>,
+        ns1:Object .
+
+ns2:Redaction ns2:hasEditor ns2:Role ;
+    ns1:hasRole ns2:Role ;
+    ns3:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        ns1:Object .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F1> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.europeana.eu/schemas/edm/ProvidedCHO> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Role ns3:subsumedUnder <http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept> .
+
+ns1:Object ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2004/02/skos/core#Concept> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:Role ns2:date <http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ;
+    ns2:roleFunction <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns2:typeOfCharacter <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns3:subsumedUnder ns1:Role .
+

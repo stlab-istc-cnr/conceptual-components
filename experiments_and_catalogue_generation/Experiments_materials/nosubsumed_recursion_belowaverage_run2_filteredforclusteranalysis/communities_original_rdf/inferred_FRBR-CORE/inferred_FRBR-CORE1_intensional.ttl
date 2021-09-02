@@ -1,0 +1,18 @@
+@prefix ns1: <http://purl.org/vocab/frbr/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Manifestation ns1:embodimentOf ns1:Expression .
+
+ns1:Expression ns1:abridgement ns1:Expression ;
+    ns1:abridgementOf ns1:Expression ;
+    ns1:arrangement ns1:Expression ;
+    ns1:arrangementOf ns1:Expression ;
+    ns1:embodiment ns1:Manifestation ;
+    ns1:revision ns1:Expression ;
+    ns1:revisionOf ns1:Expression ;
+    ns1:translation ns1:Expression ;
+    ns1:translationOf ns1:Expression .
+

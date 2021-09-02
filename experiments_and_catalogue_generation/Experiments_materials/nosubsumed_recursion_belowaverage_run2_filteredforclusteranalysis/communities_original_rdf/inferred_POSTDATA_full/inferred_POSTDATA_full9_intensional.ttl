@@ -1,0 +1,22 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <https://schema.org/> .
+@prefix ns3: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Ensemble ns1:isFrom ns1:Place .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:isFrom ns1:Place ;
+    ns3:containsMentionToPlace ns1:Place .
+
+ns1:Person ns1:birthPlace ns1:Place ;
+    ns1:deathPlace ns1:Place .
+
+ns1:Place ns1:birthPlaceOf ns1:Person ;
+    ns1:deathPlaceOf ns1:Person ;
+    ns1:typeOfPlace xsd:string ;
+    ns2:latitude xsd:string ;
+    ns2:longitude xsd:string .
+

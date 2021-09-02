@@ -1,0 +1,10 @@
+digraph "Community 1" {
+	Conference -> Person [label=hasMember]
+	Person
+	ConferenceEvent -> Person [label=hasAttendee]
+	Person -> ConferenceEvent [label=attendeeAt]
+	Person -> string [label=hasBiography]
+	Person -> string [label=hasFirstName]
+	Person -> string [label=hasLastName]
+	Person -> Conference [label=isMemberOf]
+}

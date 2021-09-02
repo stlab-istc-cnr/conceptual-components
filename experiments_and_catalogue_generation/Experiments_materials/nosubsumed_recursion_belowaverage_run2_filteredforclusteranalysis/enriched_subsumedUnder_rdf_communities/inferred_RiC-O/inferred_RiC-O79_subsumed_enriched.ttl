@@ -1,0 +1,47 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:ContentType ns2:subsumedUnder ns1:Type ;
+    ns1:isContentTypeOf ns1:RecordResource .
+
+ns1:Agent ns2:subsumedUnder ns1:Thing ;
+    ns1:isPublisherOf ns1:RecordResource .
+
+ns1:Instantiation ns2:subsumedUnder ns1:Thing ;
+    ns1:isInstantiationOf ns1:RecordResource .
+
+ns1:RecordResourceToInstantiationRelation ns2:subsumedUnder ns1:Relation ;
+    ns1:recordResourceToInstantiationRelationHasSource ns1:RecordResource .
+
+ns1:Relation ns2:subsumedUnder ns1:Thing .
+
+ns1:Type ns2:subsumedUnder ns1:Concept .
+
+ns1:Thing ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:isOrWasDescribedBy ns1:RecordResource ;
+    ns1:isOrWasMainSubjectOf ns1:RecordResource ;
+    ns1:isOrWasSubjectOf ns1:RecordResource .
+
+ns1:RecordResource ns2:subsumedUnder ns1:Thing ;
+    ns1:classification rdfs:Literal ;
+    ns1:describesOrDescribed ns1:Thing ;
+    ns1:hasCopy ns1:RecordResource ;
+    ns1:hasGeneticLinkToRecordResource ns1:RecordResource ;
+    ns1:hasInstantiation ns1:Instantiation ;
+    ns1:hasOrHadMainSubject ns1:Thing ;
+    ns1:hasOrHadSubject ns1:Thing ;
+    ns1:hasPublisher ns1:Agent ;
+    ns1:hasReply ns1:RecordResource ;
+    ns1:isCopyOf ns1:RecordResource ;
+    ns1:isRecordResourceAssociatedWithRecordResource ns1:RecordResource ;
+    ns1:isReplyTo ns1:RecordResource ;
+    ns1:publicationDate rdfs:Literal ;
+    ns1:recordResourceExtent rdfs:Literal ;
+    ns1:recordResourceIsSourceOfRecordResourceToInstantiationRelation ns1:RecordResourceToInstantiationRelation ;
+    ns1:recordResourceStructure rdfs:Literal ;
+    ns1:scopeAndContent rdfs:Literal .
+

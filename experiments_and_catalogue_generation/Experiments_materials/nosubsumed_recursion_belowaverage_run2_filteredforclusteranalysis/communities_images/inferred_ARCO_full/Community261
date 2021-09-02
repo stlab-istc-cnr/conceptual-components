@@ -1,0 +1,9 @@
+digraph "Community 261" {
+	Intervention -> AgentRole [label=hasAgentRole]
+	AgentRole
+	Organization -> AgentRole [label=isAgentOf]
+	Agent -> AgentRole [label=isAgentOf]
+	Thing -> AgentRole [label=hasAgentRole]
+	AgentRole -> Agent [label=hasAgent]
+	AgentRole -> Thing [label=isAgentRoleOf]
+}

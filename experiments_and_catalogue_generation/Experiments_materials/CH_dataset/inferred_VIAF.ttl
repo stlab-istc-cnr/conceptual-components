@@ -1,0 +1,178 @@
+@prefix : <http://viaf.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://viaf.org/> .
+
+<http://viaf.org/> rdf:type owl:Ontology ;
+                    rdfs:label "The VIAF ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://viaf.org/#clusters
+<http://viaf.org/#clusters> rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain <http://viaf.org/#NameAuthorityCluster> ;
+                            rdfs:range <http://viaf.org/#NameAuthority> ;
+                            rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#establishedIn
+<http://viaf.org/#establishedIn> rdf:type owl:ObjectProperty ;
+                                 owl:equivalentProperty [ owl:inverseOf <http://viaf.org/#hasEstablishedForm>
+                                                        ] ;
+                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                 owl:inverseOf <http://viaf.org/#hasEstablishedForm> ;
+                                 rdfs:domain <http://viaf.org/#EstablishedHeading> ;
+                                 rdfs:range <http://viaf.org/#NameAuthorityCluster> ;
+                                 rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#hasEstablishedForm
+<http://viaf.org/#hasEstablishedForm> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                      rdfs:domain <http://viaf.org/#NameAuthorityCluster> ;
+                                      rdfs:range <http://viaf.org/#EstablishedHeading> ;
+                                      rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#hasXref4xx
+<http://viaf.org/#hasXref4xx> rdf:type owl:ObjectProperty ;
+                              owl:equivalentProperty [ owl:inverseOf <http://viaf.org/#xref4xxIn>
+                                                     ] ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain <http://viaf.org/#NameAuthorityCluster> ;
+                              rdfs:range <http://viaf.org/#XRef4xx> ;
+                              rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#hasXref5xx
+<http://viaf.org/#hasXref5xx> rdf:type owl:ObjectProperty ;
+                              owl:equivalentProperty [ owl:inverseOf <http://viaf.org/#xref5xxIn>
+                                                     ] ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              owl:inverseOf <http://viaf.org/#xref5xxIn> ;
+                              rdfs:domain <http://viaf.org/#NameAuthorityCluster> ;
+                              rdfs:range <http://viaf.org/#XRef5xx> ;
+                              rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#originatesIn
+<http://viaf.org/#originatesIn> rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdfs:domain <http://viaf.org/#Heading> ;
+                                rdfs:range <http://viaf.org/#AuthorityAgency> ;
+                                rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#wasCreatedBy
+<http://viaf.org/#wasCreatedBy> rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdfs:domain <http://viaf.org/#NameAuthority> ;
+                                rdfs:range <http://viaf.org/#AuthorityAgency> ;
+                                rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#xref4xxIn
+<http://viaf.org/#xref4xxIn> rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             owl:inverseOf <http://viaf.org/#hasXref4xx> ;
+                             rdfs:domain <http://viaf.org/#XRef4xx> ;
+                             rdfs:range <http://viaf.org/#NameAuthorityCluster> ;
+                             rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#xref5xxIn
+<http://viaf.org/#xref5xxIn> rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdfs:domain <http://viaf.org/#XRef5xx> ;
+                             rdfs:range <http://viaf.org/#NameAuthorityCluster> ;
+                             rdfs:isDefinedBy <http://viaf.org/> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://viaf.org/#abbreviation
+<http://viaf.org/#abbreviation> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty ;
+                                rdfs:domain <http://viaf.org/#AuthorityAgency> ;
+                                rdfs:range xsd:NMTOKEN ;
+                                rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#name
+<http://viaf.org/#name> rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain <http://viaf.org/#AuthorityAgency> ;
+                        rdfs:range xsd:string ;
+                        rdfs:isDefinedBy <http://viaf.org/> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://viaf.org/#AuthorityAgency
+<http://viaf.org/#AuthorityAgency> rdf:type owl:Class ;
+                                   rdfs:subClassOf owl:Thing ;
+                                   rdfs:comment """
+			Note that instances of this class live under
+			http://viaf.org/authorityAgency/*
+		"""@en ;
+                                   rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#EstablishedHeading
+<http://viaf.org/#EstablishedHeading> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://viaf.org/#Heading> ;
+                                      owl:disjointWith <http://viaf.org/#XRef4xx> ,
+                                                       <http://viaf.org/#XRef5xx> ;
+                                      rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#Heading
+<http://viaf.org/#Heading> rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing ;
+                           rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#NameAuthority
+<http://viaf.org/#NameAuthority> rdf:type owl:Class ;
+                                 rdfs:subClassOf owl:Thing ;
+                                 rdfs:comment """
+			Note that instances of this class live under
+			http://viaf.org/viaf/*
+		"""@en ;
+                                 rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#NameAuthorityCluster
+<http://viaf.org/#NameAuthorityCluster> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing ;
+                                        rdfs:comment """
+			Note that instancess of this class live under
+			http://viaf.org/nameAuthorityCluster/*
+		"""@en ;
+                                        rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#XRef4xx
+<http://viaf.org/#XRef4xx> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://viaf.org/#Heading> ;
+                           owl:disjointWith <http://viaf.org/#XRef5xx> ;
+                           rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  http://viaf.org/#XRef5xx
+<http://viaf.org/#XRef5xx> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://viaf.org/#Heading> ;
+                           rdfs:isDefinedBy <http://viaf.org/> .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

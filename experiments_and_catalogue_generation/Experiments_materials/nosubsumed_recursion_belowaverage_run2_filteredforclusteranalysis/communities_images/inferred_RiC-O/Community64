@@ -1,0 +1,7 @@
+digraph "Community 64" {
+	RecordSet -> LegalStatus [label=hasOrHadAllMembersWithLegalStatus]
+	LegalStatus
+	RecordSet -> LegalStatus [label=hasOrHadSomeMembersWithLegalStatus]
+	LegalStatus -> RecordSet [label=isOrWasLegalStatusOfAllMembersOf]
+	LegalStatus -> RecordSet [label=isOrWasLegalStatusOfSomeMembersOf]
+}

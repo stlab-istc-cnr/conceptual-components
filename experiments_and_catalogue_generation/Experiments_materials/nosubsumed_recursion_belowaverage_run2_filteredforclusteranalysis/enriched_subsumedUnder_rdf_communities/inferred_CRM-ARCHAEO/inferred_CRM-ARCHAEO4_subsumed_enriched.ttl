@@ -1,0 +1,32 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:A1_Excavation_Process_Unit ns1:AP6_intended_to_approximate ns1:A3_Stratigraphic_Interface ;
+    ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal>,
+        <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation>,
+        <http://www.cidoc-crm.org/cidoc-crm/E6_Destruction> .
+
+ns1:A4_Stratigraphic_Genesis ns1:AP8_disturbed ns1:A3_Stratigraphic_Interface ;
+    ns2:subsumedUnder ns1:A5_Stratigraphic_Modification,
+        <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S17_Physical_Genesis> .
+
+ns1:A5_Stratigraphic_Modification ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S18_Alteration> .
+
+ns1:A8_Stratigraphic_Unit ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S17_Physical_Genesis> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E6_Destruction> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:A3_Stratigraphic_Interface ns1:AP6i_was_approximated_by ns1:A1_Excavation_Process_Unit ;
+    ns1:AP7i_was_produced_by ns1:A4_Stratigraphic_Genesis ;
+    ns2:subsumedUnder ns1:A8_Stratigraphic_Unit .
+

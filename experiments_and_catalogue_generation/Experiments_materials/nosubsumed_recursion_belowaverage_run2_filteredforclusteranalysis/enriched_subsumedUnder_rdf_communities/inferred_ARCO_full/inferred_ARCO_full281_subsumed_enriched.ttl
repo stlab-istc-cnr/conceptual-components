@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:PhotoInterpretationRendering ns1:hasActivityResponsible <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasAnomaly ns1:Anomaly ;
+    ns1:hasSurveyScientificDirector <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:overlapSpecifications rdfs:Literal ;
+    ns2:subsumedUnder ns1:Survey .
+
+ns1:Anomaly ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+ns1:Survey ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Activity> .
+
+<https://w3id.org/italia/onto/l0/Agent> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:isDescribedByCatalogueRecord ns1:CatalogueRecord ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:CatalogueRecordVersion ns1:isCatalogueRecordVersionOf ns1:CatalogueRecord ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns1:CatalogueRecord ns1:catalogueRecordIdentifier rdfs:Literal ;
+    ns1:deletedICCDIdentifier rdfs:Literal ;
+    ns1:describesCulturalProperty <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasCatalogueRecordVersion ns1:CatalogueRecordVersion ;
+    ns1:recoveredData rdfs:Literal ;
+    ns1:systemRecordCode rdfs:Literal ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<https://w3id.org/italia/onto/l0/Object> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

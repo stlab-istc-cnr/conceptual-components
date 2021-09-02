@@ -1,0 +1,23 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Concept ns2:subsumedUnder ns1:Thing .
+
+ns1:Date ns2:subsumedUnder ns1:Thing ;
+    ns1:isFromUseDateOf ns1:Appellation ;
+    ns1:isToUseDateOf ns1:Appellation .
+
+ns1:Appellation ns2:subsumedUnder ns1:Concept ;
+    ns1:isOrWasAppellationOf ns1:Thing ;
+    ns1:usedFromDate rdfs:Literal ;
+    ns1:usedToDate rdfs:Literal ;
+    ns1:wasUsedFromDate ns1:Date ;
+    ns1:wasUsedToDate ns1:Date .
+
+ns1:Thing ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:hasOrHadAppellation ns1:Appellation .
+

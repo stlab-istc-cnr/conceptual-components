@@ -1,0 +1,772 @@
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://culturalis.org/cult/0.1#ArchaeologicalArea> rdfs:subClassOf <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#CulturalInstitutionAndSite> ns1:equivalentClass <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#CulturalInstitutionOrSite> ns1:equivalentClass <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#HolderOfArchives> rdfs:subClassOf <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#Library> rdfs:subClassOf <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#MonumentalArea> rdfs:subClassOf <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#Museum> rdfs:subClassOf <http://culturalis.org/ocsa/1.0#Agent> .
+
+<http://culturalis.org/cult/0.1#Site> ns1:equivalentClass <http://culturalis.org/ocsa/1.0#Site> .
+
+<http://culturalis.org/oad#FindingAid> rdfs:subClassOf <http://culturalis.org/cult/0.1/#Catalogue> .
+
+<http://dati.beniculturali.it/cis/NameInTime> rdfs:subClassOf <https://w3id.org/arco/ontology/core/Situation> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F10_Person> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F11_Corporate_Body> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E74_Group> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F12_Nomen> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F13_Identifier> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object>,
+        <http://www.europeana.eu/schemas/edm/InformationResource> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E12_Production> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F33_Reproduction_Event> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E12_Production> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure>,
+        <http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F36_Script_Conversion> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F39_Family> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E74_Group> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type>,
+        <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object>,
+        <http://www.europeana.eu/schemas/edm/InformationResource> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F40_Identifier_Assignment> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F41_Representative_Manifestation_Assignment> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F44_Bibliographic_Agency> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E40_Legal_Body> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F51_Pursuit> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F52_Name_Use_Activity> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F6_Concept> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F7_Object> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F8_Event> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E4_Period>,
+        <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+    ns1:equivalentClass <http://purl.org/vocab/frbr/core#Event>,
+        <http://www.europeana.eu/schemas/edm/Event> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F9_Place> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E53_Place>,
+        <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+    ns1:equivalentClass <http://purl.org/vocab/frbr/core#Place>,
+        <http://www.europeana.eu/schemas/edm/Place> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10_enhanced> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10i_was_enhanced_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11_separated> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11i_was_separated_through> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12_separated_from> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12i_was_diminished_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13_provided_surrogate_to> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R23_created_a_realization_of> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13i_had_surrogate_through> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R23i_was_realised_through> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14_substituted_with> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14i_became_surrogate_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15_replaced> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15i_was_replaced_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16_replaced_with> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16i_was_introduced_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23_foresees_dimension> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23i_is_dimension_foreseen_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24_foresees_use_of_title> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24i_is_title_foreseen_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P69_has_association_with> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P69i_is_associated_with> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2_initiated_as_continuation> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2i_was_initiated_as_continuation_through> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R11_has_issuing_rule> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R11i_is_issuing_rule_of> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44_foresees_topic> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44i_is_topic_foreseen_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45_created> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R18_created> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45i_was_created_by> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R18i_was_created_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46_aggregated_in_a_single_storage_unit> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46i_was_aggregated_in_a_single_storage_unit_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4_initiated_as_replacement> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4i_was_initiated_as_replacement_through> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6_initiated> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6i_resulted_from_split> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8_merged_into> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8i_resulted_from_merger> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9_absorbed> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9i_was_absorbed_through> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z6_Starting_of_Publication> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z7_Ending_of_Publication> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z8_Metadata_Management> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z9_Storage_Unit> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Agent> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/Agent> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Ensemble> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F17> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Event> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/Event> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Place> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/Place> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#PoeticWork> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F1>,
+        <http://www.europeana.eu/schemas/edm/ProvidedCHO> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Redaction> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F22> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#subtitle> rdfs:subPropertyOf <http://purl.org/spar/fabio/hasSubtitle> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-dates#IntervalExpression> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/TimeSpan> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-literaryAnalysisElements#Acrostic> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-literaryAnalysisElements#Intertextuality> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://purl.org/ontology/bibo/Document> rdfs:subClassOf <http://purl.org/ontology/holding#Document> .
+
+<http://purl.org/spar/biro/BibliographicCollection> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Work> .
+
+<http://purl.org/spar/biro/BibliographicList> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> .
+
+<http://purl.org/spar/biro/BibliographicRecord> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Work> .
+
+<http://purl.org/spar/biro/BibliographicReference> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> .
+
+<http://purl.org/spar/fabio/Expression> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> .
+
+<http://purl.org/spar/fabio/Item> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Item> .
+
+<http://purl.org/spar/fabio/Manifestation> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Manifestation> .
+
+<http://purl.org/spar/fabio/Work> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Work> .
+
+<http://purl.org/spar/fabio/hasManifestation> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/spar/fabio/hasPortrayal> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/spar/fabio/hasRepresentation> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/spar/fabio/isManifestationOf> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/spar/fabio/isPortrayalOf> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/spar/fabio/isRepresentationOf> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/vocab/frbr/extended#AutonomousExpression> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> .
+
+<http://purl.org/vocab/frbr/extended#AutonomousWork> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Work> .
+
+<http://purl.org/vocab/frbr/extended#ReferentialExpression> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> .
+
+<http://purl.org/vocab/frbr/extended#ReferentialWork> rdfs:subClassOf <http://purl.org/vocab/frbr/core#Work> .
+
+<http://purl.org/vocab/frbr/extended#isRelatedToExpression> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/vocab/frbr/extended#isRelatedToItem> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/vocab/frbr/extended#isRelatedToManifestation> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://purl.org/vocab/frbr/extended#isRelatedToWork> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<http://rdaregistry.info/Elements/a/P50006> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#gndIdentifier>,
+        <https://d-nb.info/standards/elementset/gnd#oldAuthorityNumber> .
+
+<http://rdaregistry.info/Elements/a/P50035> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation> .
+
+<http://rdaregistry.info/Elements/a/P50052> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#gndIdentifier>,
+        <https://d-nb.info/standards/elementset/gnd#oldAuthorityNumber> .
+
+<http://rdaregistry.info/Elements/a/P50058> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#periodOfActivity> .
+
+<http://rdaregistry.info/Elements/a/P50064> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation> .
+
+<http://rdaregistry.info/Elements/a/P50094> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#gndIdentifier>,
+        <https://d-nb.info/standards/elementset/gnd#oldAuthorityNumber> .
+
+<http://rdaregistry.info/Elements/a/P50098> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#periodOfActivity> .
+
+<http://rdaregistry.info/Elements/a/P50113> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation> .
+
+<http://rdaregistry.info/Elements/c/Agent> rdfs:subClassOf <http://purl.org/ontology/holding#Agent> .
+
+<http://rdaregistry.info/Elements/c/Item> rdfs:subClassOf <http://purl.org/ontology/holding#Item> .
+
+<http://rdaregistry.info/Elements/u/P60580> rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#keyOfTheVersion>,
+        <https://d-nb.info/standards/elementset/gnd#keyOfTheWork> .
+
+<http://w3id.org/vir#IC10_Attribute> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure>,
+        <http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item> .
+
+<http://w3id.org/vir#IC16_Character> rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F38_Character> .
+
+<http://w3id.org/vir#IC19_Recto> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> .
+
+<http://w3id.org/vir#IC1_Iconographical_Atom> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature> .
+
+<http://w3id.org/vir#IC20_Verso> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> .
+
+<http://w3id.org/vir#IC9_Representation> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item> .
+
+<http://w3id.org/vir#K10_on_the_base_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+<http://w3id.org/vir#K10i_is_basis_for> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+<http://w3id.org/vir#K11_assigned> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P141_assigned> .
+
+<http://w3id.org/vir#K11i_was_assigned_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> .
+
+<http://w3id.org/vir#K14_symbolize> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138_represents> .
+
+<http://w3id.org/vir#K14i_has_symbolic_value> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation> .
+
+<http://w3id.org/vir#K15_use_feature> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique> .
+
+<http://w3id.org/vir#K15i_has_been_used_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P33i_was_used_by> .
+
+<http://w3id.org/vir#K17_has_attribute> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of> .
+
+<http://w3id.org/vir#K17i_is_attribute_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of> .
+
+<http://w3id.org/vir#K1_denotes> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P65_shows_visual_item> .
+
+<http://w3id.org/vir#K1i_is_denoted_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P65i_is_shown_by> .
+
+<http://w3id.org/vir#K20_forms_part_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P148_has_component> .
+
+<http://w3id.org/vir#K20i_is_composed_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P148i_is_component_of> .
+
+<http://w3id.org/vir#K21_depict_things_of_type> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P137_exemplifies> .
+
+<http://w3id.org/vir#K21i_is_depiction_of_attribute> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P137i_is_exemplified_by> .
+
+<http://w3id.org/vir#K22_has_personification> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138_represents> .
+
+<http://w3id.org/vir#K22i_is_present_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation> .
+
+<http://w3id.org/vir#K23_connote> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138_represents> .
+
+<http://w3id.org/vir#K23i_is_connotation_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation> .
+
+<http://w3id.org/vir#K24_portray> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138_represents> .
+
+<http://w3id.org/vir#K24i_is_portrayed_in> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation> .
+
+<http://w3id.org/vir#K25_express> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138_represents> .
+
+<http://w3id.org/vir#K25i_is_abstraction_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation> .
+
+<http://w3id.org/vir#K26_has_source> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R57_is_based_on> .
+
+<http://w3id.org/vir#K26i_is_source_of> rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R57i_is_basis_for> .
+
+<http://w3id.org/vir#K34_illustrate> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138_represents> .
+
+<http://w3id.org/vir#K34i_is_illustrated_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation> .
+
+<http://w3id.org/vir#K4_is_visual_prototype_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+<http://w3id.org/vir#K4i_has_visual_prototype> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+<http://w3id.org/vir#K6_has_back> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of> .
+
+<http://w3id.org/vir#K6i_has_front> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of> .
+
+<http://w3id.org/vir#K7_is_recto_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P56_bears_feature> .
+
+<http://w3id.org/vir#K7i_has_recto> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P56i_is_found_on> .
+
+<http://w3id.org/vir#K8_is_verso_of> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P56_bears_feature> .
+
+<http://w3id.org/vir#K8i_has_verso> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P56i_is_found_on> .
+
+<http://w3id.org/vir#K9_Assigned_status_to> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> .
+
+<http://w3id.org/vir#K9i_has_status_assigned_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> .
+
+<http://w3id.org/vir#PCK4_is_visual_prototype_of> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/PC0_Typed_CRM_Property> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal>,
+        <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation>,
+        <http://www.cidoc-crm.org/cidoc-crm/E6_Destruction> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A2_Stratigraphic_Volume_Unit> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A3_Stratigraphic_Interface> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A4_Stratigraphic_Genesis> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A5_Stratigraphic_Modification>,
+        <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S17_Physical_Genesis> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A6_Group_Declaration_Event> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S5_Inference_Making> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S16_State> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A9_Archaeological_Excavation> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S1_Matter_Removal>,
+        <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S4_Observation> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10_destroyed> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P13_destroyed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP10i_was_destroyed_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P13i_was_destroyed_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16_assigned_attribute_to> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP16i_was_attributed_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6_intended_to_approximate> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8_observed> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP6i_was_approximated_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O8i_was_observed_by> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7_produced> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17_generated> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP7i_was_produced_by> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/O17i_was_generated_by> .
+
+<https://d-nb.info/standards/elementset/gnd#ConferenceOrEvent> rdfs:subClassOf <http://rdaregistry.info/Elements/c/C10005> .
+
+<https://d-nb.info/standards/elementset/gnd#CorporateBody> rdfs:subClassOf <http://rdaregistry.info/Elements/c/C10005> .
+
+<https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson> rdfs:subClassOf <http://rdaregistry.info/Elements/c/C10004> .
+
+<https://d-nb.info/standards/elementset/gnd#Family> rdfs:subClassOf <http://rdaregistry.info/Elements/c/C10008> .
+
+<https://d-nb.info/standards/elementset/gnd#UndifferentiatedPerson> rdfs:subClassOf <http://rdaregistry.info/Elements/c/C10004> .
+
+<https://d-nb.info/standards/elementset/gnd#accreditedArtist> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60431> .
+
+<https://d-nb.info/standards/elementset/gnd#accreditedAuthor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60434> .
+
+<https://d-nb.info/standards/elementset/gnd#accreditedComposer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60426> .
+
+<https://d-nb.info/standards/elementset/gnd#addressee> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60456> .
+
+<https://d-nb.info/standards/elementset/gnd#affiliation> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50101> .
+
+<https://d-nb.info/standards/elementset/gnd#affiliationAsLiteral> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50101> .
+
+<https://d-nb.info/standards/elementset/gnd#annotator> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60464> .
+
+<https://d-nb.info/standards/elementset/gnd#architect> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60435> .
+
+<https://d-nb.info/standards/elementset/gnd#arranger> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60379> .
+
+<https://d-nb.info/standards/elementset/gnd#artist> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60431> .
+
+<https://d-nb.info/standards/elementset/gnd#author> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60434> .
+
+<https://d-nb.info/standards/elementset/gnd#bookbinder> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60458> .
+
+<https://d-nb.info/standards/elementset/gnd#bookdesigner> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60409> .
+
+<https://d-nb.info/standards/elementset/gnd#cartographer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60425> .
+
+<https://d-nb.info/standards/elementset/gnd#choreographer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60433> .
+
+<https://d-nb.info/standards/elementset/gnd#citedArtist> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60431> .
+
+<https://d-nb.info/standards/elementset/gnd#citedAuthor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60434> .
+
+<https://d-nb.info/standards/elementset/gnd#citedComposer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60426> .
+
+<https://d-nb.info/standards/elementset/gnd#collector> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60066> .
+
+<https://d-nb.info/standards/elementset/gnd#compiler> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60428> .
+
+<https://d-nb.info/standards/elementset/gnd#composer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60426> .
+
+<https://d-nb.info/standards/elementset/gnd#curator> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60376> .
+
+<https://d-nb.info/standards/elementset/gnd#dateOfTermination> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50038> .
+
+<https://d-nb.info/standards/elementset/gnd#dedicatee> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60455> .
+
+<https://d-nb.info/standards/elementset/gnd#designer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60424> .
+
+<https://d-nb.info/standards/elementset/gnd#director> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60449> .
+
+<https://d-nb.info/standards/elementset/gnd#directorOfPhotography> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60452> .
+
+<https://d-nb.info/standards/elementset/gnd#doubtfulArtist> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60431> .
+
+<https://d-nb.info/standards/elementset/gnd#doubtfulAuthor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60434> .
+
+<https://d-nb.info/standards/elementset/gnd#doubtfulComposer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60426> .
+
+<https://d-nb.info/standards/elementset/gnd#engraver> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60410> .
+
+<https://d-nb.info/standards/elementset/gnd#etcher> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60416> .
+
+<https://d-nb.info/standards/elementset/gnd#fictitiousAuthor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60434> .
+
+<https://d-nb.info/standards/elementset/gnd#firstArtist> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60431> .
+
+<https://d-nb.info/standards/elementset/gnd#firstAuthor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60434> .
+
+<https://d-nb.info/standards/elementset/gnd#firstComposer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60426> .
+
+<https://d-nb.info/standards/elementset/gnd#formerOwner> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60401> .
+
+<https://d-nb.info/standards/elementset/gnd#founder> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50029> .
+
+<https://d-nb.info/standards/elementset/gnd#gender> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50116> .
+
+<https://d-nb.info/standards/elementset/gnd#hierarchicalSuperiorOfPlaceOrGeographicName> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50008> .
+
+<https://d-nb.info/standards/elementset/gnd#hierarchicalSuperiorOfTheConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50008> .
+
+<https://d-nb.info/standards/elementset/gnd#hierarchicalSuperiorOfTheCorporateBody> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50008> .
+
+<https://d-nb.info/standards/elementset/gnd#inventor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60427> .
+
+<https://d-nb.info/standards/elementset/gnd#librettist> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60478> .
+
+<https://d-nb.info/standards/elementset/gnd#lithographer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60414> .
+
+<https://d-nb.info/standards/elementset/gnd#manufacturer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60443> .
+
+<https://d-nb.info/standards/elementset/gnd#mediumOfPerformance> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60536> .
+
+<https://d-nb.info/standards/elementset/gnd#memberOfTheFamily> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50056> .
+
+<https://d-nb.info/standards/elementset/gnd#narrator> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60153> .
+
+<https://d-nb.info/standards/elementset/gnd#organizerOrHost> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60061> .
+
+<https://d-nb.info/standards/elementset/gnd#owner> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60404> .
+
+<https://d-nb.info/standards/elementset/gnd#photographer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60429> .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfBirth> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50119> .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfBirthAsLiteral> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50119> .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfBusiness> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50018> .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50024> .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfDeath> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50118> .
+
+<https://d-nb.info/standards/elementset/gnd#placeOfDeathAsLiteral> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50118> .
+
+<https://d-nb.info/standards/elementset/gnd#poet> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60477> .
+
+<https://d-nb.info/standards/elementset/gnd#precedingConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50012> .
+
+<https://d-nb.info/standards/elementset/gnd#precedingCorporateBody> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50012> .
+
+<https://d-nb.info/standards/elementset/gnd#precedingWork> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60261> .
+
+<https://d-nb.info/standards/elementset/gnd#preferredNameForTheConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50041> .
+
+<https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50041> .
+
+<https://d-nb.info/standards/elementset/gnd#preferredNameForTheFamily> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50065> .
+
+<https://d-nb.info/standards/elementset/gnd#preferredNameForThePerson> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50117> .
+
+<https://d-nb.info/standards/elementset/gnd#printer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60418> .
+
+<https://d-nb.info/standards/elementset/gnd#professionOrOccupation> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50104> .
+
+<https://d-nb.info/standards/elementset/gnd#professionOrOccupationAsLiteral> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50104> .
+
+<https://d-nb.info/standards/elementset/gnd#pseudonym> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50105> .
+
+<https://d-nb.info/standards/elementset/gnd#realIdentity> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50106> .
+
+<https://d-nb.info/standards/elementset/gnd#relatedConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50218> .
+
+<https://d-nb.info/standards/elementset/gnd#relatedCorporateBody> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50218> .
+
+<https://d-nb.info/standards/elementset/gnd#relatedFamily> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50219> .
+
+<https://d-nb.info/standards/elementset/gnd#relatedPerson> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50220> .
+
+<https://d-nb.info/standards/elementset/gnd#restorer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60450> .
+
+<https://d-nb.info/standards/elementset/gnd#screenwriter> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60476> .
+
+<https://d-nb.info/standards/elementset/gnd#sculptor> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60475> .
+
+<https://d-nb.info/standards/elementset/gnd#singer> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60156> .
+
+<https://d-nb.info/standards/elementset/gnd#sponsorOrPatron> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50028> .
+
+<https://d-nb.info/standards/elementset/gnd#succeedingConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50016> .
+
+<https://d-nb.info/standards/elementset/gnd#succeedingCorporateBody> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50016> .
+
+<https://d-nb.info/standards/elementset/gnd#succeedingWork> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60278> .
+
+<https://d-nb.info/standards/elementset/gnd#titleOfNobility> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50059>,
+        <http://rdaregistry.info/Elements/a/P50110> .
+
+<https://d-nb.info/standards/elementset/gnd#titleOfNobilityAsLiteral> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50059>,
+        <http://rdaregistry.info/Elements/a/P50110> .
+
+<https://d-nb.info/standards/elementset/gnd#translator> rdfs:subPropertyOf <http://rdaregistry.info/Elements/u/P60385> .
+
+<https://d-nb.info/standards/elementset/gnd#variantNameForTheConferenceOrEvent> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50025> .
+
+<https://d-nb.info/standards/elementset/gnd#variantNameForTheCorporateBody> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50025> .
+
+<https://d-nb.info/standards/elementset/gnd#variantNameForTheFamily> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50054> .
+
+<https://d-nb.info/standards/elementset/gnd#variantNameForThePerson> rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50103> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/arco/CulturalPropertyPart> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/arco/MusicHeritage> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/MusicInstrument> .
+
+<https://w3id.org/arco/ontology/arco/TangibleCulturalProperty> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/PhysicalThing> .
+
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecord> rdfs:subClassOf <http://purl.org/spar/fabio/EntityMetadata> .
+
+<https://w3id.org/arco/ontology/catalogue/CatalogueRecordOA> rdfs:subClassOf <http://purl.org/emmedi/oaentry/OAEntry> .
+
+<https://w3id.org/arco/ontology/context-description/Acquisition> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/ImmediateAcquisition>,
+        <http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition> .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecord> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Archival> .
+
+<https://w3id.org/arco/ontology/context-description/BiologicalTaxon> rdfs:subClassOf <http://dati.beniculturali.it/cis/CollectionCulEnt> .
+
+<https://w3id.org/arco/ontology/context-description/Copyright> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/CopyrightRegistration>,
+        <http://www.cidoc-crm.org/cidoc-crm/E30_Right> .
+
+<https://w3id.org/arco/ontology/context-description/DerivatedWork> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/context-description/Intervention> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E11_Modification> .
+
+<https://w3id.org/arco/ontology/context-description/PreparatoryOrFinalWork> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/context-description/Scale> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Scale> .
+
+<https://w3id.org/arco/ontology/context-description/Title> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Title> .
+
+<https://w3id.org/arco/ontology/context-description/documentationLocation> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/physicalLocation> .
+
+<https://w3id.org/arco/ontology/context-description/hasAcquisition> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/immediateAcquisition>,
+        <http://www.cidoc-crm.org/cidoc-crm/P24i_changed_ownership_through> .
+
+<https://w3id.org/arco/ontology/context-description/hasActivityOperator> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<https://w3id.org/arco/ontology/context-description/hasActivityResponsible> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<https://w3id.org/arco/ontology/context-description/hasActivitySponsor> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> .
+
+<https://w3id.org/arco/ontology/context-description/hasAuthor> rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#creator> .
+
+<https://w3id.org/arco/ontology/context-description/hasCopyright> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/copyrightRegistration> .
+
+<https://w3id.org/arco/ontology/context-description/hasCopyrightHolder> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P75i_is_possessed_by> .
+
+<https://w3id.org/arco/ontology/context-description/hasPreviousOwner> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/acquisitionSource>,
+        <http://www.cidoc-crm.org/cidoc-crm/P23_transferred_title_from> .
+
+<https://w3id.org/arco/ontology/context-description/hasScale> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/scale> .
+
+<https://w3id.org/arco/ontology/context-description/hasTitle> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/title> .
+
+<https://w3id.org/arco/ontology/context-description/isAcquisitionOf> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P24_transferred_title_of> .
+
+<https://w3id.org/arco/ontology/context-description/isInterventionOn> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P31_has_modified> .
+
+<https://w3id.org/arco/ontology/context-description/isPreviousOwnerOf> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P23i_surrendered_title_through> .
+
+<https://w3id.org/arco/ontology/cultural-event/Exhibition> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEvent> .
+
+<https://w3id.org/arco/ontology/denotative-description/AffixedElement> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E37_Mark> .
+
+<https://w3id.org/arco/ontology/denotative-description/ConservationStatus> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State> .
+
+<https://w3id.org/arco/ontology/denotative-description/Inscription> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E34_Inscription> .
+
+<https://w3id.org/arco/ontology/denotative-description/hasConservationStatus> rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P44_has_condition> .
+
+<https://w3id.org/arco/ontology/immovable-property/hasFoundation> rdfs:subPropertyOf <http://dati.beniculturali.it/cis/isRelatedToRiT> .
+
+<https://w3id.org/arco/ontology/immovable-property/isFoundationOf> rdfs:subPropertyOf <http://dati.beniculturali.it/cis/isRelatedToRiT> .
+
+<https://w3id.org/arco/ontology/movable-property/Herbarium> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/movable-property/NaturalHeritageCollection> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/movable-property/Specimen> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arco/ontology/movable-property/SpecimenContainer> rdfs:subClassOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/arm/core/ontology/0.1/AccessionNumber> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Identifier> .
+
+<https://w3id.org/arm/core/ontology/0.1/BoundCollection> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Item> .
+
+<https://w3id.org/arm/core/ontology/0.1/CaptionNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/ContentsNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/DescriptiveNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/InaccuracyNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/LimitationNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/OclcNumber> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Identifier> .
+
+<https://w3id.org/arm/core/ontology/0.1/PaginationFoliation> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Extent> .
+
+<https://w3id.org/arm/core/ontology/0.1/PreferredCitation> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/RelatedMaterialNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/SubjectNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/SummaryNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/SupplementaryContentNote> rdfs:subClassOf <http://id.loc.gov/ontologies/bibframe/Note> .
+
+<https://w3id.org/arm/core/ontology/0.1/citedBy> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/relatedTo> .
+
+<https://w3id.org/arm/core/ontology/0.1/cites> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/relatedTo> .
+
+<https://w3id.org/arm/core/ontology/0.1/hasPreferredTitle> rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/title> .
+
+<http://dati.beniculturali.it/cis/CulturalEvent> rdfs:subClassOf <https://w3id.org/arco/ontology/core/Event> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E12_Production>,
+        <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F38_Character> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing>,
+        <http://www.europeana.eu/schemas/edm/InformationResource> .
+
+<http://purl.org/emmedi/oaentry/OAEntry> rdfs:subClassOf <http://purl.org/spar/fabio/EntityMetadata> .
+
+<http://purl.org/vocab/frbr/core#Event> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+    ns1:equivalentClass <http://www.europeana.eu/schemas/edm/Event> .
+
+<http://purl.org/vocab/frbr/core#Item> rdfs:subClassOf <http://purl.org/ontology/holding#Item> .
+
+<http://purl.org/vocab/frbr/core#Manifestation> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/InformationResource> .
+
+<http://purl.org/vocab/frbr/core#Place> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+    ns1:equivalentClass <http://www.europeana.eu/schemas/edm/Place> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A5_Stratigraphic_Modification> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S18_Alteration> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object>,
+        <http://www.europeana.eu/schemas/edm/InformationResource> .
+
+<http://rdaregistry.info/Elements/c/C10004> rdfs:subClassOf <https://d-nb.info/standards/elementset/gnd#AuthorityResource> ;
+    ns1:equivalentClass <https://d-nb.info/standards/elementset/gnd#Person> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A8_Stratigraphic_Unit> rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> .
+
+<http://purl.org/vocab/frbr/core#Expression> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/InformationResource> .
+
+<http://purl.org/vocab/frbr/core#Work> rdfs:subClassOf <http://www.europeana.eu/schemas/edm/InformationResource> .
+

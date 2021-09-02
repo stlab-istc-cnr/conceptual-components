@@ -1,0 +1,17 @@
+@prefix ns1: <http://paperdyne#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Paper ns1:discussedBy ns1:Program_Comitee .
+
+ns1:Program_Comitee_Chair ns1:headOf ns1:Program_Comitee ;
+    ns1:memberOf ns1:Program_Comitee .
+
+ns1:Reviewer ns1:memberOf ns1:Program_Comitee .
+
+ns1:Program_Comitee ns1:discusses ns1:Paper ;
+    ns1:hasMembers ns1:Program_Comitee_Chair,
+        ns1:Reviewer .
+

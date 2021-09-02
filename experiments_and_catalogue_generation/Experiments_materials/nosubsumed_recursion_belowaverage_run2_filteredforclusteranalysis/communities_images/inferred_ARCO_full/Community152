@@ -1,0 +1,10 @@
+digraph "Community 152" {
+	TypeSpecimenIdentification
+	CulturalEntity -> TypeSpecimenIdentification [label=hasTypeSpecimenIdentification]
+	TypeSpecimenIdentification -> Bibliography [label=hasBibliography]
+	TypeSpecimenIdentification -> CulturalEntity [label=isTypeSpecimenIdentificationOf]
+	TypeSpecimenIdentification -> Taxon [label=producesTaxon]
+	Taxon -> TypeSpecimenIdentification [label=isTaxonProducedBy]
+	LaboratoryTest -> TypeSpecimenIdentification [label=hasConsequence]
+	Specimen -> TypeSpecimenIdentification [label=hasTypeSpecimenIdentification]
+}

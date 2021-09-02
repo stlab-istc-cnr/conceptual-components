@@ -1,0 +1,18 @@
+@prefix ns1: <http://openconf#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Domain_Topic ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Member ns2:subsumedUnder ns1:People .
+
+ns1:Paper_Review ns1:Review_made_by ns1:Reviewer ;
+    ns2:subsumedUnder ns1:Domain_Topic .
+
+ns1:Reviewer ns1:UserName xsd:string ;
+    ns1:has_made_review ns1:Paper_Review ;
+    ns2:subsumedUnder ns1:Member .
+

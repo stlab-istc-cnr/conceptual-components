@@ -1,0 +1,14 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E19_Physical_Object ns1:P25i_moved_by ns1:E9_Move .
+
+ns1:E53_Place ns1:P26i_was_destination_of ns1:E9_Move ;
+    ns1:P27i_was_origin_of ns1:E9_Move .
+
+ns1:E9_Move ns1:P26_moved_to ns1:E53_Place ;
+    ns1:P27_moved_from ns1:E53_Place .
+

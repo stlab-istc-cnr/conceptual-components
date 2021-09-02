@@ -1,0 +1,37 @@
+Community 1 : 
+	author
+	article article_written_by author
+	article has_author author
+	author assigns_article_to_conference article
+	author writes_article article
+Community 2 : 
+	abstract
+	abstract part_of_article article
+	article has_abstract abstract
+	article
+Community 3 : 
+	program program_created_by chair
+	chair
+	chair assigns_reviewers_to_article reviewer
+Community 4 : 
+	chair creates_program program
+	program
+Community 5 : 
+	program has_session session
+	session
+Community 6 : 
+	review
+	review review_written_by reviewer
+	reviewer writes_review review
+	reviewer
+	article has_reviewer reviewer
+Community 7 : 
+	conference
+	conference has_program program
+	participant submits_to_conference conference
+	participant
+Community 8 : 
+	event has_enddate dateTime
+	dateTime
+	event
+	event has_startdate dateTime

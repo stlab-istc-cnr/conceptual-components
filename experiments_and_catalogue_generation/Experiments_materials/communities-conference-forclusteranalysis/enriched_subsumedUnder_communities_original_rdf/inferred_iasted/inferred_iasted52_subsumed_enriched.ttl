@@ -1,0 +1,20 @@
+@prefix ns1: <http://iasted#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Plenary_lecture_speaker ns1:give ns1:Tutorial ;
+    ns2:extensionallyEquivalent ns1:Tutorial_speaker ;
+    ns2:subsumedUnder ns1:Author .
+
+ns1:Lecture ns2:subsumedUnder ns1:Conference_activity .
+
+ns1:Tutorial ns1:is_given_by ns1:Tutorial_speaker ;
+    ns2:subsumedUnder ns1:Lecture .
+
+ns1:Author ns2:subsumedUnder ns1:Speaker .
+
+ns1:Tutorial_speaker ns2:subsumedUnder ns1:Author .
+

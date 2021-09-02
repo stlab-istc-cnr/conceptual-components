@@ -1,0 +1,20 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E33_Linguistic_Object ns2:subsumedUnder ns1:E73_Information_Object .
+
+ns1:E35_Title ns1:P102i_is_title_of ns1:E71_Man-Made_Thing ;
+    ns2:subsumedUnder ns1:E33_Linguistic_Object,
+        ns1:E41_Appellation .
+
+ns1:E41_Appellation ns2:subsumedUnder ns1:E90_Symbolic_Object .
+
+ns1:E70_Thing ns2:subsumedUnder ns1:E77_Persistent_Item .
+
+ns1:E71_Man-Made_Thing ns1:P102_has_title ns1:E35_Title ;
+    ns2:subsumedUnder ns1:E70_Thing .
+

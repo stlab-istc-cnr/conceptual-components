@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<Alignment>
+  <xml>yes</xml>
+  <level>0</level>
+  <type>??</type>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#ProgramCommitteeMember"/>
+      <entity2 rdf:resource="http://conference#Conference_fees"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4596465876500608</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[program, , committee, , member]--&gt;member&lt;-&gt;confer--&gt;[confer, fee]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#date"/>
+      <entity2 rdf:resource="http://conference#has_a_date_of_issue"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.9999999999999999</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[date]--&gt;https://spec.edmcouncil.org/fibo/FND/vocabulary#hasDate&lt;-&gt;https://spec.edmcouncil.org/fibo/FND/vocabulary#hasDate--&gt;[date, issu]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#reviewCriteriaEnteredBy"/>
+      <entity2 rdf:resource="http://conference#was_a_committe_co-chair_of"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.48968298156371515</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[review, , criteria, , entered]--&gt;criteria&lt;-&gt;chair--&gt;[committ, co, chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#memberOfProgramCommittee"/>
+      <entity2 rdf:resource="http://conference#has_workshops"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.6663216406417567</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[member, , of, , program, , committe]--&gt;committe&lt;-&gt;workshop--&gt;[workshop]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Document"/>
+      <entity2 rdf:resource="http://conference#Conference_announcement"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.43366094792945814</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[document]--&gt;document&lt;-&gt;announc--&gt;[confer, announc]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#title"/>
+      <entity2 rdf:resource="http://conference#has_gender"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.6553286626155873</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[titl]--&gt;titl&lt;-&gt;gender--&gt;[gender]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Reviewer"/>
+      <entity2 rdf:resource="http://conference#Reviewer"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Meta-Review"/>
+      <entity2 rdf:resource="http://conference#Abstract"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.7832441818549541</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[meta, review]--&gt;meta&lt;-&gt;abstract--&gt;[abstract]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#ConferenceMember"/>
+      <entity2 rdf:resource="http://conference#Committee_member"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.9999999999999999</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[conference_, member]--&gt;https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasMember&lt;-&gt;https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasMember--&gt;[committe, member]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#acceptPaper"/>
+      <entity2 rdf:resource="http://conference#belongs_to_a_review_reference"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5773575545106117</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[accept, , paper]--&gt;accept&lt;-&gt;review--&gt;[belong, review, refer]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#enableVirtualMeeting"/>
+      <entity2 rdf:resource="http://conference#has_a_review"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.528373130584425</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[enable, , virtual, , meet]--&gt;meet&lt;-&gt;review--&gt;[review]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Administrator"/>
+      <entity2 rdf:resource="http://conference#Active_conference_participant"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5446004586119193</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[administr]--&gt;administr&lt;-&gt;confer--&gt;[activ, confer, particip]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#ExternalReviewer"/>
+      <entity2 rdf:resource="http://conference#Committee"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.590012913214448</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[external, , review]--&gt;review&lt;-&gt;committe--&gt;[committe]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Rejection"/>
+      <entity2 rdf:resource="http://conference#Conference_part"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5537163132959458</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[reject]--&gt;reject&lt;-&gt;confer--&gt;[confer, part]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasCo-author"/>
+      <entity2 rdf:resource="http://conference#has_a_topic_or_a_submission_contribution"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.574672389157817</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , co, author]--&gt;author&lt;-&gt;submiss--&gt;[topic, submiss, contribut]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Bid"/>
+      <entity2 rdf:resource="http://conference#Camera_ready_contribution"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5266818258702854</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[bid]--&gt;bid&lt;-&gt;readi--&gt;[camera, readi, contribut]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#finalizePaperAssignment"/>
+      <entity2 rdf:resource="http://conference#has_been_assigned_a_review_reference"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0000000000000002</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[finalize_, paper_, assign]--&gt;https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable&lt;-&gt;https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable--&gt;[assign, review, refer]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#logoURL"/>
+      <entity2 rdf:resource="http://conference#has_a_location"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.48682306051874313</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[logo, url]--&gt;logo&lt;-&gt;locat--&gt;[locat]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasConferenceMember"/>
+      <entity2 rdf:resource="http://conference#has_a_track-workshop-tutorial_topic"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5594078503848737</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , conference, , member]--&gt;member&lt;-&gt;topic--&gt;[track, workshop, tutori, topic]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#name"/>
+      <entity2 rdf:resource="http://conference#has_a_name"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.9999999999999999</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[name]--&gt;https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasName&lt;-&gt;https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasName--&gt;[name]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasConflictOfInterest"/>
+      <entity2 rdf:resource="http://conference#has_an_abstract"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4078612189290691</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , conflict, , of, , interest]--&gt;conflict&lt;-&gt;abstract--&gt;[abstract]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Author"/>
+      <entity2 rdf:resource="http://conference#Contribution_1th-author"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0000000000000002</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[author]--&gt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/authorizes&lt;-&gt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/authorizes--&gt;[contribut, th, author]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#assignReviewer"/>
+      <entity2 rdf:resource="http://conference#gives_presentations"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5289596803391154</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[assign, , review]--&gt;review&lt;-&gt;present--&gt;[give, present]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#AuthorNotReviewer"/>
+      <entity2 rdf:resource="http://conference#Call_for_participation"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4806169249263982</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[author, , not, , review]--&gt;review&lt;-&gt;particip--&gt;[call, particip]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasProgramCommitteeMember"/>
+      <entity2 rdf:resource="http://conference#has_tutorials"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5144420145408964</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , program, , committee, , member]--&gt;member&lt;-&gt;tutori--&gt;[tutori]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#PaperFullVersion"/>
+      <entity2 rdf:resource="http://conference#Conference_contribution"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4908591905911868</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[paper, , full, , version]--&gt;full&lt;-&gt;confer--&gt;[confer, contribut]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Paper"/>
+      <entity2 rdf:resource="http://conference#Paper"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#runPaperAssignmentTools"/>
+      <entity2 rdf:resource="http://conference#was_a_committee_chair_of"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4433900944956895</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[run, , paper, , assignment, , tool]--&gt;tool&lt;-&gt;committe--&gt;[committe, chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#ProgramCommitteeChair"/>
+      <entity2 rdf:resource="http://conference#Conference_document"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4004307385804063</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[program, , committee, , chair]--&gt;chair&lt;-&gt;document--&gt;[confer, document]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#paperID"/>
+      <entity2 rdf:resource="http://conference#has_a_volume"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4039243450041033</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[paper, id]--&gt;paper&lt;-&gt;volum--&gt;[volum]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#siteURL"/>
+      <entity2 rdf:resource="http://conference#has_an_expertise"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4094580712156013</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[site, url]--&gt;url&lt;-&gt;expertis--&gt;[expertis]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasAuthor"/>
+      <entity2 rdf:resource="http://conference#has_authors"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0000000000000002</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has_, author]--&gt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/authorizes&lt;-&gt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/authorizes--&gt;[author]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasDecision"/>
+      <entity2 rdf:resource="http://conference#has_an_organizing_committee"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5126502792437444</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , decis]--&gt;decis&lt;-&gt;committe--&gt;[organ, committe]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#SubjectArea"/>
+      <entity2 rdf:resource="http://conference#Conference_participant"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4344299521876794</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[subject, , area]--&gt;subject&lt;-&gt;confer--&gt;[confer, particip]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#memberOfConference"/>
+      <entity2 rdf:resource="http://conference#belong_to_a_conference_volume"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[member_, of_, confer]--&gt;https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isConferredBy&lt;-&gt;https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isConferredBy--&gt;[belong, confer, volum]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#addProgramCommitteeMember"/>
+      <entity2 rdf:resource="http://conference#has_members"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.9999999999999999</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[add_, program_, committee_, member]--&gt;https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasMember&lt;-&gt;https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasMember--&gt;[member]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Review"/>
+      <entity2 rdf:resource="http://conference#Review"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#startReviewerBidding"/>
+      <entity2 rdf:resource="http://conference#was_a_track-workshop_chair_of"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.6824519609330375</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[start, , reviewer, , bid]--&gt;bid&lt;-&gt;chair--&gt;[track, workshop, chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#readPaper"/>
+      <entity2 rdf:resource="http://conference#is_submitted_at"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.47263414112743535</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[read, , paper]--&gt;paper&lt;-&gt;submit--&gt;[submit]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#rejectPaper"/>
+      <entity2 rdf:resource="http://conference#issues"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5421387145512908</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[reject, , paper]--&gt;paper&lt;-&gt;issu--&gt;[issu]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasBid"/>
+      <entity2 rdf:resource="http://conference#has_a_submitted_contribution"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5502490331848116</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , bid]--&gt;bid&lt;-&gt;submit--&gt;[submit, contribut]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#enterConferenceDetails"/>
+      <entity2 rdf:resource="http://conference#has_a_review_reference_or_expertise"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4887966260182937</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[enter, , conference, , detail]--&gt;detail&lt;-&gt;expertis--&gt;[review, refer, expertis]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#markConflictOfInterest"/>
+      <entity2 rdf:resource="http://conference#has_tracks"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4830263081091472</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[mark, , conflict, , of, , interest]--&gt;conflict&lt;-&gt;track--&gt;[track]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Conference"/>
+      <entity2 rdf:resource="http://conference#Conference"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Co-author"/>
+      <entity2 rdf:resource="http://conference#Contribution_co-author"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:KGMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0000000000000002</alignapilocalns:KGMatcher_confidence>
+      <alignapilocalns:KGMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[co, author]--&gt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/authorizes&lt;-&gt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/authorizes--&gt;[contribut, co, author]</alignapilocalns:KGMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Preference"/>
+      <entity2 rdf:resource="http://conference#Conference_contributor"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.6885984729135053</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[prefer]--&gt;prefer&lt;-&gt;contributor--&gt;[confer, contributor]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#printHardcopyMailingManifests"/>
+      <entity2 rdf:resource="http://conference#invited_by"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4395296166547236</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[print, , hardcopy, , mailing, , manifest]--&gt;manifest&lt;-&gt;invit--&gt;[invit]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#email"/>
+      <entity2 rdf:resource="http://conference#has_an_ISBN"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.6194399857699582</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[email]--&gt;email&lt;-&gt;isbn--&gt;[isbn]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasBeenAssigned"/>
+      <entity2 rdf:resource="http://conference#has_a_track-workshop-tutorial_chair"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.45391081184885057</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , been, , assign]--&gt;assign&lt;-&gt;chair--&gt;[track, workshop, tutori, chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#assignedByAdministrator"/>
+      <entity2 rdf:resource="http://conference#has_a_committee_co-chair"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5940788923273708</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[assigned, , by, , administr]--&gt;administr&lt;-&gt;committe--&gt;[committe, co, chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#assignedByReviewer"/>
+      <entity2 rdf:resource="http://conference#has_a_program_committee"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.590012913214448</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[assigned, , by, , review]--&gt;review&lt;-&gt;committe--&gt;[program, committe]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Decision"/>
+      <entity2 rdf:resource="http://conference#Co-chair"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.474513178164883</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[decis]--&gt;decis&lt;-&gt;chair--&gt;[co, chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#ConferenceChair"/>
+      <entity2 rdf:resource="http://conference#Chair"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[conference, , chair]--&gt;chair&lt;-&gt;chair--&gt;[chair]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#readByMeta-Reviewer"/>
+      <entity2 rdf:resource="http://conference#invites_co-reviewers"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.9999999999999999</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[read, , by, , meta, review]--&gt;review&lt;-&gt;review--&gt;[invit, co, review]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#readByReviewer"/>
+      <entity2 rdf:resource="http://conference#is_given_by"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.42601734524494816</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[read, , by, , review]--&gt;review&lt;-&gt;given--&gt;[given]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#adjustBid"/>
+      <entity2 rdf:resource="http://conference#belongs_to_reviewers"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.528414595558525</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[adjust, , bid]--&gt;bid&lt;-&gt;review--&gt;[belong, review]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#endReview"/>
+      <entity2 rdf:resource="http://conference#has_a_review_expertise"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.6567450607686343</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[end, , review]--&gt;review&lt;-&gt;expertis--&gt;[review, expertis]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#paperAssignmentToolsRunBy"/>
+      <entity2 rdf:resource="http://conference#is_part_of_conference_volumes"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4039243450041033</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[paper, , assignment, , tools, , run]--&gt;paper&lt;-&gt;volum--&gt;[part, confer, volum]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#hasSubjectArea"/>
+      <entity2 rdf:resource="http://conference#has_important_dates"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4351220853930411</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[has, , subject, , area]--&gt;subject&lt;-&gt;import--&gt;[import, date]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#maxPapers"/>
+      <entity2 rdf:resource="http://conference#has_a_degree"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.7199815058588045</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[max, , paper]--&gt;max&lt;-&gt;degre--&gt;[degre]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#assignExternalReviewer"/>
+      <entity2 rdf:resource="http://conference#contributes"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.46145454134461916</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[assign, , external, , review]--&gt;review&lt;-&gt;contribut--&gt;[contribut]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Acceptance"/>
+      <entity2 rdf:resource="http://conference#Accepted_contribution"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">1.0000000000000002</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[accept]--&gt;accept&lt;-&gt;accept--&gt;[accept, contribut]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#PaperAbstract"/>
+      <entity2 rdf:resource="http://conference#Conference_applicant"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4707309265715525</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[paper, , abstract]--&gt;abstract&lt;-&gt;confer--&gt;[confer, applic]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#acceptsHardcopySubmissions"/>
+      <entity2 rdf:resource="http://conference#has_a_URL"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4411711961179077</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[accepts, , hardcopy, , submiss]--&gt;submiss&lt;-&gt;url--&gt;[url]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#co-writePaper"/>
+      <entity2 rdf:resource="http://conference#has_a_publisher"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.45117845258153455</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[co, write, , paper]--&gt;paper&lt;-&gt;publish--&gt;[publish]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#User"/>
+      <entity2 rdf:resource="http://conference#Conference_proceedings"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.545854932920897</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[user]--&gt;user&lt;-&gt;proceed--&gt;[confer, proceed]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#enterReviewCriteria"/>
+      <entity2 rdf:resource="http://conference#has_a_steering_committee"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.49707810783696693</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[enter, , review, , criteria]--&gt;criteria&lt;-&gt;committe--&gt;[steer, committe]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#Person"/>
+      <entity2 rdf:resource="http://conference#Person"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#reviewsPerPaper"/>
+      <entity2 rdf:resource="http://conference#has_an_email"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.45067778587110835</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[reviews, , per, , paper]--&gt;paper&lt;-&gt;email--&gt;[email]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#ProgramCommittee"/>
+      <entity2 rdf:resource="http://conference#Program_committee"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#paperAssignmentFinalizedBy"/>
+      <entity2 rdf:resource="http://conference#is_a_topis_of_conference_parts"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.4741780630419842</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[paper, , assignment, , finalized]--&gt;paper&lt;-&gt;confer--&gt;[topi, confer, part]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#setMaxPapers"/>
+      <entity2 rdf:resource="http://conference#was_a_committee_of"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.46948416353843897</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[set, , max, , paper]--&gt;paper&lt;-&gt;committe--&gt;[committe]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource="http://cmt#AssociatedChair"/>
+      <entity2 rdf:resource="http://conference#Call_for_paper"/>
+      <relation>=</relation>
+      <measure rdf:datatype="xsd:float">1.0</measure>
+      <alignapilocalns:TextCorpusMatcher_confidence xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">0.5604372175869744</alignapilocalns:TextCorpusMatcher_confidence>
+      <alignapilocalns:TextCorpusMatcher_explanation xmlns:alignapilocalns="http://melt.dws.uni-mannheim.de/configuration#">[associated, , chair]--&gt;chair&lt;-&gt;paper--&gt;[call, paper]</alignapilocalns:TextCorpusMatcher_explanation>
+    </Cell>
+  </map>
+</Alignment>
+</rdf:RDF>

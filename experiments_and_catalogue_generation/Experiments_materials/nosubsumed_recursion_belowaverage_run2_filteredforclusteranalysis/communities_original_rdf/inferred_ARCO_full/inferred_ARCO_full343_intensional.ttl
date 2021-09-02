@@ -1,0 +1,20 @@
+@prefix ns1: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix ns2: <https://w3id.org/arco/ontology/core/> .
+@prefix ns3: <https://w3id.org/italia/onto/l0/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns1:hasDesignationInTime ns1:DesignationInTime .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:hasDesignationInTime ns1:DesignationInTime .
+
+ns1:DesignationType ns1:isDesignationTypeOf ns1:DesignationInTime .
+
+ns1:DesignationInTime ns2:note rdfs:Literal ;
+    ns1:hasDesignationType ns1:DesignationType ;
+    ns1:isDesignationInTimeOf <http://dati.beniculturali.it/cis/CulturalEntity>,
+        <http://www.w3.org/2002/07/owl#Thing> ;
+    ns3:name rdfs:Literal .
+

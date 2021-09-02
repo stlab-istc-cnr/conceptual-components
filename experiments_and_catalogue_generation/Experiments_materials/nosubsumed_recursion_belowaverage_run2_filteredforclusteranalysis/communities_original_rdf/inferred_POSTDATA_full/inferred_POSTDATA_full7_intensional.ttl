@@ -1,0 +1,20 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:presents ns1:Rhyme .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ns1:isRhymeWord ns1:Rhyme .
+
+ns1:Rhyme ns1:ending xsd:string ;
+    ns1:finalConsonant xsd:string ;
+    ns1:hasRhymeWord <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ;
+    ns1:label xsd:string ;
+    ns1:prefinalConsonants xsd:string ;
+    ns1:rhymeCategory xsd:string ;
+    ns1:rhymeGrapheme xsd:string ;
+    ns1:rhymePhoneme xsd:string ;
+    ns1:rhymeScheme xsd:string .
+

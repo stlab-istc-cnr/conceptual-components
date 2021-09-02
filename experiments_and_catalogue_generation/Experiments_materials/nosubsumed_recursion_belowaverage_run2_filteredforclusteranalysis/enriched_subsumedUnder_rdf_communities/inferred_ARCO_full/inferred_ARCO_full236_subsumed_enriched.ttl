@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix ns2: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:MeasurementCollection ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Collection> .
+
+ns1:MetallicSpecimen ns1:hasReflectance ns1:Reflectance ;
+    ns1:internalReflection xsd:boolean ;
+    ns3:subsumedUnder ns1:Specimen .
+
+ns1:Reflectance ns2:hasMeasurementCollection ns2:MeasurementCollection ;
+    ns1:isReflectanceOf ns1:MetallicSpecimen ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Characteristic> .
+
+ns1:Specimen ns3:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/italia/onto/l0/Characteristic> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

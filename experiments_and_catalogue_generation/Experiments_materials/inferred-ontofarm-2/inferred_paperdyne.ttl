@@ -1,0 +1,1514 @@
+@prefix : <http://paperdyne#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://paperdyne#> .
+
+<http://paperdyne> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://paperdyne#acceptedBy
+:acceptedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :accepts
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :accepts ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Paper ;
+            rdfs:range :Program_Comitee_Chair .
+
+
+###  http://paperdyne#accepts
+:accepts rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:InverseFunctionalProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Program_Comitee_Chair ;
+         rdfs:range :Paper .
+
+
+###  http://paperdyne#assignedBy
+:assignedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :assigns
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#assignedPaperBy
+:assignedPaperBy rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty [ owl:inverseOf :assignsPaper
+                                        ] ;
+                 rdfs:subPropertyOf :assigns ,
+                                    [ owl:inverseOf :assignedBy
+                                    ] ;
+                 owl:inverseOf :assignsPaper ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Reviewer ;
+                 rdfs:range :Program_Comitee_Chair .
+
+
+###  http://paperdyne#assignedToReviewBy
+:assignedToReviewBy rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty [ owl:inverseOf :assignsToReview
+                                           ] ;
+                    rdfs:subPropertyOf :assignedBy ,
+                                       [ owl:inverseOf :assigns
+                                       ] ;
+                    owl:inverseOf :assignsToReview ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Paper ;
+                    rdfs:range :Program_Comitee_Chair .
+
+
+###  http://paperdyne#assigns
+:assigns rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :assignedBy .
+
+
+###  http://paperdyne#assignsPaper
+:assignsPaper rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :assignedBy ,
+                                 [ owl:inverseOf :assigns
+                                 ] ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:domain :Program_Comitee_Chair ;
+              rdfs:range :Reviewer .
+
+
+###  http://paperdyne#assignsToReview
+:assignsToReview rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :assigns ,
+                                    [ owl:inverseOf :assignedBy
+                                    ] ;
+                 rdf:type owl:InverseFunctionalProperty ,
+                          owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Program_Comitee_Chair ;
+                 rdfs:range :Paper .
+
+
+###  http://paperdyne#bidsFor
+:bidsFor rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Reviewer ;
+         rdfs:range :Paper .
+
+
+###  http://paperdyne#blockAssigningToReviewer
+:blockAssigningToReviewer rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#changedBy
+:changedBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :changes
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :changes ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Contribution ;
+           rdfs:range :Author .
+
+
+###  http://paperdyne#changes
+:changes rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:InverseFunctionalProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Author ;
+         rdfs:range :Contribution .
+
+
+###  http://paperdyne#coauthorsWith
+:coauthorsWith rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :coauthorsWith
+                                      ] ;
+               rdfs:subPropertyOf :cooperates ,
+                                  [ owl:inverseOf :cooperates
+                                  ] ;
+               owl:inverseOf :coauthorsWith ;
+               rdf:type owl:SymmetricProperty .
+
+
+###  http://paperdyne#confirmedBy
+:confirmedBy rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :confirmes
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Pending_Proposed_Conflict ;
+             rdfs:range :Reviewer .
+
+
+###  http://paperdyne#confirmes
+:confirmes rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :confirmedBy ;
+           rdf:type owl:InverseFunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Reviewer ;
+           rdfs:range :Pending_Proposed_Conflict .
+
+
+###  http://paperdyne#conflictProposedBy
+:conflictProposedBy rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :proposedBy ,
+                                       [ owl:inverseOf :proposes
+                                       ] ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :Proposed_Conflict .
+
+
+###  http://paperdyne#conflictViewedBy
+:conflictViewedBy rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :visibleBy ,
+                                     [ owl:inverseOf :views
+                                     ] .
+
+
+###  http://paperdyne#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#cooperates
+:cooperates rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#coveredBy
+:coveredBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :covers
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :covers .
+
+
+###  http://paperdyne#covers
+:covers rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#createdBy
+:createdBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :creates
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :creates .
+
+
+###  http://paperdyne#creates
+:creates rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#discussedBy
+:discussedBy rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :discusses
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ,
+                      owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Program_Comitee .
+
+
+###  http://paperdyne#discusses
+:discusses rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :discussedBy ;
+           rdf:type owl:InverseFunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Program_Comitee ;
+           rdfs:range :Paper .
+
+
+###  http://paperdyne#finishedBy
+:finishedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :finishes
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :finishes ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range :Program_Comitee_Chair .
+
+
+###  http://paperdyne#finishes
+:finishes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:InverseFunctionalProperty ,
+                   owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Program_Comitee_Chair ;
+          rdfs:range :Conference .
+
+
+###  http://paperdyne#focusesOn
+:focusesOn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Conference ;
+           rdfs:range :Topic .
+
+
+###  http://paperdyne#hasConflictType
+:hasConflictType rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#hasMembers
+:hasMembers rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :memberOf
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :memberOf .
+
+
+###  http://paperdyne#headOf
+:headOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:AsymmetricProperty ,
+                 owl:IrreflexiveProperty ;
+        rdfs:domain :Program_Comitee_Chair ;
+        rdfs:range :Program_Comitee .
+
+
+###  http://paperdyne#isInConflictWith
+:isInConflictWith rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :isInConflictWith
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  owl:inverseOf :isInConflictWith ;
+                  rdf:type owl:SymmetricProperty .
+
+
+###  http://paperdyne#judges
+:judges rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#managedBy
+:managedBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :manages
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :manages .
+
+
+###  http://paperdyne#manages
+:manages rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#memberOf
+:memberOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#organisedBy
+:organisedBy rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :organises
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :organises .
+
+
+###  http://paperdyne#organises
+:organises rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#proposedBy
+:proposedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :proposes
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :proposes ;
+            rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#proposes
+:proposes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://paperdyne#refusedBy
+:refusedBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :refuses
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Pending_Proposed_Conflict ;
+           rdfs:range :Reviewer .
+
+
+###  http://paperdyne#refuses
+:refuses rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :refusedBy ;
+         rdf:type owl:InverseFunctionalProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Reviewer ;
+         rdfs:range :Pending_Proposed_Conflict .
+
+
+###  http://paperdyne#registeresTo
+:registeresTo rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Author
+                                          :Reviewer
+                                        )
+                          ] ;
+              rdfs:range :Conference .
+
+
+###  http://paperdyne#rejectedBy
+:rejectedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :rejects
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :rejects ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Paper ;
+            rdfs:range :Program_Comitee_Chair .
+
+
+###  http://paperdyne#rejects
+:rejects rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:InverseFunctionalProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Program_Comitee_Chair ;
+         rdfs:range :Paper .
+
+
+###  http://paperdyne#relates
+:relates rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#reviewedBy
+:reviewedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :reviews
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Paper ;
+            rdfs:range :Reviewer .
+
+
+###  http://paperdyne#reviews
+:reviews rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :reviewedBy ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Reviewer ;
+         rdfs:range :Paper .
+
+
+###  http://paperdyne#speaks
+:speaks rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :spokenBy
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#spokenBy
+:spokenBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :speaks .
+
+
+###  http://paperdyne#startedBy
+:startedBy rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :starts
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Conference ;
+           rdfs:range :Program_Comitee_Chair .
+
+
+###  http://paperdyne#starts
+:starts rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :startedBy ;
+        rdf:type owl:InverseFunctionalProperty ,
+                 owl:AsymmetricProperty ,
+                 owl:IrreflexiveProperty ;
+        rdfs:domain :Program_Comitee_Chair ;
+        rdfs:range :Conference .
+
+
+###  http://paperdyne#submits
+:submits rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :submittedBy
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://paperdyne#submittedBy
+:submittedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :submits ;
+             rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#switches
+:switches rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Program_Comitee_Chair ;
+          rdfs:range :PhaseOfConferencePreparation .
+
+
+###  http://paperdyne#takesPlace
+:takesPlace rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range :Location .
+
+
+###  http://paperdyne#views
+:views rdf:type owl:ObjectProperty ;
+       owl:equivalentProperty [ owl:inverseOf :visibleBy
+                              ] ;
+       rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://paperdyne#visibleBy
+:visibleBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :views .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://paperdyne#allow
+:allow rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:range [ rdf:type rdfs:Datatype ;
+                    owl:oneOf [ rdf:type rdf:List ;
+                                rdf:first "false"^^xsd:boolean ;
+                                rdf:rest [ rdf:type rdf:List ;
+                                           rdf:first "true"^^xsd:boolean ;
+                                           rdf:rest rdf:nil
+                                         ]
+                              ]
+                  ] .
+
+
+###  http://paperdyne#allowBid
+:allowBid rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :allow ;
+          rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#allowRegister
+:allowRegister rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :allow ;
+               rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#allowReview
+:allowReview rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :allow ;
+             rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#allowSubmitPaper
+:allowSubmitPaper rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :allow ;
+                  rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#allowUploadCRC
+:allowUploadCRC rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :allow ;
+                rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#hasAcronym
+:hasAcronym rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range xsd:string .
+
+
+###  http://paperdyne#hasBid
+:hasBid rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Paper ;
+        rdfs:range [ rdf:type rdfs:Datatype ;
+                     owl:oneOf [ rdf:type rdf:List ;
+                                 rdf:first "-" ;
+                                 rdf:rest [ rdf:type rdf:List ;
+                                            rdf:first "CONFLICT" ;
+                                            rdf:rest [ rdf:type rdf:List ;
+                                                       rdf:first "highBid" ;
+                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                  rdf:first "lowBid" ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first "wantNot" ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                                     ]
+                                          ]
+                               ]
+                   ] .
+
+
+###  http://paperdyne#hasContributionFileStatus
+:hasContributionFileStatus rdf:type owl:DatatypeProperty ;
+                           owl:equivalentProperty owl:bottomDataProperty ;
+                           rdfs:subPropertyOf :allowBid ,
+                                              :allowRegister ,
+                                              :allowReview ,
+                                              :allowSubmitPaper ,
+                                              :allowUploadCRC ,
+                                              :hasAcronym ,
+                                              :hasBid ,
+                                              :hasContributionStatus ,
+                                              :hasEmail ,
+                                              :hasFirstName ,
+                                              :hasLastName ,
+                                              :hasPhaseStatus ,
+                                              :isAuthorTypeOf ,
+                                              :isPaperTypeOf ,
+                                              :isVirtual ;
+                           rdf:type owl:FunctionalProperty ;
+                           rdfs:domain :Contribution_File ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:oneOf [ rdf:type rdf:List ;
+                                                    rdf:first "missing" ;
+                                                    rdf:rest [ rdf:type rdf:List ;
+                                                               rdf:first "submitted" ;
+                                                               rdf:rest rdf:nil
+                                                             ]
+                                                  ]
+                                      ] .
+
+
+###  http://paperdyne#hasContributionStatus
+:hasContributionStatus rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :hasStatus ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain :Contribution ;
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:oneOf [ rdf:type rdf:List ;
+                                                rdf:first "accepted" ;
+                                                rdf:rest [ rdf:type rdf:List ;
+                                                           rdf:first "rejected" ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                  ] .
+
+
+###  http://paperdyne#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string .
+
+
+###  http://paperdyne#hasFirstName
+:hasFirstName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :hasName ;
+              rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#hasLastName
+:hasLastName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :hasName ;
+             rdf:type owl:FunctionalProperty .
+
+
+###  http://paperdyne#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://paperdyne#hasPhaseStatus
+:hasPhaseStatus rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :hasStatus ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :PhaseOfConferencePreparation ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:oneOf [ rdf:type rdf:List ;
+                                         rdf:first "active" ;
+                                         rdf:rest [ rdf:type rdf:List ;
+                                                    rdf:first "finished" ;
+                                                    rdf:rest [ rdf:type rdf:List ;
+                                                               rdf:first "notStarted" ;
+                                                               rdf:rest rdf:nil
+                                                             ]
+                                                  ]
+                                       ]
+                           ] .
+
+
+###  http://paperdyne#hasStatus
+:hasStatus rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://paperdyne#isAuthorTypeOf
+:isAuthorTypeOf rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :isTypeOf ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Author
+                                            :Reviewer
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:oneOf [ rdf:type rdf:List ;
+                                         rdf:first "invited" ;
+                                         rdf:rest [ rdf:type rdf:List ;
+                                                    rdf:first "registered" ;
+                                                    rdf:rest rdf:nil
+                                                  ]
+                                       ]
+                           ] .
+
+
+###  http://paperdyne#isPaperTypeOf
+:isPaperTypeOf rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :isTypeOf ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Paper ;
+               rdfs:range [ rdf:type rdfs:Datatype ;
+                            owl:oneOf [ rdf:type rdf:List ;
+                                        rdf:first "invited" ;
+                                        rdf:rest [ rdf:type rdf:List ;
+                                                   rdf:first "regular" ;
+                                                   rdf:rest rdf:nil
+                                                 ]
+                                      ]
+                          ] .
+
+
+###  http://paperdyne#isTypeOf
+:isTypeOf rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://paperdyne#isVirtual
+:isVirtual rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:oneOf [ rdf:type rdf:List ;
+                                    rdf:first "false"^^xsd:boolean ;
+                                    rdf:rest [ rdf:type rdf:List ;
+                                               rdf:first "true"^^xsd:boolean ;
+                                               rdf:rest rdf:nil
+                                             ]
+                                  ]
+                      ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://paperdyne#Abstract
+:Abstract rdf:type owl:Class ;
+          rdfs:subClassOf :Contribution_File ;
+          owl:disjointWith :Camera_Ready_Copy ,
+                           :Paper_File ,
+                           :Poster ,
+                           :Slides ,
+                           :Source_Archive .
+
+
+###  http://paperdyne#Abstract_And_Paper_Submission_Phase
+:Abstract_And_Paper_Submission_Phase rdf:type owl:Class ;
+                                     rdfs:subClassOf :PhaseOfConferencePreparation ;
+                                     owl:disjointWith :Assignment_Phase ,
+                                                      :Bidding_Phase ,
+                                                      :Blocked_Phase ,
+                                                      :Camera_Ready_Copy_Phase ,
+                                                      :Closed_Phase ,
+                                                      :Invitation_Of_Reviewers_Phase ,
+                                                      :Review_Phase ,
+                                                      :Setup_Phase .
+
+
+###  http://paperdyne#Assignment_Phase
+:Assignment_Phase rdf:type owl:Class ;
+                  rdfs:subClassOf :PhaseOfConferencePreparation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :allowBid ;
+                                    owl:hasValue "false"^^xsd:boolean
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :allowRegister ;
+                                    owl:hasValue "false"^^xsd:boolean
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :allowReview ;
+                                    owl:hasValue "false"^^xsd:boolean
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :allowSubmitPaper ;
+                                    owl:hasValue "false"^^xsd:boolean
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :allowUploadCRC ;
+                                    owl:hasValue "false"^^xsd:boolean
+                                  ] ;
+                  owl:disjointWith :Bidding_Phase ,
+                                   :Blocked_Phase ,
+                                   :Camera_Ready_Copy_Phase ,
+                                   :Closed_Phase ,
+                                   :Invitation_Of_Reviewers_Phase ,
+                                   :Review_Phase ,
+                                   :Setup_Phase .
+
+
+###  http://paperdyne#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Person ,
+                        :Speaker ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :creates ;
+                          owl:someValuesFrom :Contribution
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :speaks ;
+                          owl:someValuesFrom :Paper
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :speaks ;
+                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                        ] .
+
+
+###  http://paperdyne#Bidding_And_Paper_Submission_Phase
+:Bidding_And_Paper_Submission_Phase rdf:type owl:Class ;
+                                    rdfs:subClassOf :Bidding_Phase ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :allowSubmitPaper ;
+                                                      owl:hasValue "true"^^xsd:boolean
+                                                    ] ;
+                                    owl:disjointWith :Bidding_Without_Paper_Submission_Phase .
+
+
+###  http://paperdyne#Bidding_Phase
+:Bidding_Phase rdf:type owl:Class ;
+               rdfs:subClassOf :PhaseOfConferencePreparation ;
+               owl:disjointWith :Blocked_Phase ,
+                                :Camera_Ready_Copy_Phase ,
+                                :Closed_Phase ,
+                                :Invitation_Of_Reviewers_Phase ,
+                                :Review_Phase ,
+                                :Setup_Phase .
+
+
+###  http://paperdyne#Bidding_Without_Paper_Submission_Phase
+:Bidding_Without_Paper_Submission_Phase rdf:type owl:Class ;
+                                        rdfs:subClassOf :Bidding_Phase ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :allowSubmitPaper ;
+                                                          owl:hasValue "false"^^xsd:boolean
+                                                        ] .
+
+
+###  http://paperdyne#Blocked_Phase
+:Blocked_Phase rdf:type owl:Class ;
+               rdfs:subClassOf :PhaseOfConferencePreparation ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :allowBid ;
+                                 owl:hasValue "false"^^xsd:boolean
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :allowRegister ;
+                                 owl:hasValue "false"^^xsd:boolean
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :allowReview ;
+                                 owl:hasValue "false"^^xsd:boolean
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :allowSubmitPaper ;
+                                 owl:hasValue "false"^^xsd:boolean
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :allowUploadCRC ;
+                                 owl:hasValue "false"^^xsd:boolean
+                               ] ;
+               owl:disjointWith :Camera_Ready_Copy_Phase ,
+                                :Closed_Phase ,
+                                :Invitation_Of_Reviewers_Phase ,
+                                :Review_Phase ,
+                                :Setup_Phase .
+
+
+###  http://paperdyne#Camera_Ready_Copy
+:Camera_Ready_Copy rdf:type owl:Class ;
+                   rdfs:subClassOf :Contribution_File ;
+                   owl:disjointWith :Paper_File ,
+                                    :Poster ,
+                                    :Slides ,
+                                    :Source_Archive .
+
+
+###  http://paperdyne#Camera_Ready_Copy_Phase
+:Camera_Ready_Copy_Phase rdf:type owl:Class ;
+                         rdfs:subClassOf :PhaseOfConferencePreparation ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :allowBid ;
+                                           owl:hasValue "false"^^xsd:boolean
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :allowRegister ;
+                                           owl:hasValue "false"^^xsd:boolean
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :allowReview ;
+                                           owl:hasValue "false"^^xsd:boolean
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :allowSubmitPaper ;
+                                           owl:hasValue "false"^^xsd:boolean
+                                         ] ;
+                         owl:disjointWith :Closed_Phase ,
+                                          :Invitation_Of_Reviewers_Phase ,
+                                          :Review_Phase ,
+                                          :Setup_Phase .
+
+
+###  http://paperdyne#Closed_Phase
+:Closed_Phase rdf:type owl:Class ;
+              rdfs:subClassOf :PhaseOfConferencePreparation ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowBid ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowRegister ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowReview ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowSubmitPaper ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowUploadCRC ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ;
+              owl:disjointWith :Invitation_Of_Reviewers_Phase ,
+                               :Review_Phase ,
+                               :Setup_Phase .
+
+
+###  http://paperdyne#Co-Author
+:Co-Author rdf:type owl:Class ;
+           rdfs:subClassOf :Author ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :coauthorsWith ;
+                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :Co-Author
+                                                                :MainAuthor
+                                                              )
+                                                ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :coauthorsWith ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] .
+
+
+###  http://paperdyne#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :organisedBy ;
+                              owl:allValuesFrom :Program_Comitee_Chair
+                            ] ;
+            owl:disjointWith :Conflict_Of_Interest ,
+                             :Conflict_Rules ,
+                             :Contribution ,
+                             :Discussion ,
+                             :Location ,
+                             :Person ,
+                             :PhaseOfConferencePreparation ,
+                             :Program_Comitee ,
+                             :Program_Comitee_Meeting ,
+                             :Review ,
+                             :Topic .
+
+
+###  http://paperdyne#Confirmed_Conflict
+:Confirmed_Conflict rdf:type owl:Class ;
+                    rdfs:subClassOf :Conflict_Of_Interest ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :blockAssigningToReviewer ;
+                                      owl:someValuesFrom :Paper
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :relates ;
+                                      owl:someValuesFrom :Paper
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :relates ;
+                                      owl:someValuesFrom :Reviewer
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :visibleBy ;
+                                      owl:allValuesFrom :Reviewer
+                                    ] ;
+                    owl:disjointWith :Deleted_Conflict ,
+                                     :Hidden_Conflict ,
+                                     :Pending_Proposed_Conflict ,
+                                     :Proposed_Conflict .
+
+
+###  http://paperdyne#Conflict_Of_Interest
+:Conflict_Of_Interest rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :visibleBy ;
+                                        owl:someValuesFrom :Program_Comitee_Chair
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :managedBy ;
+                                        owl:allValuesFrom :Conflict_Rules
+                                      ] ;
+                      owl:disjointWith :Conflict_Rules ,
+                                       :Contribution ,
+                                       :Discussion ,
+                                       :Location ,
+                                       :Person ,
+                                       :PhaseOfConferencePreparation ,
+                                       :Program_Comitee ,
+                                       :Program_Comitee_Meeting ,
+                                       :Review ,
+                                       :Topic .
+
+
+###  http://paperdyne#Conflict_Rules
+:Conflict_Rules rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :manages ;
+                                  owl:allValuesFrom :Conflict_Of_Interest
+                                ] ;
+                owl:disjointWith :Contribution ,
+                                 :Discussion ,
+                                 :Location ,
+                                 :Person ,
+                                 :PhaseOfConferencePreparation ,
+                                 :Program_Comitee ,
+                                 :Program_Comitee_Meeting ,
+                                 :Review ,
+                                 :Topic .
+
+
+###  http://paperdyne#Contribution
+:Contribution rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :covers ;
+                                owl:someValuesFrom :Topic
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :createdBy ;
+                                owl:someValuesFrom :Author
+                              ] ;
+              owl:disjointWith :Discussion ,
+                               :Location ,
+                               :Person ,
+                               :PhaseOfConferencePreparation ,
+                               :Program_Comitee ,
+                               :Program_Comitee_Meeting ,
+                               :Review ,
+                               :Topic .
+
+
+###  http://paperdyne#Contribution_File
+:Contribution_File rdf:type owl:Class ;
+                   rdfs:subClassOf :Contribution ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :submittedBy ;
+                                     owl:someValuesFrom :Author
+                                   ] ;
+                   owl:disjointWith :Paper ;
+                   rdfs:comment "physical file" .
+
+
+###  http://paperdyne#Deleted_Conflict
+:Deleted_Conflict rdf:type owl:Class ;
+                  rdfs:subClassOf :Conflict_Of_Interest ,
+                                  [ rdf:type owl:Class ;
+                                    owl:complementOf [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :blockAssigningToReviewer ;
+                                                       owl:someValuesFrom :Paper
+                                                     ]
+                                  ] ;
+                  owl:disjointWith :Hidden_Conflict ,
+                                   :Pending_Proposed_Conflict ,
+                                   :Proposed_Conflict ,
+                                   :Self_Conflict .
+
+
+###  http://paperdyne#Discussion
+:Discussion rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            owl:disjointWith :Location ,
+                             :Person ,
+                             :PhaseOfConferencePreparation ,
+                             :Program_Comitee ,
+                             :Program_Comitee_Meeting ,
+                             :Review ,
+                             :Topic .
+
+
+###  http://paperdyne#E-mail_PC_Meeting
+:E-mail_PC_Meeting rdf:type owl:Class ;
+                   rdfs:subClassOf :Program_Comitee_Meeting ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isVirtual ;
+                                     owl:hasValue "true"^^xsd:boolean
+                                   ] ;
+                   owl:disjointWith :PC_Meeting .
+
+
+###  http://paperdyne#Hidden_Conflict
+:Hidden_Conflict rdf:type owl:Class ;
+                 rdfs:subClassOf :Conflict_Of_Interest ,
+                                 [ rdf:type owl:Class ;
+                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :blockAssigningToReviewer ;
+                                                      owl:someValuesFrom :Paper
+                                                    ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :proposedBy ;
+                                   owl:allValuesFrom :Program_Comitee_Chair
+                                 ] ;
+                 owl:disjointWith :Pending_Proposed_Conflict ,
+                                  :Proposed_Conflict ,
+                                  :Self_Conflict .
+
+
+###  http://paperdyne#Invitation_Of_Reviewers_Phase
+:Invitation_Of_Reviewers_Phase rdf:type owl:Class ;
+                               rdfs:subClassOf :PhaseOfConferencePreparation ;
+                               owl:disjointWith :Review_Phase ,
+                                                :Setup_Phase .
+
+
+###  http://paperdyne#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Person ,
+                           :PhaseOfConferencePreparation ,
+                           :Program_Comitee ,
+                           :Program_Comitee_Meeting ,
+                           :Review ,
+                           :Topic .
+
+
+###  http://paperdyne#MainAuthor
+:MainAuthor rdf:type owl:Class ;
+            rdfs:subClassOf :Author ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :proposes ;
+                              owl:someValuesFrom :Proposed_Conflict
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :submits ;
+                              owl:someValuesFrom :Contribution_File
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :coauthorsWith ;
+                              owl:allValuesFrom :Co-Author
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :views ;
+                              owl:allValuesFrom :Proposed_Conflict
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :coauthorsWith ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :proposes ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :views ;
+                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                            ] .
+
+
+###  http://paperdyne#PC_Meeting
+:PC_Meeting rdf:type owl:Class ;
+            rdfs:subClassOf :Program_Comitee_Meeting ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isVirtual ;
+                              owl:hasValue "false"^^xsd:boolean
+                            ] .
+
+
+###  http://paperdyne#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Contribution ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isInConflictWith ;
+                         owl:someValuesFrom :Reviewer
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :spokenBy ;
+                         owl:allValuesFrom :Speaker
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isInConflictWith ;
+                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                       ] .
+
+
+###  http://paperdyne#Paper_File
+:Paper_File rdf:type owl:Class ;
+            rdfs:subClassOf :Contribution_File ;
+            owl:disjointWith :Poster ,
+                             :Slides ,
+                             :Source_Archive .
+
+
+###  http://paperdyne#Pending_Proposed_Conflict
+:Pending_Proposed_Conflict rdf:type owl:Class ;
+                           rdfs:subClassOf :Conflict_Of_Interest ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :blockAssigningToReviewer ;
+                                             owl:someValuesFrom :Paper
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :visibleBy ;
+                                             owl:allValuesFrom :Reviewer
+                                           ] ;
+                           owl:disjointWith :Self_Conflict .
+
+
+###  http://paperdyne#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith :PhaseOfConferencePreparation ,
+                         :Program_Comitee ,
+                         :Program_Comitee_Meeting ,
+                         :Review ,
+                         :Topic .
+
+
+###  http://paperdyne#PhaseOfConferencePreparation
+:PhaseOfConferencePreparation rdf:type owl:Class ;
+                              rdfs:subClassOf owl:Thing ;
+                              owl:disjointWith :Program_Comitee ,
+                                               :Program_Comitee_Meeting ,
+                                               :Review ,
+                                               :Topic .
+
+
+###  http://paperdyne#Poster
+:Poster rdf:type owl:Class ;
+        rdfs:subClassOf :Contribution_File ;
+        owl:disjointWith :Slides ,
+                         :Source_Archive .
+
+
+###  http://paperdyne#Program_Comitee
+:Program_Comitee rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasMembers ;
+                                   owl:someValuesFrom :Program_Comitee_Chair
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasMembers ;
+                                   owl:someValuesFrom :Reviewer
+                                 ] ;
+                 owl:disjointWith :Program_Comitee_Meeting ,
+                                  :Review ,
+                                  :Topic .
+
+
+###  http://paperdyne#Program_Comitee_Chair
+:Program_Comitee_Chair rdf:type owl:Class ;
+                       rdfs:subClassOf :Person ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :memberOf ;
+                                         owl:someValuesFrom :Program_Comitee
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :organises ;
+                                         owl:someValuesFrom :Conference
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :organises ;
+                                         owl:someValuesFrom :Program_Comitee_Meeting
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :views ;
+                                         owl:someValuesFrom :Conflict_Of_Interest
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :views ;
+                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                       ] .
+
+
+###  http://paperdyne#Program_Comitee_Meeting
+:Program_Comitee_Meeting rdf:type owl:Class ;
+                         rdfs:subClassOf owl:Thing ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :contains ;
+                                           owl:someValuesFrom :Discussion
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takesPlace ;
+                                           owl:allValuesFrom :Location
+                                         ] ;
+                         owl:disjointWith :Review ,
+                                          :Topic .
+
+
+###  http://paperdyne#Proposed_Conflict
+:Proposed_Conflict rdf:type owl:Class ;
+                   rdfs:subClassOf :Conflict_Of_Interest ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :blockAssigningToReviewer ;
+                                     owl:someValuesFrom :Paper
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :proposedBy ;
+                                     owl:someValuesFrom :MainAuthor
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :visibleBy ;
+                                     owl:allValuesFrom :Author
+                                   ] .
+
+
+###  http://paperdyne#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :createdBy ;
+                          owl:someValuesFrom :Reviewer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :judges ;
+                          owl:someValuesFrom :Paper
+                        ] ;
+        owl:disjointWith :Topic .
+
+
+###  http://paperdyne#Review_Phase
+:Review_Phase rdf:type owl:Class ;
+              rdfs:subClassOf :PhaseOfConferencePreparation ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowBid ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowRegister ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowSubmitPaper ;
+                                owl:hasValue "false"^^xsd:boolean
+                              ] ;
+              owl:disjointWith :Setup_Phase .
+
+
+###  http://paperdyne#Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :Person ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :creates ;
+                            owl:someValuesFrom :Review
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isInConflictWith ;
+                            owl:someValuesFrom :Paper
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :memberOf ;
+                            owl:someValuesFrom :Program_Comitee
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :submits ;
+                            owl:someValuesFrom :Review
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :views ;
+                            owl:someValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Confirmed_Conflict
+                                                               :Pending_Proposed_Conflict
+                                                             )
+                                               ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasConflictType ;
+                            owl:allValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Confirmed_Conflict
+                                                              :Pending_Proposed_Conflict
+                                                            )
+                                              ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasConflictType ;
+                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isInConflictWith ;
+                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :views ;
+                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                          ] .
+
+
+###  http://paperdyne#Self_Conflict
+:Self_Conflict rdf:type owl:Class ;
+               rdfs:subClassOf :Conflict_Of_Interest ,
+                               :Proposed_Conflict ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :blockAssigningToReviewer ;
+                                 owl:someValuesFrom :Paper
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :visibleBy ;
+                                 owl:allValuesFrom [ owl:intersectionOf ( :MainAuthor
+                                                                          :Reviewer
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ]
+                               ] .
+
+
+###  http://paperdyne#Setup_Phase
+:Setup_Phase rdf:type owl:Class ;
+             rdfs:subClassOf :PhaseOfConferencePreparation ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :allowBid ;
+                               owl:hasValue "false"^^xsd:boolean
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :allowRegister ;
+                               owl:hasValue "false"^^xsd:boolean
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :allowReview ;
+                               owl:hasValue "false"^^xsd:boolean
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :allowSubmitPaper ;
+                               owl:hasValue "false"^^xsd:boolean
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :allowUploadCRC ;
+                               owl:hasValue "false"^^xsd:boolean
+                             ] .
+
+
+###  http://paperdyne#Slides
+:Slides rdf:type owl:Class ;
+        rdfs:subClassOf :Contribution_File ;
+        owl:disjointWith :Source_Archive .
+
+
+###  http://paperdyne#Source_Archive
+:Source_Archive rdf:type owl:Class ;
+                rdfs:subClassOf :Contribution_File .
+
+
+###  http://paperdyne#Speaker
+:Speaker rdf:type owl:Class ;
+         rdfs:subClassOf :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :speaks ;
+                           owl:someValuesFrom :Paper
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :speaks ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+###  http://paperdyne#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :coveredBy ;
+                         owl:someValuesFrom :Contribution
+                       ] .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

@@ -1,0 +1,25 @@
+@prefix ns1: <http://confious#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:managing_of_conference_process ns1:is_concerned_conference ns1:conference ;
+    ns2:subsumedUnder ns1:activity .
+
+ns1:paper ns1:is_concerned_conference ns1:conference ;
+    ns2:subsumedUnder ns1:article .
+
+ns1:activity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:article ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:conference_setup ns1:is_concerned_conference ns1:conference ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:conference ns1:is_concerned_confernce_setup ns1:conference_setup ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:is_concerned_conference ns1:conference .
+

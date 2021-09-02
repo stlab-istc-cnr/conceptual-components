@@ -1,0 +1,25 @@
+@prefix ns1: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:F23_Expression_Fragment ns1:R15i_is_fragment_of ns1:F2_Expression ;
+    ns2:subsumedUnder ns1:F2_Expression .
+
+ns1:F28_Expression_Creation ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E12_Production>,
+        <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> .
+
+ns1:F41_Representative_Manifestation_Assignment ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+ns1:F4_Manifestation_Singleton ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:F2_Expression ns1:R15_has_fragment ns1:F23_Expression_Fragment ;
+    ns1:R17i_was_created_by ns1:F28_Expression_Creation ;
+    ns1:R42i_has_representative_manifestation_singleton ns1:F4_Manifestation_Singleton ;
+    ns1:R48i_was_assigned_by ns1:F41_Representative_Manifestation_Assignment ;
+    ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> .
+

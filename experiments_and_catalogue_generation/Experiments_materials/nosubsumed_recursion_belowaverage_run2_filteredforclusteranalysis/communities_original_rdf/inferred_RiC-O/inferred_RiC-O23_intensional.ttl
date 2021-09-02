@@ -1,0 +1,13 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Activity ns1:activityIsSourceOfPerformanceRelation ns1:PerformanceRelation .
+
+ns1:Agent ns1:agentIsTargetOfPerformanceRelation ns1:PerformanceRelation .
+
+ns1:PerformanceRelation ns1:performanceRelationHasSource ns1:Activity ;
+    ns1:performanceRelationHasTarget ns1:Agent .
+

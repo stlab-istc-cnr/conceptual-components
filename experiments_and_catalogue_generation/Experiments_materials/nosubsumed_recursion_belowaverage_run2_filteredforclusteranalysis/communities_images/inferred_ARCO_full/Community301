@@ -1,0 +1,9 @@
+digraph "Community 301" {
+	Address -> AdministrativeUnitComponent [label=hasHistoricalArea]
+	AdministrativeUnitComponent
+	Address -> AdministrativeUnitComponent [label=hasTerritorialArea]
+	Address -> AdministrativeUnitComponent [label=hasTerritorialDivision]
+	AdministrativeUnitComponent -> Address [label=isHistoricalAreaOf]
+	AdministrativeUnitComponent -> Address [label=isTerritorialAreaOf]
+	AdministrativeUnitComponent -> Literal [label=administrativeOrderNumber]
+}

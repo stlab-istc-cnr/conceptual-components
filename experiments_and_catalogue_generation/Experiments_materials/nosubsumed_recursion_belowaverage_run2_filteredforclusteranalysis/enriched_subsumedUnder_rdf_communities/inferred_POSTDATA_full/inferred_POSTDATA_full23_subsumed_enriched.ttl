@@ -1,0 +1,52 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix ns3: <http://purl.org/ontology/olo/core#> .
+@prefix ns4: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:Foot ns2:numberOfMorae xsd:positiveInteger ;
+    ns4:subsumedUnder <http://purl.org/linguistics/gold/Foot> .
+
+ns2:LinePattern ns2:numberOfFeet xsd:positiveInteger ;
+    ns2:numberOfSyllables xsd:positiveInteger ;
+    ns4:subsumedUnder ns2:Pattern .
+
+ns2:StanzaPattern ns2:numberOfLines xsd:positiveInteger ;
+    ns4:subsumedUnder ns2:Pattern .
+
+ns2:WorkPattern ns2:numberOfStanzas xsd:positiveInteger ;
+    ns4:subsumedUnder ns2:Pattern .
+
+ns1:Line ns1:lineNumber xsd:positiveInteger ;
+    ns4:subsumedUnder ns3:OrderedList,
+        ns3:Slot,
+        <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Stanza ns1:altStanzaNumber xsd:positiveInteger ;
+    ns1:stanzaNumber xsd:positiveInteger ;
+    ns4:subsumedUnder ns3:OrderedList,
+        ns3:Slot,
+        <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Word ns1:wordNumber xsd:positiveInteger ;
+    ns4:subsumedUnder <http://bakulf.github.io/raop/0.1#Word>,
+        ns1:Token,
+        ns3:OrderedList,
+        ns3:Slot .
+
+<http://bakulf.github.io/raop/0.1#Word> ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Token ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/linguistics/gold/Foot> ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:Pattern ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns3:OrderedList ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns3:Slot ns3:index xsd:positiveInteger ;
+    ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

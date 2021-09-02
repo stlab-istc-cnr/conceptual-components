@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:CrystallographicCharacteristic ns1:isCrystalClassOf ns1:UnitCell ;
+    ns1:isCrystalSystemOf ns1:UnitCell ;
+    ns1:isCrystallographicCharacteristicOf ns1:UnitCell ;
+    ns1:isPointGroupOf ns1:UnitCell ;
+    ns1:isSpaceGroupOf ns1:UnitCell .
+
+ns1:UnitCell ns1:hasCrystalClass ns1:CrystallographicCharacteristic ;
+    ns1:hasCrystalSystem ns1:CrystallographicCharacteristic ;
+    ns1:hasCrystallographicCharacteristic ns1:CrystallographicCharacteristic ;
+    ns1:hasPointGroup ns1:CrystallographicCharacteristic ;
+    ns1:hasSpaceGroup ns1:CrystallographicCharacteristic ;
+    ns1:isUnitCellOf ns1:InorganicSpecies .
+

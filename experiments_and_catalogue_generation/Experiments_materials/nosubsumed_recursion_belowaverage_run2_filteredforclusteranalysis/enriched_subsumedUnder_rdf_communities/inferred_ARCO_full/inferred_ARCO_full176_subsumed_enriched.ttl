@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/arco/ontology/arco/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://dati.beniculturali.it/cis/SubjectDiscipline> ns1:isAlternativeDisciplineOf ns1:CulturalProperty ;
+    ns1:isMainDisciplineOf ns1:CulturalProperty ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:CulturalProperty ns1:hasAlternativeDiscipline <http://dati.beniculturali.it/cis/SubjectDiscipline> ;
+    ns1:hasMainDiscipline <http://dati.beniculturali.it/cis/SubjectDiscipline> ;
+    ns2:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+

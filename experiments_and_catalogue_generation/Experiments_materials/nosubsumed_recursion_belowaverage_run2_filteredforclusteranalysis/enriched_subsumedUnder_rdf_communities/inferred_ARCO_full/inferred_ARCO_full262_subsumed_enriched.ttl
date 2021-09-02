@@ -1,0 +1,28 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/arco/ontology/core/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:AuthorshipAttribution ns1:hasInterventionRole <https://w3id.org/italia/onto/RO/Role> ;
+    ns3:subsumedUnder ns1:Interpretation .
+
+ns1:Interpretation ns3:subsumedUnder ns2:Situation .
+
+ns2:AgentRole ns2:hasRole <https://w3id.org/italia/onto/RO/Role> ;
+    ns3:subsumedUnder ns2:Situation .
+
+ns2:Concept ns3:extensionallyEquivalent <https://w3id.org/italia/onto/l0/Concept> ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns2:Situation ns3:subsumedUnder <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<https://w3id.org/italia/onto/RO/Role> ns1:isInterventionRoleIn ns1:AuthorshipAttribution ;
+    ns2:isRoleOf ns2:AgentRole ;
+    ns3:subsumedUnder ns2:Concept,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+<https://w3id.org/italia/onto/l0/Concept> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+

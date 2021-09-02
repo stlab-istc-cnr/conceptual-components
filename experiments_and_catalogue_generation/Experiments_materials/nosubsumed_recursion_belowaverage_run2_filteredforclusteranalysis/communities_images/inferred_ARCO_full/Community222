@@ -1,0 +1,12 @@
+digraph "Community 222" {
+	CatalogueNumbersAssignment -> integer [label=firstNumberAssigned]
+	CatalogueNumbersAssignment
+	CatalogueNumbersAssignment -> Agent [label=hasApplicantAgency]
+	CatalogueNumbersAssignment -> Application [label=hasApplication]
+	CatalogueNumbersAssignment -> CataloguingOrDigitizationCampaign [label=isCatalogueNumberAssignmentOf]
+	CatalogueNumbersAssignment -> integer [label=lastNumberAssigned]
+	CatalogueNumbersAssignment -> integer [label=totalOfAssignedNumber]
+	CataloguingOrDigitizationCampaign -> CatalogueNumbersAssignment [label=hasCatalogueNumberAssignment]
+	Agent -> CatalogueNumbersAssignment [label=isApplicantAgencyFor]
+	Application -> CatalogueNumbersAssignment [label=isApplicationOf]
+}

@@ -1,0 +1,25 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E55_Type ns2:subsumedUnder ns1:E28_Conceptual_Object .
+
+ns1:E57_Material ns1:P68i_use_foreseen_by ns1:E29_Design_or_Procedure ;
+    ns2:subsumedUnder ns1:E55_Type .
+
+ns1:E5_Event ns2:subsumedUnder ns1:E4_Period .
+
+ns1:E73_Information_Object ns2:subsumedUnder ns1:E89_Propositional_Object,
+        ns1:E90_Symbolic_Object .
+
+ns1:E7_Activity ns1:P33_used_specific_technique ns1:E29_Design_or_Procedure ;
+    ns2:subsumedUnder ns1:E5_Event .
+
+ns1:E29_Design_or_Procedure ns1:P33i_was_used_by ns1:E7_Activity ;
+    ns1:P68_foresees_use_of ns1:E57_Material ;
+    ns1:P69_is_associated_with ns1:E29_Design_or_Procedure ;
+    ns2:subsumedUnder ns1:E73_Information_Object .
+

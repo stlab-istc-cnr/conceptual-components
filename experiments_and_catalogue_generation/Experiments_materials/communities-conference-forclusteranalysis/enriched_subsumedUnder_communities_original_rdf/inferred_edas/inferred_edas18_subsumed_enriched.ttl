@@ -1,0 +1,17 @@
+@prefix ns1: <http://edas#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:AcademicEvent ns2:subsumedUnder ns1:ConferenceEvent .
+
+ns1:AcceptedPaper ns1:relatedToEvent ns1:PaperPresentation ;
+    ns2:subsumedUnder ns1:Paper .
+
+ns1:Paper ns2:subsumedUnder ns1:Document .
+
+ns1:PaperPresentation ns1:relatedToPaper ns1:AcceptedPaper ;
+    ns2:subsumedUnder ns1:AcademicEvent .
+

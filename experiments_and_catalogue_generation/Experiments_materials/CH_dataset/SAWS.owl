@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isVariantTranslationOf">
+    <rdfs:seeAlso xml:lang="en">isVariant</rdfs:seeAlso>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is a slightly modified copy of another LinguisticObject.
+
+For comparing between different languages (where a translation act is known to have taken place directly between those documents, in a particular direction)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">is variant translation of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb616c02fca6f41e3b4f27cef82173f66">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#hasAddedMarginalia"/>
+    <rdf:rest rdf:nodeID="Na5a8be557dde4c92970e5c52fa10a143"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isInSameFamilyAs">
+    <rdfs:comment xml:lang="en">Two OriginalMaterials are related by being part of the same Family of Original Materials</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <rdfs:label xml:lang="en">is in same family as</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#decorationAddedBy">
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#DecorativeItem"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:seeAlso xml:lang="en">Marginalia marginaliaAddedBy Scribe</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">decoration added by</rdfs:label>
+    <rdfs:comment xml:lang="en">A DecorativeItem has been physically added onto the manuscript by a Person
+
+NB to represent marginalia notes (text) physically written in the margins of the manuscript, use: Marginalia marginaliaAddedBy Scribe</rdfs:comment>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#hasAddedDecoration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLongerVersionOf">
+    <rdfs:seeAlso xml:lang="en">isLongerTranslationOf</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">is longer version of</rdfs:label>
+    <rdfs:comment xml:lang="en">A LinguisticObject is related to another LinguisticObject in that it conveys the same ideas (FRBRoo: Work), but is expressed in an expanded or enhanced version of the text (FRBRoo: a different and longer Expression). This need not imply that one is a direct copy of the other, nor which is the earlier.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionOf"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3d4d0d4d8cdb4a82a909dc1d269189ef">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ScribeSection"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Definition">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#ContentItem"/>
+    <rdfs:label xml:lang="en">definition</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A content item that is defining a concept or term used in the material</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e92033ab8784a75a4bd38341ddb62f9">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isOlderThan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A Physical man-made thing (physical manuscript) is older than (i.e. was produced earlier in time than) another specified Physical man-made thing</rdfs:comment>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E18_Physical_Thing"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isYoungerThan"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E18_Physical_Thing"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:label xml:lang="en">is older than</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isCloseTranslationOf">
+    <rdfs:comment xml:lang="en">This property indicates that the translated text is a close interpretation of the original text. This need not imply that one is a direct translation of the other, nor which is the earlier</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:seeAlso xml:lang="en">isLooseTranslationOf
+isCloseRenderingOf</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">is close translation of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLocationForWritingOf">
+    <rdfs:domain rdf:nodeID="N0a53574c9a9c4748a278a29ca3b61eab"/>
+    <rdfs:seeAlso xml:lang="en">isLocationOf</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">is location for writing of</rdfs:label>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">A Place is the location witnessing the writing (or transcription) of a LinguisticObject</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isWrittenAt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isIdentifiedBy">
+    <rdfs:comment xml:lang="en">A ScribeSection of text within the source isIdentifiedBy a Scribe/An EditorSection of text within the source isIdentifiedBy a modern-day Editor</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P94i_was_created_by"/>
+    <rdfs:range rdf:nodeID="N8e82d82ba44448aa808c1db00b13c2ca"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is identified by</rdfs:label>
+    <rdfs:domain rdf:nodeID="N5e2219dd8b4944e491ed0151ee0ff31d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isTwinOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isSiblingOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:comment xml:lang="en">The two OriginalMaterials are produced using the same direct source OriginalMaterial(s)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is twin of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Institution">
+    <rdfs:comment xml:lang="en">An Institution can own materials, be located at places, and include persons as members</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">institution</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E74_Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isShorterTranslationOf">
+    <rdfs:seeAlso xml:lang="en">isShorterVersionOf</rdfs:seeAlso>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:comment xml:lang="en">A Linguistic Object is a condensed version of another Linguistic Object, in a different language. This need not imply that one is a direct translation of the other, nor which is the earlier]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is shorter translation of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isRelatedTo">
+    <rdfs:label xml:lang="en">is related to</rdfs:label>
+    <rdfs:comment xml:lang="en">Two things are related in some way. This relation may be used where the details of the link are to be refined at a later date, or where some relation is seen but the annotater cannot be more specific than to indicate that this relationship exists.</rdfs:comment>
+    <owl:propertyDisjointWith rdf:resource="http://purl.org/saws/ontology#isUnrelatedTo"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isTransmittedBy">
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isTransmitterOf"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Transmitter"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isWrittenBy"/>
+    <rdfs:domain rdf:nodeID="Nbb564e31a55a4084bbc12cb321d9c7e7"/>
+    <rdfs:label xml:lang="en">is transmitted by</rdfs:label>
+    <rdfs:comment xml:lang="en">A LinguisticObject (except Edition) is transmitted by this Transmitter (Person)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#areMarginaliaOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">To indicate that Marginalia have been written on the manuscript,e .g. in the margins</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Marginalia"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#hasMarginalia"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#refersTo"/>
+    <rdfs:label xml:lang="en">are marginalia on</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N12f7998d0d8941109aece7b28414f6b0">
+    <owl:unionOf rdf:nodeID="N5a50c457a0734bfbab5000533835ecb7"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#physicalLocationOf">
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#physicallyLocatedAt"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">physical location of</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Locus"/>
+    <rdfs:comment xml:lang="en">This lets you describe the physical location of the LinguisticObject, e.g. a particular piece of text, or Marginalia, by recording the Locus that the notes are physically written on in a Material. You can describe the Locus (e.g. folio number, or position on the page) in free text, in as much detail as required, if there is no formal way to describe the location of the text/marginalia] 
+
+NB Use this relation if you are talking about the physical location for an abstract linguistic object. Use isLocationOf if you are talking about the physical location of a physically-existing object.</rdfs:comment>
+    <rdfs:seeAlso xml:lang="en">isLocationOf</rdfs:seeAlso>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#DecorativeItem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E36_Visual_Item"/>
+    <rdfs:label xml:lang="en">decorative item</rdfs:label>
+    <rdfs:comment xml:lang="en">Decorative element (picture, ornamentation, etc) within the material, either meaning-bearing or non meaning-bearing</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafd3c684b3a04adaa7fd7a8e75f4d895">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N497de0a39161425aab5fbdada2cbe84c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#OriginalMaterial">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Material"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">original material</rdfs:label>
+    <rdfs:comment xml:lang="en">A material produced by scribe transcription rather than being edited in modern times</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#contains">
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P10i_contains"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#fallsWithin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasAncestor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has ancestor</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:comment xml:lang="en">An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isInSameFamilyAs"/>
+    <owl:propertyDisjointWith rdf:resource="http://purl.org/saws/ontology#hasDescendant"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isAncestorOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9cc46ca14cd4f4cadcc8a4a707d51ac">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#CollectionInstance"/>
+    <rdf:rest rdf:nodeID="Nca45c38fe18f4841aa48e0f394bf68d0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c5997568fc34568b20c12e85e4dc0a0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N67fc190ef62f4cdeb538da63dbec10b8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isVersionOf">
+    <rdfs:label xml:lang="en">is version of</rdfs:label>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is a version in the same language of another LinguisticObject. This relates to the other object, but matches less closely than isVariantOf. This need not imply that one is a direct copy of the other, nor which is the earlier.</rdfs:comment>
+    <rdfs:seeAlso xml:lang="en">isVersionInAnotherLanguageOf</rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N329f8ba6e3ad4e25891b156f0a1f78d2">
+    <rdf:rest rdf:nodeID="N54f2e28d73264291a70fe2ae24a99237"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#ownedBy">
+    <rdfs:range rdf:nodeID="N6bb4b9fcd6f84f17aa5980a3e1c36df4"/>
+    <rdfs:comment xml:lang="en">The Material of interest has been owned (in the past or currently) by this particular Person. This would normally be based on a specific statement/mark of ownership.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Material"/>
+    <rdfs:label xml:lang="en">owned by</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#follows">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">follows</rdfs:label>
+    <rdfs:comment xml:lang="en">A Section/ContentItem/CollectionInstance comes after another Section/ContentItem/CollectionInstance in the document</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#precedes"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isMemberOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <rdfs:seeAlso xml:lang="en">dct:isPartOf
+efrbroo:R10i_is_member_of
+ecrm:P107i_is_current_or_former_member_of</rdfs:seeAlso>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">is member of</rdfs:label>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">We use isMemberOf to indicate:
+- An OriginalMaterial is member of a Family of related
+OriginalMaterials
+- A Person is member of an Institution</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2a80907eabfe462ea1b27734f83df2ff">
+    <rdf:rest rdf:nodeID="Nd9108ed279d5490198c8fc1dc1f21dad"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#physicallyLocatedAt">
+    <rdfs:comment xml:lang="en">physically located at</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:seeAlso xml:lang="en">isLocatedAt</rdfs:seeAlso>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This lets you describe the physical location of the LinguisticObject, e.g. a particular piece of text, or Marginalia, by recording the Locus that the notes are physically written on in a Material. You can describe the Locus (e.g. folio number, or position on the page) in free text, in as much detail as required, if there is no formal way to describe the location of the text/marginalia
+
+NB Use this relation if you are talking about an abstract linguistic object which is to be found at a particular locus. Use isLocatedAt if you are talking about a physically-existing object being located at a physical place.</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Locus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Editor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#Transmitter"/>
+    <rdfs:label xml:lang="en">editor</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#Scribe"/>
+    <rdfs:comment xml:lang="en">A modern scholar editing material to produce an edition, in the age of printing and beyond</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a50c457a0734bfbab5000533835ecb7">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+    <rdf:rest rdf:nodeID="N30814500d651483a87491db4b5f6b28c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafbc501ac88e48c38bc6363469de295b">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Institution"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N694febd13fe44082965eef8c62c8b1c6">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="N7a93d8423e564261af22e761b10dba0d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasOwned">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has owned</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:comment xml:lang="en">A Person has owned (either currently or in the past) the Material of Interest. This would normally be based on a specific statement/mark of ownership.</rdfs:comment>
+    <rdfs:domain rdf:nodeID="Nf01ea83402d2440ebc1536478b8959e0"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Material"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#ownedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isReferencedBy">
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#refersTo"/>
+    <rdfs:comment xml:lang="en">This property allows you to say that an object or some text (internal to that document or from an external source) is referred to in the text of a LinguisticObject, e.g. by being described or being alluded to</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P67i_is_referred_to_by"/>
+    <rdfs:label xml:lang="en">is referenced by</rdfs:label>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N89979f4873204ce9b9013e71ffe5252c">
+    <rdf:first rdf:resource="http://erlangen-crm.org/efrbroo/F10_Person"/>
+    <rdf:rest rdf:nodeID="Nf61f732b85354ae0a09a88e8e0ee0919"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isFromSamePlaceAs">
+    <rdfs:seeAlso xml:lang="en">(Place or Institution) isLocationForWritingOf Material
+Material isWrittenAt (Place or Institution)
+
+PhysicalManuscript/ReconstructedManuscript/ManuscriptPart isBySameScribeAs  PhysicalManuscript/ReconstructedManuscriptPart</rdfs:seeAlso>
+    <rdfs:domain rdf:nodeID="Nb1be1e37c12a45f6bc1f619a3d1d5bcb"/>
+    <rdfs:comment xml:lang="en">The two manuscripts (or parts of the manuscripts) have been copied/produced in the same Place</rdfs:comment>
+    <rdfs:label xml:lang="en">is from same place as</rdfs:label>
+    <rdfs:range rdf:nodeID="N12f7998d0d8941109aece7b28414f6b0"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N64a6e29e0d9041c1be7c60011db8ef89">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasMarginalia">
+    <rdfs:comment xml:lang="en">To indicate that a manuscript has had Marginalia written on it, e.g. in the margins</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Marginalia"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isReferencedBy"/>
+    <rdfs:label xml:lang="en">has marginalia</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#formsPartOf">
+    <rdfs:range rdf:nodeID="N44175ab19f8544bd8622c801451c8193"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#hasPart"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">forms part of</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+    <rdfs:comment xml:lang="en">Physical Manuscripts can be composed of many Manuscript Parts – this relationship would be stated once for each part. This relationship can be used both for existing Manuscript Parts or for Manuscript Parts which used to be parts of a manuscript</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P46i_forms_part_of"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isCopierOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasWritten"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Scribe"/>
+    <rdfs:range rdf:nodeID="N7c287a69ad2741d386356cbd4fe0c1c9"/>
+    <rdfs:comment xml:lang="en">A Scribe has written or copied this LinguisticObject (any Linguistic Object except Edition)</rdfs:comment>
+    <rdfs:label xml:lang="en">is copier of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLooseTranslationOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:comment xml:lang="en">This property indicates that the translated text is a loose interpretation of the original text. This need not imply that one is a direct translation of the other, nor which is the earlier].</rdfs:comment>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">is loose translation of</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isCloseTranslationOf
+isLooseRenderingOf</rdfs:seeAlso>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N015cf13179a94a2c9257613b5bff59c9">
+    <rdf:rest rdf:nodeID="Nc6b2c2c03c904f13b502516d73ecfbe4"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa0afc86ea364ae9a0de2c5dc48eaeb8">
+    <owl:unionOf rdf:nodeID="N7097f4e0269749d6be493a32738577db"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLooseRenderingOf">
+    <rdfs:seeAlso xml:lang="en">isLooseTranslationOf</rdfs:seeAlso>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made. This property indicates that the new LinguisticObject is a loose rendering of the original LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">is loose rendering of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3d31c5ada4e34b16a0f7049357e2b52f">
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:rest rdf:nodeID="N8ebaa9d0b0d1410aaa0def709c725f75"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb564e31a55a4084bbc12cb321d9c7e7">
+    <owl:intersectionOf rdf:nodeID="N03c9922cae324373a45f93e9277615c1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Family">
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/efrbroo/F15_Complex_Work"/>
+    <rdfs:label xml:lang="en">family</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A grouping of related Materials - this is a concept, an interpretation, rather than a physical thing</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#refersTo">
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">refers to</rdfs:label>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P67_refers_to"/>
+    <rdfs:comment xml:lang="en">This property allows you to say that the text of a LinguisticObject makes a reference to (or mentions) some other text or object, either within the text (e.g. as allusion) or external to the text (for external things, please give a URI for that object) This can include references to summaries (eg ToC).</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isAttributedAuthorOf">
+    <rdfs:range rdf:nodeID="Nf659849a193e4a6bb418e1d9664d8049"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#AttributedAuthor"/>
+    <rdfs:comment xml:lang="en">An author has been attributed as the author of this LinguisticObject (any Linguistic Object except Edition)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is attributed author of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasWritten"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isAttributedToAuthor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na3be8d672c7346e1874bfc7769d375e8">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+    <rdf:rest rdf:nodeID="N5388b53f20ce46b19bcf39e8fd0fe544"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N677d2627b955493c88bf3e5df2907630">
+    <rdf:rest rdf:nodeID="N335baa20885b4dc8963e7ee449f56ac2"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isVerbatimOf">
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">is verbatim of</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isVerbatimTranslationOf</rdfs:seeAlso>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is a verbatim, word-for-word copy of another LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N160c7dd64d864e989578e87fbf934b1a">
+    <rdf:rest rdf:nodeID="Nadab3d4c8f6c4079bdddddf065faca1b"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#commentMadeBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isWrittenAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:nodeID="Nab858dd465ec4e47881721d5f4ef0b91"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:label xml:lang="en">is written at</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isLocatedAt</rdfs:seeAlso>
+    <rdfs:comment xml:lang="en">A LinguisticObject is written (or transcribed) at a specified Place</rdfs:comment>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isDifferentTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:comment xml:lang="en">To explicitly say that two things are different from each other</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">is different to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N74c07bd5d5bc43da8287e3c593aa447d">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#CollectionInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0da97e715c0d4e7397677169b25d49f4">
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <rdf:rest rdf:nodeID="Nafbc501ac88e48c38bc6363469de295b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isSubSequenceOf">
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdfs:comment xml:lang="en">A Section is formed of a sequence of ContentItems that is a subsequence of the sequence of ContentItems in another Section</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:seeAlso xml:lang="en">isSequentiallySameAs
+isSequentiallySimilarTo</rdfs:seeAlso>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is sub sequence of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Section">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">section</rdfs:label>
+    <rdfs:comment xml:lang="en">A division of a linguistic object e.g. chapter, verse, for larger-scale reference than when using a content item. These can be nested/numbered</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N5d7f5de41e3b4e1e979077ca4d7de2a3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isVariantOf">
+    <rdfs:seeAlso xml:lang="en">isVariantTranslationOf</rdfs:seeAlso>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is a linguistically modified copy of a second LinguisticObject, in the same language/genre, and of the same length, with only small variation in use or order of words, e.g. one or two words substituted for another, or a connective inserted. This may or may not have different conceptual function. This need not imply that one is a direct copy of the other, nor which is the earlier</rdfs:comment>
+    <rdfs:label xml:lang="en">is variant of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf2cc514055164cafaa5834f665ea607b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+    <owl:members rdf:nodeID="N160c7dd64d864e989578e87fbf934b1a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5e2219dd8b4944e491ed0151ee0ff31d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N9504179b60ee457ca95974b9fa428fb6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isYoungerThan">
+    <rdfs:label xml:lang="en">is younger than</rdfs:label>
+    <rdfs:comment xml:lang="en">A Physical man-made thing (physical manuscript) is younger than (i.e. was produced later in time than) another specified Physical man-made thing</rdfs:comment>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E18_Physical_Thing"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E18_Physical_Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N44175ab19f8544bd8622c801451c8193">
+    <owl:unionOf rdf:nodeID="N8aed8552fbc54ab4bcfd0d9c724272b8"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Edition">
+    <rdfs:comment xml:lang="en">Any edited material, known or unknown, including texts such as the Bible and Kekaumenos</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Material"/>
+    <rdfs:label xml:lang="en">edition</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasMadeComment">
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Editor"/>
+    <rdfs:label xml:lang="en">has made comment</rdfs:label>
+    <rdfs:comment xml:lang="en">A modern-day scholar/editor has made a comment. 
+
+NB to represent scribes physically writing marginalia on the manuscript, use: Scribe hasAddedMarginalia.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Comment"/>
+    <rdfs:seeAlso xml:lang="en">Person hasWritten LinguisticObject
+Scribe hasAddedMarginalia Marginalia </rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasAddedMarginalia">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:seeAlso xml:lang="en">Person hasWritten LinguisticObject
+Editor hasMadeComment Comment</rdfs:seeAlso>
+    <rdfs:comment xml:lang="en">A Scribe has physically added Marginalia onto a manuscript.
+
+NB to represent where a modern-day scholar/editor makes a comment, not written onto the manuscript, use: Editor hasMadeComment Comment </rdfs:comment>
+    <rdfs:label xml:lang="en">has added marginalia</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Marginalia"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Scribe"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#marginaliaAddedBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N30814500d651483a87491db4b5f6b28c">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+    <rdf:rest rdf:nodeID="Nde145c1e33ad4ae7ab8f99bf919b38cb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLongerTranslationOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:seeAlso xml:lang="en">isLongerVersionOf</rdfs:seeAlso>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">is longer translation of</rdfs:label>
+    <rdfs:comment xml:lang="en">A Linguistic Object is a enhanced or expanded version of another Linguistic Object, in a different language. This need not imply that one is a direct translation of the other, nor which is the earlier</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Prologue">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdfs:label xml:lang="en">prologue</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isBasedOn">
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isSourceFor"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is based upon one or more textual materials (manuscripts, collections etc). One &lt;relation&gt; per each textual material)</rdfs:comment>
+    <rdfs:label xml:lang="en">is based on</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Edition"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N876f47e3dfa64055805ad1125795b1fd">
+    <owl:members rdf:nodeID="N2911ad0356c444dc99517dda8541fd63"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Marginalia">
+    <rdfs:subClassOf rdf:nodeID="N22a8042ea2a1474593d96e3cbc051bda"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Remark(s) physically written in the margin of the material by a scribe, not necessarily the original scribe. 
+
+N.B. If a comment has been physically written on a material (usually in the margin), then this should be represented as an instance of Marginalia. The Comment class is for comments on a material that don’t physically exist on that material</rdfs:comment>
+    <rdfs:label xml:lang="en">marginalia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isSequentiallySameAs">
+    <rdfs:comment xml:lang="en">A CollectionInstance or Section has the same sequential structure as another CollectionInstance or Section. N.B. CollectionInstances contain sequences of ordered Sections. Sections contain sequences of ordered ContentItems</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:seeAlso xml:lang="en">isSequentiallySimilarTo
+isSubSequenceOf</rdfs:seeAlso>
+    <rdfs:range rdf:nodeID="N68f2a759b27c448c8d52a997ca7fe273"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N552b5a8e8456435aa94f529a8db4a768"/>
+    <rdfs:label xml:lang="en">is sequentially same as</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb9ee3d0ff164a7196587f24d485755c">
+    <owl:complementOf rdf:resource="http://purl.org/saws/ontology#Edition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#precedes">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:label xml:lang="en">precedes</rdfs:label>
+    <rdfs:comment xml:lang="en">A Section/ContentItem/CollectionInstance comes before another Section/ContentItem/CollectionInstance in the document</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Locus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A physical location within a physical manuscript</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+    <rdfs:label xml:lang="en">locus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#AttributedAuthor">
+    <rdfs:comment xml:lang="en">Person to whom original authorship of a linguistic object is attributed, as the source of that linguistic object</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#Editor"/>
+    <rdfs:label xml:lang="en">attributed author</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isAncestorOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">is ancestor of</rdfs:label>
+    <owl:propertyDisjointWith rdf:resource="http://purl.org/saws/ontology#isDescendantOf"/>
+    <rdfs:comment xml:lang="en">An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isInSameFamilyAs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isNotPresentIn">
+    <rdfs:comment xml:lang="en">To specify that a piece of text is missing from a LinguisticObject, for example if this text appears in a corresponding part of a manuscript from the same Family</rdfs:comment>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is not present in</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isSourceFor">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:label xml:lang="en">is source for</rdfs:label>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A textual material (manuscripts, collections etc) is one of the source documents on which a Linguistic Object is based. One &lt;relation&gt; per each textual material.</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Edition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Lacuna">
+    <rdfs:comment xml:lang="en">A physical gap in the physical manuscript</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">lacuna</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#commentMadeBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Comment"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#hasMadeComment"/>
+    <rdfs:label xml:lang="en">comment made by</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Editor"/>
+    <rdfs:seeAlso xml:lang="en">LinguisticObject isWrittenBy Person
+Marginalia marginaliaAddedBy Scribe</rdfs:seeAlso>
+    <rdfs:comment xml:lang="en">A comment has been made by a modern-day scholar/editor. 
+
+NB to represent marginalia physically written in the margins of the manuscript, use: Marginalia marginaliaAddedBy Scribe.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isAttributedToAuthor">
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#AttributedAuthor"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isWrittenBy"/>
+    <rdfs:domain rdf:nodeID="Nafd9ce5f0bbf4ddfa1062eddde03b8cc"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject (except Edition) is attributed to this AttributedAuthor</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is attributed to author</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N68f2a759b27c448c8d52a997ca7fe273">
+    <owl:unionOf rdf:nodeID="Nb981c51c4e3b4e8f8578ecb3418585e3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#CollectionInstance">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">collection instance</rdfs:label>
+    <rdfs:comment xml:lang="en">The gnomologium or other compilation/collection on which we are working</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#EditorSection">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdfs:comment xml:lang="en">Any division within a linguistic object created by an editor, e.g. to make the navigation of the text clearer or to mark a region of interest</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">editor section</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#ScribeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4f809775a3ca46b3b075a897964c75e2">
+    <rdf:rest rdf:nodeID="Nd22763838b964bfb91498aad79ea8102"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasComponent">
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/efrbroo/R5_has_component"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/efrbroo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/efrbroo/F2_Expression"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isComponentOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7097f4e0269749d6be493a32738577db">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#AbstractManuscriptText"/>
+    <rdf:rest rdf:nodeID="N74c07bd5d5bc43da8287e3c593aa447d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na5a8be557dde4c92970e5c52fa10a143">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#hasMadeComment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0bc38d8a9d7f40f987c177809d2038a6">
+    <rdf:rest rdf:nodeID="N3d4d0d4d8cdb4a82a909dc1d269189ef"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#EditorSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8e82d82ba44448aa808c1db00b13c2ca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N0bc38d8a9d7f40f987c177809d2038a6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLocationOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E18_Physical_Thing"/>
+    <rdfs:seeAlso xml:lang="en">physicalLocationOf</rdfs:seeAlso>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+    <rdfs:comment xml:lang="en">A particular Place or Locus is (or was) the location of a physical thing.
+
+NB Use this relation if you are talking about the physical location of a physically-existing object. Use physicalLocationOf if you are talking about the physical location for an abstract linguistic object.</rdfs:comment>
+    <rdfs:label xml:lang="en">is location of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P53i_is_former_or_current_location_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#ScribeSection">
+    <rdfs:label xml:lang="en">scribe section</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdfs:comment xml:lang="en">Any division within a linguistic object indicated by a scribe</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasMember">
+    <rdfs:label xml:lang="en">has member</rdfs:label>
+    <rdfs:comment xml:lang="en">We use hasMember to indicate:
+- A Family contains the specified original material (i.e. one
+produced by Scribe transcription rather than being edited in modern times)
+- An Institution has as a member this Person</rdfs:comment>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <rdfs:seeAlso xml:lang="en">dct:hasPart
+efrbroo:R10_has_member
+ecrm:P107_has_current_or_former_member</rdfs:seeAlso>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isMemberOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isParentOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isAncestorOf"/>
+    <rdfs:label xml:lang="en">is parent of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The parent OriginalMaterial is a direct source for the production of part or all of the child OriginalMaterial</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#PhysicalManuscript">
+    <rdfs:comment xml:lang="en">The physical object on which the material we are working on exists</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/efrbroo/F4_Manifestation_Singleton"/>
+    <rdfs:label xml:lang="en">physical manuscript</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#HypothesisedInstance">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <rdfs:label xml:lang="en">hypothesised instance</rdfs:label>
+    <rdfs:comment xml:lang="en">The physical instance of an abstract manuscript text or collection instance which we hypothesise may have existed, but which we do not have - it is presumed lost or destroyed</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="Nfa0afc86ea364ae9a0de2c5dc48eaeb8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N55681e5e67a145fa840897695576bd97">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#marginaliaAddedBy"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a93d8423e564261af22e761b10dba0d">
+    <owl:complementOf rdf:resource="http://purl.org/saws/ontology#Edition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isSequentiallySimilarTo">
+    <rdfs:label xml:lang="en">is sequentially similar to</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isSequentiallySameAs
+isSubSequenceOf</rdfs:seeAlso>
+    <rdfs:range rdf:nodeID="N22be6bba739942d8833744e3b8cc2788"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A CollectionInstance or Section has a slightly different but related sequential structure to another CollectionInstance or Section. N.B. CollectionInstances contain sequences of ordered Sections. Sections contain sequences of ordered ContentItems</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:nodeID="Naf01b80a88964f78920b2db1df93d5ba"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Narrative">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">narrative</rdfs:label>
+    <rdfs:comment xml:lang="en">Narrative text that is not a saying itself, that either stands alone or is the text surrounding or immediately preceding or following the Statement (saying), e.g. 'Aristotle says...', 'The frogs asked for a king.’, ‘Aristotle is a lover of knowledge’</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#ContentItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N497de0a39161425aab5fbdada2cbe84c">
+    <rdf:rest rdf:nodeID="N670f9da023334d8c97bbe0e542de9193"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#containsTextInLanguage">
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E56_Language"/>
+    <rdfs:domain rdf:nodeID="N78d82f7dd2d4459b87318e5442e802b1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasWritten">
+    <rdfs:comment xml:lang="en">A Person has written (or has transcribed) a LinguisticObject.
+NB This also includes:
+Editor hasWritten Comment
+Scribe hasWritten Marginalia</rdfs:comment>
+    <rdfs:label xml:lang="en">has written</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:seeAlso xml:lang="en">Editor hasMadeComment Comment
+Scribe hasAddedMarginalia Marginalia</rdfs:seeAlso>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isWrittenBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N95491fd216cd47d29f2ea03a5fa83065">
+    <owl:complementOf rdf:resource="http://purl.org/saws/ontology#Edition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#usedBy">
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/efrbroo/F10_Person"/>
+    <rdfs:label xml:lang="en">used by</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The Original Material of interest has been used by this particular Person in their work. Interaction is other than ownership.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isTransliterationOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is a transliteration of another LinguisticObject, i.e. same words but using a different set of characters, e.g. kai isTransliterationOf και . This need not imply that one is a direct translation of the other, nor which is the earlier]</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:seeAlso xml:lang="en">isDirectTranslationOf</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">is transliteration of</rdfs:label>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a71f67d215640df82967937d35f2477">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Comment">
+    <rdfs:subClassOf rdf:nodeID="Nafd3c684b3a04adaa7fd7a8e75f4d895"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">comment</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#Marginalia"/>
+    <rdfs:comment xml:lang="en">Comment on a part of the material, usually from the modern editor. 
+
+N.B. The Comment class is for comments on a material that do not physically exist on that material. If a comment has been physically written on a material (usually in the margin), then this should be represented as an instance of Marginalia. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isComponentOf">
+    <rdfs:range rdf:resource="http://erlangen-crm.org/efrbroo/F2_Expression"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/efrbroo/R5i_is_component_of"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/efrbroo/F2_Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isLocatedAt">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:label xml:lang="en">is located at</rdfs:label>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E18_Physical_Thing"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P53_has_former_or_current_location"/>
+    <rdfs:comment xml:lang="en">A physical thing is (or was) located at a particular location (Place or Locus)
+
+NB Use this relation if you are talking about a physically-existing object being located at a physical place. Use physicallyLocatedAt if you are talking about an abstract linguistic object being found at a particular locus.</rdfs:comment>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isLocationOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:seeAlso xml:lang="en">physicallyLocatedAt</rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasUsed">
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#usedBy"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/efrbroo/F10_Person"/>
+    <rdfs:label xml:lang="en">has used</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A Person has used (either currently or in the past) the OriginalMaterial in their work. Interaction is other than ownership.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasDescendant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isInSameFamilyAs"/>
+    <rdfs:label xml:lang="en">has descendant</rdfs:label>
+    <rdfs:comment xml:lang="en">An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isDescendantOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasParent">
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isParentOf"/>
+    <rdfs:comment xml:lang="en">The parent OriginalMaterial is a known direct source for the production of part or all of the child OriginalMaterial</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has parent</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasAncestor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isCommentOn">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#refersTo"/>
+    <rdfs:comment xml:lang="en">To indicate that an editorial Comment is being made about something</rdfs:comment>
+    <rdfs:label xml:lang="en">is comment on</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Comment"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#AbstractManuscriptText">
+    <rdfs:comment xml:lang="en">The text that is written in an manuscript</rdfs:comment>
+    <rdfs:label xml:lang="en">abstract manuscript text</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#OriginalMaterial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isDescendantOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:comment xml:lang="en">An ancestor OriginalMaterial is a source material (direct or indirect) for the production of part or all of the descendant OriginalMaterial</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is descendant of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isInSameFamilyAs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isBySameScribeAs">
+    <rdfs:domain rdf:nodeID="N139445ecd0aa4a41a6aca45fb17b3c36"/>
+    <rdfs:comment xml:lang="en">The two manuscripts (or parts of the manuscripts) have been copied/produced by the same Person</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:seeAlso xml:lang="en">Person hasWritten LinguisticObject
+LinguisticObject isWrittenBy Person
+
+PhysicalManuscript/ReconstructedManuscript/ManuscriptPart isFromSamePlaceAs PhysicalManuscript/ReconstructedManuscript/ManuscriptPart</rdfs:seeAlso>
+    <rdfs:range rdf:nodeID="N5227e1c4421a438f8f49312622b649a4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is by same scribe as</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isDirectTranslationOf">
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P73i_is_translation_of"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <rdfs:comment xml:lang="en">the translator worked directly from an MS or text which we have identified. This does imply that the first Linguistic Object is a direct translation of the second Linguistic Object, meaning that the second Linguistic Object existed first. This relationship can be used in conjunction with other relationships which specify more details about the translation, e.g. isLooseTranslationOf, isLongerTranslationOf</rdfs:comment>
+    <rdfs:seeAlso xml:lang="en">isDirectTranslationOf</rdfs:seeAlso>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="en">is direct translation of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9504179b60ee457ca95974b9fa428fb6">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Editor"/>
+    <rdf:rest rdf:nodeID="N8f50b19a56084bd78e477919866cb6d1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N718d4e9ea811451bbc7f6709e225338d">
+    <rdf:first rdf:resource="http://erlangen-crm.org/efrbroo/F23_Expression_Fragment"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionInfo xml:lang="en">Version 2.1</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Ontology for the Sharing Ancient Wisdoms (SAWS) project, to represent the information and knowledge available in medieval gnomologia (collections of wise sayings). SAWS concentrates mainly on Ancient Greek and Arabic manuscripts containing wisdom literature. All class descriptions are provided by domain experts and the ontology has been developed through collaboration between these experts and ontology developers.</rdfs:comment>
+    <owl:priorVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</owl:priorVersion>
+    <owl:imports rdf:resource="http://erlangen-crm.org/efrbroo/"/>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ancientwisdoms.ac.uk</rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#ReconstructedManuscript">
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/efrbroo/F4_Manifestation_Singleton"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Manuscript whose parts are now distributed as separate manuscript parts, so no longer exists as a whole, but can still be identified</rdfs:comment>
+    <rdfs:label xml:lang="en">reconstructed manuscript</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasAddedDecoration">
+    <rdfs:comment xml:lang="en">A Person has physically added a DecorativeItem onto the manuscript
+
+NB to represent where scribes have written marginalia notes (text) physically onto the manuscript, use: Scribe hasAddedMarginalia Marginalia</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#DecorativeItem"/>
+    <rdfs:seeAlso xml:lang="en">Scribe hasAddedMarginalia Marginalia</rdfs:seeAlso>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:label xml:lang="en">has added decoration</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5362e58aa549418ab3935c10fdd5a55e">
+    <rdf:rest rdf:nodeID="N564fcb9104f34261932d50a0fc55df93"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5b99923da0be4f199a12eca61f46c7f6">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+    <rdf:rest rdf:nodeID="N5362e58aa549418ab3935c10fdd5a55e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#EditorTitle">
+    <rdfs:label xml:lang="en">editor title</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Indicates a title that was assigned outside the manuscript by an editor</rdfs:comment>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#ScribeTitle"/>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E35_Title"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c287a69ad2741d386356cbd4fe0c1c9">
+    <owl:intersectionOf rdf:nodeID="N84f92e87e6564033be8e96def29cce50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Scribe">
+    <rdfs:comment xml:lang="en">The producer / author / copier of a linguistic object (excluding editions), in the medieval age. The scribe can be named or unnamed</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <rdfs:label xml:lang="en">scribe</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84f92e87e6564033be8e96def29cce50">
+    <rdf:rest rdf:nodeID="N694febd13fe44082965eef8c62c8b1c6"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Material">
+    <rdfs:comment xml:lang="en">Any of the texts we are working on in SAWS or that we are referring to</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N9fe05f335a374f4c9561996ab1cee539"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">material</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isUnrelatedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">To explicitly say two things are not at all related but are completely independent of each other</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:label xml:lang="en">is unrelated to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isShorterVersionOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionOf"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is related to another LinguisticObject in that it conveys the same ideas (FRBRoo: Work), but is expressed in a more concise version (FRBRoo: a different and shorter Expression)]</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is shorter version of</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isShorterTranslationOf</rdfs:seeAlso>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isCopiedBy">
+    <rdfs:domain rdf:nodeID="N94f1ec16a55c4165b6d79d2a35bbdc3e"/>
+    <rdfs:label xml:lang="en">is copied by</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Scribe"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject (except Edition) is copied by this Scribe</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isWrittenBy"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isCopierOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5227e1c4421a438f8f49312622b649a4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N29405adfcd3f4b6395c6c2963664627a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd3193e4a9a704a6b85b32331a87a63a6">
+    <rdf:first rdf:nodeID="N6e64c2c117204c058a52e8e09354fb45"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N25365269096e48089ba1596832f5c8a8">
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:rest rdf:nodeID="N0445448f79e94e6291ab1c9e372f4934"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N552b5a8e8456435aa94f529a8db4a768">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nc0d423323358495290b4e4998044501e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8aed8552fbc54ab4bcfd0d9c724272b8">
+    <rdf:rest rdf:nodeID="N64a6e29e0d9041c1be7c60011db8ef89"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasPart">
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+    <rdfs:domain rdf:nodeID="N8c5997568fc34568b20c12e85e4dc0a0"/>
+    <rdfs:comment xml:lang="en">Physical Manuscripts can be composed of many Manuscript Parts – this relationship would be stated once for each part. This relationship can be used both for existing Manuscript Parts or for Manuscript Parts which used to be parts of a manuscript</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P46_is_composed_of"/>
+    <rdfs:label xml:lang="en">has part</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N655476266a964914b4861bd11c2fa3a4">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#OtherContentItem"/>
+    <rdf:rest rdf:nodeID="N6688d299eb8a4f4581942362d7ee9502"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E53_Place">
+    <rdfs:label xml:lang="en">place</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf01b80a88964f78920b2db1df93d5ba">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Na8ad8908db7746959e735954cc7c55b7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13ebe54449fb4025b71c5cc9ba99722a">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nadab3d4c8f6c4079bdddddf065faca1b">
+    <rdf:rest rdf:nodeID="N55681e5e67a145fa840897695576bd97"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#decorationAddedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd9646295c0b14b0489c19ce55113058a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="http://purl.org/saws/ontology#Edition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N139445ecd0aa4a41a6aca45fb17b3c36">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N5703baaa5c92432884e6857a361f71a4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#OtherContentItem">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#ContentItem"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">other content item</rdfs:label>
+    <rdfs:comment xml:lang="en">A unit of the material within a content item, as identified by the modern editor, which isn’t a narrative, statement, or definition</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8f50b19a56084bd78e477919866cb6d1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Scribe"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8331c2cce98e40658b950d2deecb4bf6">
+    <rdf:rest rdf:nodeID="N13ebe54449fb4025b71c5cc9ba99722a"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94ea03c252bb410fbb4961da78436a90">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Narrative"/>
+    <rdf:rest rdf:nodeID="N655476266a964914b4861bd11c2fa3a4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#ContentItem">
+    <rdfs:subClassOf rdf:nodeID="Na375df9d3d9f45189be4b3dd45a14d1b"/>
+    <rdfs:label xml:lang="en">content item</rdfs:label>
+    <rdfs:comment xml:lang="en">A basic unit of interest within the Material: a division of a collection instance/section, for more exact reference than when using a section – this identifies basic units of interest in the material for SAWS (marked in TEI as &lt;seg&gt;)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isWrittenBy">
+    <rdfs:label xml:lang="en">is written by</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">Comment commentMadeBy Editor
+Marginalia marginaliaAddedBy Scribe</rdfs:seeAlso>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is written (or transcribed) by a specified Person</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2911ad0356c444dc99517dda8541fd63">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#hasAddedDecoration"/>
+    <rdf:rest rdf:nodeID="Nb616c02fca6f41e3b4f27cef82173f66"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#ScribeTitle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Indicates a title that was assigned within the manuscript by a scribe</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E35_Title"/>
+    <rdfs:label xml:lang="en">scribe title</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf">
+    <rdfs:comment xml:lang="en">A LinguisticObject is a version of another LinguisticObject in another language. This need not imply that one is a direct translation of the other, nor which is the earlier</rdfs:comment>
+    <rdfs:label xml:lang="en">is version (in another language) of</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isVersionOf</rdfs:seeAlso>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isInLanguage">
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E56_Language"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is in language</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P72_has_language"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">A LinguisticObject is text in the specified Language</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isSiblingOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:comment xml:lang="en">The two OriginalMaterials are produced using the same source(s) OriginalMaterial(s) (as indirect or direct source)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isInSameFamilyAs"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0445448f79e94e6291ab1c9e372f4934">
+    <rdf:first rdf:nodeID="N145e997e41894668a5783fbf2a185afe"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isEditedBy">
+    <rdfs:label xml:lang="en">is edited by</rdfs:label>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isEditorOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isWrittenBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Edition"/>
+    <rdfs:comment xml:lang="en">An Edition is edited by an Editor (someone from the SAWS team or another modern-day scholar)</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Editor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nab858dd465ec4e47881721d5f4ef0b91">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N2a80907eabfe462ea1b27734f83df2ff"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasComment">
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isCommentOn"/>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Comment"/>
+    <rdfs:comment xml:lang="en">To indicate that something has been commented about in an editorial Comment </rdfs:comment>
+    <rdfs:label xml:lang="en">has comment</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isReferencedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0d423323358495290b4e4998044501e">
+    <rdf:rest rdf:nodeID="N5a71f67d215640df82967937d35f2477"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#CollectionInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N145e997e41894668a5783fbf2a185afe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="http://purl.org/saws/ontology#Edition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#marginaliaAddedBy">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Marginalia"/>
+    <rdfs:seeAlso xml:lang="en">LinguisticObject isWrittenBy Person
+Comment commentMadeBy Editor</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">marginalia added by</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Scribe"/>
+    <rdfs:comment xml:lang="en">Marginalia have been physically added onto the manuscript by a Scribe
+
+NB to represent where a comment has been made by a modern-day scholar/editor, not written onto the manuscript, use: Comment commentMadeBy Editor</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isVerbatimTranslationOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isVersionInAnotherLanguageOf"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:comment xml:lang="en">word-for-word translation (ad pedem). This need not imply that one is a direct translation of the other, nor which is the earlier]</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is verbatim translation of</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">isVerbatimOf</rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Epilogue">
+    <rdfs:label xml:lang="en">epilogue</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/saws/ontology#Prologue"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6b2c2c03c904f13b502516d73ecfbe4">
+    <rdf:first rdf:nodeID="Nfb9ee3d0ff164a7196587f24d485755c"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E21_Person">
+    <rdfs:comment xml:lang="en">Note for SAWS: this includes any human being, named or otherwise</rdfs:comment>
+    <rdfs:label xml:lang="en">person</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29405adfcd3f4b6395c6c2963664627a">
+    <rdf:rest rdf:nodeID="N8331c2cce98e40658b950d2deecb4bf6"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/P148_has_component">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbc6f508a7ead4a6588bc28eae575e041">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Section"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isCloseRenderingOf">
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:seeAlso xml:lang="en">isCloseTranslationOf</rdfs:seeAlso>
+    <rdfs:comment xml:lang="en">This property specifies the source and target LinguisticObject involved (respectively) when rendering one LinguisticObject instance to express it in a related but different way (not necessarily in a different Language), resulting in a new LinguisticObject e.g. poetry into prose, or from one dialect to another, or a paraphrase being made.  This property indicates that the new LinguisticObject is a close rendering of the original LinguisticObject. This need not imply that one is a direct copy of the other, nor which is the earlier</rdfs:comment>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdfs:label xml:lang="en">is close rendering of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd9108ed279d5490198c8fc1dc1f21dad">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Institution"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0d6add45dfe7443bba5782db7fca538b">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isEditorOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Editor"/>
+    <rdfs:label xml:lang="en">is editor of</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/saws/ontology#Edition"/>
+    <rdfs:comment xml:lang="en">An Editor (a modern-day scholar, e.g. someone from the SAWS team) has edited an Edition</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasWritten"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d7f5de41e3b4e1e979077ca4d7de2a3">
+    <owl:intersectionOf rdf:nodeID="N4f809775a3ca46b3b075a897964c75e2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbe81a040f41847f98ba71f937d74e5b7">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N335baa20885b4dc8963e7ee449f56ac2">
+    <rdf:first rdf:resource="http://erlangen-crm.org/efrbroo/F23_Expression_Fragment"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N71c09da09d66442db49b95a5d44973cc">
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+    <rdf:rest rdf:nodeID="N238bbc64212548a2996ebad385e736ab"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E41_Appellation">
+    <rdfs:label xml:lang="en">appellation</rdfs:label>
+    <rdfs:comment xml:lang="en">Note for SAWS: we can use Appellation to state a person’s name or other name of interest e.g. of a church</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E56_Language">
+    <rdfs:label xml:lang="en">language</rdfs:label>
+    <rdfs:comment xml:lang="en">Note for SAWS: This represents language in which a material is written - this is put in the TEI header. 
+
+NB in the TEI header we should use standards for languages, e.g. the more detailed ISO standards at http://www.loc.gov/standards/iso639-2/ , so use “http://id.loc.gov/vocabulary/iso639-2/grc” for Ancient Greek rather than “Greek”</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isChildOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The parent OriginalMaterial is a direct source for the production of part or all of the child OriginalMaterial</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isDescendantOf"/>
+    <rdfs:label xml:lang="en">is child of</rdfs:label>
+    <owl:propertyDisjointWith rdf:resource="http://purl.org/saws/ontology#isParentOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isDirectCopyOf">
+    <rdfs:comment xml:lang="en">To say explicitly that one Linguistic Object is a direct copy of another Linguistic Object. This relationship can be used in conjunction with other relationships which specify more details about the copying, e.g. isLooseRenderingOf, isVersionOf</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P130_shows_features_of"/>
+    <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:range rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdfs:seeAlso xml:lang="en">isDirectTranslationOf</rdfs:seeAlso>
+    <rdfs:label xml:lang="en">is direct copy of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#hasChild">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasDescendant"/>
+    <rdfs:comment xml:lang="en">The parent OriginalMaterial is a direct source for the production of part or all of the child OriginalMaterial</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isChildOf"/>
+    <owl:propertyDisjointWith rdf:resource="http://purl.org/saws/ontology#hasParent"/>
+    <rdfs:label xml:lang="en">hasChild</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E35_Title">
+    <rdfs:label xml:lang="en">title</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N67fc190ef62f4cdeb538da63dbec10b8">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+    <rdf:rest rdf:nodeID="N60545a58d1714974b20291aa5ecb1668"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ebaa9d0b0d1410aaa0def709c725f75">
+    <rdf:first rdf:nodeID="N95491fd216cd47d29f2ea03a5fa83065"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf3467d716a484382be7591bffcaae120">
+    <rdf:rest rdf:nodeID="N94ea03c252bb410fbb4961da78436a90"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#ManuscriptPart">
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#Locus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">manuscript part</rdfs:label>
+    <rdfs:comment xml:lang="en">A physical section of a physical manuscript</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22be6bba739942d8833744e3b8cc2788">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nb9cc46ca14cd4f4cadcc8a4a707d51ac"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba0b7601aa794bc5a45b37ffb5184534">
+    <rdf:rest rdf:nodeID="N0d6add45dfe7443bba5782db7fca538b"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22a8042ea2a1474593d96e3cbc051bda">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nb1e9ae63be3c498fa292fe98042ccda3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N60545a58d1714974b20291aa5ecb1668">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/P86i_contains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#isTransmitterOf">
+    <rdfs:range rdf:nodeID="N05409c351cf5427e9a44094dc4441c9e"/>
+    <rdfs:domain rdf:resource="http://purl.org/saws/ontology#Transmitter"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#hasWritten"/>
+    <rdfs:label xml:lang="en">is transmitter of</rdfs:label>
+    <rdfs:comment xml:lang="en">A Transmitter (Person) has transmitted this LinguisticObject (any Linguistic Object except Edition)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Statement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The actual saying, e.g. 'All men are mortal'</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/saws/ontology#ContentItem"/>
+    <rdfs:label xml:lang="en">statement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb981c51c4e3b4e8f8578ecb3418585e3">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#CollectionInstance"/>
+    <rdf:rest rdf:nodeID="Nbe81a040f41847f98ba71f937d74e5b7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0a53574c9a9c4748a278a29ca3b61eab">
+    <owl:unionOf rdf:nodeID="N71c09da09d66442db49b95a5d44973cc"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#Transmitter">
+    <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E21_Person"/>
+    <rdfs:comment xml:lang="en">Person who is described in the text content as having transmitted a content item or other linguistic objects, for example ‘[Transmitter] said that [AttributedAuthor] said … (ContentItem)</rdfs:comment>
+    <rdfs:label xml:lang="en">transmitter</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb1e9ae63be3c498fa292fe98042ccda3">
+    <rdf:rest rdf:nodeID="N718d4e9ea811451bbc7f6709e225338d"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E39_Actor">
+    <rdfs:comment xml:lang="en">Note for SAWS: we can use Actor to refer to any living being (not necessarily a person, not necessarily still alive) who is identified/named/referred to within a linguistic object, though we may wish to use a more specific class such as Person, AttributedAuthor, Scribe etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">actor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94f1ec16a55c4165b6d79d2a35bbdc3e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N25365269096e48089ba1596832f5c8a8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e64c2c117204c058a52e8e09354fb45">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="http://purl.org/saws/ontology#Edition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8ad8908db7746959e735954cc7c55b7">
+    <rdf:rest rdf:nodeID="Nbc6f508a7ead4a6588bc28eae575e041"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#CollectionInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5703baaa5c92432884e6857a361f71a4">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ManuscriptPart"/>
+    <rdf:rest rdf:nodeID="Nba0b7601aa794bc5a45b37ffb5184534"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf61f732b85354ae0a09a88e8e0ee0919">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Institution"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf01ea83402d2440ebc1536478b8959e0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N0da97e715c0d4e7397677169b25d49f4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5af52b0f59de452ab2e7238c7085093a">
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+    <rdf:rest rdf:nodeID="N20a1f5f09cd44cefad582cd414fb7cab"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafd9ce5f0bbf4ddfa1062eddde03b8cc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N329f8ba6e3ad4e25891b156f0a1f78d2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/saws/ontology#fallsWithin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+    <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P10_falls_within"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N78d82f7dd2d4459b87318e5442e802b1">
+    <owl:unionOf rdf:nodeID="Na3be8d672c7346e1874bfc7769d375e8"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/E51_Contact_Point">
+    <rdfs:label xml:lang="en">contact point</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb76fc7252b1b4ad3a771c1fa2a68d969">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nf3467d716a484382be7591bffcaae120"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9fe05f335a374f4c9561996ab1cee539">
+    <owl:intersectionOf rdf:nodeID="N5af52b0f59de452ab2e7238c7085093a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb1be1e37c12a45f6bc1f619a3d1d5bcb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N5b99923da0be4f199a12eca61f46c7f6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N20a1f5f09cd44cefad582cd414fb7cab">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/efrbroo/F22_Self-Contained_Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N05409c351cf5427e9a44094dc4441c9e">
+    <owl:intersectionOf rdf:nodeID="N3d31c5ada4e34b16a0f7049357e2b52f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N03c9922cae324373a45f93e9277615c1">
+    <rdf:rest rdf:nodeID="Nd3193e4a9a704a6b85b32331a87a63a6"/>
+    <rdf:first rdf:resource="http://erlangen-crm.org/current/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N238bbc64212548a2996ebad385e736ab">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Institution"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nde145c1e33ad4ae7ab8f99bf919b38cb">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf659849a193e4a6bb418e1d9664d8049">
+    <owl:intersectionOf rdf:nodeID="N015cf13179a94a2c9257613b5bff59c9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N54f2e28d73264291a70fe2ae24a99237">
+    <rdf:first rdf:nodeID="Nd9646295c0b14b0489c19ce55113058a"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd22763838b964bfb91498aad79ea8102">
+    <rdf:first rdf:resource="http://erlangen-crm.org/efrbroo/F22_Self-Contained_Expression"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/P130_shows_features_of">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/saws/ontology#isRelatedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5388b53f20ce46b19bcf39e8fd0fe544">
+    <rdf:rest rdf:nodeID="N6e92033ab8784a75a4bd38341ddb62f9"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#PhysicalManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6bb4b9fcd6f84f17aa5980a3e1c36df4">
+    <owl:unionOf rdf:nodeID="N89979f4873204ce9b9013e71ffe5252c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N564fcb9104f34261932d50a0fc55df93">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#ReconstructedManuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N670f9da023334d8c97bbe0e542de9193">
+    <rdf:first rdf:resource="http://erlangen-crm.org/efrbroo/F23_Expression_Fragment"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na375df9d3d9f45189be4b3dd45a14d1b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N677d2627b955493c88bf3e5df2907630"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/P148i_is_component_of">
+    <owl:propertyDisjointWith rdf:resource="http://purl.org/saws/ontology#isNotPresentIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6688d299eb8a4f4581942362d7ee9502">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nca45c38fe18f4841aa48e0f394bf68d0">
+    <rdf:first rdf:resource="http://purl.org/saws/ontology#Section"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://erlangen-crm.org/current/P72i_is_language_of">
+    <owl:inverseOf rdf:resource="http://purl.org/saws/ontology#isInLanguage"/>
+  </rdf:Description>
+</rdf:RDF>

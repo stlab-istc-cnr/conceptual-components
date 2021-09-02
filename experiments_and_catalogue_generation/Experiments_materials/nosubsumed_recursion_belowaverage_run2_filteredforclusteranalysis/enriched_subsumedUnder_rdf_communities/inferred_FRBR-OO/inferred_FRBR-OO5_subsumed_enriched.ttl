@@ -1,0 +1,31 @@
+@prefix ns1: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:F2_Expression ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> .
+
+ns1:F35_Nomen_Use_Statement ns1:R55_has_nomen_form <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+    ns2:subsumedUnder ns1:F2_Expression,
+        <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+ns1:F3_Manifestation_Product_Type ns1:CLP2_should_have_type <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+    ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E55_Type>,
+        <http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> .
+
+ns1:F52_Name_Use_Activity ns1:R61_occured_in_kind_of_context <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+    ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type> ns1:CLP2i_should_be_type_of ns1:F3_Manifestation_Product_Type ;
+    ns1:R55i_is_nomen_form_in ns1:F35_Nomen_Use_Statement ;
+    ns1:R61i_was_kind_of_context_for ns1:F52_Name_Use_Activity ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

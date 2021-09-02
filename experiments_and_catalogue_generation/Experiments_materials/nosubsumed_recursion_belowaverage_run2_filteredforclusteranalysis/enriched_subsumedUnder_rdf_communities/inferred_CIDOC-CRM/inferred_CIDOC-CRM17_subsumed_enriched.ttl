@@ -1,0 +1,22 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E52_Time-Span ns1:P160i_is_temporal_projection_of ns1:E92_Spacetime_Volume ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E53_Place ns1:P161i_is_spatial_projection_of ns1:E92_Spacetime_Volume ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E1_CRM_Entity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:E92_Spacetime_Volume ns1:P10_falls_within ns1:E92_Spacetime_Volume ;
+    ns1:P10i_contains ns1:E92_Spacetime_Volume ;
+    ns1:P132_overlaps_with ns1:E92_Spacetime_Volume ;
+    ns1:P133_is_separated_from ns1:E92_Spacetime_Volume ;
+    ns1:P161_has_spatial_projection ns1:E53_Place ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+

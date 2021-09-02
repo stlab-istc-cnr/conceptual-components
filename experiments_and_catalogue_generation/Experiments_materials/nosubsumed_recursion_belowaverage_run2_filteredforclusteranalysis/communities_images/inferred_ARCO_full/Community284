@@ -1,0 +1,9 @@
+digraph "Community 284" {
+	SurveyImage -> PhotoInterpretationRendering [label=isSurveyImageOf]
+	SurveyImage
+	SurveyImage -> Literal [label=surveyImageIdentifier]
+	SurveyImageType -> SurveyImage [label=isSurveyImageTypeOf]
+	SurveyImageType
+	PhotoInterpretationRendering -> SurveyImage [label=hasSurveyImage]
+	SurveyImage -> SurveyImageType [label=hasSurveyImageType]
+}

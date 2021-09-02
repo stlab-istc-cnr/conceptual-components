@@ -1,0 +1,859 @@
+@prefix : <http://linklings.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://linklings.owl#> .
+
+<http://linklings.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://linklings#hasContent
+<http://linklings#hasContent> rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdf:type owl:TransitiveProperty ;
+                              rdfs:range <http://linklings#Content> .
+
+
+###  http://linklings#hasContentType
+<http://linklings#hasContentType> rdf:type owl:ObjectProperty ;
+                                  owl:equivalentProperty [ owl:inverseOf <http://linklings#isContentTypeOf>
+                                                         ] ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  rdfs:range <http://linklings#ContentType> .
+
+
+###  http://linklings#hasPersonAssigned
+<http://linklings#hasPersonAssigned> rdf:type owl:ObjectProperty ;
+                                     owl:equivalentProperty [ owl:inverseOf <http://linklings#hasRole>
+                                                            ] ;
+                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                     owl:inverseOf <http://linklings#hasRole> ;
+                                     rdfs:range <http://linklings#Person> .
+
+
+###  http://linklings#hasPlace
+<http://linklings#hasPlace> rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdf:type owl:TransitiveProperty ;
+                            rdfs:range <http://linklings#Place> .
+
+
+###  http://linklings#hasProgramAssigned
+<http://linklings#hasProgramAssigned> rdf:type owl:ObjectProperty ;
+                                      owl:equivalentProperty [ owl:inverseOf <http://linklings#hasSessionChair>
+                                                             ] ;
+                                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://linklings#hasRole
+<http://linklings#hasRole> rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:range <http://linklings#Role> .
+
+
+###  http://linklings#hasRoleInvolved
+<http://linklings#hasRoleInvolved> rdf:type owl:ObjectProperty ;
+                                   owl:equivalentProperty [ owl:inverseOf <http://linklings#isRoleInvolvedIn>
+                                                          ] ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   rdfs:range <http://linklings#Role> .
+
+
+###  http://linklings#hasRoom
+<http://linklings#hasRoom> rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://linklings#hasPlace> ;
+                           rdf:type owl:TransitiveProperty ;
+                           rdfs:range <http://linklings#Room> .
+
+
+###  http://linklings#hasSession
+<http://linklings#hasSession> rdf:type owl:ObjectProperty ;
+                              owl:equivalentProperty [ owl:inverseOf <http://linklings#isSession>
+                                                     ] ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              owl:inverseOf <http://linklings#isSession> ;
+                              rdf:type owl:TransitiveProperty ;
+                              rdfs:range <http://linklings#Session> .
+
+
+###  http://linklings#hasSessionChair
+<http://linklings#hasSessionChair> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   owl:inverseOf <http://linklings#hasProgramAssigned> ;
+                                   rdfs:range <http://linklings#SessionChair> .
+
+
+###  http://linklings#hasSetting
+<http://linklings#hasSetting> rdf:type owl:ObjectProperty ;
+                              owl:equivalentProperty [ owl:inverseOf <http://linklings#isSettingFor>
+                                                     ] ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              owl:inverseOf <http://linklings#isSettingFor> ;
+                              rdf:type owl:TransitiveProperty ;
+                              rdfs:range <http://linklings#Settings> .
+
+
+###  http://linklings#hasSubmissionStatus
+<http://linklings#hasSubmissionStatus> rdf:type owl:ObjectProperty ;
+                                       owl:equivalentProperty [ owl:inverseOf <http://linklings#isSubmissionStatusOf>
+                                                              ] ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                       rdfs:range <http://linklings#SubmissionStatus> .
+
+
+###  http://linklings#hasSubmissionType
+<http://linklings#hasSubmissionType> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                     rdfs:range <http://linklings#SubmissionType> .
+
+
+###  http://linklings#hasTimeInterval
+<http://linklings#hasTimeInterval> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   rdfs:range <http://linklings#TimeInterval> .
+
+
+###  http://linklings#includesSubmission
+<http://linklings#includesSubmission> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                      rdf:type owl:TransitiveProperty ;
+                                      rdfs:range <http://linklings#Submission> .
+
+
+###  http://linklings#isContentTypeOf
+<http://linklings#isContentTypeOf> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   owl:inverseOf <http://linklings#hasContentType> .
+
+
+###  http://linklings#isRegisteredBy
+<http://linklings#isRegisteredBy> rdf:type owl:ObjectProperty ;
+                                  owl:equivalentProperty [ owl:inverseOf <http://linklings#registers>
+                                                         ] ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  owl:inverseOf <http://linklings#registers> ;
+                                  rdf:type owl:ReflexiveProperty .
+
+
+###  http://linklings#isReviewed
+<http://linklings#isReviewed> rdf:type owl:ObjectProperty ;
+                              owl:equivalentProperty [ owl:inverseOf <http://linklings#reviews>
+                                                     ] ;
+                              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://linklings#isRoleInvolvedIn
+<http://linklings#isRoleInvolvedIn> rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    owl:inverseOf <http://linklings#hasRoleInvolved> ;
+                                    rdfs:domain <http://linklings#Role> .
+
+
+###  http://linklings#isSession
+<http://linklings#isSession> rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdf:type owl:TransitiveProperty .
+
+
+###  http://linklings#isSetBy
+<http://linklings#isSetBy> rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf <http://linklings#setsSetting>
+                                                  ] ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf <http://linklings#setsSetting> .
+
+
+###  http://linklings#isSettingFor
+<http://linklings#isSettingFor> rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdf:type owl:TransitiveProperty .
+
+
+###  http://linklings#isStatusSetBy
+<http://linklings#isStatusSetBy> rdf:type owl:ObjectProperty ;
+                                 owl:equivalentProperty [ owl:inverseOf <http://linklings#setsStatus>
+                                                        ] ;
+                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                 rdfs:domain <http://linklings#SubmissionStatus> .
+
+
+###  http://linklings#isSubmissionStatusOf
+<http://linklings#isSubmissionStatusOf> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                        owl:inverseOf <http://linklings#hasSubmissionStatus> .
+
+
+###  http://linklings#isTypeOf
+<http://linklings#isTypeOf> rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdf:type owl:TransitiveProperty .
+
+
+###  http://linklings#registers
+<http://linklings#registers> rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdf:type owl:ReflexiveProperty .
+
+
+###  http://linklings#reviews
+<http://linklings#reviews> rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf <http://linklings#isReviewed> ;
+                           rdfs:domain <http://linklings#Role> .
+
+
+###  http://linklings#setsSetting
+<http://linklings#setsSetting> rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdfs:range <http://linklings#Settings> .
+
+
+###  http://linklings#setsStatus
+<http://linklings#setsStatus> rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              owl:inverseOf <http://linklings#isStatusSetBy> ;
+                              rdfs:range <http://linklings#SubmissionStatus> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://linklings#hasAddress
+<http://linklings#hasAddress> rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasCapacity
+<http://linklings#hasCapacity> rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasConferenceName
+<http://linklings#hasConferenceName> rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                     rdfs:domain <http://linklings#Conference> .
+
+
+###  http://linklings#hasConferenceSeriesName
+<http://linklings#hasConferenceSeriesName> rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                           rdfs:domain <http://linklings#Conference> .
+
+
+###  http://linklings#hasEndDate
+<http://linklings#hasEndDate> rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasFirstName
+<http://linklings#hasFirstName> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty ;
+                                rdfs:domain <http://linklings#Person> .
+
+
+###  http://linklings#hasHeight
+<http://linklings#hasHeight> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasLength
+<http://linklings#hasLength> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasRoomName
+<http://linklings#hasRoomName> rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasStartDate
+<http://linklings#hasStartDate> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasSureName
+<http://linklings#hasSureName> rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:domain <http://linklings#Person> .
+
+
+###  http://linklings#hasTheme
+<http://linklings#hasTheme> rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasTitle
+<http://linklings#hasTitle> rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://linklings#hasWidth
+<http://linklings#hasWidth> rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://linklings#Abstract
+<http://linklings#Abstract> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://linklings#Content> .
+
+
+###  http://linklings#AcceptedSubmission
+<http://linklings#AcceptedSubmission> rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( <http://linklings#Submission>
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://linklings#hasSubmissionStatus> ;
+                                                                                   owl:hasValue <http://linklings#Accepted>
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] ;
+                                      rdfs:subClassOf <http://linklings#Submission> .
+
+
+###  http://linklings#AdminRegistered
+<http://linklings#AdminRegistered> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://linklings#RegisteredPerson> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://linklings#hasRole> ;
+                                                     owl:someValuesFrom <http://linklings#Role>
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://linklings#isRegisteredBy> ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass <http://linklings#Administrator>
+                                                   ] .
+
+
+###  http://linklings#Administrator
+<http://linklings#Administrator> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://linklings#AdminRegistered> ,
+                                                 <http://linklings#Role> ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://linklings#setsSetting> ;
+                                                   owl:someValuesFrom <http://linklings#RoleSettings>
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://linklings#setsSetting> ;
+                                                   owl:someValuesFrom <http://linklings#SubmissionFeatureSettings>
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://linklings#registers> ;
+                                                   owl:allValuesFrom <http://linklings#AdminRegistered>
+                                                 ] .
+
+
+###  http://linklings#Applicant
+<http://linklings#Applicant> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://linklings#Role> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://linklings#isRoleInvolvedIn> ;
+                                               owl:someValuesFrom <http://linklings#Application>
+                                             ] .
+
+
+###  http://linklings#Application
+<http://linklings#Application> rdf:type owl:Class ;
+                               rdfs:subClassOf <http://linklings#SubmissionType> ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://linklings#hasRoleInvolved> ;
+                                                 owl:someValuesFrom <http://linklings#Applicant>
+                                               ] .
+
+
+###  http://linklings#Author
+<http://linklings#Author> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://linklings#Role> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://linklings#isRoleInvolvedIn> ;
+                                            owl:someValuesFrom <http://linklings#Paper>
+                                          ] .
+
+
+###  http://linklings#BasicUser
+<http://linklings#BasicUser> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://linklings#Role> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://linklings#hasPersonAssigned> ;
+                                               owl:someValuesFrom <http://linklings#SelfRegistered>
+                                             ] .
+
+
+###  http://linklings#Conference
+<http://linklings#Conference> rdf:type owl:Class ;
+                              rdfs:subClassOf <http://linklings#Event> ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#hasSession> ;
+                                                owl:someValuesFrom <http://linklings#ConferenceSession>
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#hasConferenceName> ;
+                                                owl:someValuesFrom xsd:string
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#hasTheme> ;
+                                                owl:someValuesFrom xsd:string
+                                              ] .
+
+
+###  http://linklings#ConferenceSession
+<http://linklings#ConferenceSession> rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( <http://linklings#Session>
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#hasRoleInvolved> ;
+                                                                                  owl:someValuesFrom <http://linklings#SessionChair>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#hasRoom> ;
+                                                                                  owl:someValuesFrom <http://linklings#Room>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#hasTimeInterval> ;
+                                                                                  owl:someValuesFrom <http://linklings#TimeInterval>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#includesSubmission> ;
+                                                                                  owl:someValuesFrom <http://linklings#AcceptedSubmission>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#isSession> ;
+                                                                                  owl:someValuesFrom <http://linklings#Conference>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#hasTimeInterval> ;
+                                                                                  owl:allValuesFrom <http://linklings#Conference>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#includesSubmission> ;
+                                                                                  owl:allValuesFrom <http://linklings#AcceptedSubmission>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#isSession> ;
+                                                                                  owl:allValuesFrom <http://linklings#Conference>
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://linklings#hasTitle> ;
+                                                                                  owl:someValuesFrom xsd:string
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:subClassOf <http://linklings#Session> .
+
+
+###  http://linklings#Content
+<http://linklings#Content> rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://linklings#hasContentType> ;
+                                             owl:someValuesFrom <http://linklings#ContentType>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://linklings#hasContentType> ;
+                                             owl:allValuesFrom <http://linklings#ContentType>
+                                           ] .
+
+
+###  http://linklings#ContentType
+<http://linklings#ContentType> rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://linklings#isContentTypeOf> ;
+                                                                            owl:someValuesFrom <http://linklings#Content>
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://linklings#isContentTypeOf> ;
+                                                                            owl:allValuesFrom <http://linklings#Content>
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf owl:Thing .
+
+
+###  http://linklings#Event
+<http://linklings#Event> rdf:type owl:Class ;
+                         rdfs:subClassOf owl:Thing ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://linklings#hasPlace> ;
+                                           owl:someValuesFrom <http://linklings#Place>
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://linklings#hasTimeInterval> ;
+                                           owl:someValuesFrom <http://linklings#TimeInterval>
+                                         ] .
+
+
+###  http://linklings#FullText
+<http://linklings#FullText> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://linklings#Content> .
+
+
+###  http://linklings#Panel
+<http://linklings#Panel> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://linklings#SubmissionType> ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://linklings#hasRoleInvolved> ;
+                                           owl:someValuesFrom <http://linklings#PanelModerator>
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://linklings#hasRoleInvolved> ;
+                                           owl:someValuesFrom <http://linklings#Panelist>
+                                         ] .
+
+
+###  http://linklings#PanelModerator
+<http://linklings#PanelModerator> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://linklings#Role> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://linklings#isRoleInvolvedIn> ;
+                                                    owl:someValuesFrom <http://linklings#Panel>
+                                                  ] .
+
+
+###  http://linklings#Panelist
+<http://linklings#Panelist> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://linklings#Role> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://linklings#isRoleInvolvedIn> ;
+                                              owl:someValuesFrom <http://linklings#Panel>
+                                            ] .
+
+
+###  http://linklings#Paper
+<http://linklings#Paper> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://linklings#SubmissionType> ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://linklings#hasRoleInvolved> ;
+                                           owl:someValuesFrom <http://linklings#Author>
+                                         ] .
+
+
+###  http://linklings#Person
+<http://linklings#Person> rdf:type owl:Class ;
+                          rdfs:subClassOf owl:Thing ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://linklings#hasAddress> ;
+                                            owl:someValuesFrom xsd:string
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://linklings#hasFirstName> ;
+                                            owl:someValuesFrom xsd:string
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://linklings#hasSureName> ;
+                                            owl:someValuesFrom xsd:string
+                                          ] .
+
+
+###  http://linklings#Place
+<http://linklings#Place> rdf:type owl:Class ;
+                         rdfs:subClassOf owl:Thing ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://linklings#hasAddress> ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] .
+
+
+###  http://linklings#RegisteredPerson
+<http://linklings#RegisteredPerson> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://linklings#Person> .
+
+
+###  http://linklings#RejectedSubmission
+<http://linklings#RejectedSubmission> rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( <http://linklings#Submission>
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://linklings#hasSubmissionStatus> ;
+                                                                                   owl:hasValue <http://linklings#Rejected>
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] ;
+                                      rdfs:subClassOf <http://linklings#Submission> .
+
+
+###  http://linklings#Reviewer
+<http://linklings#Reviewer> rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( <http://linklings#Role>
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://linklings#reviews> ;
+                                                                         owl:someValuesFrom <http://linklings#UndecidedSubmission>
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://linklings#setsStatus> ;
+                                                                         owl:someValuesFrom <http://linklings#SubmissionStatus>
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf <http://linklings#Role> .
+
+
+###  http://linklings#Role
+<http://linklings#Role> rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasPersonAssigned> ;
+                                          owl:someValuesFrom <http://linklings#AdminRegistered>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasSetting> ;
+                                          owl:someValuesFrom <http://linklings#RoleSettings>
+                                        ] .
+
+
+###  http://linklings#RoleSettings
+<http://linklings#RoleSettings> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://linklings#Settings> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://linklings#isSetBy> ;
+                                                  owl:someValuesFrom <http://linklings#Administrator>
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://linklings#isSettingFor> ;
+                                                  owl:someValuesFrom <http://linklings#Role>
+                                                ] .
+
+
+###  http://linklings#Room
+<http://linklings#Room> rdf:type owl:Class ;
+                        rdfs:subClassOf <http://linklings#Place> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasRoomName> ;
+                                          owl:someValuesFrom xsd:string
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasCapacity> ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:int
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasHeight> ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:int
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasLength> ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:int
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://linklings#hasWidth> ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:int
+                                        ] .
+
+
+###  http://linklings#SelfRegistered
+<http://linklings#SelfRegistered> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://linklings#RegisteredPerson> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://linklings#hasRole> ;
+                                                    owl:someValuesFrom <http://linklings#BasicUser>
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://linklings#isRegisteredBy> ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass <http://linklings#UnregisteredPerson>
+                                                  ] .
+
+
+###  http://linklings#Session
+<http://linklings#Session> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://linklings#Event> .
+
+
+###  http://linklings#SessionChair
+<http://linklings#SessionChair> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://linklings#Role> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://linklings#hasProgramAssigned> ;
+                                                  owl:someValuesFrom <http://linklings#ConferenceSession>
+                                                ] .
+
+
+###  http://linklings#Settings
+<http://linklings#Settings> rdf:type owl:Class ;
+                            rdfs:subClassOf owl:Thing .
+
+
+###  http://linklings#Submission
+<http://linklings#Submission> rdf:type owl:Class ;
+                              rdfs:subClassOf owl:Thing ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#hasContent> ;
+                                                owl:someValuesFrom <http://linklings#Content>
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#isTypeOf> ;
+                                                owl:someValuesFrom <http://linklings#Submission>
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#hasSubmissionType> ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass <http://linklings#SubmissionType>
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://linklings#hasTitle> ;
+                                                owl:someValuesFrom xsd:string
+                                              ] .
+
+
+###  http://linklings#SubmissionFeatureSettings
+<http://linklings#SubmissionFeatureSettings> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://linklings#Settings> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://linklings#isSetBy> ;
+                                                               owl:someValuesFrom <http://linklings#Administrator>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://linklings#isSettingFor> ;
+                                                               owl:someValuesFrom <http://linklings#SubmissionType>
+                                                             ] .
+
+
+###  http://linklings#SubmissionStatus
+<http://linklings#SubmissionStatus> rdf:type owl:Class ;
+                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                          owl:oneOf ( <http://linklings#Accepted>
+                                                                      <http://linklings#Rejected>
+                                                                      <http://linklings#Undecided>
+                                                                    )
+                                                        ] ;
+                                    rdfs:subClassOf owl:Thing ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://linklings#isStatusSetBy> ;
+                                                      owl:someValuesFrom <http://linklings#Reviewer>
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://linklings#isSubmissionStatusOf> ;
+                                                      owl:someValuesFrom <http://linklings#Submission>
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://linklings#isSubmissionStatusOf> ;
+                                                      owl:allValuesFrom <http://linklings#Submission>
+                                                    ] .
+
+
+###  http://linklings#SubmissionType
+<http://linklings#SubmissionType> rdf:type owl:Class ;
+                                  rdfs:subClassOf owl:Thing ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://linklings#hasSetting> ;
+                                                    owl:someValuesFrom <http://linklings#SubmissionFeatureSettings>
+                                                  ] .
+
+
+###  http://linklings#TimeInterval
+<http://linklings#TimeInterval> rdf:type owl:Class ;
+                                rdfs:subClassOf owl:Thing ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://linklings#hasEndDate> ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:dateTime
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://linklings#hasStartDate> ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:dateTime
+                                                ] .
+
+
+###  http://linklings#UndecidedSubmission
+<http://linklings#UndecidedSubmission> rdf:type owl:Class ;
+                                       owl:equivalentClass [ owl:intersectionOf ( <http://linklings#Submission>
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://linklings#isReviewed> ;
+                                                                                    owl:someValuesFrom <http://linklings#Reviewer>
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://linklings#isReviewed> ;
+                                                                                    owl:allValuesFrom <http://linklings#Reviewer>
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://linklings#hasSubmissionStatus> ;
+                                                                                    owl:hasValue <http://linklings#Undecided>
+                                                                                  ]
+                                                                                ) ;
+                                                             rdf:type owl:Class
+                                                           ] ;
+                                       rdfs:subClassOf <http://linklings#Submission> .
+
+
+###  http://linklings#UnregisteredPerson
+<http://linklings#UnregisteredPerson> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://linklings#Person> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://linklings#registers> ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass <http://linklings#SelfRegistered>
+                                                      ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://linklings#Accepted
+<http://linklings#Accepted> rdf:type owl:NamedIndividual ,
+                                     <http://linklings#SubmissionStatus> ,
+                                     owl:Thing ;
+                            <http://linklings#isRegisteredBy> <http://linklings#Accepted> ;
+                            <http://linklings#registers> <http://linklings#Accepted> .
+
+
+###  http://linklings#Rejected
+<http://linklings#Rejected> rdf:type owl:NamedIndividual ,
+                                     <http://linklings#SubmissionStatus> ,
+                                     owl:Thing ;
+                            <http://linklings#isRegisteredBy> <http://linklings#Rejected> ;
+                            <http://linklings#registers> <http://linklings#Rejected> .
+
+
+###  http://linklings#Undecided
+<http://linklings#Undecided> rdf:type owl:NamedIndividual ,
+                                      <http://linklings#SubmissionStatus> ,
+                                      owl:Thing ;
+                             <http://linklings#isRegisteredBy> <http://linklings#Undecided> ;
+                             <http://linklings#registers> <http://linklings#Undecided> .
+
+
+###  http://linklings#file
+<http://linklings#file> rdf:type owl:NamedIndividual ,
+                                 <http://linklings#ContentType> ,
+                                 owl:Thing ;
+                        <http://linklings#isRegisteredBy> <http://linklings#file> ;
+                        <http://linklings#registers> <http://linklings#file> .
+
+
+###  http://linklings#text
+<http://linklings#text> rdf:type owl:NamedIndividual ,
+                                 <http://linklings#ContentType> ,
+                                 owl:Thing ;
+                        <http://linklings#isRegisteredBy> <http://linklings#text> ;
+                        <http://linklings#registers> <http://linklings#text> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://linklings#AcceptedSubmission>
+                <http://linklings#RejectedSubmission>
+                <http://linklings#UndecidedSubmission>
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

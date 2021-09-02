@@ -1,0 +1,21 @@
+@prefix ns1: <http://purl.org/vocab/frbr/core#> .
+@prefix ns2: <http://purl.org/spar/fabio/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Expression ns1:embodiment ns1:Manifestation ;
+    ns3:subsumedUnder ns1:Endeavour .
+
+ns1:Work ns2:hasManifestation ns1:Manifestation ;
+    ns3:subsumedUnder ns1:Endeavour .
+
+ns1:Endeavour ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Manifestation ns2:isManifestationOf ns1:Work ;
+    ns1:alternate ns1:Manifestation ;
+    ns1:producer <http://www.w3.org/2002/07/owl#Thing> ;
+    ns3:subsumedUnder ns1:Endeavour .
+

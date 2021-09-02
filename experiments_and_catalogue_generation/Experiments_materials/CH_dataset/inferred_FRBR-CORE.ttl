@@ -1,0 +1,2132 @@
+@prefix : <file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-CORE-20050810.rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-CORE-20050810.rdf#> .
+
+<file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-CORE-20050810.rdf> rdf:type owl:Ontology ;
+                                                                                                                  <http://purl.org/dc/elements/1.1/creator> "Ian Davis <http://purl.org/NET/iand>" ,
+                                                                                                                                                            "Richard Newman" ;
+                                                                                                                  <http://purl.org/dc/terms/isVersionOf> <http://purl.org/vocab/frbr/core#> ;
+                                                                                                                  <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                                                                                  <http://purl.org/dc/terms/replaces> <http://purl.org/vocab/frbr/frbr-core-20050809> ;
+                                                                                                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "frbr" ;
+                                                                                                                  <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/vocab/frbr/core#" ;
+                                                                                                                  <http://web.resource.org/cc/license> <http://creativecommons.org/licenses/by/2.0/uk/> ;
+                                                                                                                  rdfs:comment """
+      This vocabulary is a work in progress, it includes RDF classes for the group 1, 2 and 3 entities
+      described by the FRBR report and properties corresponding to the core relationships between
+      those entities. It does not yet describe attributes of the entities. Where possible, appropriate 
+      relationships with other vocabularies are included in order to place this vocabulary in the 
+      context of existing RDF work.
+    """@en ,
+                                                                                                                               """
+      This vocabulary is an expression in RDF of the concepts and relations described in the
+      IFLA report on the Functional Requirements for Bibliographic Records (FRBR). 
+    """@en ;
+                                                                                                                  <http://www.w3.org/2004/02/skos/core#changeNote> _:genid1 ,
+                                                                                                                                                                   _:genid2 ,
+                                                                                                                                                                   _:genid3 ;
+                                                                                                                  <http://www.w3.org/2004/02/skos/core#example> <file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/frbr-example-film-20050809.html> ;
+                                                                                                                  <http://www.w3.org/2004/02/skos/core#historyNote> _:genid4 ,
+                                                                                                                                                                    _:genid5 ,
+                                                                                                                                                                    _:genid6 .
+
+_:genid1 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Added experimental paraphrases to property and class descriptions" ;
+          <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid2 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Sorted properties and classes alphabetically by URI" ;
+          <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid3 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Fixed type in film example and added creator and date" ;
+          <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid4 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Made domains and ranges of many properties more specific" ;
+          <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid5 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Added alternate, alternateOf, reconfiguration, reconfigurationOf properties" ;
+          <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid6 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+          rdf:value "Item is now not a subclass of geo:SpatialThing" ;
+          <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isVersionOf
+<http://purl.org/dc/terms/isVersionOf> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/replaces
+<http://purl.org/dc/terms/replaces> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/changes
+<http://purl.org/vocab/vann/changes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://web.resource.org/cc/license
+<http://web.resource.org/cc/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+<http://www.w3.org/2004/02/skos/core#changeNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+<http://www.w3.org/2004/02/skos/core#historyNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/format
+<http://purl.org/dc/elements/1.1/format> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.org/dc/terms/hasFormat
+<http://purl.org/dc/terms/hasFormat> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://purl.org/vocab/frbr/core#abridgement
+<http://purl.org/vocab/frbr/core#abridgement> rdf:type owl:ObjectProperty ;
+                                              owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#abridgementOf>
+                                                                     ] ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                              rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                              <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "abridgement"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#changeNote> _:genid10 ,
+                                                                                               _:genid11 ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "An abridgment of an expression."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#historyNote> _:genid12 .
+
+_:genid10 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid11 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid12 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#abridgementOf
+<http://purl.org/vocab/frbr/core#abridgementOf> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                   [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                   ] ;
+                                                owl:inverseOf <http://purl.org/vocab/frbr/core#abridgement> ;
+                                                rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                                rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "abridgement of"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid14 ,
+                                                                                                 _:genid15 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "An expression that is abridged."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#historyNote> _:genid16 .
+
+_:genid14 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid15 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid16 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#adaption
+<http://purl.org/vocab/frbr/core#adaption> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#adaptionOf>
+                                                                  ] ;
+                                           rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                              [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                              ] ;
+                                           owl:inverseOf <http://purl.org/vocab/frbr/core#adaptionOf> ;
+                                           rdfs:domain [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                       <http://purl.org/vocab/frbr/core#Work>
+                                                                     )
+                                                       ] ;
+                                           rdfs:range [ rdf:type owl:Class ;
+                                                        owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                      <http://purl.org/vocab/frbr/core#Work>
+                                                                    )
+                                                      ] ;
+                                           <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                           rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                           rdfs:label "adaption"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#changeNote> _:genid26 ,
+                                                                                            _:genid27 ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "An adaption of a work or expression."@en ;
+                                           <http://www.w3.org/2004/02/skos/core#historyNote> _:genid28 .
+
+_:genid26 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid27 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid28 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Work or Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#adaptionOf
+<http://purl.org/vocab/frbr/core#adaptionOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                ] ;
+                                             rdfs:domain [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                         <http://purl.org/vocab/frbr/core#Work>
+                                                                       )
+                                                         ] ;
+                                             rdfs:range [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                        <http://purl.org/vocab/frbr/core#Work>
+                                                                      )
+                                                        ] ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "adaption of"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid36 ,
+                                                                                              _:genid37 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is adapted."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#historyNote> _:genid38 .
+
+_:genid36 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid37 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid38 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Work or Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#alternate
+<http://purl.org/vocab/frbr/core#alternate> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#alternateOf>
+                                                                   ] ;
+                                            rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                               [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                               ] ;
+                                            owl:inverseOf <http://purl.org/vocab/frbr/core#alternateOf> ;
+                                            rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                            rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                            <http://purl.org/dc/terms/issued> "2005-08-10" ;
+                                            rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                            rdfs:label "alternate"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "An alternative to a manifestation."@en .
+
+
+###  http://purl.org/vocab/frbr/core#alternateOf
+<http://purl.org/vocab/frbr/core#alternateOf> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                              rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                              <http://purl.org/dc/terms/issued> "2005-08-10" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "alternate of"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A manifestation that is alternated."@en .
+
+
+###  http://purl.org/vocab/frbr/core#arrangement
+<http://purl.org/vocab/frbr/core#arrangement> rdf:type owl:ObjectProperty ;
+                                              owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#arrangementOf>
+                                                                     ] ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              owl:inverseOf <http://purl.org/vocab/frbr/core#arrangementOf> ;
+                                              rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                              rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                              <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "arrangement"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#changeNote> _:genid46 ,
+                                                                                               _:genid47 ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "An arrangement of an expression."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#historyNote> _:genid48 .
+
+_:genid46 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid47 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid48 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#arrangementOf
+<http://purl.org/vocab/frbr/core#arrangementOf> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                   [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                   ] ;
+                                                rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                                rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "arrangement of"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid50 ,
+                                                                                                 _:genid51 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "An expression that is arranged."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#historyNote> _:genid52 .
+
+_:genid50 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid51 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid52 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#complement
+<http://purl.org/vocab/frbr/core#complement> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#complementOf>
+                                                                    ] ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                ] ;
+                                             rdfs:domain [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                         <http://purl.org/vocab/frbr/core#Work>
+                                                                       )
+                                                         ] ;
+                                             rdfs:range [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                        <http://purl.org/vocab/frbr/core#Work>
+                                                                      )
+                                                        ] ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "complement"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid62 ,
+                                                                                              _:genid63 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A complement to a work or expression."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#historyNote> _:genid64 .
+
+_:genid62 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid63 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid64 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Work or Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#complementOf
+<http://purl.org/vocab/frbr/core#complementOf> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                  [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                  ] ;
+                                               owl:inverseOf <http://purl.org/vocab/frbr/core#complement> ;
+                                               rdfs:domain [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                           <http://purl.org/vocab/frbr/core#Work>
+                                                                         )
+                                                           ] ;
+                                               rdfs:range [ rdf:type owl:Class ;
+                                                            owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                          <http://purl.org/vocab/frbr/core#Work>
+                                                                        )
+                                                          ] ;
+                                               <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                               rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                               rdfs:label "complement of"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#changeNote> _:genid72 ,
+                                                                                                _:genid73 ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is complemented."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#historyNote> _:genid74 .
+
+_:genid72 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid73 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid74 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+           rdf:value "Added domain and range of Work or Expression" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#creator
+<http://purl.org/vocab/frbr/core#creator> rdf:type owl:ObjectProperty ;
+                                          owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#creatorOf>
+                                                                 ] ;
+                                          rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntity> ,
+                                                             [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntityOf>
+                                                             ] ;
+                                          owl:inverseOf <http://purl.org/vocab/frbr/core#creatorOf> ;
+                                          rdf:type owl:AsymmetricProperty ,
+                                                   owl:IrreflexiveProperty ;
+                                          rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                                          rdfs:range <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                          <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                          rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                          rdfs:label "creator"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#changeNote> _:genid78 ,
+                                                                                           _:genid79 ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "An entity in some way responsible for the creation of a work."@en .
+
+_:genid78 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid79 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#creatorOf
+<http://purl.org/vocab/frbr/core#creatorOf> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntityOf> ,
+                                                               [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntity>
+                                                               ] ;
+                                            rdf:type owl:AsymmetricProperty ,
+                                                     owl:IrreflexiveProperty ;
+                                            rdfs:domain <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                            rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                                            <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                            rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                            rdfs:label "creator of"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#changeNote> _:genid81 ,
+                                                                                             _:genid82 ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "A work that was in some way created by of an entity."@en .
+
+_:genid81 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid82 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#embodiment
+<http://purl.org/vocab/frbr/core#embodiment> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#embodimentOf>
+                                                                    ] ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                ] ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                             rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "embodiment"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid86 ,
+                                                                                              _:genid87 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A manifestation that embodies an expression."@en .
+
+_:genid86 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid87 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#embodimentOf
+<http://purl.org/vocab/frbr/core#embodimentOf> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                  [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                  ] ;
+                                               owl:inverseOf <http://purl.org/vocab/frbr/core#embodiment> ;
+                                               rdf:type owl:AsymmetricProperty ,
+                                                        owl:IrreflexiveProperty ;
+                                               rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                               rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                               <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                               rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                               rdfs:label "embodiment of"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#changeNote> _:genid89 ,
+                                                                                                _:genid90 ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "An expression that is embodied by a manifestation."@en .
+
+_:genid89 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid90 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#exemplar
+<http://purl.org/vocab/frbr/core#exemplar> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#exemplarOf>
+                                                                  ] ;
+                                           rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                              [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                              ] ;
+                                           owl:inverseOf <http://purl.org/vocab/frbr/core#exemplarOf> ;
+                                           rdf:type owl:AsymmetricProperty ,
+                                                    owl:IrreflexiveProperty ;
+                                           rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                           rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                                           <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                           rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                           rdfs:label "exemplar"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#changeNote> _:genid94 ,
+                                                                                            _:genid95 ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "An item that is an exemplar of a manifestation."@en .
+
+_:genid94 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid95 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#exemplarOf
+<http://purl.org/vocab/frbr/core#exemplarOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                ] ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://purl.org/vocab/frbr/core#Item> ;
+                                             rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "exemplar of"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid97 ,
+                                                                                              _:genid98 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "The manifestation that is exemplified by a item."@en .
+
+_:genid97 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+           rdf:value "Added definition" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid98 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+           rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+           <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#imitation
+<http://purl.org/vocab/frbr/core#imitation> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#imitationOf>
+                                                                   ] ;
+                                            rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                               [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                               ] ;
+                                            rdfs:domain [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                        <http://purl.org/vocab/frbr/core#Work>
+                                                                      )
+                                                        ] ;
+                                            rdfs:range [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                       <http://purl.org/vocab/frbr/core#Work>
+                                                                     )
+                                                       ] ;
+                                            <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                            rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                            rdfs:label "imitation"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#changeNote> _:genid108 ,
+                                                                                             _:genid109 ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "An imitation of a work or expression."@en ;
+                                            <http://www.w3.org/2004/02/skos/core#historyNote> _:genid110 .
+
+_:genid108 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid109 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid110 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#imitationOf
+<http://purl.org/vocab/frbr/core#imitationOf> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              owl:inverseOf <http://purl.org/vocab/frbr/core#imitation> ;
+                                              rdfs:domain [ rdf:type owl:Class ;
+                                                            owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                          <http://purl.org/vocab/frbr/core#Work>
+                                                                        )
+                                                          ] ;
+                                              rdfs:range [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                         <http://purl.org/vocab/frbr/core#Work>
+                                                                       )
+                                                         ] ;
+                                              <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "imitation of"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#changeNote> _:genid118 ,
+                                                                                               _:genid119 ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is imitated."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#historyNote> _:genid120 .
+
+_:genid118 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid119 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid120 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#owner
+<http://purl.org/vocab/frbr/core#owner> rdf:type owl:ObjectProperty ;
+                                        owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#ownerOf>
+                                                               ] ;
+                                        rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntity> ,
+                                                           [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntityOf>
+                                                           ] ;
+                                        rdf:type owl:AsymmetricProperty ,
+                                                 owl:IrreflexiveProperty ;
+                                        rdfs:domain <http://purl.org/vocab/frbr/core#Item> ;
+                                        rdfs:range <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                        <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                        rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                        rdfs:label "owner"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#changeNote> _:genid124 ,
+                                                                                         _:genid125 ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "An entity that owns an item."@en .
+
+_:genid124 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid125 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#ownerOf
+<http://purl.org/vocab/frbr/core#ownerOf> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntityOf> ,
+                                                             [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntity>
+                                                             ] ;
+                                          owl:inverseOf <http://purl.org/vocab/frbr/core#owner> ;
+                                          rdf:type owl:AsymmetricProperty ,
+                                                   owl:IrreflexiveProperty ;
+                                          rdfs:domain <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                          rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                                          <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                          rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                          rdfs:label "owner of"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#changeNote> _:genid127 ,
+                                                                                           _:genid128 ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "An item that is in some way owned an entity."@en .
+
+_:genid127 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid128 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#part
+<http://purl.org/vocab/frbr/core#part> rdf:type owl:ObjectProperty ;
+                                       owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#partOf>
+                                                              ] ;
+                                       rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                          [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                          ] ;
+                                       owl:inverseOf <http://purl.org/vocab/frbr/core#partOf> ;
+                                       <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                       rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                       rdfs:label "part"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#changeNote> _:genid132 ,
+                                                                                        _:genid133 ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A part of an endeavour."@en .
+
+_:genid132 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid133 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#partOf
+<http://purl.org/vocab/frbr/core#partOf> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                            [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                            ] ;
+                                         <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                         rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                         rdfs:label "part of"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#changeNote> _:genid135 ,
+                                                                                          _:genid136 ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "An endeavour incorporating an endeavour."@en .
+
+_:genid135 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid136 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#producer
+<http://purl.org/vocab/frbr/core#producer> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#producerOf>
+                                                                  ] ;
+                                           rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntity> ,
+                                                              [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntityOf>
+                                                              ] ;
+                                           owl:inverseOf <http://purl.org/vocab/frbr/core#producerOf> ;
+                                           rdf:type owl:AsymmetricProperty ,
+                                                    owl:IrreflexiveProperty ;
+                                           rdfs:domain <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                           rdfs:range <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                           <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                           rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                           rdfs:label "producer"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#changeNote> _:genid140 ,
+                                                                                            _:genid141 ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "An entity in some way responsible for producing a manifestation."@en .
+
+_:genid140 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid141 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#producerOf
+<http://purl.org/vocab/frbr/core#producerOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntityOf> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntity>
+                                                                ] ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                             rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "producer of"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid143 ,
+                                                                                              _:genid144 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A manifestation that was in some way produced an entity."@en .
+
+_:genid143 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid144 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#realization
+<http://purl.org/vocab/frbr/core#realization> rdf:type owl:ObjectProperty ;
+                                              owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#realizationOf>
+                                                                     ] ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              rdf:type owl:AsymmetricProperty ,
+                                                       owl:IrreflexiveProperty ;
+                                              rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                                              rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                              <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "realization"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#changeNote> _:genid148 ,
+                                                                                               _:genid149 ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "An expression that is an intellectual or artistic realization of a work."@en .
+
+_:genid148 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid149 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#realizationOf
+<http://purl.org/vocab/frbr/core#realizationOf> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                   [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                   ] ;
+                                                owl:inverseOf <http://purl.org/vocab/frbr/core#realization> ;
+                                                rdf:type owl:AsymmetricProperty ,
+                                                         owl:IrreflexiveProperty ;
+                                                rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                                rdfs:range <http://purl.org/vocab/frbr/core#Work> ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "realization of"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid151 ,
+                                                                                                 _:genid152 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "The work that has been realized by an expression."@en .
+
+_:genid151 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid152 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#realizer
+<http://purl.org/vocab/frbr/core#realizer> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#realizerOf>
+                                                                  ] ;
+                                           rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntity> ,
+                                                              [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntityOf>
+                                                              ] ;
+                                           rdf:type owl:AsymmetricProperty ,
+                                                    owl:IrreflexiveProperty ;
+                                           rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                           rdfs:range <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                           <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                           rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                           rdfs:label "realizer"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#changeNote> _:genid156 ,
+                                                                                            _:genid157 ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "An entity in some way responsible for realizing an expression."@en .
+
+_:genid156 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid157 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#realizerOf
+<http://purl.org/vocab/frbr/core#realizerOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#responsibleEntityOf> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntity>
+                                                                ] ;
+                                             owl:inverseOf <http://purl.org/vocab/frbr/core#realizer> ;
+                                             rdf:type owl:AsymmetricProperty ,
+                                                      owl:IrreflexiveProperty ;
+                                             rdfs:domain <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                             rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "realizer of"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid159 ,
+                                                                                              _:genid160 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An expression that was in some way realized by an entity."@en .
+
+_:genid159 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid160 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#reconfiguration
+<http://purl.org/vocab/frbr/core#reconfiguration> rdf:type owl:ObjectProperty ;
+                                                  owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#reconfigurationOf>
+                                                                         ] ;
+                                                  rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                     [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                     ] ;
+                                                  rdfs:domain <http://purl.org/vocab/frbr/core#Item> ;
+                                                  rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                                                  <http://purl.org/dc/terms/issued> "2005-08-10" ;
+                                                  rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                  rdfs:label "reconfiguration"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A recongifuration of an item."@en .
+
+
+###  http://purl.org/vocab/frbr/core#reconfigurationOf
+<http://purl.org/vocab/frbr/core#reconfigurationOf> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                       [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                       ] ;
+                                                    owl:inverseOf <http://purl.org/vocab/frbr/core#reconfiguration> ;
+                                                    rdfs:domain <http://purl.org/vocab/frbr/core#Item> ;
+                                                    rdfs:range <http://purl.org/vocab/frbr/core#Item> ;
+                                                    <http://purl.org/dc/terms/issued> "2005-08-10" ;
+                                                    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                    rdfs:label "reconfiguration of"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "An item that is reconfigured."@en .
+
+
+###  http://purl.org/vocab/frbr/core#relatedEndeavour
+<http://purl.org/vocab/frbr/core#relatedEndeavour> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:domain <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                                   rdfs:range <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                                   <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                   rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                   rdfs:label "related endeavour"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#changeNote> _:genid165 ,
+                                                                                                    _:genid166 ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "Another endeavour that is related in some way to an endeavour."@en .
+
+_:genid165 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid166 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#reproduction
+<http://purl.org/vocab/frbr/core#reproduction> rdf:type owl:ObjectProperty ;
+                                               owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#reproductionOf>
+                                                                      ] ;
+                                               rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                  [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                  ] ;
+                                               rdfs:domain [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <http://purl.org/vocab/frbr/core#Item>
+                                                                           <http://purl.org/vocab/frbr/core#Manifestation>
+                                                                         )
+                                                           ] ;
+                                               rdfs:range [ rdf:type owl:Class ;
+                                                            owl:unionOf ( <http://purl.org/vocab/frbr/core#Item>
+                                                                          <http://purl.org/vocab/frbr/core#Manifestation>
+                                                                        )
+                                                          ] ;
+                                               <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                               rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                               rdfs:label "reproduction"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#changeNote> _:genid176 ,
+                                                                                                _:genid177 ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A reproduction of a manifestation or item."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#historyNote> _:genid178 .
+
+_:genid176 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid177 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid178 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Manifestation or Item" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#reproductionOf
+<http://purl.org/vocab/frbr/core#reproductionOf> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                    [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                    ] ;
+                                                 owl:inverseOf <http://purl.org/vocab/frbr/core#reproduction> ;
+                                                 rdfs:domain [ rdf:type owl:Class ;
+                                                               owl:unionOf ( <http://purl.org/vocab/frbr/core#Item>
+                                                                             <http://purl.org/vocab/frbr/core#Manifestation>
+                                                                           )
+                                                             ] ;
+                                                 rdfs:range [ rdf:type owl:Class ;
+                                                              owl:unionOf ( <http://purl.org/vocab/frbr/core#Item>
+                                                                            <http://purl.org/vocab/frbr/core#Manifestation>
+                                                                          )
+                                                            ] ;
+                                                 <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                 rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                 rdfs:label "reproduction of"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#changeNote> _:genid186 ,
+                                                                                                  _:genid187 ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A manifestation or item that is reproduced."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#historyNote> _:genid188 .
+
+_:genid186 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid187 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid188 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Manifestation or Item" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#responsibleEntity
+<http://purl.org/vocab/frbr/core#responsibleEntity> rdf:type owl:ObjectProperty ;
+                                                    owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntityOf>
+                                                                           ] ;
+                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                    rdf:type owl:AsymmetricProperty ,
+                                                             owl:IrreflexiveProperty ;
+                                                    rdfs:domain <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                                    rdfs:range <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                                    <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                    rdfs:label "responsible entity"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#changeNote> _:genid191 ,
+                                                                                                     _:genid192 ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "An entity in some way responsible for an endeavour."@en .
+
+_:genid191 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid192 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#responsibleEntityOf
+<http://purl.org/vocab/frbr/core#responsibleEntityOf> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                      owl:inverseOf <http://purl.org/vocab/frbr/core#responsibleEntity> ;
+                                                      rdf:type owl:AsymmetricProperty ,
+                                                               owl:IrreflexiveProperty ;
+                                                      rdfs:domain <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                                      rdfs:range <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                                      <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                      rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                      rdfs:label "responsible entity of"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#changeNote> _:genid193 ,
+                                                                                                       _:genid194 ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "An endeavour that is the responsibility of an entity."@en .
+
+_:genid193 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid194 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#revision
+<http://purl.org/vocab/frbr/core#revision> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#revisionOf>
+                                                                  ] ;
+                                           rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                              [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                              ] ;
+                                           rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                           rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                           <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                           rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                           rdfs:label "revision"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#changeNote> _:genid198 ,
+                                                                                            _:genid199 ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "A revision of an expression."@en ;
+                                           <http://www.w3.org/2004/02/skos/core#historyNote> _:genid200 .
+
+_:genid198 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid199 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid200 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#revisionOf
+<http://purl.org/vocab/frbr/core#revisionOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                ] ;
+                                             owl:inverseOf <http://purl.org/vocab/frbr/core#revision> ;
+                                             rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                             rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "revision of"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid202 ,
+                                                                                              _:genid203 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An expression that is revised."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#historyNote> _:genid204 .
+
+_:genid202 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid203 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid204 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#subject
+<http://purl.org/vocab/frbr/core#subject> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                          rdfs:domain <http://purl.org/vocab/frbr/core#Work> ;
+                                          rdfs:range [ rdf:type owl:Class ;
+                                                       owl:unionOf ( <http://purl.org/vocab/frbr/core#Endeavour>
+                                                                     <http://purl.org/vocab/frbr/core#ResponsibleEntity>
+                                                                     <http://purl.org/vocab/frbr/core#Subject>
+                                                                   )
+                                                     ] ;
+                                          <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                          rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                          rdfs:label "subject"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#changeNote> _:genid209 ,
+                                                                                           _:genid210 ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "The subject of a work."@en .
+
+_:genid209 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid210 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#successor
+<http://purl.org/vocab/frbr/core#successor> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#successorOf>
+                                                                   ] ;
+                                            rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                               [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                               ] ;
+                                            owl:inverseOf <http://purl.org/vocab/frbr/core#successorOf> ;
+                                            rdfs:domain [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                        <http://purl.org/vocab/frbr/core#Work>
+                                                                      )
+                                                        ] ;
+                                            rdfs:range [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                       <http://purl.org/vocab/frbr/core#Work>
+                                                                     )
+                                                       ] ;
+                                            <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                            rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                            rdfs:label "successor"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#changeNote> _:genid220 ,
+                                                                                             _:genid221 ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "A successor to a work or expression."@en ;
+                                            <http://www.w3.org/2004/02/skos/core#historyNote> _:genid222 .
+
+_:genid220 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid221 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid222 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#successorOf
+<http://purl.org/vocab/frbr/core#successorOf> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              rdfs:domain [ rdf:type owl:Class ;
+                                                            owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                          <http://purl.org/vocab/frbr/core#Work>
+                                                                        )
+                                                          ] ;
+                                              rdfs:range [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                         <http://purl.org/vocab/frbr/core#Work>
+                                                                       )
+                                                         ] ;
+                                              <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "successor of"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#changeNote> _:genid230 ,
+                                                                                               _:genid231 ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is succeeded."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#historyNote> _:genid232 .
+
+_:genid230 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid231 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid232 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#summarization
+<http://purl.org/vocab/frbr/core#summarization> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#summarizationOf>
+                                                                       ] ;
+                                                rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                   [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                   ] ;
+                                                rdfs:domain [ rdf:type owl:Class ;
+                                                              owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                            <http://purl.org/vocab/frbr/core#Work>
+                                                                          )
+                                                            ] ;
+                                                rdfs:range [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                           <http://purl.org/vocab/frbr/core#Work>
+                                                                         )
+                                                           ] ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "summarization"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid242 ,
+                                                                                                 _:genid243 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "A summarization of a work or expression."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#historyNote> _:genid244 .
+
+_:genid242 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid243 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid244 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#summarizationOf
+<http://purl.org/vocab/frbr/core#summarizationOf> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                     [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                     ] ;
+                                                  owl:inverseOf <http://purl.org/vocab/frbr/core#summarization> ;
+                                                  rdfs:domain [ rdf:type owl:Class ;
+                                                                owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                              <http://purl.org/vocab/frbr/core#Work>
+                                                                            )
+                                                              ] ;
+                                                  rdfs:range [ rdf:type owl:Class ;
+                                                               owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                             <http://purl.org/vocab/frbr/core#Work>
+                                                                           )
+                                                             ] ;
+                                                  <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                  rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                  rdfs:label "summarization of"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#changeNote> _:genid252 ,
+                                                                                                   _:genid253 ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is summarized."@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#historyNote> _:genid254 .
+
+_:genid252 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid253 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid254 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#supplement
+<http://purl.org/vocab/frbr/core#supplement> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#supplementOf>
+                                                                    ] ;
+                                             rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                ] ;
+                                             rdfs:domain [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                         <http://purl.org/vocab/frbr/core#Work>
+                                                                       )
+                                                         ] ;
+                                             rdfs:range [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                        <http://purl.org/vocab/frbr/core#Work>
+                                                                      )
+                                                        ] ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "supplement"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid264 ,
+                                                                                              _:genid265 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A supplement to a work or expression."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#historyNote> _:genid266 .
+
+_:genid264 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid265 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid266 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#supplementOf
+<http://purl.org/vocab/frbr/core#supplementOf> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                  [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                  ] ;
+                                               owl:inverseOf <http://purl.org/vocab/frbr/core#supplement> ;
+                                               rdfs:domain [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                           <http://purl.org/vocab/frbr/core#Work>
+                                                                         )
+                                                           ] ;
+                                               rdfs:range [ rdf:type owl:Class ;
+                                                            owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                          <http://purl.org/vocab/frbr/core#Work>
+                                                                        )
+                                                          ] ;
+                                               <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                               rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                               rdfs:label "supplement of"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#changeNote> _:genid274 ,
+                                                                                                _:genid275 ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is supplemented."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#historyNote> _:genid276 .
+
+_:genid274 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid275 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid276 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#transformation
+<http://purl.org/vocab/frbr/core#transformation> rdf:type owl:ObjectProperty ;
+                                                 owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#transformationOf>
+                                                                        ] ;
+                                                 rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                    [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                    ] ;
+                                                 rdfs:domain [ rdf:type owl:Class ;
+                                                               owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                             <http://purl.org/vocab/frbr/core#Work>
+                                                                           )
+                                                             ] ;
+                                                 rdfs:range [ rdf:type owl:Class ;
+                                                              owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                            <http://purl.org/vocab/frbr/core#Work>
+                                                                          )
+                                                            ] ;
+                                                 <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                 rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                 rdfs:label "transformation"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#changeNote> _:genid286 ,
+                                                                                                  _:genid287 ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A transformation of a work or expression."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#historyNote> _:genid288 .
+
+_:genid286 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid287 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid288 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#transformationOf
+<http://purl.org/vocab/frbr/core#transformationOf> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                      [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                      ] ;
+                                                   owl:inverseOf <http://purl.org/vocab/frbr/core#transformation> ;
+                                                   rdfs:domain [ rdf:type owl:Class ;
+                                                                 owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                               <http://purl.org/vocab/frbr/core#Work>
+                                                                             )
+                                                               ] ;
+                                                   rdfs:range [ rdf:type owl:Class ;
+                                                                owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                              <http://purl.org/vocab/frbr/core#Work>
+                                                                            )
+                                                              ] ;
+                                                   <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                   rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                   rdfs:label "transformation of"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#changeNote> _:genid296 ,
+                                                                                                    _:genid297 ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A work or expression that is transformed."@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#historyNote> _:genid298 .
+
+_:genid296 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid297 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid298 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Work or Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#translation
+<http://purl.org/vocab/frbr/core#translation> rdf:type owl:ObjectProperty ;
+                                              owl:equivalentProperty [ owl:inverseOf <http://purl.org/vocab/frbr/core#translationOf>
+                                                                     ] ;
+                                              rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                 [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                 ] ;
+                                              rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                              rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                              <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                              rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                              rdfs:label "translation"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#changeNote> _:genid302 ,
+                                                                                               _:genid303 ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A translation of an expression."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#historyNote> _:genid304 .
+
+_:genid302 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid303 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid304 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#translationOf
+<http://purl.org/vocab/frbr/core#translationOf> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ,
+                                                                   [ owl:inverseOf <http://purl.org/vocab/frbr/core#relatedEndeavour>
+                                                                   ] ;
+                                                owl:inverseOf <http://purl.org/vocab/frbr/core#translation> ;
+                                                rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
+                                                rdfs:range <http://purl.org/vocab/frbr/core#Expression> ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "translation of"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid306 ,
+                                                                                                 _:genid307 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "An expression that is translated."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#historyNote> _:genid308 .
+
+_:genid306 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid307 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Added definition" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid308 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Added domain and range of Expression" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://web.resource.org/cc/permits
+<http://web.resource.org/cc/permits> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://web.resource.org/cc/requires
+<http://web.resource.org/cc/requires> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+rdf:value rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/dcmitype/Text
+<http://purl.org/dc/dcmitype/Text> rdf:type owl:Class ;
+                                   rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/dc/terms/IMT
+<http://purl.org/dc/terms/IMT> rdf:type owl:Class ;
+                               rdfs:subClassOf owl:Thing .
+
+
+###  http://purl.org/vocab/frbr/core#Concept
+<http://purl.org/vocab/frbr/core#Concept> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://purl.org/vocab/frbr/core#Subject> ,
+                                                          <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                          owl:disjointWith <http://purl.org/vocab/frbr/core#Event> ,
+                                                           <http://purl.org/vocab/frbr/core#Object> ,
+                                                           <http://purl.org/vocab/frbr/core#Place> ;
+                                          <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                          rdfs:comment "This class corresponds to the FRBR group three entity 'Concept'."@en ;
+                                          rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                          rdfs:label "concept"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#changeNote> _:genid309 ,
+                                                                                           _:genid310 ,
+                                                                                           _:genid311 ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "An abstract idea or notion."@en ;
+                                          <http://www.w3.org/2004/02/skos/core#historyNote> _:genid312 .
+
+_:genid309 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid310 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid311 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid312 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Made subclass of skos:Concept" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#CorporateBody
+<http://purl.org/vocab/frbr/core#CorporateBody> rdf:type owl:Class ;
+                                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( <http://xmlns.com/foaf/0.1/Group>
+                                                                                    <http://xmlns.com/foaf/0.1/Organization>
+                                                                                  )
+                                                                    ] ;
+                                                rdfs:subClassOf <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:comment "This class corresponds to the FRBR group two entity 'Corporate Body'."@en ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "corporate body"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid316 ,
+                                                                                                 _:genid317 ,
+                                                                                                 _:genid318 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "An organization or group of individuals and/or other organizations."@en .
+
+_:genid316 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid317 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid318 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Endeavour
+<http://purl.org/vocab/frbr/core#Endeavour> rdf:type owl:Class ;
+                                            owl:equivalentClass [ rdf:type owl:Class ;
+                                                                  owl:unionOf ( <http://purl.org/vocab/frbr/core#Expression>
+                                                                                <http://purl.org/vocab/frbr/core#Item>
+                                                                                <http://purl.org/vocab/frbr/core#Manifestation>
+                                                                                <http://purl.org/vocab/frbr/core#Work>
+                                                                              )
+                                                                ] ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            owl:disjointWith <http://purl.org/vocab/frbr/core#Person> ,
+                                                             <http://purl.org/vocab/frbr/core#ResponsibleEntity> ,
+                                                             <http://purl.org/vocab/frbr/core#Subject> ;
+                                            <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                            rdfs:comment "This class represents any one of the FRBR group one entities."@en ;
+                                            rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                            rdfs:label "endeavour"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#changeNote> _:genid324 ,
+                                                                                             _:genid325 ,
+                                                                                             _:genid326 ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Any of the products of artistic or creative endeavour."@en .
+
+_:genid324 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid325 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid326 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Event
+<http://purl.org/vocab/frbr/core#Event> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/vocab/frbr/core#Subject> ,
+                                                        <http://www.isi.edu/~pan/damltime/time-entry.owl#Event> ;
+                                        owl:disjointWith <http://purl.org/vocab/frbr/core#Object> ,
+                                                         <http://purl.org/vocab/frbr/core#Place> ;
+                                        <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                        rdfs:comment "This class corresponds to the FRBR group three entity 'Event'."@en ;
+                                        rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                        rdfs:label "event"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#changeNote> _:genid327 ,
+                                                                                         _:genid328 ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "An action or occurrence."@en ;
+                                        <http://www.w3.org/2004/02/skos/core#historyNote> _:genid329 .
+
+_:genid327 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid328 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid329 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Made subclass of owltime:Event" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Expression
+<http://purl.org/vocab/frbr/core#Expression> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                             owl:disjointWith <http://purl.org/vocab/frbr/core#Item> ,
+                                                              <http://purl.org/vocab/frbr/core#Manifestation> ,
+                                                              <http://purl.org/vocab/frbr/core#Work> ;
+                                             <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                             rdfs:comment "This class corresponds to the FRBR group one entity 'Expression'."@en ;
+                                             rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                             rdfs:label "expression"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#changeNote> _:genid330 ,
+                                                                                              _:genid331 ,
+                                                                                              _:genid332 ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A realization of a single work usually in a physical form."@en .
+
+_:genid330 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid331 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid332 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Item
+<http://purl.org/vocab/frbr/core#Item> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                       owl:disjointWith <http://purl.org/vocab/frbr/core#Manifestation> ,
+                                                        <http://purl.org/vocab/frbr/core#Work> ;
+                                       <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                       rdfs:comment "This class corresponds to the FRBR group one entity 'Item'."@en ;
+                                       rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                       rdfs:label "item"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#changeNote> _:genid333 ,
+                                                                                        _:genid334 ,
+                                                                                        _:genid335 ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "An exemplar of a single manifestation."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#historyNote> _:genid336 ,
+                                                                                         _:genid337 .
+
+_:genid333 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid334 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid335 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid336 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+            rdf:value "Removed subclass of geo:SpatialThing" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid337 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Made subclass of geo:SpatialThing" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Manifestation
+<http://purl.org/vocab/frbr/core#Manifestation> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> ;
+                                                owl:disjointWith <http://purl.org/vocab/frbr/core#Work> ;
+                                                <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                rdfs:comment "This class corresponds to the FRBR group one entity 'Manifestation'."@en ;
+                                                rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                rdfs:label "manifestation"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#changeNote> _:genid338 ,
+                                                                                                 _:genid339 ,
+                                                                                                 _:genid340 ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "The physical embodiment of one or more expressions."@en .
+
+_:genid338 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid339 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid340 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Object
+<http://purl.org/vocab/frbr/core#Object> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://purl.org/vocab/frbr/core#Subject> ,
+                                                         <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+                                         owl:disjointWith <http://purl.org/vocab/frbr/core#Place> ;
+                                         <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                         rdfs:comment "This class corresponds to the FRBR group three entity 'Object'."@en ;
+                                         rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                         rdfs:label "object"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#changeNote> _:genid341 ,
+                                                                                          _:genid342 ,
+                                                                                          _:genid343 ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "A tangible or material thing."@en ;
+                                         <http://www.w3.org/2004/02/skos/core#historyNote> _:genid344 .
+
+_:genid341 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid342 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid343 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid344 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Made subclass of geo:SpatialThing" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Person
+<http://purl.org/vocab/frbr/core#Person> rdf:type owl:Class ;
+                                         owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> ;
+                                         rdfs:subClassOf <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+                                         owl:disjointWith <http://purl.org/vocab/frbr/core#Subject> ;
+                                         <http://purl.org/dc/terms/issued> "2005-08-08" ;
+                                         rdfs:comment "This class corresponds to the FRBR group two entity 'Person'."@en ;
+                                         rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                         rdfs:label "person"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#changeNote> _:genid345 ,
+                                                                                          _:genid346 ,
+                                                                                          _:genid347 ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "A living or dead individual."@en .
+
+_:genid345 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid346 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid347 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Place
+<http://purl.org/vocab/frbr/core#Place> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/vocab/frbr/core#Subject> ,
+                                                        <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+                                        <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                        rdfs:comment "This class corresponds to the FRBR group three entity 'Place'."@en ;
+                                        rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                        rdfs:label "place"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#changeNote> _:genid348 ,
+                                                                                         _:genid349 ,
+                                                                                         _:genid350 ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "A location."@en ;
+                                        <http://www.w3.org/2004/02/skos/core#historyNote> _:genid351 .
+
+_:genid348 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid349 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid350 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid351 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Made subclass of geo:SpatialThing" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#ResponsibleEntity
+<http://purl.org/vocab/frbr/core#ResponsibleEntity> rdf:type owl:Class ;
+                                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                                          owl:unionOf ( <http://purl.org/vocab/frbr/core#CorporateBody>
+                                                                                        <http://xmlns.com/foaf/0.1/Person>
+                                                                                      )
+                                                                        ] ;
+                                                    rdfs:subClassOf owl:Thing ;
+                                                    owl:disjointWith <http://purl.org/vocab/frbr/core#Subject> ;
+                                                    <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                                    rdfs:comment "This class represents any of the FRBR group two entities."@en ;
+                                                    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                                    rdfs:label "responsible entity"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#changeNote> _:genid355 ,
+                                                                                                     _:genid356 ,
+                                                                                                     _:genid357 ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "One responsible for the creation, production, distribution or maintenance of artistic or creative content."@en .
+
+_:genid355 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid356 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid357 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Subject
+<http://purl.org/vocab/frbr/core#Subject> rdf:type owl:Class ;
+                                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                                owl:unionOf ( <http://purl.org/vocab/frbr/core#Concept>
+                                                                              <http://purl.org/vocab/frbr/core#Event>
+                                                                              <http://purl.org/vocab/frbr/core#Object>
+                                                                              <http://purl.org/vocab/frbr/core#Place>
+                                                                            )
+                                                              ] ;
+                                          rdfs:subClassOf owl:Thing ;
+                                          <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                          rdfs:comment "This class represents any of the FRBR group three entities."@en ;
+                                          rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                          rdfs:label "subject"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#changeNote> _:genid363 ,
+                                                                                           _:genid364 ,
+                                                                                           _:genid365 ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "Something that may serve as the subject of a work."@en .
+
+_:genid363 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid364 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid365 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://purl.org/vocab/frbr/core#Work
+<http://purl.org/vocab/frbr/core#Work> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> ,
+                                                       <http://xmlns.com/wordnet/1.6/Work~2> ;
+                                       <http://purl.org/dc/terms/issued> "2005-07-15" ;
+                                       rdfs:comment "This class corresponds to the FRBR group one entity 'Work'."@en ;
+                                       rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> ;
+                                       rdfs:label "work"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#changeNote> _:genid366 ,
+                                                                                        _:genid367 ,
+                                                                                        _:genid368 ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "An abstract notion of an artistic or intellectual creation."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#historyNote> _:genid369 .
+
+_:genid366 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added isDefinedBy property referring to FRBR core namespace" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid367 <http://purl.org/dc/elements/1.1/date> "2005-08-09" ;
+            rdf:value "Extracted definition from existing comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid368 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Added comment" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+_:genid369 <http://purl.org/dc/elements/1.1/date> "2005-08-08" ;
+            rdf:value "Made subclass of wordnet:Work~2" ;
+            <http://purl.org/dc/elements/1.1/creator> "Ian Davis" .
+
+
+###  http://web.resource.org/cc/License
+<http://web.resource.org/cc/License> rdf:type owl:Class ;
+                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://web.resource.org/cc/Permission
+<http://web.resource.org/cc/Permission> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing .
+
+
+###  http://web.resource.org/cc/Requirement
+<http://web.resource.org/cc/Requirement> rdf:type owl:Class ;
+                                         rdfs:subClassOf owl:Thing .
+
+
+###  http://web.resource.org/cc/Work
+<http://web.resource.org/cc/Work> rdf:type owl:Class ;
+                                  rdfs:subClassOf owl:Thing .
+
+
+###  http://www.isi.edu/~pan/damltime/time-entry.owl#Event
+<http://www.isi.edu/~pan/damltime/time-entry.owl#Event> rdf:type owl:Class ;
+                                                        rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class ;
+                                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://purl.org/vocab/frbr/core#CorporateBody> .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://purl.org/vocab/frbr/core#CorporateBody> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://purl.org/vocab/frbr/core#ResponsibleEntity> .
+
+
+###  http://xmlns.com/wordnet/1.6/Work~2
+<http://xmlns.com/wordnet/1.6/Work~2> rdf:type owl:Class ;
+                                      rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-CORE-20050810.rdf
+<file:///Users/vale/Documents/PhD/CH-empirical-basis/CH-onto-dataset/local-CH-ontologies/FRBR-CORE-20050810.rdf> rdf:type owl:NamedIndividual ,
+                                                                                                                          <http://web.resource.org/cc/Work> ,
+                                                                                                                          owl:Thing ;
+                                                                                                                 <http://purl.org/dc/terms/hasFormat> <http://purl.org/vocab/frbr/frbr-core-20050810.html> ,
+                                                                                                                                                      <http://purl.org/vocab/frbr/frbr-core-20050810.rdf> ;
+                                                                                                                 <http://purl.org/dc/elements/1.1/contributor> "Bruce D'Arcus" ;
+                                                                                                                 <http://purl.org/dc/elements/1.1/date> "2005-08-10" ;
+                                                                                                                 <http://purl.org/dc/elements/1.1/identifier> "http://purl.org/vocab/frbr/frbr-core-20050810" ;
+                                                                                                                 <http://purl.org/dc/elements/1.1/rights> "Copyright © 2005 Richard Newman and Ian Davis" ;
+                                                                                                                 <http://purl.org/dc/elements/1.1/title> "Expression of Core FRBR Concepts in RDF"@en .
+
+
+###  http://creativecommons.org/licenses/by/2.0/uk/
+<http://creativecommons.org/licenses/by/2.0/uk/> rdf:type owl:NamedIndividual ,
+                                                          <http://web.resource.org/cc/License> ,
+                                                          owl:Thing ;
+                                                 <http://web.resource.org/cc/permits> <http://web.resource.org/cc/DerivativeWorks> ,
+                                                                                      <http://web.resource.org/cc/Distribution> ,
+                                                                                      <http://web.resource.org/cc/Reproduction> ;
+                                                 <http://web.resource.org/cc/requires> <http://web.resource.org/cc/Attribution> ,
+                                                                                       <http://web.resource.org/cc/Notice> .
+
+
+###  http://purl.org/vocab/frbr/frbr-core-20050810.html
+<http://purl.org/vocab/frbr/frbr-core-20050810.html> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.org/dc/dcmitype/Text> ,
+                                                              owl:Thing ;
+                                                     <http://purl.org/dc/elements/1.1/format> _:genid370 .
+
+_:genid370 rdf:type <http://purl.org/dc/terms/IMT> ;
+            rdf:value "text/html" ;
+            rdfs:label "HTML"@en .
+
+
+###  http://purl.org/vocab/frbr/frbr-core-20050810.rdf
+<http://purl.org/vocab/frbr/frbr-core-20050810.rdf> rdf:type owl:NamedIndividual ,
+                                                             <http://purl.org/dc/dcmitype/Text> ,
+                                                             owl:Thing ;
+                                                    <http://purl.org/dc/elements/1.1/format> _:genid371 .
+
+_:genid371 rdf:type <http://purl.org/dc/terms/IMT> ;
+            rdf:value "application/rdf+xml" ;
+            rdfs:label "RDF"@en .
+
+
+###  http://web.resource.org/cc/Attribution
+<http://web.resource.org/cc/Attribution> rdf:type owl:NamedIndividual ,
+                                                  <http://web.resource.org/cc/Requirement> ,
+                                                  owl:Thing .
+
+
+###  http://web.resource.org/cc/DerivativeWorks
+<http://web.resource.org/cc/DerivativeWorks> rdf:type owl:NamedIndividual ,
+                                                      <http://web.resource.org/cc/Permission> ,
+                                                      owl:Thing .
+
+
+###  http://web.resource.org/cc/Distribution
+<http://web.resource.org/cc/Distribution> rdf:type owl:NamedIndividual ,
+                                                   <http://web.resource.org/cc/Permission> ,
+                                                   owl:Thing .
+
+
+###  http://web.resource.org/cc/Notice
+<http://web.resource.org/cc/Notice> rdf:type owl:NamedIndividual ,
+                                             <http://web.resource.org/cc/Requirement> ,
+                                             owl:Thing .
+
+
+###  http://web.resource.org/cc/Reproduction
+<http://web.resource.org/cc/Reproduction> rdf:type owl:NamedIndividual ,
+                                                   <http://web.resource.org/cc/Permission> ,
+                                                   owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

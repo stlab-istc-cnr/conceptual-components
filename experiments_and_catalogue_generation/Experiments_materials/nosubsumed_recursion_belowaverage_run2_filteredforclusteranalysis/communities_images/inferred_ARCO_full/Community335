@@ -1,0 +1,15 @@
+digraph "Community 335" {
+	CrystallographicCharacteristic
+	CrystallographicCharacteristic -> UnitCell [label=isCrystalClassOf]
+	CrystallographicCharacteristic -> UnitCell [label=isCrystalSystemOf]
+	CrystallographicCharacteristic -> UnitCell [label=isCrystallographicCharacteristicOf]
+	CrystallographicCharacteristic -> UnitCell [label=isPointGroupOf]
+	UnitCell -> CrystallographicCharacteristic [label=hasCrystalSystem]
+	UnitCell -> CrystallographicCharacteristic [label=hasCrystallographicCharacteristic]
+	UnitCell -> CrystallographicCharacteristic [label=hasCrystalClass]
+	UnitCell -> CrystallographicCharacteristic [label=hasPointGroup]
+	UnitCell -> CrystallographicCharacteristic [label=hasSpaceGroup]
+	CrystallographicCharacteristic -> UnitCell [label=isSpaceGroupOf]
+	UnitCell
+	UnitCell -> InorganicSpecies [label=isUnitCellOf]
+}

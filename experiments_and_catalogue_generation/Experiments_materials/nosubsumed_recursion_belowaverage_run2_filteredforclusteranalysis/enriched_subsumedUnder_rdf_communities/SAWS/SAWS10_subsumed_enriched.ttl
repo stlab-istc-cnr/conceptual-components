@@ -1,0 +1,15 @@
+@prefix ns1: <http://purl.org/saws/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Marginalia ns1:areMarginaliaOn ns1:OriginalMaterial ;
+    ns1:marginaliaAddedBy ns1:Scribe .
+
+ns1:OriginalMaterial ns2:subsumedUnder ns1:Material .
+
+ns1:Scribe ns1:hasAddedMarginalia ns1:Marginalia ;
+    ns2:subsumedUnder <http://erlangen-crm.org/current/E21_Person> .
+

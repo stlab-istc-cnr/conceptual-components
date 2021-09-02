@@ -1,0 +1,23 @@
+@prefix ns1: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:F24_Publication_Expression ns1:R24i_was_created_through ns1:F30_Publication_Event ;
+    ns2:subsumedUnder ns1:F22_Self-Contained_Expression .
+
+ns1:F16_Container_Work ns2:subsumedUnder ns1:F1_Work .
+
+ns1:F19_Publication_Work ns1:R23i_was_realised_through ns1:F30_Publication_Event ;
+    ns2:subsumedUnder ns1:F16_Container_Work .
+
+ns1:F22_Self-Contained_Expression ns2:subsumedUnder ns1:F2_Expression .
+
+ns1:F28_Expression_Creation ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E12_Production>,
+        <http://www.cidoc-crm.org/cidoc-crm/E65_Creation> .
+
+ns1:F30_Publication_Event ns1:R23_created_a_realization_of ns1:F19_Publication_Work ;
+    ns2:subsumedUnder ns1:F28_Expression_Creation .
+

@@ -1,0 +1,67 @@
+@prefix ns1: <https://w3id.org/arco/ontology/arco/> .
+@prefix ns2: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns3: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix ns4: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix ns5: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns4:InformationForm ns5:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns2:Bibliography ns5:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns2:ChangeOfAvailability ns5:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+ns2:DetectionMethod ns5:subsumedUnder <https://w3id.org/arco/ontology/core/Method> .
+
+ns2:RelatedWorkSituation ns5:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+ns2:Subject ns5:subsumedUnder <https://w3id.org/italia/onto/l0/Topic> .
+
+ns2:Title ns5:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns3:CulturalPropertyAvailability ns5:subsumedUnder <https://w3id.org/arco/ontology/core/CulturalEntityCharacteristic> .
+
+ns3:Orientation ns5:subsumedUnder <https://w3id.org/italia/onto/l0/Characteristic> .
+
+<https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> ns5:subsumedUnder <https://w3id.org/arco/ontology/core/TimeIndexedSituation> .
+
+<https://w3id.org/italia/onto/l0/Entity> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:CulturalProperty ns1:catalogueNumber rdfs:Literal ;
+    ns1:hasCataloguingAgency <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasHeritageProtectionAgency <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasRelatedAgency <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:internationalIdentifier rdfs:Literal ;
+    ns1:numberOfComponents rdfs:Literal ;
+    ns1:regionIdentifier rdfs:Literal ;
+    ns1:suffix rdfs:Literal ;
+    ns1:uniqueIdentifier rdfs:Literal ;
+    ns4:isRelatedToInformationForm ns4:InformationForm ;
+    ns2:hasBibliography ns2:Bibliography ;
+    ns2:hasChangeOfAvailability ns2:ChangeOfAvailability ;
+    ns2:hasDetectionMethod ns2:DetectionMethod ;
+    ns2:hasRelatedWorkSituation ns2:RelatedWorkSituation ;
+    ns2:hasSubject ns2:Subject ;
+    ns2:hasTitle ns2:Title ;
+    ns2:historicalInformation rdfs:Literal ;
+    ns2:informationGatheredOnSite rdfs:Literal ;
+    ns2:rights rdfs:Literal ;
+    ns2:subject rdfs:Literal ;
+    ns2:title rdfs:Literal ;
+    ns3:hasCulturalPropertyAvailability ns3:CulturalPropertyAvailability ;
+    ns3:hasLocationSubject <https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> ;
+    ns3:hasOrientation ns3:Orientation ;
+    ns3:proposedIntervention rdfs:Literal ;
+    ns3:storageConditions rdfs:Literal ;
+    ns5:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/italia/onto/l0/Agent> ns1:isCataloguingAgencyOf ns1:CulturalProperty ;
+    ns1:isHeritageProtectionAgencyOf ns1:CulturalProperty ;
+    ns1:isRelatedAgencyOf ns1:CulturalProperty ;
+    ns5:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

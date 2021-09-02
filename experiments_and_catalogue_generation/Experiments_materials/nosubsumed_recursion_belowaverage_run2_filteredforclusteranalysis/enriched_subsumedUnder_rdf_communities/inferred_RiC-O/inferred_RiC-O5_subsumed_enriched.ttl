@@ -1,0 +1,19 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Group ns2:subsumedUnder ns1:Agent ;
+    ns1:hasOrHadPosition ns1:Position .
+
+ns1:Person ns2:subsumedUnder ns1:Agent ;
+    ns1:occupiesOrOccupied ns1:Position .
+
+ns1:Position ns2:subsumedUnder ns1:Agent ;
+    ns1:existsOrExistedIn ns1:Group ;
+    ns1:isOrWasOccupiedBy ns1:Person .
+
+ns1:Agent ns2:subsumedUnder ns1:Thing .
+

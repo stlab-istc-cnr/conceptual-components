@@ -1,0 +1,36 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://bakulf.github.io/raop/0.1#Word> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Token ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Word ns1:hasFirstSyllable ns1:Syllable ;
+    ns1:hasLastSyllable ns1:Syllable ;
+    ns1:hasSyllable ns1:Syllable ;
+    ns2:subsumedUnder <http://bakulf.github.io/raop/0.1#Word>,
+        ns1:Token,
+        <http://purl.org/ontology/olo/core#OrderedList>,
+        <http://purl.org/ontology/olo/core#Slot> .
+
+<http://purl.org/ontology/olo/core#OrderedList> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2004/02/skos/core#Concept> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/olo/core#Slot> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Syllable ns1:coda xsd:string ;
+    ns1:isFirstSyllable ns1:Word ;
+    ns1:nextSyllable ns1:Syllable ;
+    ns1:nucleusType <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:onset xsd:string ;
+    ns1:positionInWord xsd:string ;
+    ns1:previousSyllable ns1:Syllable ;
+    ns1:weight xsd:string ;
+    ns2:subsumedUnder <http://purl.org/ontology/olo/core#Slot>,
+        <http://www.w3.org/2002/07/owl#Thing> .
+

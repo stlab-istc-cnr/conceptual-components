@@ -1,0 +1,14 @@
+digraph "Community 44" {
+	Word -> Syllable [label=hasFirstSyllable]
+	Syllable
+	Word -> Syllable [label=hasLastSyllable]
+	Word -> Syllable [label=hasSyllable]
+	Syllable -> Syllable [label=previousSyllable]
+	Syllable -> string [label=coda]
+	Syllable -> Word [label=isFirstSyllable]
+	Syllable -> Syllable [label=nextSyllable]
+	Syllable -> Concept [label=nucleusType]
+	Syllable -> string [label=onset]
+	Syllable -> string [label=positionInWord]
+	Syllable -> string [label=weight]
+}

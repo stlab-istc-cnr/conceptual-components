@@ -1,0 +1,19 @@
+@prefix ns1: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:DifferentiatedPerson ns1:fieldOfStudy ns1:SubjectHeading ;
+    ns1:playedInstrument ns1:SubjectHeading .
+
+ns1:Work ns1:language ns1:SubjectHeading ;
+    ns1:mediumOfPerformance ns1:SubjectHeading .
+
+ns1:SubjectHeading ns1:broaderTermGeneric ns1:SubjectHeading ;
+    ns1:narrowerTermGeneric ns1:SubjectHeading ;
+    ns1:precedingSubject ns1:SubjectHeading ;
+    ns1:preferredNameForTheSubjectHeading rdfs:Literal ;
+    ns1:succeedingSubjectHeading ns1:SubjectHeading ;
+    ns1:variantNameForTheSubjectHeading rdfs:Literal .
+

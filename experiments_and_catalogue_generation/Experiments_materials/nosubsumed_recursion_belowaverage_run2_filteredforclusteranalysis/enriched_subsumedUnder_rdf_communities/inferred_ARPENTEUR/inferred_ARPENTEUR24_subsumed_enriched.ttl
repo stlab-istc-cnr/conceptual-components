@@ -1,0 +1,16 @@
+@prefix ns1: <http://www.arpenteur.org/ontology/Arpenteur.owl#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:CardinalRelation ns1:hasSource ns1:SpatialObject ;
+    ns1:hasTarget ns1:SpatialObject ;
+    ns2:subsumedUnder ns1:Topography .
+
+ns1:Topography ns2:subsumedUnder ns1:IIdentifiedObject .
+
+ns1:SpatialObject ns2:subsumedUnder <http://erlangen-crm.org/current/E18_Physical_Thing>,
+        ns1:SpatialLocalization .
+

@@ -1,0 +1,20 @@
+@prefix ns1: <http://iasted#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Full_day_tour ns1:is_held_in ns1:Trip_day ;
+    ns2:subsumedUnder ns1:Activity_after_conference .
+
+ns1:Activity_after_conference ns2:subsumedUnder ns1:Activity .
+
+ns1:Delegate ns2:subsumedUnder ns1:Item,
+        ns1:Person .
+
+ns1:Time ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Trip_day ns1:is_designed_for ns1:Delegate ;
+    ns2:subsumedUnder ns1:Time .
+

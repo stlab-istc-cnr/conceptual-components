@@ -1,0 +1,16 @@
+@prefix ns1: <http://purl.org/saws/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://erlangen-crm.org/current/E33_Linguistic_Object> ns1:isSourceFor ns1:Edition .
+
+ns1:Editor ns1:isEditorOf ns1:Edition ;
+    ns2:subsumedUnder <http://erlangen-crm.org/current/E21_Person> .
+
+ns1:Edition ns1:isBasedOn <http://erlangen-crm.org/current/E33_Linguistic_Object> ;
+    ns1:isEditedBy ns1:Editor ;
+    ns2:subsumedUnder ns1:Material .
+

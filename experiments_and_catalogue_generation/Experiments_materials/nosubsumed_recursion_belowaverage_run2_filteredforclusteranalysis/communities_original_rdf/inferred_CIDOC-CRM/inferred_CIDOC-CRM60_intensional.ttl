@@ -1,0 +1,19 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E69_Death ns1:P100_was_death_of ns1:E21_Person .
+
+ns1:E67_Birth ns1:P96_by_mother ns1:E21_Person ;
+    ns1:P97_from_father ns1:E21_Person ;
+    ns1:P98_brought_into_life ns1:E21_Person .
+
+ns1:E21_Person ns1:P100i_died_in ns1:E69_Death ;
+    ns1:P152_has_parent ns1:E21_Person ;
+    ns1:P152i_is_parent_of ns1:E21_Person ;
+    ns1:P96i_gave_birth ns1:E67_Birth ;
+    ns1:P97i_was_father_for ns1:E67_Birth ;
+    ns1:P98i_was_born ns1:E67_Birth .
+

@@ -1,0 +1,14 @@
+digraph "Community 249" {
+	AffixedElement
+	Agent -> AffixedElement [label=isAgentReferredToBy]
+	AffixedElement -> Literal [label=description]
+	AffixedElement -> Agent [label=hasAuthor]
+	AffixedElement -> CulturalEntityTechnicalStatus [label=hasTechnicalStatus]
+	AffixedElement -> CulturalEntity [label=isElementAffixedOn]
+	AffixedElement -> Literal [label=italianTranslation]
+	CulturalEntity -> AffixedElement [label=hasAffixedElement]
+	AffixedElement -> Agent [label=refersToAgent]
+	AffixedElement -> Literal [label=transcript]
+	AffixedElement -> Literal [label=occurrences]
+	CulturalProperty -> AffixedElement [label=hasAffixedElement]
+}

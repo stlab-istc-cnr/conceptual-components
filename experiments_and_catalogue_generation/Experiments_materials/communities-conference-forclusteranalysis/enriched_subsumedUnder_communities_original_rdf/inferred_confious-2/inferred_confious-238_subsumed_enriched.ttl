@@ -1,0 +1,22 @@
+@prefix ns1: <http://confious#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:paper_assignment ns1:is_concerned_paper ns1:Undecided_Paper ;
+    ns2:subsumedUnder ns1:activity .
+
+ns1:submission_process ns1:is_concerned_paper ns1:Undecided_Paper ;
+    ns2:subsumedUnder ns1:activity .
+
+ns1:paper ns2:subsumedUnder ns1:article .
+
+ns1:reviewing_proces ns2:subsumedUnder ns1:activity .
+
+ns1:Undecided_Paper ns1:goes_through ns1:reviewing_proces ;
+    ns2:subsumedUnder ns1:paper .
+
+ns1:activity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

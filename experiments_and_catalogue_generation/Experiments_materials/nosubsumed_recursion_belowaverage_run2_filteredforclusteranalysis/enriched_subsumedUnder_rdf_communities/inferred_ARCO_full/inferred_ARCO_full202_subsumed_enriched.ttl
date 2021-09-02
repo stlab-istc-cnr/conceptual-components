@@ -1,0 +1,16 @@
+@prefix ns1: <https://w3id.org/arco/ontology/immovable-property/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:ConstructionElement ns1:isConstructionElementOf ns1:Construction ;
+    ns1:originalElement xsd:boolean ;
+    ns2:subsumedUnder ns1:Construction .
+
+<https://w3id.org/italia/onto/l0/Object> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns1:Construction ns1:hasConstructionElement ns1:ConstructionElement ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+

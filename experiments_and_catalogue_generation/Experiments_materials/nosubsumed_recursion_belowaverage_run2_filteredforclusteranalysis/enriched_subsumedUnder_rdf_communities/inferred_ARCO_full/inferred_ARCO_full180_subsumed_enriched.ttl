@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/arco/ontology/arco/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:CartographicClassification ns1:hasCartographicSymbol ns1:CartographicSymbol ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/core/CulturalEntityClassification> .
+
+ns1:CartographicSymbol ns1:cartographicSymbolIdentifier rdfs:Literal ;
+    ns1:isCartographicSymbolOf ns1:CartographicClassification ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Concept>,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+<https://w3id.org/arco/ontology/core/Concept> ns2:extensionallyEquivalent <https://w3id.org/italia/onto/l0/Concept> ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<https://w3id.org/arco/ontology/core/CulturalEntityClassification> ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Classification> .
+
+<https://w3id.org/italia/onto/l0/Concept> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+

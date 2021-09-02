@@ -1,0 +1,12 @@
+@prefix ns1: <https://w3id.org/arco/ontology/location/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Altitude ns1:alt xsd:decimal ;
+    ns1:isAltitudeOf ns1:Coordinates ;
+    ns1:minAlt xsd:decimal .
+
+ns1:Coordinates ns1:hasAltitude ns1:Altitude .
+

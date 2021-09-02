@@ -1,0 +1,21 @@
+@prefix ns1: <https://w3id.org/italia/onto/l0/> .
+@prefix ns2: <https://w3id.org/italia/onto/AtlasOfPaths/> .
+@prefix ns3: <https://w3id.org/italia/onto/Route/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:positionInSequence xsd:int .
+
+ns2:PathStage ns2:stageNumber xsd:int .
+
+ns3:Route ns3:numberOfStages xsd:int ;
+    ns1:hasMember ns3:Stage .
+
+ns3:Stage ns3:stageOrdering xsd:int ;
+    ns1:directlyFollows ns3:Stage ;
+    ns1:directlyPrecedes ns3:Stage ;
+    ns1:follows ns3:Stage ;
+    ns1:precedes ns3:Stage .
+

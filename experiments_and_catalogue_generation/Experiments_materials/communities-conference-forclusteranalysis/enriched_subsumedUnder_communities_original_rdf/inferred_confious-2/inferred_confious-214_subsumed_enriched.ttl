@@ -1,0 +1,22 @@
+@prefix ns1: <http://confious#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:lower_tier_reviewing_process ns1:has_result ns1:review_form ;
+    ns2:subsumedUnder ns1:reviewing_proces .
+
+ns1:Program_Committee_Chair ns2:subsumedUnder ns1:human .
+
+ns1:article ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:review_form ns1:is_created_in ns1:activity ;
+    ns1:structure_created_by ns1:Program_Committee_Chair ;
+    ns2:subsumedUnder ns1:article .
+
+ns1:reviewing_proces ns2:subsumedUnder ns1:activity .
+
+ns1:activity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

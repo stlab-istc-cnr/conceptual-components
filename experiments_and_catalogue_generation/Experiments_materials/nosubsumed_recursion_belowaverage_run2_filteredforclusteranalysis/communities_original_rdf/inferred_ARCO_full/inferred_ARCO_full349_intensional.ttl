@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns1:isRelatedToAdditionalForm ns1:AdditionalForm .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:isRelatedToAdditionalForm ns1:AdditionalForm .
+
+ns1:AdditionalFormType ns1:isAdditionalFormTypeOf ns1:AdditionalForm .
+
+<https://w3id.org/italia/onto/l0/Agent> ns1:isAdditionalFormResponsibleAgentOf ns1:AdditionalForm .
+
+ns1:AdditionalForm ns1:additionalFormIdentifier rdfs:Literal ;
+    ns1:describes <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasAdditionalFormResponsibleAgent <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasAdditionalFormType ns1:AdditionalFormType .
+

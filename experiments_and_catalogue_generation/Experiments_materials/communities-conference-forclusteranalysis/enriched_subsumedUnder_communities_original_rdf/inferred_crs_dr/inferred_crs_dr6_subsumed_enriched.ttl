@@ -1,0 +1,20 @@
+@prefix ns1: <http://crs_dr#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:article ns1:has_reviewer ns1:reviewer ;
+    ns2:subsumedUnder ns1:document .
+
+ns1:person ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:review ns1:review_written_by ns1:reviewer ;
+    ns2:subsumedUnder ns1:document .
+
+ns1:document ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:reviewer ns1:writes_review ns1:review ;
+    ns2:subsumedUnder ns1:person .
+

@@ -1,0 +1,135 @@
+Community 1 : 
+	Reviewer
+	Paper paperIsAssignedTo Reviewer
+	Chair asksForPreference Reviewer
+	Reviewer IsAssignedTo Paper
+	Reviewer hasConflictedPaper Paper
+	Reviewer hasPreferredPaper Paper
+Community 2 : 
+	ExternalReviewer
+	Reviewer cooperates ExternalReviewer
+	ExternalReviewer cooperatesReviewer Reviewer
+Community 3 : 
+	Author
+	Author submitsPaper Paper
+	Author writePaper Paper
+	Paper paperIsSubmittedBy Author
+Community 4 : 
+	Paper
+	Paper hasAuthor Author
+	Paper hasID string
+	Paper hasTitle string
+Community 5 : 
+	PaperStatus
+	Paper hasStatus PaperStatus
+	PaperStatus isStatusOf Paper
+Community 6 : 
+	ConferenceAttendant hasAdress string
+	ConferenceAttendant
+	ConferenceAttendant hasPhone string
+Community 7 : 
+	ConferenceAttendant paid boolean
+	boolean
+Community 8 : 
+	Fee
+	ConferenceAttendant mustPay Fee
+Community 9 : 
+	Person hasAffiliation string
+	string
+	Person
+	Person hasFirstName string
+	Person hasLastName string
+Community 10 : 
+	Conference hasAcronym string
+	Conference
+	Conference hasEmail string
+	Conference hasName string
+	ConferenceProgram isProgramOf Conference
+Community 11 : 
+	ConferenceProgram consistsOf Slot
+	Slot
+Community 12 : 
+	Slot forms ConferenceProgram
+	ConferenceProgram
+Community 13 : 
+	Slot date date
+	date
+Community 14 : 
+	Session hasChair Chair
+	Session
+	Session isAssociatedTo Slot
+	Session room string
+	Slot hosts Session
+Community 15 : 
+	AcceptedPaper isAcceptedBy Chair
+	AcceptedPaper
+	AcceptedPaper isAssignedToSession Session
+	AcceptedPaper isRatedBy Review
+	Session hasAssignedPaper AcceptedPaper
+Community 16 : 
+	ProgramCommittee hasMember Chair
+	ProgramCommittee
+	ProgramCommittee hasMember ProgramCommitteeMember
+	ProgramCommitteeMember isMemberOf ProgramCommittee
+Community 17 : 
+	ProgramCommitteeMember hasEmail string
+	ProgramCommitteeMember
+	ProgramCommitteeMember hasPassword string
+Community 18 : 
+	ResearchTopic
+	Paper hasMainTopic ResearchTopic
+	Paper hasSecondaryTopic ResearchTopic
+	Reviewer hasPreferredTopic ResearchTopic
+Community 19 : 
+	Administrator
+	ProgramCommittee hasMember Administrator
+	ResearchTopic isAssignedBy Administrator
+Community 20 : 
+	Reviewer writeReview Review
+	Review
+	Paper isRatedBy Review
+	Review isWritenBy Reviewer
+	Review rates Paper
+Community 21 : 
+	Review containsEvaluation Evaluation
+	Evaluation
+	Evaluation isContainedIn Review
+Community 22 : 
+	RejectedPaper isRatedBy Review
+	RejectedPaper
+	RejectedPaper isRejectedBy Chair
+Community 23 : 
+	Paper isAcceptedBy Chair
+	Chair
+	Paper isRejectedBy Chair
+	Chair accepts Paper
+	Chair isChairOf Session
+	Chair rejects Paper
+Community 24 : 
+	OutputDocument isProducedBy Chair
+	OutputDocument
+	Chair produces OutputDocument
+Community 25 : 
+	Proceedings includes AcceptedPaper
+	Proceedings
+Community 26 : 
+	ExternalReviewersList
+	Proceedings includes ExternalReviewersList
+Community 27 : 
+	IndexOfAuthors
+	Proceedings includes IndexOfAuthors
+Community 28 : 
+	Proceedings includes PCMembersList
+	PCMembersList
+Community 29 : 
+	PaperAbstract abstractIsSubmittedBy ContactAuthor
+	ContactAuthor
+	PaperAbstract
+	PaperAbstract isAbstractOf Paper
+	ContactAuthor hasEmail string
+	ContactAuthor submitsAbstract PaperAbstract
+	Paper hasAbstract PaperAbstract
+Community 30 : 
+	Criterion
+	Criterion hasWeight float
+	float

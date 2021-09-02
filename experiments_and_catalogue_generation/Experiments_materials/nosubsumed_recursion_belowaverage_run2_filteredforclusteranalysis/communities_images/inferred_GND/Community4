@@ -1,0 +1,17 @@
+digraph "Community 4" {
+	PlaceOrGeographicName
+	PlaceOrGeographicName -> PlaceOrGeographicName [label=StartingOrFinalPointOfADistance]
+	PlaceOrGeographicName -> Literal [label=abbreviatedNameForThePlaceOrGeographicName]
+	PlaceOrGeographicName -> Literal [label=easternmostLongitude]
+	PlaceOrGeographicName -> PlaceOrGeographicName [label=hierarchicalSuperiorOfPlaceOrGeographicName]
+	PlaceOrGeographicName -> Literal [label=northernmostLatitude]
+	PlaceOrGeographicName -> Literal [label=preferredNameForThePlaceOrGeographicName]
+	PlaceOrGeographicName -> Literal [label=southernmostLatitude]
+	PlaceOrGeographicName -> PlaceOrGeographicName [label=startingOrFinalPointOfADistance]
+	DifferentiatedPerson -> PlaceOrGeographicName [label=characteristicPlace]
+	PlaceOrGeographicName -> Literal [label=variantNameForThePlaceOrGeographicName]
+	PlaceOrGeographicName -> Literal [label=westernmostLongitude]
+	DifferentiatedPerson -> PlaceOrGeographicName [label=placeOfBirth]
+	Work -> PlaceOrGeographicName [label=placeOfDiscovery]
+	DifferentiatedPerson -> PlaceOrGeographicName [label=placeOfDeath]
+}

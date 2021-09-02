@@ -1,0 +1,38 @@
+@prefix ns1: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:DifferentiatedPerson ns1:fieldOfStudy ns1:SubjectHeading ;
+    ns1:playedInstrument ns1:SubjectHeading ;
+    ns2:subsumedUnder <http://rdaregistry.info/Elements/c/C10004>,
+        <http://xmlns.com/foaf/0.1/Person>,
+        ns1:Person .
+
+ns1:Work ns1:language ns1:SubjectHeading ;
+    ns1:mediumOfPerformance ns1:SubjectHeading ;
+    ns2:subsumedUnder ns1:AuthorityResource .
+
+<http://rdaregistry.info/Elements/c/C10004> ns2:extensionallyEquivalent <http://xmlns.com/foaf/0.1/Person>,
+        ns1:Person ;
+    ns2:subsumedUnder ns1:AuthorityResource .
+
+rdfs:Literal ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://xmlns.com/foaf/0.1/Person> ns2:extensionallyEquivalent ns1:Person ;
+    ns2:subsumedUnder ns1:AuthorityResource .
+
+ns1:Person ns2:subsumedUnder ns1:AuthorityResource .
+
+ns1:AuthorityResource ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:SubjectHeading ns1:broaderTermGeneric ns1:SubjectHeading ;
+    ns1:narrowerTermGeneric ns1:SubjectHeading ;
+    ns1:precedingSubject ns1:SubjectHeading ;
+    ns1:preferredNameForTheSubjectHeading rdfs:Literal ;
+    ns1:succeedingSubjectHeading ns1:SubjectHeading ;
+    ns1:variantNameForTheSubjectHeading rdfs:Literal ;
+    ns2:subsumedUnder ns1:AuthorityResource .
+

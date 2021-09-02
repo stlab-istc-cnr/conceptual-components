@@ -1,0 +1,24 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-literaryAnalysisElements#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://bakulf.github.io/raop/0.1#RethoricalDevice> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line> ns2:subsumedUnder <http://purl.org/ontology/olo/core#OrderedList>,
+        <http://purl.org/ontology/olo/core#Slot>,
+        <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:FigureOfSpeech ns1:figureMeaning xsd:string ;
+    ns1:figureReferent xsd:string ;
+    ns1:figureVariety <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:hasSmallerUnits ns1:FigureOfSpeech ;
+    ns1:isPresentIn <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Line> ;
+    ns1:isSmallerUnitOf ns1:FigureOfSpeech ;
+    ns1:rhetoricalOperation <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns2:subsumedUnder <http://bakulf.github.io/raop/0.1#RethoricalDevice> .
+
+<http://www.w3.org/2004/02/skos/core#Concept> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

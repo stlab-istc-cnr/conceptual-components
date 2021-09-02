@@ -1,0 +1,12 @@
+digraph "Community 350" {
+	CulturalEntity -> CulturalPropertyType [label=hasCulturalPropertyType]
+	CulturalPropertyType
+	CulturalPropertyDefinition -> CulturalPropertyType [label=isCulturalPropertyDefinitionOf]
+	CulturalPropertyDefinition
+	CulturalProperty -> CulturalPropertyType [label=hasCulturalPropertyType]
+	CulturalPropertyType -> CulturalPropertyDefinition [label=hasCulturalPropertyDefinition]
+	CulturalPropertySpecification
+	CulturalPropertySpecification -> CulturalPropertyType [label=isCulturalPropertySpecificationOf]
+	CulturalPropertyType -> CulturalPropertySpecification [label=hasCulturalPropertySpecification]
+	CulturalPropertyType -> CulturalEntity [label=isCulturalPropertyTypeOf]
+}

@@ -1,0 +1,47 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-dates#> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Person ns1:birthDate ns2:DateEntity ;
+    ns1:deathDate ns2:DateEntity ;
+    ns1:floruit ns2:DateEntity ;
+    ns3:subsumedUnder ns1:Agent,
+        <http://xmlns.com/foaf/0.1/Person> .
+
+ns1:Place ns1:date ns2:DateEntity ;
+    ns3:subsumedUnder <http://www.europeana.eu/schemas/edm/Place> .
+
+ns1:PoeticWork ns1:date ns2:DateEntity ;
+    ns3:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F1>,
+        <http://www.europeana.eu/schemas/edm/ProvidedCHO>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+ns1:Redaction ns1:date ns2:DateEntity ;
+    ns3:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F1> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Agent ns3:subsumedUnder <http://www.europeana.eu/schemas/edm/Agent>,
+        <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> .
+
+ns2:DateExpression ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.europeana.eu/schemas/edm/Place> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.europeana.eu/schemas/edm/ProvidedCHO> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://xmlns.com/foaf/0.1/Person> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:DateEntity ns2:dateNote xsd:string ;
+    ns2:isExpressedAs ns2:DateExpression ;
+    ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

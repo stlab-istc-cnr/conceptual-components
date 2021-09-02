@@ -1,0 +1,28 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns1:hasUse ns1:Use ;
+    ns2:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:Circumstance ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+ns1:UseFunction ns2:subsumedUnder <https://w3id.org/italia/onto/RO/Role> .
+
+<https://w3id.org/italia/onto/l0/Description> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity>,
+        <https://w3id.org/italia/onto/l0/Object> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:hasUse ns1:Use ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Use ns1:hasCircumstance ns1:Circumstance ;
+    ns1:hasUseFunction ns1:UseFunction ;
+    ns1:isKeptIn rdfs:Literal ;
+    ns1:isUseOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:useConditions rdfs:Literal ;
+    ns1:useFunction rdfs:Literal ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Description> .
+

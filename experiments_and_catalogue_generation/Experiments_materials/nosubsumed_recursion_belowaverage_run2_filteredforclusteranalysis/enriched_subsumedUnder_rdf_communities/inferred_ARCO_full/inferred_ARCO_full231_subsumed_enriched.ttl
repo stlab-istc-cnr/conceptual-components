@@ -1,0 +1,34 @@
+@prefix ns1: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns1:hasMeasurementCollection ns1:MeasurementCollection ;
+    ns2:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:Soil ns1:hasMeasurementCollection ns1:MeasurementCollection ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<https://w3id.org/arco/ontology/immovable-property/Construction> ns1:hasMeasurementCollection ns1:MeasurementCollection ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<https://w3id.org/arco/ontology/movable-property/UnitCell> ns1:hasMeasurementCollection ns1:MeasurementCollection ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Measurement ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+<https://w3id.org/italia/onto/l0/Collection> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:hasMeasurementCollection ns1:MeasurementCollection .
+
+<https://w3id.org/italia/onto/l0/Object> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns1:MeasurementCollection ns1:hasVolumetricDimensionsMeasurement ns1:Measurement ;
+    ns1:isMeasurementCollectionOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:validity rdfs:Literal ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Collection> .
+

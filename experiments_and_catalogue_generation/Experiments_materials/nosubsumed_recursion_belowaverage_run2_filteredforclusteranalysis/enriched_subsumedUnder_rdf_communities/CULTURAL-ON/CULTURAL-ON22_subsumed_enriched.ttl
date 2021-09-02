@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/italia/onto/TI/> .
+@prefix ns2: <http://dati.beniculturali.it/cis/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:CISNameInTime ns2:isValidDuring ns1:TimeInterval ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/POI/NameInTime>,
+        <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+ns2:CollectionCulEnt ns3:subsumedUnder ns2:CulturalEntity,
+        <https://w3id.org/italia/onto/l0/Collection> ;
+    ns1:atTime ns1:TimeInterval .
+
+ns2:CulturalEntity ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

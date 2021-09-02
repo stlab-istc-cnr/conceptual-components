@@ -1,0 +1,33 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E1_CRM_Entity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:E4_Period ns2:subsumedUnder ns1:E2_Temporal_Entity,
+        ns1:E92_Spacetime_Volume .
+
+ns1:E63_Beginning_of_Existence ns1:P92_brought_into_existence ns1:E77_Persistent_Item ;
+    ns2:subsumedUnder ns1:E5_Event .
+
+ns1:E64_End_of_Existence ns1:P93_took_out_of_existence ns1:E77_Persistent_Item ;
+    ns2:subsumedUnder ns1:E5_Event .
+
+ns1:E81_Transformation ns1:P123_resulted_in ns1:E77_Persistent_Item ;
+    ns1:P124_transformed ns1:E77_Persistent_Item ;
+    ns2:subsumedUnder ns1:E63_Beginning_of_Existence,
+        ns1:E64_End_of_Existence .
+
+ns1:E5_Event ns1:P12_occurred_in_the_presence_of ns1:E77_Persistent_Item ;
+    ns2:subsumedUnder ns1:E4_Period .
+
+ns1:E77_Persistent_Item ns1:P123i_resulted_from ns1:E81_Transformation ;
+    ns1:P124i_was_transformed_by ns1:E81_Transformation ;
+    ns1:P12i_was_present_at ns1:E5_Event ;
+    ns1:P92i_was_brought_into_existence_by ns1:E63_Beginning_of_Existence ;
+    ns1:P93i_was_taken_out_of_existence_by ns1:E64_End_of_Existence ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+

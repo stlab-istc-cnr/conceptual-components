@@ -1,0 +1,10 @@
+digraph "Community 352" {
+	CulturalInstituteOrSiteDefinition
+	CulturalInstituteOrSiteDefinition -> CulturalInstituteOrSiteType [label=isCulturalInstituteOrSiteDefinitionOf]
+	CulturalInstituteOrSiteType -> CulturalInstituteOrSiteDefinition [label=hasCulturalInstituteOrSiteDefinition]
+	CulturalInstituteOrSiteSpecification
+	CulturalInstituteOrSiteSpecification -> CulturalInstituteOrSiteType [label=isCulturalInstituteOrSiteSpecificationOf]
+	CulturalInstituteOrSiteType -> CulturalInstituteOrSiteSpecification [label=hasCulturalInstituteOrSiteSpecification]
+	CulturalInstituteOrSiteType
+	CulturalInstituteOrSite -> CulturalInstituteOrSiteType [label=hasCulturalInstituteOrSiteType]
+}

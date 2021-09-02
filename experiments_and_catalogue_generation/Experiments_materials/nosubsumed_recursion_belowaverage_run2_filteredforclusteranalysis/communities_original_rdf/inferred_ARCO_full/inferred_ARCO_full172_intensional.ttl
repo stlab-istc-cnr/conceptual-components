@@ -1,0 +1,29 @@
+@prefix ns1: <https://w3id.org/italia/onto/TI/> .
+@prefix ns2: <https://w3id.org/arco/ontology/arco/> .
+@prefix ns3: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix ns4: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix ns5: <https://w3id.org/arco/ontology/context-description/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns5:CollectionMembership ns1:atTime ns1:TimeInterval .
+
+<https://w3id.org/arco/ontology/movable-property/Accession> ns1:atTime ns1:TimeInterval .
+
+<https://w3id.org/arco/ontology/movable-property/Outcrop> ns1:atTime ns1:TimeInterval .
+
+<https://w3id.org/arco/ontology/movable-property/SpecimenHarvesting> ns1:atTime ns1:TimeInterval .
+
+<https://w3id.org/italia/onto/l0/EventOrSituation> ns5:specificTime ns1:TimeInterval .
+
+ns4:CatalogueRecordVersion ns4:editedAtTime ns1:TimeInterval .
+
+ns3:CulturalEntityTechnicalStatus ns3:isTechnicalStatusValidAt ns1:TimeInterval .
+
+ns1:TimeInterval ns2:endTime rdfs:Literal ;
+    ns2:startTime rdfs:Literal ;
+    ns4:editingTimeOf ns4:CatalogueRecordVersion ;
+    ns3:isTimeIntervalValidFor ns3:CulturalEntityTechnicalStatus .
+

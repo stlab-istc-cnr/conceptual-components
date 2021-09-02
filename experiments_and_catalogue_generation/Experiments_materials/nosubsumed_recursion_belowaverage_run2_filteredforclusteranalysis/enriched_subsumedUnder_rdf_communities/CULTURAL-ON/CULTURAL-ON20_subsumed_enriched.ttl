@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/italia/onto/l0/> .
+@prefix ns2: <http://dati.beniculturali.it/cis/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:CollectionCulEnt ns2:isDescribedBy ns2:Catalogue ;
+    ns3:subsumedUnder ns2:CulturalEntity,
+        ns1:Collection .
+
+ns2:CulturalInstituteOrSite ns2:catalogue ns2:Catalogue ;
+    ns3:subsumedUnder ns2:CulturalEntity,
+        <https://w3id.org/italia/onto/POI/PointOfInterest> .
+
+ns2:Catalogue ns2:isCatalogueOf ns2:CulturalInstituteOrSite ;
+    ns3:subsumedUnder ns1:Object ;
+    ns1:description rdfs:Literal ;
+    ns1:name rdfs:Literal .
+
+ns2:CulturalEntity ns3:subsumedUnder ns1:Entity .
+

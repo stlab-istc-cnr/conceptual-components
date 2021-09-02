@@ -1,0 +1,20 @@
+@prefix ns1: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix ns2: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns3: <https://w3id.org/arco/ontology/core/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:LaboratoryTest ns3:hasConsequence ns1:TypeSpecimenIdentification .
+
+ns1:Specimen ns1:hasTypeSpecimenIdentification ns1:TypeSpecimenIdentification .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:hasTypeSpecimenIdentification ns1:TypeSpecimenIdentification .
+
+ns1:Taxon ns1:isTaxonProducedBy ns1:TypeSpecimenIdentification .
+
+ns1:TypeSpecimenIdentification ns2:hasBibliography ns2:Bibliography ;
+    ns1:isTypeSpecimenIdentificationOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:producesTaxon ns1:Taxon .
+

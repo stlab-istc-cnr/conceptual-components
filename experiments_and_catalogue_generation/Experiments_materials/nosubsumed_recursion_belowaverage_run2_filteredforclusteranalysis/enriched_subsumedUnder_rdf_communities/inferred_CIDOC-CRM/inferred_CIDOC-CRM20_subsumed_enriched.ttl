@@ -1,0 +1,28 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E18_Physical_Thing ns1:P8i_witnessed ns1:E4_Period ;
+    ns2:subsumedUnder ns1:E72_Legal_Object,
+        ns1:E92_Spacetime_Volume .
+
+ns1:E2_Temporal_Entity ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E53_Place ns1:P7i_witnessed ns1:E4_Period ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E72_Legal_Object ns2:subsumedUnder ns1:E70_Thing .
+
+ns1:E92_Spacetime_Volume ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E1_CRM_Entity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:E4_Period ns1:P7_took_place_at ns1:E53_Place ;
+    ns1:P9_consists_of ns1:E4_Period ;
+    ns1:P9i_forms_part_of ns1:E4_Period ;
+    ns2:subsumedUnder ns1:E2_Temporal_Entity,
+        ns1:E92_Spacetime_Volume .
+

@@ -1,0 +1,20 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Stanza ns1:hasLine ns1:Line .
+
+ns1:OrderedLineList ns1:hasLineItem ns1:Line .
+
+ns1:Line ns2:rhymesWith ns1:Line ;
+    ns1:belongsToLineList ns1:OrderedLineList ;
+    ns1:containsMentionTo <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:firstHemistich xsd:string ;
+    ns1:isRefrain xsd:boolean ;
+    ns1:nextLine ns1:Line ;
+    ns1:previousLine ns1:Line ;
+    ns1:secondHemistich xsd:string .
+

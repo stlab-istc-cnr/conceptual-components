@@ -1,0 +1,11 @@
+digraph "Community 277" {
+	Agent -> EventOrSituation [label=isAgentInvolvedIn]
+	EventOrSituation
+	TimeInterval -> EventOrSituation [label=specificTimeOf]
+	EventOrSituation -> boolean [label=current]
+	EventOrSituation -> EventOrSituation [label=hasImmediateNextEvent]
+	EventOrSituation -> EventOrSituation [label=hasImmediatePreviousEvent]
+	EventOrSituation -> EventOrSituation [label=hasNextSituation]
+	EventOrSituation -> EventOrSituation [label=hasPreviousSituation]
+	EventOrSituation -> Agent [label=involvesAgent]
+}

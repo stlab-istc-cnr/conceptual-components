@@ -1,0 +1,16 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Group ns1:groupIsSourceOfMembershipRelation ns1:MembershipRelation .
+
+ns1:Person ns1:personIsTargetOfMembershipRelation ns1:MembershipRelation .
+
+ns1:Position ns1:positionIsContextOfMembershipRelation ns1:MembershipRelation .
+
+ns1:MembershipRelation ns1:membershipRelationHasSource ns1:Group ;
+    ns1:membershipRelationHasTarget ns1:Person ;
+    ns1:membershipWithPosition ns1:Position .
+

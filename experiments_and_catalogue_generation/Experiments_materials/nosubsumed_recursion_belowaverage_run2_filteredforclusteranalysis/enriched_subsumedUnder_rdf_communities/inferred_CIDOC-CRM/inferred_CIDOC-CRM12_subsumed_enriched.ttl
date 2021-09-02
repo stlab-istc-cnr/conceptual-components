@@ -1,0 +1,21 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E74_Group ns1:P144i_gained_member_by ns1:E85_Joining ;
+    ns2:subsumedUnder ns1:E39_Actor .
+
+ns1:E77_Persistent_Item ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E7_Activity ns2:subsumedUnder ns1:E5_Event .
+
+ns1:E39_Actor ns1:P143i_was_joined_by ns1:E85_Joining ;
+    ns2:subsumedUnder ns1:E77_Persistent_Item .
+
+ns1:E85_Joining ns1:P143_joined ns1:E39_Actor ;
+    ns1:P144_joined_with ns1:E74_Group ;
+    ns2:subsumedUnder ns1:E7_Activity .
+

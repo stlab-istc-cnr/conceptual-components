@@ -1,0 +1,9 @@
+digraph "Community 32" {
+	TemporalEntity
+	PathPlan -> TemporalEntity [label=bestWhen]
+	PathPlan
+	Path -> PathPlan [label=hasTripPlan]
+	PathPlan -> TravellingMethod [label=hasTravellingMethod]
+	TravellingMethod -> PathPlan [label=isTravellingMethodOf]
+	TravellingMethod
+}

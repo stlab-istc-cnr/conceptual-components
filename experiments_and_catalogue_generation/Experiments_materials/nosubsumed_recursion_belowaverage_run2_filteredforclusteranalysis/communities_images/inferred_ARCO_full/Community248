@@ -1,0 +1,12 @@
+digraph "Community 248" {
+	AccessProfile -> Literal [label=expiryDate]
+	AccessProfile
+	AccessProfile -> PrivacyReason [label=hasPrivacyReason]
+	AccessProfile -> PrivacyLevel [label=hasPrivacyLevel]
+	AccessProfile -> CatalogueRecord [label=isAccessProfileOf]
+	PrivacyLevel -> AccessProfile [label=isPrivacyLevelOf]
+	PrivacyReason -> AccessProfile [label=isPrivacyReasonOf]
+	CatalogueRecord -> AccessProfile [label=hasAccessProfile]
+	PrivacyReason
+	PrivacyLevel
+}

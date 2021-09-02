@@ -1,0 +1,1717 @@
+@prefix : <http://iasted#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://iasted#> .
+
+<http://iasted> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://iasted#give
+:give rdf:type owl:ObjectProperty ;
+      owl:equivalentProperty [ owl:inverseOf :is_given_by
+                             ] ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      owl:inverseOf :is_given_by ;
+      rdfs:domain :Person ;
+      rdfs:range [ rdf:type owl:Class ;
+                   owl:unionOf ( :Activity
+                                 :Item
+                               )
+                 ] .
+
+
+###  http://iasted#go_through
+:go_through rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Item ;
+            rdfs:range :Activity .
+
+
+###  http://iasted#is_connected_with
+:is_connected_with rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Activity
+                                               :Person
+                                             )
+                               ] ;
+                   rdfs:range [ rdf:type owl:Class ;
+                                owl:unionOf ( :Item
+                                              :Place
+                                            )
+                              ] .
+
+
+###  http://iasted#is_designed_for
+:is_designed_for rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Activity
+                                             :Money
+                                             :Time
+                                           )
+                             ] ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( :Activity
+                                            :Person
+                                          )
+                            ] .
+
+
+###  http://iasted#is_equipped_by
+:is_equipped_by rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Place ;
+                rdfs:range :Item .
+
+
+###  http://iasted#is_given_by
+:is_given_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Activity
+                                         :Item
+                                       )
+                         ] ;
+             rdfs:range :Person .
+
+
+###  http://iasted#is_given_to
+:is_given_to rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Item ;
+             rdfs:range :Person .
+
+
+###  http://iasted#is_held_after
+:is_held_after rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Activity ;
+               rdfs:range :Time .
+
+
+###  http://iasted#is_held_before
+:is_held_before rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Activity ;
+                rdfs:range :Time .
+
+
+###  http://iasted#is_held_in
+:is_held_in rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Activity ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Place
+                                       :Time
+                                     )
+                       ] .
+
+
+###  http://iasted#is_made_from
+:is_made_from rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Item ;
+              rdfs:range :Item .
+
+
+###  http://iasted#is_needed_for
+:is_needed_for rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :need
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :need ;
+               rdfs:domain :Item ;
+               rdfs:range :Person .
+
+
+###  http://iasted#is_occupied_by
+:is_occupied_by rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :occupy
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :occupy ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Building
+                                            :City
+                                            :State
+                                          )
+                            ] ;
+                rdfs:range :Person .
+
+
+###  http://iasted#is_paid_by
+:is_paid_by rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :pay
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :pay ;
+            rdfs:domain :Money ;
+            rdfs:range :Person .
+
+
+###  http://iasted#is_paid_for
+:is_paid_for rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Money ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Activity
+                                        :Item
+                                      )
+                        ] .
+
+
+###  http://iasted#is_paid_in
+:is_paid_in rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Money ;
+            rdfs:range :Building .
+
+
+###  http://iasted#is_paid_with
+:is_paid_with rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Money ;
+              rdfs:range :Item .
+
+
+###  http://iasted#is_prepared_by
+:is_prepared_by rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :prepare
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Item ;
+                rdfs:range :Person .
+
+
+###  http://iasted#is_present
+:is_present rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :Time .
+
+
+###  http://iasted#is_present_in
+:is_present_in rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Person ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Place
+                                          :Time
+                                        )
+                          ] .
+
+
+###  http://iasted#is_sent_after
+:is_sent_after rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Item ;
+               rdfs:range :Time .
+
+
+###  http://iasted#is_sent_before
+:is_sent_before rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Item ;
+                rdfs:range :Time .
+
+
+###  http://iasted#is_sent_by
+:is_sent_by rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :send
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :send ;
+            rdfs:domain :Item ;
+            rdfs:range :Person .
+
+
+###  http://iasted#is_signed_by
+:is_signed_by rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :sign
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :sign ;
+              rdfs:domain :Item ;
+              rdfs:range :Person .
+
+
+###  http://iasted#is_situated_in
+:is_situated_in rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Building
+                                            :City
+                                            :Place
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Building
+                                           :City
+                                           :Place
+                                           :State
+                                         )
+                           ] .
+
+
+###  http://iasted#is_used_by
+:is_used_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Item ;
+            rdfs:range :Person .
+
+
+###  http://iasted#is_used_for
+:is_used_for rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Item ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Activity
+                                        :Money
+                                      )
+                        ] .
+
+
+###  http://iasted#is_visited_by
+:is_visited_by rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Building
+                                           :City
+                                           :State
+                                         )
+                           ] ;
+               rdfs:range :Person .
+
+
+###  http://iasted#is_writen_by
+:is_writen_by rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :write
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Item ;
+              rdfs:range :Person .
+
+
+###  http://iasted#need
+:need rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Item .
+
+
+###  http://iasted#obtain
+:obtain rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Person ;
+        rdfs:range :Item .
+
+
+###  http://iasted#occupy
+:occupy rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Person ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :Building
+                                   :City
+                                   :State
+                                 )
+                   ] .
+
+
+###  http://iasted#pay
+:pay rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdfs:domain :Person ;
+     rdfs:range :Money .
+
+
+###  http://iasted#prepare
+:prepare rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :is_prepared_by ;
+         rdfs:domain :Person ;
+         rdfs:range :Item .
+
+
+###  http://iasted#send
+:send rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Item .
+
+
+###  http://iasted#sign
+:sign rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Item .
+
+
+###  http://iasted#speak_in
+:speak_in rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Person ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Place
+                                     :Time
+                                   )
+                     ] .
+
+
+###  http://iasted#write
+:write rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :is_writen_by ;
+       rdfs:domain :Person ;
+       rdfs:range :Item .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://iasted#done_till
+:done_till rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Deadline ;
+           rdfs:range xsd:date .
+
+
+###  http://iasted#has_amount_of
+:has_amount_of rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Money ;
+               rdfs:range xsd:int .
+
+
+###  http://iasted#is_dated_on
+:is_dated_on rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Activity ;
+             rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://iasted#Accepting_manuscript
+:Accepting_manuscript rdf:type owl:Class ;
+                      rdfs:subClassOf :Activity_before_conference .
+
+
+###  http://iasted#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Activity_after_conference
+:Activity_after_conference rdf:type owl:Class ;
+                           rdfs:subClassOf :Activity ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :is_held_after ;
+                                             owl:someValuesFrom :Conference_days
+                                           ] .
+
+
+###  http://iasted#Activity_before_conference
+:Activity_before_conference rdf:type owl:Class ;
+                            rdfs:subClassOf :Activity ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :is_held_before ;
+                                              owl:someValuesFrom :Conference_days
+                                            ] .
+
+
+###  http://iasted#Audiovisual_equipment
+:Audiovisual_equipment rdf:type owl:Class ;
+                       rdfs:subClassOf :Item ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_designed_for ;
+                                         owl:someValuesFrom :Listener
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_situated_in ;
+                                         owl:someValuesFrom :Session_room
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_used_by ;
+                                         owl:someValuesFrom :Speaker
+                                       ] .
+
+
+###  http://iasted#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Speaker ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :give ;
+                          owl:someValuesFrom :Brief_introduction_for_Session_chair
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :prepare ;
+                          owl:someValuesFrom :Transparency
+                        ] .
+
+
+###  http://iasted#Author_attendee_book_registration_fee
+:Author_attendee_book_registration_fee rdf:type owl:Class ;
+                                       rdfs:subClassOf :Registration_fee ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :is_paid_for ;
+                                                         owl:someValuesFrom :Book_proceeding
+                                                       ] .
+
+
+###  http://iasted#Author_attendee_cd_registration_fee
+:Author_attendee_cd_registration_fee rdf:type owl:Class ;
+                                     rdfs:subClassOf :Registration_fee ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_paid_for ;
+                                                       owl:someValuesFrom :Cd_proceening
+                                                     ] .
+
+
+###  http://iasted#Author_book_proceedings_included
+:Author_book_proceedings_included rdf:type owl:Class ;
+                                  rdfs:subClassOf :Author ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :obtain ;
+                                                    owl:someValuesFrom :Book_proceeding
+                                                  ] .
+
+
+###  http://iasted#Author_cd_proceedings_included
+:Author_cd_proceedings_included rdf:type owl:Class ;
+                                rdfs:subClassOf :Author ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :obtain ;
+                                                  owl:someValuesFrom :Cd_proceening
+                                                ] .
+
+
+###  http://iasted#Author_information_form
+:Author_information_form rdf:type owl:Class ;
+                         rdfs:subClassOf :Form ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :is_sent_after ;
+                                           owl:someValuesFrom :Deadline_for_notification_of_acceptance
+                                         ] .
+
+
+###  http://iasted#Bank_transfer
+:Bank_transfer rdf:type owl:Class ;
+               rdfs:subClassOf :Payment_document .
+
+
+###  http://iasted#Book_proceeding
+:Book_proceeding rdf:type owl:Class ;
+                 rdfs:subClassOf :Publication .
+
+
+###  http://iasted#Brief_introduction_for_Session_chair
+:Brief_introduction_for_Session_chair rdf:type owl:Class ;
+                                      rdfs:subClassOf :Document ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :is_given_by ;
+                                                        owl:someValuesFrom :Author
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :is_given_to ;
+                                                        owl:someValuesFrom :Session_chair
+                                                      ] .
+
+
+###  http://iasted#Building
+:Building rdf:type owl:Class ;
+          rdfs:subClassOf :Place .
+
+
+###  http://iasted#Camera_ready_manuscript_deadline
+:Camera_ready_manuscript_deadline rdf:type owl:Class ;
+                                  rdfs:subClassOf :Deadline .
+
+
+###  http://iasted#Car
+:Car rdf:type owl:Class ;
+     rdfs:subClassOf :Transport_vehicle .
+
+
+###  http://iasted#Card
+:Card rdf:type owl:Class ;
+      rdfs:subClassOf :Item .
+
+
+###  http://iasted#Cd_proceening
+:Cd_proceening rdf:type owl:Class ;
+               rdfs:subClassOf :Publication .
+
+
+###  http://iasted#Cheque
+:Cheque rdf:type owl:Class ;
+        rdfs:subClassOf :Payment_document .
+
+
+###  http://iasted#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :is_situated_in ;
+                        owl:someValuesFrom :State
+                      ] .
+
+
+###  http://iasted#Coctail_reception
+:Coctail_reception rdf:type owl:Class ;
+                   rdfs:subClassOf :Conference_activity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_designed_for ;
+                                     owl:someValuesFrom :Delegate
+                                   ] .
+
+
+###  http://iasted#Coffee_break
+:Coffee_break rdf:type owl:Class ;
+              rdfs:subClassOf :Conference_activity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_designed_for ;
+                                owl:someValuesFrom :Delegate
+                              ] .
+
+
+###  http://iasted#Computer
+:Computer rdf:type owl:Class ;
+          rdfs:subClassOf :Audiovisual_equipment .
+
+
+###  http://iasted#Conference_Hiker
+:Conference_Hiker rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :go_through ;
+                                        owl:someValuesFrom :Full_day_tour
+                                      ] ;
+                  rdfs:subClassOf :Delegate .
+
+
+###  http://iasted#Conference_activity
+:Conference_activity rdf:type owl:Class ;
+                     rdfs:subClassOf :Activity ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_held_in ;
+                                       owl:someValuesFrom :Conference_days
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_held_in ;
+                                       owl:someValuesFrom :Conference_state
+                                     ] .
+
+
+###  http://iasted#Conference_airport
+:Conference_airport rdf:type owl:Class ;
+                    rdfs:subClassOf :Building ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_situated_in ;
+                                      owl:someValuesFrom :Conference_city
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_situated_in ;
+                                      owl:someValuesFrom :Conference_state
+                                    ] .
+
+
+###  http://iasted#Conference_building
+:Conference_building rdf:type owl:Class ;
+                     rdfs:subClassOf :Building ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_occupied_by ;
+                                       owl:someValuesFrom :Delegate
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_situated_in ;
+                                       owl:someValuesFrom :Conference_city
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_situated_in ;
+                                       owl:someValuesFrom :Conference_state
+                                     ] .
+
+
+###  http://iasted#Conference_city
+:Conference_city rdf:type owl:Class ;
+                 rdfs:subClassOf :City ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_visited_by ;
+                                   owl:someValuesFrom :Delegate
+                                 ] .
+
+
+###  http://iasted#Conference_days
+:Conference_days rdf:type owl:Class ;
+                 rdfs:subClassOf :Time ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_designed_for ;
+                                   owl:someValuesFrom :Delegate
+                                 ] .
+
+
+###  http://iasted#Conference_hall
+:Conference_hall rdf:type owl:Class ;
+                 rdfs:subClassOf :Place ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_situated_in ;
+                                   owl:someValuesFrom :Conference_building
+                                 ] .
+
+
+###  http://iasted#Conference_hotel
+:Conference_hotel rdf:type owl:Class ;
+                  rdfs:subClassOf :Building ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_designed_for ;
+                                    owl:someValuesFrom :Hotel_presenter
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_situated_in ;
+                                    owl:someValuesFrom :Conference_city
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_situated_in ;
+                                    owl:someValuesFrom :Conference_state
+                                  ] .
+
+
+###  http://iasted#Conference_restaurant
+:Conference_restaurant rdf:type owl:Class ;
+                       rdfs:subClassOf :Building ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_occupied_by ;
+                                         owl:someValuesFrom :Delegate
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_situated_in ;
+                                         owl:someValuesFrom :Conference_city
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_situated_in ;
+                                         owl:someValuesFrom :Conference_state
+                                       ] .
+
+
+###  http://iasted#Conference_state
+:Conference_state rdf:type owl:Class ;
+                  rdfs:subClassOf :State ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_visited_by ;
+                                    owl:someValuesFrom :Delegate
+                                  ] .
+
+
+###  http://iasted#Credit_card
+:Credit_card rdf:type owl:Class ;
+             rdfs:subClassOf :Card ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_designed_for ;
+                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :Fee
+                                                                  :Sponzorship
+                                                                  :Tax
+                                                                )
+                                                  ]
+                             ] .
+
+
+###  http://iasted#Currency
+:Currency rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Deadline
+:Deadline rdf:type owl:Class ;
+          rdfs:subClassOf :Time ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :is_designed_for ;
+                            owl:someValuesFrom :Delegate
+                          ] .
+
+
+###  http://iasted#Deadline_for_notification_of_acceptance
+:Deadline_for_notification_of_acceptance rdf:type owl:Class ;
+                                         rdfs:subClassOf :Deadline .
+
+
+###  http://iasted#Deadline_hotel_reservation
+:Deadline_hotel_reservation rdf:type owl:Class ;
+                            rdfs:subClassOf :Deadline .
+
+
+###  http://iasted#Delegate
+:Delegate rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :go_through ;
+                                                       owl:someValuesFrom :Registration
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_present_in ;
+                                                       owl:someValuesFrom :Conference_building
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :is_present_in ;
+                                                       owl:someValuesFrom :Conference_days
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Item ,
+                          :Person ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :need ;
+                            owl:someValuesFrom :Viza
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :obtain ;
+                            owl:someValuesFrom :Invitation_letter
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :occupy ;
+                            owl:someValuesFrom :Presenter_city
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :occupy ;
+                            owl:someValuesFrom :Presenter_house
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :occupy ;
+                            owl:someValuesFrom :Presenter_state
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :pay ;
+                            owl:someValuesFrom :Registration_fee
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :send ;
+                            owl:someValuesFrom :Registration_form
+                          ] .
+
+
+###  http://iasted#Departure
+:Departure rdf:type owl:Class ;
+           rdfs:subClassOf :Activity_after_conference .
+
+
+###  http://iasted#Departure_tax
+:Departure_tax rdf:type owl:Class ;
+               rdfs:subClassOf :Tax ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :is_designed_for ;
+                                 owl:someValuesFrom :Departure
+                               ] .
+
+
+###  http://iasted#Dinner_banquet
+:Dinner_banquet rdf:type owl:Class ;
+                rdfs:subClassOf :Social_program ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :is_designed_for ;
+                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                       owl:complementOf :One_day_presenter
+                                                     ]
+                                ] .
+
+
+###  http://iasted#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf :Item .
+
+
+###  http://iasted#Double_hotel_room
+:Double_hotel_room rdf:type owl:Class ;
+                   rdfs:subClassOf :Hotel_room .
+
+
+###  http://iasted#Fee
+:Fee rdf:type owl:Class ;
+     rdfs:subClassOf :Money ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_paid_with ;
+                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                            owl:unionOf ( :Credit_card
+                                                          :Payment_document
+                                                        )
+                                          ]
+                     ] .
+
+
+###  http://iasted#Fee_for_extra_trip
+:Fee_for_extra_trip rdf:type owl:Class ;
+                    rdfs:subClassOf :Fee ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_paid_by ;
+                                      owl:someValuesFrom :Conference_Hiker
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_paid_for ;
+                                      owl:someValuesFrom :Full_day_tour
+                                    ] .
+
+
+###  http://iasted#Final_manuscript
+:Final_manuscript rdf:type owl:Class ;
+                  rdfs:subClassOf :Submission ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :go_through ;
+                                    owl:someValuesFrom :Accepting_manuscript
+                                  ] .
+
+
+###  http://iasted#Form
+:Form rdf:type owl:Class ;
+      rdfs:subClassOf :Document ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :is_given_to ;
+                        owl:someValuesFrom :Delegate
+                      ] .
+
+
+###  http://iasted#Full_day_tour
+:Full_day_tour rdf:type owl:Class ;
+               rdfs:subClassOf :Activity_after_conference ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :is_designed_for ;
+                                 owl:someValuesFrom :Delegate
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :is_held_in ;
+                                 owl:someValuesFrom :Trip_city
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :is_held_in ;
+                                 owl:someValuesFrom :Trip_day
+                               ] .
+
+
+###  http://iasted#Hotel_fee
+:Hotel_fee rdf:type owl:Class ;
+           rdfs:subClassOf :Fee ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :is_paid_by ;
+                             owl:someValuesFrom :Hotel_presenter
+                           ] .
+
+
+###  http://iasted#Hotel_presenter
+:Hotel_presenter rdf:type owl:Class ;
+                 rdfs:subClassOf :Delegate ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :occupy ;
+                                                          owl:someValuesFrom :Conference_hotel
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :pay ;
+                                                          owl:someValuesFrom :Hotel_fee
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://iasted#Hotel_registration_form
+:Hotel_registration_form rdf:type owl:Class ;
+                         rdfs:subClassOf :Form ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :is_sent_before ;
+                                           owl:someValuesFrom :Deadline_hotel_reservation
+                                         ] .
+
+
+###  http://iasted#Hotel_room
+:Hotel_room rdf:type owl:Class ;
+            rdfs:subClassOf :Place ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :is_designed_for ;
+                              owl:someValuesFrom :Hotel_presenter
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :is_situated_in ;
+                              owl:someValuesFrom :Conference_hotel
+                            ] .
+
+
+###  http://iasted#IASTED_member
+:IASTED_member rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :pay ;
+                                     owl:someValuesFrom :Memeber_registration_fee
+                                   ] ;
+               rdfs:subClassOf :Delegate .
+
+
+###  http://iasted#IASTED_non_member
+:IASTED_non_member rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :pay ;
+                                         owl:someValuesFrom :Nonmember_registration_fee
+                                       ] ;
+                   rdfs:subClassOf :Delegate .
+
+
+###  http://iasted#Initial_manuscipt
+:Initial_manuscipt rdf:type owl:Class ;
+                   rdfs:subClassOf :Submission ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :go_through ;
+                                     owl:someValuesFrom :Refusing_manuscript
+                                   ] .
+
+
+###  http://iasted#Introduction
+:Introduction rdf:type owl:Class ;
+              rdfs:subClassOf :Conference_activity .
+
+
+###  http://iasted#Introduction_of_speaker
+:Introduction_of_speaker rdf:type owl:Class ;
+                         rdfs:subClassOf :Introduction .
+
+
+###  http://iasted#Invitation_letter
+:Invitation_letter rdf:type owl:Class ;
+                   rdfs:subClassOf :Document ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_designed_for ;
+                                     owl:someValuesFrom :Delegate
+                                   ] .
+
+
+###  http://iasted#Item
+:Item rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#LCD_projector
+:LCD_projector rdf:type owl:Class ;
+               rdfs:subClassOf :Audiovisual_equipment .
+
+
+###  http://iasted#Lecture
+:Lecture rdf:type owl:Class ;
+         rdfs:subClassOf :Conference_activity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_designed_for ;
+                           owl:someValuesFrom :Listener
+                         ] .
+
+
+###  http://iasted#Lecturer
+:Lecturer rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :give ;
+                                owl:someValuesFrom :Session
+                              ] ;
+          rdfs:subClassOf :Author ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :speak_in ;
+                            owl:someValuesFrom :Session_room
+                          ] .
+
+
+###  http://iasted#Listener
+:Listener rdf:type owl:Class ;
+          rdfs:subClassOf :Delegate ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :is_present_in ;
+                            owl:someValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Conference_hall
+                                                               :Session_room
+                                                             )
+                                               ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :sign ;
+                            owl:someValuesFrom :Record_of_attendance
+                          ] .
+
+
+###  http://iasted#Mailing_list
+:Mailing_list rdf:type owl:Class ;
+              rdfs:subClassOf :Document ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_designed_for ;
+                                owl:someValuesFrom :Delegate
+                              ] .
+
+
+###  http://iasted#Main_office
+:Main_office rdf:type owl:Class ;
+             rdfs:subClassOf :Place .
+
+
+###  http://iasted#Memeber_registration_fee
+:Memeber_registration_fee rdf:type owl:Class ;
+                          rdfs:subClassOf :Registration_fee ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :is_designed_for ;
+                                            owl:someValuesFrom :IASTED_member
+                                          ] .
+
+
+###  http://iasted#Modelling
+:Modelling rdf:type owl:Class ;
+           rdfs:subClassOf :Research .
+
+
+###  http://iasted#Money
+:Money rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Non_speaker
+:Non_speaker rdf:type owl:Class ;
+             rdfs:subClassOf :Delegate ;
+             owl:disjointWith :Speaker .
+
+
+###  http://iasted#Nonauthor_registration_fee
+:Nonauthor_registration_fee rdf:type owl:Class ;
+                            rdfs:subClassOf :Registration_fee ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :is_designed_for ;
+                                              owl:someValuesFrom :Non_speaker
+                                            ] .
+
+
+###  http://iasted#Nonmember_registration_fee
+:Nonmember_registration_fee rdf:type owl:Class ;
+                            rdfs:subClassOf :Registration_fee ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :is_designed_for ;
+                                              owl:someValuesFrom :IASTED_non_member
+                                            ] .
+
+
+###  http://iasted#One_conference_day
+:One_conference_day rdf:type owl:Class ;
+                    rdfs:subClassOf :Conference_days .
+
+
+###  http://iasted#One_day_presenter
+:One_day_presenter rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_present ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                   rdfs:subClassOf :Delegate .
+
+
+###  http://iasted#Overhead_projector
+:Overhead_projector rdf:type owl:Class ;
+                    rdfs:subClassOf :Audiovisual_equipment .
+
+
+###  http://iasted#Payment_document
+:Payment_document rdf:type owl:Class ;
+                  rdfs:subClassOf :Document ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_designed_for ;
+                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Fee
+                                                                       :Tax
+                                                                     )
+                                                       ]
+                                  ] .
+
+
+###  http://iasted#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :is_situated_in ;
+                         owl:someValuesFrom :Conference_city
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :is_situated_in ;
+                         owl:someValuesFrom :Conference_state
+                       ] .
+
+
+###  http://iasted#Plenary_lecture
+:Plenary_lecture rdf:type owl:Class ;
+                 owl:equivalentClass :Tutorial ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_given_by ;
+                                       owl:someValuesFrom :Plenary_lecture_speaker
+                                     ] ;
+                 rdfs:subClassOf :Lecture .
+
+
+###  http://iasted#Plenary_lecture_speaker
+:Plenary_lecture_speaker rdf:type owl:Class ;
+                         owl:equivalentClass :Tutorial_speaker ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :give ;
+                                               owl:someValuesFrom :Tutorial
+                                             ] ;
+                         rdfs:subClassOf :Author ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :speak_in ;
+                                           owl:someValuesFrom :Conference_hall
+                                         ] .
+
+
+###  http://iasted#PowerPoint_presentation
+:PowerPoint_presentation rdf:type owl:Class ;
+                         rdfs:subClassOf :Presentation .
+
+
+###  http://iasted#Presentation
+:Presentation rdf:type owl:Class ;
+              rdfs:subClassOf :Conference_activity .
+
+
+###  http://iasted#Presenter_city
+:Presenter_city rdf:type owl:Class ;
+                rdfs:subClassOf :City ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :is_occupied_by ;
+                                  owl:someValuesFrom :Delegate
+                                ] .
+
+
+###  http://iasted#Presenter_house
+:Presenter_house rdf:type owl:Class ;
+                 rdfs:subClassOf :Building ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_occupied_by ;
+                                   owl:someValuesFrom :Delegate
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_situated_in ;
+                                   owl:someValuesFrom :Presenter_city
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_situated_in ;
+                                   owl:someValuesFrom :Presenter_state
+                                 ] .
+
+
+###  http://iasted#Presenter_state
+:Presenter_state rdf:type owl:Class ;
+                 rdfs:subClassOf :State ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_occupied_by ;
+                                   owl:someValuesFrom :Delegate
+                                 ] .
+
+
+###  http://iasted#Presenter_university
+:Presenter_university rdf:type owl:Class ;
+                      rdfs:subClassOf :Building ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :is_situated_in ;
+                                        owl:someValuesFrom :Presenter_city
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :is_situated_in ;
+                                        owl:someValuesFrom :Presenter_state
+                                      ] .
+
+
+###  http://iasted#Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf :Item ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_made_from ;
+                               owl:someValuesFrom :Final_manuscript
+                             ] .
+
+
+###  http://iasted#Receiving_manuscript
+:Receiving_manuscript rdf:type owl:Class ;
+                      rdfs:subClassOf :Activity_before_conference .
+
+
+###  http://iasted#Record_of_attendance
+:Record_of_attendance rdf:type owl:Class ;
+                      rdfs:subClassOf :Document ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :is_signed_by ;
+                                        owl:someValuesFrom :Listener
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :is_situated_in ;
+                                        owl:someValuesFrom :Session_room
+                                      ] .
+
+
+###  http://iasted#Refusing_manuscript
+:Refusing_manuscript rdf:type owl:Class ;
+                     rdfs:subClassOf :Activity_before_conference .
+
+
+###  http://iasted#Registation_deadline
+:Registation_deadline rdf:type owl:Class ;
+                      rdfs:subClassOf :Deadline .
+
+
+###  http://iasted#Registration
+:Registration rdf:type owl:Class ;
+              rdfs:subClassOf :Conference_activity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_designed_for ;
+                                owl:someValuesFrom :Delegate
+                              ] .
+
+
+###  http://iasted#Registration_fee
+:Registration_fee rdf:type owl:Class ;
+                  rdfs:subClassOf :Fee ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_paid_by ;
+                                    owl:someValuesFrom :Delegate
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_paid_for ;
+                                    owl:someValuesFrom :Conference_activity
+                                  ] .
+
+
+###  http://iasted#Registration_form
+:Registration_form rdf:type owl:Class ;
+                   rdfs:subClassOf :Form ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_sent_before ;
+                                     owl:someValuesFrom :Registation_deadline
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_sent_by ;
+                                     owl:someValuesFrom :Delegate
+                                   ] .
+
+
+###  http://iasted#Renting
+:Renting rdf:type owl:Class ;
+         rdfs:subClassOf :Activity_before_conference ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_connected_with ;
+                           owl:someValuesFrom :Car
+                         ] .
+
+
+###  http://iasted#Research
+:Research rdf:type owl:Class ;
+          rdfs:subClassOf :Activity_before_conference .
+
+
+###  http://iasted#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :is_writen_by ;
+                          owl:someValuesFrom :Reviewer
+                        ] .
+
+
+###  http://iasted#Reviewer
+:Reviewer rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :give ;
+                                owl:someValuesFrom :Review
+                              ] ;
+          rdfs:subClassOf :Speaker .
+
+
+###  http://iasted#Session
+:Session rdf:type owl:Class ;
+         rdfs:subClassOf :Lecture ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_given_by ;
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Author
+                                                              :Session_chair
+                                                            )
+                                              ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_held_in ;
+                           owl:someValuesFrom :Session_room
+                         ] .
+
+
+###  http://iasted#Session_chair
+:Session_chair rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :go_through ;
+                                     owl:someValuesFrom :Introduction_of_speaker
+                                   ] ;
+               rdfs:subClassOf :Delegate ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :obtain ;
+                                 owl:someValuesFrom :Brief_introduction_for_Session_chair
+                               ] .
+
+
+###  http://iasted#Session_room
+:Session_room rdf:type owl:Class ;
+              rdfs:subClassOf :Place ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_equipped_by ;
+                                owl:someValuesFrom :Audiovisual_equipment
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_situated_in ;
+                                owl:someValuesFrom :Conference_building
+                              ] .
+
+
+###  http://iasted#Shuttle_bus
+:Shuttle_bus rdf:type owl:Class ;
+             rdfs:subClassOf :Transport_vehicle .
+
+
+###  http://iasted#Simulating
+:Simulating rdf:type owl:Class ;
+            rdfs:subClassOf :Research .
+
+
+###  http://iasted#Single_hotel_room
+:Single_hotel_room rdf:type owl:Class ;
+                   rdfs:subClassOf :Hotel_room .
+
+
+###  http://iasted#Social_program
+:Social_program rdf:type owl:Class ;
+                rdfs:subClassOf :Conference_activity ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :is_designed_for ;
+                                  owl:someValuesFrom :Delegate
+                                ] .
+
+
+###  http://iasted#Speaker
+:Speaker rdf:type owl:Class ;
+         rdfs:subClassOf :Delegate ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :give ;
+                           owl:someValuesFrom :Lecture
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :write ;
+                           owl:someValuesFrom :Final_manuscript
+                         ] .
+
+
+###  http://iasted#Speaker_lecture
+:Speaker_lecture rdf:type owl:Class ;
+                 rdfs:subClassOf :Session .
+
+
+###  http://iasted#Sponsor
+:Sponsor rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :give ;
+                               owl:someValuesFrom :Sponzorship
+                             ] ;
+         rdfs:subClassOf :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :occupy ;
+                           owl:someValuesFrom :Sponsor_city
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :occupy ;
+                           owl:someValuesFrom :Sponsor_company_house
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :occupy ;
+                           owl:someValuesFrom :Sponsor_state
+                         ] .
+
+
+###  http://iasted#Sponsor_city
+:Sponsor_city rdf:type owl:Class ;
+              rdfs:subClassOf :City ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_occupied_by ;
+                                owl:someValuesFrom :Sponsor
+                              ] .
+
+
+###  http://iasted#Sponsor_company_house
+:Sponsor_company_house rdf:type owl:Class ;
+                       rdfs:subClassOf :Building ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_occupied_by ;
+                                         owl:someValuesFrom :Sponsor
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_situated_in ;
+                                         owl:someValuesFrom :Sponsor_city
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :is_situated_in ;
+                                         owl:someValuesFrom :Sponsor_state
+                                       ] .
+
+
+###  http://iasted#Sponsor_state
+:Sponsor_state rdf:type owl:Class ;
+               rdfs:subClassOf :State .
+
+
+###  http://iasted#Sponzorship
+:Sponzorship rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_paid_by ;
+                                   owl:someValuesFrom :Sponsor
+                                 ] ;
+             rdfs:subClassOf :Money .
+
+
+###  http://iasted#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Student_lecturer
+:Student_lecturer rdf:type owl:Class ;
+                  rdfs:subClassOf :Lecturer .
+
+
+###  http://iasted#Student_non_speaker
+:Student_non_speaker rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :pay ;
+                                           owl:someValuesFrom :Student_registration_fee
+                                         ] ;
+                     rdfs:subClassOf :Non_speaker .
+
+
+###  http://iasted#Student_registration_fee
+:Student_registration_fee rdf:type owl:Class ;
+                          rdfs:subClassOf :Registration_fee ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :is_designed_for ;
+                                            owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                 owl:unionOf ( :Student_lecturer
+                                                                               :Student_non_speaker
+                                                                             )
+                                                               ]
+                                          ] .
+
+
+###  http://iasted#Submission
+:Submission rdf:type owl:Class ;
+            rdfs:subClassOf :Document ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :is_writen_by ;
+                              owl:someValuesFrom :Speaker
+                            ] .
+
+
+###  http://iasted#Submissions_deadline
+:Submissions_deadline rdf:type owl:Class ;
+                      rdfs:subClassOf :Deadline .
+
+
+###  http://iasted#Tax
+:Tax rdf:type owl:Class ;
+     rdfs:subClassOf :Money .
+
+
+###  http://iasted#Taxi
+:Taxi rdf:type owl:Class ;
+      rdfs:subClassOf :Transport_vehicle .
+
+
+###  http://iasted#Technic_activity
+:Technic_activity rdf:type owl:Class ;
+                  rdfs:subClassOf :Conference_activity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_given_by ;
+                                    owl:someValuesFrom :Technical_commitee
+                                  ] .
+
+
+###  http://iasted#Technical_commitee
+:Technical_commitee rdf:type owl:Class ;
+                    rdfs:subClassOf :Delegate ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :go_through ;
+                                      owl:someValuesFrom :Technic_activity
+                                    ] .
+
+
+###  http://iasted#Time
+:Time rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Time_zone
+:Time_zone rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing .
+
+
+###  http://iasted#Tip
+:Tip rdf:type owl:Class ;
+     rdfs:subClassOf :Money ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_paid_in ;
+                       owl:someValuesFrom :Conference_restaurant
+                     ] .
+
+
+###  http://iasted#Transparency
+:Transparency rdf:type owl:Class ;
+              rdfs:subClassOf :Document ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_prepared_by ;
+                                owl:someValuesFrom :Speaker
+                              ] .
+
+
+###  http://iasted#Transport_vehicle
+:Transport_vehicle rdf:type owl:Class ;
+                   rdfs:subClassOf :Item ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_used_by ;
+                                     owl:someValuesFrom :Delegate
+                                   ] .
+
+
+###  http://iasted#Trip_city
+:Trip_city rdf:type owl:Class ;
+           rdfs:subClassOf :City ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :is_visited_by ;
+                             owl:someValuesFrom :Conference_Hiker
+                           ] .
+
+
+###  http://iasted#Trip_day
+:Trip_day rdf:type owl:Class ;
+          rdfs:subClassOf :Time ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :is_designed_for ;
+                            owl:someValuesFrom :Delegate
+                          ] .
+
+
+###  http://iasted#Tutorial
+:Tutorial rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_given_by ;
+                                owl:someValuesFrom :Tutorial_speaker
+                              ] ;
+          rdfs:subClassOf :Lecture .
+
+
+###  http://iasted#Tutorial_speaker
+:Tutorial_speaker rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :give ;
+                                        owl:someValuesFrom :Plenary_lecture
+                                      ] ;
+                  rdfs:subClassOf :Author ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :speak_in ;
+                                    owl:someValuesFrom :Conference_hall
+                                  ] .
+
+
+###  http://iasted#Value_added_tax
+:Value_added_tax rdf:type owl:Class ;
+                 rdfs:subClassOf :Tax .
+
+
+###  http://iasted#Van
+:Van rdf:type owl:Class ;
+     rdfs:subClassOf :Transport_vehicle .
+
+
+###  http://iasted#Video_cassette_player
+:Video_cassette_player rdf:type owl:Class ;
+                       rdfs:subClassOf :Audiovisual_equipment .
+
+
+###  http://iasted#Video_presentation
+:Video_presentation rdf:type owl:Class ;
+                    rdfs:subClassOf :Presentation .
+
+
+###  http://iasted#Viza
+:Viza rdf:type owl:Class ;
+      rdfs:subClassOf :Document ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :is_needed_for ;
+                        owl:someValuesFrom :Delegate
+                      ] .
+
+
+###  http://iasted#Welcome_address
+:Welcome_address rdf:type owl:Class ;
+                 rdfs:subClassOf :Conference_activity .
+
+
+###  http://iasted#Worker_lecturer
+:Worker_lecturer rdf:type owl:Class ;
+                 rdfs:subClassOf :Lecturer .
+
+
+###  http://iasted#Worker_non_speaker
+:Worker_non_speaker rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :pay ;
+                                          owl:someValuesFrom :Nonauthor_registration_fee
+                                        ] ;
+                    rdfs:subClassOf :Non_speaker .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://iasted#Cancun
+:Cancun rdf:type owl:NamedIndividual ,
+                 :City ,
+                 :Conference_city ,
+                 owl:Thing .
+
+
+###  http://iasted#Chichen_Itza
+:Chichen_Itza rdf:type owl:NamedIndividual ,
+                       :City ,
+                       :Trip_city ,
+                       owl:Thing .
+
+
+###  http://iasted#Mexico
+:Mexico rdf:type owl:NamedIndividual ,
+                 :Conference_state ,
+                 :State ,
+                 owl:Thing .
+
+
+###  http://iasted#peso
+:peso rdf:type owl:NamedIndividual ,
+               :Currency ,
+               owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

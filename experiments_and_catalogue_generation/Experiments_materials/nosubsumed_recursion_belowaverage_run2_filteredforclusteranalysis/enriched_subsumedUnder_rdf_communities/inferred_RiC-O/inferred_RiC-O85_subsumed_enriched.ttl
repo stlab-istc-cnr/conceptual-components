@@ -1,0 +1,25 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:ExtentType ns2:subsumedUnder ns1:Type ;
+    ns1:isExtentTypeOf ns1:Extent .
+
+ns1:Type ns2:subsumedUnder ns1:Concept .
+
+ns1:UnitOfMeasurement ns2:subsumedUnder ns1:Concept ;
+    ns1:isUnitOfMeasurementOf ns1:Extent .
+
+ns1:Concept ns2:subsumedUnder ns1:Thing .
+
+ns1:Extent ns2:subsumedUnder ns1:Thing ;
+    ns1:hasExtentType ns1:ExtentType ;
+    ns1:hasUnitOfMeasurement ns1:UnitOfMeasurement ;
+    ns1:quantity xsd:decimal ;
+    ns1:unitOfMeasurement rdfs:Literal .
+
+ns1:Thing ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

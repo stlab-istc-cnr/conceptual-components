@@ -1,0 +1,12 @@
+digraph "Community 348" {
+	Legibility
+	Legibility -> ConservationStatus [label=isLegibilityOf]
+	ConservationStatus -> Legibility [label=hasLegibility]
+	ConservationStatus
+	CulturalProperty -> ConservationStatus [label=hasConservationStatus]
+	ConservationStatus -> ConservationStatusType [label=hasConservationStatusType]
+	ConservationStatus -> CulturalEntity [label=isConservationStatusOf]
+	ConservationStatusType -> ConservationStatus [label=isConservationStatusTypeOf]
+	CulturalEntity -> ConservationStatus [label=hasConservationStatus]
+	ConservationStatusType
+}

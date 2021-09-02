@@ -1,0 +1,18 @@
+@prefix ns1: <http://www.arpenteur.org/ontology/Arpenteur.owl#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Intersection ns1:hasInterval ns1:Interval ;
+    ns2:subsumedUnder ns1:PlaneObject .
+
+ns1:Interval ns1:hasIntervalEndPoint <http://www.opengis.net/ont/sf#Point> ;
+    ns1:hasIntervalStartPoint <http://www.opengis.net/ont/sf#Point> ;
+    ns2:subsumedUnder ns1:PlaneObject .
+
+ns1:PlaneObject ns2:subsumedUnder ns1:PlaneProjection .
+
+<http://www.opengis.net/ont/sf#Point> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

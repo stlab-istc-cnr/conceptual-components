@@ -1,0 +1,33 @@
+@prefix ns1: <https://w3id.org/arco/ontology/location/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/Site> ns1:hasSiteType ns1:SiteType ;
+    ns1:isSiteIn ns1:TimeIndexedTypedLocation ;
+    ns1:siteIdentifier rdfs:Literal ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Location> .
+
+<https://w3id.org/arco/ontology/core/Type> ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Concept>,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+ns1:SiteDefinition ns1:isSiteDefinitionOf ns1:SiteType ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Description> .
+
+ns1:SiteSpecification ns1:isSiteSpecificationOf ns1:SiteType ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Description> .
+
+ns1:TimeIndexedTypedLocation ns2:subsumedUnder <https://w3id.org/arco/ontology/core/TimeIndexedSituation> .
+
+<https://w3id.org/italia/onto/l0/Location> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/italia/onto/l0/Description> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity>,
+        <https://w3id.org/italia/onto/l0/Object> .
+
+ns1:SiteType ns1:hasSiteDefinition ns1:SiteDefinition ;
+    ns1:hasSiteSpecification ns1:SiteSpecification ;
+    ns1:isSiteTypeOf <http://dati.beniculturali.it/cis/Site> ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Type> .
+

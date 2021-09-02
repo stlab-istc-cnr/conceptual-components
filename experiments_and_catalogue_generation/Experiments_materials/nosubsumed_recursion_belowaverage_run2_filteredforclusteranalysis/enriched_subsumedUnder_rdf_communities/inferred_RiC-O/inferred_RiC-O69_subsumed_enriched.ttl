@@ -1,0 +1,20 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:DerivationRelation ns2:subsumedUnder ns1:InstantiationToInstantiationRelation,
+        ns1:TemporalRelation .
+
+ns1:Thing ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Instantiation ns2:subsumedUnder ns1:Thing ;
+    ns1:instantiationIsSourceOfMigrationRelation ns1:MigrationRelation ;
+    ns1:instantiationIsTargetOfMigrationRelation ns1:MigrationRelation .
+
+ns1:MigrationRelation ns2:subsumedUnder ns1:DerivationRelation ;
+    ns1:migrationRelationHasSource ns1:Instantiation ;
+    ns1:migrationRelationHasTarget ns1:Instantiation .
+

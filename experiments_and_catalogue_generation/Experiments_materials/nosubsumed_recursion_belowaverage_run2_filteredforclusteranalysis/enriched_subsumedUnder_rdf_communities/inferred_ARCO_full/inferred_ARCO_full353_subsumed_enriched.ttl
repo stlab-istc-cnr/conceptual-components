@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/arco/ontology/core/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalFonds> ns1:hasComponent <https://w3id.org/arco/ontology/context-description/ArchivalSeries> ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalSubseries> ns1:isComponentOf <https://w3id.org/arco/ontology/context-description/ArchivalSeries> ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalSeries> ns1:hasComponent <https://w3id.org/arco/ontology/context-description/ArchivalSubseries> ;
+    ns1:isComponentOf <https://w3id.org/arco/ontology/context-description/ArchivalFonds> ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> .
+
+<https://w3id.org/arco/ontology/context-description/ArchivalRecordSet> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Collection> .
+

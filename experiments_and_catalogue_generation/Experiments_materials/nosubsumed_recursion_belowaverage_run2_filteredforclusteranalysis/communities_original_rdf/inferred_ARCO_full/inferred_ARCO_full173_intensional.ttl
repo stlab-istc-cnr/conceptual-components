@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/arco/ontology/location/> .
+@prefix ns2: <https://w3id.org/italia/onto/TI/> .
+@prefix ns3: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns1:hasTimeIndexedTypedLocation ns1:TimeIndexedTypedLocation .
+
+<https://w3id.org/italia/onto/CLV/Feature> ns1:isLocationIn ns1:TimeIndexedTypedLocation .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns3:hasLocationSubject ns1:TimeIndexedTypedLocation .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:hasTimeIndexedTypedLocation ns1:TimeIndexedTypedLocation .
+
+ns1:TimeIndexedTypedLocation ns3:hasOrientation ns3:Orientation ;
+    ns3:isLocationSubjectOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:atSite <http://dati.beniculturali.it/cis/Site> ;
+    ns1:isTimeIndexedTypedLocationOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:locationDetails rdfs:Literal ;
+    ns2:atTime ns2:TimeInterval .
+

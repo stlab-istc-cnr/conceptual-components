@@ -1,0 +1,24 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/italia/onto/l0/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:ObservationSurvey ns1:isRelatedToResearch ns1:Research ;
+    ns3:subsumedUnder ns1:Survey .
+
+ns1:Survey ns3:subsumedUnder ns2:Activity .
+
+ns2:Agent ns1:isResearchScientificDirectorOf ns1:Research ;
+    ns3:subsumedUnder ns2:Entity .
+
+ns2:Entity ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Research ns1:hasResearchScientificDirector ns2:Agent ;
+    ns3:subsumedUnder ns2:Activity ;
+    ns2:name rdfs:Literal .
+
+ns2:Activity ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

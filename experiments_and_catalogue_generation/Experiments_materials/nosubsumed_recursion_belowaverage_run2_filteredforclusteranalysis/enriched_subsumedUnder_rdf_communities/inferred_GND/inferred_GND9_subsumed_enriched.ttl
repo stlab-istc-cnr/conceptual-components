@@ -1,0 +1,23 @@
+@prefix ns1: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:DifferentiatedPerson ns1:gender <https://d-nb.info/standards/vocab/gnd/gender#GenderValue> ;
+    ns2:subsumedUnder <http://rdaregistry.info/Elements/c/C10004>,
+        <http://xmlns.com/foaf/0.1/Person>,
+        ns1:Person .
+
+<http://rdaregistry.info/Elements/c/C10004> ns2:extensionallyEquivalent <http://xmlns.com/foaf/0.1/Person>,
+        ns1:Person ;
+    ns2:subsumedUnder ns1:AuthorityResource .
+
+<https://d-nb.info/standards/vocab/gnd/gender#GenderValue> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://xmlns.com/foaf/0.1/Person> ns2:extensionallyEquivalent ns1:Person ;
+    ns2:subsumedUnder ns1:AuthorityResource .
+
+ns1:Person ns2:subsumedUnder ns1:AuthorityResource .
+

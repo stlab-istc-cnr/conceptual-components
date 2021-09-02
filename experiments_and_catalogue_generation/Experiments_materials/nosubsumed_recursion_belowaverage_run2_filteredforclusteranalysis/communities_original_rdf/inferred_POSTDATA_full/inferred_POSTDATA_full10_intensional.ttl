@@ -1,0 +1,20 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-dates#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Person ns1:birthDate ns2:DateEntity ;
+    ns1:deathDate ns2:DateEntity ;
+    ns1:floruit ns2:DateEntity .
+
+ns1:Place ns1:date ns2:DateEntity .
+
+ns1:PoeticWork ns1:date ns2:DateEntity .
+
+ns1:Redaction ns1:date ns2:DateEntity .
+
+ns2:DateEntity ns2:dateNote xsd:string ;
+    ns2:isExpressedAs ns2:DateExpression .
+

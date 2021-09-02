@@ -1,0 +1,14 @@
+digraph "Community 83" {
+	Rule
+	Agent -> Rule [label=isOrWasResponsibleForEnforcing]
+	Thing -> Rule [label=isOrWasRegulatedBy]
+	RecordResource -> Rule [label=expressesOrExpressed]
+	Agent -> Rule [label=isResponsibleForIssuing]
+	Rule -> Agent [label=isOrWasEnforcedBy]
+	Rule -> RecordResource [label=isOrWasExpressedBy]
+	Rule -> Thing [label=isRuleAssociatedWith]
+	Rule -> Agent [label=issuedBy]
+	Rule -> Thing [label=regulatesOrRegulated]
+	Rule -> RuleRelation [label=ruleIsSourceOfRuleRelation]
+	Thing -> Rule [label=isAssociatedWithRule]
+}

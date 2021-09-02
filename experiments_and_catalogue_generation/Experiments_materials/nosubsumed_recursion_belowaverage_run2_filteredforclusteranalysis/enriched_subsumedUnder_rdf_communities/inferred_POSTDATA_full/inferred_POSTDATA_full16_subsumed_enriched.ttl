@@ -1,0 +1,31 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#> .
+@prefix ns3: <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#> .
+@prefix ns4: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Role ns4:subsumedUnder ns3:Role .
+
+<http://www.europeana.eu/schemas/edm/Agent> ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> ns4:subsumedUnder ns3:Object .
+
+ns1:Agent ns1:characterIn ns1:Redaction ;
+    ns1:isMentionedIn ns1:Redaction ;
+    ns3:hasRole ns1:Role ;
+    ns4:subsumedUnder <http://www.europeana.eu/schemas/edm/Agent>,
+        <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> .
+
+ns1:Redaction ns1:hasCharacter ns1:Agent ;
+    ns4:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        ns3:Object .
+
+ns3:Object ns4:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns2:containsMentionToAgent ns1:Agent .
+

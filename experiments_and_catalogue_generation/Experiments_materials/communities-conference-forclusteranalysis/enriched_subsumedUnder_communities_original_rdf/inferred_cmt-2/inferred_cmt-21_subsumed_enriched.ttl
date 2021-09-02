@@ -1,0 +1,27 @@
+@prefix ns1: <http://cmt#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:User ns2:subsumedUnder ns1:Person .
+
+ns1:Administrator ns1:enableVirtualMeeting ns1:Conference ;
+    ns1:enterConferenceDetails ns1:Conference ;
+    ns1:enterReviewCriteria ns1:Conference ;
+    ns1:finalizePaperAssignment ns1:Conference ;
+    ns1:printHardcopyMailingManifests ns1:Conference ;
+    ns1:runPaperAssignmentTools ns1:Conference ;
+    ns1:startReviewerBidding ns1:Conference ;
+    ns2:subsumedUnder ns1:User .
+
+ns1:Conference ns1:detailsEnteredBy ns1:Administrator ;
+    ns1:hardcopyMailingManifestsPrintedBy ns1:Administrator ;
+    ns1:paperAssignmentFinalizedBy ns1:Administrator ;
+    ns1:paperAssignmentToolsRunBy ns1:Administrator ;
+    ns1:reviewCriteriaEnteredBy ns1:Administrator ;
+    ns1:reviewerBiddingStartedBy ns1:Administrator ;
+    ns1:virtualMeetingEnabledBy ns1:Administrator ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

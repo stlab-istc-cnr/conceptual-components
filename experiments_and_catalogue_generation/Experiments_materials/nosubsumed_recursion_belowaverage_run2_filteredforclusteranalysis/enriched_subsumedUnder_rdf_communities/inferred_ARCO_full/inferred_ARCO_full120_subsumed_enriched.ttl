@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/italia/onto/l0/> .
+@prefix ns2: <https://w3id.org/arco/ontology/cataloguing-campaign/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:CataloguingActivity ns2:isActivityOf ns2:CataloguingOrDigitizationCampaign ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/TI/TimeIndexedEvent> ;
+    ns1:name rdfs:Literal .
+
+ns2:CataloguingOrDigitizationCampaign ns2:hasActivity ns2:CataloguingActivity ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/TI/TimeIndexedEvent> .
+
+<https://w3id.org/italia/onto/TI/TimeIndexedEvent> ns3:subsumedUnder ns1:EventOrSituation .
+

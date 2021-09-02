@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/core/Situation> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<https://w3id.org/italia/onto/l0/Entity> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:CoinIssuance ns1:hasIssuer <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasIssuingState <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasMint <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasMinter <https://w3id.org/italia/onto/l0/Agent> ;
+    ns2:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+<https://w3id.org/italia/onto/l0/Agent> ns1:isIssuerIn ns1:CoinIssuance ;
+    ns1:isIssuingStateIn ns1:CoinIssuance ;
+    ns1:isMintIn ns1:CoinIssuance ;
+    ns1:isMinterIn ns1:CoinIssuance ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

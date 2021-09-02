@@ -1,0 +1,15 @@
+digraph "Community 19" {
+	Agent -> Agent [label=isAgentAssociatedWithAgent]
+	Agent
+	Agent -> Agent [label=isOrWasControllerOf]
+	Agent -> Agent [label=isOrWasSubordinateTo]
+	Thing -> Agent [label=isOrWasUnderAuthorityOf]
+	Agent -> Agent [label=isSuccessorOf]
+	Agent -> Agent [label=hasOrHadController]
+	Agent -> AuthorityRelation [label=agentIsSourceOfAuthorityRelation]
+	Agent -> Thing [label=hasOrHadAuthorityOver]
+	AuthorityRelation -> Agent [label=authorityRelationHasSource]
+	Agent -> Agent [label=hasOrHadSubordinate]
+	Agent -> Agent [label=hasOrHadWorkRelationWith]
+	Agent -> Agent [label=hasSuccessor]
+}

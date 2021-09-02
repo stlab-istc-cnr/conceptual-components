@@ -1,0 +1,26 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:E16_Measurement ns2:subsumedUnder ns1:E13_Attribute_Assignment .
+
+ns1:E70_Thing ns1:P43_has_dimension ns1:E54_Dimension ;
+    ns2:subsumedUnder ns1:E77_Persistent_Item .
+
+ns1:E77_Persistent_Item ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E52_Time-Span ns1:P83_had_at_least_duration ns1:E54_Dimension ;
+    ns1:P84_had_at_most_duration ns1:E54_Dimension ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+
+ns1:E1_CRM_Entity ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:E54_Dimension ns1:P40i_was_observed_in ns1:E16_Measurement ;
+    ns1:P43i_is_dimension_of ns1:E70_Thing ;
+    ns1:P83i_was_minimum_duration_of ns1:E52_Time-Span ;
+    ns1:P84i_was_maximum_duration_of ns1:E52_Time-Span ;
+    ns2:subsumedUnder ns1:E1_CRM_Entity .
+

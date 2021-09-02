@@ -1,0 +1,28 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Person ns1:additionalName xsd:string ;
+    ns1:alternativeName xsd:string ;
+    ns1:biography xsd:string ;
+    ns1:editorOf ns1:Redaction ;
+    ns1:ethnicity xsd:string ;
+    ns1:forename xsd:string ;
+    ns1:genName xsd:string ;
+    ns1:hasDedication ns1:Redaction ;
+    ns1:isFictional xsd:boolean ;
+    ns1:isMentionedIn ns1:Redaction ;
+    ns1:name xsd:string ;
+    ns1:nameLink xsd:string ;
+    ns1:nationality xsd:string ;
+    ns1:positionName xsd:string ;
+    ns1:religiousAffiliation <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:socialStatus <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:sourceNote xsd:string ;
+    ns1:surname xsd:string .
+
+ns1:Redaction ns1:dedicatedTo ns1:Person ;
+    ns1:hasEditor ns1:Person .
+

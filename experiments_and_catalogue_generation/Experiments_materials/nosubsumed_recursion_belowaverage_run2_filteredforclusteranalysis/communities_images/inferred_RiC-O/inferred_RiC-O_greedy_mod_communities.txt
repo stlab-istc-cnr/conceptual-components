@@ -1,0 +1,585 @@
+Community 1 : 
+	Person hasDescendant Person
+	Person
+	Person hasFamilyAssociationWith Person
+	Person hasOrHadCorrespondent Person
+	Person hasOrHadSpouse Person
+	Person hasOrHadStudent Person
+	Person hasOrHadTeacher Person
+	Person hasSibling Person
+	Person isChildOf Person
+	Person knownBy Person
+	Person knows Person
+	Person knowsOf Person
+	Person deathDate Literal
+	Person hasAncestor Person
+	Person hasChild Person
+Community 2 : 
+	ChildRelation childRelationHasTarget Person
+	ChildRelation
+	Person personIsSourceOfChildRelation ChildRelation
+	Person personIsTargetOfChildRelation ChildRelation
+	ChildRelation childRelationHasSource Person
+Community 3 : 
+	DescendanceRelation descendanceRelationHasTarget Person
+	DescendanceRelation
+	Person personIsSourceOfDescendanceRelation DescendanceRelation
+	Person personIsTargetOfDescendanceRelation DescendanceRelation
+	DescendanceRelation descendanceRelationHasSource Person
+Community 4 : 
+	PositionHoldingRelation positionHoldingRelationHasSource Person
+	PositionHoldingRelation
+	Position positionIsTargetOfPositionHoldingRelation PositionHoldingRelation
+	Person personIsSourceOfPositionHoldingRelation PositionHoldingRelation
+	PositionHoldingRelation positionHoldingRelationHasTarget Position
+Community 5 : 
+	Person occupiesOrOccupied Position
+	Position
+	Position existsOrExistedIn Group
+	Position isOrWasOccupiedBy Person
+	Group hasOrHadPosition Position
+Community 6 : 
+	PositionToGroupRelation
+	Group groupIsTargetOfPositionToGroupRelation PositionToGroupRelation
+	PositionToGroupRelation positionToGroupRelationHasSource Position
+	Position positionIsSourceOfPositionToGroupRelation PositionToGroupRelation
+Community 7 : 
+	Group isOrWasSubdivisionOf Group
+	Group
+	Person isOrWasLeaderOf Group
+	Person isOrWasMemberOf Group
+	Group hasOrHadLeader Person
+	PositionToGroupRelation positionToGroupRelationHasTarget Group
+	Group hasOrHadMember Person
+	Group hasOrHadSubdivision Group
+Community 8 : 
+	GroupSubdivisionRelation groupSubdivisionRelationHasSource Group
+	GroupSubdivisionRelation
+	GroupSubdivisionRelation groupSubdivisionRelationHasTarget Group
+	Group groupIsSourceOfGroupSubdivisionRelation GroupSubdivisionRelation
+	Group groupIsTargetOfGroupSubdivisionRelation GroupSubdivisionRelation
+Community 9 : 
+	LeadershipRelation leadershipRelationHasSource Person
+	LeadershipRelation
+	LeadershipRelation leadershipRelationHasTarget Group
+	LeadershipRelation leadershipWithPosition Position
+	Position positionIsContextOfLeadershipRelation LeadershipRelation
+	Person personIsSourceOfLeadershipRelation LeadershipRelation
+	Group groupIsTargetOfLeadershipRelation LeadershipRelation
+Community 10 : 
+	MembershipRelation
+	MembershipRelation membershipRelationHasSource Group
+	MembershipRelation membershipRelationHasTarget Person
+	MembershipRelation membershipWithPosition Position
+	Position positionIsContextOfMembershipRelation MembershipRelation
+	Group groupIsSourceOfMembershipRelation MembershipRelation
+	Person personIsTargetOfMembershipRelation MembershipRelation
+Community 11 : 
+	KnowingOfRelation knowingOfRelationHasSource Person
+	KnowingOfRelation
+	KnowingOfRelation knowingOfRelationHasTarget Person
+	Person personIsSourceOfKnowingOfRelation KnowingOfRelation
+	Person personIsTargetOfKnowingOfRelation KnowingOfRelation
+Community 12 : 
+	TeachingRelation teachingRelationHasSource Person
+	TeachingRelation
+	TeachingRelation teachingRelationHasTarget Person
+	Person personIsSourceOfTeachingRelation TeachingRelation
+	Person personIsTargetOfTeachingRelation TeachingRelation
+Community 13 : 
+	OccupationType
+	Person hasOrHadOccupationOfType OccupationType
+	OccupationType isOrWasOccupationTypeOf Person
+Community 14 : 
+	Person personHasCorrespondenceRelation CorrespondenceRelation
+	CorrespondenceRelation
+	CorrespondenceRelation correspondenceRelationConnects Person
+Community 15 : 
+	Person personHasFamilyRelation FamilyRelation
+	FamilyRelation
+	FamilyRelation familyRelationConnects Person
+Community 16 : 
+	Person personHasKnowingRelation KnowingRelation
+	KnowingRelation
+	KnowingRelation knowingRelationConnects Person
+Community 17 : 
+	SiblingRelation siblingRelationConnects Person
+	SiblingRelation
+	Person personHasSiblingRelation SiblingRelation
+Community 18 : 
+	SpouseRelation spouseRelationConnects Person
+	SpouseRelation
+	Person personHasSpouseRelation SpouseRelation
+Community 19 : 
+	Agent isAgentAssociatedWithAgent Agent
+	Agent
+	Agent isOrWasControllerOf Agent
+	Agent isOrWasSubordinateTo Agent
+	Thing isOrWasUnderAuthorityOf Agent
+	Agent isSuccessorOf Agent
+	Agent hasOrHadController Agent
+	Agent agentIsSourceOfAuthorityRelation AuthorityRelation
+	Agent hasOrHadAuthorityOver Thing
+	AuthorityRelation authorityRelationHasSource Agent
+	Agent hasOrHadSubordinate Agent
+	Agent hasOrHadWorkRelationWith Agent
+	Agent hasSuccessor Agent
+Community 20 : 
+	Agent agentIsSourceOfAgentControlRelation AgentControlRelation
+	AgentControlRelation
+	AgentControlRelation agentControlRelationHasTarget Agent
+	AgentControlRelation agentControlRelationHasSource Agent
+	Agent agentIsTargetOfAgentControlRelation AgentControlRelation
+Community 21 : 
+	Activity activityIsTargetOfActivityDocumentationRelation ActivityDocumentationRelation
+	ActivityDocumentationRelation
+	ActivityDocumentationRelation activityDocumentationRelationHasTarget Activity
+Community 22 : 
+	Agent performsOrPerformed Activity
+	Activity
+	Activity isOrWasPerformedBy Agent
+Community 23 : 
+	Activity activityIsSourceOfPerformanceRelation PerformanceRelation
+	PerformanceRelation
+	Agent agentIsTargetOfPerformanceRelation PerformanceRelation
+	PerformanceRelation performanceRelationHasSource Activity
+	PerformanceRelation performanceRelationHasTarget Agent
+Community 24 : 
+	Activity hasActivityType ActivityType
+	ActivityType
+	ActivityType isActivityTypeOf Activity
+Community 25 : 
+	Mandate
+	Mandate authorizes Agent
+	Mandate mandateIsSourceOfMandateRelation MandateRelation
+	MandateRelation mandateRelationHasSource Mandate
+	Agent authorizedBy Mandate
+Community 26 : 
+	Agent isAuthorizingAgentInMandateRelation MandateRelation
+	MandateRelation
+	MandateRelation authorizingAgent Agent
+	MandateRelation mandateRelationHasTarget Agent
+	Agent agentIsTargetOfMandateRelation MandateRelation
+Community 27 : 
+	Agent agentIsSourceOfAgentTemporalRelation AgentTemporalRelation
+	AgentTemporalRelation
+	AgentTemporalRelation agentTemporalRelationHasSource Agent
+	AgentTemporalRelation agentTemporalRelationHasTarget Agent
+	AgentTemporalRelation asConcernsActivity Activity
+	Agent agentIsTargetOfAgentTemporalRelation AgentTemporalRelation
+Community 28 : 
+	RoleType
+	RoleType roleIsContextOfCreationRelation CreationRelation
+	CreationRelation creationWithRole RoleType
+Community 29 : 
+	Agent agentIsTargetOfCreationRelation CreationRelation
+	CreationRelation
+	CreationRelation creationRelationHasTarget Agent
+Community 30 : 
+	Agent agentIsSourceOfAgentHierarchicalRelation AgentHierarchicalRelation
+	AgentHierarchicalRelation
+	AgentHierarchicalRelation agentHierarchicalRelationHasSource Agent
+	AgentHierarchicalRelation agentHierarchicalRelationHasTarget Agent
+	Agent agentIsTargetOfAgentHierarchicalRelation AgentHierarchicalRelation
+Community 31 : 
+	AccumulationRelation accumulationRelationHasTarget Agent
+	AccumulationRelation
+	Agent agentIsTargetOfAccumulationRelation AccumulationRelation
+Community 32 : 
+	AgentName
+	Agent hasOrHadAgentName AgentName
+	AgentName isOrWasAgentNameOf Agent
+Community 33 : 
+	AgentOriginationRelation
+	Agent agentIsTargetOfAgentOriginationRelation AgentOriginationRelation
+	AgentOriginationRelation agentOriginationRelationHasTarget Agent
+Community 34 : 
+	Agent agentIsConnectedToAgentRelation AgentToAgentRelation
+	AgentToAgentRelation
+	AgentToAgentRelation agentRelationConnects Agent
+Community 35 : 
+	ManagementRelation
+	ManagementRelation managementRelationHasSource Agent
+	Agent agentIsSourceOfManagementRelation ManagementRelation
+Community 36 : 
+	RecordResourceHoldingRelation recordResourceHoldingRelationHasSource Agent
+	RecordResourceHoldingRelation
+	Agent agentIsSourceOfRecordResourceHoldingRelation RecordResourceHoldingRelation
+Community 37 : 
+	WorkRelation
+	WorkRelation workRelationConnects Agent
+	Agent agentHasWorkRelation WorkRelation
+Community 38 : 
+	Thing isOrWasParticipantIn Event
+	Event
+	Event affectsOrAffected Thing
+	Event hasOrHadParticipant Thing
+	Event hasOrHadSubevent Event
+	Event isEventAssociatedWith Thing
+	Event isOrWasSubeventOf Event
+	Event resultsOrResultedIn Thing
+	Thing resultsOrResultedFrom Event
+	Thing isAssociatedWithEvent Event
+	Thing isOrWasAffectedBy Event
+Community 39 : 
+	Event eventIsSourceOfEventRelation EventRelation
+	EventRelation
+	EventRelation eventRelationHasSource Event
+	EventRelation eventRelationHasTarget Thing
+	Thing thingIsTargetOfEventRelation EventRelation
+Community 40 : 
+	Event hasEventType EventType
+	EventType
+	EventType isEventTypeOf Event
+Community 41 : 
+	Thing isOrWasPartOf Thing
+	Thing
+	Thing isRelatedTo Thing
+	Thing precedesInTime Thing
+	Thing followsInTime Thing
+	Thing followsOrFollowed Thing
+	Thing precedesOrPreceded Thing
+	Thing hasOrHadPart Thing
+	Thing isEquivalentTo Thing
+Community 42 : 
+	Thing thingIsTargetOfWholePartRelation WholePartRelation
+	WholePartRelation
+	WholePartRelation wholePartRelationHasSource Thing
+	WholePartRelation wholePartRelationHasTarget Thing
+	Thing thingIsSourceOfWholePartRelation WholePartRelation
+Community 43 : 
+	Relation relationConnects Thing
+	Relation
+	Relation relationHasContext Thing
+	Relation relationHasSource Thing
+	Thing thingIsConnectedToRelation Relation
+	Relation relationState Literal
+	Thing thingIsSourceOfRelation Relation
+	Thing thingIsContextOfRelation Relation
+	Relation relationHasTarget Thing
+	Thing thingIsTargetOfRelation Relation
+Community 44 : 
+	SequentialRelation sequentialRelationHasTarget Thing
+	SequentialRelation
+	Thing thingIsSourceOfSequentialRelation SequentialRelation
+	Thing thingIsTargetOfSequentialRelation SequentialRelation
+	SequentialRelation sequentialRelationHasSource Thing
+Community 45 : 
+	TemporalRelation temporalRelationHasSource Thing
+	TemporalRelation
+	TemporalRelation temporalRelationHasTarget Thing
+	Thing thingIsSourceOfTemporalRelation TemporalRelation
+	Thing thingIsTargetOfTemporalRelation TemporalRelation
+Community 46 : 
+	Thing thingIsTargetOfRuleRelation RuleRelation
+	RuleRelation
+	RuleRelation ruleRelationHasSource Rule
+	RuleRelation ruleRelationHasTarget Thing
+Community 47 : 
+	Thing thingIsTargetOfAuthorityRelation AuthorityRelation
+	AuthorityRelation
+	AuthorityRelation authorityRelationHasTarget Thing
+Community 48 : 
+	Thing hasOrHadName Name
+	Name
+	Name isOrWasNameOf Thing
+Community 49 : 
+	OwnershipRelation ownershipRelationHasTarget Thing
+	OwnershipRelation
+	Thing thingIsTargetOfOwnershipRelation OwnershipRelation
+Community 50 : 
+	Thing type Literal
+	Literal
+	Thing width Literal
+	Agent authorizingMandate Literal
+	Person birthDate Literal
+	Thing beginningDate Literal
+	Thing creationDate Literal
+	Thing date Literal
+	Thing deletionDate Literal
+	Thing descriptiveNote Literal
+	Thing endDate Literal
+	Thing height Literal
+	Thing identifier Literal
+	Thing lastModificationDate Literal
+	Thing measure Literal
+	Thing modificationDate Literal
+	Thing name Literal
+	Place location Literal
+	Thing referenceSystem Literal
+	Thing ruleFollowed Literal
+Community 51 : 
+	Place containsOrContained Place
+	Place
+	Place geographicalCoordinates Literal
+	Place isOrWasAdjacentTo Place
+	Place isOrWasContainedBy Place
+	Place isOrWasJurisdictionOf Agent
+	Place isOrWasLocationOf Thing
+	Place isPlaceAssociatedWith Thing
+	Place overlapsOrOverlapped Place
+	Thing hasOrHadLocation Place
+	Thing isAssociatedWithPlace Place
+	Agent hasOrHadJurisdiction Place
+Community 52 : 
+	PlaceName
+	Place hasOrHadPlaceName PlaceName
+	PlaceName isOrWasPlaceNameOf Place
+Community 53 : 
+	PlaceType isOrWasPlaceTypeOf Place
+	PlaceType
+	Place hasOrHadPlaceType PlaceType
+Community 54 : 
+	Coordinates
+	Coordinates altimetricSystem Literal
+	Coordinates altitude Literal
+	Coordinates geodesicSystem Literal
+	Coordinates latitude Literal
+	Coordinates longitude Literal
+Community 55 : 
+	PhysicalLocation hasOrHadCoordinates Coordinates
+	PhysicalLocation
+	PhysicalLocation isOrWasPhysicalLocationOf Place
+	Place hasOrHadPhysicalLocation PhysicalLocation
+	Coordinates isOrWasCoordinatesOf PhysicalLocation
+Community 56 : 
+	PlaceRelation
+	Place placeIsSourceOfPlaceRelation PlaceRelation
+	PlaceRelation placeRelationHasSource Place
+	PlaceRelation placeRelationHasTarget Thing
+	Thing thingIsTargetOfPlaceRelation PlaceRelation
+Community 57 : 
+	Mechanism technicalCharacteristics Literal
+	Mechanism
+Community 58 : 
+	RecordSet hasOrHadSomeMembersWithCategory Type
+	Type
+	Type isOrWasCategoryOf Thing
+	Type isOrWasCategoryOfAllMembersOf RecordSet
+	Type isOrWasCategoryOfSomeMembersOf RecordSet
+	Thing hasOrHadCategory Type
+	RecordSet hasOrHadAllMembersWithCategory Type
+Community 59 : 
+	Thing thingIsTargetOfTypeRelation TypeRelation
+	TypeRelation
+	Type typeIsSourceOfTypeRelation TypeRelation
+	TypeRelation typeRelationHasSource Type
+	TypeRelation typeRelationHasTarget Thing
+Community 60 : 
+	RecordSet hasOrHadSomeMembersWithContentType ContentType
+	ContentType
+	ContentType isOrWasContentTypeOfSomeMembersOf RecordSet
+	ContentType isOrWasContentTypeOfAllMembersOf RecordSet
+Community 61 : 
+	RecordSet accrualStatus Literal
+	RecordSet
+	RecordSet accrual Literal
+	RecordSet hasOrHadAllMembersWithContentType ContentType
+Community 62 : 
+	RecordSet hasOrHadAllMembersWithLanguage Language
+	Language
+	Language isOrWasLanguageOfAllMembersOf RecordSet
+	Language isOrWasLanguageOfSomeMembersOf RecordSet
+	RecordSet hasOrHadSomeMembersWithLanguage Language
+Community 63 : 
+	RecordSet hasOrHadAllMembersWithDocumentaryFormType DocumentaryFormType
+	DocumentaryFormType
+	DocumentaryFormType isOrWasDocumentaryFormTypeOfAllMembersOf RecordSet
+	DocumentaryFormType isOrWasDocumentaryFormTypeOfSomeMembersOf RecordSet
+	RecordSet hasOrHadSomeMemberswithDocumentaryFormType DocumentaryFormType
+Community 64 : 
+	RecordSet hasOrHadAllMembersWithLegalStatus LegalStatus
+	LegalStatus
+	RecordSet hasOrHadSomeMembersWithLegalStatus LegalStatus
+	LegalStatus isOrWasLegalStatusOfAllMembersOf RecordSet
+	LegalStatus isOrWasLegalStatusOfSomeMembersOf RecordSet
+Community 65 : 
+	RecordSet hasOrHadAllMembersWithRecordState RecordState
+	RecordState
+	RecordSet hasOrHadSomeMembersWithRecordState RecordState
+	RecordState isOrWasRecordStateOfAllMembersOf RecordSet
+	RecordState isOrWasRecordStateOfSomeMembersOf RecordSet
+Community 66 : 
+	RecordSet hasRecordSetType RecordSetType
+	RecordSetType
+	RecordSetType isRecordSetTypeOf RecordSet
+Community 67 : 
+	Instantiation carrierExtent Literal
+	Instantiation
+	Instantiation hasDerivedInstantiation Instantiation
+	Instantiation hasOrHadComponent Instantiation
+	Instantiation instantiationExtent Literal
+	Instantiation instantiationStructure Literal
+	Instantiation isDerivedFromInstantiation Instantiation
+	Instantiation isFunctionallyEquivalentTo Instantiation
+	Instantiation isInstantiationAssociatedWithInstantiation Instantiation
+	Instantiation isOrWasComponentOf Instantiation
+	Instantiation migratedFrom Instantiation
+	Instantiation migratedInto Instantiation
+	Instantiation physicalCharacteristics Literal
+	Instantiation productionTechnique Literal
+	Instantiation qualityOfRepresentation Literal
+Community 68 : 
+	DerivationRelation
+	Instantiation instantiationIsSourceOfDerivationRelation DerivationRelation
+	Instantiation instantiationIsTargetOfDerivationRelation DerivationRelation
+	DerivationRelation derivationRelationHasSource Instantiation
+	DerivationRelation derivationRelationHasTarget Instantiation
+Community 69 : 
+	MigrationRelation
+	Instantiation instantiationIsSourceOfMigrationRelation MigrationRelation
+	Instantiation instantiationIsTargetOfMigrationRelation MigrationRelation
+	MigrationRelation migrationRelationHasSource Instantiation
+	MigrationRelation migrationRelationHasTarget Instantiation
+Community 70 : 
+	RecordResourceToInstantiationRelation
+	RecordResourceToInstantiationRelation recordResourceToInstantiationRelationHasTarget Instantiation
+	Instantiation instantiationIsTargetOfRecordResourceToInstantiationRelation RecordResourceToInstantiationRelation
+Community 71 : 
+	InstantiationToInstantiationRelation
+	Instantiation instantiationIsConnectedToInstantiationRelation InstantiationToInstantiationRelation
+	InstantiationToInstantiationRelation instantiationToInstantiationRelationConnects Instantiation
+Community 72 : 
+	CarrierType
+	CarrierType isCarrierTypeOf Instantiation
+	Instantiation hasCarrierType CarrierType
+Community 73 : 
+	RepresentationType
+	RepresentationType isRepresentationTypeOf Instantiation
+	Instantiation hasRepresentationType RepresentationType
+Community 74 : 
+	FunctionalEquivalenceRelation
+	Instantiation instantiationIsConnectedToFunctionalEquivalenceRelation FunctionalEquivalenceRelation
+	FunctionalEquivalenceRelation functionalEquivalenceRelationConnects Instantiation
+Community 75 : 
+	Instantiation hasProductionTechniqueType ProductionTechniqueType
+	ProductionTechniqueType
+	ProductionTechniqueType isProductionTechniqueTypeOf Instantiation
+Community 76 : 
+	Thing wasLastUpdatedAtDate Date
+	Date
+	Person hasBirthDate Date
+	Person hasDeathDate Date
+	Thing hasBeginningDate Date
+	Date calendar Literal
+	Thing hasEndDate Date
+	Thing hasModificationDate Date
+	Date expressedDate Literal
+	Date dateStandard Literal
+	Date isBirthDateOf Person
+	Date isBeginningDateOf Thing
+	Date dateQualifier Literal
+	Date isEndDateOf Thing
+	Date isLastUpdateDateOf Thing
+	Date isModificationDateOf Thing
+	Thing isAssociatedWithDate Date
+	Date isDeathDateOf Person
+	Date isDateAssociatedWith Thing
+	Date normalizedDateValue Literal
+Community 77 : 
+	Date isFromUseDateOf Appellation
+	Appellation
+	Thing hasOrHadAppellation Appellation
+	Appellation isOrWasAppellationOf Thing
+	Appellation usedFromDate Literal
+	Appellation usedToDate Literal
+	Appellation wasUsedFromDate Date
+	Appellation wasUsedToDate Date
+	Date isToUseDateOf Appellation
+Community 78 : 
+	Appellation appellationIsSourceOfAppellationRelation AppellationRelation
+	AppellationRelation
+	Thing thingIsTargetOfAppellationRelation AppellationRelation
+	AppellationRelation appellationRelationHasSource Appellation
+	AppellationRelation appellationRelationHasTarget Thing
+Community 79 : 
+	RecordResource classification Literal
+	RecordResource
+	RecordResource describesOrDescribed Thing
+	RecordResource hasCopy RecordResource
+	RecordResource hasGeneticLinkToRecordResource RecordResource
+	RecordResource hasInstantiation Instantiation
+	RecordResource hasOrHadMainSubject Thing
+	RecordResource hasOrHadSubject Thing
+	RecordResource hasPublisher Agent
+	RecordResource hasReply RecordResource
+	RecordResource isCopyOf RecordResource
+	RecordResource isRecordResourceAssociatedWithRecordResource RecordResource
+	RecordResource isReplyTo RecordResource
+	RecordResource publicationDate Literal
+	RecordResource recordResourceExtent Literal
+	RecordResource recordResourceIsSourceOfRecordResourceToInstantiationRelation RecordResourceToInstantiationRelation
+	RecordResource recordResourceStructure Literal
+	RecordResource scopeAndContent Literal
+	Instantiation isInstantiationOf RecordResource
+	RecordResourceToInstantiationRelation recordResourceToInstantiationRelationHasSource RecordResource
+	Agent isPublisherOf RecordResource
+	ContentType isContentTypeOf RecordResource
+	Thing isOrWasDescribedBy RecordResource
+	Thing isOrWasMainSubjectOf RecordResource
+	Thing isOrWasSubjectOf RecordResource
+Community 80 : 
+	RecordResourceGeneticRelation
+	RecordResource recordResourceIsConnectedToRecordResourceGeneticRelation RecordResourceGeneticRelation
+	RecordResourceGeneticRelation recordResourceGeneticRelationConnects RecordResource
+Community 81 : 
+	RecordResourceToRecordResourceRelation recordResourceRelationConnects RecordResource
+	RecordResourceToRecordResourceRelation
+	RecordResource recordResourceIsConnectedToRecordResourceRelation RecordResourceToRecordResourceRelation
+Community 82 : 
+	Proxy
+	Proxy proxyFor RecordResource
+	Proxy proxyIn RecordSet
+Community 83 : 
+	Rule
+	Agent isOrWasResponsibleForEnforcing Rule
+	Thing isOrWasRegulatedBy Rule
+	RecordResource expressesOrExpressed Rule
+	Agent isResponsibleForIssuing Rule
+	Rule isOrWasEnforcedBy Agent
+	Rule isOrWasExpressedBy RecordResource
+	Rule isRuleAssociatedWith Thing
+	Rule issuedBy Agent
+	Rule regulatesOrRegulated Thing
+	Rule ruleIsSourceOfRuleRelation RuleRelation
+	Thing isAssociatedWithRule Rule
+Community 84 : 
+	RuleType
+	Rule hasOrHadRuleType RuleType
+	RuleType isOrWasRuleTypeOf Rule
+Community 85 : 
+	UnitOfMeasurement isUnitOfMeasurementOf Extent
+	UnitOfMeasurement
+	Extent
+	Extent hasUnitOfMeasurement UnitOfMeasurement
+	Extent hasExtentType ExtentType
+	ExtentType
+	Extent quantity decimal
+	ExtentType isExtentTypeOf Extent
+	Extent unitOfMeasurement Literal
+	decimal
+Community 86 : 
+	Record hasOrHadConstituent RecordPart
+	Record
+	RecordPart
+	Record recordIsSourceOfAuthorshipRelation AuthorshipRelation
+	AuthorshipRelation
+	RecordPart isOrWasConstituentOf Record
+	AuthorshipRelation authorshipRelationHasSource Record
+Community 87 : 
+	Identifier hasIdentifierType IdentifierType
+	Identifier
+	IdentifierType
+	Identifier isOrWasIdentifierOf Thing
+	IdentifierType isIdentifierTypeOf Identifier
+	Thing hasOrHadIdentifier Identifier
+Community 88 : 
+	CorporateBody hasOrHadCorporateBodyType CorporateBodyType
+	CorporateBody
+	CorporateBodyType
+	CorporateBodyType isOrWasCorporateBodyTypeOf CorporateBody
+Community 89 : 
+	Family
+	Family hasFamilyType FamilyType
+	FamilyType isFamilyTypeOf Family
+	FamilyType

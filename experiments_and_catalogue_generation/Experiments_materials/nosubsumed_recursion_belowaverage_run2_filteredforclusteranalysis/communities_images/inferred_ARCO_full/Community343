@@ -1,0 +1,12 @@
+digraph "Community 343" {
+	Thing -> DesignationInTime [label=hasDesignationInTime]
+	DesignationInTime
+	DesignationInTime -> DesignationType [label=hasDesignationType]
+	DesignationType
+	DesignationInTime -> CulturalEntity [label=isDesignationInTimeOf]
+	CulturalProperty -> DesignationInTime [label=hasDesignationInTime]
+	DesignationInTime -> Literal [label=name]
+	DesignationInTime -> Literal [label=note]
+	DesignationType -> DesignationInTime [label=isDesignationTypeOf]
+	DesignationInTime -> Thing [label=isDesignationInTimeOf]
+}

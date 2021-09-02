@@ -1,0 +1,42 @@
+@prefix ns1: <https://w3id.org/arco/ontology/core/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.gov.it/onto/dcatapit#Organization> ns1:isAgentOf ns1:AgentRole ;
+    ns2:extensionallyEquivalent <http://www.w3.org/2006/vcard/ns#Organization> ;
+    ns2:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        <https://w3id.org/italia/onto/l0/Agent> .
+
+<https://w3id.org/arco/ontology/context-description/Intervention> ns1:hasAgentRole ns1:AgentRole ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Activity> .
+
+<http://www.w3.org/2006/vcard/ns#Organization> ns2:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        <https://w3id.org/italia/onto/l0/Agent> .
+
+ns1:Situation ns2:subsumedUnder <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<https://w3id.org/italia/onto/l0/Activity> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://dati.gov.it/onto/dcatapit#Agent> ns2:extensionallyEquivalent <http://xmlns.com/foaf/0.1/Agent>,
+        <https://w3id.org/italia/onto/l0/Agent> ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:hasAgentRole ns1:AgentRole .
+
+<http://xmlns.com/foaf/0.1/Agent> ns2:extensionallyEquivalent <https://w3id.org/italia/onto/l0/Agent> ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/italia/onto/l0/Entity> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:AgentRole ns1:hasAgent <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:isAgentRoleOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns2:subsumedUnder ns1:Situation .
+
+<https://w3id.org/italia/onto/l0/Agent> ns1:isAgentOf ns1:AgentRole ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

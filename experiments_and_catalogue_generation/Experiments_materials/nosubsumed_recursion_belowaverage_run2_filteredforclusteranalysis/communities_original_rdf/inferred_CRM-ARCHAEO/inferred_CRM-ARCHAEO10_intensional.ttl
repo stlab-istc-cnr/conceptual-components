@@ -1,0 +1,19 @@
+@prefix ns1: <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:A1_Excavation_Process_Unit ns1:AP3_excavated <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> ns1:AP17i_found ns1:A7_Embedding .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ns1:AP18i_is_embedded ns1:A7_Embedding .
+
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place> ns1:AP20i_contains ns1:A7_Embedding ;
+    ns1:AP3i_was_excavated_by ns1:A1_Excavation_Process_Unit .
+
+ns1:A7_Embedding ns1:AP17_is_found_by <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> ;
+    ns1:AP18_is_embedding_of <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+    ns1:AP20_is_embedding_at <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+

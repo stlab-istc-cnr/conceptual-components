@@ -1,0 +1,20 @@
+digraph "Community 12" {
+	Redaction -> string [label=originalTitle]
+	Redaction
+	Redaction -> string [label=paraphrasis]
+	Redaction -> string [label=audience]
+	Redaction -> string [label=audienceEducationLevel]
+	Redaction -> string [label=sampleText]
+	Redaction -> string [label=text]
+	Redaction -> string [label=typeOfRedaction]
+	Redaction -> string [label=explicit]
+	Redaction -> string [label=unusedWitnesses]
+	Redaction -> string [label=workNumber]
+	Redaction -> Redaction [label=isSynthesisOf]
+	Place -> Redaction [label=isMentionedIn]
+	Redaction -> Redaction [label=hasSynthesis]
+	Redaction -> Redaction [label=hasTranslation]
+	Redaction -> string [label=incipit]
+	Redaction -> string [label=layout]
+	Redaction -> Redaction [label=isTranslationOf]
+}

@@ -1,0 +1,13 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:OrderedTextUnitList ns1:hasFirstPart ns1:TextUnit ;
+    ns1:hasTextUnit ns1:TextUnit .
+
+ns1:Redaction ns1:hasOrderedTextUnitList ns1:OrderedTextUnitList .
+
+ns1:TextUnit ns1:firstPartOf ns1:Redaction .
+

@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/italia/onto/CLV/> .
+@prefix ns2: <https://w3id.org/italia/onto/l0/> .
+@prefix ns3: <https://w3id.org/arco/ontology/location/> .
+@prefix ns4: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns5: <https://w3id.org/italia/onto/TI/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.gov.it/onto/dcatapit#Organization> ns1:hasSpatialCoverage ns1:Feature .
+
+ns3:TimeIndexedTypedLocation ns3:atLocation ns1:Feature .
+
+ns4:Use ns4:hasCulturalGeographicArea ns1:Feature .
+
+ns3:ToponymInTime ns3:isToponymInTimeOf ns1:Feature ;
+    ns5:atTime ns5:TimeInterval ;
+    ns2:name rdfs:Literal .
+
+ns1:Feature ns4:isCulturalGeographicAreaOf ns4:Use ;
+    ns3:hasToponymInTime ns3:ToponymInTime .
+

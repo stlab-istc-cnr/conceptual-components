@@ -1,0 +1,28 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:DerivatedWork ns2:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:PrintInPublication ns1:hasReproduction ns1:Reproduction ;
+    ns2:subsumedUnder ns1:DerivatedWork .
+
+ns1:ReproductionPosition ns1:isReproductionPositionOf ns1:Reproduction ;
+    ns1:pageOrTableNumber rdfs:Literal ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Location> .
+
+<https://w3id.org/italia/onto/l0/Location> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/italia/onto/l0/Object> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:isReproducedBy ns1:Reproduction ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Reproduction ns1:hasReproductionPosition ns1:ReproductionPosition ;
+    ns1:isReproductionOf ns1:PrintInPublication ;
+    ns1:reproduces <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+

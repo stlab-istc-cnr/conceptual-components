@@ -1,0 +1,15 @@
+digraph "Community 43" {
+	Word -> string [label=lemma]
+	Word
+	Word -> string [label=morphologicalAnnotation]
+	Word -> Concept [label=partOfSpeech]
+	Word -> string [label=phoneticTranscription]
+	Word -> string [label=sense]
+	Word -> Word [label=isLemma]
+	Word -> string [label=translation]
+	Syllable -> Word [label=belongsToWord]
+	Syllable -> Word [label=isLastSyllable]
+	Word -> Word [label=isCallOf]
+	Word -> Word [label=isEchoOf]
+	Word -> Word [label=isInflectedForm]
+}

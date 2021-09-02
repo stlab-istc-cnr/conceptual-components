@@ -1,0 +1,14 @@
+digraph "Community 171" {
+	Site
+	Site -> SiteType [label=hasSiteType]
+	Site -> TimeIndexedTypedLocation [label=isSiteIn]
+	Site -> Literal [label=siteIdentifier]
+	SiteType -> Site [label=isSiteTypeOf]
+	SiteDefinition
+	SiteDefinition -> SiteType [label=isSiteDefinitionOf]
+	SiteType -> SiteDefinition [label=hasSiteDefinition]
+	SiteSpecification
+	SiteSpecification -> SiteType [label=isSiteSpecificationOf]
+	SiteType -> SiteSpecification [label=hasSiteSpecification]
+	SiteType
+}

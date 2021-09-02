@@ -1,0 +1,14 @@
+@prefix ns1: <http://myreview#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Chair ns1:asksForPreference ns1:Reviewer .
+
+ns1:Reviewer ns1:IsAssignedTo ns1:Paper ;
+    ns1:hasConflictedPaper ns1:Paper ;
+    ns1:hasPreferredPaper ns1:Paper .
+
+ns1:Paper ns1:paperIsAssignedTo ns1:Reviewer .
+

@@ -1,0 +1,25 @@
+@prefix ns1: <http://iasted#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Item ns1:is_given_to ns1:Person ;
+    ns1:is_made_from ns1:Item ;
+    ns1:is_needed_for ns1:Person ;
+    ns1:is_prepared_by ns1:Person ;
+    ns1:is_sent_by ns1:Person ;
+    ns1:is_signed_by ns1:Person ;
+    ns1:is_used_by ns1:Person ;
+    ns1:is_writen_by ns1:Person ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Person ns1:need ns1:Item ;
+    ns1:obtain ns1:Item ;
+    ns1:prepare ns1:Item ;
+    ns1:send ns1:Item ;
+    ns1:sign ns1:Item ;
+    ns1:write ns1:Item ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

@@ -1,0 +1,123 @@
+Community 1 : 
+	Thing
+	Thing hasProgramAssigned Thing
+	Thing isContentTypeOf Thing
+	Thing isRegisteredBy Thing
+	Thing isReviewed Thing
+	Thing isSession Thing
+	Thing isSetBy Thing
+	Thing isSettingFor Thing
+	Thing isSubmissionStatusOf Thing
+	Thing isTypeOf Thing
+	Thing registers Thing
+Community 2 : 
+	Thing setsStatus SubmissionStatus
+	SubmissionStatus
+	SubmissionStatus isStatusSetBy Thing
+	Thing hasSubmissionStatus SubmissionStatus
+Community 3 : 
+	Reviewer
+	SubmissionStatus isStatusSetBy Reviewer
+Community 4 : 
+	Thing setsSetting Settings
+	Settings
+	Thing hasSetting Settings
+Community 5 : 
+	Thing hasSession Session
+	Session
+Community 6 : 
+	Thing hasPersonAssigned Person
+	Person
+	Person hasAddress string
+	Person hasFirstName string
+	Person hasSureName string
+Community 7 : 
+	string
+	Conference hasConferenceName string
+	Conference hasTheme string
+	Conference
+Community 8 : 
+	Room hasRoomName string
+	Room
+	Thing hasRoom Room
+Community 9 : 
+	Thing hasRole Role
+	Role
+	Thing hasRoleInvolved Role
+	Role isRoleInvolvedIn Thing
+	Role reviews Thing
+Community 10 : 
+	AdminRegistered hasRole Role
+	AdminRegistered
+	Administrator registers AdminRegistered
+	Role hasPersonAssigned AdminRegistered
+Community 11 : 
+	RoleSettings isSettingFor Role
+	RoleSettings
+	Role hasSetting RoleSettings
+Community 12 : 
+	Submission hasTitle string
+	Submission
+	Submission isTypeOf Submission
+	SubmissionStatus isSubmissionStatusOf Submission
+	Thing includesSubmission Submission
+Community 13 : 
+	Thing hasContentType ContentType
+	ContentType
+	Content hasContentType ContentType
+Community 14 : 
+	Thing hasContent Content
+	Content
+	Submission hasContent Content
+Community 15 : 
+	SubmissionFeatureSettings isSettingFor SubmissionType
+	SubmissionType
+	Thing hasSubmissionType SubmissionType
+	SubmissionType hasSetting SubmissionFeatureSettings
+Community 16 : 
+	SubmissionFeatureSettings isSetBy Administrator
+	SubmissionFeatureSettings
+	Administrator setsSetting SubmissionFeatureSettings
+Community 17 : 
+	RoleSettings isSetBy Administrator
+	Administrator
+	Administrator setsSetting RoleSettings
+Community 18 : 
+	Panel
+	Panel hasRoleInvolved PanelModerator
+	PanelModerator isRoleInvolvedIn Panel
+	Panelist isRoleInvolvedIn Panel
+	Panel hasRoleInvolved Panelist
+	PanelModerator
+	Panelist
+Community 19 : 
+	Place
+	Thing hasPlace Place
+	Event hasPlace Place
+Community 20 : 
+	Event
+	Event hasTimeInterval TimeInterval
+Community 21 : 
+	Thing hasTimeInterval TimeInterval
+	TimeInterval
+Community 22 : 
+	ConferenceSession
+	Conference hasSession ConferenceSession
+	SessionChair hasProgramAssigned ConferenceSession
+	Thing hasSessionChair SessionChair
+	SessionChair
+Community 23 : 
+	Application
+	Application hasRoleInvolved Applicant
+	Applicant isRoleInvolvedIn Application
+	Applicant
+Community 24 : 
+	Paper
+	Paper hasRoleInvolved Author
+	Author isRoleInvolvedIn Paper
+	Author
+Community 25 : 
+	BasicUser hasPersonAssigned SelfRegistered
+	BasicUser
+	SelfRegistered
+	SelfRegistered hasRole BasicUser

@@ -1,0 +1,20 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Agent ns2:subsumedUnder ns1:Thing .
+
+ns1:DescendanceRelation ns2:subsumedUnder ns1:AgentTemporalRelation,
+        ns1:FamilyRelation .
+
+ns1:ChildRelation ns2:subsumedUnder ns1:DescendanceRelation ;
+    ns1:childRelationHasSource ns1:Person ;
+    ns1:childRelationHasTarget ns1:Person .
+
+ns1:Person ns2:subsumedUnder ns1:Agent ;
+    ns1:personIsSourceOfChildRelation ns1:ChildRelation ;
+    ns1:personIsTargetOfChildRelation ns1:ChildRelation .
+

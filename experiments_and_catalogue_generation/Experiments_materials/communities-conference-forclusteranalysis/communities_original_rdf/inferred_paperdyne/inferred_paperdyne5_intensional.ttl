@@ -1,0 +1,14 @@
+@prefix ns1: <http://paperdyne#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Pending_Proposed_Conflict ns1:blockAssigningToReviewer ns1:Paper ;
+    ns1:confirmedBy ns1:Reviewer ;
+    ns1:refusedBy ns1:Reviewer ;
+    ns1:visibleBy ns1:Reviewer .
+
+ns1:Reviewer ns1:confirmes ns1:Pending_Proposed_Conflict ;
+    ns1:refuses ns1:Pending_Proposed_Conflict .
+

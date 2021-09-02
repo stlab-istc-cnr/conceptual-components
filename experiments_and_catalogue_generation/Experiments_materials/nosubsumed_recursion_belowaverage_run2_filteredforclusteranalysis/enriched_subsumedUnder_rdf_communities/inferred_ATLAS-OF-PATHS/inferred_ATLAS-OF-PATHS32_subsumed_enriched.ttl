@@ -1,0 +1,24 @@
+@prefix ns1: <https://w3id.org/italia/onto/AtlasOfPaths/> .
+@prefix ns2: <https://w3id.org/italia/onto/Route/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Path ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Description> ;
+    ns2:hasTripPlan ns1:PathPlan .
+
+ns1:TravellingMethod ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Description> ;
+    ns1:isTravellingMethodOf ns1:PathPlan .
+
+ns2:TripPlan ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Description> .
+
+<https://w3id.org/italia/onto/TI/TemporalEntity> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns1:PathPlan ns3:subsumedUnder ns2:TripPlan ;
+    ns1:bestWhen <https://w3id.org/italia/onto/TI/TemporalEntity> ;
+    ns1:hasTravellingMethod ns1:TravellingMethod .
+
+<https://w3id.org/italia/onto/l0/Description> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+

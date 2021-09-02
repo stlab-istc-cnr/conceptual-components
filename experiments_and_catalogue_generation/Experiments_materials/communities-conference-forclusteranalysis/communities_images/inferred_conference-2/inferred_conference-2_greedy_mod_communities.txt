@@ -1,0 +1,125 @@
+Community 1 : 
+	Conference_volume
+	Conference_volume has_contributions Conference_contribution
+Community 2 : 
+	Conference_contribution
+	Conference_contribution is_submitted_at Conference_volume
+Community 3 : 
+	Organizing_committee was_an_organizing_committee_of Conference_volume
+	Organizing_committee
+	Conference_volume has_an_organizing_committee Organizing_committee
+Community 4 : 
+	Program_committee
+	Program_committee was_a_program_committee_of Conference_volume
+	Conference_volume has_a_program_committee Program_committee
+Community 5 : 
+	Steering_committee
+	Conference_volume has_a_steering_committee Steering_committee
+	Steering_committee was_a_steering_committee_of Conference_volume
+Community 6 : 
+	Conference_volume has_tracks Track
+	Track
+Community 7 : 
+	Conference_volume has_tutorials Tutorial
+	Tutorial
+Community 8 : 
+	Conference_volume has_workshops Workshop
+	Workshop
+Community 9 : 
+	Reviewed_contribution has_a_review Review
+	Review
+	Review has_authors Reviewer
+Community 10 : 
+	Review reviews Reviewed_contribution
+	Reviewed_contribution
+Community 11 : 
+	Review_expertise belongs_to_reviewers Reviewer
+	Review_expertise
+	Submitted_contribution has_a_review_expertise Review_expertise
+Community 12 : 
+	Submitted_contribution
+	Review_expertise has_a_submitted_contribution Submitted_contribution
+Community 13 : 
+	Reviewer invited_by Reviewer
+	Reviewer
+	Reviewer invites_co-reviewers Reviewer
+Community 14 : 
+	Co-chair was_a_committe_co-chair_of Committee
+	Co-chair
+	Committee has_a_committee_co-chair Co-chair
+Community 15 : 
+	Committee has_members Committee_member
+	Committee_member
+	Committee_member was_a_member_of Committee
+Community 16 : 
+	Chair was_a_committee_chair_of Committee
+	Chair
+	Committee has_a_committee_chair Chair
+Community 17 : 
+	Conference_volume has_a_commtitee Committee
+	Committee
+	Committee was_a_committee_of Conference_volume
+Community 18 : 
+	Person has_the_first_name string
+	Person
+	Person has_an_email string
+Community 19 : 
+	Person has_the_last_name string
+	string
+	Conference_volume has_a_location string
+Community 20 : 
+	Conference_document has_a_date_of_issue date
+	Conference_document
+	Conference_document has_authors Person
+	Person contributes Conference_document
+Community 21 : 
+	Conference_www
+	Conference_www has_a_URL string
+Community 22 : 
+	Conference_proceedings
+	Conference_proceedings has_a_publisher Publisher
+	Conference_proceedings has_an_ISBN string
+Community 23 : 
+	Publisher
+	Publisher issues Conference_proceedings
+Community 24 : 
+	Review_preference has_a_degree int
+	int
+	Conference_proceedings has_a_volume int
+Community 25 : 
+	Review_preference belongs_to_reviewers Reviewer
+	Review_preference
+	Topic belongs_to_a_review_reference Review_preference
+Community 26 : 
+	Important_dates is_a_starting_date date
+	date
+	Important_dates is_an_abstract_submission_date date
+	Important_dates is_an_ending_date date
+	Important_dates is_a_date_of_camera_ready_paper_submission date
+Community 27 : 
+	Important_dates
+	Conference_volume has_important_dates Important_dates
+	Important_dates belong_to_a_conference_volume Conference_volume
+	Important_dates is_a_date_of_acceptance_announcement date
+	Important_dates is_a_full_paper_submission_date date
+Community 28 : 
+	Conference_part is_part_of_conference_volumes Conference_volume
+	Conference_part
+	Conference_volume has_parts Conference_part
+Community 29 : 
+	Track-workshop_chair was_a_track-workshop_chair_of Conference_part
+	Track-workshop_chair
+	Conference_part has_a_track-workshop-tutorial_chair Track-workshop_chair
+Community 30 : 
+	Topic is_a_topis_of_conference_parts Conference_part
+	Topic
+	Conference_part has_a_track-workshop-tutorial_topic Topic
+Community 31 : 
+	Presentation
+	Presentation is_given_by Active_conference_participant
+	Active_conference_participant gives_presentations Presentation
+	Active_conference_participant
+Community 32 : 
+	Invited_speaker contributes Invited_talk
+	Invited_speaker
+	Invited_talk

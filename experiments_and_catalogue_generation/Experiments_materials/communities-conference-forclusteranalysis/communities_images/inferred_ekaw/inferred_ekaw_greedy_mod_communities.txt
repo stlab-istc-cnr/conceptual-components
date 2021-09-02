@@ -1,0 +1,73 @@
+Community 1 : 
+	Thing volumeContainsPaper Thing
+	Thing
+	Thing hasPart Thing
+	Thing paperInVolume Thing
+	Thing partOf Thing
+	Thing referencedIn Thing
+	Thing references Thing
+	Thing technicallyOrganisedBy Thing
+Community 2 : 
+	Academic_Institution scientificallyOrganises Thing
+	Academic_Institution
+	Thing scientificallyOrganisedBy Academic_Institution
+Community 3 : 
+	Organisation
+	Organisation technicallyOrganises Thing
+Community 4 : 
+	Proceedings
+	Proceedings volumeContainsPaper Thing
+Community 5 : 
+	Paper hasReviewer Possible_Reviewer
+	Possible_Reviewer
+Community 6 : 
+	Possible_Reviewer reviewerOfPaper Paper
+	Paper
+Community 7 : 
+	Paper hasReview Review
+	Review
+	Review reviewOfPaper Paper
+	Review reviewWrittenBy Possible_Reviewer
+Community 8 : 
+	Assigned_Paper hasReviewer Possible_Reviewer
+	Assigned_Paper
+Community 9 : 
+	Evaluated_Paper
+	Evaluated_Paper hasReview Review
+Community 10 : 
+	Accepted_Paper hasReview Positive_Review
+	Positive_Review
+Community 11 : 
+	Accepted_Paper
+	Camera_Ready_Paper updatedVersionOf Accepted_Paper
+Community 12 : 
+	Camera_Ready_Paper
+	Camera_Ready_Paper writtenBy Conference_Participant
+	Conference_Participant
+Community 13 : 
+	Contributed_Talk
+	Contributed_Talk presentationOfPaper Camera_Ready_Paper
+Community 14 : 
+	Event hasEvent Event
+	Event
+	Thing inverse_of_partOf_7 Event
+	Event partOfEvent Event
+Community 15 : 
+	Event heldIn Location
+	Location
+	Location locationOf Event
+Community 16 : 
+	Document hasUpdatedVersion Document
+	Document
+	Document updatedVersionOf Document
+	Document writtenBy Person
+	Person authorOf Document
+	Person
+Community 17 : 
+	Conference_Session partOfEvent Conference
+	Conference
+	Conference_Session
+Community 18 : 
+	Individual_Presentation
+	Session hasEvent Individual_Presentation
+	Session

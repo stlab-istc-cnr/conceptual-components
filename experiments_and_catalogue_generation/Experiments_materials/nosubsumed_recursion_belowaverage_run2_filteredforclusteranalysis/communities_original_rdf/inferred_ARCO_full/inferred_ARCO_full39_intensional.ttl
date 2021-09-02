@@ -1,0 +1,58 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:CoinIssuance ns1:isCoinIssuanceOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:CollectionMembership ns1:hasMemberOfCollection <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:Commission ns1:isCommissionOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns2:CulturalEntityTechnicalStatus ns2:isTechnicalStatusOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+ns1:Research ns1:isResearchOn <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<https://w3id.org/italia/onto/l0/Agent> ns1:isMusicalEnsembleOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isMusicianOf <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns1:alternativeTitle rdfs:Literal ;
+    ns1:attributedTitle rdfs:Literal ;
+    ns1:collectionUnitIdentifier rdfs:Literal ;
+    ns1:explanationNote rdfs:Literal ;
+    ns1:findingNote rdfs:Literal ;
+    ns1:hasCreationLocation <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasFindingLocation <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasMusicalEnsemble <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasMusician <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasPlanningEnvironmentalRelationWith <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasPreviousLocation <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasRelatedWork <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:hasResearch ns1:Research ;
+    ns1:historicalInformation rdfs:Literal ;
+    ns1:informationGatheredOnSite rdfs:Literal ;
+    ns1:involves <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isCreationLocationOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isFindingLocationOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isInvolvedIn <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isLocatedIn <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isLocationOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isMemberOfArchivalRecordSetOf ns1:ArchivalRecordSetMembership ;
+    ns1:isPreviousLocationOf <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isReusedBy <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:isWorkRelatedTo <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:methodOfInterventionAndDigitization rdfs:Literal ;
+    ns1:numberInCirculation rdfs:Literal ;
+    ns1:parallelTitle rdfs:Literal ;
+    ns1:properTitle rdfs:Literal ;
+    ns1:relatedWorkNote rdfs:Literal ;
+    ns1:reuses <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns1:subject rdfs:Literal ;
+    ns1:title rdfs:Literal ;
+    ns2:anthropologicalMaterialMorphology rdfs:Literal ;
+    ns2:positionInComplexCulturalProperty rdfs:Literal ;
+    ns2:proposedIntervention rdfs:Literal ;
+    ns2:storageConditions rdfs:Literal .
+

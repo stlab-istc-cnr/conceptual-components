@@ -1,0 +1,541 @@
+@prefix : <http://culturalis.org/ocsa/1.0#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://culturalis.org/ocsa/1.0#> .
+
+<http://culturalis.org/ocsa/1.0> rdf:type owl:Ontology ;
+                                  <http://purl.org/dc/terms/created> "2012/12/07" ;
+                                  <http://purl.org/dc/terms/modified> "2015/10/01" ;
+                                  rdfs:label "Ontology for Cultural Organizations' Services and Access"@en ;
+                                  owl:versionInfo "1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/references
+<http://purl.org/dc/terms/references> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://culturalis.org/ocsa/1.0#applyTo
+:applyTo rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :RulesAndRegulations ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                    :Area
+                                    :Equipment
+                                    :Service
+                                    :Site
+                                  )
+                    ] ;
+         rdfs:comment "Proprietà che associa la classe RulesAndRegulations con le entità a cui sono applicati regolamenti e carte dei servizi."@it ;
+         rdfs:label "Apply to"@en ,
+                    "Si applica a"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#attachedTo
+:attachedTo rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Staff
+                                        :StaffMember
+                                      )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                       :Area
+                                       :Service
+                                       :Site
+                                     )
+                       ] ;
+            rdfs:comment "Proprietà che associa le classi Staff e StaffMember con le entità di cui il personale di occupa."@it ;
+            rdfs:label "Attached to"@en ,
+                       "Si occupa di"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#byMeansOf
+:byMeansOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Service ;
+           rdfs:range :Equipment ;
+           rdfs:comment "Proprietà che associa la classe Service con le attrezzature utilizzate per fornire quel servizio."@it ;
+           rdfs:label "By means of"@en ,
+                      "Per mezzo di"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#givesAdmission
+:givesAdmission rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                            :Agent
+                                            :Area
+                                            :Service
+                                            :Site
+                                          )
+                            ] ;
+                rdfs:range :Admission ;
+                rdfs:comment "Proprietà che associa la classe Admission con le entità di cui specifica le modalità di accesso."@it ;
+                rdfs:label "Gives admission"@en ,
+                           "Ha modalità di accesso"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#hasAddress
+:hasAddress rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Area
+                                        :Site
+                                      )
+                        ] ;
+            rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
+            rdfs:comment "Proprietà che associa le classi Site e Area con il relativo indirizzo."@it ;
+            rdfs:label "Ha indirizzo"@it ,
+                       "Has address"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#hasConditionOfUse
+:hasConditionOfUse rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Agent
+                                               :Area
+                                               :Equipment
+                                               :Service
+                                               :Site
+                                             )
+                               ] ;
+                   rdfs:range :ConditionOfUse ;
+                   rdfs:comment "Proprietà che associa le classi Service, Area, Site, Agent, Equipment con gli specifici requisiti o condizioni d’uso."@it ;
+                   rdfs:label "Ha condizione o requisito d’uso"@it ,
+                              "Has condition of use"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#hasRulesAndRegulations
+:hasRulesAndRegulations rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                                    :Agent
+                                                  )
+                                    ] ;
+                        rdfs:range :RulesAndRegulations ;
+                        rdfs:comment "Proprietà che associa la classe Agent con la classe RulesAndRegulations."@it ;
+                        rdfs:label "Ha regolamento o carte dei servizi"@it ,
+                                   "Has rules and regulations"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#hasStaff
+:hasStaff rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                      :Agent
+                                    )
+                      ] ;
+          rdfs:range :Staff ;
+          rdfs:comment "Proprietà che associa la classe Agent con la classe Staff."@it ;
+          rdfs:label "Ha staff collegato"@it ,
+                     "Has staff"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#hasStaffMember
+:hasStaffMember rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Staff ;
+                rdfs:range :StaffMember ;
+                rdfs:comment "Proprietà che associa la classe Staff con le singole persone che operano all’interno dell’Agent."@it ;
+                rdfs:label "Comprende"@it ,
+                           "Has staff member"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#includesArea
+:includesArea rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                          :Agent
+                                          :Site
+                                        )
+                          ] ;
+              rdfs:range :Area ;
+              rdfs:comment "Proprietà che associa le classi Agent e Site con la classe Area."@it ;
+              rdfs:label "Include"@it ,
+                         "Includes area"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#isAvailableAt
+:isAvailableAt rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Equipment
+                                           :Service
+                                         )
+                           ] ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Area
+                                          :Site
+                                        )
+                          ] ;
+               rdfs:comment "Proprietà che associa le classi Equipment e Service con le classi Site e Area in cui servizi e attrezzature sono disponibili."@it ;
+               rdfs:label "Disponibile in"@it ,
+                          "Is available at"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#isAvailableFor
+:isAvailableFor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Service ;
+                rdfs:range owl:Thing ;
+                rdfs:comment "Proprietà che associa la classe Service con le entità in relazione alle quali sono disponibili quei servizi."@it ;
+                rdfs:label "Is available for"@en ,
+                           "È disponibile per"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#linkingTo
+:linkingTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Contacts ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                      :Agent
+                                      :Area
+                                      :Service
+                                      :Site
+                                      :Staff
+                                      :StaffMember
+                                    )
+                      ] ;
+           rdfs:comment "Proprietà che associa la classe Contacts con le entità a cui si riferiscono i contatti stessi."@it ;
+           rdfs:label "Linking to"@en ,
+                      "Mette collegamento con"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#makesAvailableEquipment
+:makesAvailableEquipment rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                                     :Agent
+                                                   )
+                                     ] ;
+                         rdfs:range :Equipment ;
+                         rdfs:comment "Proprietà che associa la classe Agent alle attrezzature possedute, messe a disposizione o utilizzate da un ente."@it ;
+                         rdfs:label "Makes available equipment"@en ,
+                                    "Mette a disposizione"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#offersService
+:offersService rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                           :Agent
+                                         )
+                           ] ;
+               rdfs:range :Service ;
+               rdfs:comment "Proprietà che associa la classe Agent ai servizi che offre ai suoi utenti."@it ;
+               rdfs:label "Offers service"@en ,
+                          "Offre servizi"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#partecipatesInEvent
+:partecipatesInEvent rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                                 :Agent
+                                               )
+                                 ] ;
+                     rdfs:range <http://linkedevents.org/ontology/Event> ;
+                     rdfs:comment "Proprietà che associa la classe Agent agli eventi a cui l’Agent prende parte a vario titolo."@it ;
+                     rdfs:label "Partecipa all'evento"@it ,
+                                "Partecipates in event"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#partecipatesInNetwork
+:partecipatesInNetwork rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                                   :Agent
+                                                 )
+                                   ] ;
+                       rdfs:range :Network ;
+                       rdfs:comment "Proprietà che associa la classe Agent alle reti o consorzi in cui l’Agent è coinvolto a vario titolo."@it ;
+                       rdfs:label "Partecipa alla rete"@it ,
+                                  "Partecipates in network"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#partecipatesInProject
+:partecipatesInProject rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                                   :Agent
+                                                   :Network
+                                                 )
+                                   ] ;
+                       rdfs:range <http://xmlns.com/foaf/0.1/Project> ;
+                       rdfs:comment "Proprietà che associa la classe Agent ai progetti in cui l’Agent è coinvolto a vario titolo."@it ;
+                       rdfs:label "Partecipa al progetto"@it ,
+                                  "Partecipates in project"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#situated
+:situated rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( <http://culturalis.org/eac-cpf#Entity>
+                                      :Agent
+                                    )
+                      ] ;
+          rdfs:range :Site ;
+          rdfs:comment "Proprietà che associa la classe Agent alle sue sedi."@it ;
+          rdfs:label "E' situato"@it ,
+                     "Situated"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://culturalis.org/ocsa/1.0#accessibility
+:accessibility rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Admission ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Proprietà che descrive l'eliminazione delle barriere architettoniche o altre specifiche condizioni di accessibilità."@it ;
+               rdfs:label "Accessibility"@en ,
+                          "Accessibilità"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#admittedUsers
+:admittedUsers rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Admission ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Proprietà che descrive le categorie di utenti ammessi."@it ;
+               rdfs:label "Admitted users"@en ,
+                          "Utenti ammessi"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#automation
+:automation rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :ConditionOfUse ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Proprietà che indica la presenza di procedure automatizzate per la fruizione dei servizi o l’utilizzo delle attrezzature offerte dall’Agent (booleano)."@it ;
+            rdfs:label "Automation"@en ,
+                       "Informatizzazione"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#availability
+:availability rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :ConditionOfUse ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Proprietà che indica la disponibilità di un servizio o un attrezzatura (booleano)."@it ;
+              rdfs:label "Availability"@en ,
+                         "Disponibilità"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :ConditionOfUse ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Proprietà che indica la durata massima di fruizione di un servizio o un’attrezzatura (quanti giorni può durare un prestito bibliotecario, per quante ore è possibile utilizzare una postazione internet, ecc.)."@it ;
+          rdfs:label "Durata"@it ,
+                     "Duration"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#freeAdmission
+:freeAdmission rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Admission ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Proprietà che indica la gratuità dell’accesso all’Agent o ai servizi offerti (booleano)."@it ;
+               rdfs:label "Accesso libero/gratuito"@it ,
+                          "Free admission"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#numberOf
+:numberOf rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :ConditionOfUse
+                                      :Equipment
+                                    )
+                      ] ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Proprietà utilizzata per indicare il numero di specifiche attrezzature possedute dall'istituto."@it ;
+          rdfs:label "Number of"@en ,
+                     "Quantità"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#seatingCapacity
+:seatingCapacity rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Area
+                                             :Site
+                                           )
+                             ] ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Proprietà utilizzata per indicare il numero di posti a sedere disponibili in un’Area o in un Site."@it ;
+                 rdfs:label "Posti disponibili"@it ,
+                            "Seating capacity"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://culturalis.org/cult/0.1#CulturalInstitutionAndSite
+<http://culturalis.org/cult/0.1#CulturalInstitutionAndSite> rdf:type owl:Class ;
+                                                            owl:equivalentClass <http://culturalis.org/eac-cpf#Entity> ,
+                                                                                :Agent ;
+                                                            rdfs:subClassOf owl:Thing .
+
+
+###  http://culturalis.org/cult/0.1#Site
+<http://culturalis.org/cult/0.1#Site> rdf:type owl:Class ;
+                                      owl:equivalentClass :Site ;
+                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://culturalis.org/eac-cpf#Entity
+<http://culturalis.org/eac-cpf#Entity> rdf:type owl:Class ;
+                                       owl:equivalentClass :Agent ;
+                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://culturalis.org/ocsa/1.0#Admission
+:Admission rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:comment "Modalità di accesso all'Agent o ai servizi, alle aree, alle attrezzature a disposizione degli utenti (orari di apertura, costi e gratuità, accessibilità, accessi riservati)."@it ;
+           rdfs:label "Admission"@en ,
+                      "Modalità di accesso"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       rdfs:comment "Un agente (persona, famiglia, ente pubblico o privato) che offra l’accesso a servizi culturali e/o agisca anche in qualità di istituto culturale."@it ;
+       rdfs:label "Agent"@en ,
+                  "Agente"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#Area
+:Area rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:comment "Area o spazio specificamente individuato e dedicato al pubblico, ai materiali conservati, a specifiche attività, ecc."@it ;
+      rdfs:label "Area"@en ,
+                 "Area o spazio specificamente individuato"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#ConditionOfUse
+:ConditionOfUse rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing ;
+                rdfs:comment "Condizione o requisito necessario per  la fruizione dei servizi o l’utilizzo delle attrezzature offerti dall’Agent."@it ;
+                rdfs:label "Condition of use"@en ,
+                           "Condizione o requisito d'uso"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#Contacts
+:Contacts rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:comment "Insieme dei contatti (numeri di telefono, fax, mail, siti web) di uno specifico Agent, del suo staff, di una sua area o di uno specifico servizio o attività."@it ;
+          rdfs:label "Contacts"@en ,
+                     "Contatti"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#Equipment
+:Equipment rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:comment "Attrezzature posseduta, messa a disposizione o utilizzata da un Agent."@it ;
+           rdfs:label "Attrezzatura"@it ,
+                      "Equipment"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#Network
+:Network rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:comment "Rete o consorzio a cui l’Agent partecipa a vario titolo."@it ;
+         rdfs:label "Network"@en ,
+                    "Network"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#RulesAndRegulations
+:RulesAndRegulations rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing ;
+                     rdfs:comment "Regolamenti, carte dei servizi o altre norme che regolano l’accesso all'Agent e l’erogazione dei servizi."@it ;
+                     rdfs:label "Regolamenti e carte dei servizi"@it ,
+                                "Rules and regulations"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:comment "Servizio offerto da un Agent ((consultazione, prestito, riproduzione, visita guidata, attività didattica, accesso ad internet...)."@it ;
+         rdfs:label "Service"@en ,
+                    "Servizio al pubblico"@it .
+
+
+###  http://culturalis.org/ocsa/1.0#Site
+:Site rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:comment "Sede dell’Agent. Ogni Agent può avere più sedi, con patrimoni, servizi, attrezzature, orari, personale differenziati."@it ;
+      rdfs:label "Sede"@it ,
+                 "Site"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#Staff
+:Staff rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       rdfs:comment "Personale che opera all’interno dell’Agent."@it ;
+       rdfs:label "Responsabile"@it ,
+                  "Staff"@en .
+
+
+###  http://culturalis.org/ocsa/1.0#StaffMember
+:StaffMember rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:comment "Persona che opera all’interno dell’Agent."@it ;
+             rdfs:label "Membro dello staff"@it ,
+                        "Staff member"@en .
+
+
+###  http://linkedevents.org/ontology/Event
+<http://linkedevents.org/ontology/Event> rdf:type owl:Class ;
+                                         rdfs:subClassOf owl:Thing .
+
+
+###  http://www.w3.org/2006/vcard/ns#Address
+<http://www.w3.org/2006/vcard/ns#Address> rdf:type owl:Class ;
+                                          rdfs:subClassOf owl:Thing .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class ;
+                                    rdfs:subClassOf owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

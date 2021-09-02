@@ -1,0 +1,25 @@
+@prefix ns1: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rdaregistry.info/Elements/c/C10005> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:PlaceOrGeographicName ns2:subsumedUnder ns1:AuthorityResource .
+
+ns1:AuthorityResource ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+rdfs:Literal ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:ConferenceOrEvent ns1:abbreviatedNameForTheConferenceOrEvent rdfs:Literal ;
+    ns1:placeOfConferenceOrEvent ns1:PlaceOrGeographicName ;
+    ns1:precedingConferenceOrEvent ns1:ConferenceOrEvent ;
+    ns1:preferredNameForTheConferenceOrEvent rdfs:Literal ;
+    ns1:succeedingConferenceOrEvent ns1:ConferenceOrEvent ;
+    ns1:temporaryNameOfTheConferenceOrEvent ns1:ConferenceOrEvent ;
+    ns1:variantNameForTheConferenceOrEvent rdfs:Literal ;
+    ns2:subsumedUnder <http://rdaregistry.info/Elements/c/C10005>,
+        ns1:AuthorityResource .
+

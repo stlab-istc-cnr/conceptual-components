@@ -1,0 +1,25 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Person ns1:portrait xsd:anyURI ;
+    ns2:subsumedUnder ns1:Agent,
+        <http://xmlns.com/foaf/0.1/Person> .
+
+ns1:Redaction ns1:additionalFile xsd:anyURI ;
+    ns1:text xsd:anyURI ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Agent ns2:subsumedUnder <http://www.europeana.eu/schemas/edm/Agent>,
+        <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> .
+
+<http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://xmlns.com/foaf/0.1/Person> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

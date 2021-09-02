@@ -1,0 +1,33 @@
+@prefix ns1: <https://w3id.org/arco/ontology/cataloguing-campaign/> .
+@prefix ns2: <https://w3id.org/italia/onto/l0/> .
+@prefix ns3: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns4: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.gov.it/onto/dcatapit#Organization> ns1:acronym rdfs:Literal ;
+    ns3:isConstructionCompanyOf ns3:CulturalPropertyRealization ;
+    ns4:extensionallyEquivalent <http://www.w3.org/2006/vcard/ns#Organization> ;
+    ns4:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        ns2:Agent ;
+    ns2:identifier rdfs:Literal ;
+    ns2:name rdfs:Literal .
+
+<http://www.w3.org/2006/vcard/ns#Organization> ns4:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        ns2:Agent .
+
+ns3:CulturalPropertyRealization ns4:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+<http://dati.gov.it/onto/dcatapit#Agent> ns4:extensionallyEquivalent <http://xmlns.com/foaf/0.1/Agent>,
+        ns2:Agent ;
+    ns4:subsumedUnder ns2:Entity .
+
+<http://xmlns.com/foaf/0.1/Agent> ns4:extensionallyEquivalent ns2:Agent ;
+    ns4:subsumedUnder ns2:Entity .
+
+ns2:Agent ns4:subsumedUnder ns2:Entity .
+

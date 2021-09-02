@@ -1,0 +1,15 @@
+@prefix ns1: <http://myreview#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Document ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Paper ns1:hasStatus ns1:PaperStatus ;
+    ns2:subsumedUnder ns1:Document .
+
+ns1:PaperStatus ns1:isStatusOf ns1:Paper ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

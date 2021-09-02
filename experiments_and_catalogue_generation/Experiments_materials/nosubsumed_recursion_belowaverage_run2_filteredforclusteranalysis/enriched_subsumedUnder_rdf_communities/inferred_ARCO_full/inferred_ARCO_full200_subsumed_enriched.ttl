@@ -1,0 +1,20 @@
+@prefix ns1: <https://w3id.org/arco/ontology/immovable-property/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/denotative-description/Soil> ns2:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns1:ArchitecturalElement ns2:subsumedUnder ns1:ConstructionElement .
+
+ns1:Building ns1:hasFoundation ns1:Foundation ;
+    ns2:subsumedUnder ns1:ConstructionSpace .
+
+ns1:ConstructionSpace ns2:subsumedUnder ns1:Construction .
+
+ns1:Foundation ns1:isFoundationOf ns1:Building ;
+    ns1:laysOnSoil <https://w3id.org/arco/ontology/denotative-description/Soil> ;
+    ns2:subsumedUnder ns1:ArchitecturalElement .
+

@@ -1,0 +1,19 @@
+@prefix ns1: <http://confious#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Contact_Person ns1:is_author_of ns1:paper ;
+    ns2:subsumedUnder ns1:human .
+
+ns1:article ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:human ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:paper ns1:has_author ns1:human ;
+    ns2:subsumedUnder ns1:article .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:is_concerned_paper ns1:paper .
+

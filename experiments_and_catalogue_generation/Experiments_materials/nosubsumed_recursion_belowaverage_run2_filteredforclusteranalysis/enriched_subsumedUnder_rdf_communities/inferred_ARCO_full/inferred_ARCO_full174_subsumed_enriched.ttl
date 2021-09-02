@@ -1,0 +1,54 @@
+@prefix ns1: <https://w3id.org/italia/onto/CLV/> .
+@prefix ns2: <https://w3id.org/italia/onto/l0/> .
+@prefix ns3: <https://w3id.org/arco/ontology/location/> .
+@prefix ns4: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns5: <https://w3id.org/italia/onto/TI/> .
+@prefix ns6: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.gov.it/onto/dcatapit#Organization> ns6:extensionallyEquivalent <http://www.w3.org/2006/vcard/ns#Organization> ;
+    ns6:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        ns2:Agent ;
+    ns1:hasSpatialCoverage ns1:Feature .
+
+ns3:TimeIndexedTypedLocation ns3:atLocation ns1:Feature ;
+    ns6:subsumedUnder <https://w3id.org/arco/ontology/core/TimeIndexedSituation> .
+
+<http://www.w3.org/2006/vcard/ns#Organization> ns6:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        ns2:Agent .
+
+ns4:Use ns4:hasCulturalGeographicArea ns1:Feature ;
+    ns6:subsumedUnder ns2:Description .
+
+ns3:ToponymInTime ns3:isToponymInTimeOf ns1:Feature ;
+    ns6:subsumedUnder <https://w3id.org/arco/ontology/core/TimeIndexedSituation> ;
+    ns5:atTime ns5:TimeInterval ;
+    ns2:name rdfs:Literal .
+
+ns1:SpatialObject ns6:subsumedUnder ns2:Location .
+
+ns5:TimeInterval ns6:subsumedUnder ns2:Entity .
+
+ns2:Description ns6:subsumedUnder ns2:Entity,
+        ns2:Object .
+
+<http://dati.gov.it/onto/dcatapit#Agent> ns6:extensionallyEquivalent <http://xmlns.com/foaf/0.1/Agent>,
+        ns2:Agent ;
+    ns6:subsumedUnder ns2:Entity .
+
+<https://w3id.org/arco/ontology/core/TimeIndexedSituation> ns6:subsumedUnder <https://w3id.org/arco/ontology/core/Situation> .
+
+<http://xmlns.com/foaf/0.1/Agent> ns6:extensionallyEquivalent ns2:Agent ;
+    ns6:subsumedUnder ns2:Entity .
+
+ns1:Feature ns4:isCulturalGeographicAreaOf ns4:Use ;
+    ns3:hasToponymInTime ns3:ToponymInTime ;
+    ns6:subsumedUnder ns1:SpatialObject .
+
+ns2:Agent ns6:subsumedUnder ns2:Entity .
+

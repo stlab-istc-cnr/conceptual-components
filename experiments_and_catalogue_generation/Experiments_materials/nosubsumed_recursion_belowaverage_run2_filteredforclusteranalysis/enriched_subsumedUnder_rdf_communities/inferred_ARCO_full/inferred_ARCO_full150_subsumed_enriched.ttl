@@ -1,0 +1,30 @@
+@prefix ns1: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix ns2: <https://w3id.org/arco/ontology/core/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Specimen ns2:isClassifiedBy ns1:Taxon ;
+    ns3:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:Concept ns3:extensionallyEquivalent <https://w3id.org/italia/onto/l0/Concept> ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:hasTaxon ns1:Taxon ;
+    ns1:isClassifiedByCurrentTaxon ns1:Taxon ;
+    ns1:isClassifiedByOriginalTaxon ns1:Taxon .
+
+<https://w3id.org/italia/onto/l0/Concept> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns1:Taxon ns1:hasDirectHigherRank ns1:Taxon ;
+    ns1:hasDirectLowerRank ns1:Taxon ;
+    ns1:hasHigherRank ns1:Taxon ;
+    ns1:hasLowerRank ns1:Taxon ;
+    ns1:isTaxonOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns3:subsumedUnder ns2:Concept,
+        <https://w3id.org/italia/onto/l0/Concept> .
+

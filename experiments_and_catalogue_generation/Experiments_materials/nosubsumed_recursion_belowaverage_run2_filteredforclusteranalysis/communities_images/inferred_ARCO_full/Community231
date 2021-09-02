@@ -1,0 +1,11 @@
+digraph "Community 231" {
+	Soil -> MeasurementCollection [label=hasMeasurementCollection]
+	MeasurementCollection
+	Construction -> MeasurementCollection [label=hasMeasurementCollection]
+	MeasurementCollection -> Measurement [label=hasVolumetricDimensionsMeasurement]
+	MeasurementCollection -> Thing [label=isMeasurementCollectionOf]
+	UnitCell -> MeasurementCollection [label=hasMeasurementCollection]
+	MeasurementCollection -> Literal [label=validity]
+	Thing -> MeasurementCollection [label=hasMeasurementCollection]
+	CulturalProperty -> MeasurementCollection [label=hasMeasurementCollection]
+}

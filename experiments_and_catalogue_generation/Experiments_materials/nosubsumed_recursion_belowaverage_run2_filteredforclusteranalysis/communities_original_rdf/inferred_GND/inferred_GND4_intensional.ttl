@@ -1,0 +1,23 @@
+@prefix ns1: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:DifferentiatedPerson ns1:characteristicPlace ns1:PlaceOrGeographicName ;
+    ns1:placeOfBirth ns1:PlaceOrGeographicName ;
+    ns1:placeOfDeath ns1:PlaceOrGeographicName .
+
+ns1:Work ns1:placeOfDiscovery ns1:PlaceOrGeographicName .
+
+ns1:PlaceOrGeographicName ns1:StartingOrFinalPointOfADistance ns1:PlaceOrGeographicName ;
+    ns1:abbreviatedNameForThePlaceOrGeographicName rdfs:Literal ;
+    ns1:easternmostLongitude rdfs:Literal ;
+    ns1:hierarchicalSuperiorOfPlaceOrGeographicName ns1:PlaceOrGeographicName ;
+    ns1:northernmostLatitude rdfs:Literal ;
+    ns1:preferredNameForThePlaceOrGeographicName rdfs:Literal ;
+    ns1:southernmostLatitude rdfs:Literal ;
+    ns1:startingOrFinalPointOfADistance ns1:PlaceOrGeographicName ;
+    ns1:variantNameForThePlaceOrGeographicName rdfs:Literal ;
+    ns1:westernmostLongitude rdfs:Literal .
+

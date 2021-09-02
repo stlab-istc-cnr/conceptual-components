@@ -1,0 +1,12 @@
+digraph "Community 10" {
+	DateEntity
+	Redaction -> DateEntity [label=date]
+	DateEntity -> string [label=dateNote]
+	DateEntity -> DateExpression [label=isExpressedAs]
+	Place -> DateEntity [label=date]
+	Person -> DateEntity [label=birthDate]
+	Person -> DateEntity [label=deathDate]
+	Person -> DateEntity [label=floruit]
+	PoeticWork -> DateEntity [label=date]
+	DateExpression
+}

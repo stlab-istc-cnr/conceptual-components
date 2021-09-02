@@ -1,0 +1,54 @@
+@prefix ns1: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns2: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:ArchaeologicalFieldSurvey ns1:hasActivityResponsible <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasSurveyScientificDirector <https://w3id.org/italia/onto/l0/Agent> ;
+    ns3:subsumedUnder ns1:Survey .
+
+ns1:PreparatoryOrFinalWork ns1:hasAuthor <https://w3id.org/italia/onto/l0/Agent> ;
+    ns3:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:CulturalPropertyRecord ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns1:CurrentInventory ns1:hasResponsibleForInsertion <https://w3id.org/italia/onto/l0/Agent> ;
+    ns3:subsumedUnder ns1:Inventory,
+        <https://w3id.org/arco/ontology/core/Category> .
+
+ns1:Survey ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Activity> .
+
+<https://w3id.org/arco/ontology/core/Category> ns3:subsumedUnder <https://w3id.org/arco/ontology/core/Concept>,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+<https://w3id.org/italia/onto/l0/Entity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Inventory ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns1:hasAuthor <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasAuthorityFileCataloguingAgency <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasRelatedAgent <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasSecondaryAuthor <https://w3id.org/italia/onto/l0/Agent> ;
+    ns1:hasUser <https://w3id.org/italia/onto/l0/Agent> .
+
+<https://w3id.org/italia/onto/l0/Agent> ns2:isResponsibleAgentOfCulturalPropertyRecord ns2:CulturalPropertyRecord ;
+    ns1:address rdfs:Literal ;
+    ns1:agentDate rdfs:Literal ;
+    ns1:agentLocalIdentifier rdfs:Literal ;
+    ns1:authorICCDIdentifier rdfs:Literal ;
+    ns1:contacts rdfs:Literal ;
+    ns1:historicalBiographicalInformation rdfs:Literal ;
+    ns1:isAgentRelatedTo <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:isAuthorOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:isAuthorityFileCataloguingAgencyOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:isInventoryIdentifierResponsibleOf ns1:Inventory ;
+    ns1:isResponsibleForInsertionOf ns1:CurrentInventory ;
+    ns1:isSecondaryAuthorOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns1:isUserOf <http://www.w3.org/2002/07/owl#Thing> ;
+    ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

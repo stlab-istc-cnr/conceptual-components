@@ -1,0 +1,20 @@
+@prefix ns1: <https://w3id.org/italia/onto/TI/> .
+@prefix ns2: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns3: <https://w3id.org/arco/ontology/core/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns2:hasIntervention ns2:Intervention .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns2:hasIntervention ns2:Intervention .
+
+ns2:Intervention ns2:hasActivityOperator <https://w3id.org/italia/onto/l0/Agent> ;
+    ns2:hasActivityResponsible <https://w3id.org/italia/onto/l0/Agent> ;
+    ns2:hasActivitySponsor <https://w3id.org/italia/onto/l0/Agent> ;
+    ns2:isInterventionOn <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns3:description rdfs:Literal ;
+    ns3:specifications rdfs:Literal ;
+    ns1:atTime ns1:TimeInterval .
+

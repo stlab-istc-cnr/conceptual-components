@@ -1,0 +1,18 @@
+@prefix ns1: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:F15_Complex_Work ns2:subsumedUnder ns1:F1_Work .
+
+ns1:F18_Serial_Work ns1:R11_has_issuing_rule <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+    ns2:subsumedUnder ns1:F15_Complex_Work,
+        ns1:F19_Publication_Work .
+
+ns1:F19_Publication_Work ns2:subsumedUnder ns1:F16_Container_Work .
+
+<http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ns1:R11i_is_issuing_rule_of ns1:F18_Serial_Work ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

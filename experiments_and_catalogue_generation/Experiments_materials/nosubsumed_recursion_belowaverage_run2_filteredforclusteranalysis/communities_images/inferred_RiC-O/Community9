@@ -1,0 +1,9 @@
+digraph "Community 9" {
+	LeadershipRelation -> Person [label=leadershipRelationHasSource]
+	LeadershipRelation
+	LeadershipRelation -> Group [label=leadershipRelationHasTarget]
+	LeadershipRelation -> Position [label=leadershipWithPosition]
+	Position -> LeadershipRelation [label=positionIsContextOfLeadershipRelation]
+	Person -> LeadershipRelation [label=personIsSourceOfLeadershipRelation]
+	Group -> LeadershipRelation [label=groupIsTargetOfLeadershipRelation]
+}

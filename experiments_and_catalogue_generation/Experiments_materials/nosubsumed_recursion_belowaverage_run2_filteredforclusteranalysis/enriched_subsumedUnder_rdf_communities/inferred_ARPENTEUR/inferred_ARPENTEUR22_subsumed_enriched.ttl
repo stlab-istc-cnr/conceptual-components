@@ -1,0 +1,20 @@
+@prefix ns1: <http://www.arpenteur.org/ontology/Arpenteur.owl#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Bloc ns1:isExtruded xsd:boolean ;
+    ns2:subsumedUnder ns1:ElementDeParement .
+
+ns1:IIdentifiedObject ns1:isActive xsd:boolean ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:UnitaStratigrafica ns1:isNegative xsd:boolean ;
+    ns2:subsumedUnder ns1:ElementoStratigrafico .
+
+ns1:ElementDeParement ns2:subsumedUnder ns1:Architecture .
+
+ns1:ElementoStratigrafico ns2:subsumedUnder ns1:UnitaArcheologica .
+

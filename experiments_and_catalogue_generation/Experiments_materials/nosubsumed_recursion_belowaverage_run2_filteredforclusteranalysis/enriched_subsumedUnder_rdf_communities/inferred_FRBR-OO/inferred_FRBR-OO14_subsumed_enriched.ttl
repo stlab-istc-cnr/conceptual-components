@@ -1,0 +1,23 @@
+@prefix ns1: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:F52_Name_Use_Activity ns1:R63_named <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+    ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> .
+
+ns1:F2_Expression ns2:subsumedUnder <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> .
+
+ns1:F35_Nomen_Use_Statement ns1:R38_refers_to_thema <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+    ns2:subsumedUnder ns1:F2_Expression,
+        <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ns1:R38i_is_thema_of ns1:F35_Nomen_Use_Statement ;
+    ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

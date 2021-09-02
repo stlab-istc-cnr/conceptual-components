@@ -1,0 +1,1404 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R11_has_issuing_rule
+<http://iflastandards.info/ns/fr/frbr/frbroo/R11_has_issuing_rule> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R11i_is_issuing_rule_of
+<http://iflastandards.info/ns/fr/frbr/frbroo/R11i_is_issuing_rule_of> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated
+<http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by
+<http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R18_created
+<http://iflastandards.info/ns/fr/frbr/frbroo/R18_created> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R18i_was_created_by
+<http://iflastandards.info/ns/fr/frbr/frbroo/R18i_was_created_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R23_created_a_realization_of
+<http://iflastandards.info/ns/fr/frbr/frbroo/R23_created_a_realization_of> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/R23i_was_realised_through
+<http://iflastandards.info/ns/fr/frbr/frbroo/R23i_was_realised_through> rdf:type owl:AnnotationProperty .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y10_enhanced
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10_enhanced> rdf:type owl:AnnotationProperty ;
+                                                            rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y10i_was_enhanced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10i_was_enhanced_through> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y11_separated
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11_separated> rdf:type owl:AnnotationProperty ;
+                                                             rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y11i_was_separated_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11i_was_separated_through> rdf:type owl:AnnotationProperty ;
+                                                                          rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y12_separated_from
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12_separated_from> rdf:type owl:AnnotationProperty ;
+                                                                  rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y12i_was_diminished_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12i_was_diminished_through> rdf:type owl:AnnotationProperty ;
+                                                                           rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y13_provided_surrogate_to
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13_provided_surrogate_to> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R23_created_a_realization_of> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y13i_had_surrogate_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13i_had_surrogate_through> rdf:type owl:AnnotationProperty ;
+                                                                          rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R23i_was_realised_through> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y14_substituted_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14_substituted_with> rdf:type owl:AnnotationProperty ;
+                                                                    rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y14i_became_surrogate_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14i_became_surrogate_through> rdf:type owl:AnnotationProperty ;
+                                                                             rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y15_replaced
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15_replaced> rdf:type owl:AnnotationProperty ;
+                                                            rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y15i_was_replaced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15i_was_replaced_through> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y16_replaced_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16_replaced_with> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y16i_was_introduced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16i_was_introduced_through> rdf:type owl:AnnotationProperty ;
+                                                                           rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> rdf:type owl:AnnotationProperty ;
+                                                                 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> rdf:type owl:AnnotationProperty ;
+                                                                        rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y23_foresees_dimension
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23_foresees_dimension> rdf:type owl:AnnotationProperty ;
+                                                                      rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y23i_is_dimension_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23i_is_dimension_foreseen_in> rdf:type owl:AnnotationProperty ;
+                                                                             rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y24_foresees_use_of_title
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24_foresees_use_of_title> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y24i_is_title_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24i_is_title_foreseen_in> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with> rdf:type owl:AnnotationProperty ;
+                                                                             rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P69_has_association_with> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in> rdf:type owl:AnnotationProperty ;
+                                                                                rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P69i_is_associated_with> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL> rdf:type owl:AnnotationProperty ;
+                                                                rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in> rdf:type owl:AnnotationProperty ;
+                                                                       rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y2_initiated_as_continuation
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2_initiated_as_continuation> rdf:type owl:AnnotationProperty ;
+                                                                            rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y2i_was_initiated_as_continuation_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2i_was_initiated_as_continuation_through> rdf:type owl:AnnotationProperty ;
+                                                                                         rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule> rdf:type owl:AnnotationProperty ;
+                                                                                      rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R11_has_issuing_rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of> rdf:type owl:AnnotationProperty ;
+                                                                                         rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R11i_is_issuing_rule_of> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of> rdf:type owl:AnnotationProperty ;
+                                                                    rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by> rdf:type owl:AnnotationProperty ;
+                                                                      rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y44_foresees_topic
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44_foresees_topic> rdf:type owl:AnnotationProperty ;
+                                                                  rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y44i_is_topic_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44i_is_topic_foreseen_in> rdf:type owl:AnnotationProperty ;
+                                                                         rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y45_created
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45_created> rdf:type owl:AnnotationProperty ;
+                                                           rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R18_created> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y45i_was_created_by
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45i_was_created_by> rdf:type owl:AnnotationProperty ;
+                                                                   rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R18i_was_created_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y46_aggregated_in_a_single_storage_unit
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46_aggregated_in_a_single_storage_unit> rdf:type owl:AnnotationProperty ;
+                                                                                       rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y46i_was_aggregated_in_a_single_storage_unit_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46i_was_aggregated_in_a_single_storage_unit_through> rdf:type owl:AnnotationProperty ;
+                                                                                                    rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y4_initiated_as_replacement
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4_initiated_as_replacement> rdf:type owl:AnnotationProperty ;
+                                                                           rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y4i_was_initiated_as_replacement_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4i_was_initiated_as_replacement_through> rdf:type owl:AnnotationProperty ;
+                                                                                        rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y6_initiated
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6_initiated> rdf:type owl:AnnotationProperty ;
+                                                            rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y6i_resulted_from_split
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6i_resulted_from_split> rdf:type owl:AnnotationProperty ;
+                                                                       rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y8_merged_into
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8_merged_into> rdf:type owl:AnnotationProperty ;
+                                                              rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16_initiated> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y8i_resulted_from_merger
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8i_resulted_from_merger> rdf:type owl:AnnotationProperty ;
+                                                                        rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/frbroo/R16i_was_initiated_by> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y9_absorbed
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9_absorbed> rdf:type owl:AnnotationProperty ;
+                                                           rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y9i_was_absorbed_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9i_was_absorbed_through> rdf:type owl:AnnotationProperty ;
+                                                                        rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of
+<http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at
+<http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object
+<http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for
+<http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P2_has_type
+<http://www.cidoc-crm.org/cidoc-crm/P2_has_type> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of
+<http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P67_refers_to
+<http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by
+<http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P69_has_association_with
+<http://www.cidoc-crm.org/cidoc-crm/P69_has_association_with> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P69i_is_associated_with
+<http://www.cidoc-crm.org/cidoc-crm/P69i_is_associated_with> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y10_enhanced
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10_enhanced> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption> ;
+                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y10i_was_enhanced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10i_was_enhanced_through> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y11_separated
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11_separated> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation> ;
+                                                             rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y11i_was_separated_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11i_was_separated_through> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                          rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                          rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y12_separated_from
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12_separated_from> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation> ;
+                                                                  rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y12i_was_diminished_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12i_was_diminished_through> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                           rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                           rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y13_provided_surrogate_to
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13_provided_surrogate_to> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y13i_had_surrogate_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13i_had_surrogate_through> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                          rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                          rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y14_substituted_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14_substituted_with> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution> ;
+                                                                    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y14i_became_surrogate_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14i_became_surrogate_through> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                             rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                             rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y15_replaced
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15_replaced> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change> ;
+                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y15i_was_replaced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15i_was_replaced_through> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y16_replaced_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16_replaced_with> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change> ;
+                                                                 rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y16i_was_introduced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16i_was_introduced_through> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                           rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                           rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y17_launched
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y17_launched> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z6_Starting_of_Publication> ;
+                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                            rdfs:comment "This property associates an instance of Z6 Starting of Publication with the serial the first issue of which was published through that process."@en ;
+                                                            rdfs:label "launched"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y17i_was_launched_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y17i_was_launched_through> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z6_Starting_of_Publication> ;
+                                                                         rdfs:label "was launched through"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y18_ended
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y18_ended> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z7_Ending_of_Publication> ;
+                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                         rdfs:comment "This property associates an instance of Z7 Ending of Publication with the serial the last issue of which was published through that process."@en ;
+                                                         rdfs:label "ended"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y18i_was_ended_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y18i_was_ended_through> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z7_Ending_of_Publication> ;
+                                                                      rdfs:label "was ended through"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y19_concerned
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y19_concerned> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z8_Metadata_Management> ;
+                                                             rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                             rdfs:comment "This property associates an instance of Z8 Metadata Management with the instance of F18 Serial Work that is described in the metadata over which the ISSN agency performing the instance of Z8 Metadata Management has a responsibility."@en ;
+                                                             rdfs:label "concerned"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y19i_was_the_concern_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y19i_was_the_concern_of> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                       rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z8_Metadata_Management> ;
+                                                                       rdfs:label "was the concern of"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y1_provided_a_continuation_to
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y1_provided_a_continuation_to> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                             rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                             rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                             rdfs:comment "This property associates an instance of Z1 Serial Transformation with an instance of F18 Serial Work that underwent a ‘major’ title change that transformed it into another instance of F18 Serial Work."@en ;
+                                                                             rdfs:label "provided a continuation to"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y1i_was_continued_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y1i_was_continued_through> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                         rdfs:label "was continued through"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                 rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+                                                                        rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y21_foresees_use_of_language
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y21_foresees_use_of_language> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                            rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E56_Language> ;
+                                                                            rdfs:comment """This property associates an instance of Z12 Issuing Rule with one or more than one language in which the contents of the serial are planned to be expressed.
+The Y21.1 mode of use property of the property makes it possible to specify whether the language pointed to is envisioned as the language of the main body of text or of the abstracts only or as one of several parallel languages, etc."""@en ;
+                                                                            rdfs:label "foresees use of language"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y21i_is_language_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y21i_is_language_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> ;
+                                                                            rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E56_Language> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                            rdfs:label "is language foreseen in"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y22_foresees_sequencing_pattern
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y22_foresees_sequencing_pattern> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> ;
+                                                                               rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                               rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+                                                                               rdfs:comment """This property associates an instance of Z12 Issuing Rule with a sequencing pattern foreseen for the issues of a serial that follows that policy.
+Typically, a sequencing pattern is not recorded in its archetypical form, but through the transcription of a statement found on one or more than one issue of the serial. The complete semantics of the relation between the serial described and the statement transcribed is contained in the following circle: F18 Serial Work R10 has member F19 Publication Work [ = the concepts of the individual issue from which the statement is transcribed] R3 is realised in F24 Publication Expression R15 has fragment F23 Expression Fragment Y43 is indicative of Z10 Sequencing Pattern Y22i is sequencing pattern foreseen in Z12 Issuing Rule Y37i is former or current issuing rule of F18 Serial Work.
+FRBRER distinguishes between the archetypical Sequencing Pattern, an attribute of the Expression entity, and the actual Numbering, an attribute of the Manifestation entity. The FRBRER Sequencing Pattern notion corresponds to Z10 Sequencing Pattern in PRESSOO, while the FRBRER Numbering corresponds to the instance of F23 Expression Fragment used to convey the archetypical sequencing pattern and does not call for a specific class in PRESSOO."""@en ;
+                                                                               rdfs:label "foresees sequencing pattern"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y22i_is_sequencing_pattern_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y22i_is_sequencing_pattern_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> ;
+                                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+                                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                                      rdfs:label "is sequencing pattern foreseen in"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y23_foresees_dimension
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23_foresees_dimension> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y23i_is_dimension_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23i_is_dimension_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                             rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+                                                                             rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y24_foresees_use_of_title
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24_foresees_use_of_title> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E35_Title> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y24i_is_title_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24i_is_title_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E35_Title> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                             rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                             rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                                rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y26_foresees_other_edition
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y26_foresees_other_edition> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with> ;
+                                                                          rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                          rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                          rdfs:comment """This property associates an instance of Z12 Issuing Rule with an instance of Z12 Issuing Rule associated with a continuing resource that the first instance of Z12 Issuing Rule regards as another edition of the continuing resource of which it is an issuing rule.
+It can denote a dynamic, asymmetric relationship where the range expresses the dependant publication, if such a direction can be established. Otherwise, it denotes a symmetric relationship, where none of the two continuing resources is regarded as dependant on the other.
+In addition to being a subproperty of Y25 foresees association with (has association foreseen in), it can also be analysed as a shortcut of the more developed path: Z12 Issuing Rule Y37i is former or current issuing rule of F18 Serial Work R10i is member of F15 Complex Work R10 has member F18 Serial Work Y37 has former or current issuing rule Z12 Issuing Rule.
+The Y26.1 has type property of the property allows the nature of the association to be specified; examples of types of association between instances of Z12 Issuing Rule include: other edition, other format, local edition, other edition on a different type of carrier, abridged edition, edition in a different language, etc."""@en ;
+                                                                          rdfs:label "foresees other edition"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y26i_foresees_to_be_another_edition_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y26i_foresees_to_be_another_edition_of> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in> ;
+                                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                                      rdfs:label "foresees to be another edition of"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y27_foresees_translation_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y27_foresees_translation_in> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y26_foresees_other_edition> ;
+                                                                           rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                           rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                           rdfs:comment """This property associates an instance of Z12 Issuing Rule with an instance of Z12 Issuing Rule associated with a continuing resource that, according to the respective issuing policies of the
+39/105
+two continuing resources, should contain a translation of the content of the first continuing resource.
+This is not the same notion as the association of a continuing resource with one or more than one ‘edition in a different language’, which is expressed through property Y26 foresees other edition (foresees to be another edition of)."""@en ;
+                                                                           rdfs:label "foresees translation in"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y27i_foresees_translation_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y27i_foresees_translation_of> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y26i_foresees_to_be_another_edition_of> ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                            rdfs:label "foresees translation of"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL> ;
+                                                                       rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y29_evolved_into
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y29_evolved_into> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                rdfs:comment "This property associates an instance of F18 Serial Work with the instance of F18 Serial Work into which it was transformed, due to a ‘major’ title change."@en ;
+                                                                rdfs:label "evolved into"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y29i_continues
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y29i_continues> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                              rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                              rdfs:label "continues"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y2_initiated_as_continuation
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2_initiated_as_continuation> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y2i_was_initiated_as_continuation_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2i_was_initiated_as_continuation_through> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y30_was_partially_continued_by
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y30_was_partially_continued_by> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                              rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                              rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                              rdfs:comment "This property associates an instance of F18 Serial Work with an instance of F18 Serial Work that was separated from it through an instance of Z3 Separation"@en ;
+                                                                              rdfs:label "was partially continued by"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y30i_was_separated_from
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y30i_was_separated_from> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                       rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                       rdfs:label "was separated from"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y31_was_superseded_by
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y31_was_superseded_by> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                     rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                     rdfs:comment "This property associates an instance of Z1 Serial Transformation with an instance of F18 Serial Work that was created with the distinct intention of being published in lieu of another instance of F18 Serial Work the publication of which had ceased."@en ;
+                                                                     rdfs:label "was superseded by"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y31i_superseded
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y31i_superseded> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                               rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                               rdfs:label "superseded"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y32_was_split_into
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y32_was_split_into> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                  rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                  rdfs:comment "This property associates an instance of F18 Serial Work with any one of the instances of F18 Serial Work that were created on the occasion of its split."@en ;
+                                                                  rdfs:label "was split into"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y32i_resulted_from_splitting
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y32i_resulted_from_splitting> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                            rdfs:label "resulted from splitting"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y33_was_merged_with
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y33_was_merged_with> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                   rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                   rdfs:comment "This symmetrical property associates an instance of F18 Serial Work with any one of the instances of F18 Serial Work with which it was merged in order to create a new instance of F18 Serial Work."@en ;
+                                                                   rdfs:label "was merged with"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y34_was_merged_to_form
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y34_was_merged_to_form> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:comment "This property associates instances of F18 Serial Work with an instance of F18 Serial Work that was created by merging them."@en ;
+                                                                      rdfs:label "was merged to form"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y34i_resulted_from_merging
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y34i_resulted_from_merging> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                          rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                          rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                          rdfs:label "resulted from merging"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y35_was_absorbed_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y35_was_absorbed_in> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                   rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                   rdfs:comment "This property associates instances of F18 Serial Work with the instances of F18 Serial Work that absorbed them."@en ;
+                                                                   rdfs:label "was absorbed in"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y35i_was_enhanced_by_absorbing
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y35i_was_enhanced_by_absorbing> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                              rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                              rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                              rdfs:label "was enhanced by absorbing"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y36_had_surrogate
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y36_had_surrogate> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                 rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                 rdfs:comment "This property associates an instance of F18 Serial Work with an instance of F18 Serial Work that temporarily replaced it."@en ;
+                                                                 rdfs:label "had surrogate"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y36i_was_surrogate_for
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y36i_was_surrogate_for> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:label "was surrogate for"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y38_has_current_issuing_rule
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y38_has_current_issuing_rule> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule> ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                            rdfs:comment """This property associates an instance of F18 Serial Work with instances of Z12 Issuing Rule that specify aspects of the issuing policy planned by this Work, such as sequencing pattern, expected frequency or expected regularity, at the time of validity of the record or database containing the statement that uses this property.
+If the publication has ceased, this property reflects the latest known issuing rules followed by the continuing resource when its last known issue was released (i.e., the issuing rules followed in the instance of Z7 Ending of Publication associated with the continuing resource), rather than the ‘current’ issuing rules (since in that case, strictly speaking, there are no ‘current’ issuing rules)."""@en ;
+                                                                            rdfs:label "has current issuing rule"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y38i_is_current_issuing_rule_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y38i_is_current_issuing_rule_of> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of> ;
+                                                                               rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                               rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                               rdfs:label "is current issuing rule of"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y39_is_enhanced_by_monograph
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y39_is_enhanced_by_monograph> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+                                                                            rdfs:comment """This property associates an instance of F18 Serial Work with an instance of Z13 Monograph that constitutes an enhancement of its content.
+[Note. The relationship between a series and a monograph published as a volume within that series, or between a periodical and one of its regular issues, is not expressed through this property, but by stating that the monograph or regular issue is a member of the series or periodical, i.e., F18 Serial Work R10 has member (is member of) F19 Publication Work. Special issues of a periodical that are included in that periodical’s numbering are also modelled simply as members of the periodical, not as monographs that enhance it.]
+The Y39.1 has type property of the property allows the nature of the association to be specified; examples of types of enhancement of an instance of F18 Serial Work by a monograph include: supplementing monograph, special issue, etc."""@en ;
+                                                                            rdfs:label "is enhanced by monograph"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y39i_enhances_serial
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y39i_enhances_serial> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+                                                                    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                    rdfs:label "enhances serial"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y3_provided_a_replacement_to
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y3_provided_a_replacement_to> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                            rdfs:comment "This property associates an instance of Z1 Serial Transformation with an instance of F18 Serial Work the publication of which had ceased and that was superseded by one or more than one instance of F18 Serial Work."@en ;
+                                                                            rdfs:label "provided a replacement to"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y3i_was_replaced_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y3i_was_replaced_through> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                        rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                        rdfs:label "was replaced through"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y40_enhances_monograph
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y40_enhances_monograph> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+                                                                      rdfs:comment """This property associates an instance of F18 Serial Work with an instance of Z13 Monograph the content of which is enhanced by the instance of F18 Serial Work.
+The Y40.1 has type property of the property allows the nature of the association to be specified; examples of types of enhancement of a monograph by an instance of F18 Serial Work include: supplemented monograph, base volume for an updating loose-leaf, etc."""@en ;
+                                                                      rdfs:label "enhances monograph"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y40i_is_enhanced_by_serial
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y40i_is_enhanced_by_serial> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                          rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> ;
+                                                                          rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                          rdfs:label "is enhanced by serial"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y41_has_former_or_current_area_of_publication
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y41_has_former_or_current_area_of_publication> rdf:type owl:ObjectProperty ;
+                                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                             rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                             rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                                                             rdfs:comment """This property associates an instance of F18 Serial Work with an instance of E53 Place that corresponds to the country (in the sense of ISO standard ISO 3166) in which the publisher (or one of the publishers) of the serial work is established.
+It makes no statement as to whether the publisher whose headquarters is located within the country referred to is still the publisher of the serial work at the time of validity of the record or database containing the statement that uses this property, nor does it make any statement as to whether the publisher is still located within that country."""@en ;
+                                                                                             rdfs:label "has former or current area of publication"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y41i_is_former_or_current_area_of_publication_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y41i_is_former_or_current_area_of_publication_of> rdf:type owl:ObjectProperty ;
+                                                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                                                                rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                                rdfs:label "is former or current area of publication of"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y42_has_current_area_of_publication
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y42_has_current_area_of_publication> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y41_has_former_or_current_area_of_publication> ;
+                                                                                   rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                   rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                                                   rdfs:comment """corresponds to the country (in the sense of ISO standard ISO 3166) in which the publisher (or one of the publishers) of the serial work is established, at the time of validity of the record or database containing the statement that uses this property.
+[Comment: The choice of the ISSN agency that performs an instance of Z8 Metadata Management on a given instance of F18 Serial Work is determined by the current area(s) of publication of that instance of F18 Serial Work.]"""@en ;
+                                                                                   rdfs:label "has current area of publication"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y42i_is_current_area_of_publication_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y42i_is_current_area_of_publication_of> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf <http://iflastandards.info/ns/fr/frbr/pressoo/Y41i_is_former_or_current_area_of_publication_of> ;
+                                                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                      rdfs:label "is current area of publication of"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> ;
+                                                                    rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ;
+                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y44_foresees_topic
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44_foresees_topic> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> ;
+                                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y44i_is_topic_foreseen_in
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44i_is_topic_foreseen_in> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y45_created
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45_created> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation> ;
+                                                           rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z9_Storage_Unit> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y45i_was_created_by
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45i_was_created_by> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z9_Storage_Unit> ;
+                                                                   rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y46_aggregated_in_a_single_storage_unit
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46_aggregated_in_a_single_storage_unit> rdf:type owl:ObjectProperty ;
+                                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                       rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation> ;
+                                                                                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y46i_was_aggregated_in_a_single_storage_unit_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46i_was_aggregated_in_a_single_storage_unit_through> rdf:type owl:ObjectProperty ;
+                                                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ;
+                                                                                                    rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y4_initiated_as_replacement
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4_initiated_as_replacement> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                           rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                           rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y4i_was_initiated_as_replacement_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4i_was_initiated_as_replacement_through> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                        rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                                        rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y5_split
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y5_split> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                        rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                        rdfs:comment "This property associates an instance of Z1 Serial Transformation with an instance of F18 Serial Work that was split in order to create new instances of F18 Serial Work."@en ;
+                                                        rdfs:label "split"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y5i_was_split_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y5i_was_split_through> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                     rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                     rdfs:label "was split through"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y6_initiated
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6_initiated> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                            rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y6i_resulted_from_split
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6i_resulted_from_split> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                       rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y7_merged
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y7_merged> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                         rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                         rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                         rdfs:comment "This property associates an instance of Z1 Serial Transformation with any one of the instances of F18 Serial Work that were merged with each other in order to create a new instance of F18 Serial Work."@en ;
+                                                         rdfs:label "merged"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y7i_was_merged_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y7i_was_merged_through> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                      rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                                      rdfs:label "was merged through"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y8_merged_into
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8_merged_into> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> ;
+                                                              rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y8i_resulted_from_merger
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8i_resulted_from_merger> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                        rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y9_absorbed
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9_absorbed> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdfs:domain <http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption> ;
+                                                           rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Y9i_was_absorbed_through
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9i_was_absorbed_through> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> ;
+                                                                        rdfs:range <http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work
+<http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work> rdf:type owl:Class ;
+                                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work
+<http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment
+<http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception
+<http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation
+<http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event
+<http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton
+<http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf owl:Thing .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+                                                                      rdfs:comment """This class comprises ‘forms anticipated to be used in designating volumes/issues, etc. and/or dates for the individual units of the serial (e.g. Volume ..., number ...)’ [FRBR definition].
+A sequencing pattern is a type exemplified in one or more than one statement transcribed from one or more than one issue of a serial. The type itself is never recorded as such, but is only inferred from the transcribed statements."""@en ;
+                                                                      rdfs:label "Sequencing Pattern"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z11_URL> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point> ;
+                                                       rdfs:comment "This class comprises identifiers for servers from which digital files can be obtained online."@en ;
+                                                       rdfs:label "URL"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z12_Issuing_Rule> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ;
+                                                                rdfs:comment """This class comprises plans that specify bits of the issuing policy followed at some point in time for instances of F18 Serial Work.
+The notion of issuing policy may include: regularity, frequency, sequencing pattern, the language of the linguistic objects contained in each issue, dimension of each issue, the font used to print each issue, the layout and editorial rules adhered to in each issue, etc.
+[Note: The notion of issuing rule is to be understood differently in PRESSOO than in FRBROO. In FRBROO, property R11 has issuing rule (is issuing rule) points to a complete issuing policy that comprises a variety of parameters (regularity, frequency, dimension, language, etc.), while in PRESSOO an instance of Z12 Issuing Rule focuses on only one of those parameters and consists of a plan for just the expected regularity, just the expected frequency, just the expected dimension, etc. This perspective shift was made necessary when it was realized that any change (i.e., any instance of Z5 Issuing Rule Change) in just one of those parameters led to a new instantiation of Z12 Issuing Rule and new instantiations of all the ranges of the associated properties, with exactly the same value for each of them except for the one parameter that changes. It was deemed preferable to associate an instance of Z12 Issuing Rule with just one parameter of the issuing policy, which makes it possible that, e.g., a monthly was transformed into a quarterly without having to repeat that the expected language of its issues remains English.]"""@en ;
+                                                                rdfs:label "Issuing Rule"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z13_Monograph> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work> ;
+                                                             rdfs:comment """This class comprises instances of F19 Publication Work that are planned to result in an instance of F24 Publication Expression that should either be complete in one part, or completed within a finite (and predetermined) number of parts, as opposed to instances of F18 Serial Work. [Adapted from Appendix E: Glossary of ISBD, International Standard Bibliographic Description: Consolidated Edition, 2011]
+F18 Serial Work and Z13 Monograph are two distinct subclasses of F19 Publication Work; however, they are neither declared as disjoint nor complementary, in order to allow for a certain amount of uncertainty as to the actual nature of some publications."""@en ;
+                                                             rdfs:label "Monograph"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z14_Storage_Unit_Creation> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation> ;
+                                                                         rdfs:comment """This class comprises activities through which instances of Z9 Storage Unit are produced.
+Although the activity of producing a storage unit can be motivated by preservation only, it inevitably results in the creation of an expression that consists of the sum of all expressions conveyed by the individual items and/or manifestation singletons that make up the resulting storage unit. Z14 Storage Unit Creation is therefore declared as a subclass of F28 Expression Creation.
+A given instance of Z14 Storage Unit Creation can involve truly artistic endeavours, such as the conception and realisation of a binding which can be regarded as a piece of cultural heritage in its own right."""@en ;
+                                                                         rdfs:label "Storage Unit Creation"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z1_Serial_Transformation> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception> ;
+                                                                        rdfs:comment """This class comprises activities that transform instances of F18 Serial Work into new instances of F18 Serial Work.
+An instance of Z1 Serial Transformation consists of having the idea of starting the publication of one or more than one new serial (this is a particular case of F27 Work Conception), with a distinct intention of thus prolonging, under a new identity, one or more than one earlier serial, the publication of which has ceased, either due directly to the transformation project, or for any other reason.
+The idea of starting a new serial can be contiguous with the disappearance of a serial, or occur quite some time after that event.
+A transformation can be complete or only partial (e.g., a serial devoted to history of the Middle Ages and Renaissance can cease to be published as such and be continued by a new serial that is devoted to the Middle Ages only). This information element can be reflected through the P2 has type (is type of): E55 Type from the CIDOC CRM model.
+The most frequent cases of serial transformation are: continuation (in which a serial undergoes a major title change), replacement (in which a new serial supersedes an earlier serial), split (in which one serial is transformed into at least two serials), and merger (in which at least two serials are transformed into one serial).
+The temporary substitution of a serial with another serial (either pre-existing or created for that purpose) is not regarded as a serial transformation but simply as an episode within the publication process of the serial that temporarily disappeared (see Scope Note for Z4 Temporary Substitution).
+Cases of separation and absorption are not regarded as serial transformations either, as they do not involve the combination of the disappearance of a serial and the appearance of another serial, but just either the latter or the former."""@en ;
+                                                                        rdfs:label "Serial Transformation"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z2_Absorption> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+                                                             rdfs:comment """This class comprises activities that result in instances of F18 Serial Work being absorbed by pre-existing instances of F18 Serial Work.
+An absorption can be complete or only partial (e.g., a serial devoted to history in general can absorb specifically the portion devoted to the history of the Middle Ages of another serial that is devoted to the Middle Ages and Renaissance, while the portion devoted to the Renaissance is just abandoned). This information element can be reflected through the P2 has type (is type of): E55 Type from the CIDOC CRM model."""@en ;
+                                                             rdfs:label "Absorption"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z3_Separation> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception> ;
+                                                             rdfs:comment "This class comprises activities that result in new instances of F18 Serial Work coming into being as the ‘offspring’ of pre-existing instances of F18 Serial Work that continue to be published after the separation has occurred."@en ;
+                                                             rdfs:label "Separation"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z4_Temporary_Substitution> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+                                                                         rdfs:comment "replacement for another instance of F18 Serial Work. The replacing instance of F18 Serial Work can either pre-exist the replacement, or be created specifically for the purpose of replacing the other instance of F18 Serial Work."@en ;
+                                                                         rdfs:label "Temporary Substitution"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z5_Issuing_Rule_Change> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+                                                                      rdfs:comment "This class comprises activities resulting in the modification of an element of the issuing policy followed in publishing a given continuing resource."@en ;
+                                                                      rdfs:label "Issuing Rule Change"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z6_Starting_of_Publication
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z6_Starting_of_Publication> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+                                                                          rdfs:comment """This class comprises activities that consist of publishing the first issue of a given continuing resource.
+An instance of Z6 Starting of Publication is part of the instance of F30 Publication Event that realises the entire continuing resource, and it is associated with it through property P116 starts (is started by) (i.e., the starting point of the instance of Z6 Starting of Publication coincides with the starting point of the instance of F30 Publication Event).
+This class and Z7 Ending of Publication are not declared as disjoint, as the publication of the first issue of a continuing resource can also be the publication of its last issue, in cases where only one issue of a continuing resource was ever published. If no other issue of a periodical is published after the first issue, then both the instance of Z6 Starting of Publication and the instance of Z7 Ending of Publication P114 [are] equal in time to the instance of F30 Publication Event. As a matter of fact, the same event is then an instance of all three classes."""@en ;
+                                                                          rdfs:label "Starting of Publication"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z7_Ending_of_Publication
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z7_Ending_of_Publication> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event> ;
+                                                                        rdfs:comment """This class comprises activities that consist of publishing the latest known issue of a given continuing resource.
+An instance of Z7 Ending of Publication is part of the instance of F30 Publication Event that realises the entire continuing resource, and it is associated with it through property P115 finishes (is finished by) (i.e., the ending point of the instance of Z7 Ending of Publication coincides with the ending point of the instance of F30 Publication Event).
+This class and Z6 Starting of Publication are not declared as disjoint, as the publication of the first issue of a continuing resource can also be the publication of its latest known issue, in cases where only one issue of a continuing resource was ever published. If no other issue of a periodical is published after the first issue, then both the instance of Z6 Starting of Publication and the instance of Z7 Ending of Publication P114 [are] equal in time to the instance of F30 Publication Event. As a matter of fact, the same event is then an instance of all three classes."""@en ;
+                                                                        rdfs:label "Ending of Publication"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z8_Metadata_Management
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z8_Metadata_Management> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+                                                                      rdfs:comment """This class comprises activities performed by ISSN agencies (either at the international or a regional level) and consisting of exerting a responsibility on the metadata relating to a continuing resource identified by an ISSN, which includes, among other things: storing and preserving the metadata, checking the accuracy of the recorded information, making decisions as to whether new records and new ISSNs are required or not due to modifications in the continuing resource described, checking the uniqueness of key titles, etc. Z8 Metadata Management does not necessarily include the activity of creating the metadata.
+A set of ISSN metadata can be managed by various agencies over time, but at a given point in time it cannot be managed by more than one agency. In practice, information relating to the agency that was previously responsible for a given set of metadata is erased from that set of metadata when the responsibility on it is handed over to another agency.
+[Comment. This scope note is very restrictive and specific, while the label for the class is deliberately very vague and general. The intention is to make it possible in the future, if needed, to generalize this class and include it in other conceptual models.]"""@en ;
+                                                                      rdfs:label "Metadata Management"@en .
+
+
+###  http://iflastandards.info/ns/fr/frbr/pressoo/Z9_Storage_Unit
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z9_Storage_Unit> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton> ;
+                                                               rdfs:comment "This class comprises unique combinations of instances of E24 Physical Man-Made Thing that are bound together, or otherwise physically united, for the sake of preservation, and are communicated to library users as single, indivisible units. The individual components of a given instance of Z9 Storage Unit are generally instances of F4 Manifestation Singleton and/or F5 Item, but the binding itself that holds them together can be a valuable piece of cultural heritage that is worth describing for its own sake. Z9 Storage Unit makes it possible to account indifferently for the description of the various materials (printed or manuscript or of any other type) that make up a holding, and of the binding (or any other type of device, e.g. a box, a casket, etc.) that was produced for that holding, if needed."@en ;
+                                                               rdfs:label "Storage Unit"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> rdf:type owl:Class ;
+                                                        rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> rdf:type owl:Class ;
+                                                   rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure
+<http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> rdf:type owl:Class ;
+                                                             rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E35_Title
+<http://www.cidoc-crm.org/cidoc-crm/E35_Title> rdf:type owl:Class ;
+                                               rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point
+<http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point> rdf:type owl:Class ;
+                                                       rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E53_Place
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place> rdf:type owl:Class ;
+                                               rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E54_Dimension
+<http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> rdf:type owl:Class ;
+                                                   rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E56_Language
+<http://www.cidoc-crm.org/cidoc-crm/E56_Language> rdf:type owl:Class ;
+                                                  rdfs:subClassOf owl:Thing .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E7_Activity
+<http://www.cidoc-crm.org/cidoc-crm/E7_Activity> rdf:type owl:Class ;
+                                                 rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10_enhanced> rdfs:comment "This property associates an instance of Z2 Absorption with an instance of F18 Serial Work that absorbed another instance of F18 Serial Work."@en ;
+                                                            rdfs:label "enhanced"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y10i_was_enhanced_through> rdfs:label "was enhanced through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11_separated> rdfs:comment "This property associates an instance of Z3 Separation with an instance of F18 Serial Work that resulted from the separation."@en ;
+                                                             rdfs:label "separated"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y11i_was_separated_through> rdfs:label "was separated through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12_separated_from> rdfs:comment "This property associates an instance of Z3 Separation with the instance of F18 Serial Work that was diminished through the separation."@en ;
+                                                                  rdfs:label "separated from"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y12i_was_diminished_through> rdfs:label "was diminished through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13_provided_surrogate_to> rdfs:comment "This property associates an instance of Z4 Temporary Substitution with an instance of F18 Serial Work the publication of which was interrupted and replaced with the publication of a distinct instance of F18 Serial Work."@en ;
+                                                                         rdfs:label "provided surrogate to"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y13i_had_surrogate_through> rdfs:label "had surrogate through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14_substituted_with> rdfs:comment "This property associates an instance of Z4 Temporary Substitution with an instance of F18 Serial Work that temporarily replaced a distinct instance of F18 Serial Work the publication of which was interrupted."@en ;
+                                                                    rdfs:label "substituted with"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y14i_became_surrogate_through> rdfs:label "became surrogate through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15_replaced> rdfs:comment "This property associates an instance of Z5 Issuing Rule Change with the instance of Z12 Issuing Rule that became obsolete through that process."@en ;
+                                                            rdfs:label "replaced"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y15i_was_replaced_through> rdfs:label "was replaced through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16_replaced_with> rdfs:comment "This property associates an instance of Z5 Issuing Rule Change with the instance of Z12 Issuing Rule that came into force through that process."@en ;
+                                                                 rdfs:label "replaced with"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y16i_was_introduced_through> rdfs:label "was introduced through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20_foresees_type> rdfs:comment """This property associates an instance of Z12 Issuing Rule with an instance of E55 Type that the issues of the continuing resource published while the instance of Z12 Issuing Rule obtained should have.
+The Y20.1 has type property of the property allows the nature of the association to be specified; examples of types of types foreseen in instances of Z12 Issuing Rule include: regularity, frequency, nature of the carrier, digital format, content type, media type, target audience, etc."""@en ;
+                                                                 rdfs:label "foresees type"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y20i_is_type_foreseen_in> rdfs:label "is type foreseen in"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23_foresees_dimension> rdfs:comment """This property associates an instance of Z12 Issuing Rule with a dimension foreseen for exemplars of the issues of a serial that follows that policy.
+Typically, this property is observed on one exemplar of an issue of a serial, and extrapolated to all other exemplars of the issue and of other issues to come. This logical inference is an induction along the path that can be modelled as: F18 Serial Work Y37 has former or current issuing rule Z12 Issuing Rule, and F18 Serial Work R10 has member F19 Publication Work R3 is realised in F24 Publication Expression R6i is carried by F5 Item P39i was measured by E16 Measurement P40 observed dimension E54 Dimension. [adapted from scope note for CLP43 should have dimension in FRBROO]"""@en ;
+                                                                      rdfs:label "foresees dimension"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y23i_is_dimension_foreseen_in> rdfs:label "is dimension foreseen in"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24_foresees_use_of_title> rdfs:comment """This property associates an instance of Z12 Issuing Rule with the title that each individual issue of a serial should display as long as that serial follows that policy.
+The property Y24.1 has type allows for specifying a particular type of title, the same way as the CIDOC CRM property P102 has title (is title of) from E71 Man-Made Thing to E35 Title has a property, P102.1 has type, that makes it possible to clarify the relationship between a man-made thing and the title associated with it.
+The key title and abridged key title used to identify a serial cannot be referred to through this property, as they are artificial constructs forged by cataloguers, even though they may happen to look identical with the title proper foreseen by the issuing policy. The relationship between an instance of F18 Serial Work and a key title or abridged key title is expressed by using the P48 has preferred identifier property from CIDOC CRM."""@en ;
+                                                                         rdfs:label "foresees use of title"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y24i_is_title_foreseen_in> rdfs:label "is title foreseen in"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25_foresees_association_with> rdfs:comment """This property associates an instance of Z12 Issuing Rule with an instance of Z12 Issuing Rule associated with a continuing resource that the first instance of Z12 Issuing Rule regards as related in some way with the continuing resource of which it is an issuing rule.
+It can denote a dynamic, asymmetric relationship where the range expresses the dependant publication, if such a direction can be established. Otherwise, it denotes a symmetric relationship, where none of the two continuing resources is regarded as dependant on the other.
+The Y25.1 has type property of the property allows the nature of the association to be specified; examples of types of association between instances of Z12 Issuing Rule include: supplement, issued with, insert, etc."""@en ;
+                                                                             rdfs:label "foresees association with"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y25i_has_association_foreseen_in> rdfs:label "has association foreseen in"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28_foresees_URL> rdfs:comment "This property associates an instance of Z12 Issuing Rule with an instance of Z11 URL that identifies the server from which digital files containing the issues of the continuing resource with which the instance of Z12 Issuing Rule is associated are available on the Web."@en ;
+                                                                rdfs:label "foresees URL"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y28i_is_URL_foreseen_in> rdfs:label "is URL foreseen in"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2_initiated_as_continuation> rdfs:comment "This property associates an instance of Z1 Serial Transformation with an instance of F18 Serial Work that resulted from a ‘major’ title change that affected another instance of F18 Serial Work."@en ;
+                                                                            rdfs:label "initiated as continuation"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y2i_was_initiated_as_continuation_through> rdfs:label "was initiated as continuation through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37_has_former_or_current_issuing_rule> rdfs:comment "This property associates an instance of F18 Serial Work with instances of Z12 Issuing Rule that specify aspects of the issuing policy planned at some time by this Work, such as sequencing pattern, expected frequency or expected regularity. This property does not specify whether these instances of Z12 Issuing Rule are still in force at the time of validity of the record or database containing the statement that uses this property, and it can point to obsolete instances of Z12 Issuing Rule."@en ;
+                                                                                      rdfs:label "has former or current issuing rule"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y37i_is_former_or_current_issuing_rule_of> rdfs:label "is former or current issuing rule of"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43_is_indicative_of> rdfs:comment "This property associates an instance of F23 Expression Fragment with the instance of Z10 Sequencing Pattern of which it provides an example."@en ;
+                                                                    rdfs:label "is indicative of"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y43i_is_exemplified_by> rdfs:label "is exemplified by"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44_foresees_topic> rdfs:comment "This property associates an instance of Z12 Issuing Rule with an instance of E1 CRM Entity that is the main subject that all articles aggregated in each single issue of the serial should be about, even more or less loosely."@en ;
+                                                                  rdfs:label "foresees topic"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y44i_is_topic_foreseen_in> rdfs:label "is topic foreseen in"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45_created> rdfs:comment "This property associates an instance of Z14 Storage Unit Creation with the instances of Z9 Storage Unit in which it resulted."@en ;
+                                                           rdfs:label "created"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y45i_was_created_by> rdfs:label "was created by"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46_aggregated_in_a_single_storage_unit> rdfs:comment "This property associates an instance of Z14 Storage Unit Creation with the instances of E18 Physical Thing that were aggregated in a single storage unit through that process."@en ;
+                                                                                       rdfs:label "aggregated in a single storage unit"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y46i_was_aggregated_in_a_single_storage_unit_through> rdfs:label "was aggregated in a single storage unit through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4_initiated_as_replacement> rdfs:comment "This property associates an instance of Z1 Serial Transformation with an instance of F18 Serial Work that was created with the distinct intention of being published in lieu of another instance of F18 Serial Work the publication of which had ceased."@en ;
+                                                                           rdfs:label "initiated as replacement"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y4i_was_initiated_as_replacement_through> rdfs:label "was initiated as replacement through"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6_initiated> rdfs:comment "This property associates an instance of Z1 Serial Transformation with one or more than one instance of F18 Serial Work that resulted from splitting another instance of F18 Serial Work."@en ;
+                                                            rdfs:label "initiated"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y6i_resulted_from_split> rdfs:label "resulted from split"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8_merged_into> rdfs:comment "This property associates an instance of Z1 Serial Transformation with the instance of F18 Serial Work that resulted from merging other instances of F18 Serial Work."@en ;
+                                                              rdfs:label "merged into"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y8i_resulted_from_merger> rdfs:label "resulted from merger"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9_absorbed> rdfs:comment "This property associates an instance of Z2 Absorption with an instance of F18 Serial Work that was absorbed in another instance of F18 Serial Work."@en ;
+                                                           rdfs:label "absorbed"@en .
+
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Y9i_was_absorbed_through> rdfs:label "was absorbed through"@en .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

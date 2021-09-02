@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/arco/ontology/location/> .
+@prefix ns2: <https://w3id.org/italia/onto/CLV/> .
+@prefix ns3: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/ontology/arco/CulturalProperty> ns3:subsumedUnder <http://dati.beniculturali.it/cis/CulturalEntity> ;
+    ns2:hasGeometry ns2:Geometry .
+
+ns1:Coordinates ns1:areCoordinatesOf ns2:Geometry ;
+    ns3:subsumedUnder ns2:Geometry,
+        <https://w3id.org/italia/onto/l0/Collection> .
+
+<http://dati.beniculturali.it/cis/CulturalEntity> ns3:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns2:SpatialObject ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Location> .
+
+<https://w3id.org/italia/onto/l0/Collection> ns3:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns2:Geometry ns1:pointType rdfs:Literal ;
+    ns1:spacialReferenceSystem rdfs:Literal ;
+    ns3:subsumedUnder ns2:SpatialObject .
+

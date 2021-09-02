@@ -1,0 +1,21 @@
+@prefix ns1: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:AuthorshipRelation ns2:subsumedUnder ns1:CreationRelation ;
+    ns1:authorshipRelationHasSource ns1:Record .
+
+ns1:CreationRelation ns2:subsumedUnder ns1:AgentOriginationRelation .
+
+ns1:RecordPart ns2:subsumedUnder ns1:RecordResource ;
+    ns1:isOrWasConstituentOf ns1:Record .
+
+ns1:Record ns2:subsumedUnder ns1:RecordResource ;
+    ns1:hasOrHadConstituent ns1:RecordPart ;
+    ns1:recordIsSourceOfAuthorshipRelation ns1:AuthorshipRelation .
+
+ns1:RecordResource ns2:subsumedUnder ns1:Thing .
+

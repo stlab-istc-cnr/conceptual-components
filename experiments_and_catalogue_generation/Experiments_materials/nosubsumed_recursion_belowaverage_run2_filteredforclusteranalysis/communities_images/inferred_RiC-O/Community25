@@ -1,0 +1,7 @@
+digraph "Community 25" {
+	Mandate
+	Mandate -> Agent [label=authorizes]
+	Mandate -> MandateRelation [label=mandateIsSourceOfMandateRelation]
+	MandateRelation -> Mandate [label=mandateRelationHasSource]
+	Agent -> Mandate [label=authorizedBy]
+}

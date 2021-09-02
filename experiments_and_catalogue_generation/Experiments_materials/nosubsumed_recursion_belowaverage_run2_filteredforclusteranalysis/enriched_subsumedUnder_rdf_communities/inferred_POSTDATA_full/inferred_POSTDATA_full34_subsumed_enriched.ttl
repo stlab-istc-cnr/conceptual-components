@@ -1,0 +1,34 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns2: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:PoeticWork ns1:hasCreator ns1:CreatorRole ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F1>,
+        <http://www.europeana.eu/schemas/edm/ProvidedCHO>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+ns1:Redaction ns1:hasCreator ns1:CreatorRole ;
+    ns2:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F1> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:Role ns2:subsumedUnder <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role> .
+
+<http://www.europeana.eu/schemas/edm/ProvidedCHO> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.w3.org/2004/02/skos/core#Concept> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns1:CreatorRole ns1:isAnonymous xsd:boolean ;
+    ns1:isWrongAttribution xsd:boolean ;
+    ns1:penName xsd:string ;
+    ns1:typeOfDesignation <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns2:subsumedUnder ns1:Role .
+
+<http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object> ns2:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

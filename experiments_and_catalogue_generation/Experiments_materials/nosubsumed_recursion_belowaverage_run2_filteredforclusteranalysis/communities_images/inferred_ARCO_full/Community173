@@ -1,0 +1,13 @@
+digraph "Community 173" {
+	CulturalProperty -> TimeIndexedTypedLocation [label=hasTimeIndexedTypedLocation]
+	TimeIndexedTypedLocation
+	TimeIndexedTypedLocation -> Site [label=atSite]
+	TimeIndexedTypedLocation -> TimeInterval [label=atTime]
+	Feature -> TimeIndexedTypedLocation [label=isLocationIn]
+	TimeIndexedTypedLocation -> Orientation [label=hasOrientation]
+	TimeIndexedTypedLocation -> CulturalEntity [label=isLocationSubjectOf]
+	TimeIndexedTypedLocation -> Thing [label=isTimeIndexedTypedLocationOf]
+	TimeIndexedTypedLocation -> Literal [label=locationDetails]
+	CulturalEntity -> TimeIndexedTypedLocation [label=hasLocationSubject]
+	Thing -> TimeIndexedTypedLocation [label=hasTimeIndexedTypedLocation]
+}

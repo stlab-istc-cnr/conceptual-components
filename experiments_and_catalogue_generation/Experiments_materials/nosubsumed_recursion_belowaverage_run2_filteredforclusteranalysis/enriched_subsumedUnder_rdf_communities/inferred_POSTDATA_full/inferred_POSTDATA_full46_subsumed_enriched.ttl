@@ -1,0 +1,58 @@
+@prefix ns1: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#> .
+@prefix ns2: <http://postdata.linhd.uned.es/ontology/postdata-prosodicElements#> .
+@prefix ns3: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix ns4: <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#> .
+@prefix ns5: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns3:PoeticWork ns1:isPartOf ns3:Ensemble ;
+    ns5:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F1>,
+        <http://www.europeana.eu/schemas/edm/ProvidedCHO>,
+        ns4:Object .
+
+ns3:Redaction ns3:numberOfWitnessesUsed xsd:integer ;
+    ns5:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F22>,
+        ns4:Object .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ns2:stressPosition xsd:integer ;
+    ns5:subsumedUnder <http://bakulf.github.io/raop/0.1#Word>,
+        <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token>,
+        <http://purl.org/ontology/olo/core#OrderedList>,
+        <http://purl.org/ontology/olo/core#Slot> .
+
+<http://bakulf.github.io/raop/0.1#Word> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F1> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F17> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F22> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns3:CreatorRole ns5:subsumedUnder ns3:Role .
+
+ns3:Ensemble ns3:date <http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ;
+    ns3:hasCreator ns3:CreatorRole ;
+    ns3:numberOfLines xsd:integer ;
+    ns3:numberOfPlays xsd:integer ;
+    ns3:numberOfPoems xsd:integer ;
+    ns4:hasRole ns3:Role ;
+    ns5:subsumedUnder <http://iflastandards.info/ns/fr/frbr/frbroo/F17>,
+        ns4:Object .
+
+<http://postdata.linhd.uned.es/ontology/postdata-dates#DateEntity> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/olo/core#OrderedList> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://purl.org/ontology/olo/core#Slot> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://www.europeana.eu/schemas/edm/ProvidedCHO> ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+
+ns3:Role ns5:subsumedUnder ns4:Role .
+
+ns4:Object ns5:subsumedUnder <http://www.w3.org/2002/07/owl#Thing> .
+

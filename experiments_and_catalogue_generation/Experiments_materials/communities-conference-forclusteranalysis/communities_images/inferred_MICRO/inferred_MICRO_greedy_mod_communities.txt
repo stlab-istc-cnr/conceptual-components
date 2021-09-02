@@ -1,0 +1,64 @@
+Community 1 : 
+	Conference
+	Activity isPartOf Conference
+	OrganizingCommittee organizes Conference
+Community 2 : 
+	Location
+	Conference takesPlace Location
+Community 3 : 
+	OrganizingCommittee
+	CommitteeMember isMemberOf OrganizingCommittee
+	Conference isOrganizedBy OrganizingCommittee
+	OrganizingCommittee hasMembers CommitteeMember
+	CommitteeMember
+Community 4 : 
+	Topic
+	Activity hasTopic Topic
+	Topic isIncluded Activity
+Community 5 : 
+	Author conducts Activity
+	Activity
+	Activity isConductedBy Author
+Community 6 : 
+	Activity expectedAttendance int
+	int
+	Conference annualOrder int
+Community 7 : 
+	Lecture
+	DoubleBlindReview appliesTo Lecture
+Community 8 : 
+	Paper appliesTo Lecture
+	Paper
+Community 9 : 
+	DoubleBlindReview isExecutedBy Reviewer
+	DoubleBlindReview
+	Reviewer
+	Reviewer executes DoubleBlindReview
+Community 10 : 
+	ActivitySubmissionForm hasAuthor Author
+	ActivitySubmissionForm
+	Author
+	ActivitySubmissionForm isSubmittedBy Author
+	Author isAuthorOf ActivitySubmissionForm
+Community 11 : 
+	dateTime
+	ActivitySubmissionForm submissionDeadline dateTime
+Community 12 : 
+	Person
+	Person hasMail string
+	Person worksForCompany string
+	string
+	Lecture hasAcronym string
+Community 13 : 
+	Thing
+	Thing hasMembers CommitteeMember
+	CommitteeMember isMemberOf Thing
+	ActivitySubmissionForm isSubmittedBy Thing
+Community 14 : 
+	Tutorial
+	TutorialProposal appliesTo Tutorial
+	TutorialProposal
+Community 15 : 
+	WorkShop
+	WorksopProposal appliesTo WorkShop
+	WorksopProposal

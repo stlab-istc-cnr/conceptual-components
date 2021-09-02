@@ -1,0 +1,9 @@
+digraph "Community 353" {
+	ArchivalFonds -> ArchivalSeries [label=hasComponent]
+	ArchivalFonds
+	ArchivalSeries
+	ArchivalSeries -> ArchivalSubseries [label=hasComponent]
+	ArchivalSubseries
+	ArchivalSeries -> ArchivalFonds [label=isComponentOf]
+	ArchivalSubseries -> ArchivalSeries [label=isComponentOf]
+}

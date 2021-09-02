@@ -1,0 +1,17 @@
+@prefix ns1: <http://postdata.linhd.uned.es/ontology/postdata-core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:PoeticWork ns1:authorEducationLevel <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:genre <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:isCalligram xsd:boolean ;
+    ns1:isRealisedThrough ns1:Redaction ;
+    ns1:isReferencedIn <http://postdata.linhd.uned.es/ontology/postdata-transmission#Location> ;
+    ns1:literaryTradition xsd:string ;
+    ns1:poeticType <http://www.w3.org/2004/02/skos/core#Concept> ;
+    ns1:theme xsd:string .
+
+ns1:Redaction ns1:realises ns1:PoeticWork .
+

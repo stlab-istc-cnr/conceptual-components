@@ -1,0 +1,11 @@
+digraph "Community 77" {
+	Date -> Appellation [label=isFromUseDateOf]
+	Appellation
+	Thing -> Appellation [label=hasOrHadAppellation]
+	Appellation -> Thing [label=isOrWasAppellationOf]
+	Appellation -> Literal [label=usedFromDate]
+	Appellation -> Literal [label=usedToDate]
+	Appellation -> Date [label=wasUsedFromDate]
+	Appellation -> Date [label=wasUsedToDate]
+	Date -> Appellation [label=isToUseDateOf]
+}

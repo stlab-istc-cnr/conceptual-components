@@ -1,0 +1,57 @@
+@prefix ns1: <https://w3id.org/arco/ontology/location/> .
+@prefix ns2: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix ns3: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ns4: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix ns5: <https://w3id.org/arco/ontology/movable-property/> .
+@prefix ns6: <https://w3id.org/arco/ontology/core/> .
+@prefix ns7: <https://w3id.org/arco/ontology/cataloguing-campaign/> .
+@prefix ns8: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/CulturalInstituteOrSite> ns1:culturalInstituteOrSiteIdentifier rdfs:Literal ;
+    ns8:subsumedUnder <http://dati.gov.it/onto/dcatapit#Agent>,
+        <http://xmlns.com/foaf/0.1/Agent>,
+        <https://w3id.org/italia/onto/l0/Agent> .
+
+<http://www.w3.org/2002/07/owl#Thing> ns4:ICCDIdentifier rdfs:Literal ;
+    ns4:localIdentifier rdfs:Literal ;
+    ns7:acronym rdfs:Literal ;
+    ns3:expiryDate rdfs:Literal ;
+    ns3:iconclassCode rdfs:Literal ;
+    ns3:synonym rdfs:Literal ;
+    ns6:description rdfs:Literal ;
+    ns6:keyword rdfs:Literal ;
+    ns6:note rdfs:Literal ;
+    ns6:specifications rdfs:Literal ;
+    ns2:positionOnCulturalProperty rdfs:Literal ;
+    ns2:transcript rdfs:Literal ;
+    ns5:manufacturingDate rdfs:Literal .
+
+ns3:ArchaeometricDiagnosticSurvey ns3:report rdfs:Literal ;
+    ns8:subsumedUnder ns3:Survey .
+
+ns3:Edition ns3:editionLocation rdfs:Literal ;
+    ns8:subsumedUnder <https://w3id.org/italia/onto/l0/Object> .
+
+ns3:UseFunction ns3:useFunction rdfs:Literal ;
+    ns8:subsumedUnder <https://w3id.org/italia/onto/RO/Role> .
+
+<http://dati.gov.it/onto/dcatapit#Agent> ns8:extensionallyEquivalent <http://xmlns.com/foaf/0.1/Agent>,
+        <https://w3id.org/italia/onto/l0/Agent> ;
+    ns8:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+ns3:Survey ns8:subsumedUnder <https://w3id.org/italia/onto/l0/Activity> .
+
+<https://w3id.org/italia/onto/RO/Role> ns8:subsumedUnder ns6:Concept,
+        <https://w3id.org/italia/onto/l0/Concept> .
+
+<https://w3id.org/italia/onto/l0/Object> ns8:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<http://xmlns.com/foaf/0.1/Agent> ns8:extensionallyEquivalent <https://w3id.org/italia/onto/l0/Agent> ;
+    ns8:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+
+<https://w3id.org/italia/onto/l0/Agent> ns8:subsumedUnder <https://w3id.org/italia/onto/l0/Entity> .
+

@@ -1,0 +1,10 @@
+digraph "Community 10" {
+	ConferenceOrEvent -> Literal [label=abbreviatedNameForTheConferenceOrEvent]
+	ConferenceOrEvent
+	ConferenceOrEvent -> PlaceOrGeographicName [label=placeOfConferenceOrEvent]
+	ConferenceOrEvent -> ConferenceOrEvent [label=precedingConferenceOrEvent]
+	ConferenceOrEvent -> Literal [label=preferredNameForTheConferenceOrEvent]
+	ConferenceOrEvent -> ConferenceOrEvent [label=succeedingConferenceOrEvent]
+	ConferenceOrEvent -> ConferenceOrEvent [label=temporaryNameOfTheConferenceOrEvent]
+	ConferenceOrEvent -> Literal [label=variantNameForTheConferenceOrEvent]
+}

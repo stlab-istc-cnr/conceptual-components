@@ -17,7 +17,7 @@ Input:
 
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
 
-python compute_greedy_modularity_communities.py "/Users/goofy/conceptual-components-extraction/corpora/CH/CH_dataset_inferred/" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/" "True"
+    python compute_greedy_modularity_communities.py "/Users/goofy/conceptual-components-extraction/corpora/CH/CH_dataset_inferred/" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/" "True"
 
 (Replace "CH/CH_dataset_inferred/" with "Conf/Conf_dataset_inferred/" if you want to run the experiment on the Conf dataset)
 
@@ -34,7 +34,7 @@ Input:
 
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
 
-python ontology_entities_to_annotatedtext_from_txt.py "/Users/goofy/conceptual-components-extraction/corpora/CH/CH_dataset_inferred/" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_original_uris/" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/" "False" "True" "http://www.w3.org/2001/XMLSchema http://www.w3.org/2002/07/owl http://www.w3.org/2000/01/rdf-schema http://www.w3.org/1999/02/22-rdf-syntax-ns"
+    python ontology_entities_to_annotatedtext_from_txt.py "/Users/goofy/conceptual-components-extraction/corpora/CH/CH_dataset_inferred/" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_original_uris/" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/" "False" "True" "http://www.w3.org/2001/XMLSchema http://www.w3.org/2002/07/owl http://www.w3.org/2000/01/rdf-schema http://www.w3.org/1999/02/22-rdf-syntax-ns"
 
 Output: it produces all the results of the initial step for creating the virtual documents of the communities.
 
@@ -43,7 +43,7 @@ Build ukb (https://github.com/asoroa/ukb) and replace the executable in /Users/g
 Then,
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/disambiguation_framedetection/", run this line of code from the terminal:
 
-java -jar xxx.jar
+    java -jar xxx.jar
 
 Output: you will run an instance of the server that you will need in step 4
 
@@ -54,7 +54,7 @@ Input:
 
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
 
-python disambiguation_from_csv.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_text_annotated.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe.csv"
+    python disambiguation_from_csv.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_text_annotated.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe.csv"
 
 Output: it produces the disambiguated and with related frames version of the virtual documents of the communities.
 
@@ -66,7 +66,7 @@ Input:
 
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
 
-python filter_have_be_enrich_synsetframe.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe.csv" "/Users/goofy/conceptual-components-extraction/project_root/data/topLevelAnchestors-prefix.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe_filtered_enriched.csv"
+    python filter_have_be_enrich_synsetframe.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe.csv" "/Users/goofy/conceptual-components-extraction/project_root/data/topLevelAnchestors-prefix.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe_filtered_enriched.csv"
 
 Output: it produces a filtered (no have and be lemmas) and enriched (top level ancestors frames) version of the disambiguated virtual documents of the communities.
 
@@ -78,7 +78,7 @@ Input:
 
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
 
-python clustering_synsetframe_communities.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe_filtered_enriched.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_clusters.csv" "100"
+    python clustering_synsetframe_communities.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_synsetframe_filtered_enriched.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_clusters.csv" "100"
 
 (Replace "100" with "81" if you want to run the experiment on the Conf dataset)
 
@@ -91,7 +91,7 @@ Input:
 
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/", run this line of code from the terminal:
 
-python clusters_frame_analysis.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_clusters.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/labeled_clusters/"
+    python clusters_frame_analysis.py  "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/all_communities_clusters.csv" "/Users/goofy/conceptual-components-extraction/CH-community-clustering-output/communities_texts/labeled_clusters/"
 
 Output: it produces all the final results.
 

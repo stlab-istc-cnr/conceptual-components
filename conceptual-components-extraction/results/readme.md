@@ -4,7 +4,6 @@ In this folder you can find the results of the experiments that we describe in t
 
 ### CH: results from the Cultural Heritage corpus
 ### Conf: results from the Conference corpus
-### communities-manual-evaluation: the manual evaluation of the communities performed by the authors
 
 Each of the previous folders have the following subfolders:
 
@@ -29,4 +28,6 @@ Each of the previous folders have the following subfolders:
   - "clustering-framesynset-analysis.csv" contains the output of the method, that is used for producing the catalogue, with clusters, their labels, a description (the docs of the communities, # communities per cluster, #ontologies per cluster, and all synsets and frames of the cluster with their frequency) 
   - "clustering-framesynset-mostfrequent.csv" is the same as (i) but contains only frames and synsets with a frequency equal or above the average frequency of synset/frames in the cluster, 
   - "clustering-framesynset.csv" is an intermediate file used to generate (i) and (ii).
+
+### communities-manual-evaluation: the manual evaluation of the communities performed by the authors
 

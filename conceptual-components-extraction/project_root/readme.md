@@ -40,7 +40,9 @@ Output: it produces all the results of the initial step for creating the virtual
 
 ### 3 ``ukb``
 Build ukb (https://github.com/asoroa/ukb) and replace the executable in /Users/goofy/conceptual-components-extraction/project_root/disambiguation_framedetection/ukb/bin/ukb_wsd with your version.
-Then,
+
+Download the jar file from this link: https://drive.google.com/file/d/1ZCjtxiL80vALaQXWscIwYOJa0LMJwGtN/view?usp=sharing (it was not included on GitHub for space reasons).
+
 From the folder "/Users/goofy/conceptual-components-extraction/project_root/disambiguation_framedetection/", run this line of code from the terminal:
 
     java -jar xxx.jar

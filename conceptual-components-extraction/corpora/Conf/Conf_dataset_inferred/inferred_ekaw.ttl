@@ -1,0 +1,865 @@
+@prefix : <http://ekaw#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ekaw#> .
+
+<http://ekaw> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ekaw#authorOf
+:authorOf rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :writtenBy
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Person ;
+          rdfs:range :Document .
+
+
+###  http://ekaw#coversTopic
+:coversTopic rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :topicCoveredBy
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Event
+                                         :Paper
+                                       )
+                         ] ;
+             rdfs:range :Research_Topic .
+
+
+###  http://ekaw#eventOnList
+:eventOnList rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :listsEvent
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :listsEvent ;
+             rdfs:domain :Event ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Programme_Brochure
+                                        :Web_Site
+                                      )
+                        ] .
+
+
+###  http://ekaw#hasEvent
+:hasEvent rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :partOfEvent
+                                 ] ;
+          rdfs:subPropertyOf :hasPart ,
+                             [ owl:inverseOf :partOf
+                             ] ;
+          owl:inverseOf :partOfEvent ;
+          rdfs:domain :Event ;
+          rdfs:range :Event .
+
+
+###  http://ekaw#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :partOf
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :partOf ;
+         rdf:type owl:TransitiveProperty .
+
+
+###  http://ekaw#hasReview
+:hasReview rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :reviewOfPaper
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :reviewOfPaper ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Paper ;
+           rdfs:range :Review .
+
+
+###  http://ekaw#hasReviewer
+:hasReviewer rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :reviewerOfPaper
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Possible_Reviewer .
+
+
+###  http://ekaw#hasUpdatedVersion
+:hasUpdatedVersion rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty [ owl:inverseOf :updatedVersionOf
+                                          ] ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   owl:inverseOf :updatedVersionOf ;
+                   rdfs:domain :Document ;
+                   rdfs:range :Document .
+
+
+###  http://ekaw#heldIn
+:heldIn rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :locationOf
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Event ;
+        rdfs:range :Location .
+
+
+###  http://ekaw#inverse_of_partOf_7
+:inverse_of_partOf_7 rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasPart ;
+                     rdfs:range :Event .
+
+
+###  http://ekaw#listsEvent
+:listsEvent rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Programme_Brochure
+                                        :Web_Site
+                                      )
+                        ] ;
+            rdfs:range :Event .
+
+
+###  http://ekaw#locationOf
+:locationOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :heldIn ;
+            rdfs:domain :Location ;
+            rdfs:range :Event .
+
+
+###  http://ekaw#organisedBy
+:organisedBy rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :organises
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Event ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Organisation
+                                        :Person
+                                      )
+                        ] .
+
+
+###  http://ekaw#organises
+:organises rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :organisedBy ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Organisation
+                                       :Person
+                                     )
+                       ] ;
+           rdfs:range :Event .
+
+
+###  http://ekaw#paperInVolume
+:paperInVolume rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :volumeContainsPaper
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ekaw#paperPresentedAs
+:paperPresentedAs rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :presentationOfPaper
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Abstract
+                                              :Paper
+                                            )
+                              ] ;
+                  rdfs:range :Individual_Presentation .
+
+
+###  http://ekaw#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:TransitiveProperty .
+
+
+###  http://ekaw#partOfEvent
+:partOfEvent rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :partOf ,
+                                [ owl:inverseOf :hasPart
+                                ] ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain :Event ;
+             rdfs:range :Event .
+
+
+###  http://ekaw#presentationOfPaper
+:presentationOfPaper rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :paperPresentedAs ;
+                     rdfs:domain :Individual_Presentation ;
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Abstract
+                                                :Paper
+                                              )
+                                ] .
+
+
+###  http://ekaw#publisherOf
+:publisherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Organisation ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Flyer
+                                        :Multi-author_Volume
+                                        :Programme_Brochure
+                                        :Web_Site
+                                      )
+                        ] .
+
+
+###  http://ekaw#referencedIn
+:referencedIn rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :references
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ekaw#references
+:references rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :referencedIn .
+
+
+###  http://ekaw#reviewOfPaper
+:reviewOfPaper rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :Review ;
+               rdfs:range :Paper .
+
+
+###  http://ekaw#reviewWrittenBy
+:reviewWrittenBy rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :writtenBy ,
+                                    [ owl:inverseOf :authorOf
+                                    ] ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Review ;
+                 rdfs:range :Possible_Reviewer .
+
+
+###  http://ekaw#reviewerOfPaper
+:reviewerOfPaper rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :hasReviewer ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Possible_Reviewer ;
+                 rdfs:range :Paper .
+
+
+###  http://ekaw#scientificallyOrganisedBy
+:scientificallyOrganisedBy rdf:type owl:ObjectProperty ;
+                           owl:equivalentProperty [ owl:inverseOf :scientificallyOrganises
+                                                  ] ;
+                           rdfs:subPropertyOf :organisedBy ,
+                                              [ owl:inverseOf :organises
+                                              ] ;
+                           owl:inverseOf :scientificallyOrganises ;
+                           rdfs:range :Academic_Institution .
+
+
+###  http://ekaw#scientificallyOrganises
+:scientificallyOrganises rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :organises ,
+                                            [ owl:inverseOf :organisedBy
+                                            ] ;
+                         rdfs:domain :Academic_Institution .
+
+
+###  http://ekaw#technicallyOrganisedBy
+:technicallyOrganisedBy rdf:type owl:ObjectProperty ;
+                        owl:equivalentProperty [ owl:inverseOf :technicallyOrganises
+                                               ] ;
+                        rdfs:subPropertyOf :organisedBy ,
+                                           [ owl:inverseOf :organises
+                                           ] .
+
+
+###  http://ekaw#technicallyOrganises
+:technicallyOrganises rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :organises ,
+                                         [ owl:inverseOf :organisedBy
+                                         ] ;
+                      owl:inverseOf :technicallyOrganisedBy ;
+                      rdfs:domain :Organisation .
+
+
+###  http://ekaw#topicCoveredBy
+:topicCoveredBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :coversTopic ;
+                rdfs:domain :Research_Topic ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Event
+                                           :Paper
+                                         )
+                           ] .
+
+
+###  http://ekaw#updatedVersionOf
+:updatedVersionOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :Document ;
+                  rdfs:range :Document .
+
+
+###  http://ekaw#volumeContainsPaper
+:volumeContainsPaper rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :paperInVolume .
+
+
+###  http://ekaw#writtenBy
+:writtenBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :authorOf ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Document ;
+           rdfs:range :Person .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ekaw#Abstract
+:Abstract rdf:type owl:Class ;
+          rdfs:subClassOf :Document .
+
+
+###  http://ekaw#Academic_Institution
+:Academic_Institution rdf:type owl:Class ;
+                      rdfs:subClassOf :Organisation ;
+                      owl:disjointWith :Organising_Agency .
+
+
+###  http://ekaw#Accepted_Paper
+:Accepted_Paper rdf:type owl:Class ;
+                rdfs:subClassOf :Evaluated_Paper ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasReview ;
+                                  owl:someValuesFrom :Positive_Review
+                                ] ;
+                owl:disjointWith :Camera_Ready_Paper ,
+                                 :Rejected_Paper ;
+                rdfs:comment """Accepted paper to become part of proceedings. 
+Note that camera-ready paper is not considered as 'accepted paper', as it was accepted in a different form!""" .
+
+
+###  http://ekaw#Agency_Staff_Member
+:Agency_Staff_Member rdf:type owl:Class ;
+                     rdfs:subClassOf :Person .
+
+
+###  http://ekaw#Assigned_Paper
+:Assigned_Paper rdf:type owl:Class ;
+                rdfs:subClassOf :Submitted_Paper ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasReviewer ;
+                                  owl:minCardinality "3"^^xsd:nonNegativeInteger
+                                ] .
+
+
+###  http://ekaw#Camera_Ready_Paper
+:Camera_Ready_Paper rdf:type owl:Class ;
+                    rdfs:subClassOf :Paper ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :updatedVersionOf ;
+                                      owl:someValuesFrom :Accepted_Paper
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :writtenBy ;
+                                      owl:someValuesFrom :Conference_Participant
+                                    ] ;
+                    owl:disjointWith :Evaluated_Paper ,
+                                     :Submitted_Paper .
+
+
+###  http://ekaw#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf :Scientific_Event ;
+            owl:disjointWith :Contributed_Talk ,
+                             :Invited_Talk ,
+                             :Session ,
+                             :Social_Event ,
+                             :Track ,
+                             :Tutorial ,
+                             :Workshop ;
+            rdfs:comment "One edition of a conference" .
+
+
+###  http://ekaw#Conference_Banquet
+:Conference_Banquet rdf:type owl:Class ;
+                    rdfs:subClassOf :Social_Event .
+
+
+###  http://ekaw#Conference_Paper
+:Conference_Paper rdf:type owl:Class ;
+                  rdfs:subClassOf :Paper ;
+                  owl:disjointWith :Workshop_Paper .
+
+
+###  http://ekaw#Conference_Participant
+:Conference_Participant rdf:type owl:Class ;
+                        rdfs:subClassOf :Person .
+
+
+###  http://ekaw#Conference_Proceedings
+:Conference_Proceedings rdf:type owl:Class ;
+                        rdfs:subClassOf :Proceedings ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :volumeContainsPaper ;
+                                          owl:allValuesFrom [ rdf:type owl:Class ;
+                                                              owl:unionOf ( :Conference_Paper
+                                                                            :Invited_Talk_Abstract
+                                                                          )
+                                                            ]
+                                        ] .
+
+
+###  http://ekaw#Conference_Session
+:Conference_Session rdf:type owl:Class ;
+                    rdfs:subClassOf :Session ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :partOfEvent ;
+                                      owl:someValuesFrom :Conference
+                                    ] ;
+                    owl:disjointWith :Workshop_Session .
+
+
+###  http://ekaw#Conference_Trip
+:Conference_Trip rdf:type owl:Class ;
+                 rdfs:subClassOf :Social_Event .
+
+
+###  http://ekaw#Contributed_Talk
+:Contributed_Talk rdf:type owl:Class ;
+                  rdfs:subClassOf :Individual_Presentation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :presentationOfPaper ;
+                                    owl:someValuesFrom :Camera_Ready_Paper
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :presentationOfPaper ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  owl:disjointWith :Invited_Talk ,
+                                   :Session ,
+                                   :Social_Event ,
+                                   :Track ,
+                                   :Tutorial .
+
+
+###  http://ekaw#Demo_Chair
+:Demo_Chair rdf:type owl:Class ;
+            rdfs:subClassOf :Conference_Participant .
+
+
+###  http://ekaw#Demo_Paper
+:Demo_Paper rdf:type owl:Class ;
+            rdfs:subClassOf :Paper ;
+            owl:disjointWith :Industrial_Paper ,
+                             :Poster_Paper ,
+                             :Regular_Paper .
+
+
+###  http://ekaw#Demo_Session
+:Demo_Session rdf:type owl:Class ;
+              rdfs:subClassOf :Session ;
+              owl:disjointWith :Poster_Session ,
+                               :Regular_Session .
+
+
+###  http://ekaw#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Person .
+
+
+###  http://ekaw#Early-Registered_Participant
+:Early-Registered_Participant rdf:type owl:Class ;
+                              rdfs:subClassOf :Conference_Participant ;
+                              owl:disjointWith :Late-Registered_Participant .
+
+
+###  http://ekaw#Evaluated_Paper
+:Evaluated_Paper rdf:type owl:Class ;
+                 rdfs:subClassOf :Assigned_Paper ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasReview ;
+                                   owl:minCardinality "3"^^xsd:nonNegativeInteger
+                                 ] .
+
+
+###  http://ekaw#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       owl:disjointWith :Person .
+
+
+###  http://ekaw#Flyer
+:Flyer rdf:type owl:Class ;
+       rdfs:subClassOf :Document ;
+       owl:disjointWith :Multi-author_Volume ,
+                        :Paper ,
+                        :Proceedings ,
+                        :Programme_Brochure ,
+                        :Review ,
+                        :Web_Site .
+
+
+###  http://ekaw#Individual_Presentation
+:Individual_Presentation rdf:type owl:Class ;
+                         rdfs:subClassOf :Scientific_Event ;
+                         owl:disjointWith :Workshop .
+
+
+###  http://ekaw#Industrial_Paper
+:Industrial_Paper rdf:type owl:Class ;
+                  rdfs:subClassOf :Paper ;
+                  owl:disjointWith :Poster_Paper ,
+                                   :Regular_Paper ,
+                                   :Workshop_Paper .
+
+
+###  http://ekaw#Industrial_Session
+:Industrial_Session rdf:type owl:Class ;
+                    rdfs:subClassOf :Conference_Session .
+
+
+###  http://ekaw#Invited_Speaker
+:Invited_Speaker rdf:type owl:Class ;
+                 rdfs:subClassOf :Presenter .
+
+
+###  http://ekaw#Invited_Talk
+:Invited_Talk rdf:type owl:Class ;
+              rdfs:subClassOf :Individual_Presentation ;
+              owl:disjointWith :Session ,
+                               :Social_Event ,
+                               :Track ,
+                               :Tutorial ,
+                               :Workshop .
+
+
+###  http://ekaw#Invited_Talk_Abstract
+:Invited_Talk_Abstract rdf:type owl:Class ;
+                       rdfs:subClassOf :Abstract .
+
+
+###  http://ekaw#Late-Registered_Participant
+:Late-Registered_Participant rdf:type owl:Class ;
+                             rdfs:subClassOf :Conference_Participant .
+
+
+###  http://ekaw#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Person .
+
+
+###  http://ekaw#Multi-author_Volume
+:Multi-author_Volume rdf:type owl:Class ;
+                     rdfs:subClassOf :Document ;
+                     owl:disjointWith :Paper ,
+                                      :Programme_Brochure ,
+                                      :Review ,
+                                      :Web_Site .
+
+
+###  http://ekaw#Negative_Review
+:Negative_Review rdf:type owl:Class ;
+                 rdfs:subClassOf :Review ;
+                 owl:disjointWith :Neutral_Review ,
+                                  :Positive_Review .
+
+
+###  http://ekaw#Neutral_Review
+:Neutral_Review rdf:type owl:Class ;
+                rdfs:subClassOf :Review ;
+                owl:disjointWith :Positive_Review .
+
+
+###  http://ekaw#OC_Chair
+:OC_Chair rdf:type owl:Class ;
+          rdfs:subClassOf :OC_Member .
+
+
+###  http://ekaw#OC_Member
+:OC_Member rdf:type owl:Class ;
+           rdfs:subClassOf :Conference_Participant .
+
+
+###  http://ekaw#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ;
+              owl:disjointWith :Person .
+
+
+###  http://ekaw#Organising_Agency
+:Organising_Agency rdf:type owl:Class ;
+                   rdfs:subClassOf :Organisation .
+
+
+###  http://ekaw#PC_Chair
+:PC_Chair rdf:type owl:Class ;
+          rdfs:subClassOf :Conference_Participant ,
+                          :PC_Member ;
+          owl:disjointWith :Tutorial_Chair ,
+                           :Workshop_Chair .
+
+
+###  http://ekaw#PC_Member
+:PC_Member rdf:type owl:Class ;
+           rdfs:subClassOf :Possible_Reviewer .
+
+
+###  http://ekaw#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Document ;
+       owl:disjointWith :Proceedings ,
+                        :Programme_Brochure ,
+                        :Review ,
+                        :Web_Site .
+
+
+###  http://ekaw#Paper_Author
+:Paper_Author rdf:type owl:Class ;
+              rdfs:subClassOf :Person .
+
+
+###  http://ekaw#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://ekaw#Positive_Review
+:Positive_Review rdf:type owl:Class ;
+                 rdfs:subClassOf :Review .
+
+
+###  http://ekaw#Possible_Reviewer
+:Possible_Reviewer rdf:type owl:Class ;
+                   rdfs:subClassOf :Person .
+
+
+###  http://ekaw#Poster_Paper
+:Poster_Paper rdf:type owl:Class ;
+              rdfs:subClassOf :Paper ;
+              owl:disjointWith :Regular_Paper .
+
+
+###  http://ekaw#Poster_Session
+:Poster_Session rdf:type owl:Class ;
+                rdfs:subClassOf :Session ;
+                owl:disjointWith :Regular_Session .
+
+
+###  http://ekaw#Presenter
+:Presenter rdf:type owl:Class ;
+           rdfs:subClassOf :Conference_Participant .
+
+
+###  http://ekaw#Proceedings
+:Proceedings rdf:type owl:Class ;
+             rdfs:subClassOf :Multi-author_Volume ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :volumeContainsPaper ;
+                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :Accepted_Paper
+                                                                 :Invited_Talk_Abstract
+                                                               )
+                                                 ]
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :volumeContainsPaper ;
+                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+             owl:disjointWith :Programme_Brochure ,
+                              :Review ,
+                              :Web_Site .
+
+
+###  http://ekaw#Proceedings_Publisher
+:Proceedings_Publisher rdf:type owl:Class ;
+                       rdfs:subClassOf :Organisation .
+
+
+###  http://ekaw#Programme_Brochure
+:Programme_Brochure rdf:type owl:Class ;
+                    rdfs:subClassOf :Document ;
+                    owl:disjointWith :Review ,
+                                     :Web_Site .
+
+
+###  http://ekaw#Regular_Paper
+:Regular_Paper rdf:type owl:Class ;
+               rdfs:subClassOf :Paper .
+
+
+###  http://ekaw#Regular_Session
+:Regular_Session rdf:type owl:Class ;
+                 rdfs:subClassOf :Session .
+
+
+###  http://ekaw#Rejected_Paper
+:Rejected_Paper rdf:type owl:Class ;
+                rdfs:subClassOf :Evaluated_Paper .
+
+
+###  http://ekaw#Research_Institute
+:Research_Institute rdf:type owl:Class ;
+                    rdfs:subClassOf :Academic_Institution .
+
+
+###  http://ekaw#Research_Topic
+:Research_Topic rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  http://ekaw#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document ;
+        owl:disjointWith :Web_Site .
+
+
+###  http://ekaw#SC_Member
+:SC_Member rdf:type owl:Class ;
+           rdfs:subClassOf :PC_Member .
+
+
+###  http://ekaw#Scientific_Event
+:Scientific_Event rdf:type owl:Class ;
+                  rdfs:subClassOf :Event .
+
+
+###  http://ekaw#Session
+:Session rdf:type owl:Class ;
+         rdfs:subClassOf :Scientific_Event ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEvent ;
+                           owl:someValuesFrom :Individual_Presentation
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :partOfEvent ;
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Conference
+                                                              :Workshop
+                                                            )
+                                              ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :partOfEvent ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Conference
+                                                             :Track
+                                                             :Workshop
+                                                           )
+                                             ]
+                         ] ;
+         owl:disjointWith :Track ,
+                          :Tutorial ,
+                          :Workshop .
+
+
+###  http://ekaw#Session_Chair
+:Session_Chair rdf:type owl:Class ;
+               rdfs:subClassOf :Conference_Participant ,
+                               :PC_Member .
+
+
+###  http://ekaw#Social_Event
+:Social_Event rdf:type owl:Class ;
+              rdfs:subClassOf :Event ;
+              owl:disjointWith :Track ,
+                               :Tutorial ,
+                               :Workshop .
+
+
+###  http://ekaw#Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Person .
+
+
+###  http://ekaw#Submitted_Paper
+:Submitted_Paper rdf:type owl:Class ;
+                 rdfs:subClassOf :Paper .
+
+
+###  http://ekaw#Track
+:Track rdf:type owl:Class ;
+       rdfs:subClassOf :Scientific_Event ;
+       owl:disjointWith :Tutorial ,
+                        :Workshop .
+
+
+###  http://ekaw#Tutorial
+:Tutorial rdf:type owl:Class ;
+          rdfs:subClassOf :Individual_Presentation ;
+          owl:disjointWith :Workshop .
+
+
+###  http://ekaw#Tutorial_Abstract
+:Tutorial_Abstract rdf:type owl:Class ;
+                   rdfs:subClassOf :Abstract .
+
+
+###  http://ekaw#Tutorial_Chair
+:Tutorial_Chair rdf:type owl:Class ;
+                rdfs:subClassOf :Conference_Participant ,
+                                :PC_Member .
+
+
+###  http://ekaw#University
+:University rdf:type owl:Class ;
+            rdfs:subClassOf :Academic_Institution .
+
+
+###  http://ekaw#Web_Site
+:Web_Site rdf:type owl:Class ;
+          rdfs:subClassOf :Document .
+
+
+###  http://ekaw#Workshop
+:Workshop rdf:type owl:Class ;
+          rdfs:subClassOf :Scientific_Event .
+
+
+###  http://ekaw#Workshop_Chair
+:Workshop_Chair rdf:type owl:Class ;
+                rdfs:subClassOf :Conference_Participant ,
+                                :PC_Member .
+
+
+###  http://ekaw#Workshop_Paper
+:Workshop_Paper rdf:type owl:Class ;
+                rdfs:subClassOf :Paper .
+
+
+###  http://ekaw#Workshop_Session
+:Workshop_Session rdf:type owl:Class ;
+                  rdfs:subClassOf :Session .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

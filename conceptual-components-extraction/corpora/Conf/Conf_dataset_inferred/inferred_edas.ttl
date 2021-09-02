@@ -1,0 +1,2374 @@
+@prefix : <http://edas#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://edas#> .
+
+<http://edas> rdf:type owl:Ontology ;
+               rdfs:comment "EDAS Conference Menagement Ontology (for 4iz440)" ;
+               owl:versionInfo "1.5" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://edas#attendeeAt
+:attendeeAt rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :hasAttendee
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :hasAttendee ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :ConferenceEvent .
+
+
+###  http://edas#belongsToEvent
+:belongsToEvent rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :hasProgramme
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :hasProgramme ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Programme ;
+                rdfs:range :ConferenceEvent .
+
+
+###  http://edas#forEvent
+:forEvent rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :hasCall
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Call ;
+          rdfs:range :AcademicEvent .
+
+
+###  http://edas#hasAttendee
+:hasAttendee rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :ConferenceEvent ;
+             rdfs:range :Person .
+
+
+###  http://edas#hasCall
+:hasCall rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :forEvent ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :AcademicEvent ;
+         rdfs:range :Call .
+
+
+###  http://edas#hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range :Country .
+
+
+###  http://edas#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :isLocationOf
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :ConferenceEvent ;
+             rdfs:range :Place .
+
+
+###  http://edas#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :isMemberOf
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isMemberOf ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Conference ;
+           rdfs:range :Person .
+
+
+###  http://edas#hasMenu
+:hasMenu rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :isMenuOf
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :isMenuOf ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :MealEvent ;
+         rdfs:range :MealMenu .
+
+
+###  http://edas#hasProgramme
+:hasProgramme rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :ConferenceEvent ;
+              rdfs:range :Programme .
+
+
+###  http://edas#hasRating
+:hasRating rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :ActivePaper ;
+           rdfs:range :ReviewRating .
+
+
+###  http://edas#hasRelatedDocument
+:hasRelatedDocument rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty [ owl:inverseOf :relatesTo
+                                           ] ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :relatesTo ;
+                    rdf:type owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( :AcademicEvent
+                                                :Conference
+                                                :ConferenceSession
+                                                :Person
+                                              )
+                                ] ;
+                    rdfs:range :Document .
+
+
+###  http://edas#hasRelatedPaper
+:hasRelatedPaper rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty [ owl:inverseOf :isWrittenBy
+                                        ] ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :Author ;
+                 rdfs:range :Paper .
+
+
+###  http://edas#hasReviewHistory
+:hasReviewHistory rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :isReviewHistoryOf
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  owl:inverseOf :isReviewHistoryOf ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Reviewer ;
+                  rdfs:range :PersonalReviewHistory .
+
+
+###  http://edas#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :isTopicOf
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :isTopicOf ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Conference
+                                      :Paper
+                                    )
+                      ] ;
+          rdfs:range :Topic .
+
+
+###  http://edas#initiates
+:initiates rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty [ owl:inverseOf :isInitiatedBy
+                                  ] ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isInitiatedBy ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :ConferenceChair
+                                       :SessionChair
+                                       :TPCMember
+                                     )
+                       ] ;
+           rdfs:range :Call .
+
+
+###  http://edas#isInitiatedBy
+:isInitiatedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain :Call ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :ConferenceChair
+                                          :SessionChair
+                                          :TPCMember
+                                        )
+                          ] .
+
+
+###  http://edas#isLocationOf
+:isLocationOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :hasLocation ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Place ;
+              rdfs:range :ConferenceEvent .
+
+
+###  http://edas#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :Conference .
+
+
+###  http://edas#isMenuOf
+:isMenuOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :MealMenu ;
+          rdfs:range :MealEvent .
+
+
+###  http://edas#isProviderOf
+:isProviderOf rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :providedBy
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Organization ;
+              rdfs:range :Sponsorship .
+
+
+###  http://edas#isReviewHistoryOf
+:isReviewHistoryOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :PersonalReviewHistory ;
+                   rdfs:range :Reviewer .
+
+
+###  http://edas#isReviewedBy
+:isReviewedBy rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty [ owl:inverseOf :isReviewing
+                                     ] ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Paper ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :ConferenceChair
+                                         :Reviewer
+                                         :SessionChair
+                                         :TPCMember
+                                       )
+                         ] .
+
+
+###  http://edas#isReviewing
+:isReviewing rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :isReviewedBy ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :ConferenceChair
+                                         :Reviewer
+                                         :SessionChair
+                                         :TPCMember
+                                       )
+                         ] ;
+             rdfs:range :Paper .
+
+
+###  http://edas#isTopicOf
+:isTopicOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Topic ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Conference
+                                      :Paper
+                                    )
+                      ] .
+
+
+###  http://edas#isWrittenBy
+:isWrittenBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :hasRelatedPaper ;
+             rdf:type owl:AsymmetricProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Paper ;
+             rdfs:range :Author .
+
+
+###  http://edas#providedBy
+:providedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :isProviderOf ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Sponsorship ;
+            rdfs:range :Organization .
+
+
+###  http://edas#relatedToEvent
+:relatedToEvent rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty [ owl:inverseOf :relatedToPaper
+                                       ] ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :AcceptedPaper ;
+                rdfs:range :PaperPresentation .
+
+
+###  http://edas#relatedToPaper
+:relatedToPaper rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :relatedToEvent ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :PaperPresentation ;
+                rdfs:range :AcceptedPaper .
+
+
+###  http://edas#relatesTo
+:relatesTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Document ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :AcademicEvent
+                                      :Conference
+                                      :ConferenceSession
+                                      :Person
+                                    )
+                      ] .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://edas#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Conference ;
+         rdfs:range xsd:dateTime ;
+         rdfs:comment "Conference End Date and Time" .
+
+
+###  http://edas#hasBiography
+:hasBiography rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string .
+
+
+###  http://edas#hasCity
+:hasCity rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :ContactInformation ;
+         rdfs:range xsd:string .
+
+
+###  http://edas#hasCostAmount
+:hasCostAmount rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Sponsorship ;
+               rdfs:range xsd:int .
+
+
+###  http://edas#hasCostCurrency
+:hasCostCurrency rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Sponsorship ;
+                 rdfs:range xsd:string .
+
+
+###  http://edas#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :ContactInformation
+                                      :Person
+                                    )
+                      ] ;
+          rdfs:range xsd:string .
+
+
+###  http://edas#hasEndDateTime
+:hasEndDateTime rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :ConferenceEvent ;
+                rdfs:range xsd:dateTime .
+
+
+###  http://edas#hasFirstName
+:hasFirstName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string .
+
+
+###  http://edas#hasLastName
+:hasLastName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:string .
+
+
+###  http://edas#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Conference ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Conference Full Name" .
+
+
+###  http://edas#hasPhone
+:hasPhone rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :ContactInformation ;
+          rdfs:range xsd:string .
+
+
+###  http://edas#hasPostalCode
+:hasPostalCode rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :ContactInformation ;
+               rdfs:range xsd:string .
+
+
+###  http://edas#hasStartDateTime
+:hasStartDateTime rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :ConferenceEvent ;
+                  rdfs:range xsd:dateTime .
+
+
+###  http://edas#hasStreet
+:hasStreet rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :ContactInformation ;
+           rdfs:range xsd:string .
+
+
+###  http://edas#hasSubmissionDeadline
+:hasSubmissionDeadline rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain :Call ;
+                       rdfs:range xsd:dateTime .
+
+
+###  http://edas#hasSubmissionInstructions
+:hasSubmissionInstructions rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf owl:topDataProperty ;
+                           rdf:type owl:FunctionalProperty ;
+                           rdfs:domain :Call ;
+                           rdfs:range xsd:string .
+
+
+###  http://edas#manuscriptDueOn
+:manuscriptDueOn rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Conference ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:comment "Conference Manuscript Date and Time Deadline" .
+
+
+###  http://edas#paperDueOn
+:paperDueOn rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Conference ;
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "Conference Paper Date and Time Deadline" .
+
+
+###  http://edas#registrationDueOn
+:registrationDueOn rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :Conference ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:comment "Conference Registration Date and Time Deadline" .
+
+
+###  http://edas#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Conference ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "Conference Start Date and Time" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://edas#AcademiaOrganization
+:AcademiaOrganization rdf:type owl:Class ;
+                      rdfs:subClassOf :Organization ;
+                      owl:disjointWith :GovernmentOrganization ,
+                                       :IndustryOrganization ,
+                                       :NGO .
+
+
+###  http://edas#AcademicEvent
+:AcademicEvent rdf:type owl:Class ;
+               rdfs:subClassOf :ConferenceEvent ;
+               owl:disjointWith :NonAcademicEvent .
+
+
+###  http://edas#AcceptRating
+:AcceptRating rdf:type owl:Class ;
+              rdfs:subClassOf :ReviewRating ;
+              owl:disjointWith :AccpetIfRoomRating ,
+                               :RejectRating ,
+                               :WeekRejectRating .
+
+
+###  http://edas#AcceptedPaper
+:AcceptedPaper rdf:type owl:Class ;
+               rdfs:subClassOf :Paper ;
+               owl:disjointWith :ActivePaper ,
+                                :PendingPaper ,
+                                :PublishedPaper ,
+                                :RejectedPaper ,
+                                :WithdrawnPaper .
+
+
+###  http://edas#AccommodationPlace
+:AccommodationPlace rdf:type owl:Class ;
+                    rdfs:subClassOf :Place .
+
+
+###  http://edas#AccpetIfRoomRating
+:AccpetIfRoomRating rdf:type owl:Class ;
+                    rdfs:subClassOf :ReviewRating ;
+                    owl:disjointWith :RejectRating ,
+                                     :WeekRejectRating .
+
+
+###  http://edas#ActivePaper
+:ActivePaper rdf:type owl:Class ;
+             rdfs:subClassOf :Paper ;
+             owl:disjointWith :PendingPaper ,
+                              :PublishedPaper ,
+                              :RejectedPaper ,
+                              :WithdrawnPaper .
+
+
+###  http://edas#AntennasTopic
+:AntennasTopic rdf:type owl:Class ;
+               rdfs:subClassOf :Topic ;
+               owl:disjointWith :CADTopic ,
+                                :CommunicationTheoryTopic ,
+                                :CommunicationsTopic ,
+                                :ComputerArchitectureTopic ,
+                                :ComputerNetworksTopic ,
+                                :CryptographyTopic ,
+                                :MedicineTopic ,
+                                :MicroelectronicsTopic ,
+                                :MobileComputingTopic ,
+                                :MultimediaTopic ,
+                                :OperatingTopicsystems ,
+                                :ParallelAndDistributedComputingTopic ,
+                                :PerformanceTopic ,
+                                :PowerlineTransmissionTopic ,
+                                :RadioCommunicationsTopic ,
+                                :SatelliteAndSpaceCommunicationsTopic ,
+                                :SecurityTopic ,
+                                :SignalProcessingTopic ,
+                                :TestOnlyTopic ,
+                                :WirelessCommunicationsTopic .
+
+
+###  http://edas#Attendee
+:Attendee rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://edas#Author
+:Author rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasRelatedDocument ;
+                                                     owl:someValuesFrom :Paper
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Person ;
+        owl:disjointWith :ConferenceChair ,
+                         :SessionChair ,
+                         :TPCMember .
+
+
+###  http://edas#BreakEvent
+:BreakEvent rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:unionOf ( :CoffeeBreak
+                                                :FreeTimeBreak
+                                                :MealBreak
+                                              )
+                                ] ;
+            rdfs:subClassOf :NonAcademicEvent ;
+            owl:disjointWith :MealEvent .
+
+
+###  http://edas#CADTopic
+:CADTopic rdf:type owl:Class ;
+          rdfs:subClassOf :Topic ;
+          owl:disjointWith :CommunicationTheoryTopic ,
+                           :CommunicationsTopic ,
+                           :ComputerArchitectureTopic ,
+                           :ComputerNetworksTopic ,
+                           :CryptographyTopic ,
+                           :MedicineTopic ,
+                           :MicroelectronicsTopic ,
+                           :MobileComputingTopic ,
+                           :MultimediaTopic ,
+                           :OperatingTopicsystems ,
+                           :ParallelAndDistributedComputingTopic ,
+                           :PerformanceTopic ,
+                           :PowerlineTransmissionTopic ,
+                           :RadioCommunicationsTopic ,
+                           :SatelliteAndSpaceCommunicationsTopic ,
+                           :SecurityTopic ,
+                           :SignalProcessingTopic ,
+                           :TestOnlyTopic ,
+                           :WirelessCommunicationsTopic .
+
+
+###  http://edas#Call
+:Call rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      owl:disjointWith :Conference ,
+                       :ConferenceEvent ,
+                       :ConferenceSession ,
+                       :ContactInformation ,
+                       :Country ,
+                       :Document ,
+                       :Organization ,
+                       :Person ,
+                       :PersonalHistory ,
+                       :Place ,
+                       :ReviewForm ,
+                       :ReviewQuestion ,
+                       :ReviewRating ,
+                       :Sponsorship ,
+                       :Topic .
+
+
+###  http://edas#CallForManuscripts
+:CallForManuscripts rdf:type owl:Class ;
+                    rdfs:subClassOf :Call ;
+                    rdfs:comment "Call For Manuscripts" .
+
+
+###  http://edas#CallForPapers
+:CallForPapers rdf:type owl:Class ;
+               rdfs:subClassOf :Call ;
+               rdfs:comment "Call For Papers" .
+
+
+###  http://edas#CallForReviews
+:CallForReviews rdf:type owl:Class ;
+                rdfs:subClassOf :Call ;
+                rdfs:comment "Call For Reviews" .
+
+
+###  http://edas#ClosingTalk
+:ClosingTalk rdf:type owl:Class ;
+             rdfs:subClassOf :TalkEvent ;
+             owl:disjointWith :WelcomeTalk .
+
+
+###  http://edas#CoffeeBreak
+:CoffeeBreak rdf:type owl:Class ;
+             rdfs:subClassOf :BreakEvent .
+
+
+###  http://edas#CommunicationTheoryTopic
+:CommunicationTheoryTopic rdf:type owl:Class ;
+                          rdfs:subClassOf :Topic ;
+                          owl:disjointWith :CommunicationsTopic ,
+                                           :ComputerArchitectureTopic ,
+                                           :ComputerNetworksTopic ,
+                                           :CryptographyTopic ,
+                                           :MedicineTopic ,
+                                           :MicroelectronicsTopic ,
+                                           :MobileComputingTopic ,
+                                           :MultimediaTopic ,
+                                           :OperatingTopicsystems ,
+                                           :ParallelAndDistributedComputingTopic ,
+                                           :PerformanceTopic ,
+                                           :PowerlineTransmissionTopic ,
+                                           :RadioCommunicationsTopic ,
+                                           :SatelliteAndSpaceCommunicationsTopic ,
+                                           :SecurityTopic ,
+                                           :SignalProcessingTopic ,
+                                           :TestOnlyTopic ,
+                                           :WirelessCommunicationsTopic .
+
+
+###  http://edas#CommunicationsTopic
+:CommunicationsTopic rdf:type owl:Class ;
+                     rdfs:subClassOf :Topic ;
+                     owl:disjointWith :ComputerArchitectureTopic ,
+                                      :ComputerNetworksTopic ,
+                                      :CryptographyTopic ,
+                                      :MedicineTopic ,
+                                      :MicroelectronicsTopic ,
+                                      :MobileComputingTopic ,
+                                      :MultimediaTopic ,
+                                      :OperatingTopicsystems ,
+                                      :ParallelAndDistributedComputingTopic ,
+                                      :PerformanceTopic ,
+                                      :PowerlineTransmissionTopic ,
+                                      :RadioCommunicationsTopic ,
+                                      :SatelliteAndSpaceCommunicationsTopic ,
+                                      :SecurityTopic ,
+                                      :SignalProcessingTopic ,
+                                      :TestOnlyTopic ,
+                                      :WirelessCommunicationsTopic .
+
+
+###  http://edas#ComputerArchitectureTopic
+:ComputerArchitectureTopic rdf:type owl:Class ;
+                           rdfs:subClassOf :Topic ;
+                           owl:disjointWith :ComputerNetworksTopic ,
+                                            :CryptographyTopic ,
+                                            :MedicineTopic ,
+                                            :MicroelectronicsTopic ,
+                                            :MobileComputingTopic ,
+                                            :MultimediaTopic ,
+                                            :OperatingTopicsystems ,
+                                            :ParallelAndDistributedComputingTopic ,
+                                            :PerformanceTopic ,
+                                            :PowerlineTransmissionTopic ,
+                                            :RadioCommunicationsTopic ,
+                                            :SatelliteAndSpaceCommunicationsTopic ,
+                                            :SecurityTopic ,
+                                            :SignalProcessingTopic ,
+                                            :TestOnlyTopic ,
+                                            :WirelessCommunicationsTopic .
+
+
+###  http://edas#ComputerNetworksAapplicationsTopic
+:ComputerNetworksAapplicationsTopic rdf:type owl:Class ;
+                                    rdfs:subClassOf :ComputerNetworksTopic ;
+                                    owl:disjointWith :ComputerNetworksEnterpriseTopic ,
+                                                     :ComputerNetworksManagementTopic ,
+                                                     :ComputerNetworksMeasurementsTopic ,
+                                                     :ComputerNetworksOpticalTopic ,
+                                                     :ComputerNetworksSecurityTopic ,
+                                                     :ComputerNetworksSensorTopic ,
+                                                     :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksEnterpriseTopic
+:ComputerNetworksEnterpriseTopic rdf:type owl:Class ;
+                                 rdfs:subClassOf :ComputerNetworksTopic ;
+                                 owl:disjointWith :ComputerNetworksManagementTopic ,
+                                                  :ComputerNetworksMeasurementsTopic ,
+                                                  :ComputerNetworksOpticalTopic ,
+                                                  :ComputerNetworksSecurityTopic ,
+                                                  :ComputerNetworksSensorTopic ,
+                                                  :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksManagementTopic
+:ComputerNetworksManagementTopic rdf:type owl:Class ;
+                                 rdfs:subClassOf :ComputerNetworksTopic ;
+                                 owl:disjointWith :ComputerNetworksMeasurementsTopic ,
+                                                  :ComputerNetworksOpticalTopic ,
+                                                  :ComputerNetworksSecurityTopic ,
+                                                  :ComputerNetworksSensorTopic ,
+                                                  :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksMeasurementsTopic
+:ComputerNetworksMeasurementsTopic rdf:type owl:Class ;
+                                   rdfs:subClassOf :ComputerNetworksTopic ;
+                                   owl:disjointWith :ComputerNetworksOpticalTopic ,
+                                                    :ComputerNetworksSecurityTopic ,
+                                                    :ComputerNetworksSensorTopic ,
+                                                    :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksOpticalTopic
+:ComputerNetworksOpticalTopic rdf:type owl:Class ;
+                              rdfs:subClassOf :ComputerNetworksTopic ;
+                              owl:disjointWith :ComputerNetworksSecurityTopic ,
+                                               :ComputerNetworksSensorTopic ,
+                                               :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksSecurityTopic
+:ComputerNetworksSecurityTopic rdf:type owl:Class ;
+                               rdfs:subClassOf :ComputerNetworksTopic ;
+                               owl:disjointWith :ComputerNetworksSensorTopic ,
+                                                :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksSensorTopic
+:ComputerNetworksSensorTopic rdf:type owl:Class ;
+                             rdfs:subClassOf :ComputerNetworksTopic ;
+                             owl:disjointWith :ComputerNetworksSwitchingTopic .
+
+
+###  http://edas#ComputerNetworksSwitchingTopic
+:ComputerNetworksSwitchingTopic rdf:type owl:Class ;
+                                rdfs:subClassOf :ComputerNetworksTopic .
+
+
+###  http://edas#ComputerNetworksTopic
+:ComputerNetworksTopic rdf:type owl:Class ;
+                       rdfs:subClassOf :Topic ;
+                       owl:disjointWith :CryptographyTopic ,
+                                        :MedicineTopic ,
+                                        :MicroelectronicsTopic ,
+                                        :MobileComputingTopic ,
+                                        :MultimediaTopic ,
+                                        :OperatingTopicsystems ,
+                                        :ParallelAndDistributedComputingTopic ,
+                                        :PerformanceTopic ,
+                                        :PowerlineTransmissionTopic ,
+                                        :RadioCommunicationsTopic ,
+                                        :SatelliteAndSpaceCommunicationsTopic ,
+                                        :SecurityTopic ,
+                                        :SignalProcessingTopic ,
+                                        :TestOnlyTopic ,
+                                        :WirelessCommunicationsTopic .
+
+
+###  http://edas#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCountry ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasTopic ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasName ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :endDate ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :manuscriptDueOn ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :paperDueOn ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :registrationDueOn ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :startDate ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            owl:disjointWith :ConferenceEvent ,
+                             :ConferenceSession ,
+                             :ContactInformation ,
+                             :Country ,
+                             :Document ,
+                             :Organization ,
+                             :Paper ,
+                             :Person ,
+                             :PersonalHistory ,
+                             :Place ,
+                             :ReviewForm ,
+                             :ReviewQuestion ,
+                             :ReviewRating ,
+                             :Sponsorship ,
+                             :Topic ;
+            rdfs:comment "Conference" .
+
+
+###  http://edas#ConferenceChair
+:ConferenceChair rdf:type owl:Class ;
+                 rdfs:subClassOf :Person .
+
+
+###  http://edas#ConferenceDinner
+:ConferenceDinner rdf:type owl:Class ;
+                  rdfs:subClassOf :MealEvent .
+
+
+###  http://edas#ConferenceEvent
+:ConferenceEvent rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ;
+                 owl:disjointWith :ConferenceSession ,
+                                  :ContactInformation ,
+                                  :Country ,
+                                  :Document ,
+                                  :Organization ,
+                                  :Person ,
+                                  :PersonalHistory ,
+                                  :Place ,
+                                  :ReviewForm ,
+                                  :ReviewQuestion ,
+                                  :ReviewRating ,
+                                  :Sponsorship ,
+                                  :Topic .
+
+
+###  http://edas#ConferenceSession
+:ConferenceSession rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing ;
+                   owl:disjointWith :ContactInformation ,
+                                    :Country ,
+                                    :Document ,
+                                    :Organization ,
+                                    :Person ,
+                                    :PersonalHistory ,
+                                    :Place ,
+                                    :ReviewForm ,
+                                    :ReviewQuestion ,
+                                    :ReviewRating ,
+                                    :Sponsorship ,
+                                    :Topic .
+
+
+###  http://edas#ConferenceVenuePlace
+:ConferenceVenuePlace rdf:type owl:Class ;
+                      rdfs:subClassOf :Place .
+
+
+###  http://edas#ContactInformation
+:ContactInformation rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing ;
+                    owl:disjointWith :Country ,
+                                     :Document ,
+                                     :Organization ,
+                                     :PersonalHistory ,
+                                     :Place ,
+                                     :ReviewForm ,
+                                     :ReviewQuestion ,
+                                     :ReviewRating ,
+                                     :Sponsorship ,
+                                     :Topic .
+
+
+###  http://edas#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         owl:disjointWith :Document ,
+                          :Organization ,
+                          :Person ,
+                          :PersonalHistory ,
+                          :Place ,
+                          :ReviewForm ,
+                          :ReviewQuestion ,
+                          :ReviewRating ,
+                          :Sponsorship ,
+                          :Topic .
+
+
+###  http://edas#CryptographyTopic
+:CryptographyTopic rdf:type owl:Class ;
+                   rdfs:subClassOf :Topic ;
+                   owl:disjointWith :MedicineTopic ,
+                                    :MicroelectronicsTopic ,
+                                    :MobileComputingTopic ,
+                                    :MultimediaTopic ,
+                                    :OperatingTopicsystems ,
+                                    :ParallelAndDistributedComputingTopic ,
+                                    :PerformanceTopic ,
+                                    :PowerlineTransmissionTopic ,
+                                    :RadioCommunicationsTopic ,
+                                    :SatelliteAndSpaceCommunicationsTopic ,
+                                    :SecurityTopic ,
+                                    :SignalProcessingTopic ,
+                                    :TestOnlyTopic ,
+                                    :WirelessCommunicationsTopic .
+
+
+###  http://edas#DiningPlace
+:DiningPlace rdf:type owl:Class ;
+             rdfs:subClassOf :Place .
+
+
+###  http://edas#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          owl:disjointWith :Organization ,
+                           :Person ,
+                           :PersonalHistory ,
+                           :Place ,
+                           :ReviewForm ,
+                           :ReviewQuestion ,
+                           :ReviewRating ,
+                           :Sponsorship ,
+                           :Topic .
+
+
+###  http://edas#Excursion
+:Excursion rdf:type owl:Class ;
+           rdfs:subClassOf :SocialEvent .
+
+
+###  http://edas#FreeTimeBreak
+:FreeTimeBreak rdf:type owl:Class ;
+               rdfs:subClassOf :BreakEvent .
+
+
+###  http://edas#GovernmentOrganization
+:GovernmentOrganization rdf:type owl:Class ;
+                        rdfs:subClassOf :Organization ;
+                        owl:disjointWith :IndustryOrganization ,
+                                         :NGO .
+
+
+###  http://edas#IndustryOrganization
+:IndustryOrganization rdf:type owl:Class ;
+                      rdfs:subClassOf :Organization ;
+                      owl:disjointWith :NGO .
+
+
+###  http://edas#MealBreak
+:MealBreak rdf:type owl:Class ;
+           rdfs:subClassOf :BreakEvent .
+
+
+###  http://edas#MealEvent
+:MealEvent rdf:type owl:Class ;
+           rdfs:subClassOf :NonAcademicEvent .
+
+
+###  http://edas#MealMenu
+:MealMenu rdf:type owl:Class ;
+          rdfs:subClassOf :Document ;
+          owl:disjointWith :Paper ,
+                           :Programme ,
+                           :Review ,
+                           :SlideSet .
+
+
+###  http://edas#MedicineTopic
+:MedicineTopic rdf:type owl:Class ;
+               rdfs:subClassOf :Topic ;
+               owl:disjointWith :MicroelectronicsTopic ,
+                                :MobileComputingTopic ,
+                                :MultimediaTopic ,
+                                :OperatingTopicsystems ,
+                                :ParallelAndDistributedComputingTopic ,
+                                :PerformanceTopic ,
+                                :PowerlineTransmissionTopic ,
+                                :RadioCommunicationsTopic ,
+                                :SatelliteAndSpaceCommunicationsTopic ,
+                                :SecurityTopic ,
+                                :SignalProcessingTopic ,
+                                :TestOnlyTopic ,
+                                :WirelessCommunicationsTopic .
+
+
+###  http://edas#MeetingRoomPlace
+:MeetingRoomPlace rdf:type owl:Class ;
+                  rdfs:subClassOf :Place .
+
+
+###  http://edas#MicroelectronicsTopic
+:MicroelectronicsTopic rdf:type owl:Class ;
+                       rdfs:subClassOf :Topic ;
+                       owl:disjointWith :MobileComputingTopic ,
+                                        :MultimediaTopic ,
+                                        :OperatingTopicsystems ,
+                                        :ParallelAndDistributedComputingTopic ,
+                                        :PerformanceTopic ,
+                                        :PowerlineTransmissionTopic ,
+                                        :RadioCommunicationsTopic ,
+                                        :SatelliteAndSpaceCommunicationsTopic ,
+                                        :SecurityTopic ,
+                                        :SignalProcessingTopic ,
+                                        :TestOnlyTopic ,
+                                        :WirelessCommunicationsTopic .
+
+
+###  http://edas#MobileComputingTopic
+:MobileComputingTopic rdf:type owl:Class ;
+                      rdfs:subClassOf :Topic ;
+                      owl:disjointWith :MultimediaTopic ,
+                                       :OperatingTopicsystems ,
+                                       :ParallelAndDistributedComputingTopic ,
+                                       :PerformanceTopic ,
+                                       :PowerlineTransmissionTopic ,
+                                       :RadioCommunicationsTopic ,
+                                       :SatelliteAndSpaceCommunicationsTopic ,
+                                       :SecurityTopic ,
+                                       :SignalProcessingTopic ,
+                                       :TestOnlyTopic ,
+                                       :WirelessCommunicationsTopic .
+
+
+###  http://edas#MultimediaTopic
+:MultimediaTopic rdf:type owl:Class ;
+                 rdfs:subClassOf :Topic ;
+                 owl:disjointWith :OperatingTopicsystems ,
+                                  :ParallelAndDistributedComputingTopic ,
+                                  :PerformanceTopic ,
+                                  :PowerlineTransmissionTopic ,
+                                  :RadioCommunicationsTopic ,
+                                  :SatelliteAndSpaceCommunicationsTopic ,
+                                  :SecurityTopic ,
+                                  :SignalProcessingTopic ,
+                                  :TestOnlyTopic ,
+                                  :WirelessCommunicationsTopic .
+
+
+###  http://edas#NGO
+:NGO rdf:type owl:Class ;
+     rdfs:subClassOf :Organization .
+
+
+###  http://edas#NonAcademicEvent
+:NonAcademicEvent rdf:type owl:Class ;
+                  rdfs:subClassOf :ConferenceEvent .
+
+
+###  http://edas#NumericalReviewQuestion
+:NumericalReviewQuestion rdf:type owl:Class ;
+                         rdfs:subClassOf :ReviewQuestion .
+
+
+###  http://edas#OperatingTopicsystems
+:OperatingTopicsystems rdf:type owl:Class ;
+                       rdfs:subClassOf :Topic ;
+                       owl:disjointWith :ParallelAndDistributedComputingTopic ,
+                                        :PerformanceTopic ,
+                                        :PowerlineTransmissionTopic ,
+                                        :RadioCommunicationsTopic ,
+                                        :SatelliteAndSpaceCommunicationsTopic ,
+                                        :SecurityTopic ,
+                                        :SignalProcessingTopic ,
+                                        :TestOnlyTopic ,
+                                        :WirelessCommunicationsTopic .
+
+
+###  http://edas#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ;
+              owl:disjointWith :Person ,
+                               :PersonalHistory ,
+                               :Place ,
+                               :ReviewForm ,
+                               :ReviewQuestion ,
+                               :ReviewRating ,
+                               :Sponsorship ,
+                               :Topic .
+
+
+###  http://edas#OrganizationalMeeting
+:OrganizationalMeeting rdf:type owl:Class ;
+                       rdfs:subClassOf :AcademicEvent ;
+                       owl:disjointWith :PaperPresentation ,
+                                        :TalkEvent ,
+                                        :Workshop .
+
+
+###  http://edas#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Document ;
+       owl:disjointWith :Programme ,
+                        :Review ,
+                        :SlideSet .
+
+
+###  http://edas#PaperPresentation
+:PaperPresentation rdf:type owl:Class ;
+                   rdfs:subClassOf :AcademicEvent ;
+                   owl:disjointWith :TalkEvent ,
+                                    :Workshop .
+
+
+###  http://edas#ParallelAndDistributedComputingTopic
+:ParallelAndDistributedComputingTopic rdf:type owl:Class ;
+                                      rdfs:subClassOf :Topic ;
+                                      owl:disjointWith :PerformanceTopic ,
+                                                       :PowerlineTransmissionTopic ,
+                                                       :RadioCommunicationsTopic ,
+                                                       :SatelliteAndSpaceCommunicationsTopic ,
+                                                       :SecurityTopic ,
+                                                       :SignalProcessingTopic ,
+                                                       :TestOnlyTopic ,
+                                                       :WirelessCommunicationsTopic .
+
+
+###  http://edas#PendingPaper
+:PendingPaper rdf:type owl:Class ;
+              rdfs:subClassOf :Paper ;
+              owl:disjointWith :PublishedPaper ,
+                               :RejectedPaper ,
+                               :WithdrawnPaper .
+
+
+###  http://edas#PerformanceTopic
+:PerformanceTopic rdf:type owl:Class ;
+                  rdfs:subClassOf :Topic ;
+                  owl:disjointWith :PowerlineTransmissionTopic ,
+                                   :RadioCommunicationsTopic ,
+                                   :SatelliteAndSpaceCommunicationsTopic ,
+                                   :SecurityTopic ,
+                                   :SignalProcessingTopic ,
+                                   :TestOnlyTopic ,
+                                   :WirelessCommunicationsTopic .
+
+
+###  http://edas#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith :PersonalHistory ,
+                         :Place ,
+                         :ReviewForm ,
+                         :ReviewQuestion ,
+                         :ReviewRating ,
+                         :Sponsorship ,
+                         :Topic .
+
+
+###  http://edas#PersonalHistory
+:PersonalHistory rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ;
+                 owl:disjointWith :Place ,
+                                  :ReviewForm ,
+                                  :ReviewQuestion ,
+                                  :ReviewRating ,
+                                  :Sponsorship ,
+                                  :Topic .
+
+
+###  http://edas#PersonalPublicationHistory
+:PersonalPublicationHistory rdf:type owl:Class ;
+                            rdfs:subClassOf :PersonalHistory .
+
+
+###  http://edas#PersonalReviewHistory
+:PersonalReviewHistory rdf:type owl:Class ;
+                       rdfs:subClassOf :PersonalHistory .
+
+
+###  http://edas#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       owl:disjointWith :ReviewForm ,
+                        :ReviewQuestion ,
+                        :ReviewRating ,
+                        :Sponsorship ,
+                        :Topic .
+
+
+###  http://edas#PowerlineTransmissionTopic
+:PowerlineTransmissionTopic rdf:type owl:Class ;
+                            rdfs:subClassOf :Topic ;
+                            owl:disjointWith :RadioCommunicationsTopic ,
+                                             :SatelliteAndSpaceCommunicationsTopic ,
+                                             :SecurityTopic ,
+                                             :SignalProcessingTopic ,
+                                             :TestOnlyTopic ,
+                                             :WirelessCommunicationsTopic .
+
+
+###  http://edas#Presenter
+:Presenter rdf:type owl:Class ;
+           rdfs:subClassOf :Author .
+
+
+###  http://edas#Programme
+:Programme rdf:type owl:Class ;
+           rdfs:subClassOf :Document ;
+           owl:disjointWith :Review ,
+                            :SlideSet .
+
+
+###  http://edas#PublishedPaper
+:PublishedPaper rdf:type owl:Class ;
+                rdfs:subClassOf :Paper ;
+                owl:disjointWith :RejectedPaper ,
+                                 :WithdrawnPaper .
+
+
+###  http://edas#RadioCommunicationsTopic
+:RadioCommunicationsTopic rdf:type owl:Class ;
+                          rdfs:subClassOf :Topic ;
+                          owl:disjointWith :SatelliteAndSpaceCommunicationsTopic ,
+                                           :SecurityTopic ,
+                                           :SignalProcessingTopic ,
+                                           :TestOnlyTopic ,
+                                           :WirelessCommunicationsTopic .
+
+
+###  http://edas#RatedPapers
+:RatedPapers rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasRating ;
+                                   owl:someValuesFrom :ReviewRating
+                                 ] ;
+             rdfs:subClassOf :ActivePaper .
+
+
+###  http://edas#Reception
+:Reception rdf:type owl:Class ;
+           rdfs:subClassOf :SocialEvent .
+
+
+###  http://edas#RejectRating
+:RejectRating rdf:type owl:Class ;
+              rdfs:subClassOf :ReviewRating ;
+              owl:disjointWith :WeekRejectRating .
+
+
+###  http://edas#RejectedPaper
+:RejectedPaper rdf:type owl:Class ;
+               rdfs:subClassOf :Paper ;
+               owl:disjointWith :WithdrawnPaper .
+
+
+###  http://edas#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document ;
+        owl:disjointWith :SlideSet .
+
+
+###  http://edas#ReviewForm
+:ReviewForm rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            owl:disjointWith :ReviewQuestion ,
+                             :ReviewRating ,
+                             :Sponsorship ,
+                             :Topic .
+
+
+###  http://edas#ReviewQuestion
+:ReviewQuestion rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing ;
+                owl:disjointWith :ReviewRating ,
+                                 :Sponsorship ,
+                                 :Topic .
+
+
+###  http://edas#ReviewRating
+:ReviewRating rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:unionOf ( :AcceptRating
+                                                  :AccpetIfRoomRating
+                                                  :RejectRating
+                                                  :WeekRejectRating
+                                                )
+                                  ] ;
+              rdfs:subClassOf owl:Thing ;
+              owl:disjointWith :Sponsorship ,
+                               :Topic .
+
+
+###  http://edas#Reviewer
+:Reviewer rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isReviewing ;
+                                                       owl:someValuesFrom :Paper
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Person .
+
+
+###  http://edas#SatelliteAndSpaceCommunicationsTopic
+:SatelliteAndSpaceCommunicationsTopic rdf:type owl:Class ;
+                                      rdfs:subClassOf :Topic ;
+                                      owl:disjointWith :SecurityTopic ,
+                                                       :SignalProcessingTopic ,
+                                                       :TestOnlyTopic ,
+                                                       :WirelessCommunicationsTopic .
+
+
+###  http://edas#SecurityTopic
+:SecurityTopic rdf:type owl:Class ;
+               rdfs:subClassOf :Topic ;
+               owl:disjointWith :SignalProcessingTopic ,
+                                :TestOnlyTopic ,
+                                :WirelessCommunicationsTopic .
+
+
+###  http://edas#SessionChair
+:SessionChair rdf:type owl:Class ;
+              rdfs:subClassOf :Person .
+
+
+###  http://edas#SignalProcessingTopic
+:SignalProcessingTopic rdf:type owl:Class ;
+                       rdfs:subClassOf :Topic ;
+                       owl:disjointWith :TestOnlyTopic ,
+                                        :WirelessCommunicationsTopic .
+
+
+###  http://edas#SingleLevelConference
+:SingleLevelConference rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Conference
+                                                                  [ rdf:type owl:Class ;
+                                                                    owl:complementOf :TwoLevelConference
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMember ;
+                                                                    owl:allValuesFrom :Person
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Conference .
+
+
+###  http://edas#SlideSet
+:SlideSet rdf:type owl:Class ;
+          rdfs:subClassOf :Document .
+
+
+###  http://edas#SocialEvent
+:SocialEvent rdf:type owl:Class ;
+             rdfs:subClassOf :NonAcademicEvent .
+
+
+###  http://edas#Sponsorship
+:Sponsorship rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             owl:disjointWith :Topic .
+
+
+###  http://edas#TPCMember
+:TPCMember rdf:type owl:Class ;
+           rdfs:subClassOf :Person .
+
+
+###  http://edas#TalkEvent
+:TalkEvent rdf:type owl:Class ;
+           rdfs:subClassOf :AcademicEvent ;
+           owl:disjointWith :Workshop .
+
+
+###  http://edas#TestOnlyTopic
+:TestOnlyTopic rdf:type owl:Class ;
+               rdfs:subClassOf :Topic ;
+               owl:disjointWith :WirelessCommunicationsTopic .
+
+
+###  http://edas#TextualReviewQuestion
+:TextualReviewQuestion rdf:type owl:Class ;
+                       rdfs:subClassOf :ReviewQuestion .
+
+
+###  http://edas#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://edas#TravelGrant
+:TravelGrant rdf:type owl:Class ;
+             rdfs:subClassOf :Sponsorship .
+
+
+###  http://edas#TwoLevelConference
+:TwoLevelConference rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Conference
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasMember ;
+                                                                 owl:someValuesFrom :TPCMember
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasMember ;
+                                                                 owl:allValuesFrom :Person
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Conference .
+
+
+###  http://edas#WeekRejectRating
+:WeekRejectRating rdf:type owl:Class ;
+                  rdfs:subClassOf :ReviewRating .
+
+
+###  http://edas#WelcomeTalk
+:WelcomeTalk rdf:type owl:Class ;
+             rdfs:subClassOf :TalkEvent .
+
+
+###  http://edas#WirelessCommunicationsTopic
+:WirelessCommunicationsTopic rdf:type owl:Class ;
+                             rdfs:subClassOf :Topic .
+
+
+###  http://edas#WithdrawnPaper
+:WithdrawnPaper rdf:type owl:Class ;
+                rdfs:subClassOf :Paper .
+
+
+###  http://edas#Workshop
+:Workshop rdf:type owl:Class ;
+          rdfs:subClassOf :AcademicEvent .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing owl:versionInfo """OWLUnitTest:<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<OWLUnitTest enabled=\"true\" satisfiable=\"true\">
+    <superclasses/>
+    <subclasses/>
+    <comment/>
+</OWLUnitTest>
+""" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://edas#Argentina
+:Argentina rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Armenia
+:Armenia rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Australia
+:Australia rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Austria
+:Austria rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Azerbaijan
+:Azerbaijan rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Bahamas
+:Bahamas rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Bahrain
+:Bahrain rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Bangladesh
+:Bangladesh rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Belarus
+:Belarus rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Belgium
+:Belgium rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#BosniaAndHerzegovina
+:BosniaAndHerzegovina rdf:type owl:NamedIndividual ,
+                               :Country ,
+                               owl:Thing .
+
+
+###  http://edas#Botswana
+:Botswana rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Brazil
+:Brazil rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Bulgaria
+:Bulgaria rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Cambodia
+:Cambodia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Canada
+:Canada rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Chile
+:Chile rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#China
+:China rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#CocosIslands
+:CocosIslands rdf:type owl:NamedIndividual ,
+                       :Country ,
+                       owl:Thing .
+
+
+###  http://edas#Colombia
+:Colombia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Croatia
+:Croatia rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Cuba
+:Cuba rdf:type owl:NamedIndividual ,
+               :Country ,
+               owl:Thing .
+
+
+###  http://edas#Cyprus
+:Cyprus rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#CzechRepublic
+:CzechRepublic rdf:type owl:NamedIndividual ,
+                        :Country ,
+                        owl:Thing .
+
+
+###  http://edas#DemocraticRepublicOfCongo
+:DemocraticRepublicOfCongo rdf:type owl:NamedIndividual ,
+                                    :Country ,
+                                    owl:Thing .
+
+
+###  http://edas#Denmark
+:Denmark rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Ecuador
+:Ecuador rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Egypt
+:Egypt rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Estonia
+:Estonia rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Ethiopia
+:Ethiopia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#EuropeanUnion
+:EuropeanUnion rdf:type owl:NamedIndividual ,
+                        :Country ,
+                        owl:Thing .
+
+
+###  http://edas#Finland
+:Finland rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#France
+:France rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Georgia
+:Georgia rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Germany
+:Germany rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Ghana
+:Ghana rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Greece
+:Greece rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#HongKong
+:HongKong rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Hungary
+:Hungary rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Iceland
+:Iceland rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#India
+:India rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Indonesia
+:Indonesia rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Iran
+:Iran rdf:type owl:NamedIndividual ,
+               :Country ,
+               owl:Thing .
+
+
+###  http://edas#Iraq
+:Iraq rdf:type owl:NamedIndividual ,
+               :Country ,
+               owl:Thing .
+
+
+###  http://edas#Ireland
+:Ireland rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Israel
+:Israel rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Italy
+:Italy rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Japan
+:Japan rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Jordan
+:Jordan rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Kenya
+:Kenya rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Korea
+:Korea rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Kuwait
+:Kuwait rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Latvia
+:Latvia rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Lebanon
+:Lebanon rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Libya
+:Libya rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Lithuania
+:Lithuania rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Luxemburg
+:Luxemburg rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Macao
+:Macao rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Macedonia
+:Macedonia rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Madagascar
+:Madagascar rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Malaysia
+:Malaysia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Malta
+:Malta rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Mauritius
+:Mauritius rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Mexico
+:Mexico rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Mongolia
+:Mongolia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Morocco
+:Morocco rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Nepal
+:Nepal rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Netherlands
+:Netherlands rdf:type owl:NamedIndividual ,
+                      :Country ,
+                      owl:Thing .
+
+
+###  http://edas#NewZealand
+:NewZealand rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Nicaragua
+:Nicaragua rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Nigeria
+:Nigeria rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#NorthKorea
+:NorthKorea rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Norway
+:Norway rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Oman
+:Oman rdf:type owl:NamedIndividual ,
+               :Country ,
+               owl:Thing .
+
+
+###  http://edas#Pakistan
+:Pakistan rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Paraguay
+:Paraguay rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Peru
+:Peru rdf:type owl:NamedIndividual ,
+               :Country ,
+               owl:Thing .
+
+
+###  http://edas#Philippines
+:Philippines rdf:type owl:NamedIndividual ,
+                      :Country ,
+                      owl:Thing .
+
+
+###  http://edas#Poland
+:Poland rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Portugal
+:Portugal rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#PuertoRico
+:PuertoRico rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Qatar
+:Qatar rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Romania
+:Romania rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Russia
+:Russia rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#SanMarino
+:SanMarino rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#SaudiArabia
+:SaudiArabia rdf:type owl:NamedIndividual ,
+                      :Country ,
+                      owl:Thing .
+
+
+###  http://edas#Senegal
+:Senegal rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#SerbiaAndMontenegro
+:SerbiaAndMontenegro rdf:type owl:NamedIndividual ,
+                              :Country ,
+                              owl:Thing .
+
+
+###  http://edas#Singapore
+:Singapore rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Slovakia
+:Slovakia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Slovenia
+:Slovenia rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#SouthAfrica
+:SouthAfrica rdf:type owl:NamedIndividual ,
+                      :Country ,
+                      owl:Thing .
+
+
+###  http://edas#Spain
+:Spain rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#SriLanka
+:SriLanka rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Sweden
+:Sweden rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Switzerland
+:Switzerland rdf:type owl:NamedIndividual ,
+                      :Country ,
+                      owl:Thing .
+
+
+###  http://edas#Syria
+:Syria rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Taiwan
+:Taiwan rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Tajikistan
+:Tajikistan rdf:type owl:NamedIndividual ,
+                     :Country ,
+                     owl:Thing .
+
+
+###  http://edas#Tanzania
+:Tanzania rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Thailand
+:Thailand rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+###  http://edas#Tunisia
+:Tunisia rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Turkey
+:Turkey rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Turkmenistan
+:Turkmenistan rdf:type owl:NamedIndividual ,
+                       :Country ,
+                       owl:Thing .
+
+
+###  http://edas#UAE
+:UAE rdf:type owl:NamedIndividual ,
+              :Country ,
+              owl:Thing .
+
+
+###  http://edas#USA
+:USA rdf:type owl:NamedIndividual ,
+              :Country ,
+              owl:Thing .
+
+
+###  http://edas#Uganda
+:Uganda rdf:type owl:NamedIndividual ,
+                 :Country ,
+                 owl:Thing .
+
+
+###  http://edas#Ukraine
+:Ukraine rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#UnitedKingdom
+:UnitedKingdom rdf:type owl:NamedIndividual ,
+                        :Country ,
+                        owl:Thing .
+
+
+###  http://edas#Uruguay
+:Uruguay rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Venezuela
+:Venezuela rdf:type owl:NamedIndividual ,
+                    :Country ,
+                    owl:Thing .
+
+
+###  http://edas#Vietnam
+:Vietnam rdf:type owl:NamedIndividual ,
+                  :Country ,
+                  owl:Thing .
+
+
+###  http://edas#Yemen
+:Yemen rdf:type owl:NamedIndividual ,
+                :Country ,
+                owl:Thing .
+
+
+###  http://edas#Zimbabwe
+:Zimbabwe rdf:type owl:NamedIndividual ,
+                   :Country ,
+                   owl:Thing .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Argentina
+                        :Armenia
+                        :Australia
+                        :Austria
+                        :Azerbaijan
+                        :Bahamas
+                        :Bahrain
+                        :Bangladesh
+                        :Belarus
+                        :Belgium
+                        :BosniaAndHerzegovina
+                        :Botswana
+                        :Brazil
+                        :Bulgaria
+                        :Cambodia
+                        :Canada
+                        :Chile
+                        :China
+                        :CocosIslands
+                        :Colombia
+                        :Croatia
+                        :Cuba
+                        :Cyprus
+                        :CzechRepublic
+                        :DemocraticRepublicOfCongo
+                        :Denmark
+                        :Ecuador
+                        :Egypt
+                        :Estonia
+                        :Ethiopia
+                        :EuropeanUnion
+                        :Finland
+                        :France
+                        :Georgia
+                        :Germany
+                        :Ghana
+                        :Greece
+                        :HongKong
+                        :Hungary
+                        :Iceland
+                        :India
+                        :Indonesia
+                        :Iran
+                        :Iraq
+                        :Ireland
+                        :Israel
+                        :Italy
+                        :Japan
+                        :Jordan
+                        :Kenya
+                        :Korea
+                        :Kuwait
+                        :Latvia
+                        :Lebanon
+                        :Libya
+                        :Lithuania
+                        :Luxemburg
+                        :Macao
+                        :Macedonia
+                        :Madagascar
+                        :Malaysia
+                        :Malta
+                        :Mauritius
+                        :Mexico
+                        :Mongolia
+                        :Morocco
+                        :Nepal
+                        :Netherlands
+                        :NewZealand
+                        :Nicaragua
+                        :Nigeria
+                        :NorthKorea
+                        :Norway
+                        :Oman
+                        :Pakistan
+                        :Paraguay
+                        :Peru
+                        :Philippines
+                        :Poland
+                        :Portugal
+                        :PuertoRico
+                        :Qatar
+                        :Romania
+                        :Russia
+                        :SanMarino
+                        :SaudiArabia
+                        :Senegal
+                        :SerbiaAndMontenegro
+                        :Singapore
+                        :Slovakia
+                        :Slovenia
+                        :SouthAfrica
+                        :Spain
+                        :SriLanka
+                        :Sweden
+                        :Switzerland
+                        :Syria
+                        :Taiwan
+                        :Tajikistan
+                        :Tanzania
+                        :Thailand
+                        :Tunisia
+                        :Turkey
+                        :Turkmenistan
+                        :UAE
+                        :USA
+                        :Uganda
+                        :Ukraine
+                        :UnitedKingdom
+                        :Uruguay
+                        :Venezuela
+                        :Vietnam
+                        :Yemen
+                        :Zimbabwe
+                      )
+] .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

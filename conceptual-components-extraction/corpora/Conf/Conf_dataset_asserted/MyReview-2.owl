@@ -1,0 +1,1478 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://myreview#"
+     xml:base="http://myreview"
+     xmlns:p1="http://www.owl-ontologies.com/assert.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://myreview"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://myreview#IsAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#IsAssignedTo">
+        <owl:inverseOf rdf:resource="http://myreview#paperIsAssignedTo"/>
+        <rdfs:domain rdf:resource="http://myreview#Reviewer"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#abstractIsSubmittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#abstractIsSubmittedBy">
+        <owl:inverseOf rdf:resource="http://myreview#submitsAbstract"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#PaperAbstract"/>
+        <rdfs:range rdf:resource="http://myreview#ContactAuthor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#accepts -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#accepts">
+        <owl:inverseOf rdf:resource="http://myreview#isAcceptedBy"/>
+        <rdfs:domain rdf:resource="http://myreview#Chair"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#asksForPreference -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#asksForPreference">
+        <rdfs:domain rdf:resource="http://myreview#Chair"/>
+        <rdfs:range rdf:resource="http://myreview#Reviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#assigns -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#assigns">
+        <owl:inverseOf rdf:resource="http://myreview#isAssignedBy"/>
+        <rdfs:domain rdf:resource="http://myreview#Administrator"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#Criterion"/>
+                    <rdf:Description rdf:about="http://myreview#PaperStatus"/>
+                    <rdf:Description rdf:about="http://myreview#Question"/>
+                    <rdf:Description rdf:about="http://myreview#ResearchTopic"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#consistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#consistsOf">
+        <owl:inverseOf rdf:resource="http://myreview#forms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#ConferenceProgram"/>
+        <rdfs:range rdf:resource="http://myreview#Slot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#containsEvaluation -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#containsEvaluation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Review"/>
+        <rdfs:range rdf:resource="http://myreview#Evaluation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#cooperates -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#cooperates">
+        <owl:inverseOf rdf:resource="http://myreview#cooperatesReviewer"/>
+        <rdfs:domain rdf:resource="http://myreview#Reviewer"/>
+        <rdfs:range rdf:resource="http://myreview#ExternalReviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#cooperatesReviewer -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#cooperatesReviewer">
+        <rdfs:domain rdf:resource="http://myreview#ExternalReviewer"/>
+        <rdfs:range rdf:resource="http://myreview#Reviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#forms -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#forms">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Slot"/>
+        <rdfs:range rdf:resource="http://myreview#ConferenceProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasAbstract -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasAbstract">
+        <owl:inverseOf rdf:resource="http://myreview#isAbstractOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#PaperAbstract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasAssignedPaper -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasAssignedPaper">
+        <owl:inverseOf rdf:resource="http://myreview#isAssignedToSession"/>
+        <rdfs:domain rdf:resource="http://myreview#Session"/>
+        <rdfs:range rdf:resource="http://myreview#AcceptedPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasAuthor">
+        <owl:inverseOf rdf:resource="http://myreview#writePaper"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#Author"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasChair -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasChair">
+        <owl:inverseOf rdf:resource="http://myreview#isChairOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Session"/>
+        <rdfs:range rdf:resource="http://myreview#Chair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasConflictedPaper -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasConflictedPaper">
+        <rdfs:domain rdf:resource="http://myreview#Reviewer"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">• if one of the paper’s authors name (first name + last name) are equal to a reviewer’s name, there is a conflict ;
+• if one of the paper’s authors affiliation are equal to a reviewer’s affiliation, there is a conflict.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasMainTopic -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasMainTopic">
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#ResearchTopic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasMember">
+        <owl:inverseOf rdf:resource="http://myreview#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://myreview#ProgramCommittee"/>
+        <rdfs:range rdf:resource="http://myreview#ProgramCommitteeMember"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasPreferredPaper -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasPreferredPaper">
+        <rdfs:domain rdf:resource="http://myreview#Reviewer"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasPreferredTopic -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasPreferredTopic">
+        <rdfs:domain rdf:resource="http://myreview#Reviewer"/>
+        <rdfs:range rdf:resource="http://myreview#ResearchTopic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasSecondaryTopic -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasSecondaryTopic">
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#ResearchTopic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hasStatus">
+        <owl:inverseOf rdf:resource="http://myreview#isStatusOf"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#PaperStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#hosts -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#hosts">
+        <owl:inverseOf rdf:resource="http://myreview#isAssociatedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Slot"/>
+        <rdfs:range rdf:resource="http://myreview#Session"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#includes -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#includes">
+        <owl:inverseOf rdf:resource="http://myreview#isIncludedIn"/>
+        <rdfs:domain rdf:resource="http://myreview#Proceedings"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#AcceptedPaper"/>
+                    <rdf:Description rdf:about="http://myreview#ExternalReviewersList"/>
+                    <rdf:Description rdf:about="http://myreview#IndexOfAuthors"/>
+                    <rdf:Description rdf:about="http://myreview#PCMembersList"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isAbstractOf -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isAbstractOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#PaperAbstract"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isAcceptedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isAcceptedBy">
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#Chair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isAssignedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isAssignedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#Criterion"/>
+                    <rdf:Description rdf:about="http://myreview#PaperStatus"/>
+                    <rdf:Description rdf:about="http://myreview#Question"/>
+                    <rdf:Description rdf:about="http://myreview#ResearchTopic"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://myreview#Administrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isAssignedToSession -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isAssignedToSession">
+        <rdfs:domain rdf:resource="http://myreview#AcceptedPaper"/>
+        <rdfs:range rdf:resource="http://myreview#Session"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isAssociatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isAssociatedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Session"/>
+        <rdfs:range rdf:resource="http://myreview#Slot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isChairOf -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isChairOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Chair"/>
+        <rdfs:range rdf:resource="http://myreview#Session"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isContainedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Evaluation"/>
+        <rdfs:range rdf:resource="http://myreview#Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isIncludedIn -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isIncludedIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#AcceptedPaper"/>
+                    <rdf:Description rdf:about="http://myreview#ExternalReviewersList"/>
+                    <rdf:Description rdf:about="http://myreview#IndexOfAuthors"/>
+                    <rdf:Description rdf:about="http://myreview#PCMembersList"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://myreview#Proceedings"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isMemberOf">
+        <rdfs:domain rdf:resource="http://myreview#ProgramCommitteeMember"/>
+        <rdfs:range rdf:resource="http://myreview#ProgramCommittee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isProducedBy">
+        <owl:inverseOf rdf:resource="http://myreview#produces"/>
+        <rdfs:domain rdf:resource="http://myreview#OutputDocument"/>
+        <rdfs:range rdf:resource="http://myreview#Chair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isProgramOf -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isProgramOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#ConferenceProgram"/>
+        <rdfs:range rdf:resource="http://myreview#Conference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isRatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isRatedBy">
+        <owl:inverseOf rdf:resource="http://myreview#rates"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isRejectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isRejectedBy">
+        <owl:inverseOf rdf:resource="http://myreview#rejects"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#Chair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isStatusOf -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isStatusOf">
+        <rdfs:domain rdf:resource="http://myreview#PaperStatus"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#isWritenBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#isWritenBy">
+        <owl:inverseOf rdf:resource="http://myreview#writeReview"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Review"/>
+        <rdfs:range rdf:resource="http://myreview#Reviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#mustPay -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#mustPay">
+        <rdfs:domain rdf:resource="http://myreview#ConferenceAttendant"/>
+        <rdfs:range rdf:resource="http://myreview#Fee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#paperIsAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#paperIsAssignedTo">
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#Reviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#paperIsSubmittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#paperIsSubmittedBy">
+        <owl:inverseOf rdf:resource="http://myreview#submitsPaper"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://myreview#Author"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#produces -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#produces">
+        <rdfs:domain rdf:resource="http://myreview#Chair"/>
+        <rdfs:range rdf:resource="http://myreview#OutputDocument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#rates -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#rates">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Review"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#rejects -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#rejects">
+        <rdfs:domain rdf:resource="http://myreview#Chair"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#sets -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#sets">
+        <rdfs:domain rdf:resource="http://myreview#Chair"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#Fee"/>
+                    <rdf:Description rdf:about="http://myreview#PaymentMode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#submitsAbstract -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#submitsAbstract">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#ContactAuthor"/>
+        <rdfs:range rdf:resource="http://myreview#PaperAbstract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#submitsPaper -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#submitsPaper">
+        <rdfs:domain rdf:resource="http://myreview#Author"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#writePaper -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#writePaper">
+        <rdfs:domain rdf:resource="http://myreview#Author"/>
+        <rdfs:range rdf:resource="http://myreview#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://myreview#writeReview -->
+
+    <owl:ObjectProperty rdf:about="http://myreview#writeReview">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Reviewer"/>
+        <rdfs:range rdf:resource="http://myreview#Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://myreview#beginsAt -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#beginsAt">
+        <rdfs:domain rdf:resource="http://myreview#Slot"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#date -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#date">
+        <rdfs:domain rdf:resource="http://myreview#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#endsAt -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#endsAt">
+        <rdfs:domain rdf:resource="http://myreview#Slot"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasAcronym -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasAcronym">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Conference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasAdress -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasAdress">
+        <rdfs:domain rdf:resource="http://myreview#ConferenceAttendant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasAffiliation -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasAffiliation">
+        <rdfs:domain rdf:resource="http://myreview#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasEmail">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#Conference"/>
+                    <rdf:Description rdf:about="http://myreview#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasFirstName">
+        <rdfs:domain rdf:resource="http://myreview#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasLastName -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasLastName">
+        <rdfs:domain rdf:resource="http://myreview#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasName">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://myreview#Conference"/>
+                    <rdf:Description rdf:about="http://myreview#Session"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasPassword -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasPassword">
+        <rdfs:domain rdf:resource="http://myreview#ProgramCommitteeMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasPhone -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasPhone">
+        <rdfs:domain rdf:resource="http://myreview#ConferenceAttendant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasTitle">
+        <rdfs:domain rdf:resource="http://myreview#Paper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#hasWeight">
+        <rdfs:domain rdf:resource="http://myreview#Criterion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#paid -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#paid">
+        <rdfs:domain rdf:resource="http://myreview#ConferenceAttendant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://myreview#room -->
+
+    <owl:DatatypeProperty rdf:about="http://myreview#room">
+        <rdfs:domain rdf:resource="http://myreview#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://myreview#AcceptedPaper -->
+
+    <owl:Class rdf:about="http://myreview#AcceptedPaper">
+        <rdfs:subClassOf rdf:resource="http://myreview#Paper"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isAcceptedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isRatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Review"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasStatus"/>
+                <owl:hasValue rdf:resource="http://myreview#Accept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#RejectedPaper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Administrator -->
+
+    <owl:Class rdf:about="http://myreview#Administrator">
+        <rdfs:subClassOf rdf:resource="http://myreview#ProgramCommitteeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Author -->
+
+    <owl:Class rdf:about="http://myreview#Author">
+        <rdfs:subClassOf rdf:resource="http://myreview#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#BookletOfAbstracts -->
+
+    <owl:Class rdf:about="http://myreview#BookletOfAbstracts">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#CD-ROM"/>
+        <owl:disjointWith rdf:resource="http://myreview#ExternalReviewersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#IndexOfAuthors"/>
+        <owl:disjointWith rdf:resource="http://myreview#ListOfAbstracts"/>
+        <owl:disjointWith rdf:resource="http://myreview#PCMembersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#CD-ROM -->
+
+    <owl:Class rdf:about="http://myreview#CD-ROM">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#ExternalReviewersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#IndexOfAuthors"/>
+        <owl:disjointWith rdf:resource="http://myreview#ListOfAbstracts"/>
+        <owl:disjointWith rdf:resource="http://myreview#PCMembersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Chair -->
+
+    <owl:Class rdf:about="http://myreview#Chair">
+        <rdfs:subClassOf rdf:resource="http://myreview#ProgramCommitteeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Conference -->
+
+    <owl:Class rdf:about="http://myreview#Conference">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasAcronym"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasEmail"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#ConferenceProgram"/>
+        <owl:disjointWith rdf:resource="http://myreview#Criterion"/>
+        <owl:disjointWith rdf:resource="http://myreview#Document"/>
+        <owl:disjointWith rdf:resource="http://myreview#Fee"/>
+        <owl:disjointWith rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaperStatus"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ConferenceAttendant -->
+
+    <owl:Class rdf:about="http://myreview#ConferenceAttendant">
+        <rdfs:subClassOf rdf:resource="http://myreview#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#mustPay"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Fee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#paid"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasAdress"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasPhone"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ConferenceProgram -->
+
+    <owl:Class rdf:about="http://myreview#ConferenceProgram">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isProgramOf"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Criterion"/>
+        <owl:disjointWith rdf:resource="http://myreview#Document"/>
+        <owl:disjointWith rdf:resource="http://myreview#Fee"/>
+        <owl:disjointWith rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaperStatus"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ContactAuthor -->
+
+    <owl:Class rdf:about="http://myreview#ContactAuthor">
+        <rdfs:subClassOf rdf:resource="http://myreview#Author"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasEmail"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Criterion -->
+
+    <owl:Class rdf:about="http://myreview#Criterion">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasWeight"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Document"/>
+        <owl:disjointWith rdf:resource="http://myreview#Fee"/>
+        <owl:disjointWith rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaperStatus"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Criteria are used to evaluate a paper.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Document -->
+
+    <owl:Class rdf:about="http://myreview#Document">
+        <owl:disjointWith rdf:resource="http://myreview#Fee"/>
+        <owl:disjointWith rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaperStatus"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Evaluation -->
+
+    <owl:Class rdf:about="http://myreview#Evaluation">
+        <rdfs:subClassOf rdf:resource="http://myreview#Document"/>
+        <owl:disjointWith rdf:resource="http://myreview#Paper"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaperAbstract"/>
+        <owl:disjointWith rdf:resource="http://myreview#Review"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ExternalReviewer -->
+
+    <owl:Class rdf:about="http://myreview#ExternalReviewer">
+        <rdfs:subClassOf rdf:resource="http://myreview#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#cooperatesReviewer"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Reviewer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommitteeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ExternalReviewersList -->
+
+    <owl:Class rdf:about="http://myreview#ExternalReviewersList">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#IndexOfAuthors"/>
+        <owl:disjointWith rdf:resource="http://myreview#ListOfAbstracts"/>
+        <owl:disjointWith rdf:resource="http://myreview#PCMembersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Fee -->
+
+    <owl:Class rdf:about="http://myreview#Fee">
+        <owl:disjointWith rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaperStatus"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#IndexOfAuthors -->
+
+    <owl:Class rdf:about="http://myreview#IndexOfAuthors">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#ListOfAbstracts"/>
+        <owl:disjointWith rdf:resource="http://myreview#PCMembersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ListOfAbstracts -->
+
+    <owl:Class rdf:about="http://myreview#ListOfAbstracts">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#PCMembersList"/>
+        <owl:disjointWith rdf:resource="http://myreview#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#OutputDocument -->
+
+    <owl:Class rdf:about="http://myreview#OutputDocument">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isProducedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#PaperStatus"/>
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#PCMembersList -->
+
+    <owl:Class rdf:about="http://myreview#PCMembersList">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <owl:disjointWith rdf:resource="http://myreview#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Paper -->
+
+    <owl:Class rdf:about="http://myreview#Paper">
+        <rdfs:subClassOf rdf:resource="http://myreview#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasAuthor"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#paperIsSubmittedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasAbstract"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasMainTopic"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasTitle"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#PaperAbstract"/>
+        <owl:disjointWith rdf:resource="http://myreview#Review"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#PaperAbstract -->
+
+    <owl:Class rdf:about="http://myreview#PaperAbstract">
+        <rdfs:subClassOf rdf:resource="http://myreview#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#abstractIsSubmittedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#ContactAuthor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Review"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#PaperQuestion -->
+
+    <owl:Class rdf:about="http://myreview#PaperQuestion">
+        <rdfs:subClassOf rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ReviewQuestion"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questions must be asked to the author that submits a paper.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#PaperStatus -->
+
+    <owl:Class rdf:about="http://myreview#PaperStatus">
+        <owl:disjointWith rdf:resource="http://myreview#PaymentMode"/>
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#PaymentMode -->
+
+    <owl:Class rdf:about="http://myreview#PaymentMode">
+        <owl:disjointWith rdf:resource="http://myreview#Person"/>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Person -->
+
+    <owl:Class rdf:about="http://myreview#Person">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasAffiliation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasFirstName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasLastName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#ProgramCommittee"/>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Proceedings -->
+
+    <owl:Class rdf:about="http://myreview#Proceedings">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#includes"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#AcceptedPaper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#includes"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#ExternalReviewersList"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#includes"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#IndexOfAuthors"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#includes"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#PCMembersList"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Program -->
+
+    <owl:Class rdf:about="http://myreview#Program">
+        <rdfs:subClassOf rdf:resource="http://myreview#OutputDocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ProgramCommittee -->
+
+    <owl:Class rdf:about="http://myreview#ProgramCommittee">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasMember"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Administrator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasMember"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Question"/>
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ProgramCommitteeMember -->
+
+    <owl:Class rdf:about="http://myreview#ProgramCommitteeMember">
+        <rdfs:subClassOf rdf:resource="http://myreview#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasEmail"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Question -->
+
+    <owl:Class rdf:about="http://myreview#Question">
+        <owl:disjointWith rdf:resource="http://myreview#ResearchTopic"/>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#RejectedPaper -->
+
+    <owl:Class rdf:about="http://myreview#RejectedPaper">
+        <rdfs:subClassOf rdf:resource="http://myreview#Paper"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isRatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Review"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isRejectedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#hasStatus"/>
+                <owl:hasValue rdf:resource="http://myreview#Reject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ResearchTopic -->
+
+    <owl:Class rdf:about="http://myreview#ResearchTopic">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isAssignedBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Administrator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Session"/>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Review -->
+
+    <owl:Class rdf:about="http://myreview#Review">
+        <rdfs:subClassOf rdf:resource="http://myreview#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isWritenBy"/>
+                <owl:someValuesFrom rdf:resource="http://myreview#Reviewer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#containsEvaluation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#rates"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#ReviewQuestion -->
+
+    <owl:Class rdf:about="http://myreview#ReviewQuestion">
+        <rdfs:subClassOf rdf:resource="http://myreview#Question"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Questions must be asked to the reviewer that submits a review.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Reviewer -->
+
+    <owl:Class rdf:about="http://myreview#Reviewer">
+        <rdfs:subClassOf rdf:resource="http://myreview#ProgramCommitteeMember"/>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Session -->
+
+    <owl:Class rdf:about="http://myreview#Session">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#isAssociatedTo"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://myreview#Slot"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sessions of the conference. Each session is associated to one of the previously defined slots.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://myreview#Slot -->
+
+    <owl:Class rdf:about="http://myreview#Slot">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#beginsAt"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#date"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://myreview#endsAt"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A “slot of the conference” is a period of a given day that hosts one or several sessions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://myreview#Accept -->
+
+    <owl:NamedIndividual rdf:about="http://myreview#Accept">
+        <rdf:type rdf:resource="http://myreview#PaperStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://myreview#Reject -->
+
+    <owl:NamedIndividual rdf:about="http://myreview#Reject">
+        <rdf:type rdf:resource="http://myreview#PaperStatus"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+

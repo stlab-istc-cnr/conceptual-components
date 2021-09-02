@@ -1,0 +1,1758 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://confious#"
+     xml:base="http://confious"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://confious"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://confious#assign_paper -->
+
+    <owl:ObjectProperty rdf:about="http://confious#assign_paper">
+        <rdfs:domain rdf:resource="http://confious#paper_assignment"/>
+        <rdfs:range rdf:resource="http://confious#Program_Committee_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#automatically_assign_paper -->
+
+    <owl:ObjectProperty rdf:about="http://confious#automatically_assign_paper">
+        <rdfs:subPropertyOf rdf:resource="http://confious#assign_paper"/>
+        <rdfs:domain rdf:resource="http://confious#Automatic_Paper_Assignment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#gives_classification -->
+
+    <owl:ObjectProperty rdf:about="http://confious#gives_classification">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://confious#article"/>
+        <rdfs:range rdf:resource="http://confious#classification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#goes_through -->
+
+    <owl:ObjectProperty rdf:about="http://confious#goes_through">
+        <rdfs:domain rdf:resource="http://confious#article"/>
+        <rdfs:range rdf:resource="http://confious#activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#has_author -->
+
+    <owl:ObjectProperty rdf:about="http://confious#has_author">
+        <owl:inverseOf rdf:resource="http://confious#is_author_of"/>
+        <rdfs:domain rdf:resource="http://confious#article"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#has_intensity -->
+
+    <owl:ObjectProperty rdf:about="http://confious#has_intensity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://confious#activity"/>
+        <rdfs:range rdf:resource="http://confious#intensity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#has_result -->
+
+    <owl:ObjectProperty rdf:about="http://confious#has_result">
+        <rdfs:domain rdf:resource="http://confious#activity"/>
+        <rdfs:range rdf:resource="http://confious#article"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#has_topic_of_interest -->
+
+    <owl:ObjectProperty rdf:about="http://confious#has_topic_of_interest">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://confious#topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#includes_topic -->
+
+    <owl:ObjectProperty rdf:about="http://confious#includes_topic">
+        <rdfs:domain rdf:resource="http://confious#conference_setup"/>
+        <rdfs:range rdf:resource="http://confious#topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_author_of -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_author_of">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://confious#article"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_checked_in -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_checked_in">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://confious#activity"/>
+                    <rdf:Description rdf:about="http://confious#article"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://confious#activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_concerned -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_concerned">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_concerned_conference -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_concerned_conference">
+        <rdfs:subPropertyOf rdf:resource="http://confious#is_concerned"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://confious#conference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_concerned_confernce_setup -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_concerned_confernce_setup">
+        <rdfs:subPropertyOf rdf:resource="http://confious#is_concerned"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://confious#conference_setup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_concerned_paper -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_concerned_paper">
+        <rdfs:subPropertyOf rdf:resource="http://confious#is_concerned"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://confious#paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_concerned_review -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_concerned_review">
+        <rdfs:subPropertyOf rdf:resource="http://confious#is_concerned"/>
+        <rdfs:range rdf:resource="http://confious#review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_created_in -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_created_in">
+        <rdfs:domain rdf:resource="http://confious#article"/>
+        <rdfs:range rdf:resource="http://confious#activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_employed_in -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_employed_in">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://confious#institute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_followed_by -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_followed_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://confious#activity"/>
+        <rdfs:range rdf:resource="http://confious#activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_in_phase -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_in_phase">
+        <rdfs:domain rdf:resource="http://confious#conference"/>
+        <rdfs:range rdf:resource="http://confious#phase_of_conference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_made_by -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_made_by">
+        <rdfs:domain rdf:resource="http://confious#conference_setup"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_monitored_by -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_monitored_by">
+        <rdfs:domain rdf:resource="http://confious#activity"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_performed_by -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_performed_by">
+        <owl:inverseOf rdf:resource="http://confious#performs_activity"/>
+        <rdfs:domain rdf:resource="http://confious#activity"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_sent_to -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_sent_to">
+        <rdfs:domain rdf:resource="http://confious#article"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#is_supervised_by -->
+
+    <owl:ObjectProperty rdf:about="http://confious#is_supervised_by">
+        <owl:inverseOf rdf:resource="http://confious#supervises"/>
+        <rdfs:domain rdf:resource="http://confious#activity"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#manually_assign_paper -->
+
+    <owl:ObjectProperty rdf:about="http://confious#manually_assign_paper">
+        <rdfs:subPropertyOf rdf:resource="http://confious#assign_paper"/>
+        <rdfs:domain rdf:resource="http://confious#Manual_Paper_Assignment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#performs_activity -->
+
+    <owl:ObjectProperty rdf:about="http://confious#performs_activity">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://confious#activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_CP_URL -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_CP_URL">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_URL"/>
+        <rdfs:range rdf:resource="http://confious#Contact_Person_URL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_Chair_URL -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_Chair_URL">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_URL"/>
+        <rdfs:range rdf:resource="http://confious#Chair_URL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_RPC_URL -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_RPC_URL">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_URL"/>
+        <rdfs:range rdf:resource="http://confious#Regular_Reviewer_URL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_SPC_URL -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_SPC_URL">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_URL"/>
+        <rdfs:range rdf:resource="http://confious#Senior_Reviewer_URL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_URL -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_URL">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://confious#conference_setup"/>
+        <rdfs:range rdf:resource="http://confious#URL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_date -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://confious#conference_setup"/>
+        <rdfs:range rdf:resource="http://confious#date"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_date_of_notification -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_date_of_notification">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_date"/>
+        <rdfs:range rdf:resource="http://confious#date_of_notification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_end_date -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_end_date">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_date"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_end_date_full_paper_submission -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_end_date_full_paper_submission">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_end_date"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://confious#date"/>
+                    <rdf:Description rdf:about="http://confious#end_date_of_full_paper_submission"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_end_date_of_abstract_submission -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_end_date_of_abstract_submission">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_end_date"/>
+        <rdfs:range rdf:resource="http://confious#end_date_of_abstract_submission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_end_date_of_camera_ready_submission -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_end_date_of_camera_ready_submission">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_end_date"/>
+        <rdfs:range rdf:resource="http://confious#end_date_of_camera-ready_submission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_end_date_of_conference -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_end_date_of_conference">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_end_date"/>
+        <rdfs:range rdf:resource="http://confious#end_date_of_conference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_member -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_member">
+        <rdfs:domain rdf:resource="http://confious#conference_setup"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_member_CP -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_member_CP">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_member"/>
+        <rdfs:range rdf:resource="http://confious#Contact_Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_member_PCC -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_member_PCC">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_member"/>
+        <rdfs:range rdf:resource="http://confious#Program_Committee_Chair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_member_RPC -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_member_RPC">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_member"/>
+        <rdfs:range rdf:resource="http://confious#Regular_Program_Committee_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_member_SPC -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_member_SPC">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_member"/>
+        <rdfs:range rdf:resource="http://confious#Senior_Program_Committee_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_start_date -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_start_date">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_date"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_start_date_of_abstract_submission -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_start_date_of_abstract_submission">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_start_date"/>
+        <rdfs:range rdf:resource="http://confious#start_date_of_abstract_submission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_start_date_of_camera_ready_submission -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_start_date_of_camera_ready_submission">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_start_date"/>
+        <rdfs:range rdf:resource="http://confious#start_date_of_camera-ready_submission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_start_date_of_conference -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_start_date_of_conference">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_start_date"/>
+        <rdfs:range rdf:resource="http://confious#start_date_of_conference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#sets_start_date_or_full_paper_submission -->
+
+    <owl:ObjectProperty rdf:about="http://confious#sets_start_date_or_full_paper_submission">
+        <rdfs:subPropertyOf rdf:resource="http://confious#sets_start_date"/>
+        <rdfs:range rdf:resource="http://confious#start_date_of_full_paper_submission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#structure_created_by -->
+
+    <owl:ObjectProperty rdf:about="http://confious#structure_created_by">
+        <rdfs:domain rdf:resource="http://confious#article"/>
+        <rdfs:range rdf:resource="http://confious#human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://confious#supervises -->
+
+    <owl:ObjectProperty rdf:about="http://confious#supervises">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://confious#activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://confious#e-mail -->
+
+    <owl:DatatypeProperty rdf:about="http://confious#e-mail">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://confious#first_name -->
+
+    <owl:DatatypeProperty rdf:about="http://confious#first_name">
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://confious#full_paper_size -->
+
+    <owl:DatatypeProperty rdf:about="http://confious#full_paper_size">
+        <rdfs:domain rdf:resource="http://confious#paper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://confious#last_name -->
+
+    <owl:DatatypeProperty rdf:about="http://confious#last_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://confious#human"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://confious#telephone -->
+
+    <owl:DatatypeProperty rdf:about="http://confious#telephone">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://confious#human"/>
+                    <rdf:Description rdf:about="http://confious#institute"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://confious#Accepted_Paper -->
+
+    <owl:Class rdf:about="http://confious#Accepted_Paper">
+        <rdfs:subClassOf rdf:resource="http://confious#paper"/>
+        <owl:disjointWith rdf:resource="http://confious#Rejected_Paper"/>
+        <owl:disjointWith rdf:resource="http://confious#Undecided_Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Automatic_Paper_Assignment -->
+
+    <owl:Class rdf:about="http://confious#Automatic_Paper_Assignment">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#automatically_assign_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_member"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://confious#paper_assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Chair_URL -->
+
+    <owl:Class rdf:about="http://confious#Chair_URL">
+        <rdfs:subClassOf rdf:resource="http://confious#URL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Contact_Person -->
+
+    <owl:Class rdf:about="http://confious#Contact_Person">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_author_of"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://confious#human"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_confernce_setup"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference_setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Contact_Person_URL -->
+
+    <owl:Class rdf:about="http://confious#Contact_Person_URL">
+        <rdfs:subClassOf rdf:resource="http://confious#URL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Manual_Paper_Assignment -->
+
+    <owl:Class rdf:about="http://confious#Manual_Paper_Assignment">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#manually_assign_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_member"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://confious#paper_assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Program_Committee_Chair -->
+
+    <owl:Class rdf:about="http://confious#Program_Committee_Chair">
+        <rdfs:subClassOf rdf:resource="http://confious#human"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_confernce_setup"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference_setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#performs_activity"/>
+                <owl:someValuesFrom rdf:resource="http://confious#managing_of_conference_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Program_Committee_member -->
+
+    <owl:Class rdf:about="http://confious#Program_Committee_member">
+        <rdfs:subClassOf rdf:resource="http://confious#human"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_topic_of_interest"/>
+                <owl:someValuesFrom rdf:resource="http://confious#topic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_confernce_setup"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference_setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Regular_Program_Committee_member -->
+
+    <owl:Class rdf:about="http://confious#Regular_Program_Committee_member">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_author_of"/>
+                <owl:someValuesFrom rdf:resource="http://confious#review"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://confious#Program_Committee_member"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Regular_Reviewer_URL -->
+
+    <owl:Class rdf:about="http://confious#Regular_Reviewer_URL">
+        <rdfs:subClassOf rdf:resource="http://confious#URL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Rejected_Paper -->
+
+    <owl:Class rdf:about="http://confious#Rejected_Paper">
+        <rdfs:subClassOf rdf:resource="http://confious#paper"/>
+        <owl:disjointWith rdf:resource="http://confious#Undecided_Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Senior_Program_Committee_member -->
+
+    <owl:Class rdf:about="http://confious#Senior_Program_Committee_member">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#supervises"/>
+                <owl:someValuesFrom rdf:resource="http://confious#lower_tier_reviewing_process"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://confious#Program_Committee_member"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#supervises"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Senior_Reviewer_URL -->
+
+    <owl:Class rdf:about="http://confious#Senior_Reviewer_URL">
+        <rdfs:subClassOf rdf:resource="http://confious#URL"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#URL -->
+
+    <owl:Class rdf:about="http://confious#URL">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_confernce_setup"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference_setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#Undecided_Paper -->
+
+    <owl:Class rdf:about="http://confious#Undecided_Paper">
+        <rdfs:subClassOf rdf:resource="http://confious#paper"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#goes_through"/>
+                <owl:someValuesFrom rdf:resource="http://confious#reviewing_proces"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#abstract_of_paper -->
+
+    <owl:Class rdf:about="http://confious#abstract_of_paper">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#abstract_submission_date -->
+
+    <owl:Class rdf:about="http://confious#abstract_submission_date">
+        <rdfs:subClassOf rdf:resource="http://confious#date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#acceptance_notification_email -->
+
+    <owl:Class rdf:about="http://confious#acceptance_notification_email">
+        <rdfs:subClassOf rdf:resource="http://confious#notification_email"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Accepted_Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://confious#rejection_notification_email"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#activity -->
+
+    <owl:Class rdf:about="http://confious#activity"/>
+    
+
+
+    <!-- http://confious#article -->
+
+    <owl:Class rdf:about="http://confious#article">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:someValuesFrom rdf:resource="http://confious#human"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#bidding_of_reviewer -->
+
+    <owl:Class rdf:about="http://confious#bidding_of_reviewer">
+        <rdfs:subClassOf rdf:resource="http://confious#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_intensity"/>
+                <owl:someValuesFrom rdf:resource="http://confious#intensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#camera-ready_submission_date -->
+
+    <owl:Class rdf:about="http://confious#camera-ready_submission_date">
+        <rdfs:subClassOf rdf:resource="http://confious#date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#classification -->
+
+    <owl:Class rdf:about="http://confious#classification"/>
+    
+
+
+    <!-- http://confious#conference -->
+
+    <owl:Class rdf:about="http://confious#conference">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_confernce_setup"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference_setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_in_phase"/>
+                <owl:someValuesFrom rdf:resource="http://confious#phase_of_conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#conference_setup -->
+
+    <owl:Class rdf:about="http://confious#conference_setup">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#includes_topic"/>
+                <owl:someValuesFrom rdf:resource="http://confious#topic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_conference"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_made_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_CP_URL"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Contact_Person_URL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_Chair_URL"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Chair_URL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_RPC_URL"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Regular_Reviewer_URL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_SPC_URL"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Senior_Reviewer_URL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_date_of_notification"/>
+                <owl:someValuesFrom rdf:resource="http://confious#date_of_notification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_end_date_full_paper_submission"/>
+                <owl:someValuesFrom rdf:resource="http://confious#end_date_of_full_paper_submission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_end_date_of_abstract_submission"/>
+                <owl:someValuesFrom rdf:resource="http://confious#end_date_of_abstract_submission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_end_date_of_camera_ready_submission"/>
+                <owl:someValuesFrom rdf:resource="http://confious#end_date_of_camera-ready_submission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_end_date_of_conference"/>
+                <owl:someValuesFrom rdf:resource="http://confious#end_date_of_conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_member_CP"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Contact_Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_member_PCC"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_member_RPC"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Regular_Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_member_SPC"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Senior_Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_start_date_of_abstract_submission"/>
+                <owl:someValuesFrom rdf:resource="http://confious#start_date_of_abstract_submission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_start_date_of_camera_ready_submission"/>
+                <owl:someValuesFrom rdf:resource="http://confious#start_date_of_camera-ready_submission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_start_date_of_conference"/>
+                <owl:someValuesFrom rdf:resource="http://confious#start_date_of_conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#sets_start_date_or_full_paper_submission"/>
+                <owl:someValuesFrom rdf:resource="http://confious#start_date_of_full_paper_submission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_made_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#date -->
+
+    <owl:Class rdf:about="http://confious#date">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_confernce_setup"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference_setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#date_of_conference -->
+
+    <owl:Class rdf:about="http://confious#date_of_conference">
+        <rdfs:subClassOf rdf:resource="http://confious#date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#date_of_notification -->
+
+    <owl:Class rdf:about="http://confious#date_of_notification">
+        <rdfs:subClassOf rdf:resource="http://confious#date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#end_date_of_abstract_submission -->
+
+    <owl:Class rdf:about="http://confious#end_date_of_abstract_submission">
+        <rdfs:subClassOf rdf:resource="http://confious#abstract_submission_date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#end_date_of_camera-ready_submission -->
+
+    <owl:Class rdf:about="http://confious#end_date_of_camera-ready_submission">
+        <rdfs:subClassOf rdf:resource="http://confious#camera-ready_submission_date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#end_date_of_conference -->
+
+    <owl:Class rdf:about="http://confious#end_date_of_conference">
+        <rdfs:subClassOf rdf:resource="http://confious#date_of_conference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#end_date_of_full_paper_submission -->
+
+    <owl:Class rdf:about="http://confious#end_date_of_full_paper_submission">
+        <rdfs:subClassOf rdf:resource="http://confious#full_paper_submission_date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#full_paper_submission_date -->
+
+    <owl:Class rdf:about="http://confious#full_paper_submission_date">
+        <rdfs:subClassOf rdf:resource="http://confious#date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#group_email -->
+
+    <owl:Class rdf:about="http://confious#group_email">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned"/>
+                <owl:someValuesFrom rdf:resource="http://confious#reviewing_proces"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_sent_to"/>
+                <owl:someValuesFrom rdf:resource="http://confious#human"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#human -->
+
+    <owl:Class rdf:about="http://confious#human">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_employed_in"/>
+                <owl:someValuesFrom rdf:resource="http://confious#institute"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#institute -->
+
+    <owl:Class rdf:about="http://confious#institute"/>
+    
+
+
+    <!-- http://confious#intensity -->
+
+    <owl:Class rdf:about="http://confious#intensity"/>
+    
+
+
+    <!-- http://confious#lower_tier_reviewing_process -->
+
+    <owl:Class rdf:about="http://confious#lower_tier_reviewing_process">
+        <rdfs:subClassOf rdf:resource="http://confious#reviewing_proces"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_result"/>
+                <owl:someValuesFrom rdf:resource="http://confious#review"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_result"/>
+                <owl:someValuesFrom rdf:resource="http://confious#review_form"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_checked_in"/>
+                <owl:someValuesFrom rdf:resource="http://confious#upper_tier_reviewing_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_followed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#upper_tier_reviewing_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Regular_Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_supervised_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Senior_Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_checked_in"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://confious#upper_tier_reviewing_process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#managing_of_conference_process -->
+
+    <owl:Class rdf:about="http://confious#managing_of_conference_process">
+        <rdfs:subClassOf rdf:resource="http://confious#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_conference"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#notification -->
+
+    <owl:Class rdf:about="http://confious#notification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://confious#has_result"/>
+                        <owl:someValuesFrom rdf:resource="http://confious#notification_email"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://confious#has_result"/>
+                        <owl:allValuesFrom rdf:resource="http://confious#notification_email"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://confious#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_result"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#notification_email -->
+
+    <owl:Class rdf:about="http://confious#notification_email">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_sent_to"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Contact_Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#paper -->
+
+    <owl:Class rdf:about="http://confious#paper">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_conference"/>
+                <owl:someValuesFrom rdf:resource="http://confious#conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Contact_Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#paper_assignment -->
+
+    <owl:Class rdf:about="http://confious#paper_assignment">
+        <rdfs:subClassOf rdf:resource="http://confious#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Undecided_Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_followed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#lower_tier_reviewing_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#phase_of_conference -->
+
+    <owl:Class rdf:about="http://confious#phase_of_conference"/>
+    
+
+
+    <!-- http://confious#rejection_notification_email -->
+
+    <owl:Class rdf:about="http://confious#rejection_notification_email">
+        <rdfs:subClassOf rdf:resource="http://confious#notification_email"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Rejected_Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#review -->
+
+    <owl:Class rdf:about="http://confious#review">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_created_in"/>
+                <owl:allValuesFrom rdf:resource="http://confious#lower_tier_reviewing_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#gives_classification"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_created_in"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#review_form -->
+
+    <owl:Class rdf:about="http://confious#review_form">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_created_in"/>
+                <owl:someValuesFrom rdf:resource="http://confious#lower_tier_reviewing_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#structure_created_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#structure_created_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Program_Committee_Chair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_review"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_created_in"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#reviewing_proces -->
+
+    <owl:Class rdf:about="http://confious#reviewing_proces">
+        <rdfs:subClassOf rdf:resource="http://confious#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#start_date_of_abstract_submission -->
+
+    <owl:Class rdf:about="http://confious#start_date_of_abstract_submission">
+        <rdfs:subClassOf rdf:resource="http://confious#abstract_submission_date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#start_date_of_camera-ready_submission -->
+
+    <owl:Class rdf:about="http://confious#start_date_of_camera-ready_submission">
+        <rdfs:subClassOf rdf:resource="http://confious#camera-ready_submission_date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#start_date_of_conference -->
+
+    <owl:Class rdf:about="http://confious#start_date_of_conference">
+        <rdfs:subClassOf rdf:resource="http://confious#date_of_conference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#start_date_of_full_paper_submission -->
+
+    <owl:Class rdf:about="http://confious#start_date_of_full_paper_submission">
+        <rdfs:subClassOf rdf:resource="http://confious#full_paper_submission_date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#submission_process -->
+
+    <owl:Class rdf:about="http://confious#submission_process">
+        <rdfs:subClassOf rdf:resource="http://confious#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_paper"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Undecided_Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_followed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#paper_assignment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Contact_Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#summary_of_reviews -->
+
+    <owl:Class rdf:about="http://confious#summary_of_reviews">
+        <rdfs:subClassOf rdf:resource="http://confious#article"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_author"/>
+                <owl:someValuesFrom rdf:resource="http://confious#Senior_Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_concerned_review"/>
+                <owl:someValuesFrom rdf:resource="http://confious#review"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_created_in"/>
+                <owl:someValuesFrom rdf:resource="http://confious#upper_tier_reviewing_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_created_in"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://confious#topic -->
+
+    <owl:Class rdf:about="http://confious#topic"/>
+    
+
+
+    <!-- http://confious#upper_tier_reviewing_process -->
+
+    <owl:Class rdf:about="http://confious#upper_tier_reviewing_process">
+        <rdfs:subClassOf rdf:resource="http://confious#reviewing_proces"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#has_result"/>
+                <owl:someValuesFrom rdf:resource="http://confious#summary_of_reviews"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_followed_by"/>
+                <owl:someValuesFrom rdf:resource="http://confious#notification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:allValuesFrom rdf:resource="http://confious#Senior_Program_Committee_member"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://confious#is_performed_by"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://confious#Abstract_Submission_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Abstract_Submission_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Assignment_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Assignment_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Bidding_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Bidding_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Camera-ready_Paper_Submission_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Camera-ready_Paper_Submission_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Decision_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Decision_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Full_Paper_Submission_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Full_Paper_Submission_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Invitation_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Invitation_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Publish_Reviewing_Results_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Publish_Reviewing_Results_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Reviewing_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Reviewing_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Setup_Phase -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Setup_Phase">
+        <rdf:type rdf:resource="http://confious#phase_of_conference"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Strong_Accept -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Strong_Accept">
+        <rdf:type rdf:resource="http://confious#classification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Strong_Reject -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Strong_Reject">
+        <rdf:type rdf:resource="http://confious#classification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Weak_Accept -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Weak_Accept">
+        <rdf:type rdf:resource="http://confious#classification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#Weak_Reject -->
+
+    <owl:NamedIndividual rdf:about="http://confious#Weak_Reject">
+        <rdf:type rdf:resource="http://confious#classification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#high -->
+
+    <owl:NamedIndividual rdf:about="http://confious#high">
+        <rdf:type rdf:resource="http://confious#intensity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#low -->
+
+    <owl:NamedIndividual rdf:about="http://confious#low">
+        <rdf:type rdf:resource="http://confious#intensity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://confious#neutral -->
+
+    <owl:NamedIndividual rdf:about="http://confious#neutral">
+        <rdf:type rdf:resource="http://confious#intensity"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+

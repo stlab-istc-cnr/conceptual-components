@@ -1,0 +1,1248 @@
+@prefix : <http://confious#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://confious#> .
+
+<http://confious> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://confious#assign_paper
+:assign_paper rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :paper_assignment ;
+              rdfs:range :Program_Committee_member .
+
+
+###  http://confious#automatically_assign_paper
+:automatically_assign_paper rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :assign_paper ;
+                            rdfs:domain :Automatic_Paper_Assignment .
+
+
+###  http://confious#gives_classification
+:gives_classification rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdf:type owl:FunctionalProperty ;
+                      rdfs:domain :article ;
+                      rdfs:range :classification .
+
+
+###  http://confious#goes_through
+:goes_through rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :article ;
+              rdfs:range :activity .
+
+
+###  http://confious#has_author
+:has_author rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty [ owl:inverseOf :is_author_of
+                                   ] ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :is_author_of ;
+            rdfs:domain :article ;
+            rdfs:range :human .
+
+
+###  http://confious#has_intensity
+:has_intensity rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :activity ;
+               rdfs:range :intensity .
+
+
+###  http://confious#has_result
+:has_result rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :activity ;
+            rdfs:range :article .
+
+
+###  http://confious#has_topic_of_interest
+:has_topic_of_interest rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :human ;
+                       rdfs:range :topic .
+
+
+###  http://confious#includes_topic
+:includes_topic rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :conference_setup ;
+                rdfs:range :topic .
+
+
+###  http://confious#is_author_of
+:is_author_of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :human ;
+              rdfs:range :article .
+
+
+###  http://confious#is_checked_in
+:is_checked_in rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :activity
+                                           :article
+                                         )
+                           ] ;
+               rdfs:range :activity .
+
+
+###  http://confious#is_concerned
+:is_concerned rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:TransitiveProperty .
+
+
+###  http://confious#is_concerned_conference
+:is_concerned_conference rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :is_concerned ;
+                         rdf:type owl:FunctionalProperty ;
+                         rdfs:range :conference .
+
+
+###  http://confious#is_concerned_confernce_setup
+:is_concerned_confernce_setup rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :is_concerned ;
+                              rdf:type owl:FunctionalProperty ;
+                              rdfs:range :conference_setup .
+
+
+###  http://confious#is_concerned_paper
+:is_concerned_paper rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :is_concerned ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:range :paper .
+
+
+###  http://confious#is_concerned_review
+:is_concerned_review rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :is_concerned ;
+                     rdfs:range :review .
+
+
+###  http://confious#is_created_in
+:is_created_in rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :article ;
+               rdfs:range :activity .
+
+
+###  http://confious#is_employed_in
+:is_employed_in rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :human ;
+                rdfs:range :institute .
+
+
+###  http://confious#is_followed_by
+:is_followed_by rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:TransitiveProperty ;
+                rdfs:domain :activity ;
+                rdfs:range :activity .
+
+
+###  http://confious#is_in_phase
+:is_in_phase rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :conference ;
+             rdfs:range :phase_of_conference .
+
+
+###  http://confious#is_made_by
+:is_made_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :conference_setup ;
+            rdfs:range :human .
+
+
+###  http://confious#is_monitored_by
+:is_monitored_by rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :activity ;
+                 rdfs:range :human .
+
+
+###  http://confious#is_performed_by
+:is_performed_by rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty [ owl:inverseOf :performs_activity
+                                        ] ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :performs_activity ;
+                 rdfs:domain :activity ;
+                 rdfs:range :human .
+
+
+###  http://confious#is_sent_to
+:is_sent_to rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :article ;
+            rdfs:range :human .
+
+
+###  http://confious#is_supervised_by
+:is_supervised_by rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty [ owl:inverseOf :supervises
+                                         ] ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  owl:inverseOf :supervises ;
+                  rdfs:domain :activity ;
+                  rdfs:range :human .
+
+
+###  http://confious#manually_assign_paper
+:manually_assign_paper rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :assign_paper ;
+                       rdfs:domain :Manual_Paper_Assignment .
+
+
+###  http://confious#performs_activity
+:performs_activity rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :human ;
+                   rdfs:range :activity .
+
+
+###  http://confious#sets_CP_URL
+:sets_CP_URL rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty :sets_Chair_URL ,
+                                    :sets_RPC_URL ,
+                                    :sets_SPC_URL ,
+                                    :sets_URL ;
+             rdfs:subPropertyOf :sets_URL ,
+                                owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:range :Contact_Person_URL .
+
+
+###  http://confious#sets_Chair_URL
+:sets_Chair_URL rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :sets_URL ,
+                                   owl:topObjectProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:range :Chair_URL .
+
+
+###  http://confious#sets_RPC_URL
+:sets_RPC_URL rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :sets_URL ,
+                                 owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:range :Regular_Reviewer_URL .
+
+
+###  http://confious#sets_SPC_URL
+:sets_SPC_URL rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :sets_URL ,
+                                 owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:range :Senior_Reviewer_URL .
+
+
+###  http://confious#sets_URL
+:sets_URL rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :conference_setup ;
+          rdfs:range :URL .
+
+
+###  http://confious#sets_date
+:sets_date rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty :sets_date_of_notification ,
+                                  :sets_end_date ,
+                                  :sets_end_date_full_paper_submission ,
+                                  :sets_end_date_of_abstract_submission ,
+                                  :sets_end_date_of_camera_ready_submission ,
+                                  :sets_end_date_of_conference ,
+                                  :sets_start_date ,
+                                  :sets_start_date_of_abstract_submission ,
+                                  :sets_start_date_of_camera_ready_submission ,
+                                  :sets_start_date_of_conference ,
+                                  :sets_start_date_or_full_paper_submission ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :conference_setup ;
+           rdfs:range :date .
+
+
+###  http://confious#sets_date_of_notification
+:sets_date_of_notification rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :sets_date ,
+                                              owl:topObjectProperty ;
+                           rdf:type owl:FunctionalProperty ;
+                           rdfs:range :date_of_notification .
+
+
+###  http://confious#sets_end_date
+:sets_end_date rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :sets_date ,
+                                  owl:topObjectProperty ;
+               rdf:type owl:FunctionalProperty .
+
+
+###  http://confious#sets_end_date_full_paper_submission
+:sets_end_date_full_paper_submission rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf :sets_end_date ,
+                                                        owl:topObjectProperty ;
+                                     rdf:type owl:FunctionalProperty ;
+                                     rdfs:range [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :date
+                                                                :end_date_of_full_paper_submission
+                                                              )
+                                                ] .
+
+
+###  http://confious#sets_end_date_of_abstract_submission
+:sets_end_date_of_abstract_submission rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf :sets_end_date ,
+                                                         owl:topObjectProperty ;
+                                      rdf:type owl:FunctionalProperty ;
+                                      rdfs:range :end_date_of_abstract_submission .
+
+
+###  http://confious#sets_end_date_of_camera_ready_submission
+:sets_end_date_of_camera_ready_submission rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf :sets_end_date ,
+                                                             owl:topObjectProperty ;
+                                          rdf:type owl:FunctionalProperty ;
+                                          rdfs:range :end_date_of_camera-ready_submission .
+
+
+###  http://confious#sets_end_date_of_conference
+:sets_end_date_of_conference rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :sets_end_date ,
+                                                owl:topObjectProperty ;
+                             rdf:type owl:FunctionalProperty ;
+                             rdfs:range :end_date_of_conference .
+
+
+###  http://confious#sets_member
+:sets_member rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :conference_setup ;
+             rdfs:range :human .
+
+
+###  http://confious#sets_member_CP
+:sets_member_CP rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :sets_member ;
+                rdfs:range :Contact_Person .
+
+
+###  http://confious#sets_member_PCC
+:sets_member_PCC rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :sets_member ;
+                 rdfs:range :Program_Committee_Chair .
+
+
+###  http://confious#sets_member_RPC
+:sets_member_RPC rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :sets_member ;
+                 rdfs:range :Regular_Program_Committee_member .
+
+
+###  http://confious#sets_member_SPC
+:sets_member_SPC rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :sets_member ;
+                 rdfs:range :Senior_Program_Committee_member .
+
+
+###  http://confious#sets_start_date
+:sets_start_date rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :sets_date ,
+                                    owl:topObjectProperty ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  http://confious#sets_start_date_of_abstract_submission
+:sets_start_date_of_abstract_submission rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf :sets_start_date ,
+                                                           owl:topObjectProperty ;
+                                        rdf:type owl:FunctionalProperty ;
+                                        rdfs:range :start_date_of_abstract_submission .
+
+
+###  http://confious#sets_start_date_of_camera_ready_submission
+:sets_start_date_of_camera_ready_submission rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf :sets_start_date ,
+                                                               owl:topObjectProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:range :start_date_of_camera-ready_submission .
+
+
+###  http://confious#sets_start_date_of_conference
+:sets_start_date_of_conference rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :sets_start_date ,
+                                                  owl:topObjectProperty ;
+                               rdf:type owl:FunctionalProperty ;
+                               rdfs:range :start_date_of_conference .
+
+
+###  http://confious#sets_start_date_or_full_paper_submission
+:sets_start_date_or_full_paper_submission rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf :sets_start_date ,
+                                                             owl:topObjectProperty ;
+                                          rdf:type owl:FunctionalProperty ;
+                                          rdfs:range :start_date_of_full_paper_submission .
+
+
+###  http://confious#structure_created_by
+:structure_created_by rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :article ;
+                      rdfs:range :human .
+
+
+###  http://confious#supervises
+:supervises rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :human ;
+            rdfs:range :activity .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://confious#e-mail
+:e-mail rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :human ;
+        rdfs:range xsd:string .
+
+
+###  http://confious#first_name
+:first_name rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :human ;
+            rdfs:range xsd:string .
+
+
+###  http://confious#full_paper_size
+:full_paper_size rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :paper ;
+                 rdfs:range xsd:int .
+
+
+###  http://confious#last_name
+:last_name rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :human ;
+           rdfs:range xsd:string .
+
+
+###  http://confious#telephone
+:telephone rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :human
+                                       :institute
+                                     )
+                       ] ;
+           rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://confious#Accepted_Paper
+:Accepted_Paper rdf:type owl:Class ;
+                rdfs:subClassOf :paper ;
+                owl:disjointWith :Rejected_Paper ,
+                                 :Undecided_Paper .
+
+
+###  http://confious#Automatic_Paper_Assignment
+:Automatic_Paper_Assignment rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :automatically_assign_paper ;
+                                                  owl:someValuesFrom :Program_Committee_member
+                                                ] ;
+                            rdfs:subClassOf :paper_assignment .
+
+
+###  http://confious#Chair_URL
+:Chair_URL rdf:type owl:Class ;
+           rdfs:subClassOf :URL .
+
+
+###  http://confious#Contact_Person
+:Contact_Person rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_author_of ;
+                                      owl:someValuesFrom :paper
+                                    ] ;
+                rdfs:subClassOf :human ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :is_concerned_confernce_setup ;
+                                  owl:someValuesFrom :conference_setup
+                                ] .
+
+
+###  http://confious#Contact_Person_URL
+:Contact_Person_URL rdf:type owl:Class ;
+                    rdfs:subClassOf :URL .
+
+
+###  http://confious#Manual_Paper_Assignment
+:Manual_Paper_Assignment rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty :manually_assign_paper ;
+                                               owl:someValuesFrom :Program_Committee_member
+                                             ] ;
+                         rdfs:subClassOf :paper_assignment .
+
+
+###  http://confious#Program_Committee_Chair
+:Program_Committee_Chair rdf:type owl:Class ;
+                         rdfs:subClassOf :human ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :is_concerned_confernce_setup ;
+                                           owl:someValuesFrom :conference_setup
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :performs_activity ;
+                                           owl:someValuesFrom :managing_of_conference_process
+                                         ] .
+
+
+###  http://confious#Program_Committee_member
+:Program_Committee_member rdf:type owl:Class ;
+                          rdfs:subClassOf :human ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :has_topic_of_interest ;
+                                            owl:someValuesFrom :topic
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :is_concerned_confernce_setup ;
+                                            owl:someValuesFrom :conference_setup
+                                          ] .
+
+
+###  http://confious#Regular_Program_Committee_member
+:Regular_Program_Committee_member rdf:type owl:Class ;
+                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :is_author_of ;
+                                                        owl:someValuesFrom :review
+                                                      ] ;
+                                  rdfs:subClassOf :Program_Committee_member .
+
+
+###  http://confious#Regular_Reviewer_URL
+:Regular_Reviewer_URL rdf:type owl:Class ;
+                      rdfs:subClassOf :URL .
+
+
+###  http://confious#Rejected_Paper
+:Rejected_Paper rdf:type owl:Class ;
+                rdfs:subClassOf :paper ;
+                owl:disjointWith :Undecided_Paper .
+
+
+###  http://confious#Senior_Program_Committee_member
+:Senior_Program_Committee_member rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :supervises ;
+                                                       owl:someValuesFrom :lower_tier_reviewing_process
+                                                     ] ;
+                                 rdfs:subClassOf :Program_Committee_member ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :supervises ;
+                                                   owl:maxCardinality "4"^^xsd:nonNegativeInteger
+                                                 ] .
+
+
+###  http://confious#Senior_Reviewer_URL
+:Senior_Reviewer_URL rdf:type owl:Class ;
+                     rdfs:subClassOf :URL .
+
+
+###  http://confious#URL
+:URL rdf:type owl:Class ;
+     rdfs:subClassOf owl:Thing ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_concerned_confernce_setup ;
+                       owl:someValuesFrom :conference_setup
+                     ] .
+
+
+###  http://confious#Undecided_Paper
+:Undecided_Paper rdf:type owl:Class ;
+                 rdfs:subClassOf :paper ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :goes_through ;
+                                   owl:someValuesFrom :reviewing_proces
+                                 ] .
+
+
+###  http://confious#abstract_of_paper
+:abstract_of_paper rdf:type owl:Class ;
+                   rdfs:subClassOf :article ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :is_concerned_paper ;
+                                     owl:someValuesFrom :paper
+                                   ] .
+
+
+###  http://confious#abstract_submission_date
+:abstract_submission_date rdf:type owl:Class ;
+                          rdfs:subClassOf :date .
+
+
+###  http://confious#acceptance_notification_email
+:acceptance_notification_email rdf:type owl:Class ;
+                               rdfs:subClassOf :notification_email ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :is_concerned_paper ;
+                                                 owl:allValuesFrom :Accepted_Paper
+                                               ] ;
+                               owl:disjointWith :rejection_notification_email .
+
+
+###  http://confious#activity
+:activity rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#article
+:article rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :has_author ;
+                               owl:someValuesFrom :human
+                             ] ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#bidding_of_reviewer
+:bidding_of_reviewer rdf:type owl:Class ;
+                     rdfs:subClassOf :activity ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :has_intensity ;
+                                       owl:someValuesFrom :intensity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_concerned_paper ;
+                                       owl:someValuesFrom :paper
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_performed_by ;
+                                       owl:allValuesFrom :Program_Committee_member
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :is_performed_by ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://confious#camera-ready_submission_date
+:camera-ready_submission_date rdf:type owl:Class ;
+                              rdfs:subClassOf :date .
+
+
+###  http://confious#classification
+:classification rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#conference
+:conference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :is_concerned_confernce_setup ;
+                              owl:someValuesFrom :conference_setup
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :is_in_phase ;
+                              owl:someValuesFrom :phase_of_conference
+                            ] .
+
+
+###  http://confious#conference_setup
+:conference_setup rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :includes_topic ;
+                                    owl:someValuesFrom :topic
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_concerned_conference ;
+                                    owl:someValuesFrom :conference
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_made_by ;
+                                    owl:someValuesFrom :Program_Committee_Chair
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_CP_URL ;
+                                    owl:someValuesFrom :Contact_Person_URL
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_Chair_URL ;
+                                    owl:someValuesFrom :Chair_URL
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_RPC_URL ;
+                                    owl:someValuesFrom :Regular_Reviewer_URL
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_SPC_URL ;
+                                    owl:someValuesFrom :Senior_Reviewer_URL
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_date_of_notification ;
+                                    owl:someValuesFrom :date_of_notification
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_end_date_full_paper_submission ;
+                                    owl:someValuesFrom :end_date_of_full_paper_submission
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_end_date_of_abstract_submission ;
+                                    owl:someValuesFrom :end_date_of_abstract_submission
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_end_date_of_camera_ready_submission ;
+                                    owl:someValuesFrom :end_date_of_camera-ready_submission
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_end_date_of_conference ;
+                                    owl:someValuesFrom :end_date_of_conference
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_member_CP ;
+                                    owl:someValuesFrom :Contact_Person
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_member_PCC ;
+                                    owl:someValuesFrom :Program_Committee_Chair
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_member_RPC ;
+                                    owl:someValuesFrom :Regular_Program_Committee_member
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_member_SPC ;
+                                    owl:someValuesFrom :Senior_Program_Committee_member
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_start_date_of_abstract_submission ;
+                                    owl:someValuesFrom :start_date_of_abstract_submission
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_start_date_of_camera_ready_submission ;
+                                    owl:someValuesFrom :start_date_of_camera-ready_submission
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_start_date_of_conference ;
+                                    owl:someValuesFrom :start_date_of_conference
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :sets_start_date_or_full_paper_submission ;
+                                    owl:someValuesFrom :start_date_of_full_paper_submission
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_made_by ;
+                                    owl:allValuesFrom :Program_Committee_Chair
+                                  ] .
+
+
+###  http://confious#date
+:date rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :is_concerned_confernce_setup ;
+                        owl:someValuesFrom :conference_setup
+                      ] .
+
+
+###  http://confious#date_of_conference
+:date_of_conference rdf:type owl:Class ;
+                    rdfs:subClassOf :date .
+
+
+###  http://confious#date_of_notification
+:date_of_notification rdf:type owl:Class ;
+                      rdfs:subClassOf :date .
+
+
+###  http://confious#end_date_of_abstract_submission
+:end_date_of_abstract_submission rdf:type owl:Class ;
+                                 rdfs:subClassOf :abstract_submission_date .
+
+
+###  http://confious#end_date_of_camera-ready_submission
+:end_date_of_camera-ready_submission rdf:type owl:Class ;
+                                     rdfs:subClassOf :camera-ready_submission_date .
+
+
+###  http://confious#end_date_of_conference
+:end_date_of_conference rdf:type owl:Class ;
+                        rdfs:subClassOf :date_of_conference .
+
+
+###  http://confious#end_date_of_full_paper_submission
+:end_date_of_full_paper_submission rdf:type owl:Class ;
+                                   rdfs:subClassOf :full_paper_submission_date .
+
+
+###  http://confious#full_paper_submission_date
+:full_paper_submission_date rdf:type owl:Class ;
+                            rdfs:subClassOf :date .
+
+
+###  http://confious#group_email
+:group_email rdf:type owl:Class ;
+             rdfs:subClassOf :article ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_concerned ;
+                               owl:someValuesFrom :reviewing_proces
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_sent_to ;
+                               owl:someValuesFrom :human
+                             ] .
+
+
+###  http://confious#human
+:human rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :is_employed_in ;
+                             owl:someValuesFrom :institute
+                           ] ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#institute
+:institute rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#intensity
+:intensity rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#lower_tier_reviewing_process
+:lower_tier_reviewing_process rdf:type owl:Class ;
+                              rdfs:subClassOf :reviewing_proces ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :has_result ;
+                                                owl:someValuesFrom :review
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :has_result ;
+                                                owl:someValuesFrom :review_form
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_checked_in ;
+                                                owl:someValuesFrom :upper_tier_reviewing_process
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_followed_by ;
+                                                owl:someValuesFrom :upper_tier_reviewing_process
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_performed_by ;
+                                                owl:someValuesFrom :Regular_Program_Committee_member
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_supervised_by ;
+                                                owl:someValuesFrom :Senior_Program_Committee_member
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_checked_in ;
+                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                              ] ;
+                              owl:disjointWith :upper_tier_reviewing_process .
+
+
+###  http://confious#managing_of_conference_process
+:managing_of_conference_process rdf:type owl:Class ;
+                                rdfs:subClassOf :activity ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :is_concerned_conference ;
+                                                  owl:someValuesFrom :conference
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :is_performed_by ;
+                                                  owl:someValuesFrom :Program_Committee_Chair
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :is_performed_by ;
+                                                  owl:allValuesFrom :Program_Committee_Chair
+                                                ] .
+
+
+###  http://confious#notification
+:notification rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_result ;
+                                                           owl:someValuesFrom :notification_email
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :has_result ;
+                                                           owl:allValuesFrom :notification_email
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :activity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_concerned_paper ;
+                                owl:someValuesFrom :paper
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_performed_by ;
+                                owl:allValuesFrom :Program_Committee_Chair
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :is_performed_by ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_result ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+###  http://confious#notification_email
+:notification_email rdf:type owl:Class ;
+                    rdfs:subClassOf :article ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :has_author ;
+                                      owl:someValuesFrom :Program_Committee_Chair
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_concerned_paper ;
+                                      owl:someValuesFrom :paper
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_sent_to ;
+                                      owl:someValuesFrom :Contact_Person
+                                    ] .
+
+
+###  http://confious#paper
+:paper rdf:type owl:Class ;
+       rdfs:subClassOf :article ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :is_concerned_conference ;
+                         owl:someValuesFrom :conference
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :has_author ;
+                         owl:allValuesFrom :Contact_Person
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :has_author ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] .
+
+
+###  http://confious#paper_assignment
+:paper_assignment rdf:type owl:Class ;
+                  rdfs:subClassOf :activity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_concerned_paper ;
+                                    owl:someValuesFrom :Undecided_Paper
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_followed_by ;
+                                    owl:someValuesFrom :lower_tier_reviewing_process
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_performed_by ;
+                                    owl:allValuesFrom :Program_Committee_Chair
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_performed_by ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] .
+
+
+###  http://confious#phase_of_conference
+:phase_of_conference rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#rejection_notification_email
+:rejection_notification_email rdf:type owl:Class ;
+                              rdfs:subClassOf :notification_email ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_concerned_paper ;
+                                                owl:allValuesFrom :Rejected_Paper
+                                              ] .
+
+
+###  http://confious#review
+:review rdf:type owl:Class ;
+        rdfs:subClassOf :article ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_author ;
+                          owl:someValuesFrom :Program_Committee_member
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :is_concerned_paper ;
+                          owl:someValuesFrom :paper
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :is_created_in ;
+                          owl:allValuesFrom :lower_tier_reviewing_process
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :gives_classification ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :is_created_in ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] .
+
+
+###  http://confious#review_form
+:review_form rdf:type owl:Class ;
+             rdfs:subClassOf :article ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :has_author ;
+                               owl:someValuesFrom :Program_Committee_member
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_created_in ;
+                               owl:someValuesFrom :lower_tier_reviewing_process
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :structure_created_by ;
+                               owl:someValuesFrom :Program_Committee_Chair
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :structure_created_by ;
+                               owl:allValuesFrom :Program_Committee_Chair
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_concerned_review ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_created_in ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+###  http://confious#reviewing_proces
+:reviewing_proces rdf:type owl:Class ;
+                  rdfs:subClassOf :activity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_concerned_paper ;
+                                    owl:someValuesFrom :paper
+                                  ] .
+
+
+###  http://confious#start_date_of_abstract_submission
+:start_date_of_abstract_submission rdf:type owl:Class ;
+                                   rdfs:subClassOf :abstract_submission_date .
+
+
+###  http://confious#start_date_of_camera-ready_submission
+:start_date_of_camera-ready_submission rdf:type owl:Class ;
+                                       rdfs:subClassOf :camera-ready_submission_date .
+
+
+###  http://confious#start_date_of_conference
+:start_date_of_conference rdf:type owl:Class ;
+                          rdfs:subClassOf :date_of_conference .
+
+
+###  http://confious#start_date_of_full_paper_submission
+:start_date_of_full_paper_submission rdf:type owl:Class ;
+                                     rdfs:subClassOf :full_paper_submission_date .
+
+
+###  http://confious#submission_process
+:submission_process rdf:type owl:Class ;
+                    rdfs:subClassOf :activity ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_concerned_paper ;
+                                      owl:someValuesFrom :Undecided_Paper
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_followed_by ;
+                                      owl:someValuesFrom :paper_assignment
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_performed_by ;
+                                      owl:someValuesFrom :Contact_Person
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_performed_by ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] .
+
+
+###  http://confious#summary_of_reviews
+:summary_of_reviews rdf:type owl:Class ;
+                    rdfs:subClassOf :article ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :has_author ;
+                                      owl:someValuesFrom :Senior_Program_Committee_member
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_concerned_review ;
+                                      owl:someValuesFrom :review
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_created_in ;
+                                      owl:someValuesFrom :upper_tier_reviewing_process
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :is_created_in ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] .
+
+
+###  http://confious#topic
+:topic rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://confious#upper_tier_reviewing_process
+:upper_tier_reviewing_process rdf:type owl:Class ;
+                              rdfs:subClassOf :reviewing_proces ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :has_result ;
+                                                owl:someValuesFrom :summary_of_reviews
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_followed_by ;
+                                                owl:someValuesFrom :notification
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_performed_by ;
+                                                owl:allValuesFrom :Senior_Program_Committee_member
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :is_performed_by ;
+                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                              ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://confious#Abstract_Submission_Phase
+:Abstract_Submission_Phase rdf:type owl:NamedIndividual ,
+                                    :phase_of_conference ,
+                                    owl:Thing .
+
+
+###  http://confious#Assignment_Phase
+:Assignment_Phase rdf:type owl:NamedIndividual ,
+                           :phase_of_conference ,
+                           owl:Thing .
+
+
+###  http://confious#Bidding_Phase
+:Bidding_Phase rdf:type owl:NamedIndividual ,
+                        :phase_of_conference ,
+                        owl:Thing .
+
+
+###  http://confious#Camera-ready_Paper_Submission_Phase
+:Camera-ready_Paper_Submission_Phase rdf:type owl:NamedIndividual ,
+                                              :phase_of_conference ,
+                                              owl:Thing .
+
+
+###  http://confious#Decision_Phase
+:Decision_Phase rdf:type owl:NamedIndividual ,
+                         :phase_of_conference ,
+                         owl:Thing .
+
+
+###  http://confious#Full_Paper_Submission_Phase
+:Full_Paper_Submission_Phase rdf:type owl:NamedIndividual ,
+                                      :phase_of_conference ,
+                                      owl:Thing .
+
+
+###  http://confious#Invitation_Phase
+:Invitation_Phase rdf:type owl:NamedIndividual ,
+                           :phase_of_conference ,
+                           owl:Thing .
+
+
+###  http://confious#Publish_Reviewing_Results_Phase
+:Publish_Reviewing_Results_Phase rdf:type owl:NamedIndividual ,
+                                          :phase_of_conference ,
+                                          owl:Thing .
+
+
+###  http://confious#Reviewing_Phase
+:Reviewing_Phase rdf:type owl:NamedIndividual ,
+                          :phase_of_conference ,
+                          owl:Thing .
+
+
+###  http://confious#Setup_Phase
+:Setup_Phase rdf:type owl:NamedIndividual ,
+                      :phase_of_conference ,
+                      owl:Thing .
+
+
+###  http://confious#Strong_Accept
+:Strong_Accept rdf:type owl:NamedIndividual ,
+                        :classification ,
+                        owl:Thing .
+
+
+###  http://confious#Strong_Reject
+:Strong_Reject rdf:type owl:NamedIndividual ,
+                        :classification ,
+                        owl:Thing .
+
+
+###  http://confious#Weak_Accept
+:Weak_Accept rdf:type owl:NamedIndividual ,
+                      :classification ,
+                      owl:Thing .
+
+
+###  http://confious#Weak_Reject
+:Weak_Reject rdf:type owl:NamedIndividual ,
+                      :classification ,
+                      owl:Thing .
+
+
+###  http://confious#high
+:high rdf:type owl:NamedIndividual ,
+               :intensity ,
+               owl:Thing .
+
+
+###  http://confious#low
+:low rdf:type owl:NamedIndividual ,
+              :intensity ,
+              owl:Thing .
+
+
+###  http://confious#neutral
+:neutral rdf:type owl:NamedIndividual ,
+                  :intensity ,
+                  owl:Thing .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

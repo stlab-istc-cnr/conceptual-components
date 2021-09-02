@@ -1,0 +1,1024 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://cocus#"
+     xml:base="http://cocus"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cocus"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cocus#add -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#add">
+        <owl:inverseOf rdf:resource="http://cocus#added_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#added_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#added_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#approve -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#approve">
+        <owl:inverseOf rdf:resource="http://cocus#approved_by"/>
+        <rdfs:domain rdf:resource="http://cocus#Administrator"/>
+        <rdfs:range rdf:resource="http://cocus#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#approved_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#approved_by">
+        <rdfs:domain rdf:resource="http://cocus#Event"/>
+        <rdfs:range rdf:resource="http://cocus#Administrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#assign -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#assign">
+        <owl:inverseOf rdf:resource="http://cocus#assigned_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Administrator"/>
+        <rdfs:range rdf:resource="http://cocus#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#assigned_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#assigned_by">
+        <rdfs:domain rdf:resource="http://cocus#Role"/>
+        <rdfs:range rdf:resource="http://cocus#Administrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#concerned -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#concerned">
+        <rdfs:domain rdf:resource="http://cocus#Event_URL"/>
+        <rdfs:range rdf:resource="http://cocus#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#confirm -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#confirm">
+        <owl:inverseOf rdf:resource="http://cocus#confirmed_by"/>
+        <rdfs:domain rdf:resource="http://cocus#Approval_Email"/>
+        <rdfs:range rdf:resource="http://cocus#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#confirmed_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#confirmed_by">
+        <rdfs:domain rdf:resource="http://cocus#Event"/>
+        <rdfs:range rdf:resource="http://cocus#Approval_Email"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#conists_of -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#conists_of">
+        <rdfs:domain rdf:resource="http://cocus#Event"/>
+        <rdfs:range rdf:resource="http://cocus#Event_Tracks"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#create -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#create">
+        <owl:inverseOf rdf:resource="http://cocus#created_by"/>
+        <rdfs:domain rdf:resource="http://cocus#User"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Document"/>
+                    <rdf:Description rdf:about="http://cocus#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#created_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#created_by">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Document"/>
+                    <rdf:Description rdf:about="http://cocus#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://cocus#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#define -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#define">
+        <owl:inverseOf rdf:resource="http://cocus#defined_by"/>
+        <rdfs:domain rdf:resource="http://cocus#Event_Setup"/>
+        <rdfs:range rdf:resource="http://cocus#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#defined_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#defined_by">
+        <rdfs:domain rdf:resource="http://cocus#Event"/>
+        <rdfs:range rdf:resource="http://cocus#Event_Setup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#execute -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#execute">
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Activity"/>
+                    <rdf:Description rdf:about="http://cocus#Role"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#get -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#get">
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Inforamtion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#has_result -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#has_result">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Activity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Document"/>
+                    <rdf:Description rdf:about="http://cocus#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#inverse_of_add -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#inverse_of_add">
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Document"/>
+                    <rdf:Description rdf:about="http://cocus#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#modified_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#modified_by">
+        <owl:inverseOf rdf:resource="http://cocus#modify"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Account"/>
+                    <rdf:Description rdf:about="http://cocus#Detail"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#modify -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#modify">
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Account"/>
+                    <rdf:Description rdf:about="http://cocus#Detail"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#owns -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#owns"/>
+    
+
+
+    <!-- http://cocus#recieve -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#recieve">
+        <owl:inverseOf rdf:resource="http://cocus#recieved_by"/>
+        <rdfs:domain rdf:resource="http://cocus#User"/>
+        <rdfs:range rdf:resource="http://cocus#Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#recieved_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#recieved_by">
+        <rdfs:domain rdf:resource="http://cocus#Document"/>
+        <rdfs:range rdf:resource="http://cocus#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#register -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#register">
+        <owl:inverseOf rdf:resource="http://cocus#registred_by"/>
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Account"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#registred_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#registred_by">
+        <rdfs:domain rdf:resource="http://cocus#Account"/>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#remove -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#remove">
+        <owl:inverseOf rdf:resource="http://cocus#removed_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Document"/>
+                    <rdf:Description rdf:about="http://cocus#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#removed_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#removed_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cocus#Document"/>
+                    <rdf:Description rdf:about="http://cocus#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#send -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#send">
+        <owl:inverseOf rdf:resource="http://cocus#sent_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#sent_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#sent_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://cocus#Activity"/>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#submit -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#submit">
+        <owl:inverseOf rdf:resource="http://cocus#submited__by"/>
+        <rdfs:domain rdf:resource="http://cocus#User"/>
+        <rdfs:range rdf:resource="http://cocus#Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#submited__by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#submited__by">
+        <rdfs:domain rdf:resource="http://cocus#Document"/>
+        <rdfs:range rdf:resource="http://cocus#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#take_part_in -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#take_part_in">
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#use -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#use">
+        <owl:inverseOf rdf:resource="http://cocus#used_by"/>
+        <rdfs:domain rdf:resource="http://cocus#Person"/>
+        <rdfs:range rdf:resource="http://cocus#Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://cocus#used_by -->
+
+    <owl:ObjectProperty rdf:about="http://cocus#used_by">
+        <rdfs:domain rdf:resource="http://cocus#Document"/>
+        <rdfs:range rdf:resource="http://cocus#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cocus#Abstract -->
+
+    <owl:Class rdf:about="http://cocus#Abstract">
+        <rdfs:subClassOf rdf:resource="http://cocus#Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Account -->
+
+    <owl:Class rdf:about="http://cocus#Account"/>
+    
+
+
+    <!-- http://cocus#Activity -->
+
+    <owl:Class rdf:about="http://cocus#Activity"/>
+    
+
+
+    <!-- http://cocus#Admin_Role -->
+
+    <owl:Class rdf:about="http://cocus#Admin_Role">
+        <rdfs:subClassOf rdf:resource="http://cocus#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Administrator -->
+
+    <owl:Class rdf:about="http://cocus#Administrator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://cocus#execute"/>
+                        <owl:someValuesFrom rdf:resource="http://cocus#Admin_Role"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://cocus#execute"/>
+                        <owl:allValuesFrom rdf:resource="http://cocus#Admin_Role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://cocus#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#approve"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#execute"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event_Approval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Approval_Email -->
+
+    <owl:Class rdf:about="http://cocus#Approval_Email">
+        <rdfs:subClassOf rdf:resource="http://cocus#Email"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Assistance -->
+
+    <owl:Class rdf:about="http://cocus#Assistance">
+        <rdfs:subClassOf rdf:resource="http://cocus#Help_Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Author -->
+
+    <owl:Class rdf:about="http://cocus#Author">
+        <rdfs:subClassOf rdf:resource="http://cocus#User"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#add"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#execute"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event_Creation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#recieve"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://cocus#Approval_Email"/>
+                            <rdf:Description rdf:about="http://cocus#Rejection_Email"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#remove"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Author_Role -->
+
+    <owl:Class rdf:about="http://cocus#Author_Role">
+        <rdfs:subClassOf rdf:resource="http://cocus#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Committe_Role -->
+
+    <owl:Class rdf:about="http://cocus#Committe_Role">
+        <rdfs:subClassOf rdf:resource="http://cocus#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Committee -->
+
+    <owl:Class rdf:about="http://cocus#Committee">
+        <rdfs:subClassOf rdf:resource="http://cocus#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Conference -->
+
+    <owl:Class rdf:about="http://cocus#Conference">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Corresponding_Author -->
+
+    <owl:Class rdf:about="http://cocus#Corresponding_Author">
+        <rdfs:subClassOf rdf:resource="http://cocus#Author"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Description -->
+
+    <owl:Class rdf:about="http://cocus#Description"/>
+    
+
+
+    <!-- http://cocus#Detail -->
+
+    <owl:Class rdf:about="http://cocus#Detail">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#modified_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Document -->
+
+    <owl:Class rdf:about="http://cocus#Document">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#created_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Person"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#used_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Email -->
+
+    <owl:Class rdf:about="http://cocus#Email">
+        <rdfs:subClassOf rdf:resource="http://cocus#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#recieved_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Email_Template -->
+
+    <owl:Class rdf:about="http://cocus#Email_Template">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event_Setup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Event -->
+
+    <owl:Class rdf:about="http://cocus#Event">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#created_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Person"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#confirmed_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Approval_Email"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#conists_of"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event_Tracks"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Event_Approval -->
+
+    <owl:Class rdf:about="http://cocus#Event_Approval">
+        <rdfs:subClassOf rdf:resource="http://cocus#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#has_result"/>
+                <owl:allValuesFrom rdf:resource="http://cocus#Approval_Email"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Event_Creation -->
+
+    <owl:Class rdf:about="http://cocus#Event_Creation">
+        <rdfs:subClassOf rdf:resource="http://cocus#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#has_result"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Event_Setup -->
+
+    <owl:Class rdf:about="http://cocus#Event_Setup">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#define"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Event_Tracks -->
+
+    <owl:Class rdf:about="http://cocus#Event_Tracks">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event_Setup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Event_URL -->
+
+    <owl:Class rdf:about="http://cocus#Event_URL">
+        <rdfs:subClassOf rdf:resource="http://cocus#URL"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#concerned"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Feature_Request -->
+
+    <owl:Class rdf:about="http://cocus#Feature_Request">
+        <rdfs:subClassOf rdf:resource="http://cocus#Help_Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Full_Paper -->
+
+    <owl:Class rdf:about="http://cocus#Full_Paper">
+        <rdfs:subClassOf rdf:resource="http://cocus#Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Group_Email -->
+
+    <owl:Class rdf:about="http://cocus#Group_Email">
+        <rdfs:subClassOf rdf:resource="http://cocus#Email"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Head_Role -->
+
+    <owl:Class rdf:about="http://cocus#Head_Role">
+        <rdfs:subClassOf rdf:resource="http://cocus#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Help_Request -->
+
+    <owl:Class rdf:about="http://cocus#Help_Request">
+        <rdfs:subClassOf rdf:resource="http://cocus#Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Inforamtion -->
+
+    <owl:Class rdf:about="http://cocus#Inforamtion"/>
+    
+
+
+    <!-- http://cocus#Invited_Paper -->
+
+    <owl:Class rdf:about="http://cocus#Invited_Paper">
+        <rdfs:subClassOf rdf:resource="http://cocus#Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Misc -->
+
+    <owl:Class rdf:about="http://cocus#Misc">
+        <rdfs:subClassOf rdf:resource="http://cocus#Help_Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Notification_Email -->
+
+    <owl:Class rdf:about="http://cocus#Notification_Email">
+        <rdfs:subClassOf rdf:resource="http://cocus#Email"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Paper -->
+
+    <owl:Class rdf:about="http://cocus#Paper">
+        <rdfs:subClassOf rdf:resource="http://cocus#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#submited__by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Corresponding_Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Paper_Typologies -->
+
+    <owl:Class rdf:about="http://cocus#Paper_Typologies">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event_Setup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Person -->
+
+    <owl:Class rdf:about="http://cocus#Person">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#get"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Inforamtion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Preview -->
+
+    <owl:Class rdf:about="http://cocus#Preview">
+        <rdfs:subClassOf rdf:resource="http://cocus#Review_Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Registration -->
+
+    <owl:Class rdf:about="http://cocus#Registration">
+        <rdfs:subClassOf rdf:resource="http://cocus#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#has_result"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Rejection_Email -->
+
+    <owl:Class rdf:about="http://cocus#Rejection_Email">
+        <rdfs:subClassOf rdf:resource="http://cocus#Email"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Request -->
+
+    <owl:Class rdf:about="http://cocus#Request">
+        <rdfs:subClassOf rdf:resource="http://cocus#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Research_Topic -->
+
+    <owl:Class rdf:about="http://cocus#Research_Topic">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event_Setup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Review -->
+
+    <owl:Class rdf:about="http://cocus#Review">
+        <rdfs:subClassOf rdf:resource="http://cocus#Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Review_Form -->
+
+    <owl:Class rdf:about="http://cocus#Review_Form">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event_Setup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Review_Form_Setup -->
+
+    <owl:Class rdf:about="http://cocus#Review_Form_Setup">
+        <rdfs:subClassOf rdf:resource="http://cocus#Review_Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Reviewer_Role -->
+
+    <owl:Class rdf:about="http://cocus#Reviewer_Role">
+        <rdfs:subClassOf rdf:resource="http://cocus#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Role -->
+
+    <owl:Class rdf:about="http://cocus#Role">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#assigned_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Administrator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Short_Paper -->
+
+    <owl:Class rdf:about="http://cocus#Short_Paper">
+        <rdfs:subClassOf rdf:resource="http://cocus#Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Submission -->
+
+    <owl:Class rdf:about="http://cocus#Submission">
+        <rdfs:subClassOf rdf:resource="http://cocus#Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Submission_Template -->
+
+    <owl:Class rdf:about="http://cocus#Submission_Template">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event_Setup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Symposium -->
+
+    <owl:Class rdf:about="http://cocus#Symposium">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Template -->
+
+    <owl:Class rdf:about="http://cocus#Template">
+        <rdfs:subClassOf rdf:resource="http://cocus#Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#used_by"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#URL -->
+
+    <owl:Class rdf:about="http://cocus#URL"/>
+    
+
+
+    <!-- http://cocus#User -->
+
+    <owl:Class rdf:about="http://cocus#User">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://cocus#execute"/>
+                        <owl:someValuesFrom rdf:resource="http://cocus#Role"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://cocus#register"/>
+                        <owl:someValuesFrom rdf:resource="http://cocus#Account"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://cocus#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#send"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Help_Request"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cocus#take_part_in"/>
+                <owl:someValuesFrom rdf:resource="http://cocus#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://cocus#Workshop -->
+
+    <owl:Class rdf:about="http://cocus#Workshop">
+        <rdfs:subClassOf rdf:resource="http://cocus#Event"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+

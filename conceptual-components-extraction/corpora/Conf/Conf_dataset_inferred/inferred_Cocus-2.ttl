@@ -1,0 +1,740 @@
+@prefix : <http://cocus#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://cocus#> .
+
+<http://cocus> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://cocus#add
+:add rdf:type owl:ObjectProperty ;
+     owl:equivalentProperty [ owl:inverseOf :added_by
+                            ] ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     owl:inverseOf :added_by ;
+     rdf:type owl:FunctionalProperty ;
+     rdfs:domain :Person ;
+     rdfs:range :Person .
+
+
+###  http://cocus#added_by
+:added_by rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:InverseFunctionalProperty ;
+          rdfs:domain :Person ;
+          rdfs:range :Person .
+
+
+###  http://cocus#approve
+:approve rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :approved_by
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :approved_by ;
+         rdfs:domain :Administrator ;
+         rdfs:range :Event .
+
+
+###  http://cocus#approved_by
+:approved_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Event ;
+             rdfs:range :Administrator .
+
+
+###  http://cocus#assign
+:assign rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :assigned_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :assigned_by ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Administrator ;
+        rdfs:range :Role .
+
+
+###  http://cocus#assigned_by
+:assigned_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:InverseFunctionalProperty ;
+             rdfs:domain :Role ;
+             rdfs:range :Administrator .
+
+
+###  http://cocus#concerned
+:concerned rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Event_URL ;
+           rdfs:range :Event .
+
+
+###  http://cocus#confirm
+:confirm rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :confirmed_by
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :confirmed_by ;
+         rdfs:domain :Approval_Email ;
+         rdfs:range :Event .
+
+
+###  http://cocus#confirmed_by
+:confirmed_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Event ;
+              rdfs:range :Approval_Email .
+
+
+###  http://cocus#conists_of
+:conists_of rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Event ;
+            rdfs:range :Event_Tracks .
+
+
+###  http://cocus#create
+:create rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :created_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :created_by ;
+        rdfs:domain :User ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :Document
+                                   :Event
+                                 )
+                   ] .
+
+
+###  http://cocus#created_by
+:created_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Document
+                                        :Event
+                                      )
+                        ] ;
+            rdfs:range :User .
+
+
+###  http://cocus#define
+:define rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :defined_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :defined_by ;
+        rdfs:domain :Event_Setup ;
+        rdfs:range :Event .
+
+
+###  http://cocus#defined_by
+:defined_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Event ;
+            rdfs:range :Event_Setup .
+
+
+###  http://cocus#execute
+:execute rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Person ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :Activity
+                                    :Role
+                                  )
+                    ] .
+
+
+###  http://cocus#get
+:get rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdfs:domain :Person ;
+     rdfs:range :Inforamtion .
+
+
+###  http://cocus#has_result
+:has_result rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Activity ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Document
+                                       :Event
+                                     )
+                       ] .
+
+
+###  http://cocus#inverse_of_add
+:inverse_of_add rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Person ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Document
+                                           :Person
+                                         )
+                           ] .
+
+
+###  http://cocus#modified_by
+:modified_by rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty [ owl:inverseOf :modify
+                                    ] ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :modify ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Account
+                                         :Detail
+                                       )
+                         ] ;
+             rdfs:range :Person .
+
+
+###  http://cocus#modify
+:modify rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Person ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :Account
+                                   :Detail
+                                 )
+                   ] .
+
+
+###  http://cocus#owns
+:owns rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://cocus#recieve
+:recieve rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty [ owl:inverseOf :recieved_by
+                                ] ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :recieved_by ;
+         rdfs:domain :User ;
+         rdfs:range :Document .
+
+
+###  http://cocus#recieved_by
+:recieved_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Document ;
+             rdfs:range :User .
+
+
+###  http://cocus#register
+:register rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty [ owl:inverseOf :registred_by
+                                 ] ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :registred_by ;
+          rdfs:domain :Person ;
+          rdfs:range :Account .
+
+
+###  http://cocus#registred_by
+:registred_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Account ;
+              rdfs:range :Person .
+
+
+###  http://cocus#remove
+:remove rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :removed_by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :removed_by ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Person ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :Document
+                                   :Person
+                                 )
+                   ] .
+
+
+###  http://cocus#removed_by
+:removed_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:InverseFunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Document
+                                        :Person
+                                      )
+                        ] ;
+            rdfs:range :Person .
+
+
+###  http://cocus#send
+:send rdf:type owl:ObjectProperty ;
+      owl:equivalentProperty [ owl:inverseOf :sent_by
+                             ] ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      owl:inverseOf :sent_by ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :Activity .
+
+
+###  http://cocus#sent_by
+:sent_by rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:InverseFunctionalProperty ;
+         rdfs:domain :Activity ;
+         rdfs:range :Person .
+
+
+###  http://cocus#submit
+:submit rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :submited__by
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :submited__by ;
+        rdfs:domain :User ;
+        rdfs:range :Document .
+
+
+###  http://cocus#submited__by
+:submited__by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Document ;
+              rdfs:range :User .
+
+
+###  http://cocus#take_part_in
+:take_part_in rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :Event .
+
+
+###  http://cocus#use
+:use rdf:type owl:ObjectProperty ;
+     owl:equivalentProperty [ owl:inverseOf :used_by
+                            ] ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     owl:inverseOf :used_by ;
+     rdfs:domain :Person ;
+     rdfs:range :Document .
+
+
+###  http://cocus#used_by
+:used_by rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Document ;
+         rdfs:range :Person .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://cocus#Abstract
+:Abstract rdf:type owl:Class ;
+          rdfs:subClassOf :Paper .
+
+
+###  http://cocus#Account
+:Account rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  http://cocus#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://cocus#Admin_Role
+:Admin_Role rdf:type owl:Class ;
+            rdfs:subClassOf :Role .
+
+
+###  http://cocus#Administrator
+:Administrator rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :execute ;
+                                                            owl:someValuesFrom :Admin_Role
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :execute ;
+                                                            owl:allValuesFrom :Admin_Role
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :Person ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :approve ;
+                                 owl:someValuesFrom :Event
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :execute ;
+                                 owl:someValuesFrom :Event_Approval
+                               ] .
+
+
+###  http://cocus#Approval_Email
+:Approval_Email rdf:type owl:Class ;
+                rdfs:subClassOf :Email .
+
+
+###  http://cocus#Assistance
+:Assistance rdf:type owl:Class ;
+            rdfs:subClassOf :Help_Request .
+
+
+###  http://cocus#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :User ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :add ;
+                          owl:someValuesFrom :Author
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :execute ;
+                          owl:someValuesFrom :Event_Creation
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :recieve ;
+                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Approval_Email
+                                                             :Rejection_Email
+                                                           )
+                                             ]
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :remove ;
+                          owl:someValuesFrom :Author
+                        ] .
+
+
+###  http://cocus#Author_Role
+:Author_Role rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
+
+
+###  http://cocus#Committe_Role
+:Committe_Role rdf:type owl:Class ;
+               rdfs:subClassOf :Role .
+
+
+###  http://cocus#Committee
+:Committee rdf:type owl:Class ;
+           rdfs:subClassOf :User .
+
+
+###  http://cocus#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf :Document ,
+                            :Event .
+
+
+###  http://cocus#Corresponding_Author
+:Corresponding_Author rdf:type owl:Class ;
+                      rdfs:subClassOf :Author .
+
+
+###  http://cocus#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  http://cocus#Detail
+:Detail rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :modified_by ;
+                          owl:someValuesFrom :Person
+                        ] .
+
+
+###  http://cocus#Document
+:Document rdf:type owl:Class ;
+          owl:equivalentClass :Event ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :created_by ;
+                                owl:someValuesFrom :Person
+                              ] ;
+          rdfs:subClassOf owl:Thing ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :used_by ;
+                            owl:someValuesFrom :Person
+                          ] .
+
+
+###  http://cocus#Email
+:Email rdf:type owl:Class ;
+       rdfs:subClassOf :Document ,
+                       :Event ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :recieved_by ;
+                         owl:someValuesFrom :Person
+                       ] .
+
+
+###  http://cocus#Email_Template
+:Email_Template rdf:type owl:Class ;
+                rdfs:subClassOf :Event_Setup .
+
+
+###  http://cocus#Event
+:Event rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :created_by ;
+                             owl:someValuesFrom :Person
+                           ] ;
+       rdfs:subClassOf owl:Thing ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :confirmed_by ;
+                         owl:someValuesFrom :Approval_Email
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :conists_of ;
+                         owl:someValuesFrom :Event_Tracks
+                       ] .
+
+
+###  http://cocus#Event_Approval
+:Event_Approval rdf:type owl:Class ;
+                rdfs:subClassOf :Activity ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :has_result ;
+                                  owl:allValuesFrom :Approval_Email
+                                ] .
+
+
+###  http://cocus#Event_Creation
+:Event_Creation rdf:type owl:Class ;
+                rdfs:subClassOf :Activity ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :has_result ;
+                                  owl:someValuesFrom :Event
+                                ] .
+
+
+###  http://cocus#Event_Setup
+:Event_Setup rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :define ;
+                                   owl:someValuesFrom :Event
+                                 ] ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  http://cocus#Event_Tracks
+:Event_Tracks rdf:type owl:Class ;
+              rdfs:subClassOf :Event_Setup .
+
+
+###  http://cocus#Event_URL
+:Event_URL rdf:type owl:Class ;
+           rdfs:subClassOf :URL ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :concerned ;
+                             owl:someValuesFrom :Event
+                           ] .
+
+
+###  http://cocus#Feature_Request
+:Feature_Request rdf:type owl:Class ;
+                 rdfs:subClassOf :Help_Request .
+
+
+###  http://cocus#Full_Paper
+:Full_Paper rdf:type owl:Class ;
+            rdfs:subClassOf :Paper .
+
+
+###  http://cocus#Group_Email
+:Group_Email rdf:type owl:Class ;
+             rdfs:subClassOf :Email .
+
+
+###  http://cocus#Head_Role
+:Head_Role rdf:type owl:Class ;
+           rdfs:subClassOf :Role .
+
+
+###  http://cocus#Help_Request
+:Help_Request rdf:type owl:Class ;
+              rdfs:subClassOf :Request .
+
+
+###  http://cocus#Inforamtion
+:Inforamtion rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing .
+
+
+###  http://cocus#Invited_Paper
+:Invited_Paper rdf:type owl:Class ;
+               rdfs:subClassOf :Paper .
+
+
+###  http://cocus#Misc
+:Misc rdf:type owl:Class ;
+      rdfs:subClassOf :Help_Request .
+
+
+###  http://cocus#Notification_Email
+:Notification_Email rdf:type owl:Class ;
+                    rdfs:subClassOf :Email .
+
+
+###  http://cocus#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Document ,
+                       :Event ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :submited__by ;
+                         owl:someValuesFrom :Corresponding_Author
+                       ] .
+
+
+###  http://cocus#Paper_Typologies
+:Paper_Typologies rdf:type owl:Class ;
+                  rdfs:subClassOf :Event_Setup .
+
+
+###  http://cocus#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :get ;
+                          owl:someValuesFrom :Inforamtion
+                        ] .
+
+
+###  http://cocus#Preview
+:Preview rdf:type owl:Class ;
+         rdfs:subClassOf :Review_Form .
+
+
+###  http://cocus#Registration
+:Registration rdf:type owl:Class ;
+              rdfs:subClassOf :Activity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_result ;
+                                owl:someValuesFrom :User
+                              ] .
+
+
+###  http://cocus#Rejection_Email
+:Rejection_Email rdf:type owl:Class ;
+                 rdfs:subClassOf :Email .
+
+
+###  http://cocus#Request
+:Request rdf:type owl:Class ;
+         rdfs:subClassOf :Activity .
+
+
+###  http://cocus#Research_Topic
+:Research_Topic rdf:type owl:Class ;
+                rdfs:subClassOf :Event_Setup .
+
+
+###  http://cocus#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Document ,
+                        :Event .
+
+
+###  http://cocus#Review_Form
+:Review_Form rdf:type owl:Class ;
+             rdfs:subClassOf :Event_Setup .
+
+
+###  http://cocus#Review_Form_Setup
+:Review_Form_Setup rdf:type owl:Class ;
+                   rdfs:subClassOf :Review_Form .
+
+
+###  http://cocus#Reviewer_Role
+:Reviewer_Role rdf:type owl:Class ;
+               rdfs:subClassOf :Role .
+
+
+###  http://cocus#Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :assigned_by ;
+                        owl:someValuesFrom :Administrator
+                      ] .
+
+
+###  http://cocus#Short_Paper
+:Short_Paper rdf:type owl:Class ;
+             rdfs:subClassOf :Paper .
+
+
+###  http://cocus#Submission
+:Submission rdf:type owl:Class ;
+            rdfs:subClassOf :Document ,
+                            :Event .
+
+
+###  http://cocus#Submission_Template
+:Submission_Template rdf:type owl:Class ;
+                     rdfs:subClassOf :Event_Setup .
+
+
+###  http://cocus#Symposium
+:Symposium rdf:type owl:Class ;
+           rdfs:subClassOf :Document ,
+                           :Event .
+
+
+###  http://cocus#Template
+:Template rdf:type owl:Class ;
+          rdfs:subClassOf :Document ,
+                          :Event ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :used_by ;
+                            owl:someValuesFrom :Person
+                          ] .
+
+
+###  http://cocus#URL
+:URL rdf:type owl:Class ;
+     rdfs:subClassOf owl:Thing .
+
+
+###  http://cocus#User
+:User rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :execute ;
+                                                   owl:someValuesFrom :Role
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :register ;
+                                                   owl:someValuesFrom :Account
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :Person ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :send ;
+                        owl:someValuesFrom :Help_Request
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :take_part_in ;
+                        owl:someValuesFrom :Event
+                      ] .
+
+
+###  http://cocus#Workshop
+:Workshop rdf:type owl:Class ;
+          rdfs:subClassOf :Document ,
+                          :Event .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

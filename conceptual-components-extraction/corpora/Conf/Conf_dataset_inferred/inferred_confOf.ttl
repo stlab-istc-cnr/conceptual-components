@@ -1,0 +1,788 @@
+@prefix : <http://confOf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://confOf#> .
+
+<http://confOf> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://confOf#dealsWith
+:dealsWith rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Contribution ;
+           rdfs:range :Topic ;
+           rdfs:comment "confTool" .
+
+
+###  http://confOf#employedBy
+:employedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :Organization ;
+            rdfs:comment "confTool" .
+
+
+###  http://confOf#expertOn
+:expertOn rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Member_PC ;
+          rdfs:range :Topic ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#follows
+:follows rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:domain :Administrative_event ;
+         rdfs:range :Administrative_event .
+
+
+###  http://confOf#hasAdministrativeEvent
+:hasAdministrativeEvent rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdf:type owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain :Working_event ;
+                        rdfs:range :Administrative_event .
+
+
+###  http://confOf#hasCity
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Organization
+                                     :Person
+                                   )
+                     ] ;
+         rdfs:range :City ;
+         rdfs:comment "confTool" .
+
+
+###  http://confOf#hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Organization
+                                        :Person
+                                      )
+                        ] ;
+            rdfs:range :Country ;
+            rdfs:comment "confTool" .
+
+
+###  http://confOf#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Working_event ;
+          rdfs:range :Topic ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#parallel_with
+:parallel_with rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty [ owl:inverseOf :parallel_with
+                                      ] ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :parallel_with ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :Administrative_event ;
+               rdfs:range :Administrative_event .
+
+
+###  http://confOf#reviewes
+:reviewes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Member_PC ;
+          rdfs:range :Contribution .
+
+
+###  http://confOf#studyAt
+:studyAt rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Scholar ;
+         rdfs:range :University .
+
+
+###  http://confOf#writes
+:writes rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty [ owl:inverseOf :writtenBy
+                               ] ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:AsymmetricProperty ,
+                 owl:IrreflexiveProperty ;
+        rdfs:domain :Author ;
+        rdfs:range :Contribution ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#writtenBy
+:writtenBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :writes ;
+           rdf:type owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Contribution ;
+           rdfs:range :Author ;
+           rdfs:comment "confTool" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://confOf#abstract
+:abstract rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Contribution ;
+          rdfs:range xsd:string ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#contactEmail
+:contactEmail rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Contribution ;
+              rdfs:range xsd:string ;
+              rdfs:comment "confTool" .
+
+
+###  http://confOf#defaultChoice
+:defaultChoice rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Social_event
+                                           :Working_event
+                                         )
+                           ] ;
+               rdfs:range xsd:positiveInteger ;
+               rdfs:comment "confTool" .
+
+
+###  http://confOf#earlyRegistration
+:earlyRegistration rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :Participant ;
+                   rdfs:range xsd:boolean .
+
+
+###  http://confOf#ends_on
+:ends_on rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Event ;
+         rdfs:range xsd:string ;
+         rdfs:comment "confTool" .
+
+
+###  http://confOf#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#hasFax
+:hasFax rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#hasFirstName
+:hasFirstName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string ;
+              rdfs:comment "confTool" ,
+                           "involved middle name" .
+
+
+###  http://confOf#hasHomePage
+:hasHomePage rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:string ;
+             rdfs:comment "confTool" .
+
+
+###  http://confOf#hasKeyword
+:hasKeyword rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Contribution ;
+            rdfs:range xsd:string ;
+            rdfs:comment "confTool" .
+
+
+###  http://confOf#hasPhone
+:hasPhone rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#hasPostalCode
+:hasPostalCode rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Organization
+                                           :Person
+                                         )
+                           ] ;
+               rdfs:range xsd:string ;
+               rdfs:comment "confTool" .
+
+
+###  http://confOf#hasStreet
+:hasStreet rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Organization
+                                       :Person
+                                     )
+                       ] ;
+           rdfs:range xsd:string ;
+           rdfs:comment "confTool" .
+
+
+###  http://confOf#hasSurname
+:hasSurname rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string ;
+            rdfs:comment "confTool" .
+
+
+###  http://confOf#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Contribution ;
+          rdfs:range xsd:string ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#hasVAT
+:hasVAT rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Social_event
+                                    :Working_event
+                                  )
+                    ] ;
+        rdfs:range xsd:string ;
+        rdfs:comment "confTool" ,
+                     """value added tax
+""" .
+
+
+###  http://confOf#has_short_title
+:has_short_title rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Social_event
+                                             :Working_event
+                                           )
+                             ] ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "confTool" .
+
+
+###  http://confOf#has_title
+:has_title rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Social_event
+                                       :Working_event
+                                     )
+                       ] ;
+           rdfs:range xsd:string ;
+           rdfs:comment "confTool" .
+
+
+###  http://confOf#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Social_event
+                                      :Working_event
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment "confTool" ,
+                       "where the event is being held" .
+
+
+###  http://confOf#maxChoice
+:maxChoice rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Social_event
+                                       :Working_event
+                                     )
+                       ] ;
+           rdfs:range xsd:positiveInteger ;
+           rdfs:comment """confTool
+""" .
+
+
+###  http://confOf#minChoice
+:minChoice rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Social_event
+                                       :Working_event
+                                     )
+                       ] ;
+           rdfs:range xsd:positiveInteger ;
+           rdfs:comment """confTool
+""" .
+
+
+###  http://confOf#remark
+:remark rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Contribution ;
+        rdfs:range xsd:string ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#starts_on
+:starts_on rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Event ;
+           rdfs:range xsd:string ;
+           rdfs:comment "confTool" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://confOf#Administrative_event
+:Administrative_event rdf:type owl:Class ;
+                      rdfs:subClassOf :Event ;
+                      owl:disjointWith :Social_event ,
+                                       :Working_event .
+
+
+###  http://confOf#Administrator
+:Administrator rdf:type owl:Class ;
+               rdfs:subClassOf :Person ;
+               rdfs:comment "confTool" .
+
+
+###  http://confOf#Assistant
+:Assistant rdf:type owl:Class ;
+           rdfs:subClassOf :Person ;
+           rdfs:comment "confTool" .
+
+
+###  http://confOf#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :writes ;
+                          owl:someValuesFrom :Contribution
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :writes ;
+                          owl:allValuesFrom :Contribution
+                        ] ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#Banquet
+:Banquet rdf:type owl:Class ;
+         rdfs:subClassOf :Social_event ;
+         owl:disjointWith :Reception ,
+                          :Trip .
+
+
+###  http://confOf#Camera_Ready_event
+:Camera_Ready_event rdf:type owl:Class ;
+                    rdfs:subClassOf :Administrative_event ;
+                    owl:disjointWith :Registration_of_participants_event ,
+                                     :Reviewing_event ,
+                                     :Reviewing_results_event ,
+                                     :Submission_event ;
+                    rdfs:comment "Final upload of accepted contributions" ,
+                                 "confTool" .
+
+
+###  http://confOf#Chair_PC
+:Chair_PC rdf:type owl:Class ;
+          rdfs:subClassOf :Person ;
+          rdfs:comment "confTool" .
+
+
+###  http://confOf#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      owl:disjointWith :Contribution ,
+                       :Event ,
+                       :Organization ,
+                       :Person ,
+                       :Topic .
+
+
+###  http://confOf#Company
+:Company rdf:type owl:Class ;
+         rdfs:subClassOf :Organization ;
+         owl:disjointWith :University .
+
+
+###  http://confOf#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf :Working_event ;
+            owl:disjointWith :Tutorial ,
+                             :Workshop .
+
+
+###  http://confOf#Contribution
+:Contribution rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :dealsWith ;
+                                owl:someValuesFrom :Topic
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :dealsWith ;
+                                owl:allValuesFrom :Topic
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :contactEmail ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasKeyword ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :abstract ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasTitle ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              owl:disjointWith :Country ,
+                               :Event ,
+                               :Organization ,
+                               :Person ,
+                               :Topic ;
+              rdfs:comment "confTool"@en .
+
+
+###  http://confOf#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         owl:disjointWith :Event ,
+                          :Organization ,
+                          :Person ,
+                          :Topic .
+
+
+###  http://confOf#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       owl:disjointWith :Organization ,
+                        :Person ,
+                        :Topic ;
+       rdfs:comment "confTool" .
+
+
+###  http://confOf#Member
+:Member rdf:type owl:Class ;
+        rdfs:subClassOf :Participant ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#Member_PC
+:Member_PC rdf:type owl:Class ;
+           rdfs:subClassOf :Person ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :expertOn ;
+                             owl:someValuesFrom :Topic
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :reviewes ;
+                             owl:someValuesFrom :Contribution
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :expertOn ;
+                             owl:allValuesFrom :Topic
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :reviewes ;
+                             owl:allValuesFrom :Contribution
+                           ] ;
+           rdfs:comment "Reviewer" ,
+                        "confTool" .
+
+
+###  http://confOf#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ;
+              owl:disjointWith :Person ,
+                               :Topic .
+
+
+###  http://confOf#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Contribution ;
+       owl:disjointWith :Poster ,
+                        :Short_paper ;
+       rdfs:comment "confTool" .
+
+
+###  http://confOf#Participant
+:Participant rdf:type owl:Class ;
+             rdfs:subClassOf :Person ;
+             rdfs:comment "confTool" .
+
+
+###  http://confOf#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :employedBy ;
+                          owl:someValuesFrom :Organization
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCity ;
+                          owl:someValuesFrom :City
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCountry ;
+                          owl:someValuesFrom :Country
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :employedBy ;
+                          owl:allValuesFrom :Organization
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasEmail ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPostalCode ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasStreet ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasFirstName ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSurname ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        owl:disjointWith :Topic ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#Poster
+:Poster rdf:type owl:Class ;
+        rdfs:subClassOf :Contribution ;
+        owl:disjointWith :Short_paper ;
+        rdfs:comment "confTool" .
+
+
+###  http://confOf#Reception
+:Reception rdf:type owl:Class ;
+           rdfs:subClassOf :Social_event ;
+           owl:disjointWith :Trip .
+
+
+###  http://confOf#Registration_of_participants_event
+:Registration_of_participants_event rdf:type owl:Class ;
+                                    rdfs:subClassOf :Administrative_event ;
+                                    owl:disjointWith :Reviewing_event ,
+                                                     :Reviewing_results_event ,
+                                                     :Submission_event ;
+                                    rdfs:comment "Registration of new ConfTool users" ,
+                                                 "confTool" .
+
+
+###  http://confOf#Regular
+:Regular rdf:type owl:Class ;
+         rdfs:subClassOf :Participant ;
+         rdfs:comment "confTool" .
+
+
+###  http://confOf#Reviewing_event
+:Reviewing_event rdf:type owl:Class ;
+                 rdfs:subClassOf :Administrative_event ;
+                 owl:disjointWith :Reviewing_results_event ,
+                                  :Submission_event ;
+                 rdfs:comment "Reviewing procedure for submitted contributions" ,
+                              "confTool" .
+
+
+###  http://confOf#Reviewing_results_event
+:Reviewing_results_event rdf:type owl:Class ;
+                         rdfs:subClassOf :Administrative_event ;
+                         owl:disjointWith :Submission_event ;
+                         rdfs:comment "Results of the reviewing procedures, accessable to authors" ,
+                                      "confTool" .
+
+
+###  http://confOf#Scholar
+:Scholar rdf:type owl:Class ;
+         rdfs:subClassOf :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :studyAt ;
+                           owl:someValuesFrom :University
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :studyAt ;
+                           owl:allValuesFrom :University
+                         ] ;
+         rdfs:comment "confTool" ,
+                      "price category - scholar" .
+
+
+###  http://confOf#Science_Worker
+:Science_Worker rdf:type owl:Class ;
+                rdfs:subClassOf :Person ;
+                rdfs:comment "confTool" ,
+                             "price category - science worker" .
+
+
+###  http://confOf#Short_paper
+:Short_paper rdf:type owl:Class ;
+             rdfs:subClassOf :Contribution ;
+             rdfs:comment "confTool" .
+
+
+###  http://confOf#Social_event
+:Social_event rdf:type owl:Class ;
+              rdfs:subClassOf :Event ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :defaultChoice ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_title ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :location ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              owl:disjointWith :Working_event .
+
+
+###  http://confOf#Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Participant ;
+         rdfs:comment "confTool" .
+
+
+###  http://confOf#Submission_event
+:Submission_event rdf:type owl:Class ;
+                  rdfs:subClassOf :Administrative_event ;
+                  rdfs:comment "Submission of contributions" ,
+                               "confTool" .
+
+
+###  http://confOf#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ;
+       rdfs:comment "confTool" .
+
+
+###  http://confOf#Trip
+:Trip rdf:type owl:Class ;
+      rdfs:subClassOf :Social_event .
+
+
+###  http://confOf#Tutorial
+:Tutorial rdf:type owl:Class ;
+          rdfs:subClassOf :Working_event ;
+          owl:disjointWith :Workshop .
+
+
+###  http://confOf#University
+:University rdf:type owl:Class ;
+            rdfs:subClassOf :Organization .
+
+
+###  http://confOf#Volunteer
+:Volunteer rdf:type owl:Class ;
+           rdfs:subClassOf :Person ;
+           rdfs:comment "confTool" .
+
+
+###  http://confOf#Working_event
+:Working_event rdf:type owl:Class ;
+               rdfs:subClassOf :Event ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasTopic ;
+                                 owl:someValuesFrom :Topic
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasTopic ;
+                                 owl:allValuesFrom :Topic
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :defaultChoice ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :has_title ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :location ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] .
+
+
+###  http://confOf#Workshop
+:Workshop rdf:type owl:Class ;
+          rdfs:subClassOf :Working_event .
+
+
+###  Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/

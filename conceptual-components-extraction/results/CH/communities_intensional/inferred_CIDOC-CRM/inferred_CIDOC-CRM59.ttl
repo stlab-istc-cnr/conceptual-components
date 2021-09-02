@@ -1,0 +1,37 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E5_Event--P12_occurred_in_the_presence_of--E77_Persistent_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://edge.example/E63_Beginning_of_Existence--P92_brought_into_existence--E77_Persistent_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://edge.example/E64_End_of_Existence--P93_took_out_of_existence--E77_Persistent_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://edge.example/E77_Persistent_Item--P123i_resulted_from--E81_Transformation> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> .
+
+<http://edge.example/E77_Persistent_Item--P124i_was_transformed_by--E81_Transformation> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> .
+
+<http://edge.example/E77_Persistent_Item--P92i_was_brought_into_existence_by--E63_Beginning_of_Existence> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> .
+
+<http://edge.example/E77_Persistent_Item--P93i_was_taken_out_of_existence_by--E64_End_of_Existence> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence> .
+
+<http://edge.example/E81_Transformation--P123_resulted_in--E77_Persistent_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://edge.example/E81_Transformation--P124_transformed--E77_Persistent_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> ns1:edge <http://edge.example/E63_Beginning_of_Existence--P92_brought_into_existence--E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence> ns1:edge <http://edge.example/E64_End_of_Existence--P93_took_out_of_existence--E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E81_Transformation> ns1:edge <http://edge.example/E81_Transformation--P123_resulted_in--E77_Persistent_Item>,
+        <http://edge.example/E81_Transformation--P124_transformed--E77_Persistent_Item> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ns1:edge <http://edge.example/E77_Persistent_Item--P123i_resulted_from--E81_Transformation>,
+        <http://edge.example/E77_Persistent_Item--P124i_was_transformed_by--E81_Transformation>,
+        <http://edge.example/E77_Persistent_Item--P12i_was_present_at--E5_Event>,
+        <http://edge.example/E77_Persistent_Item--P92i_was_brought_into_existence_by--E63_Beginning_of_Existence>,
+        <http://edge.example/E77_Persistent_Item--P93i_was_taken_out_of_existence_by--E64_End_of_Existence> .
+

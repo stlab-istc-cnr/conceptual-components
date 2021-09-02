@@ -1,0 +1,12 @@
+digraph "Community 349" {
+	Agent -> AdditionalForm [label=isAdditionalFormResponsibleAgentOf]
+	AdditionalForm
+	CulturalProperty -> AdditionalForm [label=isRelatedToAdditionalForm]
+	CulturalEntity -> AdditionalForm [label=isRelatedToAdditionalForm]
+	AdditionalForm -> Literal [label=additionalFormIdentifier]
+	AdditionalForm -> CulturalEntity [label=describes]
+	AdditionalForm -> Agent [label=hasAdditionalFormResponsibleAgent]
+	AdditionalForm -> AdditionalFormType [label=hasAdditionalFormType]
+	AdditionalFormType -> AdditionalForm [label=isAdditionalFormTypeOf]
+	AdditionalFormType
+}

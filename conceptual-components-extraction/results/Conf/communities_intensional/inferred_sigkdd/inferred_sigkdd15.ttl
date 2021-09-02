@@ -1,0 +1,15 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Document--presentationed_by--Speaker> ns1:edge <http://sigkdd#Speaker> .
+
+<http://edge.example/Speaker--presentation--Document> ns1:edge <http://sigkdd#Document> .
+
+<http://sigkdd#Document> ns1:edge <http://edge.example/Document--presentationed_by--Speaker>,
+        <http://edge.example/Document--submit_until--Deadline> .
+
+<http://sigkdd#Speaker> ns1:edge <http://edge.example/Speaker--presentation--Document> .
+

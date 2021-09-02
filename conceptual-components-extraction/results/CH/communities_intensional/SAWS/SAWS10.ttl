@@ -1,0 +1,15 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Marginalia--marginaliaAddedBy--Scribe> ns1:edge <http://purl.org/saws/ontology#Scribe> .
+
+<http://edge.example/Scribe--hasAddedMarginalia--Marginalia> ns1:edge <http://purl.org/saws/ontology#Marginalia> .
+
+<http://purl.org/saws/ontology#Marginalia> ns1:edge <http://edge.example/Marginalia--areMarginaliaOn--OriginalMaterial>,
+        <http://edge.example/Marginalia--marginaliaAddedBy--Scribe> .
+
+<http://purl.org/saws/ontology#Scribe> ns1:edge <http://edge.example/Scribe--hasAddedMarginalia--Marginalia> .
+

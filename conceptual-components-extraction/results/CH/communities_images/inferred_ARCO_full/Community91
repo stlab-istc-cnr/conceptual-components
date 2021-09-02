@@ -1,0 +1,8 @@
+digraph "Community 91" {
+	CollectionCulEnt
+	Agent -> CollectionCulEnt [label=isCollectorOf]
+	CollectionCulEnt -> Literal [label=collectionIdentifier]
+	CollectionCulEnt -> Agent [label=hasCollector]
+	CollectionCulEnt -> CollectionMembership [label=isCollectionIn]
+	CollectionMembership -> CollectionCulEnt [label=hasCollection]
+}

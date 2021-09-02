@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E33_Linguistic_Object--isWrittenBy--E21_Person> ns1:edge <http://erlangen-crm.org/current/E21_Person> .
+
+<http://edge.example/DecorativeItem--decorationAddedBy--E21_Person> ns1:edge <http://erlangen-crm.org/current/E21_Person> .
+
+<http://edge.example/E21_Person--hasAddedDecoration--DecorativeItem> ns1:edge <http://purl.org/saws/ontology#DecorativeItem> .
+
+<http://purl.org/saws/ontology#DecorativeItem> ns1:edge <http://edge.example/DecorativeItem--decorationAddedBy--E21_Person> .
+
+<http://erlangen-crm.org/current/E21_Person> ns1:edge <http://edge.example/E21_Person--hasAddedDecoration--DecorativeItem>,
+        <http://edge.example/E21_Person--hasWritten--E33_Linguistic_Object> .
+

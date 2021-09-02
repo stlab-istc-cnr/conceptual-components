@@ -1,0 +1,13 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Agent--authorizedBy--Mandate> ns1:edge <https://www.ica.org/standards/RiC/ontology#Mandate> .
+
+<http://edge.example/MandateRelation--mandateRelationHasSource--Mandate> ns1:edge <https://www.ica.org/standards/RiC/ontology#Mandate> .
+
+<https://www.ica.org/standards/RiC/ontology#Mandate> ns1:edge <http://edge.example/Mandate--authorizes--Agent>,
+        <http://edge.example/Mandate--mandateIsSourceOfMandateRelation--MandateRelation> .
+

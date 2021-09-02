@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E92_Spacetime_Volume--P160_has_temporal_projection--E52_Time-Span> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+
+<http://edge.example/E93_Presence--P164_during--E52_Time-Span> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+
+<http://edge.example/E52_Time-Span--P86_falls_within--E52_Time-Span> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+
+<http://edge.example/E52_Time-Span--P86i_contains--E52_Time-Span> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ns1:edge <http://edge.example/E52_Time-Span--P86_falls_within--E52_Time-Span>,
+        <http://edge.example/E52_Time-Span--P86i_contains--E52_Time-Span> .
+

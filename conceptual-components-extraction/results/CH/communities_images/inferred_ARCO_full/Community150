@@ -1,0 +1,12 @@
+digraph "Community 150" {
+	Taxon
+	Taxon -> Taxon [label=hasDirectHigherRank]
+	Taxon -> Taxon [label=hasDirectLowerRank]
+	Thing -> Taxon [label=isClassifiedByCurrentTaxon]
+	Thing -> Taxon [label=isClassifiedByOriginalTaxon]
+	Taxon -> Taxon [label=hasHigherRank]
+	Taxon -> Taxon [label=hasLowerRank]
+	Taxon -> Thing [label=isTaxonOf]
+	Thing -> Taxon [label=hasTaxon]
+	Specimen -> Taxon [label=isClassifiedBy]
+}

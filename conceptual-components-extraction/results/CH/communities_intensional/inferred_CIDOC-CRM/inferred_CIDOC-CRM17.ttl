@@ -1,0 +1,24 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E52_Time-Span--P160i_is_temporal_projection_of--E92_Spacetime_Volume> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://edge.example/E53_Place--P161i_is_spatial_projection_of--E92_Spacetime_Volume> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://edge.example/E92_Spacetime_Volume--P10_falls_within--E92_Spacetime_Volume> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://edge.example/E92_Spacetime_Volume--P10i_contains--E92_Spacetime_Volume> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://edge.example/E92_Spacetime_Volume--P132_overlaps_with--E92_Spacetime_Volume> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://edge.example/E92_Spacetime_Volume--P133_is_separated_from--E92_Spacetime_Volume> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume> ns1:edge <http://edge.example/E92_Spacetime_Volume--P10_falls_within--E92_Spacetime_Volume>,
+        <http://edge.example/E92_Spacetime_Volume--P10i_contains--E92_Spacetime_Volume>,
+        <http://edge.example/E92_Spacetime_Volume--P132_overlaps_with--E92_Spacetime_Volume>,
+        <http://edge.example/E92_Spacetime_Volume--P133_is_separated_from--E92_Spacetime_Volume>,
+        <http://edge.example/E92_Spacetime_Volume--P161_has_spatial_projection--E53_Place> .
+

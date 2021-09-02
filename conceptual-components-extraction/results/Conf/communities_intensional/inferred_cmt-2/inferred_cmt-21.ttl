@@ -1,0 +1,50 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Administrator--enableVirtualMeeting--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Administrator--enterConferenceDetails--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Administrator--enterReviewCriteria--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Administrator--finalizePaperAssignment--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Administrator--printHardcopyMailingManifests--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Administrator--runPaperAssignmentTools--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Administrator--startReviewerBidding--Conference> ns1:edge <http://cmt#Conference> .
+
+<http://edge.example/Conference--detailsEnteredBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://edge.example/Conference--hardcopyMailingManifestsPrintedBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://edge.example/Conference--paperAssignmentFinalizedBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://edge.example/Conference--paperAssignmentToolsRunBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://edge.example/Conference--reviewCriteriaEnteredBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://edge.example/Conference--reviewerBiddingStartedBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://edge.example/Conference--virtualMeetingEnabledBy--Administrator> ns1:edge <http://cmt#Administrator> .
+
+<http://cmt#Administrator> ns1:edge <http://edge.example/Administrator--enableVirtualMeeting--Conference>,
+        <http://edge.example/Administrator--enterConferenceDetails--Conference>,
+        <http://edge.example/Administrator--enterReviewCriteria--Conference>,
+        <http://edge.example/Administrator--finalizePaperAssignment--Conference>,
+        <http://edge.example/Administrator--printHardcopyMailingManifests--Conference>,
+        <http://edge.example/Administrator--runPaperAssignmentTools--Conference>,
+        <http://edge.example/Administrator--startReviewerBidding--Conference> .
+
+<http://cmt#Conference> ns1:edge <http://edge.example/Conference--detailsEnteredBy--Administrator>,
+        <http://edge.example/Conference--hardcopyMailingManifestsPrintedBy--Administrator>,
+        <http://edge.example/Conference--paperAssignmentFinalizedBy--Administrator>,
+        <http://edge.example/Conference--paperAssignmentToolsRunBy--Administrator>,
+        <http://edge.example/Conference--reviewCriteriaEnteredBy--Administrator>,
+        <http://edge.example/Conference--reviewerBiddingStartedBy--Administrator>,
+        <http://edge.example/Conference--virtualMeetingEnabledBy--Administrator> .
+

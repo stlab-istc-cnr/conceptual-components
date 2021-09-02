@@ -1,0 +1,10 @@
+digraph "Community 260" {
+	AuthorshipAttribution -> boolean [label=dubiuosAuthorshipAttribution]
+	AuthorshipAttribution
+	AuthorshipAttribution -> Agent [label=hasAttributedAuthor]
+	AuthorshipAttribution -> Agent [label=hasAuthorityFileCataloguingAgency]
+	CulturalEntity -> AuthorshipAttribution [label=hasAuthorshipAttribution]
+	AuthorshipAttribution -> boolean [label=preferredAuthorshipAttribution]
+	AuthorshipAttribution -> CulturalEntity [label=isAuthorshipAttributionOf]
+	CulturalProperty -> AuthorshipAttribution [label=hasAuthorshipAttribution]
+}

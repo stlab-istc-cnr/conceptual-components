@@ -1,0 +1,12 @@
+digraph "Community 16" {
+	Paper -> Author [label=written_paper_by]
+	Author
+	Paper
+	Author -> Paper [label=submit]
+	Author -> Paper [label=write_paper]
+	CommitteeMember -> Paper [label=accept]
+	CommitteeMember
+	CommitteeMember -> Paper [label=reject_paper]
+	Paper -> CommitteeMember [label=accepted_by]
+	Paper -> CommitteeMember [label=rejected_paper_by]
+}

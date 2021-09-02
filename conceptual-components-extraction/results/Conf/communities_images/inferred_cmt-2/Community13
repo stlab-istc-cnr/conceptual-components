@@ -1,0 +1,9 @@
+digraph "Community 13" {
+	Reviewer -> Administrator [label=assignedByAdministrator]
+	Reviewer
+	Reviewer -> Paper [label=hasBeenAssigned]
+	Reviewer -> Paper [label=readPaper]
+	Paper -> Reviewer [label=assignedTo]
+	Administrator -> Reviewer [label=assignReviewer]
+	Paper -> Reviewer [label=readByReviewer]
+}

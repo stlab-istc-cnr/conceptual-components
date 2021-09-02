@@ -1,0 +1,27 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/A1_Excavation_Process_Unit--AP3_excavated--E53_Place> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+
+<http://edge.example/E18_Physical_Thing--AP18i_is_embedded--A7_Embedding> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> .
+
+<http://edge.example/A7_Embedding--AP17_is_found_by--S19_Encounter_Event> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> .
+
+<http://edge.example/A7_Embedding--AP20_is_embedding_at--E53_Place> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+
+<http://edge.example/E53_Place--AP20i_contains--A7_Embedding> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> .
+
+<http://edge.example/S19_Encounter_Event--AP17i_found--A7_Embedding> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S19_Encounter_Event> ns1:edge <http://edge.example/S19_Encounter_Event--AP17i_found--A7_Embedding> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place> ns1:edge <http://edge.example/E53_Place--AP20i_contains--A7_Embedding>,
+        <http://edge.example/E53_Place--AP3i_was_excavated_by--A1_Excavation_Process_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A7_Embedding> ns1:edge <http://edge.example/A7_Embedding--AP17_is_found_by--S19_Encounter_Event>,
+        <http://edge.example/A7_Embedding--AP18_is_embedding_of--E18_Physical_Thing>,
+        <http://edge.example/A7_Embedding--AP20_is_embedding_at--E53_Place> .
+

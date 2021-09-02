@@ -1,0 +1,11 @@
+digraph "Community 88" {
+	Edition -> Agent [label=hasAuthor]
+	Edition
+	Edition -> Agent [label=hasEditor]
+	Edition -> Agent [label=hasSecondaryAuthor]
+	Edition -> Title [label=hasTitle]
+	Edition -> Thing [label=isEditionOf]
+	Edition -> Literal [label=time]
+	Thing -> Edition [label=hasEdition]
+	Agent -> Edition [label=isEditorOf]
+}

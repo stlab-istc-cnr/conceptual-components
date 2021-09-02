@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalEntity--isReproducedBy--Reproduction> ns1:edge <https://w3id.org/arco/ontology/context-description/Reproduction> .
+
+<http://edge.example/PrintInPublication--hasReproduction--Reproduction> ns1:edge <https://w3id.org/arco/ontology/context-description/Reproduction> .
+
+<http://edge.example/Reproduction--hasReproductionPosition--ReproductionPosition> ns1:edge <https://w3id.org/arco/ontology/context-description/ReproductionPosition> .
+
+<http://edge.example/Reproduction--isReproductionOf--PrintInPublication> ns1:edge <https://w3id.org/arco/ontology/context-description/PrintInPublication> .
+
+<http://edge.example/ReproductionPosition--isReproductionPositionOf--Reproduction> ns1:edge <https://w3id.org/arco/ontology/context-description/Reproduction> .
+
+<https://w3id.org/arco/ontology/context-description/PrintInPublication> ns1:edge <http://edge.example/PrintInPublication--hasReproduction--Reproduction> .
+
+<https://w3id.org/arco/ontology/context-description/ReproductionPosition> ns1:edge <http://edge.example/ReproductionPosition--isReproductionPositionOf--Reproduction>,
+        <http://edge.example/ReproductionPosition--pageOrTableNumber--Literal> .
+
+<https://w3id.org/arco/ontology/context-description/Reproduction> ns1:edge <http://edge.example/Reproduction--hasReproductionPosition--ReproductionPosition>,
+        <http://edge.example/Reproduction--isReproductionOf--PrintInPublication>,
+        <http://edge.example/Reproduction--reproduces--CulturalEntity> .
+

@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E39_Actor--P109i_is_current_or_former_curator_of--E78_Collection> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> .
+
+<http://edge.example/E78_Collection--P147i_was_curated_by--E87_Curation_Activity> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> .
+
+<http://edge.example/E87_Curation_Activity--P147_curated--E78_Collection> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity> ns1:edge <http://edge.example/E87_Curation_Activity--P147_curated--E78_Collection> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E78_Collection> ns1:edge <http://edge.example/E78_Collection--P109_has_current_or_former_curator--E39_Actor>,
+        <http://edge.example/E78_Collection--P147i_was_curated_by--E87_Curation_Activity> .
+

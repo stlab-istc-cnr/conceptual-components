@@ -1,0 +1,105 @@
+Community 1 : 
+	Administrator
+	Conference detailsEnteredBy Administrator
+	Conference hardcopyMailingManifestsPrintedBy Administrator
+	Conference paperAssignmentFinalizedBy Administrator
+	Conference paperAssignmentToolsRunBy Administrator
+	Conference reviewCriteriaEnteredBy Administrator
+	Conference reviewerBiddingStartedBy Administrator
+	Conference virtualMeetingEnabledBy Administrator
+	Administrator enableVirtualMeeting Conference
+	Administrator enterConferenceDetails Conference
+	Administrator enterReviewCriteria Conference
+	Administrator finalizePaperAssignment Conference
+	Administrator printHardcopyMailingManifests Conference
+	Administrator runPaperAssignmentTools Conference
+	Administrator startReviewerBidding Conference
+	Conference
+Community 2 : 
+	ConferenceMember memberOfConference Conference
+	ConferenceMember
+	Conference hasConferenceMember ConferenceMember
+Community 3 : 
+	ProgramCommitteeMember addedBy Administrator
+	ProgramCommitteeMember
+	Administrator addProgramCommitteeMember ProgramCommitteeMember
+	Administrator setMaxPapers ProgramCommitteeMember
+Community 4 : 
+	ProgramCommittee hasProgramCommitteeMember ProgramCommitteeMember
+	ProgramCommittee
+	ProgramCommitteeMember memberOfProgramCommittee ProgramCommittee
+Community 5 : 
+	anyURI
+	Conference siteURL anyURI
+	Conference logoURL anyURI
+Community 6 : 
+	Paper
+	Administrator acceptPaper Paper
+	Paper acceptedBy Administrator
+	Paper hasBid Bid
+	Administrator rejectPaper Paper
+	Paper rejectedBy Administrator
+Community 7 : 
+	Author
+	Paper hasAuthor Author
+	Author submitPaper Paper
+	Author writePaper Paper
+Community 8 : 
+	Co-author co-writePaper Paper
+	Co-author
+	Paper hasCo-author Co-author
+Community 9 : 
+	Decision
+	Paper hasDecision Decision
+Community 10 : 
+	Meta-Reviewer
+	Paper readByMeta-Reviewer Meta-Reviewer
+Community 11 : 
+	Paper hasSubjectArea SubjectArea
+	SubjectArea
+Community 12 : 
+	unsignedLong
+	Paper paperID unsignedLong
+Community 13 : 
+	Reviewer assignedByAdministrator Administrator
+	Reviewer
+	Reviewer hasBeenAssigned Paper
+	Reviewer readPaper Paper
+	Paper assignedTo Reviewer
+	Administrator assignReviewer Reviewer
+	Paper readByReviewer Reviewer
+Community 14 : 
+	Reviewer writeReview Review
+	Review
+	Review writtenBy Reviewer
+Community 15 : 
+	ProgramCommitteeChair endReview Review
+	ProgramCommitteeChair
+Community 16 : 
+	Bid adjustedBy Reviewer
+	Bid
+	Reviewer adjustBid Bid
+Community 17 : 
+	ExternalReviewer
+	ExternalReviewer assignedByReviewer Reviewer
+	Reviewer assignExternalReviewer ExternalReviewer
+Community 18 : 
+	Conference name string
+	string
+	Paper title string
+Community 19 : 
+	Person hasConflictOfInterest Document
+	Document
+Community 20 : 
+	Person
+	Person email string
+Community 21 : 
+	ProgramCommitteeMember maxPapers int
+	int
+	Conference reviewsPerPaper int
+Community 22 : 
+	Conference acceptsHardcopySubmissions boolean
+	boolean
+Community 23 : 
+	Conference date date
+	date

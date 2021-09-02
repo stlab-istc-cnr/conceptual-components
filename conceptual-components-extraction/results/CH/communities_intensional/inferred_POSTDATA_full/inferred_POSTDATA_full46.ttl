@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/PoeticWork--isPartOf--Ensemble> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#Ensemble> .
+
+<http://edge.example/Redaction--numberOfWitnessesUsed--integer> ns1:edge xsd:integer .
+
+<http://edge.example/Word--stressPosition--integer> ns1:edge xsd:integer .
+
+<http://edge.example/Ensemble--numberOfLines--integer> ns1:edge xsd:integer .
+
+<http://edge.example/Ensemble--numberOfPlays--integer> ns1:edge xsd:integer .
+
+<http://edge.example/Ensemble--numberOfPoems--integer> ns1:edge xsd:integer .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Ensemble> ns1:edge <http://edge.example/Ensemble--date--DateEntity>,
+        <http://edge.example/Ensemble--hasCreator--CreatorRole>,
+        <http://edge.example/Ensemble--hasRole--Role>,
+        <http://edge.example/Ensemble--numberOfLines--integer>,
+        <http://edge.example/Ensemble--numberOfPlays--integer>,
+        <http://edge.example/Ensemble--numberOfPoems--integer> .
+

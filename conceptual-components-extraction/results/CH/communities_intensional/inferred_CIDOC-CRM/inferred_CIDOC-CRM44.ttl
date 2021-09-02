@@ -1,0 +1,16 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E57_Material--P68i_use_foreseen_by--E29_Design_or_Procedure> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://edge.example/E7_Activity--P33_used_specific_technique--E29_Design_or_Procedure> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://edge.example/E29_Design_or_Procedure--P69_is_associated_with--E29_Design_or_Procedure> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure> ns1:edge <http://edge.example/E29_Design_or_Procedure--P33i_was_used_by--E7_Activity>,
+        <http://edge.example/E29_Design_or_Procedure--P68_foresees_use_of--E57_Material>,
+        <http://edge.example/E29_Design_or_Procedure--P69_is_associated_with--E29_Design_or_Procedure> .
+

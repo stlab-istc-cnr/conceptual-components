@@ -1,0 +1,21 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Conference_Program--Program_made_by--Program_chair> ns1:edge <http://openconf#Program_chair> .
+
+<http://edge.example/Conference_Program--planned_papers--Planed_Paper> ns1:edge <http://openconf#Planed_Paper> .
+
+<http://edge.example/Planed_Paper--is_planned_in--Conference_Program> ns1:edge <http://openconf#Conference_Program> .
+
+<http://edge.example/Program_chair--made_program--Conference_Program> ns1:edge <http://openconf#Conference_Program> .
+
+<http://openconf#Planed_Paper> ns1:edge <http://edge.example/Planed_Paper--is_planned_in--Conference_Program> .
+
+<http://openconf#Program_chair> ns1:edge <http://edge.example/Program_chair--made_program--Conference_Program> .
+
+<http://openconf#Conference_Program> ns1:edge <http://edge.example/Conference_Program--Program_made_by--Program_chair>,
+        <http://edge.example/Conference_Program--planned_papers--Planed_Paper> .
+

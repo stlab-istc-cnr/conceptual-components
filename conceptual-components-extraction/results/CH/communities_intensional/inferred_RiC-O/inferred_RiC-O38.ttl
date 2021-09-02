@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Thing--isAssociatedWithEvent--Event> ns1:edge <https://www.ica.org/standards/RiC/ontology#Event> .
+
+<http://edge.example/Thing--isOrWasAffectedBy--Event> ns1:edge <https://www.ica.org/standards/RiC/ontology#Event> .
+
+<http://edge.example/Thing--isOrWasParticipantIn--Event> ns1:edge <https://www.ica.org/standards/RiC/ontology#Event> .
+
+<http://edge.example/Thing--resultsOrResultedFrom--Event> ns1:edge <https://www.ica.org/standards/RiC/ontology#Event> .
+
+<http://edge.example/Event--hasOrHadSubevent--Event> ns1:edge <https://www.ica.org/standards/RiC/ontology#Event> .
+
+<http://edge.example/Event--isOrWasSubeventOf--Event> ns1:edge <https://www.ica.org/standards/RiC/ontology#Event> .
+
+<https://www.ica.org/standards/RiC/ontology#Event> ns1:edge <http://edge.example/Event--affectsOrAffected--Thing>,
+        <http://edge.example/Event--hasOrHadParticipant--Thing>,
+        <http://edge.example/Event--hasOrHadSubevent--Event>,
+        <http://edge.example/Event--isEventAssociatedWith--Thing>,
+        <http://edge.example/Event--isOrWasSubeventOf--Event>,
+        <http://edge.example/Event--resultsOrResultedIn--Thing> .
+

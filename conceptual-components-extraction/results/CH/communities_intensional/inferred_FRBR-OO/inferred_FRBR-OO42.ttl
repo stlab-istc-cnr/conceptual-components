@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/F35_Nomen_Use_Statement--R35_specified_by--F34_KOS> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> .
+
+<http://edge.example/E52_Time-Span--R34i_is_validity_period_of--F34_KOS> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> .
+
+<http://edge.example/F34_KOS--R34_has_validity_period--E52_Time-Span> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ns1:edge <http://edge.example/E52_Time-Span--R34i_is_validity_period_of--F34_KOS> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS> ns1:edge <http://edge.example/F34_KOS--R34_has_validity_period--E52_Time-Span>,
+        <http://edge.example/F34_KOS--R35i_specifies--F35_Nomen_Use_Statement> .
+

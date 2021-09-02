@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Line--hasFirstToken--Token> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> .
+
+<http://edge.example/Line--hasLastToken--Token> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> .
+
+<http://edge.example/Line--hasToken--Token> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> .
+
+<http://edge.example/Token--nextToken--Token> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> .
+
+<http://edge.example/Token--previousToken--Token> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Token> ns1:edge <http://edge.example/Token--belongsToLine--Line>,
+        <http://edge.example/Token--isFirstToken--Line>,
+        <http://edge.example/Token--isLastToken--Line>,
+        <http://edge.example/Token--nextToken--Token>,
+        <http://edge.example/Token--previousToken--Token> .
+

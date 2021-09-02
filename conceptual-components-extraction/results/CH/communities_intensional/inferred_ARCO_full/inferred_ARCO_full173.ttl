@@ -1,0 +1,21 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalEntity--hasLocationSubject--TimeIndexedTypedLocation> ns1:edge <https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> .
+
+<http://edge.example/CulturalProperty--hasTimeIndexedTypedLocation--TimeIndexedTypedLocation> ns1:edge <https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> .
+
+<http://edge.example/Feature--isLocationIn--TimeIndexedTypedLocation> ns1:edge <https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> .
+
+<http://edge.example/Thing--hasTimeIndexedTypedLocation--TimeIndexedTypedLocation> ns1:edge <https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> .
+
+<https://w3id.org/arco/ontology/location/TimeIndexedTypedLocation> ns1:edge <http://edge.example/TimeIndexedTypedLocation--atSite--Site>,
+        <http://edge.example/TimeIndexedTypedLocation--atTime--TimeInterval>,
+        <http://edge.example/TimeIndexedTypedLocation--hasOrientation--Orientation>,
+        <http://edge.example/TimeIndexedTypedLocation--isLocationSubjectOf--CulturalEntity>,
+        <http://edge.example/TimeIndexedTypedLocation--isTimeIndexedTypedLocationOf--Thing>,
+        <http://edge.example/TimeIndexedTypedLocation--locationDetails--Literal> .
+

@@ -1,0 +1,16 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/FruitSample--hasPreservationType--PreservationType> ns1:edge <https://w3id.org/arco/ontology/movable-property/PreservationType> .
+
+<http://edge.example/PreservationType--isPreservationTypeOf--FruitSample> ns1:edge <https://w3id.org/arco/ontology/movable-property/FruitSample> .
+
+<https://w3id.org/arco/ontology/movable-property/FruitSample> ns1:edge <http://edge.example/FruitSample--dateOfLastChangePreservative--Literal>,
+        <http://edge.example/FruitSample--dateOfLastChangePreservative--date>,
+        <http://edge.example/FruitSample--hasPreservationType--PreservationType> .
+
+<https://w3id.org/arco/ontology/movable-property/PreservationType> ns1:edge <http://edge.example/PreservationType--isPreservationTypeOf--FruitSample> .
+

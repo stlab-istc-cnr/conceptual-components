@@ -1,0 +1,34 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/A1_Excavation_Process_Unit--AP10_destroyed--S22_Segment_of_Matter> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S22_Segment_of_Matter> .
+
+<http://edge.example/A1_Excavation_Process_Unit--AP1_produced--S11_Amount_of_Matter> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> .
+
+<http://edge.example/A1_Excavation_Process_Unit--AP2_discarded_into--S11_Amount_of_Matter> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> .
+
+<http://edge.example/A1_Excavation_Process_Unit--AP4_produced_surface--S20_Physical_Feature> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> .
+
+<http://edge.example/S11_Amount_of_Matter--AP1i_was_produced_by--A1_Excavation_Process_Unit> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> .
+
+<http://edge.example/S11_Amount_of_Matter--AP2i_was_discarded_by--A1_Excavation_Process_Unit> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> .
+
+<http://edge.example/S20_Physical_Feature--AP4i_was_surface_produced_by--A1_Excavation_Process_Unit> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> .
+
+<http://edge.example/S22_Segment_of_Matter--AP10i_was_destroyed_by--A1_Excavation_Process_Unit> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S20_Physical_Feature> ns1:edge <http://edge.example/S20_Physical_Feature--AP4i_was_surface_produced_by--A1_Excavation_Process_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S22_Segment_of_Matter> ns1:edge <http://edge.example/S22_Segment_of_Matter--AP10i_was_destroyed_by--A1_Excavation_Process_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMsci/S11_Amount_of_Matter> ns1:edge <http://edge.example/S11_Amount_of_Matter--AP1i_was_produced_by--A1_Excavation_Process_Unit>,
+        <http://edge.example/S11_Amount_of_Matter--AP2i_was_discarded_by--A1_Excavation_Process_Unit> .
+
+<http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/A1_Excavation_Process_Unit> ns1:edge <http://edge.example/A1_Excavation_Process_Unit--AP10_destroyed--S22_Segment_of_Matter>,
+        <http://edge.example/A1_Excavation_Process_Unit--AP1_produced--S11_Amount_of_Matter>,
+        <http://edge.example/A1_Excavation_Process_Unit--AP2_discarded_into--S11_Amount_of_Matter>,
+        <http://edge.example/A1_Excavation_Process_Unit--AP4_produced_surface--S20_Physical_Feature> .
+

@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Agent--isOrWasResponsibleForEnforcing--Rule> ns1:edge <https://www.ica.org/standards/RiC/ontology#Rule> .
+
+<http://edge.example/Agent--isResponsibleForIssuing--Rule> ns1:edge <https://www.ica.org/standards/RiC/ontology#Rule> .
+
+<http://edge.example/RecordResource--expressesOrExpressed--Rule> ns1:edge <https://www.ica.org/standards/RiC/ontology#Rule> .
+
+<http://edge.example/Thing--isAssociatedWithRule--Rule> ns1:edge <https://www.ica.org/standards/RiC/ontology#Rule> .
+
+<http://edge.example/Thing--isOrWasRegulatedBy--Rule> ns1:edge <https://www.ica.org/standards/RiC/ontology#Rule> .
+
+<https://www.ica.org/standards/RiC/ontology#Rule> ns1:edge <http://edge.example/Rule--isOrWasEnforcedBy--Agent>,
+        <http://edge.example/Rule--isOrWasExpressedBy--RecordResource>,
+        <http://edge.example/Rule--isRuleAssociatedWith--Thing>,
+        <http://edge.example/Rule--issuedBy--Agent>,
+        <http://edge.example/Rule--regulatesOrRegulated--Thing>,
+        <http://edge.example/Rule--ruleIsSourceOfRuleRelation--RuleRelation> .
+

@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Redaction--hasOrderedTextUnitList--OrderedTextUnitList> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#OrderedTextUnitList> .
+
+<http://edge.example/OrderedTextUnitList--hasFirstPart--TextUnit> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit> .
+
+<http://edge.example/OrderedTextUnitList--hasTextUnit--TextUnit> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#OrderedTextUnitList> ns1:edge <http://edge.example/OrderedTextUnitList--hasFirstPart--TextUnit>,
+        <http://edge.example/OrderedTextUnitList--hasTextUnit--TextUnit> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#TextUnit> ns1:edge <http://edge.example/TextUnit--firstPartOf--Redaction> .
+

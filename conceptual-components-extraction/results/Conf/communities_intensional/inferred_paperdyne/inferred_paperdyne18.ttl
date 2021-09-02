@@ -1,0 +1,30 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Conference--focusesOn--Topic> ns1:edge <http://paperdyne#Topic> .
+
+<http://edge.example/Author--changes--Contribution> ns1:edge <http://paperdyne#Contribution> .
+
+<http://edge.example/Author--creates--Contribution> ns1:edge <http://paperdyne#Contribution> .
+
+<http://edge.example/Contribution--changedBy--Author> ns1:edge <http://paperdyne#Author> .
+
+<http://edge.example/Contribution--covers--Topic> ns1:edge <http://paperdyne#Topic> .
+
+<http://edge.example/Contribution--createdBy--Author> ns1:edge <http://paperdyne#Author> .
+
+<http://edge.example/Topic--coveredBy--Contribution> ns1:edge <http://paperdyne#Contribution> .
+
+<http://paperdyne#Author> ns1:edge <http://edge.example/Author--changes--Contribution>,
+        <http://edge.example/Author--creates--Contribution>,
+        <http://edge.example/Author--speaks--Paper> .
+
+<http://paperdyne#Topic> ns1:edge <http://edge.example/Topic--coveredBy--Contribution> .
+
+<http://paperdyne#Contribution> ns1:edge <http://edge.example/Contribution--changedBy--Author>,
+        <http://edge.example/Contribution--covers--Topic>,
+        <http://edge.example/Contribution--createdBy--Author> .
+

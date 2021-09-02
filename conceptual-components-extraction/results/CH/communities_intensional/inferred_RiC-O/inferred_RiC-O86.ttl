@@ -1,0 +1,21 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/AuthorshipRelation--authorshipRelationHasSource--Record> ns1:edge <https://www.ica.org/standards/RiC/ontology#Record> .
+
+<http://edge.example/Record--hasOrHadConstituent--RecordPart> ns1:edge <https://www.ica.org/standards/RiC/ontology#RecordPart> .
+
+<http://edge.example/Record--recordIsSourceOfAuthorshipRelation--AuthorshipRelation> ns1:edge <https://www.ica.org/standards/RiC/ontology#AuthorshipRelation> .
+
+<http://edge.example/RecordPart--isOrWasConstituentOf--Record> ns1:edge <https://www.ica.org/standards/RiC/ontology#Record> .
+
+<https://www.ica.org/standards/RiC/ontology#AuthorshipRelation> ns1:edge <http://edge.example/AuthorshipRelation--authorshipRelationHasSource--Record> .
+
+<https://www.ica.org/standards/RiC/ontology#RecordPart> ns1:edge <http://edge.example/RecordPart--isOrWasConstituentOf--Record> .
+
+<https://www.ica.org/standards/RiC/ontology#Record> ns1:edge <http://edge.example/Record--hasOrHadConstituent--RecordPart>,
+        <http://edge.example/Record--recordIsSourceOfAuthorshipRelation--AuthorshipRelation> .
+

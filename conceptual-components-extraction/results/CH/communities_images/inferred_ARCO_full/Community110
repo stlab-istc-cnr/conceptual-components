@@ -1,0 +1,14 @@
+digraph "Community 110" {
+	Documentation -> Thing [label=isDocumentationOf]
+	Documentation
+	Documentation -> CulturalEntity [label=isPrimaryDocumentationOf]
+	Documentation -> Literal [label=rights]
+	Documentation -> Literal [label=specifications]
+	Thing -> Documentation [label=hasDocumentation]
+	CulturalProperty -> Documentation [label=hasDocumentation]
+	CulturalEntity -> Documentation [label=hasPrimaryDocumentation]
+	Documentation -> Literal [label=digitalFilename]
+	Documentation -> Literal [label=documentationIdentifier]
+	Documentation -> Literal [label=documentationLocation]
+	Documentation -> Literal [label=documentationTitle]
+}

@@ -1,0 +1,8 @@
+digraph "Community 273" {
+	PhotographicSeries -> PhotographicSeriesMembership [label=isPhotographicSeriesIn]
+	PhotographicSeriesMembership
+	PhotographicSeriesMembership -> CulturalEntity [label=hasMemberOfPhotographicSeries]
+	PhotographicSeriesMembership -> Literal [label=photographicSeriesItemNumber]
+	PhotographicSeriesMembership -> Literal [label=photographicSubseriesItemNumber]
+	CulturalEntity -> PhotographicSeriesMembership [label=isMemberOfPhotographicSeriesIn]
+}

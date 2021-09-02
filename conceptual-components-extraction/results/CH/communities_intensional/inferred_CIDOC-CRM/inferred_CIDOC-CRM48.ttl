@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E52_Time-Span--P83_had_at_least_duration--E54_Dimension> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> .
+
+<http://edge.example/E52_Time-Span--P84_had_at_most_duration--E54_Dimension> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> .
+
+<http://edge.example/E70_Thing--P43_has_dimension--E54_Dimension> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ns1:edge <http://edge.example/E54_Dimension--P40i_was_observed_in--E16_Measurement>,
+        <http://edge.example/E54_Dimension--P43i_is_dimension_of--E70_Thing>,
+        <http://edge.example/E54_Dimension--P83i_was_minimum_duration_of--E52_Time-Span>,
+        <http://edge.example/E54_Dimension--P84i_was_maximum_duration_of--E52_Time-Span> .
+

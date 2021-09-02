@@ -1,0 +1,14 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Concept--inScheme--ConceptScheme> ns1:edge <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+<http://edge.example/ConceptScheme--isSchemeOf--Concept> ns1:edge <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<http://www.w3.org/2004/02/skos/core#Concept> ns1:edge <http://edge.example/Concept--inScheme--ConceptScheme> .
+
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> ns1:edge <http://edge.example/ConceptScheme--isSchemeOf--Concept> .
+

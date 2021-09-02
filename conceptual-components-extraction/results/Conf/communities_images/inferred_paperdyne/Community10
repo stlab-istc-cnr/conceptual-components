@@ -1,0 +1,10 @@
+digraph "Community 10" {
+	Reviewer -> Program_Comitee [label=memberOf]
+	Program_Comitee
+	Program_Comitee -> Paper [label=discusses]
+	Program_Comitee -> Program_Comitee_Chair [label=hasMembers]
+	Program_Comitee -> Reviewer [label=hasMembers]
+	Program_Comitee_Chair -> Program_Comitee [label=headOf]
+	Program_Comitee_Chair -> Program_Comitee [label=memberOf]
+	Paper -> Program_Comitee [label=discussedBy]
+}

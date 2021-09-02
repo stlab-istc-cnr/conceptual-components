@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Anomaly--hasAnomalyOrigin--AnomalyOrigin> ns1:edge <https://w3id.org/arco/ontology/context-description/AnomalyOrigin> .
+
+<http://edge.example/Anomaly--hasAnomalyType--AnomalyType> ns1:edge <https://w3id.org/arco/ontology/context-description/AnomalyType> .
+
+<http://edge.example/AnomalyOrigin--isAnomalyOriginOf--Anomaly> ns1:edge <https://w3id.org/arco/ontology/context-description/Anomaly> .
+
+<http://edge.example/AnomalyType--isAnomalyTypeOf--Anomaly> ns1:edge <https://w3id.org/arco/ontology/context-description/Anomaly> .
+
+<https://w3id.org/arco/ontology/context-description/AnomalyOrigin> ns1:edge <http://edge.example/AnomalyOrigin--isAnomalyOriginOf--Anomaly> .
+
+<https://w3id.org/arco/ontology/context-description/AnomalyType> ns1:edge <http://edge.example/AnomalyType--isAnomalyTypeOf--Anomaly> .
+
+<https://w3id.org/arco/ontology/context-description/Anomaly> ns1:edge <http://edge.example/Anomaly--hasAnomalyOrigin--AnomalyOrigin>,
+        <http://edge.example/Anomaly--hasAnomalyType--AnomalyType>,
+        <http://edge.example/Anomaly--isAnomalyOf--PhotoInterpretationRendering> .
+

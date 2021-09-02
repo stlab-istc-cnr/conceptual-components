@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E1_CRM_Entity--P129i_is_subject_of--E89_Propositional_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> .
+
+<http://edge.example/E1_CRM_Entity--P67i_is_referred_to_by--E89_Propositional_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> .
+
+<http://edge.example/E89_Propositional_Object--P148_has_component--E89_Propositional_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> .
+
+<http://edge.example/E89_Propositional_Object--P148i_is_component_of--E89_Propositional_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ns1:edge <http://edge.example/E89_Propositional_Object--P129_is_about--E1_CRM_Entity>,
+        <http://edge.example/E89_Propositional_Object--P148_has_component--E89_Propositional_Object>,
+        <http://edge.example/E89_Propositional_Object--P148i_is_component_of--E89_Propositional_Object>,
+        <http://edge.example/E89_Propositional_Object--P67_refers_to--E1_CRM_Entity> .
+

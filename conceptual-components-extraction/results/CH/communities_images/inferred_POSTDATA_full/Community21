@@ -1,0 +1,15 @@
+digraph "Community 21" {
+	Stanza -> Line [label=hasFirstLine]
+	Stanza
+	Line -> Stanza [label=isFirstLine]
+	Stanza -> Redaction [label=isFirstStanza]
+	OrderedStanzaList -> Stanza [label=hasStanzaItem]
+	Stanza -> boolean [label=isRefrainOmitted]
+	Stanza -> Stanza [label=nextStanza]
+	Stanza -> string [label=paraphrasis]
+	Stanza -> Stanza [label=previousStanza]
+	Stanza -> Stanza [label=isTheSameAs]
+	Stanza -> Concept [label=typeOfStanza]
+	Stanza -> Concept [label=typeOfStanzaEdition]
+	Line -> Stanza [label=belongsToStanza]
+}

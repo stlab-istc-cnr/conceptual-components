@@ -1,0 +1,16 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Administrator--assignReviewer--Reviewer> ns1:edge <http://cmt#Reviewer> .
+
+<http://edge.example/Paper--assignedTo--Reviewer> ns1:edge <http://cmt#Reviewer> .
+
+<http://edge.example/Paper--readByReviewer--Reviewer> ns1:edge <http://cmt#Reviewer> .
+
+<http://cmt#Reviewer> ns1:edge <http://edge.example/Reviewer--assignedByAdministrator--Administrator>,
+        <http://edge.example/Reviewer--hasBeenAssigned--Paper>,
+        <http://edge.example/Reviewer--readPaper--Paper> .
+

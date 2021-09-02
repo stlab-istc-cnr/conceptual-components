@@ -1,0 +1,30 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dati.beniculturali.it/cis/Site> ns1:edge <http://edge.example/Site--hasSiteType--SiteType>,
+        <http://edge.example/Site--isSiteIn--TimeIndexedTypedLocation>,
+        <http://edge.example/Site--siteIdentifier--Literal> .
+
+<http://edge.example/Site--hasSiteType--SiteType> ns1:edge <https://w3id.org/arco/ontology/location/SiteType> .
+
+<http://edge.example/SiteDefinition--isSiteDefinitionOf--SiteType> ns1:edge <https://w3id.org/arco/ontology/location/SiteType> .
+
+<http://edge.example/SiteSpecification--isSiteSpecificationOf--SiteType> ns1:edge <https://w3id.org/arco/ontology/location/SiteType> .
+
+<http://edge.example/SiteType--hasSiteDefinition--SiteDefinition> ns1:edge <https://w3id.org/arco/ontology/location/SiteDefinition> .
+
+<http://edge.example/SiteType--hasSiteSpecification--SiteSpecification> ns1:edge <https://w3id.org/arco/ontology/location/SiteSpecification> .
+
+<http://edge.example/SiteType--isSiteTypeOf--Site> ns1:edge <http://dati.beniculturali.it/cis/Site> .
+
+<https://w3id.org/arco/ontology/location/SiteDefinition> ns1:edge <http://edge.example/SiteDefinition--isSiteDefinitionOf--SiteType> .
+
+<https://w3id.org/arco/ontology/location/SiteSpecification> ns1:edge <http://edge.example/SiteSpecification--isSiteSpecificationOf--SiteType> .
+
+<https://w3id.org/arco/ontology/location/SiteType> ns1:edge <http://edge.example/SiteType--hasSiteDefinition--SiteDefinition>,
+        <http://edge.example/SiteType--hasSiteSpecification--SiteSpecification>,
+        <http://edge.example/SiteType--isSiteTypeOf--Site> .
+

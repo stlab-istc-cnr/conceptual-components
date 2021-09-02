@@ -1,0 +1,50 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Item--is_given_to--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Item--is_made_from--Item> ns1:edge <http://iasted#Item> .
+
+<http://edge.example/Item--is_needed_for--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Item--is_prepared_by--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Item--is_sent_by--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Item--is_signed_by--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Item--is_used_by--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Item--is_writen_by--Person> ns1:edge <http://iasted#Person> .
+
+<http://edge.example/Person--need--Item> ns1:edge <http://iasted#Item> .
+
+<http://edge.example/Person--obtain--Item> ns1:edge <http://iasted#Item> .
+
+<http://edge.example/Person--prepare--Item> ns1:edge <http://iasted#Item> .
+
+<http://edge.example/Person--send--Item> ns1:edge <http://iasted#Item> .
+
+<http://edge.example/Person--sign--Item> ns1:edge <http://iasted#Item> .
+
+<http://edge.example/Person--write--Item> ns1:edge <http://iasted#Item> .
+
+<http://iasted#Item> ns1:edge <http://edge.example/Item--is_given_to--Person>,
+        <http://edge.example/Item--is_made_from--Item>,
+        <http://edge.example/Item--is_needed_for--Person>,
+        <http://edge.example/Item--is_prepared_by--Person>,
+        <http://edge.example/Item--is_sent_by--Person>,
+        <http://edge.example/Item--is_signed_by--Person>,
+        <http://edge.example/Item--is_used_by--Person>,
+        <http://edge.example/Item--is_writen_by--Person> .
+
+<http://iasted#Person> ns1:edge <http://edge.example/Person--need--Item>,
+        <http://edge.example/Person--obtain--Item>,
+        <http://edge.example/Person--prepare--Item>,
+        <http://edge.example/Person--send--Item>,
+        <http://edge.example/Person--sign--Item>,
+        <http://edge.example/Person--write--Item> .
+

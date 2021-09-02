@@ -1,0 +1,359 @@
+Community 1 : 
+	Thing realizationOf Thing
+	Thing
+	Thing realizerOf Thing
+	Thing reconfigurationOf Thing
+	Thing reproductionOf Thing
+	Thing responsibleEntityOf Thing
+	Thing revisionOf Thing
+	Thing rights Thing
+	Thing subjectOf Thing
+	Thing successorOf Thing
+	Thing summarizationOf Thing
+	Thing supplementOf Thing
+	Thing topObjectProperty Thing
+	Thing transformationOf Thing
+	Thing translationOf Thing
+	Item owner Thing
+	Thing abridgementOf Thing
+	Thing adaptionOf Thing
+	Thing alternateOf Thing
+	Thing arrangementOf Thing
+	Thing complementOf Thing
+	Thing creator Thing
+	Thing creatorOf Thing
+	Thing embodimentOf Thing
+	Thing exemplarOf Thing
+	Thing format Thing
+	Thing hasPrimarySubjectTerm Thing
+	Thing imitationOf Thing
+	Thing language Thing
+	Thing license Thing
+	Thing ownerOf Thing
+	Thing part Thing
+	Thing partOf Thing
+	Thing producerOf Thing
+	Thing publisher Thing
+Community 2 : 
+	WorkCollection
+	WorkCollection part Work
+Community 3 : 
+	Work
+	Expression realizationOf Work
+Community 4 : 
+	Expression
+	Work realization Expression
+	Manifestation embodimentOf Expression
+Community 5 : 
+	ExpressionCollection part Expression
+	ExpressionCollection
+Community 6 : 
+	Item reconfiguration Item
+	Item
+	Item isRepresentationOf Expression
+	Expression hasRepresentation Item
+Community 7 : 
+	Work creator Thing
+	Work
+	Item isPortrayalOf Work
+	Work hasPortrayal Item
+Community 8 : 
+	Expression
+	Expression abridgement Expression
+	Expression arrangement Expression
+	Expression realizer Thing
+	Expression revision Expression
+	Expression translation Expression
+Community 9 : 
+	Manifestation
+	Manifestation alternate Manifestation
+	Expression embodiment Manifestation
+	Manifestation isManifestationOf Work
+	Manifestation producer Thing
+	Work hasManifestation Manifestation
+Community 10 : 
+	Manifestation
+	Manifestation exemplar Item
+	ManifestationCollection part Manifestation
+	Item exemplarOf Manifestation
+	ManifestationCollection
+Community 11 : 
+	Endeavour hasPubMedCentralId string
+	string
+	Endeavour hasPubMedId string
+	Endeavour hasShortTitle string
+	Endeavour hasHandle string
+Community 12 : 
+	Endeavour
+	Endeavour hasSICI string
+	Endeavour relatedEndeavour Endeavour
+	Endeavour hasSubtitle string
+Community 13 : 
+	Endeavour hasCharacterCount positiveInteger
+	positiveInteger
+	Endeavour wordCount positiveInteger
+	Endeavour hasPageCount positiveInteger
+Community 14 : 
+	Place
+	Endeavour hasPlaceOfPublication Place
+Community 15 : 
+	Endeavour responsibleEntity ResponsibleEntity
+	ResponsibleEntity
+Community 16 : 
+	Endeavour hasURL anyURI
+	anyURI
+Community 17 : 
+	gYear
+	Endeavour hasCopyrightYear gYear
+Community 18 : 
+	nonNegativeInteger
+	Endeavour hasVolumeCount nonNegativeInteger
+Community 19 : 
+	Journal part JournalIssue
+	Journal
+	JournalVolume partOf Journal
+Community 20 : 
+	Journal part JournalVolume
+	JournalVolume
+Community 21 : 
+	JournalEditorial partOf JournalIssue
+	JournalEditorial
+Community 22 : 
+	JournalIssue partOf JournalVolume
+	JournalIssue
+Community 23 : 
+	JournalArticle partOf JournalIssue
+	JournalArticle
+Community 24 : 
+	JournalNewsItem
+	JournalNewsItem partOf JournalIssue
+Community 25 : 
+	MagazineIssue partOf Magazine
+	MagazineIssue
+Community 26 : 
+	Magazine
+	Magazine part MagazineIssue
+Community 27 : 
+	MagazineArticle partOf MagazineIssue
+	MagazineArticle
+Community 28 : 
+	MagazineEditorial partOf MagazineIssue
+	MagazineEditorial
+Community 29 : 
+	MagazineNewsItem partOf MagazineIssue
+	MagazineNewsItem
+Community 30 : 
+	Newspaper
+	NewspaperIssue partOf Newspaper
+Community 31 : 
+	NewspaperIssue
+	Newspaper part NewspaperIssue
+Community 32 : 
+	NewspaperArticle
+	NewspaperArticle partOf NewspaperIssue
+Community 33 : 
+	NewspaperEditorial
+	NewspaperEditorial partOf NewspaperIssue
+Community 34 : 
+	NewspaperNewsItem partOf NewspaperIssue
+	NewspaperNewsItem
+Community 35 : 
+	dateTime
+	Item hasDepositDate dateTime
+Community 36 : 
+	Item hasAccessDate dateTime
+	Item
+Community 37 : 
+	StorageMedium
+	Item isStoredOn StorageMedium
+	StorageMedium stores Item
+Community 38 : 
+	ItemCollection
+	ItemCollection part Item
+Community 39 : 
+	ArchivalDocument
+	ArchivalDocumentSet part ArchivalDocument
+Community 40 : 
+	ArchivalRecord
+	ArchivalRecord realization ArchivalDocument
+Community 41 : 
+	ArchivalRecordSet
+	ArchivalRecordSet part ArchivalRecord
+Community 42 : 
+	ArchivalRecordSet realization ArchivalDocumentSet
+	ArchivalDocumentSet
+Community 43 : 
+	AnalogItem
+	AnalogItem exemplarOf AnalogManifestation
+	AnalogManifestation exemplar AnalogItem
+	AnalogManifestation
+Community 44 : 
+	AnalogItem isStoredOn AnalogStorageMedium
+	AnalogStorageMedium
+	AnalogStorageMedium stores AnalogItem
+Community 45 : 
+	Book
+	BookChapter partOf Book
+	BookChapter
+Community 46 : 
+	BookSeries
+	BookSeries part Book
+Community 47 : 
+	BookSet
+	BookSet part Book
+Community 48 : 
+	DigitalItem exemplarOf DigitalManifestation
+	DigitalItem
+	DigitalManifestation
+	DigitalManifestation exemplar DigitalItem
+Community 49 : 
+	DigitalStorageMedium stores DigitalItem
+	DigitalStorageMedium
+	DigitalItem isStoredOn DigitalStorageMedium
+Community 50 : 
+	Periodical part PeriodicalIssue
+	PeriodicalIssue
+Community 51 : 
+	Periodical
+	PeriodicalIssue partOf Periodical
+Community 52 : 
+	PeriodicalVolume
+	PeriodicalVolume partOf Periodical
+Community 53 : 
+	InstructionalWork
+	Textbook realizationOf InstructionalWork
+	Textbook
+Community 54 : 
+	InstructionManual
+	InstructionManual realizationOf InstructionalWork
+Community 55 : 
+	TermDictionary isSchemeOf SubjectTerm
+	SubjectTerm
+	Endeavour hasSubjectTerm SubjectTerm
+Community 56 : 
+	SubjectTerm inScheme TermDictionary
+	TermDictionary
+Community 57 : 
+	Proposition
+	CallForApplications realizationOf Proposition
+	CallForApplications
+Community 58 : 
+	DataMangementPlan
+	DataMangementPlan realizationOf Proposition
+Community 59 : 
+	ReferenceBook realizationOf ReferenceWork
+	ReferenceBook
+	ReferenceWork
+Community 60 : 
+	ReferenceEntry realizationOf ReferenceWork
+	ReferenceEntry
+Community 61 : 
+	ConceptScheme isSchemeOf Concept
+	ConceptScheme
+	Concept
+	Concept inScheme ConceptScheme
+Community 62 : 
+	DisciplineDictionary
+	DisciplineDictionary isSchemeOf SubjectDiscipline
+	SubjectDiscipline inScheme DisciplineDictionary
+	SubjectDiscipline
+Community 63 : 
+	Figure realizationOf StillImage
+	Figure
+	StillImage
+Community 64 : 
+	NewsItem realizationOf NewsReport
+	NewsItem
+	NewsReport
+Community 65 : 
+	Vocabulary
+	VocabularyDocument realizationOf Vocabulary
+	VocabularyDocument
+Community 66 : 
+	WebContent embodiment WebManifestation
+	WebContent
+	WebManifestation
+Community 67 : 
+	Editorial
+	Editorial realizationOf Opinion
+	Opinion
+Community 68 : 
+	SpecificationDocument realizationOf Specification
+	Specification
+	SpecificationDocument
+Community 69 : 
+	WorkshopPaper
+	WorkshopProceedings part WorkshopPaper
+	WorkshopProceedings
+Community 70 : 
+	Patent
+	PatentDocument realizationOf Patent
+	PatentDocument
+Community 71 : 
+	ConferenceProceedings
+	ConferenceProceedings part ConferencePaper
+	ConferencePaper
+Community 72 : 
+	Metadata
+	MetadataDocument realizationOf Metadata
+	MetadataDocument
+Community 73 : 
+	Report
+	ReportDocument realizationOf Report
+	ReportDocument
+Community 74 : 
+	Entry
+	Diary part Entry
+	Diary
+Community 75 : 
+	AudioDocument realizationOf SoundRecording
+	SoundRecording
+	AudioDocument
+Community 76 : 
+	Review
+	ReviewArticle realizationOf Review
+	ReviewArticle
+Community 77 : 
+	StructuredSummary realizationOf MinimalInformationStandard
+	StructuredSummary
+	MinimalInformationStandard
+Community 78 : 
+	Movie realizationOf MovingImage
+	Movie
+	MovingImage
+Community 79 : 
+	PolicyDocument
+	PolicyDocument realizationOf Policy
+	Policy
+Community 80 : 
+	PatentApplication
+	PatentApplicationDocument realizationOf PatentApplication
+	PatentApplicationDocument
+Community 81 : 
+	ProjectReportDocument realizationOf ProjectReport
+	ProjectReport
+	ProjectReportDocument
+Community 82 : 
+	GrantApplicationDocument realizationOf GrantApplication
+	GrantApplication
+	GrantApplicationDocument
+Community 83 : 
+	AcademicProceedings part ProceedingsPaper
+	ProceedingsPaper
+	AcademicProceedings
+Community 84 : 
+	VocabularyMapping
+	VocabularyMappingDocument realizationOf VocabularyMapping
+	VocabularyMappingDocument
+Community 85 : 
+	CaseForSupport
+	CaseForSupportDocument realizationOf CaseForSupport
+	CaseForSupportDocument
+Community 86 : 
+	OntologyDocument realizationOf Ontology
+	Ontology
+	OntologyDocument
+Community 87 : 
+	DataFile
+	DataFile realizationOf Dataset
+	Dataset

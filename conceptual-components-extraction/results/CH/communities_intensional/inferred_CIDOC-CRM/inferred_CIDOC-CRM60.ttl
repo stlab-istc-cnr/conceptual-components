@@ -1,0 +1,39 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E21_Person--P100i_died_in--E69_Death> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E69_Death> .
+
+<http://edge.example/E21_Person--P152_has_parent--E21_Person> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://edge.example/E21_Person--P152i_is_parent_of--E21_Person> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://edge.example/E21_Person--P96i_gave_birth--E67_Birth> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> .
+
+<http://edge.example/E21_Person--P97i_was_father_for--E67_Birth> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> .
+
+<http://edge.example/E21_Person--P98i_was_born--E67_Birth> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> .
+
+<http://edge.example/E67_Birth--P96_by_mother--E21_Person> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://edge.example/E67_Birth--P97_from_father--E21_Person> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://edge.example/E67_Birth--P98_brought_into_life--E21_Person> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://edge.example/E69_Death--P100_was_death_of--E21_Person> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E69_Death> ns1:edge <http://edge.example/E69_Death--P100_was_death_of--E21_Person> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ns1:edge <http://edge.example/E67_Birth--P96_by_mother--E21_Person>,
+        <http://edge.example/E67_Birth--P97_from_father--E21_Person>,
+        <http://edge.example/E67_Birth--P98_brought_into_life--E21_Person> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E21_Person> ns1:edge <http://edge.example/E21_Person--P100i_died_in--E69_Death>,
+        <http://edge.example/E21_Person--P152_has_parent--E21_Person>,
+        <http://edge.example/E21_Person--P152i_is_parent_of--E21_Person>,
+        <http://edge.example/E21_Person--P96i_gave_birth--E67_Birth>,
+        <http://edge.example/E21_Person--P97i_was_father_for--E67_Birth>,
+        <http://edge.example/E21_Person--P98i_was_born--E67_Birth> .
+

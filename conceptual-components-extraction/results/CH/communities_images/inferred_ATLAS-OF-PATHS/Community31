@@ -1,0 +1,10 @@
+digraph "Community 31" {
+	TripPlan -> Duration [label=hasEstimatedDuration]
+	Duration
+	TripPlan
+	TripPlan -> Route [label=hasRoute]
+	TripPlan -> TripPlan [label=hasSubTripPlan]
+	TripPlan -> TripPlan [label=hasSuperTripPlan]
+	TripPlan -> Thing [label=isTripPlanOf]
+	Thing -> TripPlan [label=hasTripPlan]
+}

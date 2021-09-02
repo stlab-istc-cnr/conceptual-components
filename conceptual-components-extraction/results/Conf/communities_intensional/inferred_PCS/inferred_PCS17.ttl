@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/DOCUMENT--Document_ID--int> ns1:edge xsd:int .
+
+<http://edge.example/DOCUMENT--submited_by--PERSON> ns1:edge <http://pcs#PERSON> .
+
+<http://edge.example/PERSON--get--Information> ns1:edge <http://pcs#Information> .
+
+<http://edge.example/PERSON--loggin_in--System> ns1:edge <http://pcs#System> .
+
+<http://edge.example/PERSON--submit--DOCUMENT> ns1:edge <http://pcs#DOCUMENT> .
+
+<http://pcs#DOCUMENT> ns1:edge <http://edge.example/DOCUMENT--Document_ID--int>,
+        <http://edge.example/DOCUMENT--submited_by--PERSON> .
+
+<http://pcs#PERSON> ns1:edge <http://edge.example/PERSON--get--Information>,
+        <http://edge.example/PERSON--loggin_in--System>,
+        <http://edge.example/PERSON--submit--DOCUMENT> .
+

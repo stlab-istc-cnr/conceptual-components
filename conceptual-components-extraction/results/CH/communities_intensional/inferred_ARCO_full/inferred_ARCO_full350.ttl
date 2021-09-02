@@ -1,0 +1,26 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalEntity--hasCulturalPropertyType--CulturalPropertyType> ns1:edge <https://w3id.org/arco/ontology/denotative-description/CulturalPropertyType> .
+
+<http://edge.example/CulturalProperty--hasCulturalPropertyType--CulturalPropertyType> ns1:edge <https://w3id.org/arco/ontology/denotative-description/CulturalPropertyType> .
+
+<http://edge.example/CulturalPropertyDefinition--isCulturalPropertyDefinitionOf--CulturalPropertyType> ns1:edge <https://w3id.org/arco/ontology/denotative-description/CulturalPropertyType> .
+
+<http://edge.example/CulturalPropertySpecification--isCulturalPropertySpecificationOf--CulturalPropertyType> ns1:edge <https://w3id.org/arco/ontology/denotative-description/CulturalPropertyType> .
+
+<http://edge.example/CulturalPropertyType--hasCulturalPropertyDefinition--CulturalPropertyDefinition> ns1:edge <https://w3id.org/arco/ontology/denotative-description/CulturalPropertyDefinition> .
+
+<http://edge.example/CulturalPropertyType--hasCulturalPropertySpecification--CulturalPropertySpecification> ns1:edge <https://w3id.org/arco/ontology/denotative-description/CulturalPropertySpecification> .
+
+<https://w3id.org/arco/ontology/denotative-description/CulturalPropertyDefinition> ns1:edge <http://edge.example/CulturalPropertyDefinition--isCulturalPropertyDefinitionOf--CulturalPropertyType> .
+
+<https://w3id.org/arco/ontology/denotative-description/CulturalPropertySpecification> ns1:edge <http://edge.example/CulturalPropertySpecification--isCulturalPropertySpecificationOf--CulturalPropertyType> .
+
+<https://w3id.org/arco/ontology/denotative-description/CulturalPropertyType> ns1:edge <http://edge.example/CulturalPropertyType--hasCulturalPropertyDefinition--CulturalPropertyDefinition>,
+        <http://edge.example/CulturalPropertyType--hasCulturalPropertySpecification--CulturalPropertySpecification>,
+        <http://edge.example/CulturalPropertyType--isCulturalPropertyTypeOf--CulturalEntity> .
+

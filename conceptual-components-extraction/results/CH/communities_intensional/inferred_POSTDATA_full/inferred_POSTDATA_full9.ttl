@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Ensemble--isFrom--Place> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#Place> .
+
+<http://edge.example/Person--birthPlace--Place> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#Place> .
+
+<http://edge.example/Person--deathPlace--Place> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#Place> .
+
+<http://edge.example/Thing--containsMentionToPlace--Place> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#Place> .
+
+<http://edge.example/Thing--isFrom--Place> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-core#Place> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-core#Place> ns1:edge <http://edge.example/Place--birthPlaceOf--Person>,
+        <http://edge.example/Place--deathPlaceOf--Person>,
+        <http://edge.example/Place--latitude--string>,
+        <http://edge.example/Place--longitude--string>,
+        <http://edge.example/Place--typeOfPlace--string> .
+

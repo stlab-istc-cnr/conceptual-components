@@ -1,0 +1,249 @@
+Community 1 : 
+	Thing is_concerned Thing
+	Thing
+	Thing is_concerned_confernce_setup conference_setup
+	Thing sets_end_date Thing
+	Thing sets_start_date Thing
+Community 2 : 
+	Chair_URL
+	conference_setup sets_Chair_URL Chair_URL
+	Thing sets_Chair_URL Chair_URL
+Community 3 : 
+	conference_setup sets_CP_URL Contact_Person_URL
+	Contact_Person_URL
+	Thing sets_CP_URL Contact_Person_URL
+Community 4 : 
+	Thing sets_RPC_URL Regular_Reviewer_URL
+	Regular_Reviewer_URL
+	conference_setup sets_RPC_URL Regular_Reviewer_URL
+Community 5 : 
+	Thing sets_SPC_URL Senior_Reviewer_URL
+	Senior_Reviewer_URL
+	conference_setup sets_SPC_URL Senior_Reviewer_URL
+Community 6 : 
+	date_of_notification
+	Thing sets_date_of_notification date_of_notification
+	conference_setup sets_date_of_notification date_of_notification
+Community 7 : 
+	end_date_of_abstract_submission
+	conference_setup sets_end_date_of_abstract_submission end_date_of_abstract_submission
+	Thing sets_end_date_of_abstract_submission end_date_of_abstract_submission
+Community 8 : 
+	end_date_of_camera-ready_submission
+	conference_setup sets_end_date_of_camera_ready_submission end_date_of_camera-ready_submission
+	Thing sets_end_date_of_camera_ready_submission end_date_of_camera-ready_submission
+Community 9 : 
+	end_date_of_conference
+	conference_setup sets_end_date_of_conference end_date_of_conference
+	Thing sets_end_date_of_conference end_date_of_conference
+Community 10 : 
+	conference_setup sets_start_date_of_abstract_submission start_date_of_abstract_submission
+	start_date_of_abstract_submission
+	Thing sets_start_date_of_abstract_submission start_date_of_abstract_submission
+Community 11 : 
+	Thing sets_start_date_of_conference start_date_of_conference
+	start_date_of_conference
+	conference_setup sets_start_date_of_conference start_date_of_conference
+Community 12 : 
+	conference_setup sets_start_date_or_full_paper_submission start_date_of_full_paper_submission
+	start_date_of_full_paper_submission
+	Thing sets_start_date_or_full_paper_submission start_date_of_full_paper_submission
+Community 13 : 
+	lower_tier_reviewing_process
+	review is_created_in lower_tier_reviewing_process
+	lower_tier_reviewing_process has_result review
+	lower_tier_reviewing_process is_checked_in activity
+	review_form is_created_in lower_tier_reviewing_process
+Community 14 : 
+	review_form is_created_in activity
+	review_form
+	lower_tier_reviewing_process has_result review_form
+	review_form structure_created_by Program_Committee_Chair
+Community 15 : 
+	Thing is_concerned_review review
+	review
+	review is_concerned_paper paper
+	review is_created_in activity
+	review_form is_concerned_review review
+Community 16 : 
+	article gives_classification classification
+	classification
+	review gives_classification classification
+Community 17 : 
+	review_form has_author Program_Committee_member
+	Program_Committee_member
+	review has_author Program_Committee_member
+	Program_Committee_member is_concerned_confernce_setup conference_setup
+Community 18 : 
+	Automatic_Paper_Assignment
+	Automatic_Paper_Assignment automatically_assign_paper Program_Committee_member
+	Automatic_Paper_Assignment automatically_assign_paper Thing
+Community 19 : 
+	conference_setup sets_member_RPC Regular_Program_Committee_member
+	Regular_Program_Committee_member
+	Thing sets_member_RPC Regular_Program_Committee_member
+	lower_tier_reviewing_process is_performed_by Regular_Program_Committee_member
+	Regular_Program_Committee_member is_author_of review
+Community 20 : 
+	Manual_Paper_Assignment manually_assign_paper Program_Committee_member
+	Manual_Paper_Assignment
+	Manual_Paper_Assignment manually_assign_paper Thing
+Community 21 : 
+	URL is_concerned_confernce_setup conference_setup
+	URL
+	conference_setup sets_URL URL
+Community 22 : 
+	date
+	date is_concerned_confernce_setup conference_setup
+	conference_setup sets_date date
+Community 23 : 
+	conference_setup
+	conference_setup sets_member_PCC Program_Committee_Chair
+Community 24 : 
+	Thing is_concerned_conference conference
+	conference
+	paper is_concerned_conference conference
+	conference is_concerned_confernce_setup conference_setup
+	conference_setup is_concerned_conference conference
+	managing_of_conference_process is_concerned_conference conference
+Community 25 : 
+	conference is_in_phase phase_of_conference
+	phase_of_conference
+Community 26 : 
+	Thing sets_member_PCC Program_Committee_Chair
+	Program_Committee_Chair
+	Program_Committee_Chair is_concerned_confernce_setup conference_setup
+	conference_setup is_made_by Program_Committee_Chair
+Community 27 : 
+	managing_of_conference_process is_performed_by Program_Committee_Chair
+	managing_of_conference_process
+	Program_Committee_Chair performs_activity managing_of_conference_process
+Community 28 : 
+	conference_setup sets_start_date_of_camera_ready_submission start_date_of_camera-ready_submission
+	start_date_of_camera-ready_submission
+	Thing sets_start_date_of_camera_ready_submission start_date_of_camera-ready_submission
+Community 29 : 
+	conference_setup sets_end_date_full_paper_submission end_date_of_full_paper_submission
+	end_date_of_full_paper_submission
+Community 30 : 
+	article goes_through activity
+	article
+	article has_author human
+	article is_created_in activity
+	article is_sent_to human
+	article structure_created_by human
+	human is_author_of article
+	activity has_result article
+Community 31 : 
+	activity is_performed_by human
+	activity
+	activity is_supervised_by human
+	human performs_activity activity
+	human supervises activity
+	activity is_followed_by activity
+	activity is_monitored_by human
+Community 32 : 
+	human e-mail string
+	string
+	human first_name string
+	human last_name string
+Community 33 : 
+	conference_setup is_made_by human
+	human
+	conference_setup sets_member human
+Community 34 : 
+	human is_employed_in institute
+	institute
+Community 35 : 
+	paper_assignment assign_paper Program_Committee_member
+	paper_assignment
+	paper_assignment is_followed_by lower_tier_reviewing_process
+	paper_assignment is_performed_by Program_Committee_Chair
+	paper_assignment is_performed_by human
+Community 36 : 
+	group_email is_sent_to human
+	group_email
+	group_email is_concerned reviewing_proces
+Community 37 : 
+	reviewing_proces
+	reviewing_proces is_concerned_paper paper
+Community 38 : 
+	Undecided_Paper goes_through reviewing_proces
+	Undecided_Paper
+	submission_process is_concerned_paper Undecided_Paper
+	paper_assignment is_concerned_paper Undecided_Paper
+Community 39 : 
+	submission_process is_performed_by Contact_Person
+	submission_process
+	submission_process is_performed_by human
+	submission_process is_followed_by paper_assignment
+Community 40 : 
+	Senior_Program_Committee_member supervises lower_tier_reviewing_process
+	Senior_Program_Committee_member
+	conference_setup sets_member_SPC Senior_Program_Committee_member
+	Thing sets_member_SPC Senior_Program_Committee_member
+	lower_tier_reviewing_process is_supervised_by Senior_Program_Committee_member
+	Senior_Program_Committee_member supervises activity
+Community 41 : 
+	summary_of_reviews
+	summary_of_reviews has_author Senior_Program_Committee_member
+	summary_of_reviews is_concerned_review review
+	summary_of_reviews is_created_in activity
+	summary_of_reviews is_created_in upper_tier_reviewing_process
+	upper_tier_reviewing_process has_result summary_of_reviews
+Community 42 : 
+	upper_tier_reviewing_process is_performed_by Senior_Program_Committee_member
+	upper_tier_reviewing_process
+	upper_tier_reviewing_process is_performed_by human
+	lower_tier_reviewing_process is_checked_in upper_tier_reviewing_process
+	lower_tier_reviewing_process is_followed_by upper_tier_reviewing_process
+	upper_tier_reviewing_process is_followed_by notification
+Community 43 : 
+	paper has_author human
+	paper
+	Thing is_concerned_paper paper
+	Contact_Person is_author_of paper
+Community 44 : 
+	paper full_paper_size int
+	int
+Community 45 : 
+	paper has_author Contact_Person
+	Contact_Person
+	Thing sets_member_CP Contact_Person
+	Contact_Person is_concerned_confernce_setup conference_setup
+	conference_setup sets_member_CP Contact_Person
+Community 46 : 
+	notification_email is_sent_to Contact_Person
+	notification_email
+	notification_email has_author Program_Committee_Chair
+	notification_email is_concerned_paper paper
+Community 47 : 
+	abstract_of_paper is_concerned_paper paper
+	abstract_of_paper
+Community 48 : 
+	intensity
+	bidding_of_reviewer has_intensity intensity
+	activity has_intensity intensity
+	bidding_of_reviewer
+	bidding_of_reviewer is_concerned_paper paper
+	bidding_of_reviewer is_performed_by Program_Committee_member
+	bidding_of_reviewer is_performed_by human
+Community 49 : 
+	notification
+	notification has_result article
+	notification is_concerned_paper paper
+	notification is_performed_by Program_Committee_Chair
+	notification is_performed_by human
+Community 50 : 
+	topic
+	human has_topic_of_interest topic
+	Program_Committee_member has_topic_of_interest topic
+	conference_setup includes_topic topic
+Community 51 : 
+	rejection_notification_email
+	rejection_notification_email is_concerned_paper Rejected_Paper
+	Rejected_Paper
+Community 52 : 
+	Accepted_Paper
+	acceptance_notification_email is_concerned_paper Accepted_Paper
+	acceptance_notification_email

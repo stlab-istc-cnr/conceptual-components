@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Agent--isAdditionalFormResponsibleAgentOf--AdditionalForm> ns1:edge <https://w3id.org/arco/ontology/catalogue/AdditionalForm> .
+
+<http://edge.example/CulturalEntity--isRelatedToAdditionalForm--AdditionalForm> ns1:edge <https://w3id.org/arco/ontology/catalogue/AdditionalForm> .
+
+<http://edge.example/CulturalProperty--isRelatedToAdditionalForm--AdditionalForm> ns1:edge <https://w3id.org/arco/ontology/catalogue/AdditionalForm> .
+
+<http://edge.example/AdditionalForm--hasAdditionalFormType--AdditionalFormType> ns1:edge <https://w3id.org/arco/ontology/catalogue/AdditionalFormType> .
+
+<http://edge.example/AdditionalFormType--isAdditionalFormTypeOf--AdditionalForm> ns1:edge <https://w3id.org/arco/ontology/catalogue/AdditionalForm> .
+
+<https://w3id.org/arco/ontology/catalogue/AdditionalFormType> ns1:edge <http://edge.example/AdditionalFormType--isAdditionalFormTypeOf--AdditionalForm> .
+
+<https://w3id.org/arco/ontology/catalogue/AdditionalForm> ns1:edge <http://edge.example/AdditionalForm--additionalFormIdentifier--Literal>,
+        <http://edge.example/AdditionalForm--describes--CulturalEntity>,
+        <http://edge.example/AdditionalForm--hasAdditionalFormResponsibleAgent--Agent>,
+        <http://edge.example/AdditionalForm--hasAdditionalFormType--AdditionalFormType> .
+

@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/F2_Expression--R51i_was_assigned_by--F42_Representative_Expression_Assignment> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> .
+
+<http://edge.example/F15_Complex_Work--R50i_was_assigned_by--F42_Representative_Expression_Assignment> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> .
+
+<http://edge.example/F42_Representative_Expression_Assignment--R50_assigned_to--F15_Complex_Work> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work> ns1:edge <http://edge.example/F15_Complex_Work--R10_has_member--F1_Work>,
+        <http://edge.example/F15_Complex_Work--R50i_was_assigned_by--F42_Representative_Expression_Assignment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment> ns1:edge <http://edge.example/F42_Representative_Expression_Assignment--R50_assigned_to--F15_Complex_Work>,
+        <http://edge.example/F42_Representative_Expression_Assignment--R51_assigned--F2_Expression> .
+

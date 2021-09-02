@@ -1,0 +1,30 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Author--submit--Paper> ns1:edge <http://pcs#Paper> .
+
+<http://edge.example/Author--write_paper--Paper> ns1:edge <http://pcs#Paper> .
+
+<http://edge.example/CommitteeMember--accept--Paper> ns1:edge <http://pcs#Paper> .
+
+<http://edge.example/CommitteeMember--reject_paper--Paper> ns1:edge <http://pcs#Paper> .
+
+<http://edge.example/Paper--accepted_by--CommitteeMember> ns1:edge <http://pcs#CommitteeMember> .
+
+<http://edge.example/Paper--rejected_paper_by--CommitteeMember> ns1:edge <http://pcs#CommitteeMember> .
+
+<http://edge.example/Paper--written_paper_by--Author> ns1:edge <http://pcs#Author> .
+
+<http://pcs#Author> ns1:edge <http://edge.example/Author--submit--Paper>,
+        <http://edge.example/Author--write_paper--Paper> .
+
+<http://pcs#CommitteeMember> ns1:edge <http://edge.example/CommitteeMember--accept--Paper>,
+        <http://edge.example/CommitteeMember--reject_paper--Paper> .
+
+<http://pcs#Paper> ns1:edge <http://edge.example/Paper--accepted_by--CommitteeMember>,
+        <http://edge.example/Paper--rejected_paper_by--CommitteeMember>,
+        <http://edge.example/Paper--written_paper_by--Author> .
+

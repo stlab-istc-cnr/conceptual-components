@@ -1,0 +1,10 @@
+digraph "Community 278" {
+	RecurrentTimePeriod
+	RecurrentTimePeriod -> TimePeriodMeasurementUnit [label=hasTimePeriodMeasurementUnit]
+	RecurrentTimePeriod -> RecurrentSituationSeries [label=isRecurrentTimePeriodOf]
+	RecurrentTimePeriod -> EventOrSituation [label=isTimePeriodBeforeNextEventOf]
+	RecurrentTimePeriod -> integer [label=timePeriodValue]
+	TimePeriodMeasurementUnit -> RecurrentTimePeriod [label=isTimePeriodMeasurementUnitOf]
+	EventOrSituation -> RecurrentTimePeriod [label=hasTimePeriodBeforeNextEvent]
+	TimePeriodMeasurementUnit
+}

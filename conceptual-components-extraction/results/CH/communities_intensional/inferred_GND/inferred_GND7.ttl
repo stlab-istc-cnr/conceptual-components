@@ -1,0 +1,29 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/DifferentiatedPerson--fieldOfStudy--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/DifferentiatedPerson--playedInstrument--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/Work--language--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/Work--mediumOfPerformance--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/SubjectHeading--broaderTermGeneric--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/SubjectHeading--narrowerTermGeneric--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/SubjectHeading--precedingSubject--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<http://edge.example/SubjectHeading--succeedingSubjectHeading--SubjectHeading> ns1:edge <https://d-nb.info/standards/elementset/gnd#SubjectHeading> .
+
+<https://d-nb.info/standards/elementset/gnd#SubjectHeading> ns1:edge <http://edge.example/SubjectHeading--broaderTermGeneric--SubjectHeading>,
+        <http://edge.example/SubjectHeading--narrowerTermGeneric--SubjectHeading>,
+        <http://edge.example/SubjectHeading--precedingSubject--SubjectHeading>,
+        <http://edge.example/SubjectHeading--preferredNameForTheSubjectHeading--Literal>,
+        <http://edge.example/SubjectHeading--succeedingSubjectHeading--SubjectHeading>,
+        <http://edge.example/SubjectHeading--variantNameForTheSubjectHeading--Literal> .
+

@@ -1,0 +1,89 @@
+Community 1 : 
+	Conference hasMember Person
+	Person
+	ConferenceEvent hasAttendee Person
+	Person attendeeAt ConferenceEvent
+	Person hasBiography string
+	Person hasFirstName string
+	Person hasLastName string
+	Person isMemberOf Conference
+Community 2 : 
+	string
+	ContactInformation hasCity string
+	ContactInformation hasPhone string
+	ContactInformation hasPostalCode string
+	ContactInformation hasStreet string
+	ContactInformation
+Community 3 : 
+	Conference hasName string
+	Conference
+	Conference paperDueOn dateTime
+	Conference startDate dateTime
+Community 4 : 
+	dateTime
+	Conference manuscriptDueOn dateTime
+	Conference registrationDueOn dateTime
+	Conference endDate dateTime
+Community 5 : 
+	Country
+	Conference hasCountry Country
+Community 6 : 
+	Conference hasTopic Topic
+	Topic
+Community 7 : 
+	ConferenceEvent hasEndDateTime dateTime
+	ConferenceEvent
+	ConferenceEvent hasStartDateTime dateTime
+Community 8 : 
+	Place
+	ConferenceEvent hasLocation Place
+	Place isLocationOf ConferenceEvent
+Community 9 : 
+	Programme
+	ConferenceEvent hasProgramme Programme
+	Programme belongsToEvent ConferenceEvent
+Community 10 : 
+	Sponsorship providedBy Organization
+	Organization
+	Organization isProviderOf Sponsorship
+Community 11 : 
+	Sponsorship hasCostCurrency string
+	Sponsorship
+Community 12 : 
+	int
+	Sponsorship hasCostAmount int
+Community 13 : 
+	AcademicEvent
+	Call forEvent AcademicEvent
+	AcademicEvent hasCall Call
+Community 14 : 
+	Call hasSubmissionInstructions string
+	Call
+	Call hasSubmissionDeadline dateTime
+Community 15 : 
+	ActivePaper hasRating ReviewRating
+	ActivePaper
+	ReviewRating
+Community 16 : 
+	RatedPapers
+	RatedPapers hasRating ReviewRating
+Community 17 : 
+	MealEvent hasMenu MealMenu
+	MealMenu
+	MealEvent
+	MealMenu isMenuOf MealEvent
+Community 18 : 
+	AcceptedPaper relatedToEvent PaperPresentation
+	AcceptedPaper
+	PaperPresentation
+	PaperPresentation relatedToPaper AcceptedPaper
+Community 19 : 
+	PersonalReviewHistory isReviewHistoryOf Reviewer
+	Reviewer
+	PersonalReviewHistory
+	Reviewer hasReviewHistory PersonalReviewHistory
+Community 20 : 
+	Paper isWrittenBy Author
+	Author
+	Paper
+	Author hasRelatedPaper Paper

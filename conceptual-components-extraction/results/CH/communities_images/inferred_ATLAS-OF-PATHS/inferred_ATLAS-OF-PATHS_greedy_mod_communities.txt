@@ -1,0 +1,169 @@
+Community 1 : 
+	Thing isAltRouteOf Thing
+	Thing
+	Thing description Literal
+	Thing hasAltRoute Route
+	Thing hasDeviation Route
+	Thing hasGeometry Thing
+	Thing hasGeometryType Thing
+	Thing hasMeasurementUnit Thing
+	Thing hasOrganization Thing
+	Thing hasPrefRoute Route
+	Thing hasTemporalCoverage Thing
+	Route isDeviationOf Thing
+	Route isPrefRouteOf Thing
+	Route isRouteOf Thing
+	Thing isOrganizationOf Thing
+Community 2 : 
+	Literal
+	Route description Literal
+	Thing name Literal
+	Route routeLongName Literal
+	Route routelLength Literal
+Community 3 : 
+	SpatialObject
+	Route crosses SpatialObject
+	SpatialObject isCrossedBy Route
+Community 4 : 
+	Route
+	Route routeShortName Literal
+	Thing hasRoute Route
+Community 5 : 
+	PathStage hasSignposting Signposting
+	Signposting
+	Signposting isSignpostingOf Thing
+	Thing hasSignposting Signposting
+Community 6 : 
+	Value
+	Route hasLength Value
+Community 7 : 
+	RouteType
+	Route hasRouteType RouteType
+Community 8 : 
+	Route routeEstDuration duration
+	duration
+Community 9 : 
+	Thing hasSpatialCoverage Feature
+	Feature
+Community 10 : 
+	Sequence hasFirstMember Entity
+	Sequence
+	Entity hasLastMember Sequence
+	Entity isFirstMemberOf Sequence
+	Entity isLastMemberOf Sequence
+Community 11 : 
+	Entity
+	Entity directlyFollows Entity
+	Entity follows Entity
+	Entity directlyPrecedes Entity
+	Entity precedes Entity
+Community 12 : 
+	Entity hasDescription Description
+	Description
+	Description isDescriptionOf Entity
+	Description description Literal
+Community 13 : 
+	Collection hasMember Entity
+	Collection
+	Entity isMemberOf Collection
+Community 14 : 
+	Topic
+	Entity hasTopic Topic
+	Topic isTopicOf Entity
+Community 15 : 
+	Path
+	QuantifiedPathwayPaving isQuantifiedPathwayPavingOf Path
+	Path description Literal
+	Path encountersPath Path
+	Path hasAltRoute Pathway
+	Path hasDeviation Pathway
+	Path hasRoute Pathway
+	Path name Literal
+	Path pathNumber Literal
+Community 16 : 
+	WebSite
+	Thing hasWebSite WebSite
+	Path hasWebSite WebSite
+Community 17 : 
+	Path hasTheme PathTheme
+	PathTheme
+	PathTheme isThemeOf Path
+Community 18 : 
+	Organization isGovernanceOrganOf Path
+	Organization
+	Path hasGovernanceOrgan Organization
+Community 19 : 
+	ServiceType isServiceTypeOf SupportService
+	ServiceType
+	SupportService hasServiceType ServiceType
+Community 20 : 
+	SupportService isSupportServiceOf PathStage
+	SupportService
+	PathStage hasSupportService SupportService
+Community 21 : 
+	PathStage hasNearbyAccommodation Accommodation
+	Accommodation
+	Accommodation isNearbyAccomodationOf PathStage
+Community 22 : 
+	Pathway hasLastMember PathStage
+	PathStage
+	PathStage encountersPathStage PathStage
+Community 23 : 
+	PathStage hasNearbyPointOfInterest PointOfInterest
+	PointOfInterest
+	PointOfInterest isNearbyPointOfInterestOf PathStage
+Community 24 : 
+	Restaurant
+	Restaurant isNearbyRestaurantOf PathStage
+	PathStage hasNearbyRestaurant Restaurant
+Community 25 : 
+	Agent isMaintainerOf Pathway
+	Agent
+	Agent isSurveillanceOf Pathway
+	Pathway hasMaintainer Agent
+Community 26 : 
+	Pathway hasMember PathStage
+	Pathway
+	Pathway hasSurveillance Agent
+	Pathway hasFirstMember PathStage
+Community 27 : 
+	QuantifiedPathwayPaving
+	Pathway hasQuantityOfPaving QuantifiedPathwayPaving
+	Path hasQuantifiedPathwayPaving QuantifiedPathwayPaving
+	QuantifiedPathwayPaving forPathway Pathway
+Community 28 : 
+	QuantifiedPathwayPaving withPaving Paving
+	Paving
+Community 29 : 
+	SecurityLevel isSecurityLevelOf Pathway
+	SecurityLevel
+	Pathway hasSecurityLevel SecurityLevel
+Community 30 : 
+	Stage directlyFollows Stage
+	Stage
+	Stage directlyPrecedes Stage
+	int
+	Stage stageOrdering int
+	PathStage stageNumber int
+	Route numberOfStages int
+	Thing positionInSequence int
+	Stage precedes Stage
+	Stage follows Stage
+	Route hasMember Stage
+Community 31 : 
+	TripPlan hasEstimatedDuration Duration
+	Duration
+	TripPlan
+	TripPlan hasRoute Route
+	TripPlan hasSubTripPlan TripPlan
+	TripPlan hasSuperTripPlan TripPlan
+	TripPlan isTripPlanOf Thing
+	Thing hasTripPlan TripPlan
+Community 32 : 
+	TemporalEntity
+	PathPlan bestWhen TemporalEntity
+	PathPlan
+	Path hasTripPlan PathPlan
+	PathPlan hasTravellingMethod TravellingMethod
+	TravellingMethod isTravellingMethodOf PathPlan
+	TravellingMethod

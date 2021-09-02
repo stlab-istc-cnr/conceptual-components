@@ -1,0 +1,11 @@
+digraph "Community 239" {
+	CatalogueRecordVersion -> CatalogueRecord [label=isCatalogueRecordVersionOf]
+	CatalogueRecord
+	CulturalEntity -> CatalogueRecord [label=isDescribedByCatalogueRecord]
+	CatalogueRecord -> Literal [label=catalogueRecordIdentifier]
+	CatalogueRecord -> Literal [label=deletedICCDIdentifier]
+	CatalogueRecord -> CulturalEntity [label=describesCulturalProperty]
+	CatalogueRecord -> CatalogueRecordVersion [label=hasCatalogueRecordVersion]
+	CatalogueRecord -> Literal [label=recoveredData]
+	CatalogueRecord -> Literal [label=systemRecordCode]
+}

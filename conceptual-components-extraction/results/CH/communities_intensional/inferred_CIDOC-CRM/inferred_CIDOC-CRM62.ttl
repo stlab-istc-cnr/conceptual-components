@@ -1,0 +1,20 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E33_Linguistic_Object--P72_has_language--E56_Language> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E56_Language> .
+
+<http://edge.example/E33_Linguistic_Object--P73_has_translation--E33_Linguistic_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> .
+
+<http://edge.example/E33_Linguistic_Object--P73i_is_translation_of--E33_Linguistic_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> .
+
+<http://edge.example/E56_Language--P72i_is_language_of--E33_Linguistic_Object> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E56_Language> ns1:edge <http://edge.example/E56_Language--P72i_is_language_of--E33_Linguistic_Object> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ns1:edge <http://edge.example/E33_Linguistic_Object--P72_has_language--E56_Language>,
+        <http://edge.example/E33_Linguistic_Object--P73_has_translation--E33_Linguistic_Object>,
+        <http://edge.example/E33_Linguistic_Object--P73i_is_translation_of--E33_Linguistic_Object> .
+

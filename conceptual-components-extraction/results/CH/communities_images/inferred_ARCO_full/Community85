@@ -1,0 +1,13 @@
+digraph "Community 85" {
+	Competition
+	Agent -> Competition [label=isJuryMemberOf]
+	Agent -> Competition [label=isPartecipantOf]
+	Competition -> Agent [label=hasFinalist]
+	Competition -> Agent [label=hasJuryMember]
+	Competition -> Agent [label=hasPartecipant]
+	Competition -> Thing [label=hasPrize]
+	Competition -> Agent [label=hasWinner]
+	Agent -> Competition [label=isWinnerOf]
+	Thing -> Competition [label=isPrizeOf]
+	Agent -> Competition [label=isFinalistOf]
+}

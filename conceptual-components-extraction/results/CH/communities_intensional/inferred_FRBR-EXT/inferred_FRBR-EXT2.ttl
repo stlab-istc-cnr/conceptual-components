@@ -1,0 +1,35 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Thing--isAReferentialSuccessorToWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Thing--isASummaryOfWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Thing--isAnAdaptationOfWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Thing--isAutonomouslyRelatedToWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Thing--referentiallySupplementsWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Work--hasDependentPartWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Work--hasIndependentPartWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Work--hasPartWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Work--isDependentPartOfWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Work--isIndependentPartOfWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://edge.example/Work--isPartOfWork--Work> ns1:edge <http://purl.org/vocab/frbr/core#Work> .
+
+<http://purl.org/vocab/frbr/core#Work> ns1:edge <http://edge.example/Work--hasDependentPartWork--Work>,
+        <http://edge.example/Work--hasIndependentPartWork--Work>,
+        <http://edge.example/Work--hasPartWork--Work>,
+        <http://edge.example/Work--isDependentPartOfWork--Work>,
+        <http://edge.example/Work--isIndependentPartOfWork--Work>,
+        <http://edge.example/Work--isPartOfWork--Work> .
+

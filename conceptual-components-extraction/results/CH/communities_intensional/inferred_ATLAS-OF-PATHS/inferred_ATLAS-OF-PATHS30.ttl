@@ -1,0 +1,30 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/PathStage--stageNumber--int> ns1:edge xsd:int .
+
+<http://edge.example/Route--hasMember--Stage> ns1:edge <https://w3id.org/italia/onto/Route/Stage> .
+
+<http://edge.example/Route--numberOfStages--int> ns1:edge xsd:int .
+
+<http://edge.example/Thing--positionInSequence--int> ns1:edge xsd:int .
+
+<http://edge.example/Stage--directlyFollows--Stage> ns1:edge <https://w3id.org/italia/onto/Route/Stage> .
+
+<http://edge.example/Stage--directlyPrecedes--Stage> ns1:edge <https://w3id.org/italia/onto/Route/Stage> .
+
+<http://edge.example/Stage--follows--Stage> ns1:edge <https://w3id.org/italia/onto/Route/Stage> .
+
+<http://edge.example/Stage--precedes--Stage> ns1:edge <https://w3id.org/italia/onto/Route/Stage> .
+
+<http://edge.example/Stage--stageOrdering--int> ns1:edge xsd:int .
+
+<https://w3id.org/italia/onto/Route/Stage> ns1:edge <http://edge.example/Stage--directlyFollows--Stage>,
+        <http://edge.example/Stage--directlyPrecedes--Stage>,
+        <http://edge.example/Stage--follows--Stage>,
+        <http://edge.example/Stage--precedes--Stage>,
+        <http://edge.example/Stage--stageOrdering--int> .
+

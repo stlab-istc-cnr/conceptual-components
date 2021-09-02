@@ -1,0 +1,9 @@
+digraph "Community 10" {
+	MembershipRelation
+	MembershipRelation -> Group [label=membershipRelationHasSource]
+	MembershipRelation -> Person [label=membershipRelationHasTarget]
+	MembershipRelation -> Position [label=membershipWithPosition]
+	Position -> MembershipRelation [label=positionIsContextOfMembershipRelation]
+	Group -> MembershipRelation [label=groupIsSourceOfMembershipRelation]
+	Person -> MembershipRelation [label=personIsTargetOfMembershipRelation]
+}

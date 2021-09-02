@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Extent--hasExtentType--ExtentType> ns1:edge <https://www.ica.org/standards/RiC/ontology#ExtentType> .
+
+<http://edge.example/Extent--hasUnitOfMeasurement--UnitOfMeasurement> ns1:edge <https://www.ica.org/standards/RiC/ontology#UnitOfMeasurement> .
+
+<http://edge.example/Extent--quantity--decimal> ns1:edge xsd:decimal .
+
+<http://edge.example/ExtentType--isExtentTypeOf--Extent> ns1:edge <https://www.ica.org/standards/RiC/ontology#Extent> .
+
+<http://edge.example/UnitOfMeasurement--isUnitOfMeasurementOf--Extent> ns1:edge <https://www.ica.org/standards/RiC/ontology#Extent> .
+
+<https://www.ica.org/standards/RiC/ontology#ExtentType> ns1:edge <http://edge.example/ExtentType--isExtentTypeOf--Extent> .
+
+<https://www.ica.org/standards/RiC/ontology#UnitOfMeasurement> ns1:edge <http://edge.example/UnitOfMeasurement--isUnitOfMeasurementOf--Extent> .
+
+<https://www.ica.org/standards/RiC/ontology#Extent> ns1:edge <http://edge.example/Extent--hasExtentType--ExtentType>,
+        <http://edge.example/Extent--hasUnitOfMeasurement--UnitOfMeasurement>,
+        <http://edge.example/Extent--quantity--decimal>,
+        <http://edge.example/Extent--unitOfMeasurement--Literal> .
+

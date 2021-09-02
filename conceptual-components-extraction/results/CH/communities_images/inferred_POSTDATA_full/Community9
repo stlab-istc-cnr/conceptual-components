@@ -1,0 +1,13 @@
+digraph "Community 9" {
+	Thing -> Place [label=containsMentionToPlace]
+	Place
+	Thing -> Place [label=isFrom]
+	Place -> Person [label=birthPlaceOf]
+	Place -> Person [label=deathPlaceOf]
+	Ensemble -> Place [label=isFrom]
+	Place -> string [label=latitude]
+	Person -> Place [label=birthPlace]
+	Place -> string [label=longitude]
+	Place -> string [label=typeOfPlace]
+	Person -> Place [label=deathPlace]
+}

@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalEntity--hasTypeSpecimenIdentification--TypeSpecimenIdentification> ns1:edge <https://w3id.org/arco/ontology/movable-property/TypeSpecimenIdentification> .
+
+<http://edge.example/LaboratoryTest--hasConsequence--TypeSpecimenIdentification> ns1:edge <https://w3id.org/arco/ontology/movable-property/TypeSpecimenIdentification> .
+
+<http://edge.example/Specimen--hasTypeSpecimenIdentification--TypeSpecimenIdentification> ns1:edge <https://w3id.org/arco/ontology/movable-property/TypeSpecimenIdentification> .
+
+<http://edge.example/Taxon--isTaxonProducedBy--TypeSpecimenIdentification> ns1:edge <https://w3id.org/arco/ontology/movable-property/TypeSpecimenIdentification> .
+
+<https://w3id.org/arco/ontology/movable-property/TypeSpecimenIdentification> ns1:edge <http://edge.example/TypeSpecimenIdentification--hasBibliography--Bibliography>,
+        <http://edge.example/TypeSpecimenIdentification--isTypeSpecimenIdentificationOf--CulturalEntity>,
+        <http://edge.example/TypeSpecimenIdentification--producesTaxon--Taxon> .
+

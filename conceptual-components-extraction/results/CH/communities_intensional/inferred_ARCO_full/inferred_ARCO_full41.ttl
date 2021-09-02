@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalEntity--hasStratigraphicArea--Location> ns1:edge <https://w3id.org/italia/onto/l0/Location> .
+
+<http://edge.example/CulturalEntity--hasStratigraphicRoom--Location> ns1:edge <https://w3id.org/italia/onto/l0/Location> .
+
+<http://edge.example/CulturalEntity--hasStratigraphicSquare--Location> ns1:edge <https://w3id.org/italia/onto/l0/Location> .
+
+<http://edge.example/Thing--hasLocation--Location> ns1:edge <https://w3id.org/italia/onto/l0/Location> .
+
+<https://w3id.org/italia/onto/l0/Location> ns1:edge <http://edge.example/Location--isLocationOf--Thing>,
+        <http://edge.example/Location--isStratigraphicAreaOf--CulturalEntity>,
+        <http://edge.example/Location--isStratigraphicRoomOf--CulturalEntity>,
+        <http://edge.example/Location--isStratigraphicSquareOf--CulturalEntity> .
+

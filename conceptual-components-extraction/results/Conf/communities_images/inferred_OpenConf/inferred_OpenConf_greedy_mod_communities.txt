@@ -1,0 +1,73 @@
+Community 1 : 
+	Paper_Review appropriate_length Long_bool
+	Long_bool
+	Paper_Review is_Candidate_for_Award Long_bool
+Community 2 : 
+	Paper_Review Comments_for_Author string
+	Paper_Review
+	Paper_Review Comments_for_Program_Committee string
+Community 3 : 
+	Reviewer
+	Reviewer UserName string
+	Reviewer has_made_review Paper_Review
+	Paper_Review Review_made_by Reviewer
+Community 4 : 
+	Overall_Value
+	Paper_Review has_Overall Overall_Value
+Community 5 : 
+	Paper_Review has_Categorization Paper_Categorization
+	Paper_Categorization
+Community 6 : 
+	Reccommendation
+	Paper_Review has_Reccommendation Reccommendation
+Community 7 : 
+	Contact_Author
+	Contact_Author Alternate_Email string
+	Submitted_Paper has_been_sent_by Contact_Author
+Community 8 : 
+	Submitted_Paper
+	Contact_Author has_sent Submitted_Paper
+Community 9 : 
+	Submitted_Paper is_stored_in Paper_File
+	Paper_File
+Community 10 : 
+	Paper_File is_Type Format
+	Format
+Community 11 : 
+	int
+	Submitted_Paper Paper_Id int
+Community 12 : 
+	People
+	People Country string
+	People E-mail string
+	People Name string
+	People Organisation string
+	People Surname string
+	string
+Community 13 : 
+	Member
+	Member Web_address string
+Community 14 : 
+	Author
+	Author writes_Paper Paper
+	Paper is_written_by Author
+Community 15 : 
+	Paper Keywords string
+	Paper
+	Paper Title string
+Community 16 : 
+	Paper Students boolean
+	boolean
+Community 17 : 
+	Conference_Program Program_made_by Program_chair
+	Conference_Program
+	Program_chair
+	Conference_Program planned_papers Planed_Paper
+	Planed_Paper is_planned_in Conference_Program
+	Program_chair made_program Conference_Program
+	Planed_Paper
+Community 18 : 
+	Advocate will_advocate Advocated_Paper
+	Advocated_Paper
+	Advocate
+	Advocated_Paper to_advocate_by Advocate

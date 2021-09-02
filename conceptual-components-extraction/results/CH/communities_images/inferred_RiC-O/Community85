@@ -1,0 +1,12 @@
+digraph "Community 85" {
+	UnitOfMeasurement -> Extent [label=isUnitOfMeasurementOf]
+	UnitOfMeasurement
+	Extent
+	Extent -> UnitOfMeasurement [label=hasUnitOfMeasurement]
+	Extent -> ExtentType [label=hasExtentType]
+	ExtentType
+	Extent -> decimal [label=quantity]
+	ExtentType -> Extent [label=isExtentTypeOf]
+	Extent -> Literal [label=unitOfMeasurement]
+	decimal
+}

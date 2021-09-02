@@ -1,0 +1,14 @@
+digraph "Community 172" {
+	EventOrSituation -> TimeInterval [label=specificTime]
+	TimeInterval
+	SpecimenHarvesting -> TimeInterval [label=atTime]
+	Outcrop -> TimeInterval [label=atTime]
+	Accession -> TimeInterval [label=atTime]
+	CulturalEntityTechnicalStatus -> TimeInterval [label=isTechnicalStatusValidAt]
+	TimeInterval -> CatalogueRecordVersion [label=editingTimeOf]
+	TimeInterval -> Literal [label=endTime]
+	TimeInterval -> CulturalEntityTechnicalStatus [label=isTimeIntervalValidFor]
+	TimeInterval -> Literal [label=startTime]
+	CatalogueRecordVersion -> TimeInterval [label=editedAtTime]
+	CollectionMembership -> TimeInterval [label=atTime]
+}

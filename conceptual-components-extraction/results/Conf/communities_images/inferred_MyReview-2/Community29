@@ -1,0 +1,9 @@
+digraph "Community 29" {
+	PaperAbstract -> ContactAuthor [label=abstractIsSubmittedBy]
+	ContactAuthor
+	PaperAbstract
+	PaperAbstract -> Paper [label=isAbstractOf]
+	ContactAuthor -> string [label=hasEmail]
+	ContactAuthor -> PaperAbstract [label=submitsAbstract]
+	Paper -> PaperAbstract [label=hasAbstract]
+}

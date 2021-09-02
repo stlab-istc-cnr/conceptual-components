@@ -1,0 +1,10 @@
+digraph "Community 292" {
+	Thing -> LegalSituation [label=hasLegalSituation]
+	LegalSituation
+	Agent -> LegalSituation [label=isOwnerIn]
+	LegalSituation -> Agent [label=hasOwner]
+	CadastralIdentity -> LegalSituation [label=hasLegalSituation]
+	LegalSituation -> Thing [label=isLegalSituationOf]
+	LegalSituation -> CulturalEntity [label=isLegalSituationOf]
+	CulturalProperty -> LegalSituation [label=hasLegalSituation]
+}

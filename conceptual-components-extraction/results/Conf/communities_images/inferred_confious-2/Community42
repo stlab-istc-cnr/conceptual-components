@@ -1,0 +1,8 @@
+digraph "Community 42" {
+	upper_tier_reviewing_process -> Senior_Program_Committee_member [label=is_performed_by]
+	upper_tier_reviewing_process
+	upper_tier_reviewing_process -> human [label=is_performed_by]
+	lower_tier_reviewing_process -> upper_tier_reviewing_process [label=is_checked_in]
+	lower_tier_reviewing_process -> upper_tier_reviewing_process [label=is_followed_by]
+	upper_tier_reviewing_process -> notification [label=is_followed_by]
+}

@@ -1,0 +1,39 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CrystallographicCharacteristic--isCrystalClassOf--UnitCell> ns1:edge <https://w3id.org/arco/ontology/movable-property/UnitCell> .
+
+<http://edge.example/CrystallographicCharacteristic--isCrystalSystemOf--UnitCell> ns1:edge <https://w3id.org/arco/ontology/movable-property/UnitCell> .
+
+<http://edge.example/CrystallographicCharacteristic--isCrystallographicCharacteristicOf--UnitCell> ns1:edge <https://w3id.org/arco/ontology/movable-property/UnitCell> .
+
+<http://edge.example/CrystallographicCharacteristic--isPointGroupOf--UnitCell> ns1:edge <https://w3id.org/arco/ontology/movable-property/UnitCell> .
+
+<http://edge.example/CrystallographicCharacteristic--isSpaceGroupOf--UnitCell> ns1:edge <https://w3id.org/arco/ontology/movable-property/UnitCell> .
+
+<http://edge.example/UnitCell--hasCrystalClass--CrystallographicCharacteristic> ns1:edge <https://w3id.org/arco/ontology/movable-property/CrystallographicCharacteristic> .
+
+<http://edge.example/UnitCell--hasCrystalSystem--CrystallographicCharacteristic> ns1:edge <https://w3id.org/arco/ontology/movable-property/CrystallographicCharacteristic> .
+
+<http://edge.example/UnitCell--hasCrystallographicCharacteristic--CrystallographicCharacteristic> ns1:edge <https://w3id.org/arco/ontology/movable-property/CrystallographicCharacteristic> .
+
+<http://edge.example/UnitCell--hasPointGroup--CrystallographicCharacteristic> ns1:edge <https://w3id.org/arco/ontology/movable-property/CrystallographicCharacteristic> .
+
+<http://edge.example/UnitCell--hasSpaceGroup--CrystallographicCharacteristic> ns1:edge <https://w3id.org/arco/ontology/movable-property/CrystallographicCharacteristic> .
+
+<https://w3id.org/arco/ontology/movable-property/CrystallographicCharacteristic> ns1:edge <http://edge.example/CrystallographicCharacteristic--isCrystalClassOf--UnitCell>,
+        <http://edge.example/CrystallographicCharacteristic--isCrystalSystemOf--UnitCell>,
+        <http://edge.example/CrystallographicCharacteristic--isCrystallographicCharacteristicOf--UnitCell>,
+        <http://edge.example/CrystallographicCharacteristic--isPointGroupOf--UnitCell>,
+        <http://edge.example/CrystallographicCharacteristic--isSpaceGroupOf--UnitCell> .
+
+<https://w3id.org/arco/ontology/movable-property/UnitCell> ns1:edge <http://edge.example/UnitCell--hasCrystalClass--CrystallographicCharacteristic>,
+        <http://edge.example/UnitCell--hasCrystalSystem--CrystallographicCharacteristic>,
+        <http://edge.example/UnitCell--hasCrystallographicCharacteristic--CrystallographicCharacteristic>,
+        <http://edge.example/UnitCell--hasPointGroup--CrystallographicCharacteristic>,
+        <http://edge.example/UnitCell--hasSpaceGroup--CrystallographicCharacteristic>,
+        <http://edge.example/UnitCell--isUnitCellOf--InorganicSpecies> .
+

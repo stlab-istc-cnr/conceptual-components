@@ -1,0 +1,10 @@
+digraph "Community 341" {
+	Acquisition
+	Agent -> Acquisition [label=isPreviousOwnerOf]
+	Acquisition -> Literal [label=acquisitionLocation]
+	CulturalEntity -> Acquisition [label=hasAcquisition]
+	Acquisition -> Agent [label=hasPreviousOwner]
+	Acquisition -> CulturalEntity [label=isAcquisitionOf]
+	Acquisition -> Literal [label=time]
+	CulturalProperty -> Acquisition [label=hasAcquisition]
+}

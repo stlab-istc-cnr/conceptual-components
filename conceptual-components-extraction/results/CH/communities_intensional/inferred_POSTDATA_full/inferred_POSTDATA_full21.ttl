@@ -1,0 +1,28 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Line--belongsToStanza--Stanza> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> .
+
+<http://edge.example/Line--isFirstLine--Stanza> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> .
+
+<http://edge.example/OrderedStanzaList--hasStanzaItem--Stanza> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> .
+
+<http://edge.example/Stanza--isTheSameAs--Stanza> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> .
+
+<http://edge.example/Stanza--nextStanza--Stanza> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> .
+
+<http://edge.example/Stanza--previousStanza--Stanza> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Stanza> ns1:edge <http://edge.example/Stanza--hasFirstLine--Line>,
+        <http://edge.example/Stanza--isFirstStanza--Redaction>,
+        <http://edge.example/Stanza--isRefrainOmitted--boolean>,
+        <http://edge.example/Stanza--isTheSameAs--Stanza>,
+        <http://edge.example/Stanza--nextStanza--Stanza>,
+        <http://edge.example/Stanza--paraphrasis--string>,
+        <http://edge.example/Stanza--previousStanza--Stanza>,
+        <http://edge.example/Stanza--typeOfStanza--Concept>,
+        <http://edge.example/Stanza--typeOfStanzaEdition--Concept> .
+

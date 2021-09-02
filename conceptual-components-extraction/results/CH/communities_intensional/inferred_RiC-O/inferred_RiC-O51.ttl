@@ -1,0 +1,29 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Agent--hasOrHadJurisdiction--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<http://edge.example/Thing--hasOrHadLocation--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<http://edge.example/Thing--isAssociatedWithPlace--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<http://edge.example/Place--containsOrContained--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<http://edge.example/Place--isOrWasAdjacentTo--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<http://edge.example/Place--isOrWasContainedBy--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<http://edge.example/Place--overlapsOrOverlapped--Place> ns1:edge <https://www.ica.org/standards/RiC/ontology#Place> .
+
+<https://www.ica.org/standards/RiC/ontology#Place> ns1:edge <http://edge.example/Place--containsOrContained--Place>,
+        <http://edge.example/Place--geographicalCoordinates--Literal>,
+        <http://edge.example/Place--isOrWasAdjacentTo--Place>,
+        <http://edge.example/Place--isOrWasContainedBy--Place>,
+        <http://edge.example/Place--isOrWasJurisdictionOf--Agent>,
+        <http://edge.example/Place--isOrWasLocationOf--Thing>,
+        <http://edge.example/Place--isPlaceAssociatedWith--Thing>,
+        <http://edge.example/Place--overlapsOrOverlapped--Place> .
+

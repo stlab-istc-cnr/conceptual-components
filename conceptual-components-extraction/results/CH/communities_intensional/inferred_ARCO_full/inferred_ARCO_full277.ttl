@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Agent--isAgentInvolvedIn--EventOrSituation> ns1:edge <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<http://edge.example/TimeInterval--specificTimeOf--EventOrSituation> ns1:edge <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<http://edge.example/EventOrSituation--hasImmediateNextEvent--EventOrSituation> ns1:edge <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<http://edge.example/EventOrSituation--hasImmediatePreviousEvent--EventOrSituation> ns1:edge <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<http://edge.example/EventOrSituation--hasNextSituation--EventOrSituation> ns1:edge <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<http://edge.example/EventOrSituation--hasPreviousSituation--EventOrSituation> ns1:edge <https://w3id.org/italia/onto/l0/EventOrSituation> .
+
+<https://w3id.org/italia/onto/l0/EventOrSituation> ns1:edge <http://edge.example/EventOrSituation--current--boolean>,
+        <http://edge.example/EventOrSituation--hasImmediateNextEvent--EventOrSituation>,
+        <http://edge.example/EventOrSituation--hasImmediatePreviousEvent--EventOrSituation>,
+        <http://edge.example/EventOrSituation--hasNextSituation--EventOrSituation>,
+        <http://edge.example/EventOrSituation--hasPreviousSituation--EventOrSituation>,
+        <http://edge.example/EventOrSituation--involvesAgent--Agent> .
+

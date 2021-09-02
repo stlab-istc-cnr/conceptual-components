@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Date--isFromUseDateOf--Appellation> ns1:edge <https://www.ica.org/standards/RiC/ontology#Appellation> .
+
+<http://edge.example/Date--isToUseDateOf--Appellation> ns1:edge <https://www.ica.org/standards/RiC/ontology#Appellation> .
+
+<http://edge.example/Thing--hasOrHadAppellation--Appellation> ns1:edge <https://www.ica.org/standards/RiC/ontology#Appellation> .
+
+<https://www.ica.org/standards/RiC/ontology#Appellation> ns1:edge <http://edge.example/Appellation--isOrWasAppellationOf--Thing>,
+        <http://edge.example/Appellation--usedFromDate--Literal>,
+        <http://edge.example/Appellation--usedToDate--Literal>,
+        <http://edge.example/Appellation--wasUsedFromDate--Date>,
+        <http://edge.example/Appellation--wasUsedToDate--Date> .
+

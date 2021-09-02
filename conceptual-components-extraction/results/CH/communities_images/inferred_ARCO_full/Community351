@@ -1,0 +1,12 @@
+digraph "Community 351" {
+	PrintInPublication -> Reproduction [label=hasReproduction]
+	PrintInPublication
+	Reproduction
+	Reproduction -> ReproductionPosition [label=hasReproductionPosition]
+	ReproductionPosition
+	Reproduction -> PrintInPublication [label=isReproductionOf]
+	ReproductionPosition -> Reproduction [label=isReproductionPositionOf]
+	ReproductionPosition -> Literal [label=pageOrTableNumber]
+	Reproduction -> CulturalEntity [label=reproduces]
+	CulturalEntity -> Reproduction [label=isReproducedBy]
+}

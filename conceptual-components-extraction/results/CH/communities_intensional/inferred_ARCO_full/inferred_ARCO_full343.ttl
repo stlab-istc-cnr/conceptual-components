@@ -1,0 +1,22 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalProperty--hasDesignationInTime--DesignationInTime> ns1:edge <https://w3id.org/arco/ontology/denotative-description/DesignationInTime> .
+
+<http://edge.example/Thing--hasDesignationInTime--DesignationInTime> ns1:edge <https://w3id.org/arco/ontology/denotative-description/DesignationInTime> .
+
+<http://edge.example/DesignationInTime--hasDesignationType--DesignationType> ns1:edge <https://w3id.org/arco/ontology/denotative-description/DesignationType> .
+
+<http://edge.example/DesignationType--isDesignationTypeOf--DesignationInTime> ns1:edge <https://w3id.org/arco/ontology/denotative-description/DesignationInTime> .
+
+<https://w3id.org/arco/ontology/denotative-description/DesignationType> ns1:edge <http://edge.example/DesignationType--isDesignationTypeOf--DesignationInTime> .
+
+<https://w3id.org/arco/ontology/denotative-description/DesignationInTime> ns1:edge <http://edge.example/DesignationInTime--hasDesignationType--DesignationType>,
+        <http://edge.example/DesignationInTime--isDesignationInTimeOf--CulturalEntity>,
+        <http://edge.example/DesignationInTime--isDesignationInTimeOf--Thing>,
+        <http://edge.example/DesignationInTime--name--Literal>,
+        <http://edge.example/DesignationInTime--note--Literal> .
+

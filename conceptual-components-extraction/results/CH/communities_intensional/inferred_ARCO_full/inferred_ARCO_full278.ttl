@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/EventOrSituation--hasTimePeriodBeforeNextEvent--RecurrentTimePeriod> ns1:edge <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> .
+
+<http://edge.example/RecurrentTimePeriod--hasTimePeriodMeasurementUnit--TimePeriodMeasurementUnit> ns1:edge <https://w3id.org/arco/ontology/cultural-event/TimePeriodMeasurementUnit> .
+
+<http://edge.example/TimePeriodMeasurementUnit--isTimePeriodMeasurementUnitOf--RecurrentTimePeriod> ns1:edge <https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> .
+
+<https://w3id.org/arco/ontology/cultural-event/TimePeriodMeasurementUnit> ns1:edge <http://edge.example/TimePeriodMeasurementUnit--isTimePeriodMeasurementUnitOf--RecurrentTimePeriod> .
+
+<https://w3id.org/arco/ontology/cultural-event/RecurrentTimePeriod> ns1:edge <http://edge.example/RecurrentTimePeriod--hasTimePeriodMeasurementUnit--TimePeriodMeasurementUnit>,
+        <http://edge.example/RecurrentTimePeriod--isRecurrentTimePeriodOf--RecurrentSituationSeries>,
+        <http://edge.example/RecurrentTimePeriod--isTimePeriodBeforeNextEventOf--EventOrSituation>,
+        <http://edge.example/RecurrentTimePeriod--timePeriodValue--integer> .
+

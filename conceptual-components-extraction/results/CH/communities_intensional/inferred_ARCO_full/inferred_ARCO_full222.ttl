@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Agent--isApplicantAgencyFor--CatalogueNumbersAssignment> ns1:edge <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> .
+
+<http://edge.example/Application--isApplicationOf--CatalogueNumbersAssignment> ns1:edge <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> .
+
+<http://edge.example/CataloguingOrDigitizationCampaign--hasCatalogueNumberAssignment--CatalogueNumbersAssignment> ns1:edge <https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> .
+
+<https://w3id.org/arco/ontology/cataloguing-campaign/CatalogueNumbersAssignment> ns1:edge <http://edge.example/CatalogueNumbersAssignment--firstNumberAssigned--integer>,
+        <http://edge.example/CatalogueNumbersAssignment--hasApplicantAgency--Agent>,
+        <http://edge.example/CatalogueNumbersAssignment--hasApplication--Application>,
+        <http://edge.example/CatalogueNumbersAssignment--isCatalogueNumberAssignmentOf--CataloguingOrDigitizationCampaign>,
+        <http://edge.example/CatalogueNumbersAssignment--lastNumberAssigned--integer>,
+        <http://edge.example/CatalogueNumbersAssignment--totalOfAssignedNumber--integer> .
+

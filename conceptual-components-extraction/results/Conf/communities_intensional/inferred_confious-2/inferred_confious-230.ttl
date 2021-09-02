@@ -1,0 +1,16 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/activity--has_result--article> ns1:edge <http://confious#article> .
+
+<http://edge.example/human--is_author_of--article> ns1:edge <http://confious#article> .
+
+<http://confious#article> ns1:edge <http://edge.example/article--goes_through--activity>,
+        <http://edge.example/article--has_author--human>,
+        <http://edge.example/article--is_created_in--activity>,
+        <http://edge.example/article--is_sent_to--human>,
+        <http://edge.example/article--structure_created_by--human> .
+

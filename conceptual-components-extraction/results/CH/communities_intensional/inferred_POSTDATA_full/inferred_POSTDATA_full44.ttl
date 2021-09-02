@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Word--hasFirstSyllable--Syllable> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> .
+
+<http://edge.example/Word--hasLastSyllable--Syllable> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> .
+
+<http://edge.example/Word--hasSyllable--Syllable> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> .
+
+<http://edge.example/Syllable--nextSyllable--Syllable> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> .
+
+<http://edge.example/Syllable--previousSyllable--Syllable> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Syllable> ns1:edge <http://edge.example/Syllable--coda--string>,
+        <http://edge.example/Syllable--isFirstSyllable--Word>,
+        <http://edge.example/Syllable--nextSyllable--Syllable>,
+        <http://edge.example/Syllable--nucleusType--Concept>,
+        <http://edge.example/Syllable--onset--string>,
+        <http://edge.example/Syllable--positionInWord--string>,
+        <http://edge.example/Syllable--previousSyllable--Syllable>,
+        <http://edge.example/Syllable--weight--string> .
+

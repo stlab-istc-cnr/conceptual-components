@@ -1,0 +1,19 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Path--hasTripPlan--PathPlan> ns1:edge <https://w3id.org/italia/onto/AtlasOfPaths/PathPlan> .
+
+<http://edge.example/PathPlan--bestWhen--TemporalEntity> ns1:edge <https://w3id.org/italia/onto/TI/TemporalEntity> .
+
+<http://edge.example/PathPlan--hasTravellingMethod--TravellingMethod> ns1:edge <https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod> .
+
+<http://edge.example/TravellingMethod--isTravellingMethodOf--PathPlan> ns1:edge <https://w3id.org/italia/onto/AtlasOfPaths/PathPlan> .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/TravellingMethod> ns1:edge <http://edge.example/TravellingMethod--isTravellingMethodOf--PathPlan> .
+
+<https://w3id.org/italia/onto/AtlasOfPaths/PathPlan> ns1:edge <http://edge.example/PathPlan--bestWhen--TemporalEntity>,
+        <http://edge.example/PathPlan--hasTravellingMethod--TravellingMethod> .
+

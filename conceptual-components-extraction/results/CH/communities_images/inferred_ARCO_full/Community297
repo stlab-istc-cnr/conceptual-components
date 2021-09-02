@@ -1,0 +1,12 @@
+digraph "Community 297" {
+	SpecimenHarvesting -> Agent [label=hasHarvestingOperator]
+	SpecimenHarvesting
+	SpecimenHarvesting -> Agent [label=hasHarvestingResponsible]
+	SpecimenHarvesting -> Agent [label=hasHarvestingSponsor]
+	SpecimenHarvesting -> TimeIndexedTypedLocation [label=hasTimeIndexedTypedLocation]
+	SpecimenHarvesting -> Specimen [label=isSpecimenHarvestingOf]
+	Thing -> SpecimenHarvesting [label=isHarvestingOperatorOf]
+	Specimen -> SpecimenHarvesting [label=hasSpecimenHarvesting]
+	Agent -> SpecimenHarvesting [label=isHarvestingResponsibleOf]
+	Agent -> SpecimenHarvesting [label=isHarvestingSponsorOf]
+}

@@ -1,0 +1,152 @@
+Community 1 : 
+	Confirmed_Conflict blockAssigningToReviewer Paper
+	Confirmed_Conflict
+	Confirmed_Conflict relates Paper
+	Confirmed_Conflict relates Reviewer
+	Confirmed_Conflict visibleBy Reviewer
+Community 2 : 
+	Reviewer reviews Paper
+	Paper
+	Program_Comitee_Chair rejects Paper
+	Paper isInConflictWith Reviewer
+	Reviewer bidsFor Paper
+Community 3 : 
+	Reviewer isInConflictWith Paper
+	Reviewer
+	Reviewer submits Review
+	Paper reviewedBy Reviewer
+Community 4 : 
+	Reviewer creates Review
+	Review
+	Review judges Paper
+	Review createdBy Reviewer
+Community 5 : 
+	Reviewer confirmes Pending_Proposed_Conflict
+	Pending_Proposed_Conflict
+	Pending_Proposed_Conflict blockAssigningToReviewer Paper
+	Pending_Proposed_Conflict confirmedBy Reviewer
+	Pending_Proposed_Conflict refusedBy Reviewer
+	Reviewer refuses Pending_Proposed_Conflict
+	Pending_Proposed_Conflict visibleBy Reviewer
+Community 6 : 
+	Paper spokenBy Speaker
+	Speaker
+	Speaker speaks Thing
+	Speaker speaks Paper
+Community 7 : 
+	Self_Conflict
+	Self_Conflict blockAssigningToReviewer Paper
+Community 8 : 
+	Thing
+	Thing assignedBy Thing
+	Thing assigns Thing
+	Thing blockAssigningToReviewer Thing
+	Thing coauthorsWith Thing
+	Thing conflictViewedBy Thing
+	Thing contains Thing
+	Thing cooperates Thing
+	Thing coveredBy Thing
+	Thing covers Thing
+	Thing createdBy Thing
+	Thing creates Thing
+	Thing hasConflictType Thing
+	Thing hasMembers Thing
+	Thing isInConflictWith Thing
+	Thing judges Thing
+	Thing managedBy Thing
+	Thing manages Thing
+	Thing memberOf Thing
+	Thing organisedBy Thing
+	Thing organises Thing
+	Thing proposedBy Thing
+	Thing proposes Thing
+	Thing relates Thing
+	Thing speaks Thing
+	Thing spokenBy Thing
+	Thing submits Thing
+	Thing submittedBy Thing
+	Thing views Thing
+	Thing visibleBy Thing
+Community 9 : 
+	Program_Comitee_Chair accepts Paper
+	Program_Comitee_Chair
+	Program_Comitee_Chair assignsPaper Reviewer
+	Program_Comitee_Chair assignsToReview Paper
+	Reviewer assignedPaperBy Program_Comitee_Chair
+	Paper acceptedBy Program_Comitee_Chair
+	Paper assignedToReviewBy Program_Comitee_Chair
+	Paper rejectedBy Program_Comitee_Chair
+Community 10 : 
+	Reviewer memberOf Program_Comitee
+	Program_Comitee
+	Program_Comitee discusses Paper
+	Program_Comitee hasMembers Program_Comitee_Chair
+	Program_Comitee hasMembers Reviewer
+	Program_Comitee_Chair headOf Program_Comitee
+	Program_Comitee_Chair memberOf Program_Comitee
+	Paper discussedBy Program_Comitee
+Community 11 : 
+	Conference finishedBy Program_Comitee_Chair
+	Conference
+	Conference organisedBy Program_Comitee_Chair
+	Conference startedBy Program_Comitee_Chair
+	Program_Comitee_Chair finishes Conference
+	Program_Comitee_Chair organises Conference
+	Program_Comitee_Chair starts Conference
+Community 12 : 
+	Hidden_Conflict
+	Hidden_Conflict proposedBy Program_Comitee_Chair
+Community 13 : 
+	Program_Comitee_Chair switches PhaseOfConferencePreparation
+	PhaseOfConferencePreparation
+Community 14 : 
+	Proposed_Conflict blockAssigningToReviewer Paper
+	Proposed_Conflict
+	Proposed_Conflict conflictProposedBy Thing
+	Proposed_Conflict visibleBy Author
+Community 15 : 
+	MainAuthor views Proposed_Conflict
+	MainAuthor
+	Proposed_Conflict proposedBy MainAuthor
+	MainAuthor proposes Proposed_Conflict
+Community 16 : 
+	Co-Author
+	Co-Author coauthorsWith Thing
+	MainAuthor coauthorsWith Co-Author
+Community 17 : 
+	MainAuthor submits Contribution_File
+	Contribution_File
+	Contribution_File submittedBy Author
+Community 18 : 
+	Topic
+	Conference focusesOn Topic
+	Topic coveredBy Contribution
+	Contribution covers Topic
+	Author changes Contribution
+	Author
+	Contribution
+	Author speaks Paper
+	Author creates Contribution
+	Contribution changedBy Author
+	Contribution createdBy Author
+Community 19 : 
+	Conference takesPlace Location
+	Location
+	Discussion
+	Program_Comitee_Meeting contains Discussion
+	Program_Comitee_Chair organises Program_Comitee_Meeting
+	Program_Comitee_Meeting
+	Program_Comitee_Meeting takesPlace Location
+Community 20 : 
+	Conflict_Of_Interest
+	Conflict_Of_Interest managedBy Conflict_Rules
+	Conflict_Of_Interest visibleBy Program_Comitee_Chair
+	Conflict_Rules manages Conflict_Of_Interest
+	Program_Comitee_Chair views Conflict_Of_Interest
+	Conflict_Rules
+Community 21 : 
+	string
+	Person hasEmail string
+	Person hasName string
+	Conference hasAcronym string
+	Person

@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Z12_Issuing_Rule--Y22_foresees_sequencing_pattern--Z10_Sequencing_Pattern> ns1:edge <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> .
+
+<http://edge.example/F23_Expression_Fragment--Y43_is_indicative_of--Z10_Sequencing_Pattern> ns1:edge <http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> .
+
+<http://edge.example/Z10_Sequencing_Pattern--Y43i_is_exemplified_by--F23_Expression_Fragment> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> ns1:edge <http://edge.example/F23_Expression_Fragment--Y43_is_indicative_of--Z10_Sequencing_Pattern> .
+
+<http://iflastandards.info/ns/fr/frbr/pressoo/Z10_Sequencing_Pattern> ns1:edge <http://edge.example/Z10_Sequencing_Pattern--Y22i_is_sequencing_pattern_foreseen_in--Z12_Issuing_Rule>,
+        <http://edge.example/Z10_Sequencing_Pattern--Y43i_is_exemplified_by--F23_Expression_Fragment> .
+

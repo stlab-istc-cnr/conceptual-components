@@ -1,0 +1,24 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E18_Physical_Thing--K1_denotes--E36_Visual_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item> .
+
+<http://edge.example/E18_Physical_Thing--K9i_has_status_assigned_by--IC12_Visual_Recognition> ns1:edge <http://w3id.org/vir#IC12_Visual_Recognition> .
+
+<http://edge.example/E36_Visual_Item--K11i_was_assigned_by--IC12_Visual_Recognition> ns1:edge <http://w3id.org/vir#IC12_Visual_Recognition> .
+
+<http://edge.example/IC12_Visual_Recognition--K11_assigned--E36_Visual_Item> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item> .
+
+<http://edge.example/IC12_Visual_Recognition--K9_Assigned_status_to--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ns1:edge <http://edge.example/E18_Physical_Thing--K1_denotes--E36_Visual_Item>,
+        <http://edge.example/E18_Physical_Thing--K9i_has_status_assigned_by--IC12_Visual_Recognition> .
+
+<http://w3id.org/vir#IC12_Visual_Recognition> ns1:edge <http://edge.example/IC12_Visual_Recognition--K11_assigned--E36_Visual_Item>,
+        <http://edge.example/IC12_Visual_Recognition--K9_Assigned_status_to--E18_Physical_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item> ns1:edge <http://edge.example/E36_Visual_Item--K11i_was_assigned_by--IC12_Visual_Recognition> .
+

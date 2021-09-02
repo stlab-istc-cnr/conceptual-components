@@ -1,0 +1,133 @@
+Community 1 : 
+	CISNameInTime institutionalCISName Literal
+	CISNameInTime
+	CISNameInTime altCISName Literal
+Community 2 : 
+	Literal
+	CulturalInstituteOrSite institutionalCISName Literal
+	CISService name Literal
+Community 3 : 
+	CulturalInstituteOrSite hasCISType CISType
+	CISType
+	CISType description Literal
+	CISType name Literal
+Community 4 : 
+	Site hasSiteDescription SiteDescription
+	SiteDescription
+	SiteDescription description Literal
+	SiteDescription hasAttribute Attribute
+Community 5 : 
+	Ticket description Literal
+	Ticket
+	CulturalInstituteOrSite hasTicket Ticket
+	Ticket name Literal
+Community 6 : 
+	Attribute
+	Attribute description Literal
+	Attribute name Literal
+Community 7 : 
+	CulturalInstituteOrSite
+	CulturalInstituteOrSite ISILIdentifier Literal
+	CulturalInstituteOrSite description Literal
+	CulturalInstituteOrSite hasCISNameInTime CISNameInTime
+	CulturalInstituteOrSite isPartOf CulturalInstituteOrSite
+Community 8 : 
+	CulturalInstituteOrSite providesService CISService
+	CISService
+	CISService description Literal
+	CISService isProvidedBy CulturalInstituteOrSite
+Community 9 : 
+	OnlineContactPoint
+	CISService hasOnlineContactPoint OnlineContactPoint
+	CulturalInstituteOrSite hasOnlineContactPoint OnlineContactPoint
+	Site hasOnlineContactPoint OnlineContactPoint
+Community 10 : 
+	CulturalInstituteOrSite isSubjectOf CreativeWork
+	CreativeWork
+Community 11 : 
+	SubjectDiscipline
+	CulturalInstituteOrSite hasDiscipline SubjectDiscipline
+Community 12 : 
+	CulturalInstituteOrSite hasAccessCondition AccessCondition
+	AccessCondition
+Community 13 : 
+	TimeIndexedRole
+	CulturalInstituteOrSite hasRiT TimeIndexedRole
+Community 14 : 
+	CulturalEntity
+	CulturalEntity isInvolvedInCulturalEvent CulturalEvent
+	CulturalEvent involvesCulturalEntity CulturalEntity
+Community 15 : 
+	CulturalEvent
+	Site hostsCulturalEvent CulturalEvent
+Community 16 : 
+	Site description Literal
+	Site
+	CulturalEvent isHostedBySite Site
+	Site isSiteOf CulturalInstituteOrSite
+	CulturalInstituteOrSite hasSite Site
+Community 17 : 
+	Feature
+	Site hasSpatialCoverage Feature
+	CulturalInstituteOrSite hasSpatialCoverage Feature
+Community 18 : 
+	CulturalHeritageObject
+	CulturalHeritageObject isInSite Site
+	CulturalHeritageObject name Literal
+Community 19 : 
+	Site siteAddress Address
+	Address
+Community 20 : 
+	Catalogue description Literal
+	Catalogue
+	Catalogue isCatalogueOf CulturalInstituteOrSite
+	Catalogue name Literal
+	CollectionCulEnt isDescribedBy Catalogue
+	CulturalInstituteOrSite catalogue Catalogue
+Community 21 : 
+	Catalogue describesCulturalEntity CollectionCulEnt
+	CollectionCulEnt
+	CollectionCulEnt description Literal
+	CollectionCulEnt name Literal
+	CulturalInstituteOrSite hasCollection CollectionCulEnt
+Community 22 : 
+	CISNameInTime isValidDuring TimeInterval
+	TimeInterval
+	CollectionCulEnt atTime TimeInterval
+Community 23 : 
+	Catalogue hasWebSite WebSite
+	WebSite
+Community 24 : 
+	CulturalProject URL anyURI
+	anyURI
+Community 25 : 
+	AudioObject
+	AudioObject URL anyURI
+Community 26 : 
+	CulturalProject name Literal
+	CulturalProject
+	CulturalInstituteOrSite isInvolvedInProject CulturalProject
+Community 27 : 
+	ImageObject URL anyURI
+	ImageObject
+Community 28 : 
+	NewsArticle URL anyURI
+	NewsArticle
+Community 29 : 
+	VideoObject URL anyURI
+	VideoObject
+Community 30 : 
+	Thing atTime Thing
+	Thing
+	Thing forAccessTo Thing
+	Thing hasOnlineContactPoint Thing
+	Thing hasRiT Thing
+	Thing hasTicket Thing
+	Thing hasWebSite Thing
+	Thing holdsRoleInTime Thing
+	Thing hosts Thing
+	Thing takesPlaceIn Thing
+Community 31 : 
+	Equipment name Literal
+	Equipment
+	CulturalInstituteOrSite makesAvailableEquipment Equipment

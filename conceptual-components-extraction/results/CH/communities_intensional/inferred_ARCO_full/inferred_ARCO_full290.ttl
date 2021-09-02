@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Kingdom--hasDirectLowerRank--Phylum> ns1:edge <https://w3id.org/arco/ontology/movable-property/Phylum> .
+
+<http://edge.example/Phylum--hasDirectHigherRank--Kingdom> ns1:edge <https://w3id.org/arco/ontology/movable-property/Kingdom> .
+
+<http://edge.example/Phylum--hasHigherRank--Kingdom> ns1:edge <https://w3id.org/arco/ontology/movable-property/Kingdom> .
+
+<https://w3id.org/arco/ontology/movable-property/Phylum> ns1:edge <http://edge.example/Phylum--hasDirectHigherRank--Kingdom>,
+        <http://edge.example/Phylum--hasHigherRank--Kingdom> .
+
+<https://w3id.org/arco/ontology/movable-property/Kingdom> ns1:edge <http://edge.example/Kingdom--hasDirectLowerRank--Phylum> .
+

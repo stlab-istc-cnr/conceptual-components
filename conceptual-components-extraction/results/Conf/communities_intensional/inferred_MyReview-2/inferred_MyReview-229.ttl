@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Paper--hasAbstract--PaperAbstract> ns1:edge <http://myreview#PaperAbstract> .
+
+<http://edge.example/ContactAuthor--submitsAbstract--PaperAbstract> ns1:edge <http://myreview#PaperAbstract> .
+
+<http://edge.example/PaperAbstract--abstractIsSubmittedBy--ContactAuthor> ns1:edge <http://myreview#ContactAuthor> .
+
+<http://myreview#ContactAuthor> ns1:edge <http://edge.example/ContactAuthor--hasEmail--string>,
+        <http://edge.example/ContactAuthor--submitsAbstract--PaperAbstract> .
+
+<http://myreview#PaperAbstract> ns1:edge <http://edge.example/PaperAbstract--abstractIsSubmittedBy--ContactAuthor>,
+        <http://edge.example/PaperAbstract--isAbstractOf--Paper> .
+

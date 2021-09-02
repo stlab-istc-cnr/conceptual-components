@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/ShadingDevice--isShadingDeviceOf--Window> ns1:edge <https://w3id.org/arco/ontology/immovable-property/Window> .
+
+<http://edge.example/Window--hasShadingDevice--ShadingDevice> ns1:edge <https://w3id.org/arco/ontology/immovable-property/ShadingDevice> .
+
+<http://edge.example/Window--hasType--WindowType> ns1:edge <https://w3id.org/arco/ontology/immovable-property/WindowType> .
+
+<https://w3id.org/arco/ontology/immovable-property/ShadingDevice> ns1:edge <http://edge.example/ShadingDevice--isShadingDeviceOf--Window> .
+
+<https://w3id.org/arco/ontology/immovable-property/Window> ns1:edge <http://edge.example/Window--fanlightPresence--boolean>,
+        <http://edge.example/Window--hasShadingDevice--ShadingDevice>,
+        <http://edge.example/Window--hasType--WindowType> .
+

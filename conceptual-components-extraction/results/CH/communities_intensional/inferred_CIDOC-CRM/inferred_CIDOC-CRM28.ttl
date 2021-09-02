@@ -1,0 +1,44 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E10_Transfer_of_Custody--P30_transferred_custody_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E39_Actor--P49i_is_former_or_current_keeper_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E39_Actor--P50i_is_current_keeper_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E39_Actor--P51i_is_former_or_current_owner_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E39_Actor--P52i_is_current_owner_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E4_Period--P8_took_place_on_or_within--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E53_Place--P156i_is_occupied_by--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E53_Place--P157_is_at_rest_relative_to--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E53_Place--P53i_is_former_or_current_location_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E53_Place--P59i_is_located_on_or_within--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E8_Acquisition--P24_transferred_title_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E18_Physical_Thing--P46_is_composed_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://edge.example/E18_Physical_Thing--P46i_forms_part_of--E18_Physical_Thing> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing> ns1:edge <http://edge.example/E18_Physical_Thing--P156_occupies--E53_Place>,
+        <http://edge.example/E18_Physical_Thing--P157i_provides_reference_space_for--E53_Place>,
+        <http://edge.example/E18_Physical_Thing--P30i_custody_transferred_through--E10_Transfer_of_Custody>,
+        <http://edge.example/E18_Physical_Thing--P46_is_composed_of--E18_Physical_Thing>,
+        <http://edge.example/E18_Physical_Thing--P46i_forms_part_of--E18_Physical_Thing>,
+        <http://edge.example/E18_Physical_Thing--P49_has_former_or_current_keeper--E39_Actor>,
+        <http://edge.example/E18_Physical_Thing--P50_has_current_keeper--E39_Actor>,
+        <http://edge.example/E18_Physical_Thing--P51_has_former_or_current_owner--E39_Actor>,
+        <http://edge.example/E18_Physical_Thing--P52_has_current_owner--E39_Actor>,
+        <http://edge.example/E18_Physical_Thing--P53_has_former_or_current_location--E53_Place>,
+        <http://edge.example/E18_Physical_Thing--P59_has_section--E53_Place> .
+

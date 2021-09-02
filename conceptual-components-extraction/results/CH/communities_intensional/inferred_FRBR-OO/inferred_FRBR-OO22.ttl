@@ -1,0 +1,17 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/F23_Expression_Fragment--R15i_is_fragment_of--F2_Expression> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> .
+
+<http://edge.example/F2_Expression--R15_has_fragment--F23_Expression_Fragment> ns1:edge <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> ns1:edge <http://edge.example/F23_Expression_Fragment--R15i_is_fragment_of--F2_Expression> .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression> ns1:edge <http://edge.example/F2_Expression--R15_has_fragment--F23_Expression_Fragment>,
+        <http://edge.example/F2_Expression--R17i_was_created_by--F28_Expression_Creation>,
+        <http://edge.example/F2_Expression--R42i_has_representative_manifestation_singleton--F4_Manifestation_Singleton>,
+        <http://edge.example/F2_Expression--R48i_was_assigned_by--F41_Representative_Manifestation_Assignment> .
+

@@ -1,0 +1,29 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Syllable--belongsToWord--Word> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> .
+
+<http://edge.example/Syllable--isLastSyllable--Word> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> .
+
+<http://edge.example/Word--isCallOf--Word> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> .
+
+<http://edge.example/Word--isEchoOf--Word> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> .
+
+<http://edge.example/Word--isInflectedForm--Word> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> .
+
+<http://edge.example/Word--isLemma--Word> ns1:edge <http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> .
+
+<http://postdata.linhd.uned.es/ontology/postdata-structuralElements#Word> ns1:edge <http://edge.example/Word--isCallOf--Word>,
+        <http://edge.example/Word--isEchoOf--Word>,
+        <http://edge.example/Word--isInflectedForm--Word>,
+        <http://edge.example/Word--isLemma--Word>,
+        <http://edge.example/Word--lemma--string>,
+        <http://edge.example/Word--morphologicalAnnotation--string>,
+        <http://edge.example/Word--partOfSpeech--Concept>,
+        <http://edge.example/Word--phoneticTranscription--string>,
+        <http://edge.example/Word--sense--string>,
+        <http://edge.example/Word--translation--string> .
+

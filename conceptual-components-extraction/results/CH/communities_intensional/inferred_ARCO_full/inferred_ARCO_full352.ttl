@@ -1,0 +1,23 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalInstituteOrSite--hasCulturalInstituteOrSiteType--CulturalInstituteOrSiteType> ns1:edge <https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteType> .
+
+<http://edge.example/CulturalInstituteOrSiteDefinition--isCulturalInstituteOrSiteDefinitionOf--CulturalInstituteOrSiteType> ns1:edge <https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteType> .
+
+<http://edge.example/CulturalInstituteOrSiteSpecification--isCulturalInstituteOrSiteSpecificationOf--CulturalInstituteOrSiteType> ns1:edge <https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteType> .
+
+<http://edge.example/CulturalInstituteOrSiteType--hasCulturalInstituteOrSiteDefinition--CulturalInstituteOrSiteDefinition> ns1:edge <https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteDefinition> .
+
+<http://edge.example/CulturalInstituteOrSiteType--hasCulturalInstituteOrSiteSpecification--CulturalInstituteOrSiteSpecification> ns1:edge <https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteSpecification> .
+
+<https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteDefinition> ns1:edge <http://edge.example/CulturalInstituteOrSiteDefinition--isCulturalInstituteOrSiteDefinitionOf--CulturalInstituteOrSiteType> .
+
+<https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteSpecification> ns1:edge <http://edge.example/CulturalInstituteOrSiteSpecification--isCulturalInstituteOrSiteSpecificationOf--CulturalInstituteOrSiteType> .
+
+<https://w3id.org/arco/ontology/location/CulturalInstituteOrSiteType> ns1:edge <http://edge.example/CulturalInstituteOrSiteType--hasCulturalInstituteOrSiteDefinition--CulturalInstituteOrSiteDefinition>,
+        <http://edge.example/CulturalInstituteOrSiteType--hasCulturalInstituteOrSiteSpecification--CulturalInstituteOrSiteSpecification> .
+

@@ -1,0 +1,15 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/Audiovisual_equipment--is_situated_in--Session_room> ns1:edge <http://iasted#Session_room> .
+
+<http://edge.example/Session_room--is_equipped_by--Audiovisual_equipment> ns1:edge <http://iasted#Audiovisual_equipment> .
+
+<http://iasted#Audiovisual_equipment> ns1:edge <http://edge.example/Audiovisual_equipment--is_designed_for--Listener>,
+        <http://edge.example/Audiovisual_equipment--is_situated_in--Session_room> .
+
+<http://iasted#Session_room> ns1:edge <http://edge.example/Session_room--is_equipped_by--Audiovisual_equipment> .
+

@@ -1,0 +1,8 @@
+digraph "Community 10" {
+	CulturalProperty -> CulturalEntityTechnicalStatus [label=hasTechnicalStatus]
+	CulturalEntityTechnicalStatus
+	CulturalEntityTechnicalStatus -> TechnicalCharacteristic [label=includesTechnicalCharacteristic]
+	CulturalEntityTechnicalStatus -> Thing [label=isTechnicalStatusOf]
+	Thing -> CulturalEntityTechnicalStatus [label=hasTechnicalStatus]
+	TechnicalCharacteristic -> CulturalEntityTechnicalStatus [label=isIncludedInTechnicalStatus]
+}

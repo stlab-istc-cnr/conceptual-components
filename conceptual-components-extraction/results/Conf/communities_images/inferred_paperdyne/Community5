@@ -1,0 +1,9 @@
+digraph "Community 5" {
+	Reviewer -> Pending_Proposed_Conflict [label=confirmes]
+	Pending_Proposed_Conflict
+	Pending_Proposed_Conflict -> Paper [label=blockAssigningToReviewer]
+	Pending_Proposed_Conflict -> Reviewer [label=confirmedBy]
+	Pending_Proposed_Conflict -> Reviewer [label=refusedBy]
+	Reviewer -> Pending_Proposed_Conflict [label=refuses]
+	Pending_Proposed_Conflict -> Reviewer [label=visibleBy]
+}

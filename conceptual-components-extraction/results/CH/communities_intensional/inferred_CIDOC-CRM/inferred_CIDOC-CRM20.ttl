@@ -1,0 +1,18 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/E18_Physical_Thing--P8i_witnessed--E4_Period> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E4_Period> .
+
+<http://edge.example/E53_Place--P7i_witnessed--E4_Period> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E4_Period> .
+
+<http://edge.example/E4_Period--P9_consists_of--E4_Period> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E4_Period> .
+
+<http://edge.example/E4_Period--P9i_forms_part_of--E4_Period> ns1:edge <http://www.cidoc-crm.org/cidoc-crm/E4_Period> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E4_Period> ns1:edge <http://edge.example/E4_Period--P7_took_place_at--E53_Place>,
+        <http://edge.example/E4_Period--P9_consists_of--E4_Period>,
+        <http://edge.example/E4_Period--P9i_forms_part_of--E4_Period> .
+

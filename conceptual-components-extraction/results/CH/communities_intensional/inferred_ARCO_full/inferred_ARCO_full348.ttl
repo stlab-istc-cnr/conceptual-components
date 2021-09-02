@@ -1,0 +1,26 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CulturalEntity--hasConservationStatus--ConservationStatus> ns1:edge <https://w3id.org/arco/ontology/denotative-description/ConservationStatus> .
+
+<http://edge.example/CulturalProperty--hasConservationStatus--ConservationStatus> ns1:edge <https://w3id.org/arco/ontology/denotative-description/ConservationStatus> .
+
+<http://edge.example/ConservationStatus--hasConservationStatusType--ConservationStatusType> ns1:edge <https://w3id.org/arco/ontology/denotative-description/ConservationStatusType> .
+
+<http://edge.example/ConservationStatus--hasLegibility--Legibility> ns1:edge <https://w3id.org/arco/ontology/denotative-description/Legibility> .
+
+<http://edge.example/ConservationStatusType--isConservationStatusTypeOf--ConservationStatus> ns1:edge <https://w3id.org/arco/ontology/denotative-description/ConservationStatus> .
+
+<http://edge.example/Legibility--isLegibilityOf--ConservationStatus> ns1:edge <https://w3id.org/arco/ontology/denotative-description/ConservationStatus> .
+
+<https://w3id.org/arco/ontology/denotative-description/ConservationStatusType> ns1:edge <http://edge.example/ConservationStatusType--isConservationStatusTypeOf--ConservationStatus> .
+
+<https://w3id.org/arco/ontology/denotative-description/Legibility> ns1:edge <http://edge.example/Legibility--isLegibilityOf--ConservationStatus> .
+
+<https://w3id.org/arco/ontology/denotative-description/ConservationStatus> ns1:edge <http://edge.example/ConservationStatus--hasConservationStatusType--ConservationStatusType>,
+        <http://edge.example/ConservationStatus--hasLegibility--Legibility>,
+        <http://edge.example/ConservationStatus--isConservationStatusOf--CulturalEntity> .
+

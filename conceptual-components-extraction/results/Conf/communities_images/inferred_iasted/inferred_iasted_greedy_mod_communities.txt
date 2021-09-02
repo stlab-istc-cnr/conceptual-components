@@ -1,0 +1,339 @@
+Community 1 : 
+	Delegate obtain Invitation_letter
+	Delegate
+	Invitation_letter
+	Invitation_letter is_designed_for Delegate
+Community 2 : 
+	Registration_fee is_paid_by Delegate
+	Registration_fee
+	Delegate pay Registration_fee
+Community 3 : 
+	Delegate need Viza
+	Viza
+	Viza is_needed_for Delegate
+Community 4 : 
+	Presenter_city
+	Delegate occupy Presenter_city
+	Presenter_city is_occupied_by Delegate
+	Presenter_house is_situated_in Presenter_city
+Community 5 : 
+	Presenter_house is_situated_in Presenter_state
+	Presenter_house
+	Delegate occupy Presenter_house
+	Presenter_house is_occupied_by Delegate
+Community 6 : 
+	Presenter_university
+	Presenter_university is_situated_in Presenter_city
+	Presenter_university is_situated_in Presenter_state
+Community 7 : 
+	Presenter_state is_occupied_by Delegate
+	Presenter_state
+	Delegate occupy Presenter_state
+Community 8 : 
+	Registration_form is_sent_by Delegate
+	Registration_form
+	Delegate send Registration_form
+Community 9 : 
+	Registration_form is_sent_before Registation_deadline
+	Registation_deadline
+Community 10 : 
+	Transport_vehicle is_used_by Delegate
+	Transport_vehicle
+Community 11 : 
+	Coctail_reception is_designed_for Delegate
+	Coctail_reception
+Community 12 : 
+	Coffee_break
+	Coffee_break is_designed_for Delegate
+Community 13 : 
+	Form is_given_to Delegate
+	Form
+Community 14 : 
+	Mailing_list
+	Mailing_list is_designed_for Delegate
+Community 15 : 
+	Registration
+	Registration is_designed_for Delegate
+Community 16 : 
+	Social_program is_designed_for Delegate
+	Social_program
+Community 17 : 
+	Item is_given_to Person
+	Item
+	Person
+	Item is_made_from Item
+	Item is_needed_for Person
+	Item is_prepared_by Person
+	Item is_signed_by Person
+	Item is_used_by Person
+	Item is_writen_by Person
+	Item is_sent_by Person
+	Person need Item
+	Person obtain Item
+	Person prepare Item
+	Person send Item
+	Person sign Item
+	Person write Item
+Community 18 : 
+	Time
+	Item is_sent_after Time
+	Item is_sent_before Time
+	Person is_present Time
+Community 19 : 
+	Activity is_held_after Time
+	Activity
+	Activity is_held_before Time
+	Item go_through Activity
+Community 20 : 
+	Activity is_dated_on dateTime
+	dateTime
+Community 21 : 
+	One_day_presenter
+	One_day_presenter is_present Time
+Community 22 : 
+	Building
+	Money is_paid_in Building
+	Money
+	Money has_amount_of int
+	Money is_paid_by Person
+	Money is_paid_with Item
+	Person pay Money
+	int
+Community 23 : 
+	Conference_restaurant
+	Conference_restaurant is_occupied_by Delegate
+	Conference_restaurant is_situated_in Conference_city
+	Conference_restaurant is_situated_in Conference_state
+Community 24 : 
+	Tip is_paid_in Conference_restaurant
+	Tip
+Community 25 : 
+	Conference_airport is_situated_in Conference_state
+	Conference_airport
+	Conference_airport is_situated_in Conference_city
+Community 26 : 
+	Conference_state
+	Conference_building is_situated_in Conference_state
+	Conference_state is_visited_by Delegate
+Community 27 : 
+	Conference_building is_occupied_by Delegate
+	Conference_building
+	Session_room is_situated_in Conference_building
+Community 28 : 
+	Conference_building is_situated_in Conference_city
+	Conference_city
+	Conference_city is_visited_by Delegate
+Community 29 : 
+	Place is_situated_in Conference_city
+	Place
+	Place is_situated_in Conference_state
+	Place is_equipped_by Item
+Community 30 : 
+	Lecture is_designed_for Listener
+	Lecture
+	Speaker give Lecture
+Community 31 : 
+	Audiovisual_equipment is_used_by Speaker
+	Speaker
+Community 32 : 
+	Submission
+	Submission is_writen_by Speaker
+Community 33 : 
+	Session_room
+	Audiovisual_equipment is_situated_in Session_room
+	Session_room is_equipped_by Audiovisual_equipment
+	Audiovisual_equipment is_designed_for Listener
+	Audiovisual_equipment
+Community 34 : 
+	Listener
+	Record_of_attendance is_signed_by Listener
+	Listener sign Record_of_attendance
+	Record_of_attendance
+	Record_of_attendance is_situated_in Session_room
+Community 35 : 
+	Lecturer give Session
+	Session
+	Session is_held_in Session_room
+Community 36 : 
+	Lecturer
+	Lecturer speak_in Session_room
+Community 37 : 
+	Sponsor occupy Sponsor_city
+	Sponsor_city
+	Sponsor_city is_occupied_by Sponsor
+	Sponsor_company_house is_situated_in Sponsor_city
+Community 38 : 
+	Sponsor
+	Sponsor give Sponzorship
+	Sponzorship is_paid_by Sponsor
+	Sponzorship
+Community 39 : 
+	Sponsor occupy Sponsor_company_house
+	Sponsor_company_house
+	Sponsor_company_house is_occupied_by Sponsor
+Community 40 : 
+	Sponsor occupy Sponsor_state
+	Sponsor_state
+	Sponsor_company_house is_situated_in Sponsor_state
+Community 41 : 
+	Fee_for_extra_trip is_paid_by Conference_Hiker
+	Fee_for_extra_trip
+	Fee_for_extra_trip is_paid_for Full_day_tour
+Community 42 : 
+	Trip_city is_visited_by Conference_Hiker
+	Trip_city
+	Full_day_tour is_held_in Trip_city
+Community 43 : 
+	Trip_day is_designed_for Delegate
+	Trip_day
+	Full_day_tour is_held_in Trip_day
+Community 44 : 
+	Conference_Hiker
+	Conference_Hiker go_through Full_day_tour
+Community 45 : 
+	Full_day_tour
+	Full_day_tour is_designed_for Delegate
+Community 46 : 
+	Brief_introduction_for_Session_chair is_given_to Session_chair
+	Session_chair
+	Session_chair obtain Brief_introduction_for_Session_chair
+Community 47 : 
+	Session_chair go_through Introduction_of_speaker
+	Introduction_of_speaker
+Community 48 : 
+	Author give Brief_introduction_for_Session_chair
+	Brief_introduction_for_Session_chair
+	Author
+	Brief_introduction_for_Session_chair is_given_by Author
+Community 49 : 
+	Author prepare Transparency
+	Transparency
+	Transparency is_prepared_by Speaker
+Community 50 : 
+	Plenary_lecture_speaker
+	Plenary_lecture_speaker speak_in Conference_hall
+Community 51 : 
+	Conference_hall is_situated_in Conference_building
+	Conference_hall
+Community 52 : 
+	Tutorial is_given_by Tutorial_speaker
+	Tutorial
+	Plenary_lecture_speaker give Tutorial
+Community 53 : 
+	Plenary_lecture is_given_by Plenary_lecture_speaker
+	Plenary_lecture
+	Tutorial_speaker give Plenary_lecture
+Community 54 : 
+	Tutorial_speaker
+	Tutorial_speaker speak_in Conference_hall
+Community 55 : 
+	Hotel_fee
+	Hotel_fee is_paid_by Hotel_presenter
+Community 56 : 
+	Hotel_presenter
+	Conference_hotel is_designed_for Hotel_presenter
+Community 57 : 
+	Conference_hotel is_situated_in Conference_city
+	Conference_hotel
+	Conference_hotel is_situated_in Conference_state
+Community 58 : 
+	Hotel_room
+	Hotel_room is_designed_for Hotel_presenter
+	Hotel_room is_situated_in Conference_hotel
+Community 59 : 
+	Registration_fee is_paid_for Conference_activity
+	Conference_activity
+	Conference_activity is_held_in Conference_days
+	Conference_activity is_held_in Conference_state
+Community 60 : 
+	Activity_after_conference
+	Activity_after_conference is_held_after Conference_days
+Community 61 : 
+	Conference_days is_designed_for Delegate
+	Conference_days
+Community 62 : 
+	Activity_before_conference
+	Activity_before_conference is_held_before Conference_days
+Community 63 : 
+	Publication
+	Publication is_made_from Final_manuscript
+Community 64 : 
+	Final_manuscript go_through Accepting_manuscript
+	Accepting_manuscript
+Community 65 : 
+	Final_manuscript
+	Speaker write Final_manuscript
+Community 66 : 
+	Nonauthor_registration_fee is_designed_for Non_speaker
+	Non_speaker
+	Nonauthor_registration_fee
+Community 67 : 
+	Worker_non_speaker
+	Worker_non_speaker pay Nonauthor_registration_fee
+Community 68 : 
+	Author_attendee_cd_registration_fee is_paid_for Cd_proceening
+	Cd_proceening
+	Author_attendee_cd_registration_fee
+Community 69 : 
+	Author_cd_proceedings_included obtain Cd_proceening
+	Author_cd_proceedings_included
+Community 70 : 
+	Book_proceeding
+	Author_attendee_book_registration_fee is_paid_for Book_proceeding
+	Author_attendee_book_registration_fee
+Community 71 : 
+	Author_book_proceedings_included obtain Book_proceeding
+	Author_book_proceedings_included
+Community 72 : 
+	Technic_activity
+	Technical_commitee go_through Technic_activity
+	Technic_activity is_given_by Technical_commitee
+	Technical_commitee
+Community 73 : 
+	Deadline
+	Deadline done_till date
+	Deadline is_designed_for Delegate
+	date
+Community 74 : 
+	IASTED_member
+	IASTED_member pay Memeber_registration_fee
+	Memeber_registration_fee is_designed_for IASTED_member
+	Memeber_registration_fee
+Community 75 : 
+	Review
+	Review is_writen_by Reviewer
+	Reviewer give Review
+	Reviewer
+Community 76 : 
+	IASTED_non_member
+	IASTED_non_member pay Nonmember_registration_fee
+	Nonmember_registration_fee is_designed_for IASTED_non_member
+	Nonmember_registration_fee
+Community 77 : 
+	Student_non_speaker pay Student_registration_fee
+	Student_non_speaker
+	Student_registration_fee
+Community 78 : 
+	City is_situated_in State
+	State
+	City
+Community 79 : 
+	Hotel_registration_form is_sent_before Deadline_hotel_reservation
+	Deadline_hotel_reservation
+	Hotel_registration_form
+Community 80 : 
+	Departure_tax
+	Departure_tax is_designed_for Departure
+	Departure
+Community 81 : 
+	Author_information_form
+	Author_information_form is_sent_after Deadline_for_notification_of_acceptance
+	Deadline_for_notification_of_acceptance
+Community 82 : 
+	Renting
+	Renting is_connected_with Car
+	Car
+Community 83 : 
+	Initial_manuscipt
+	Initial_manuscipt go_through Refusing_manuscript
+	Refusing_manuscript

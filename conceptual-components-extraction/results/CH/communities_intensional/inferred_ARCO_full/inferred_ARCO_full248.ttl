@@ -1,0 +1,25 @@
+@prefix ns1: <https://w3id.org/framester/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://edge.example/CatalogueRecord--hasAccessProfile--AccessProfile> ns1:edge <https://w3id.org/arco/ontology/catalogue/AccessProfile> .
+
+<http://edge.example/AccessProfile--hasPrivacyLevel--PrivacyLevel> ns1:edge <https://w3id.org/arco/ontology/catalogue/PrivacyLevel> .
+
+<http://edge.example/AccessProfile--hasPrivacyReason--PrivacyReason> ns1:edge <https://w3id.org/arco/ontology/catalogue/PrivacyReason> .
+
+<http://edge.example/PrivacyLevel--isPrivacyLevelOf--AccessProfile> ns1:edge <https://w3id.org/arco/ontology/catalogue/AccessProfile> .
+
+<http://edge.example/PrivacyReason--isPrivacyReasonOf--AccessProfile> ns1:edge <https://w3id.org/arco/ontology/catalogue/AccessProfile> .
+
+<https://w3id.org/arco/ontology/catalogue/PrivacyLevel> ns1:edge <http://edge.example/PrivacyLevel--isPrivacyLevelOf--AccessProfile> .
+
+<https://w3id.org/arco/ontology/catalogue/PrivacyReason> ns1:edge <http://edge.example/PrivacyReason--isPrivacyReasonOf--AccessProfile> .
+
+<https://w3id.org/arco/ontology/catalogue/AccessProfile> ns1:edge <http://edge.example/AccessProfile--expiryDate--Literal>,
+        <http://edge.example/AccessProfile--hasPrivacyLevel--PrivacyLevel>,
+        <http://edge.example/AccessProfile--hasPrivacyReason--PrivacyReason>,
+        <http://edge.example/AccessProfile--isAccessProfileOf--CatalogueRecord> .
+

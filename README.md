@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # Conceptual Components
 This repository contains code, experiment results and resources related to the extraction of conceptual components and observed ontology design patterns from corpora of ontologies.
 

@@ -7,3 +7,10 @@ This repository contains code, experiment results and resources related to the e
 - ``experiments_and_catalogue_generation``: code for running the experiments and results, and code for generating the Catalogue of conceptual components and observed ontology design patterns
 - ``ch_catalogue``: folder with the catalogue generated from the Cultural Heritage corpus
 - ``conf_catalogue``: folder with the catalogue generated from the Conference corpus
+
+
+## Useful materials
+- [arXiv paper](arxiv.org/abs/2106.12831)
+- [YouTube video](youtu.be/dyw0VgSrs2A)
+- [slides](https://www.slideshare.net/ValentinaCarriero1/conceptual-components-extraction-from-multiple-ontologies)
+- [twitter thread](https://twitter.com/vale_carriero/status/1412394361187340294?s=20)

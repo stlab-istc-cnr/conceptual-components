@@ -10,7 +10,7 @@ This repository contains code, experiment results and resources related to the e
 
 
 ## Useful materials
-- [arXiv paper](https://arxiv.org/abs/2106.12831)
+- [arXiv paper](https://arxiv.org/abs/2106.12831) (will be presented at K-CAP 2021)
 - [YouTube video](https://youtu.be/dyw0VgSrs2A)
 - [slides](https://www.slideshare.net/ValentinaCarriero1/conceptual-components-extraction-from-multiple-ontologies)
 - [twitter thread](https://twitter.com/vale_carriero/status/1412394361187340294?s=20)

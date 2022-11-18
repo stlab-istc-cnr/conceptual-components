@@ -138,8 +138,8 @@ public class GenerateCatalogue {
 	}
 
 	private static List<Cluster> getClusters(String clusterFilepath, String folderIn, String folderOut,
-			String ontologyFolder, Map<Integer, Set<Integer>> clusterHierarhcy,
-			Map<List<Integer>, Double> subsumptionStrength) throws IOException {
+											 String ontologyFolder, Map<Integer, Set<Integer>> clusterHierarhcy,
+											 Map<List<Integer>, Double> subsumptionStrength) throws IOException {
 		Reader in = new FileReader(clusterFilepath);
 		CSVParser records = CSVFormat.DEFAULT.parse(in);
 		Iterator<CSVRecord> it = records.iterator();
@@ -187,6 +187,12 @@ public class GenerateCatalogue {
 
 				String communityRDF = folderIn + "/communities_original_rdf/"
 						+ AnalyseAlignments.removeSuffix(communityId) + "/" + communityId + "_intensional.ttl";
+
+				if(!new File(communityRDF).exists()) {
+					communityRDF = folderIn + "/communities_original_rdf/"
+							+ AnalyseAlignments.removeSuffix(communityId) + "/" + communityId + ".ttl";
+				}
+
 				String communityRDFOut = folderOut + "/ontologies/" + communityId + ".ttl";
 
 				extractFragment(communityRDF, ontologyFileIn, communityRDFOut);
@@ -283,8 +289,8 @@ public class GenerateCatalogue {
 	}
 
 	public static void generateCatalogue(String folderOut, String clustersFile, String folderIn,
-			String folderOntologiesIn, String topLevelAnchestorsFile, String hierarchyFile,
-			String generatedCommunitiesFolder, String corpusName, String numberOfOntologies)
+										 String folderOntologiesIn, String topLevelAnchestorsFile, String hierarchyFile,
+										 String generatedCommunitiesFolder, String corpusName, String numberOfOntologies)
 			throws TemplateNotFoundException, MalformedTemplateNameException, ParseException, IOException,
 			TemplateException {
 

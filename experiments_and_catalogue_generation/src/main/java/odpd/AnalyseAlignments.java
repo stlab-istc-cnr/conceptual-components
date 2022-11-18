@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,7 +28,6 @@ import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
-import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Statement;
@@ -96,8 +94,8 @@ public class AnalyseAlignments {
 	}
 
 	public static void analyseAlignments(String clusterFilepath, String folder, String amlAlignments,
-			String assertedAlingmentsFile, String outfolder, String topLevelAnchestorsFile, String hierarchyFile,
-			double thresholdSubsumptions, boolean conf) throws IOException {
+										 String assertedAlingmentsFile, String outfolder, String topLevelAnchestorsFile, String hierarchyFile,
+										 double thresholdSubsumptions, boolean conf) throws IOException {
 
 		Map<String, Set<String>> topLevelAnchestors = loadHierarhcy(topLevelAnchestorsFile);
 		Map<List<Integer>, Double> subsumptionStrength = new HashMap<>();
@@ -131,7 +129,7 @@ public class AnalyseAlignments {
 
 		System.out.println("Assessing AML Alignments on Asserted Alignements: "
 				+ ((double) Sets.intersection(alignmentSetAll, assertedAlignmentsAlignments).size()
-						/ (double) assertedAlignmentsAlignments.size()));
+				/ (double) assertedAlignmentsAlignments.size()));
 
 //		computePrecisionOfWithRespectToAlignments(assertedAlignmentsEquivalences, null, uri2Cluster,
 //				outfolder + "/Asserted_alingments", "Asserted_alingments", sim, clusterHierarhcy);
@@ -234,7 +232,7 @@ public class AnalyseAlignments {
 	}
 
 	public static void computeUri2ClusterMap(String clusterFilepath, String folder,
-			Map<String, Set<Integer>> uri2Cluster) throws IOException {
+											 Map<String, Set<Integer>> uri2Cluster) throws IOException {
 		Reader in = new FileReader(clusterFilepath);
 		CSVParser records = CSVFormat.DEFAULT.parse(in);
 		Iterator<CSVRecord> it = records.iterator();
@@ -299,8 +297,8 @@ public class AnalyseAlignments {
 	}
 
 	public static double[][] clusterSimilarity(String clusterFilepath, Map<String, Set<String>> topLevelAnchestors,
-			Map<String, Set<String>> hierarchy, Map<Integer, Set<Integer>> clusterHierarhcy,
-			Map<List<Integer>, Double> subsumptionStrength, double threshold) throws IOException {
+											   Map<String, Set<String>> hierarchy, Map<Integer, Set<Integer>> clusterHierarhcy,
+											   Map<List<Integer>, Double> subsumptionStrength, double threshold) throws IOException {
 
 		Map<Integer, Set<Integer>> clusterHierarhcyCandidate = new HashMap<>();
 		Map<List<Integer>, Double> subsumptionStrengthCandidate = new HashMap<>();
@@ -323,6 +321,8 @@ public class AnalyseAlignments {
 
 			Map<String, Integer> entities = new HashMap<>();
 			for (String f2f : frames2frequency) {
+				if(f2f.equals("no frames"))
+					continue;
 				String frame = "frame:" + f2f.split(":")[1];
 				Integer freq = Integer.parseInt(f2f.split(":")[2].trim());
 				entities.put(frame, freq);
@@ -458,7 +458,7 @@ public class AnalyseAlignments {
 	}
 
 	private static void filter(Map<Integer, Set<Integer>> clusterHierarhcyCandidate,
-			Map<List<Integer>, Double> subsumptionStrengthCandidate, final double threshold) {
+							   Map<List<Integer>, Double> subsumptionStrengthCandidate, final double threshold) {
 
 		List<List<Integer>> toRemove = new ArrayList<>();
 		subsumptionStrengthCandidate.forEach((k, v) -> {
@@ -492,8 +492,8 @@ public class AnalyseAlignments {
 	}
 
 	public static void computePrecisionOfWithRespectToAlignments(Set<Set<String>> alignmentSet,
-			Map<Set<String>, Double> scores, Map<String, Set<Integer>> uri2Cluster, String outfolder,
-			String datasetName, final double[][] sim, Map<Integer, Set<Integer>> clusterHierarhcy) throws IOException {
+																 Map<Set<String>, Double> scores, Map<String, Set<Integer>> uri2Cluster, String outfolder,
+																 String datasetName, final double[][] sim, Map<Integer, Set<Integer>> clusterHierarhcy) throws IOException {
 
 		new File(outfolder).mkdir();
 
@@ -647,14 +647,14 @@ public class AnalyseAlignments {
 				+ (innerAlignmentsConfidence.get() / validAlignmentsConfidence.get()));
 		System.out.println("[" + datasetName + "] Corr with respect to H: "
 				+ ((double) (innerAlignmentsConfidence.get() + havingHierarchicalConfidence.get())
-						/ validAlignmentsConfidence.get()));
+				/ validAlignmentsConfidence.get()));
 
 //		fosStat.flush();
 //		fosStat.close();
 	}
 
 	public static void retrieveAlignments(String alignmentsFile, Set<Set<String>> alignments,
-			Map<Set<String>, Double> scores, double threshold) {
+										  Map<Set<String>, Double> scores, double threshold) {
 
 //		Set<Set<String>> alignments = new HashSet<>();
 
@@ -765,7 +765,7 @@ public class AnalyseAlignments {
 		for (double t : new double[] { 0.0, 0.1, 0.2, 0.3, 0.4 }) {
 			System.out.println("Run the experiments with minimum strength set as " + t);
 			analyseAlignments(folderIn
-					+ "clustering-nocomments-100-alsocommswithoutsynsetframe-filtered-framesynset-analysis-withoutnone_ch.csv",
+							+ "clustering-nocomments-100-alsocommswithoutsynsetframe-filtered-framesynset-analysis-withoutnone_ch.csv",
 					folderIn + "nosubsumed_recursion_belowaverage_run2_filteredforclusteranalysis/communities_original_rdf",
 					folderIn + "Alignments/alignments_AML.ttl",
 					folderIn + "Alignments/CH_dataset_internal_classprop_alignments.ttl", folderIn,
